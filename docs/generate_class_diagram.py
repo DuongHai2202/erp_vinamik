@@ -20,20 +20,20 @@ html_content = """<!DOCTYPE html>
     --bg-main: #0b0f19;
     --card-bg: #111827;
     --border-color: #1f2937;
-    
+
     /* Modules */
     --identity-primary: #6366f1;
     --identity-bg: rgba(99, 102, 241, 0.04);
     --identity-border: rgba(99, 102, 241, 0.35);
-    
+
     --hr-primary: #0d9488;
     --hr-bg: rgba(13, 148, 136, 0.04);
     --hr-border: rgba(13, 148, 136, 0.35);
-    
+
     --inventory-primary: #d97706;
     --inventory-bg: rgba(217, 119, 6, 0.04);
     --inventory-border: rgba(217, 119, 6, 0.35);
-    
+
     --production-primary: #e11d48;
     --production-bg: rgba(225, 29, 72, 0.04);
     --production-border: rgba(225, 29, 72, 0.35);
@@ -303,7 +303,7 @@ html_content = """<!DOCTYPE html>
         <span class="module-desc">6 Classes &bull; Role-Based Access Control</span>
       </div>
       <div class="classes-grid">
-        
+
         <!-- UserAccount -->
         <div class="uml-class">
           <div class="uml-header">

@@ -19,7 +19,7 @@ svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {
     <style>
       .pkg-box {{ fill: none; stroke: #64748b; stroke-width: 1.5; stroke-dasharray: 4,4; rx: 6; }}
       .pkg-label {{ font-size: 13px; font-weight: bold; fill: #475569; text-transform: uppercase; letter-spacing: 0.5px; }}
-      
+
       .uml-box {{ fill: #ffffff; stroke: #1e293b; stroke-width: 1.3; }}
       .uml-header-text {{ font-size: 13.5px; font-weight: bold; fill: #0f172a; text-anchor: middle; }}
       .uml-stereo {{ font-size: 10px; font-style: italic; fill: #64748b; text-anchor: middle; }}
@@ -27,7 +27,7 @@ svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {
       .uml-method-text {{ font-size: 11.5px; fill: #0f172a; font-family: 'Segoe UI', Arial, sans-serif; }}
       .uml-line {{ stroke: #1e293b; stroke-width: 1.3; fill: none; }}
       .uml-cardinality {{ font-size: 12px; fill: #0f172a; font-weight: 600; font-family: 'Segoe UI', Arial, sans-serif; }}
-      
+
       .title-text {{ font-size: 20px; font-weight: bold; fill: #0f172a; }}
       .subtitle-text {{ font-size: 13px; fill: #64748b; }}
     </style>

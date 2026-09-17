@@ -1,4 +1,12 @@
-"""Load a balanced sample of ~400-600 records across all ERP Vinamik tables."""
+"""Load a balanced sample of ~400-600 records across all ERP Vinamik tables.
+
+Required environment variables:
+    ERP_ADMIN_USERNAME
+    ERP_ADMIN_PASSWORD
+
+Optional:
+    ERP_API_BASE_URL (default: http://127.0.0.1:8080)
+"""
 
 import csv
 import os
@@ -144,35 +152,43 @@ def filtered_read_rows(relative_path: str):
 loader.read_rows = filtered_read_rows
 
 
-def main():
-    username = os.environ.get("ERP_ADMIN_USERNAME", "admin")
-    password = os.environ.get("ERP_ADMIN_PASSWORD", "Admin@12345678")
+def main() -> int:
+    username = os.environ.get("ERP_ADMIN_USERNAME")
+    password = os.environ.get("ERP_ADMIN_PASSWORD")
     api_url = os.environ.get("ERP_API_BASE_URL", "http://127.0.0.1:8080")
+    if not username or not password:
+        print("ERP_ADMIN_USERNAME and ERP_ADMIN_PASSWORD are required.", file=sys.stderr)
+        return 2
 
     print(f"Connecting to {api_url} as {username}...")
     client = loader.api_client(api_url, username, password)
-    user = client.login()
-    print(f"Authenticated as {user.get('username')} (super_admin={user.get('super_admin')}).")
-
-    context = loader.load_context(client=client, maps={}, failures=[], skipped=[])
-
-    print("\n--- PHASE 1: Loading Human Resources ---")
-    loader.load_hr(context)
-
-    print("\n--- PHASE 2: Loading Inventory Master ---")
-    loader.load_inventory_master(context)
-
-    print("\n--- PHASE 3: Loading Production ---")
     try:
+        user = client.login()
+        print(f"Authenticated as {user.get('username')} (super_admin={user.get('super_admin')}).")
+
+        context = loader.load_context(client=client, maps={}, failures=[], skipped=[])
+
+        print("\n--- PHASE 1: Loading Human Resources ---")
+        loader.load_hr(context)
+
+        print("\n--- PHASE 2: Loading Inventory Master ---")
+        loader.load_inventory_master(context)
+
+        print("\n--- PHASE 3: Loading Inventory Transactions ---")
+        loader.load_inventory_transactions(context)
+
+        print("\n--- PHASE 4: Loading Production ---")
         loader.load_production(context)
-    except Exception as e:
-        print(f"Production loader notice: {e}")
+    except Exception as error:
+        print(f"Balanced sample load failed: {error}", file=sys.stderr)
+        return 1
 
     print("\n=======================================================")
-    print(f"BALANCED SAMPLE LOAD FINISHED!")
+    print("BALANCED SAMPLE LOAD FINISHED!")
     print(f"Total failures: {len(context.failures)}")
     print("=======================================================")
+    return 1 if context.failures else 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
