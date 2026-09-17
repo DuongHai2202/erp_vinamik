@@ -188,7 +188,7 @@ function ModuleDataPage({ feature_key }) {
   const config = feature_catalog[feature_key] || feature_catalog.absences;
   const module_visual = module_visuals[config.module_key] || module_visuals.human_resources;
   const { current_user } = use_auth();
-  const { message } = AntdApp.useApp();
+  const { message, modal } = AntdApp.useApp();
   const [search_params, set_search_params] = useSearchParams();
   const [records, set_records] = useState([]);
   const [filters, set_filters] = useState(() => ({ search: search_params.get('search') || '', status: search_params.get('status') || '' }));
@@ -245,7 +245,7 @@ function ModuleDataPage({ feature_key }) {
   }, [current_page, current_page_size, filters, load_records]);
 
   const run_action = useCallback((action, record) => {
-    Modal.confirm({
+    modal.confirm({
       title: `${action.label} bản ghi?`,
       content: `Thao tác này sẽ chuyển trạng thái sang “${status_labels[action.target_status] || action.target_status}”.`,
       okText: 'Xác nhận',
@@ -261,7 +261,7 @@ function ModuleDataPage({ feature_key }) {
         }
       },
     });
-  }, [filters, load_records, message, pagination]);
+  }, [filters, load_records, message, modal, pagination]);
 
   const columns = useMemo(() => {
     const base_columns = config.columns.map(([key, title, width]) => ({
@@ -282,8 +282,8 @@ function ModuleDataPage({ feature_key }) {
     const record = event.detail;
     if (!record) return;
     const labels = config.columns.map(([key, title]) => ({ key, title, value: format_cell(record[key], key) }));
-    Modal.info({ title: `Chi tiết ${record[config.columns[0][0]] || 'bản ghi'}`, width: 700, content: <div className="workflow_detail_grid">{labels.map((item) => <div key={item.key}><span>{item.title}</span><strong>{item.key === 'status' ? display_status(record[item.key]) : item.value}</strong></div>)}</div>, okText: 'Đóng' });
-  }, [config]);
+    modal.info({ title: `Chi tiết ${record[config.columns[0][0]] || 'bản ghi'}`, width: 700, content: <div className="workflow_detail_grid">{labels.map((item) => <div key={item.key}><span>{item.title}</span><strong>{item.key === 'status' ? display_status(record[item.key]) : item.value}</strong></div>)}</div>, okText: 'Đóng' });
+  }, [config, modal]);
 
   useEffect(() => {
     document.addEventListener('vinamik:open_record', open_record_event);

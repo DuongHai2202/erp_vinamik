@@ -19,7 +19,7 @@ const status_labels = Object.fromEntries(status_options.filter((item) => item.va
 
 function HumanResourcesPage() {
   const { current_user } = use_auth();
-  const { message } = AntdApp.useApp();
+  const { message, modal } = AntdApp.useApp();
   const [search_params, set_search_params] = useSearchParams();
   const [employees, set_employees] = useState([]);
   const [is_loading, set_is_loading] = useState(false);
@@ -88,7 +88,7 @@ function HumanResourcesPage() {
       set_is_modal_open(false);
       return;
     }
-    Modal.confirm({ title: 'Đóng biểu mẫu?', content: 'Các thay đổi chưa lưu sẽ bị mất.', okText: 'Đóng', cancelText: 'Tiếp tục chỉnh sửa', onOk: () => set_is_modal_open(false) });
+    modal.confirm({ title: 'Đóng biểu mẫu?', content: 'Các thay đổi chưa lưu sẽ bị mất.', okText: 'Đóng', cancelText: 'Tiếp tục chỉnh sửa', onOk: () => set_is_modal_open(false) });
   };
 
   const on_finish = async (values) => {
@@ -113,7 +113,7 @@ function HumanResourcesPage() {
   };
 
   const deactivate_employee = (employee) => {
-    Modal.confirm({
+    modal.confirm({
       title: 'Vô hiệu hóa hồ sơ?',
       content: `Hồ sơ ${employee.employee_code} sẽ chuyển sang ngừng hoạt động.`,
       okText: 'Vô hiệu hóa',

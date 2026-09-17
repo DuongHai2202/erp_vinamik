@@ -17,7 +17,7 @@ const status_labels = { active: 'Đang sử dụng', inactive: 'Ngừng sử d�
 
 function InventoryPage() {
   const { current_user } = use_auth();
-  const { message } = AntdApp.useApp();
+  const { message, modal } = AntdApp.useApp();
   const [search_params, set_search_params] = useSearchParams();
   const [materials, set_materials] = useState([]);
   const [units, set_units] = useState([]);
@@ -112,7 +112,7 @@ function InventoryPage() {
   };
 
   const deactivate_material = (material) => {
-    Modal.confirm({
+    modal.confirm({
       title: 'Vô hiệu hóa mặt hàng?',
       content: `Mặt hàng ${material.item_code} sẽ chuyển sang ngừng sử dụng.`,
       okText: 'Vô hiệu hóa',

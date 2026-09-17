@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: erp_vinamik_db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: erp_vinamik
+      POSTGRES_USER: erp_vinamik
+      POSTGRES_PASSWORD: erp_vinamik_secret
+    volumes:
+      - erp_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  erp_postgres_data:
