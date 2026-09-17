@@ -18,7 +18,7 @@ const status_labels = Object.fromEntries(status_options.filter((item) => item.va
 
 function ContractsPage() {
   const { current_user } = use_auth();
-  const { message } = AntdApp.useApp();
+  const { message, modal } = AntdApp.useApp();
   const [contracts, set_contracts] = useState([]);
   const [employees, set_employees] = useState([]);
   const [is_loading, set_is_loading] = useState(false);
@@ -103,7 +103,7 @@ function ContractsPage() {
 
   const change_status = (contract, status) => {
     const action_label = status === 'active' ? 'Duyệt' : status === 'cancelled' ? 'Hủy' : 'Đóng';
-    Modal.confirm({
+    modal.confirm({
       title: `${action_label} hợp đồng?`,
       content: `Hợp đồng ${contract.contract_code} sẽ chuyển sang ${status_labels[status]}.`,
       okText: 'Xác nhận',

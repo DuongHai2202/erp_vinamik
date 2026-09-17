@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: erp_vinamik_db
+    restart: unless-stopped
+    ports:
+      # The Spring Boot process runs on this host during local development.
+      # Keep PostgreSQL off the LAN; client workstations must use the API.
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_DB: ${ERP_DB_NAME:-erp_vinamik}
+      POSTGRES_USER: ${ERP_DB_USERNAME:-erp_vinamik}
+      POSTGRES_PASSWORD: ${ERP_DB_PASSWORD:?ERP_DB_PASSWORD must be set outside the repository}
+    volumes:
+      - erp_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  erp_postgres_data:

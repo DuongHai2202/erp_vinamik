@@ -1,0 +1,975 @@
+"""Generate a high-resolution, professional UML Class Diagram for ERP Vinamik."""
+
+import os
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+DOCS_DIR = ROOT / "docs"
+
+html_content = """<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>ERP Vinamik - Biểu đồ lớp UML</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-main: #0b0f19;
+    --card-bg: #111827;
+    --border-color: #1f2937;
+
+    /* Modules */
+    --identity-primary: #6366f1;
+    --identity-bg: rgba(99, 102, 241, 0.04);
+    --identity-border: rgba(99, 102, 241, 0.35);
+
+    --hr-primary: #0d9488;
+    --hr-bg: rgba(13, 148, 136, 0.04);
+    --hr-border: rgba(13, 148, 136, 0.35);
+
+    --inventory-primary: #d97706;
+    --inventory-bg: rgba(217, 119, 6, 0.04);
+    --inventory-border: rgba(217, 119, 6, 0.35);
+
+    --production-primary: #e11d48;
+    --production-bg: rgba(225, 29, 72, 0.04);
+    --production-border: rgba(225, 29, 72, 0.35);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: var(--bg-main);
+    color: #e2e8f0;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 40px;
+    width: 3200px;
+  }
+
+  .header {
+    margin-bottom: 35px;
+    background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 16px;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  }
+
+  .header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .header .badge {
+    background: rgba(99, 102, 241, 0.25);
+    border: 1px solid #818cf8;
+    color: #c7d2fe;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-weight: 600;
+  }
+
+  .header p {
+    color: #94a3b8;
+    font-size: 15px;
+    margin-top: 8px;
+  }
+
+  .legend {
+    display: flex;
+    gap: 24px;
+    background: rgba(15, 23, 42, 0.8);
+    padding: 14px 24px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .module-section {
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .module-identity { background: var(--identity-bg); border-color: var(--identity-border); }
+  .module-hr { background: var(--hr-bg); border-color: var(--hr-border); }
+  .module-inventory { background: var(--inventory-bg); border-color: var(--inventory-border); }
+  .module-production { background: var(--production-bg); border-color: var(--production-border); }
+
+  .module-title {
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid;
+  }
+
+  .module-identity .module-title { color: #a5b4fc; border-color: rgba(99, 102, 241, 0.25); }
+  .module-hr .module-title { color: #5eead4; border-color: rgba(13, 148, 136, 0.25); }
+  .module-inventory .module-title { color: #fcd34d; border-color: rgba(217, 119, 6, 0.25); }
+  .module-production .module-title { color: #fda4af; border-color: rgba(225, 29, 72, 0.25); }
+
+  .module-desc {
+    font-size: 13px;
+    font-weight: 500;
+    color: #94a3b8;
+  }
+
+  .classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+  }
+
+  /* UML Class Card */
+  .uml-class {
+    background: #111827;
+    border-radius: 10px;
+    border: 1.5px solid #374151;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .uml-header {
+    padding: 12px 16px;
+    text-align: center;
+    border-bottom: 1.5px solid #374151;
+  }
+
+  .module-identity .uml-class { border-color: rgba(99, 102, 241, 0.4); }
+  .module-identity .uml-header { background: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.3); }
+
+  .module-hr .uml-class { border-color: rgba(13, 148, 136, 0.4); }
+  .module-hr .uml-header { background: rgba(13, 148, 136, 0.15); border-color: rgba(13, 148, 136, 0.3); }
+
+  .module-inventory .uml-class { border-color: rgba(217, 119, 6, 0.4); }
+  .module-inventory .uml-header { background: rgba(217, 119, 6, 0.15); border-color: rgba(217, 119, 6, 0.3); }
+
+  .module-production .uml-class { border-color: rgba(225, 29, 72, 0.4); }
+  .module-production .uml-header { background: rgba(225, 29, 72, 0.15); border-color: rgba(225, 29, 72, 0.3); }
+
+  .uml-stereotype {
+    font-size: 11px;
+    color: #94a3b8;
+    font-style: italic;
+    margin-bottom: 2px;
+  }
+
+  .uml-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Fira Code', monospace;
+  }
+
+  .uml-body {
+    padding: 12px 14px;
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    border-bottom: 1px solid #2d3748;
+    flex-grow: 1;
+  }
+
+  .uml-body div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .uml-methods {
+    padding: 10px 14px;
+    font-family: 'Fira Code', monospace;
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: #94a3b8;
+    background: #0f172a;
+  }
+
+  .uml-methods div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .vis-pub { color: #10b981; font-weight: bold; margin-right: 4px; }
+  .vis-pri { color: #ef4444; font-weight: bold; margin-right: 4px; }
+  .type { color: #38bdf8; }
+  .comment { color: #64748b; font-size: 10.5px; margin-left: 4px; }
+
+  .public-contract-note {
+    margin-top: 35px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 24px 30px;
+  }
+
+  .public-contract-note h3 {
+    font-size: 17px;
+    color: #e2e8f0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contract-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .contract-card {
+    background: #1e293b;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 13px;
+    border-left: 4px solid;
+  }
+
+  .contract-card.c-id { border-color: #6366f1; }
+  .contract-card.c-hr { border-color: #0d9488; }
+  .contract-card.c-inv { border-color: #d97706; }
+  .contract-card.c-prd { border-color: #e11d48; }
+
+  .contract-card strong { color: #ffffff; display: block; margin-bottom: 4px; font-size: 14px; }
+  .contract-card span { color: #94a3b8; font-size: 12.5px; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <h1>
+        HỆ THỐNG ERP VINAMIK &bull; BIỂU ĐỒ LỚP UML (CLASS DIAGRAM)
+        <span class="badge">Modular Monolith Architecture</span>
+      </h1>
+      <p>Mô hình hóa cấu trúc hướng đối tượng các phân hệ: Định danh, Nhân sự, Kho vật tư và Sản xuất theo chuẩn Spring Boot & PostgreSQL</p>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#6366f1;"></div> Platform / Identity</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#0d9488;"></div> Quản lý Nhân sự</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#d97706;"></div> Quản lý Kho</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#e11d48;"></div> Quản lý Sản xuất</div>
+    </div>
+  </div>
+
+  <div class="grid-container">
+
+    <!-- 1. PLATFORM / IDENTITY -->
+    <div class="module-section module-identity">
+      <div class="module-title">
+        <span>1. Platform &amp; Identity (Nền tảng &amp; Phân quyền)</span>
+        <span class="module-desc">6 Classes &bull; Role-Based Access Control</span>
+      </div>
+      <div class="classes-grid">
+
+        <!-- UserAccount -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / aggregate root&raquo;</div>
+            <div class="uml-name">UserAccount</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>user_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>username: <span class="type">String</span></div>
+            <div><span class="vis-pri">-</span>password_hash: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>employee_id: <span class="type">Long?</span> <span class="comment">// HR ref</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">UserStatus</span></div>
+            <div><span class="vis-pub">+</span>is_super_admin: <span class="type">Boolean</span></div>
+            <div><span class="vis-pub">+</span>failed_login_count: <span class="type">Integer</span></div>
+            <div><span class="vis-pub">+</span>locked_until: <span class="type">Instant?</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>authenticate(pwd): <span class="type">Boolean</span></div>
+            <div><span class="vis-pub">+</span>lockAccount(duration): <span class="type">void</span></div>
+            <div><span class="vis-pub">+</span>resetFailedAttempts(): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- Role -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">Role</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>role_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>role_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>display_name: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>description: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">String</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>addPermission(perm): <span class="type">void</span></div>
+            <div><span class="vis-pub">+</span>hasPermission(code): <span class="type">Boolean</span></div>
+          </div>
+        </div>
+
+        <!-- Permission -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">Permission</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>permission_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>permission_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>module_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>action_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>description: <span class="type">String</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>matches(module, act): <span class="type">Boolean</span></div>
+          </div>
+        </div>
+
+        <!-- UserSession -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">UserSession</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>session_id: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>user_id: <span class="type">Long</span></div>
+            <div><span class="vis-pri">-</span>token_hash: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>expires_at: <span class="type">Instant</span></div>
+            <div><span class="vis-pub">+</span>revoked_at: <span class="type">Instant?</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>isExpired(): <span class="type">Boolean</span></div>
+            <div><span class="vis-pub">+</span>revoke(): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- AuditLog -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / append-only&raquo;</div>
+            <div class="uml-name">AuditLog</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>audit_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>actor_user_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>module_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>action_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>target_type: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>correlation_id: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>metadata: <span class="type">Map&lt;String,Object&gt;</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>recordEvent(): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- RegistrationRequest -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">RegistrationRequest</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>request_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>username: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>full_name: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>email: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">RequestStatus</span></div>
+            <div><span class="vis-pub">+</span>reviewer_user_id: <span class="type">Long?</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>approve(reviewerId): <span class="type">void</span></div>
+            <div><span class="vis-pub">+</span>reject(reviewerId, rsn): <span class="type">void</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2. HUMAN RESOURCES -->
+    <div class="module-section module-hr">
+      <div class="module-title">
+        <span>2. Human Resources (Quản lý Nhân sự &amp; Lương)</span>
+        <span class="module-desc">8 Classes &bull; Contracts, Leave &amp; Payroll</span>
+      </div>
+      <div class="classes-grid">
+
+        <!-- Employee -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / aggregate root&raquo;</div>
+            <div class="uml-name">Employee</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>employee_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>employee_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>full_name: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>date_of_birth: <span class="type">LocalDate?</span></div>
+            <div><span class="vis-pub">+</span>phone_number: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>department_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>job_title_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>manager_employee_id: <span class="type">Long?</span></div>
+            <div><span class="vis-pub">+</span>employment_status: <span class="type">String</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>calculateSeniority(): <span class="type">Integer</span></div>
+            <div><span class="vis-pub">+</span>deactivate(): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- Department -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">Department</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>department_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>department_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>department_name: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>parent_department_id: <span class="type">Long?</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">String</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>getSubDepartments(): <span class="type">List</span></div>
+          </div>
+        </div>
+
+        <!-- EmploymentContract -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">EmploymentContract</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>contract_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>contract_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>employee_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>contract_type: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>effective_from: <span class="type">LocalDate</span></div>
+            <div><span class="vis-pub">+</span>effective_to: <span class="type">LocalDate?</span></div>
+            <div><span class="vis-pub">+</span>base_salary: <span class="type">BigDecimal</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>isValidOn(date): <span class="type">Boolean</span></div>
+          </div>
+        </div>
+
+        <!-- LeaveRequest -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">LeaveRequest</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>leave_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>employee_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>leave_type: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>start_date: <span class="type">LocalDate</span></div>
+            <div><span class="vis-pub">+</span>end_date: <span class="type">LocalDate</span></div>
+            <div><span class="vis-pub">+</span>is_paid: <span class="type">Boolean</span></div>
+            <div><span class="vis-pub">+</span>approval_status: <span class="type">String</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>approve(approverId): <span class="type">void</span></div>
+            <div><span class="vis-pub">+</span>reject(approverId, rsn): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- PayrollPeriod -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / aggregate root&raquo;</div>
+            <div class="uml-name">PayrollPeriod</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>period_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>period_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>start_date: <span class="type">LocalDate</span></div>
+            <div><span class="vis-pub">+</span>end_date: <span class="type">LocalDate</span></div>
+            <div><span class="vis-pub">+</span>standard_working_days: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>formula_version: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">PayrollStatus</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>calculate(): <span class="type">void</span></div>
+            <div><span class="vis-pub">+</span>approve(approverId): <span class="type">void</span></div>
+            <div><span class="vis-pub">+</span>lock(actorId): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- PayrollRecord -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / snapshot&raquo;</div>
+            <div class="uml-name">PayrollRecord</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>record_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>period_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>employee_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>contract_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>base_salary: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>actual_working_days: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>unpaid_leave_days: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>net_salary: <span class="type">BigDecimal</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>recomputeTotals(): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- WorkShift -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">WorkShift</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>shift_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>shift_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>shift_name: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>start_time: <span class="type">LocalTime</span></div>
+            <div><span class="vis-pub">+</span>end_time: <span class="type">LocalTime</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">String</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>calculateHours(): <span class="type">Double</span></div>
+          </div>
+        </div>
+
+        <!-- EmployeeRewardDiscipline -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">RewardDiscipline</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>record_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>employee_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>type: <span class="type">RewardType</span></div>
+            <div><span class="vis-pub">+</span>event_date: <span class="type">LocalDate</span></div>
+            <div><span class="vis-pub">+</span>amount: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>approval_status: <span class="type">String</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>approve(approverId): <span class="type">void</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. INVENTORY -->
+    <div class="module-section module-inventory">
+      <div class="module-title">
+        <span>3. Inventory &amp; Materials (Quản lý Kho &amp; Nguyên vật liệu)</span>
+        <span class="module-desc">8 Classes &bull; Ledger &amp; Balance Projection</span>
+      </div>
+      <div class="classes-grid">
+
+        <!-- StockItem -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / aggregate root&raquo;</div>
+            <div class="uml-name">StockItem</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>stock_item_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>item_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>item_name: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>item_type: <span class="type">ItemType</span></div>
+            <div><span class="vis-pub">+</span>category_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>base_unit_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>lot_controlled: <span class="type">Boolean</span></div>
+            <div><span class="vis-pub">+</span>minimum_stock_level: <span class="type">BigDecimal</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>isRawMaterial(): <span class="type">Boolean</span></div>
+            <div><span class="vis-pub">+</span>isFinishedGood(): <span class="type">Boolean</span></div>
+          </div>
+        </div>
+
+        <!-- StockMovement -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / immutable ledger&raquo;</div>
+            <div class="uml-name">StockMovement</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>movement_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>stock_item_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>warehouse_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>location_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>stock_lot_id: <span class="type">Long?</span></div>
+            <div><span class="vis-pub">+</span>quantity_delta: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>movement_type: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>source_document_id: <span class="type">Long</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>postTransaction(): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- StockBalance -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / projection&raquo;</div>
+            <div class="uml-name">StockBalance</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>balance_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>stock_item_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>warehouse_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>location_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>stock_lot_id: <span class="type">Long?</span></div>
+            <div><span class="vis-pub">+</span>on_hand_quantity: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>allocated_quantity: <span class="type">BigDecimal</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>getAvailable(): <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>applyDelta(d): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- Receipt -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / aggregate root&raquo;</div>
+            <div class="uml-name">Receipt</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>receipt_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>receipt_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>warehouse_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>supplier_id: <span class="type">Long?</span></div>
+            <div><span class="vis-pub">+</span>source_document_type: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">DocStatus</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>post(actorId): <span class="type">void</span></div>
+            <div><span class="vis-pub">+</span>addLine(item, qty): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- Issue -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / aggregate root&raquo;</div>
+            <div class="uml-name">Issue</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>issue_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>issue_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>warehouse_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>reason: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>source_module: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>source_document_id: <span class="type">String?</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">DocStatus</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>post(actorId): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- Transfer -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">Transfer</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>transfer_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>transfer_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>from_warehouse_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>to_warehouse_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">DocStatus</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>post(actorId): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- Stocktake -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">Stocktake</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>stocktake_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>stocktake_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>warehouse_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>started_at: <span class="type">Instant</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">DocStatus</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>approve(approverId): <span class="type">void</span></div>
+            <div><span class="vis-pub">+</span>postAdjustment(actorId): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- Warehouse -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">Warehouse</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>warehouse_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>warehouse_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>warehouse_name: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">String</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>getLocations(): <span class="type">List</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. PRODUCTION -->
+    <div class="module-section module-production">
+      <div class="module-title">
+        <span>4. Production Management (Quản lý Sản xuất)</span>
+        <span class="module-desc">7 Classes &bull; Plans, BOMs &amp; Work Orders</span>
+      </div>
+      <div class="classes-grid">
+
+        <!-- ProductionPlan -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / aggregate root&raquo;</div>
+            <div class="uml-name">ProductionPlan</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>plan_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>plan_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>plan_name: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>start_date: <span class="type">LocalDate</span></div>
+            <div><span class="vis-pub">+</span>end_date: <span class="type">LocalDate</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">PlanStatus</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>approve(approverId): <span class="type">void</span></div>
+            <div><span class="vis-pub">+</span>addLine(item, qty): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- BillOfMaterials -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / aggregate root&raquo;</div>
+            <div class="uml-name">BillOfMaterials (BOM)</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>bom_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>bom_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>finished_item_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>version: <span class="type">Integer</span></div>
+            <div><span class="vis-pub">+</span>base_quantity: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">BomStatus</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>approve(approverId): <span class="type">void</span></div>
+            <div><span class="vis-pub">+</span>calculateNeeds(targetQty): <span class="type">List</span></div>
+          </div>
+        </div>
+
+        <!-- ProductionOrder -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / aggregate root&raquo;</div>
+            <div class="uml-name">ProductionOrder</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>order_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>order_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>plan_id: <span class="type">Long?</span></div>
+            <div><span class="vis-pub">+</span>finished_item_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>bom_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>target_quantity: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>production_line: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">OrderStatus</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>release(): <span class="type">void</span></div>
+            <div><span class="vis-pub">+</span>complete(): <span class="type">void</span></div>
+            <div><span class="vis-pub">+</span>calculateProgress(): <span class="type">Double</span></div>
+          </div>
+        </div>
+
+        <!-- OrderMaterialRequirement -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity / snapshot&raquo;</div>
+            <div class="uml-name">MaterialRequirement</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>requirement_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>order_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>material_item_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>required_quantity: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>allocated_quantity: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>consumed_quantity: <span class="type">BigDecimal</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>getShortage(): <span class="type">BigDecimal</span></div>
+          </div>
+        </div>
+
+        <!-- ProductionAssignment -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">ProductionAssignment</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>assignment_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>order_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>employee_id: <span class="type">Long</span> <span class="comment">// HR ref</span></div>
+            <div><span class="vis-pub">+</span>shift_id: <span class="type">Long</span> <span class="comment">// HR ref</span></div>
+            <div><span class="vis-pub">+</span>stage_name: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>work_date: <span class="type">LocalDate</span></div>
+            <div><span class="vis-pub">+</span>status: <span class="type">String</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>hasConflict(empId, d): <span class="type">Boolean</span></div>
+          </div>
+        </div>
+
+        <!-- MaterialConsumption -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">MaterialConsumption</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>consumption_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>order_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>material_item_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>issue_id: <span class="type">Long?</span> <span class="comment">// Inv ref</span></div>
+            <div><span class="vis-pub">+</span>quantity_consumed: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>recorded_at: <span class="type">Instant</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>recordUsage(qty): <span class="type">void</span></div>
+          </div>
+        </div>
+
+        <!-- ProductionOutput -->
+        <div class="uml-class">
+          <div class="uml-header">
+            <div class="uml-stereotype">&laquo;entity&raquo;</div>
+            <div class="uml-name">ProductionOutput</div>
+          </div>
+          <div class="uml-body">
+            <div><span class="vis-pub">+</span>output_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>order_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>finished_item_id: <span class="type">Long</span></div>
+            <div><span class="vis-pub">+</span>lot_code: <span class="type">String</span></div>
+            <div><span class="vis-pub">+</span>good_quantity: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>defect_quantity: <span class="type">BigDecimal</span></div>
+            <div><span class="vis-pub">+</span>receipt_id: <span class="type">Long?</span> <span class="comment">// Inv ref</span></div>
+          </div>
+          <div class="uml-methods">
+            <div><span class="vis-pub">+</span>sendToWarehouse(): <span class="type">void</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="public-contract-note">
+    <h3>&#128279; Ràng buộc kiến trúc &amp; Hợp đồng giao tiếp liên Module (Public Contracts)</h3>
+    <div class="contract-list">
+      <div class="contract-card c-id">
+        <strong>Platform &rarr; HR</strong>
+        <span>Tài khoản người dùng (UserAccount) tham chiếu mã nhân viên (employee_id) qua HR Public Contract, không nối FK trực tiếp.</span>
+      </div>
+      <div class="contract-card c-prd">
+        <strong>Production &rarr; HR</strong>
+        <span>Lệnh phân công sản xuất (ProductionAssignment) tham chiếu mã nhân viên và ca làm việc (work_shift_id) từ HR.</span>
+      </div>
+      <div class="contract-card c-prd">
+        <strong>Production &rarr; Inventory</strong>
+        <span>Kế hoạch, BOM và Lệnh sản xuất tham chiếu danh mục hàng hóa (stock_item_id) độc quyền do Kho quản lý.</span>
+      </div>
+      <div class="contract-card c-inv">
+        <strong>Inventory Ledger &amp; Balance</strong>
+        <span>Chỉ duy nhất Kho ghi nhận biến động vào Sổ cái bất biến (StockMovement) để cập nhật Số dư tồn (StockBalance).</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+"""
+
+html_path = DOCS_DIR / "class_diagram.html"
+html_path.write_text(html_content, encoding="utf-8")
+print(f"Generated HTML at: {html_path}")
+
+# Run headless Edge to capture PNG screenshot
+edge_path = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+png_path = DOCS_DIR / "class_diagram.png"
+
+cmd = [
+    edge_path,
+    "--headless",
+    "--disable-gpu",
+    "--no-sandbox",
+    f"--window-size=3280,2400",
+    f"--screenshot={png_path}",
+    str(html_path)
+]
+
+print("Running Edge headless to capture screenshot...")
+res = subprocess.run(cmd, capture_output=True, text=True)
+if png_path.exists():
+    print(f"Generated PNG successfully at: {png_path} (Size: {png_path.stat().st_size} bytes)")
+else:
+    print(f"Failed to generate PNG. Edge output: {res.stderr}")

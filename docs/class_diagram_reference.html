@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    margin: 0;
+    padding: 20px;
+    background: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  svg {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e2e8f0;
+  }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 1020" width="1150" height="1020" style="background-color: #ffffff; font-family: Arial, sans-serif;">
+  <defs>
+    <!-- Graph paper background grid -->
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0f2f5" stroke-width="1"/>
+    </pattern>
+    <style>
+      .uml-box { fill: #ffffff; stroke: #000000; stroke-width: 1.2; }
+      .uml-header-text { font-size: 13.5px; font-weight: bold; fill: #000000; text-anchor: middle; }
+      .uml-attr-text { font-size: 12px; fill: #000000; font-family: Arial, sans-serif; }
+      .uml-method-text { font-size: 12px; fill: #000000; font-family: Arial, sans-serif; }
+      .uml-line { stroke: #000000; stroke-width: 1.2; fill: none; }
+      .uml-cardinality { font-size: 12.5px; fill: #000000; font-family: Arial, sans-serif; font-weight: normal; }
+    </style>
+  </defs>
+
+  <!-- Background grid -->
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- ==================== LINES & CARDINALITIES ==================== -->
+
+  <!-- 1. Ke Hoach San Xuat -> Nhan Vien (Horizontal at y=155) -->
+  <line x1="260" y1="155" x2="860" y2="155" class="uml-line" />
+  <text x="270" y="145" class="uml-cardinality">0..*</text>
+  <text x="835" y="145" class="uml-cardinality">1</text>
+
+  <!-- 2. Ke Hoach San Xuat -> Lenh San Xuat (Vertical at x=155) -->
+  <line x1="155" y1="285" x2="155" y2="380" class="uml-line" />
+  <text x="135" y="315" class="uml-cardinality">1</text>
+  <text x="125" y="365" class="uml-cardinality">0..*</text>
+
+  <!-- 3. Lenh San Xuat -> Thanh Pham (Vertical at x=155) -->
+  <line x1="155" y1="635" x2="155" y2="725" class="uml-line" />
+  <text x="135" y="665" class="uml-cardinality">1</text>
+  <text x="125" y="710" class="uml-cardinality">0..*</text>
+
+  <!-- 4. Ke Hoach San Xuat -> Lenh San Xuat Nguyen Vat Lieu (Diagonal from (260, 235) to (340, 255)) -->
+  <line x1="260" y1="235" x2="340" y2="255" class="uml-line" />
+  <text x="270" y="245" class="uml-cardinality">1</text>
+  <text x="310" y="270" class="uml-cardinality">0..*</text>
+
+  <!-- 5. Lenh San Xuat Nguyen Vat Lieu -> Nguyen Vat Lieu (Horizontal from (580, 315) to (650, 315)) -->
+  <line x1="580" y1="315" x2="650" y2="315" class="uml-line" />
+  <text x="590" y="330" class="uml-cardinality">0..*</text>
+  <text x="635" y="330" class="uml-cardinality">1</text>
+
+  <!-- 6. Nguyen Vat Lieu -> Dinh Muc Nguyen Vat Lieu (Vertical from (750, 425) to (750, 505)) -->
+  <line x1="750" y1="425" x2="750" y2="505" class="uml-line" />
+  <text x="735" y="455" class="uml-cardinality">1</text>
+  <text x="725" y="490" class="uml-cardinality">0..*</text>
+
+  <!-- 7. Lenh San Xuat -> Phan Cong Nhan Su (Diagonal from (260, 560) to (860, 820)) -->
+  <line x1="260" y1="560" x2="860" y2="820" class="uml-line" />
+  <text x="270" y="580" class="uml-cardinality">1</text>
+  <text x="820" y="825" class="uml-cardinality">0..*</text>
+
+  <!-- 8. Nhan Vien -> Phan Cong Nhan Su (Vertical from (960, 280) to (960, 740)) -->
+  <line x1="960" y1="280" x2="960" y2="740" class="uml-line" />
+  <text x="970" y="315" class="uml-cardinality">1</text>
+  <text x="970" y="720" class="uml-cardinality">0..*</text>
+
+
+  <!-- ==================== 1. KẾ HOẠCH SẢN XUẤT ==================== -->
+  <g id="class_ke_hoach_san_xuat">
+    <!-- Outer Box -->
+    <rect x="50" y="25" width="210" height="260" class="uml-box" />
+    <!-- Header separator -->
+    <line x1="50" y1="60" x2="260" y2="60" class="uml-line" />
+    <!-- Method separator -->
+    <line x1="50" y1="230" x2="260" y2="230" class="uml-line" />
+
+    <!-- Class Name -->
+    <text x="155" y="47" class="uml-header-text">Kế Hoạch Sản Xuất</text>
+
+    <!-- Attributes -->
+    <text x="60" y="78" class="uml-attr-text">-id: Long</text>
+    <text x="60" y="94" class="uml-attr-text">-ma_ke_hoach: String</text>
+    <text x="60" y="110" class="uml-attr-text">-ten_ke_hoach: String</text>
+    <text x="60" y="126" class="uml-attr-text">-ngay_lap: Date</text>
+    <text x="60" y="142" class="uml-attr-text">-ngay_bat_dau: Date</text>
+    <text x="60" y="158" class="uml-attr-text">-ngay_ket_thuc: Date</text>
+    <text x="60" y="174" class="uml-attr-text">-trang_thai: String</text>
+    <text x="60" y="190" class="uml-attr-text">-ghi_chu: String</text>
+    <text x="60" y="206" class="uml-attr-text">-nguoi_lap_id: Long</text>
+
+    <!-- Methods -->
+    <text x="60" y="247" class="uml-method-text">+taoKeHoach()</text>
+    <text x="60" y="265" class="uml-method-text">+duyetKeHoach()</text>
+  </g>
+
+
+  <!-- ==================== 2. LỆNH SẢN XUẤT ==================== -->
+  <g id="class_lenh_san_xuat">
+    <rect x="50" y="380" width="210" height="255" class="uml-box" />
+    <line x1="50" y1="415" x2="260" y2="415" class="uml-line" />
+    <line x1="50" y1="595" x2="260" y2="595" class="uml-line" />
+
+    <text x="155" y="402" class="uml-header-text">Lệnh Sản Xuất</text>
+
+    <text x="60" y="433" class="uml-attr-text">-id: Long</text>
+    <text x="60" y="449" class="uml-attr-text">-ma_lenh: String</text>
+    <text x="60" y="465" class="uml-attr-text">-ke_hoach_id: Long</text>
+    <text x="60" y="481" class="uml-attr-text">-san_pham: String</text>
+    <text x="60" y="497" class="uml-attr-text">-so_luong_ke_hoach: Int</text>
+    <text x="60" y="513" class="uml-attr-text">-don_vi_tinh: String</text>
+    <text x="60" y="529" class="uml-attr-text">-ngay_bat_dau: Date</text>
+    <text x="60" y="545" class="uml-attr-text">-ngay_ket_thuc: Date</text>
+    <text x="60" y="561" class="uml-attr-text">-day_chuyen: String</text>
+    <text x="60" y="577" class="uml-attr-text">-trang_thai: String</text>
+
+    <text x="60" y="615" class="uml-method-text">+capNhatTienDo()</text>
+  </g>
+
+
+  <!-- ==================== 3. THÀNH PHẨM ==================== -->
+  <g id="class_thanh_pham">
+    <rect x="50" y="725" width="210" height="245" class="uml-box" />
+    <line x1="50" y1="760" x2="260" y2="760" class="uml-line" />
+    <line x1="50" y1="935" x2="260" y2="935" class="uml-line" />
+
+    <text x="155" y="747" class="uml-header-text">Thành Phẩm</text>
+
+    <text x="60" y="778" class="uml-attr-text">-id: Long</text>
+    <text x="60" y="794" class="uml-attr-text">-lenh_san_xuat_id: Long</text>
+    <text x="60" y="810" class="uml-attr-text">-ma_lo: String</text>
+    <text x="60" y="826" class="uml-attr-text">-san_pham: String</text>
+    <text x="60" y="842" class="uml-attr-text">-so_luong_san_xuat: Int</text>
+    <text x="60" y="858" class="uml-attr-text">-so_luong_dat: Int</text>
+    <text x="60" y="874" class="uml-attr-text">-ngay_san_xuat: Date</text>
+    <text x="60" y="890" class="uml-attr-text">-han_su_dung: Date</text>
+    <text x="60" y="906" class="uml-attr-text">-trang_thai: String</text>
+
+    <text x="60" y="955" class="uml-method-text">+nhapKhoThanhPham()</text>
+  </g>
+
+
+  <!-- ==================== 4. NHÂN VIÊN ==================== -->
+  <g id="class_nhan_vien">
+    <rect x="860" y="35" width="210" height="245" class="uml-box" />
+    <line x1="860" y1="70" x2="1070" y2="70" class="uml-line" />
+    <line x1="860" y1="230" x2="1070" y2="230" class="uml-line" />
+
+    <text x="965" y="57" class="uml-header-text">Nhân Viên</text>
+
+    <text x="870" y="88" class="uml-attr-text">-id: Long</text>
+    <text x="870" y="104" class="uml-attr-text">-ma_nhan_vien: String</text>
+    <text x="870" y="120" class="uml-attr-text">-ho_ten: String</text>
+    <text x="870" y="136" class="uml-attr-text">-chuc_vu: String</text>
+    <text x="870" y="152" class="uml-attr-text">-bo_phan: String</text>
+    <text x="870" y="168" class="uml-attr-text">-so_dien_thoai: String</text>
+    <text x="870" y="184" class="uml-attr-text">-trang_thai: String</text>
+    <text x="870" y="200" class="uml-attr-text">-ghi_chu: String</text>
+
+    <text x="870" y="247" class="uml-method-text">+themNhanVien()</text>
+    <text x="870" y="265" class="uml-method-text">+capNhatNhanVien()</text>
+  </g>
+
+
+  <!-- ==================== 5. LỆNH SẢN XUẤT NGUYÊN VẬT LIỆU ==================== -->
+  <g id="class_lsx_nvl">
+    <rect x="340" y="205" width="240" height="220" class="uml-box" />
+    <line x1="340" y1="240" x2="580" y2="240" class="uml-line" />
+    <line x1="340" y1="385" x2="580" y2="385" class="uml-line" />
+
+    <text x="460" y="227" class="uml-header-text">Lệnh Sản Xuất Nguyên Vật Liệu</text>
+
+    <text x="350" y="258" class="uml-attr-text">-id: Long</text>
+    <text x="350" y="274" class="uml-attr-text">-lenh_san_xuat_id: Long</text>
+    <text x="350" y="290" class="uml-attr-text">-nvl_id: Long</text>
+    <text x="350" y="306" class="uml-attr-text">-so_luong_yeu_cau: Float</text>
+    <text x="350" y="322" class="uml-attr-text">-so_luong_da_cap: Float</text>
+    <text x="350" y="338" class="uml-attr-text">-so_luong_thuc_te: Float</text>
+    <text x="350" y="354" class="uml-attr-text">-ghi_chu: String</text>
+
+    <text x="350" y="405" class="uml-method-text">+xuatKhoNVL()</text>
+  </g>
+
+
+  <!-- ==================== 6. NGUYÊN VẬT LIỆU ==================== -->
+  <g id="class_nguyen_vat_lieu">
+    <rect x="650" y="185" width="200" height="240" class="uml-box" />
+    <line x1="650" y1="220" x2="850" y2="220" class="uml-line" />
+    <line x1="650" y1="390" x2="850" y2="390" class="uml-line" />
+
+    <text x="750" y="207" class="uml-header-text">Nguyên Vật Liệu</text>
+
+    <text x="660" y="238" class="uml-attr-text">-id: Long</text>
+    <text x="660" y="254" class="uml-attr-text">-ma_nvl: String</text>
+    <text x="660" y="270" class="uml-attr-text">-ten_nvl: String</text>
+    <text x="660" y="286" class="uml-attr-text">-loai_nvl: String</text>
+    <text x="660" y="302" class="uml-attr-text">-don_vi_tinh: String</text>
+    <text x="660" y="318" class="uml-attr-text">-so_luong_ton: Float</text>
+    <text x="660" y="334" class="uml-attr-text">-muc_ton_toi_thieu: Float</text>
+    <text x="660" y="350" class="uml-attr-text">-trang_thai: String</text>
+    <text x="660" y="366" class="uml-attr-text">-ghi_chu: String</text>
+
+    <text x="660" y="412" class="uml-method-text">+kiemTraTonKho()</text>
+  </g>
+
+
+  <!-- ==================== 7. ĐỊNH MỨC NGUYÊN VẬT LIỆU ==================== -->
+  <g id="class_dinh_muc_nvl">
+    <rect x="650" y="505" width="200" height="185" class="uml-box" />
+    <line x1="650" y1="540" x2="850" y2="540" class="uml-line" />
+    <line x1="650" y1="655" x2="850" y2="655" class="uml-line" />
+
+    <text x="750" y="527" class="uml-header-text">Định Mức Nguyên Vật Liệu</text>
+
+    <text x="660" y="558" class="uml-attr-text">-id: Long</text>
+    <text x="660" y="574" class="uml-attr-text">-san_pham: String</text>
+    <text x="660" y="590" class="uml-attr-text">-nvl_id: Long</text>
+    <text x="660" y="606" class="uml-attr-text">-so_luong_dinh_muc: Float</text>
+    <text x="660" y="622" class="uml-attr-text">-don_vi_tinh: String</text>
+    <text x="660" y="638" class="uml-attr-text">-ghi_chu: String</text>
+
+    <text x="660" y="675" class="uml-method-text">+capNhatDinhMuc()</text>
+  </g>
+
+
+  <!-- ==================== 8. PHÂN CÔNG NHÂN SỰ ==================== -->
+  <g id="class_phan_cong_nhan_su">
+    <rect x="860" y="740" width="210" height="245" class="uml-box" />
+    <line x1="860" y1="775" x2="1070" y2="775" class="uml-line" />
+    <line x1="860" y1="950" x2="1070" y2="950" class="uml-line" />
+
+    <text x="965" y="762" class="uml-header-text">Phân Công Nhân Sự</text>
+
+    <text x="870" y="793" class="uml-attr-text">-id: Long</text>
+    <text x="870" y="809" class="uml-attr-text">-lenh_san_xuat_id: Long</text>
+    <text x="870" y="825" class="uml-attr-text">-nhan_vien_id: Long</text>
+    <text x="870" y="841" class="uml-attr-text">-cong_doan: String</text>
+    <text x="870" y="857" class="uml-attr-text">-ca_lam: String</text>
+    <text x="870" y="873" class="uml-attr-text">-ngay_lam: Date</text>
+    <text x="870" y="889" class="uml-attr-text">-vai_tro: String</text>
+    <text x="870" y="905" class="uml-attr-text">-trang_thai: String</text>
+    <text x="870" y="921" class="uml-attr-text">-ghi_chu: String</text>
+
+    <text x="870" y="972" class="uml-method-text">+phanCong()</text>
+  </g>
+
+</svg>
+
+</body>
+</html>

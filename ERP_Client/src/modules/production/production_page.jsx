@@ -21,7 +21,7 @@ const next_status = { draft: 'approved', approved: 'released', released: 'comple
 
 function ProductionPage() {
   const { current_user } = use_auth();
-  const { message } = AntdApp.useApp();
+  const { message, modal } = AntdApp.useApp();
   const [search_params, set_search_params] = useSearchParams();
   const [plans, set_plans] = useState([]);
   const [stock_items, set_stock_items] = useState([]);
@@ -129,7 +129,7 @@ function ProductionPage() {
   const change_plan_status = (plan) => {
     const target = next_status[plan.status];
     if (!target) return;
-    Modal.confirm({
+    modal.confirm({
       title: 'Chuyển trạng thái kế hoạch?',
       content: `Kế hoạch ${plan.plan_code} sẽ chuyển sang ${plan_status_labels[target]}.`,
       okText: 'Xác nhận',
@@ -147,7 +147,7 @@ function ProductionPage() {
   };
 
   const delete_plan = (plan) => {
-    Modal.confirm({
+    modal.confirm({
       title: 'Xóa kế hoạch nháp?',
       content: `Kế hoạch ${plan.plan_code} sẽ bị xóa khỏi hệ thống.`,
       okText: 'Xóa kế hoạch',
