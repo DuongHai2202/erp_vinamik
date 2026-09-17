@@ -1,0 +1,31 @@
+﻿supplier_code,supplier_name,phone_number,email,address,status
+supplier_001,Nhà cung cấp Nguyên liệu sữa 01,,supplier.001@vinamilk.test,Thành phố Hồ Chí Minh,active
+supplier_002,Nhà cung cấp Bao bì thực phẩm 02,,supplier.002@vinamilk.test,Bình Dương,active
+supplier_003,Nhà cung cấp Vitamin và khoáng chất 03,,supplier.003@vinamilk.test,Đồng Nai,active
+supplier_004,Nhà cung cấp Trái cây cô đặc 04,,supplier.004@vinamilk.test,Long An,active
+supplier_005,Nhà cung cấp Men vi sinh 05,,supplier.005@vinamilk.test,Hà Nội,active
+supplier_006,Nhà cung cấp Đường thực phẩm 06,,supplier.006@vinamilk.test,Bắc Ninh,active
+supplier_007,Nhà cung cấp Nguyên liệu sữa 07,,supplier.007@vinamilk.test,Đà Nẵng,active
+supplier_008,Nhà cung cấp Bao bì thực phẩm 08,,supplier.008@vinamilk.test,Cần Thơ,active
+supplier_009,Nhà cung cấp Vitamin và khoáng chất 09,,supplier.009@vinamilk.test,Thành phố Hồ Chí Minh,active
+supplier_010,Nhà cung cấp Trái cây cô đặc 10,,supplier.010@vinamilk.test,Bình Dương,active
+supplier_011,Nhà cung cấp Men vi sinh 11,,supplier.011@vinamilk.test,Đồng Nai,active
+supplier_012,Nhà cung cấp Đường thực phẩm 12,,supplier.012@vinamilk.test,Long An,active
+supplier_013,Nhà cung cấp Nguyên liệu sữa 13,,supplier.013@vinamilk.test,Hà Nội,active
+supplier_014,Nhà cung cấp Bao bì thực phẩm 14,,supplier.014@vinamilk.test,Bắc Ninh,active
+supplier_015,Nhà cung cấp Vitamin và khoáng chất 15,,supplier.015@vinamilk.test,Đà Nẵng,active
+supplier_016,Nhà cung cấp Trái cây cô đặc 16,,supplier.016@vinamilk.test,Cần Thơ,active
+supplier_017,Nhà cung cấp Men vi sinh 17,,supplier.017@vinamilk.test,Thành phố Hồ Chí Minh,active
+supplier_018,Nhà cung cấp Đường thực phẩm 18,,supplier.018@vinamilk.test,Bình Dương,active
+supplier_019,Nhà cung cấp Nguyên liệu sữa 19,,supplier.019@vinamilk.test,Đồng Nai,active
+supplier_020,Nhà cung cấp Bao bì thực phẩm 20,,supplier.020@vinamilk.test,Long An,active
+supplier_021,Nhà cung cấp Vitamin và khoáng chất 21,,supplier.021@vinamilk.test,Hà Nội,active
+supplier_022,Nhà cung cấp Trái cây cô đặc 22,,supplier.022@vinamilk.test,Bắc Ninh,active
+supplier_023,Nhà cung cấp Men vi sinh 23,,supplier.023@vinamilk.test,Đà Nẵng,active
+supplier_024,Nhà cung cấp Đường thực phẩm 24,,supplier.024@vinamilk.test,Cần Thơ,active
+supplier_025,Nhà cung cấp Nguyên liệu sữa 25,,supplier.025@vinamilk.test,Thành phố Hồ Chí Minh,active
+supplier_026,Nhà cung cấp Bao bì thực phẩm 26,,supplier.026@vinamilk.test,Bình Dương,active
+supplier_027,Nhà cung cấp Vitamin và khoáng chất 27,,supplier.027@vinamilk.test,Đồng Nai,active
+supplier_028,Nhà cung cấp Trái cây cô đặc 28,,supplier.028@vinamilk.test,Long An,inactive
+supplier_029,Nhà cung cấp Men vi sinh 29,,supplier.029@vinamilk.test,Hà Nội,inactive
+supplier_030,Nhà cung cấp Đường thực phẩm 30,,supplier.030@vinamilk.test,Bắc Ninh,inactive

@@ -1,0 +1,521 @@
+﻿item_code,item_name,item_type,category_code,unit_code,lot_controlled,minimum_stock_quantity,status,description
+rm_0001,Sữa bò tươi nguyên liệu - Tiêu chuẩn A,raw_material,dairy_input,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0002,Sữa bột gầy - Tiêu chuẩn A,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0003,Sữa bột nguyên kem - Tiêu chuẩn A,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0004,Whey bột - Tiêu chuẩn A,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0005,Đạm whey cô đặc - Tiêu chuẩn A,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0006,Casein sữa - Tiêu chuẩn A,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0007,Chất béo sữa khan - Tiêu chuẩn A,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0008,Kem sữa - Tiêu chuẩn A,raw_material,dairy_input,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0009,Lactose thực phẩm - Tiêu chuẩn A,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0010,Sữa non dạng bột - Tiêu chuẩn A,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0011,Đường tinh luyện - Tiêu chuẩn A,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0012,Đường glucose - Tiêu chuẩn A,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0013,Siro glucose - Tiêu chuẩn A,raw_material,sweetener,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0014,Maltodextrin - Tiêu chuẩn A,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0015,Chất tạo ngọt stevia - Tiêu chuẩn A,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0016,Men Streptococcus thermophilus - Tiêu chuẩn A,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0017,Men Lactobacillus bulgaricus - Tiêu chuẩn A,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0018,Men Bifidobacterium - Tiêu chuẩn A,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0019,Men Lactobacillus casei - Tiêu chuẩn A,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0020,Premix vitamin A D E - Tiêu chuẩn A,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0021,Premix vitamin nhóm B - Tiêu chuẩn A,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0022,Canxi carbonate - Tiêu chuẩn A,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0023,Canxi phosphate - Tiêu chuẩn A,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0024,Kẽm sulfate - Tiêu chuẩn A,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0025,Sắt fumarate - Tiêu chuẩn A,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0026,Dầu cá DHA - Tiêu chuẩn A,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0027,Bột collagen thủy phân - Tiêu chuẩn A,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0028,Pectin thực phẩm - Tiêu chuẩn A,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0029,Carrageenan thực phẩm - Tiêu chuẩn A,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0030,Guar gum thực phẩm - Tiêu chuẩn A,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0031,Xanthan gum thực phẩm - Tiêu chuẩn A,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0032,Chất xơ hòa tan inulin - Tiêu chuẩn A,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0033,Dịch cô đặc cam - Tiêu chuẩn A,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0034,Dịch cô đặc táo - Tiêu chuẩn A,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0035,Dịch cô đặc đào - Tiêu chuẩn A,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0036,Dịch cô đặc dâu - Tiêu chuẩn A,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0037,Dịch cô đặc nho - Tiêu chuẩn A,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0038,Dịch cô đặc dừa - Tiêu chuẩn A,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0039,Hương vani thực phẩm - Tiêu chuẩn A,raw_material,fruit_flavor,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0040,Bột cacao - Tiêu chuẩn A,raw_material,fruit_flavor,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0041,Hạt đậu nành - Tiêu chuẩn A,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0042,Hạt hạnh nhân - Tiêu chuẩn A,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0043,Hạt óc chó - Tiêu chuẩn A,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0044,Hạt mắc ca - Tiêu chuẩn A,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0045,Yến mạch - Tiêu chuẩn A,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0046,Gạo lứt - Tiêu chuẩn A,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0047,Ngũ cốc phối trộn - Tiêu chuẩn A,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0048,Thạch dừa - Tiêu chuẩn A,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0049,Hộp giấy tiệt trùng 110 ml - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0050,Hộp giấy tiệt trùng 180 ml - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0051,Hộp giấy tiệt trùng 1 lít - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0052,Chai nhựa thực phẩm 150 ml - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0053,Chai nhựa thực phẩm 450 ml - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0054,Cốc sữa chua 100 g - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0055,Nắp nhôm cốc sữa chua - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0056,Nắp chai HDPE - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0057,Ống hút giấy - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0058,Màng co lốc sản phẩm - Tiêu chuẩn A,raw_material,packaging,kg,false,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0059,Thùng carton 12 sản phẩm - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0060,Thùng carton 24 sản phẩm - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0061,Thùng carton 48 sản phẩm - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0062,Nhãn cuộn sản phẩm - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0063,Pallet nhựa thực phẩm - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0064,Túi sữa tiệt trùng - Tiêu chuẩn A,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0065,Sữa bò tươi nguyên liệu - Tiêu chuẩn B,raw_material,dairy_input,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0066,Sữa bột gầy - Tiêu chuẩn B,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0067,Sữa bột nguyên kem - Tiêu chuẩn B,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0068,Whey bột - Tiêu chuẩn B,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0069,Đạm whey cô đặc - Tiêu chuẩn B,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0070,Casein sữa - Tiêu chuẩn B,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0071,Chất béo sữa khan - Tiêu chuẩn B,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0072,Kem sữa - Tiêu chuẩn B,raw_material,dairy_input,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0073,Lactose thực phẩm - Tiêu chuẩn B,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0074,Sữa non dạng bột - Tiêu chuẩn B,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0075,Đường tinh luyện - Tiêu chuẩn B,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0076,Đường glucose - Tiêu chuẩn B,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0077,Siro glucose - Tiêu chuẩn B,raw_material,sweetener,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0078,Maltodextrin - Tiêu chuẩn B,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0079,Chất tạo ngọt stevia - Tiêu chuẩn B,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0080,Men Streptococcus thermophilus - Tiêu chuẩn B,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0081,Men Lactobacillus bulgaricus - Tiêu chuẩn B,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0082,Men Bifidobacterium - Tiêu chuẩn B,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0083,Men Lactobacillus casei - Tiêu chuẩn B,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0084,Premix vitamin A D E - Tiêu chuẩn B,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0085,Premix vitamin nhóm B - Tiêu chuẩn B,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0086,Canxi carbonate - Tiêu chuẩn B,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0087,Canxi phosphate - Tiêu chuẩn B,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0088,Kẽm sulfate - Tiêu chuẩn B,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0089,Sắt fumarate - Tiêu chuẩn B,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0090,Dầu cá DHA - Tiêu chuẩn B,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0091,Bột collagen thủy phân - Tiêu chuẩn B,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0092,Pectin thực phẩm - Tiêu chuẩn B,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0093,Carrageenan thực phẩm - Tiêu chuẩn B,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0094,Guar gum thực phẩm - Tiêu chuẩn B,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0095,Xanthan gum thực phẩm - Tiêu chuẩn B,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0096,Chất xơ hòa tan inulin - Tiêu chuẩn B,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0097,Dịch cô đặc cam - Tiêu chuẩn B,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0098,Dịch cô đặc táo - Tiêu chuẩn B,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0099,Dịch cô đặc đào - Tiêu chuẩn B,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0100,Dịch cô đặc dâu - Tiêu chuẩn B,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0101,Dịch cô đặc nho - Tiêu chuẩn B,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0102,Dịch cô đặc dừa - Tiêu chuẩn B,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0103,Hương vani thực phẩm - Tiêu chuẩn B,raw_material,fruit_flavor,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0104,Bột cacao - Tiêu chuẩn B,raw_material,fruit_flavor,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0105,Hạt đậu nành - Tiêu chuẩn B,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0106,Hạt hạnh nhân - Tiêu chuẩn B,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0107,Hạt óc chó - Tiêu chuẩn B,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0108,Hạt mắc ca - Tiêu chuẩn B,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0109,Yến mạch - Tiêu chuẩn B,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0110,Gạo lứt - Tiêu chuẩn B,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0111,Ngũ cốc phối trộn - Tiêu chuẩn B,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0112,Thạch dừa - Tiêu chuẩn B,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0113,Hộp giấy tiệt trùng 110 ml - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0114,Hộp giấy tiệt trùng 180 ml - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0115,Hộp giấy tiệt trùng 1 lít - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0116,Chai nhựa thực phẩm 150 ml - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0117,Chai nhựa thực phẩm 450 ml - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0118,Cốc sữa chua 100 g - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0119,Nắp nhôm cốc sữa chua - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0120,Nắp chai HDPE - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0121,Ống hút giấy - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0122,Màng co lốc sản phẩm - Tiêu chuẩn B,raw_material,packaging,kg,false,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0123,Thùng carton 12 sản phẩm - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0124,Thùng carton 24 sản phẩm - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0125,Thùng carton 48 sản phẩm - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0126,Nhãn cuộn sản phẩm - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0127,Pallet nhựa thực phẩm - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0128,Túi sữa tiệt trùng - Tiêu chuẩn B,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0129,Sữa bò tươi nguyên liệu - Lô nội địa,raw_material,dairy_input,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0130,Sữa bột gầy - Lô nội địa,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0131,Sữa bột nguyên kem - Lô nội địa,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0132,Whey bột - Lô nội địa,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0133,Đạm whey cô đặc - Lô nội địa,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0134,Casein sữa - Lô nội địa,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0135,Chất béo sữa khan - Lô nội địa,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0136,Kem sữa - Lô nội địa,raw_material,dairy_input,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0137,Lactose thực phẩm - Lô nội địa,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0138,Sữa non dạng bột - Lô nội địa,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0139,Đường tinh luyện - Lô nội địa,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0140,Đường glucose - Lô nội địa,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0141,Siro glucose - Lô nội địa,raw_material,sweetener,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0142,Maltodextrin - Lô nội địa,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0143,Chất tạo ngọt stevia - Lô nội địa,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0144,Men Streptococcus thermophilus - Lô nội địa,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0145,Men Lactobacillus bulgaricus - Lô nội địa,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0146,Men Bifidobacterium - Lô nội địa,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0147,Men Lactobacillus casei - Lô nội địa,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0148,Premix vitamin A D E - Lô nội địa,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0149,Premix vitamin nhóm B - Lô nội địa,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0150,Canxi carbonate - Lô nội địa,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0151,Canxi phosphate - Lô nội địa,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0152,Kẽm sulfate - Lô nội địa,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0153,Sắt fumarate - Lô nội địa,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0154,Dầu cá DHA - Lô nội địa,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0155,Bột collagen thủy phân - Lô nội địa,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0156,Pectin thực phẩm - Lô nội địa,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0157,Carrageenan thực phẩm - Lô nội địa,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0158,Guar gum thực phẩm - Lô nội địa,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0159,Xanthan gum thực phẩm - Lô nội địa,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0160,Chất xơ hòa tan inulin - Lô nội địa,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0161,Dịch cô đặc cam - Lô nội địa,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0162,Dịch cô đặc táo - Lô nội địa,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0163,Dịch cô đặc đào - Lô nội địa,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0164,Dịch cô đặc dâu - Lô nội địa,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0165,Dịch cô đặc nho - Lô nội địa,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0166,Dịch cô đặc dừa - Lô nội địa,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0167,Hương vani thực phẩm - Lô nội địa,raw_material,fruit_flavor,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0168,Bột cacao - Lô nội địa,raw_material,fruit_flavor,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0169,Hạt đậu nành - Lô nội địa,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0170,Hạt hạnh nhân - Lô nội địa,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0171,Hạt óc chó - Lô nội địa,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0172,Hạt mắc ca - Lô nội địa,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0173,Yến mạch - Lô nội địa,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0174,Gạo lứt - Lô nội địa,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0175,Ngũ cốc phối trộn - Lô nội địa,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0176,Thạch dừa - Lô nội địa,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0177,Hộp giấy tiệt trùng 110 ml - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0178,Hộp giấy tiệt trùng 180 ml - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0179,Hộp giấy tiệt trùng 1 lít - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0180,Chai nhựa thực phẩm 150 ml - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0181,Chai nhựa thực phẩm 450 ml - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0182,Cốc sữa chua 100 g - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0183,Nắp nhôm cốc sữa chua - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0184,Nắp chai HDPE - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0185,Ống hút giấy - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0186,Màng co lốc sản phẩm - Lô nội địa,raw_material,packaging,kg,false,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0187,Thùng carton 12 sản phẩm - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0188,Thùng carton 24 sản phẩm - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0189,Thùng carton 48 sản phẩm - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0190,Nhãn cuộn sản phẩm - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0191,Pallet nhựa thực phẩm - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0192,Túi sữa tiệt trùng - Lô nội địa,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0193,Sữa bò tươi nguyên liệu - Lô nhập khẩu,raw_material,dairy_input,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0194,Sữa bột gầy - Lô nhập khẩu,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0195,Sữa bột nguyên kem - Lô nhập khẩu,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0196,Whey bột - Lô nhập khẩu,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0197,Đạm whey cô đặc - Lô nhập khẩu,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0198,Casein sữa - Lô nhập khẩu,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0199,Chất béo sữa khan - Lô nhập khẩu,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0200,Kem sữa - Lô nhập khẩu,raw_material,dairy_input,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0201,Lactose thực phẩm - Lô nhập khẩu,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0202,Sữa non dạng bột - Lô nhập khẩu,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0203,Đường tinh luyện - Lô nhập khẩu,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0204,Đường glucose - Lô nhập khẩu,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0205,Siro glucose - Lô nhập khẩu,raw_material,sweetener,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0206,Maltodextrin - Lô nhập khẩu,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0207,Chất tạo ngọt stevia - Lô nhập khẩu,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0208,Men Streptococcus thermophilus - Lô nhập khẩu,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0209,Men Lactobacillus bulgaricus - Lô nhập khẩu,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0210,Men Bifidobacterium - Lô nhập khẩu,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0211,Men Lactobacillus casei - Lô nhập khẩu,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0212,Premix vitamin A D E - Lô nhập khẩu,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0213,Premix vitamin nhóm B - Lô nhập khẩu,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0214,Canxi carbonate - Lô nhập khẩu,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0215,Canxi phosphate - Lô nhập khẩu,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0216,Kẽm sulfate - Lô nhập khẩu,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0217,Sắt fumarate - Lô nhập khẩu,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0218,Dầu cá DHA - Lô nhập khẩu,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0219,Bột collagen thủy phân - Lô nhập khẩu,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0220,Pectin thực phẩm - Lô nhập khẩu,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0221,Carrageenan thực phẩm - Lô nhập khẩu,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0222,Guar gum thực phẩm - Lô nhập khẩu,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0223,Xanthan gum thực phẩm - Lô nhập khẩu,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0224,Chất xơ hòa tan inulin - Lô nhập khẩu,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0225,Dịch cô đặc cam - Lô nhập khẩu,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0226,Dịch cô đặc táo - Lô nhập khẩu,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0227,Dịch cô đặc đào - Lô nhập khẩu,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0228,Dịch cô đặc dâu - Lô nhập khẩu,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0229,Dịch cô đặc nho - Lô nhập khẩu,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0230,Dịch cô đặc dừa - Lô nhập khẩu,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0231,Hương vani thực phẩm - Lô nhập khẩu,raw_material,fruit_flavor,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0232,Bột cacao - Lô nhập khẩu,raw_material,fruit_flavor,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0233,Hạt đậu nành - Lô nhập khẩu,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0234,Hạt hạnh nhân - Lô nhập khẩu,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0235,Hạt óc chó - Lô nhập khẩu,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0236,Hạt mắc ca - Lô nhập khẩu,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0237,Yến mạch - Lô nhập khẩu,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0238,Gạo lứt - Lô nhập khẩu,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0239,Ngũ cốc phối trộn - Lô nhập khẩu,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0240,Thạch dừa - Lô nhập khẩu,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0241,Hộp giấy tiệt trùng 110 ml - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0242,Hộp giấy tiệt trùng 180 ml - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0243,Hộp giấy tiệt trùng 1 lít - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0244,Chai nhựa thực phẩm 150 ml - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0245,Chai nhựa thực phẩm 450 ml - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0246,Cốc sữa chua 100 g - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0247,Nắp nhôm cốc sữa chua - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0248,Nắp chai HDPE - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0249,Ống hút giấy - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0250,Màng co lốc sản phẩm - Lô nhập khẩu,raw_material,packaging,kg,false,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0251,Thùng carton 12 sản phẩm - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0252,Thùng carton 24 sản phẩm - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0253,Thùng carton 48 sản phẩm - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0254,Nhãn cuộn sản phẩm - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0255,Pallet nhựa thực phẩm - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0256,Túi sữa tiệt trùng - Lô nhập khẩu,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0257,Sữa bò tươi nguyên liệu - Dùng cho sản xuất thử,raw_material,dairy_input,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0258,Sữa bột gầy - Dùng cho sản xuất thử,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0259,Sữa bột nguyên kem - Dùng cho sản xuất thử,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0260,Whey bột - Dùng cho sản xuất thử,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0261,Đạm whey cô đặc - Dùng cho sản xuất thử,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0262,Casein sữa - Dùng cho sản xuất thử,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0263,Chất béo sữa khan - Dùng cho sản xuất thử,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0264,Kem sữa - Dùng cho sản xuất thử,raw_material,dairy_input,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0265,Lactose thực phẩm - Dùng cho sản xuất thử,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0266,Sữa non dạng bột - Dùng cho sản xuất thử,raw_material,dairy_input,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0267,Đường tinh luyện - Dùng cho sản xuất thử,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0268,Đường glucose - Dùng cho sản xuất thử,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0269,Siro glucose - Dùng cho sản xuất thử,raw_material,sweetener,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0270,Maltodextrin - Dùng cho sản xuất thử,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0271,Chất tạo ngọt stevia - Dùng cho sản xuất thử,raw_material,sweetener,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0272,Men Streptococcus thermophilus - Dùng cho sản xuất thử,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0273,Men Lactobacillus bulgaricus - Dùng cho sản xuất thử,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0274,Men Bifidobacterium - Dùng cho sản xuất thử,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0275,Men Lactobacillus casei - Dùng cho sản xuất thử,raw_material,culture,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0276,Premix vitamin A D E - Dùng cho sản xuất thử,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0277,Premix vitamin nhóm B - Dùng cho sản xuất thử,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0278,Canxi carbonate - Dùng cho sản xuất thử,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0279,Canxi phosphate - Dùng cho sản xuất thử,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0280,Kẽm sulfate - Dùng cho sản xuất thử,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0281,Sắt fumarate - Dùng cho sản xuất thử,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0282,Dầu cá DHA - Dùng cho sản xuất thử,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0283,Bột collagen thủy phân - Dùng cho sản xuất thử,raw_material,vitamin_mineral,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0284,Pectin thực phẩm - Dùng cho sản xuất thử,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0285,Carrageenan thực phẩm - Dùng cho sản xuất thử,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0286,Guar gum thực phẩm - Dùng cho sản xuất thử,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0287,Xanthan gum thực phẩm - Dùng cho sản xuất thử,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0288,Chất xơ hòa tan inulin - Dùng cho sản xuất thử,raw_material,stabilizer,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0289,Dịch cô đặc cam - Dùng cho sản xuất thử,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0290,Dịch cô đặc táo - Dùng cho sản xuất thử,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0291,Dịch cô đặc đào - Dùng cho sản xuất thử,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0292,Dịch cô đặc dâu - Dùng cho sản xuất thử,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0293,Dịch cô đặc nho - Dùng cho sản xuất thử,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0294,Dịch cô đặc dừa - Dùng cho sản xuất thử,raw_material,fruit_flavor,litre,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0295,Hương vani thực phẩm - Dùng cho sản xuất thử,raw_material,fruit_flavor,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0296,Bột cacao - Dùng cho sản xuất thử,raw_material,fruit_flavor,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0297,Hạt đậu nành - Dùng cho sản xuất thử,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0298,Hạt hạnh nhân - Dùng cho sản xuất thử,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0299,Hạt óc chó - Dùng cho sản xuất thử,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0300,Hạt mắc ca - Dùng cho sản xuất thử,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0301,Yến mạch - Dùng cho sản xuất thử,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0302,Gạo lứt - Dùng cho sản xuất thử,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0303,Ngũ cốc phối trộn - Dùng cho sản xuất thử,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0304,Thạch dừa - Dùng cho sản xuất thử,raw_material,grain_nut,kg,true,500,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0305,Hộp giấy tiệt trùng 110 ml - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0306,Hộp giấy tiệt trùng 180 ml - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0307,Hộp giấy tiệt trùng 1 lít - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0308,Chai nhựa thực phẩm 150 ml - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0309,Chai nhựa thực phẩm 450 ml - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0310,Cốc sữa chua 100 g - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,active,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0311,Nắp nhôm cốc sữa chua - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,inactive,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0312,Nắp chai HDPE - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,inactive,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0313,Ống hút giấy - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,inactive,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0314,Màng co lốc sản phẩm - Dùng cho sản xuất thử,raw_material,packaging,kg,false,500,inactive,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0315,Thùng carton 12 sản phẩm - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,inactive,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0316,Thùng carton 24 sản phẩm - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,inactive,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0317,Thùng carton 48 sản phẩm - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,inactive,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0318,Nhãn cuộn sản phẩm - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,inactive,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0319,Pallet nhựa thực phẩm - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,inactive,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+rm_0320,Túi sữa tiệt trùng - Dùng cho sản xuất thử,raw_material,packaging,piece,false,5000,inactive,Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.
+fg_0001,Sữa tươi tiệt trùng Green Farm Rất ít đường - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0002,Sữa tươi tiệt trùng Green Farm Rất ít đường - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0003,Sữa tươi tiệt trùng Green Farm Rất ít đường - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0004,Sữa tươi tiệt trùng Green Farm Rất ít đường - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0005,Sữa tươi tiệt trùng Green Farm Rất ít đường - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0006,Sữa tươi tiệt trùng Green Farm Organic - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0007,Sữa tươi tiệt trùng Green Farm Organic - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0008,Sữa tươi tiệt trùng Green Farm Organic - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0009,Sữa tươi tiệt trùng Green Farm Organic - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0010,Sữa tươi tiệt trùng Green Farm Organic - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0011,Sữa tươi tiệt trùng Green Farm Cao đạm ít béo - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0012,Sữa tươi tiệt trùng Green Farm Cao đạm ít béo - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0013,Sữa tươi tiệt trùng Green Farm Cao đạm ít béo - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0014,Sữa tươi tiệt trùng Green Farm Cao đạm ít béo - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0015,Sữa tươi tiệt trùng Green Farm Cao đạm ít béo - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Green Farm; nhóm Sữa tươi tiệt trùng; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0016,Sữa tươi tiệt trùng 100% Ít đường - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk 100%; nhóm Sữa tươi tiệt trùng; https://partners.vinamilk.com.vn/collections/all-products
+fg_0017,Sữa tươi tiệt trùng 100% Ít đường - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk 100%; nhóm Sữa tươi tiệt trùng; https://partners.vinamilk.com.vn/collections/all-products
+fg_0018,Sữa tươi tiệt trùng 100% Ít đường - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk 100%; nhóm Sữa tươi tiệt trùng; https://partners.vinamilk.com.vn/collections/all-products
+fg_0019,Sữa tươi tiệt trùng 100% Ít đường - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk 100%; nhóm Sữa tươi tiệt trùng; https://partners.vinamilk.com.vn/collections/all-products
+fg_0020,Sữa tươi tiệt trùng 100% Ít đường - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk 100%; nhóm Sữa tươi tiệt trùng; https://partners.vinamilk.com.vn/collections/all-products
+fg_0021,Sữa tươi tiệt trùng 100% Không đường - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk 100%; nhóm Sữa tươi tiệt trùng; https://new.vinamilk.com.vn/collections/sua-tuoi
+fg_0022,Sữa tươi tiệt trùng 100% Không đường - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk 100%; nhóm Sữa tươi tiệt trùng; https://new.vinamilk.com.vn/collections/sua-tuoi
+fg_0023,Sữa tươi tiệt trùng 100% Không đường - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk 100%; nhóm Sữa tươi tiệt trùng; https://new.vinamilk.com.vn/collections/sua-tuoi
+fg_0024,Sữa tươi tiệt trùng 100% Không đường - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk 100%; nhóm Sữa tươi tiệt trùng; https://new.vinamilk.com.vn/collections/sua-tuoi
+fg_0025,Sữa tươi tiệt trùng 100% Không đường - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk 100%; nhóm Sữa tươi tiệt trùng; https://new.vinamilk.com.vn/collections/sua-tuoi
+fg_0026,Sữa hạt 9 loại hạt Ít đường - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa hạt; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0027,Sữa hạt 9 loại hạt Ít đường - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa hạt; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0028,Sữa hạt 9 loại hạt Ít đường - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa hạt; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0029,Sữa hạt 9 loại hạt Ít đường - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa hạt; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0030,Sữa hạt 9 loại hạt Ít đường - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa hạt; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0031,Sữa đậu nành Hạnh nhân Ít đường - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa đậu nành; https://partners.vinamilk.com.vn/collections/all-products
+fg_0032,Sữa đậu nành Hạnh nhân Ít đường - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa đậu nành; https://partners.vinamilk.com.vn/collections/all-products
+fg_0033,Sữa đậu nành Hạnh nhân Ít đường - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa đậu nành; https://partners.vinamilk.com.vn/collections/all-products
+fg_0034,Sữa đậu nành Hạnh nhân Ít đường - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa đậu nành; https://partners.vinamilk.com.vn/collections/all-products
+fg_0035,Sữa đậu nành Hạnh nhân Ít đường - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa đậu nành; https://partners.vinamilk.com.vn/collections/all-products
+fg_0036,Sữa đậu nành Sữa tươi Ít đường - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa đậu nành; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0037,Sữa đậu nành Sữa tươi Ít đường - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa đậu nành; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0038,Sữa đậu nành Sữa tươi Ít đường - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa đậu nành; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0039,Sữa đậu nành Sữa tươi Ít đường - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa đậu nành; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0040,Sữa đậu nành Sữa tươi Ít đường - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa đậu nành; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0041,Sữa bột CanxiPro - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: CanxiPro; nhóm Sữa bột người lớn; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0042,Sữa bột CanxiPro - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: CanxiPro; nhóm Sữa bột người lớn; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0043,Sữa bột CanxiPro - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: CanxiPro; nhóm Sữa bột người lớn; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0044,Sữa bột CanxiPro - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: CanxiPro; nhóm Sữa bột người lớn; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0045,Sữa bột CanxiPro - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: CanxiPro; nhóm Sữa bột người lớn; https://www.vinamilk.com.vn/products/sua-dau-nanh-vinamilk-super-soy-gap-doi-canxi
+fg_0046,Sữa chua uống SuSu Hương Dâu - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0047,Sữa chua uống SuSu Hương Dâu - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0048,Sữa chua uống SuSu Hương Dâu - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0049,Sữa chua uống SuSu Hương Dâu - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0050,Sữa chua uống SuSu Hương Dâu - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0051,Sữa chua uống SuSu Hương Cam - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/cong-bo-san-pham/wp-content/uploads/cbsp/pa-000001-tcbsp-09-ncpt-24-final.pdf
+fg_0052,Sữa chua uống SuSu Hương Cam - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/cong-bo-san-pham/wp-content/uploads/cbsp/pa-000001-tcbsp-09-ncpt-24-final.pdf
+fg_0053,Sữa chua uống SuSu Hương Cam - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/cong-bo-san-pham/wp-content/uploads/cbsp/pa-000001-tcbsp-09-ncpt-24-final.pdf
+fg_0054,Sữa chua uống SuSu Hương Cam - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/cong-bo-san-pham/wp-content/uploads/cbsp/pa-000001-tcbsp-09-ncpt-24-final.pdf
+fg_0055,Sữa chua uống SuSu Hương Cam - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/cong-bo-san-pham/wp-content/uploads/cbsp/pa-000001-tcbsp-09-ncpt-24-final.pdf
+fg_0056,Sữa chua uống SuSu Hương Táo Nho - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0057,Sữa chua uống SuSu Hương Táo Nho - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0058,Sữa chua uống SuSu Hương Táo Nho - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0059,Sữa chua uống SuSu Hương Táo Nho - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0060,Sữa chua uống SuSu Hương Táo Nho - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0061,Sữa chua uống SuSu Hương Việt Quất Chuối - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0062,Sữa chua uống SuSu Hương Việt Quất Chuối - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0063,Sữa chua uống SuSu Hương Việt Quất Chuối - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0064,Sữa chua uống SuSu Hương Việt Quất Chuối - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0065,Sữa chua uống SuSu Hương Việt Quất Chuối - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa chua uống; https://www.vinamilk.com.vn/vi/tin-tuc-su-kien/2556/khuyen-dung-susu-va-hero-mua-cang-nhieu-qua-cang-to
+fg_0066,Sữa trái cây Hero Hương Dâu - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0067,Sữa trái cây Hero Hương Dâu - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0068,Sữa trái cây Hero Hương Dâu - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0069,Sữa trái cây Hero Hương Dâu - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0070,Sữa trái cây Hero Hương Dâu - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0071,Sữa trái cây Hero Hương Kẹo Nho - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0072,Sữa trái cây Hero Hương Kẹo Nho - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0073,Sữa trái cây Hero Hương Kẹo Nho - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0074,Sữa trái cây Hero Hương Kẹo Nho - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0075,Sữa trái cây Hero Hương Kẹo Nho - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0076,Sữa trái cây Hero Hương Cam - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0077,Sữa trái cây Hero Hương Cam - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0078,Sữa trái cây Hero Hương Cam - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0079,Sữa trái cây Hero Hương Cam - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0080,Sữa trái cây Hero Hương Cam - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0081,Sữa trái cây Hero Hương Dưa Hấu - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0082,Sữa trái cây Hero Hương Dưa Hấu - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0083,Sữa trái cây Hero Hương Dưa Hấu - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0084,Sữa trái cây Hero Hương Dưa Hấu - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0085,Sữa trái cây Hero Hương Dưa Hấu - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Hero; nhóm Sữa trái cây; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0086,Sữa trái cây SuSu Thạch Hương Kẹo Bông - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa trái cây có thạch; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0087,Sữa trái cây SuSu Thạch Hương Kẹo Bông - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa trái cây có thạch; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0088,Sữa trái cây SuSu Thạch Hương Kẹo Bông - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa trái cây có thạch; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0089,Sữa trái cây SuSu Thạch Hương Kẹo Bông - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa trái cây có thạch; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0090,Sữa trái cây SuSu Thạch Hương Kẹo Bông - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa trái cây có thạch; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0091,Sữa trái cây SuSu Thạch Hương Marshmallow Kiwi - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa trái cây có thạch; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0092,Sữa trái cây SuSu Thạch Hương Marshmallow Kiwi - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa trái cây có thạch; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0093,Sữa trái cây SuSu Thạch Hương Marshmallow Kiwi - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa trái cây có thạch; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0094,Sữa trái cây SuSu Thạch Hương Marshmallow Kiwi - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa trái cây có thạch; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0095,Sữa trái cây SuSu Thạch Hương Marshmallow Kiwi - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: SuSu; nhóm Sữa trái cây có thạch; https://new.vinamilk.com.vn/collections/sua-trai-cay
+fg_0096,Nước ép Cam Đào Collagen - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://partners.vinamilk.com.vn/collections/all-products
+fg_0097,Nước ép Cam Đào Collagen - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://partners.vinamilk.com.vn/collections/all-products
+fg_0098,Nước ép Cam Đào Collagen - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://partners.vinamilk.com.vn/collections/all-products
+fg_0099,Nước ép Cam Đào Collagen - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://partners.vinamilk.com.vn/collections/all-products
+fg_0100,Nước ép Cam Đào Collagen - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://partners.vinamilk.com.vn/collections/all-products
+fg_0101,Nước ép Cam - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0102,Nước ép Cam - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0103,Nước ép Cam - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0104,Nước ép Cam - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0105,Nước ép Cam - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0106,Nước ép Táo - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0107,Nước ép Táo - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0108,Nước ép Táo - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0109,Nước ép Táo - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0110,Nước ép Táo - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước ép; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0111,Nước dừa tươi - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước dừa; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0112,Nước dừa tươi - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước dừa; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0113,Nước dừa tươi - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước dừa; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0114,Nước dừa tươi - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước dừa; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0115,Nước dừa tươi - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước dừa; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0116,Nước dừa tắc - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước dừa; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0117,Nước dừa tắc - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước dừa; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0118,Nước dừa tắc - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước dừa; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0119,Nước dừa tắc - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước dừa; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0120,Nước dừa tắc - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Nước dừa; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0121,Nước tinh khiết ICY Premium - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ICY; nhóm Nước tinh khiết; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0122,Nước tinh khiết ICY Premium - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ICY; nhóm Nước tinh khiết; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0123,Nước tinh khiết ICY Premium - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ICY; nhóm Nước tinh khiết; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0124,Nước tinh khiết ICY Premium - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ICY; nhóm Nước tinh khiết; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0125,Nước tinh khiết ICY Premium - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ICY; nhóm Nước tinh khiết; https://new.vinamilk.com.vn/collections/nuoc-giai-khat
+fg_0126,Sữa đặc Ông Thọ Nhãn đỏ - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Ông Thọ; nhóm Sữa đặc; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0127,Sữa đặc Ông Thọ Nhãn đỏ - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Ông Thọ; nhóm Sữa đặc; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0128,Sữa đặc Ông Thọ Nhãn đỏ - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Ông Thọ; nhóm Sữa đặc; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0129,Sữa đặc Ông Thọ Nhãn đỏ - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Ông Thọ; nhóm Sữa đặc; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0130,Sữa đặc Ông Thọ Nhãn đỏ - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Ông Thọ; nhóm Sữa đặc; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0131,Sữa bột Dielac Grow Plus 2 - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Dielac Grow Plus; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0132,Sữa bột Dielac Grow Plus 2 - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Dielac Grow Plus; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0133,Sữa bột Dielac Grow Plus 2 - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Dielac Grow Plus; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0134,Sữa bột Dielac Grow Plus 2 - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Dielac Grow Plus; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0135,Sữa bột Dielac Grow Plus 2 - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Dielac Grow Plus; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0136,Sữa uống dinh dưỡng Dielac Grow Plus - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Dielac Grow Plus; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0137,Sữa uống dinh dưỡng Dielac Grow Plus - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Dielac Grow Plus; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0138,Sữa uống dinh dưỡng Dielac Grow Plus - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Dielac Grow Plus; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0139,Sữa uống dinh dưỡng Dielac Grow Plus - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Dielac Grow Plus; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0140,Sữa uống dinh dưỡng Dielac Grow Plus - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Dielac Grow Plus; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0141,Sữa bột Optimum Gold 4 - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Optimum Gold; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0142,Sữa bột Optimum Gold 4 - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Optimum Gold; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0143,Sữa bột Optimum Gold 4 - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Optimum Gold; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0144,Sữa bột Optimum Gold 4 - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Optimum Gold; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0145,Sữa bột Optimum Gold 4 - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Optimum Gold; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0146,Sữa uống dinh dưỡng Optimum Gold - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Optimum Gold; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0147,Sữa uống dinh dưỡng Optimum Gold - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Optimum Gold; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0148,Sữa uống dinh dưỡng Optimum Gold - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Optimum Gold; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0149,Sữa uống dinh dưỡng Optimum Gold - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Optimum Gold; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0150,Sữa uống dinh dưỡng Optimum Gold - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Optimum Gold; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0151,Sữa bột Vinamilk ColosGold 3 - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ColosGold; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0152,Sữa bột Vinamilk ColosGold 3 - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ColosGold; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0153,Sữa bột Vinamilk ColosGold 3 - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ColosGold; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0154,Sữa bột Vinamilk ColosGold 3 - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ColosGold; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0155,Sữa bột Vinamilk ColosGold 3 - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ColosGold; nhóm Sữa bột trẻ em; https://livestream.vinamilk.com.vn/
+fg_0156,Sữa uống dinh dưỡng Vinamilk ColosGold - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ColosGold; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0157,Sữa uống dinh dưỡng Vinamilk ColosGold - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ColosGold; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0158,Sữa uống dinh dưỡng Vinamilk ColosGold - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ColosGold; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0159,Sữa uống dinh dưỡng Vinamilk ColosGold - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ColosGold; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0160,Sữa uống dinh dưỡng Vinamilk ColosGold - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: ColosGold; nhóm Sữa uống dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0161,Sữa bột YokoGold 1 - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: YokoGold; nhóm Sữa bột trẻ em; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0162,Sữa bột YokoGold 1 - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: YokoGold; nhóm Sữa bột trẻ em; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0163,Sữa bột YokoGold 1 - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: YokoGold; nhóm Sữa bột trẻ em; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0164,Sữa bột YokoGold 1 - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: YokoGold; nhóm Sữa bột trẻ em; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0165,Sữa bột YokoGold 1 - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: YokoGold; nhóm Sữa bột trẻ em; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0166,Bột ăn dặm RiDielac Gold - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: RiDielac Gold; nhóm Bột dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0167,Bột ăn dặm RiDielac Gold - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: RiDielac Gold; nhóm Bột dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0168,Bột ăn dặm RiDielac Gold - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: RiDielac Gold; nhóm Bột dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0169,Bột ăn dặm RiDielac Gold - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: RiDielac Gold; nhóm Bột dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0170,Bột ăn dặm RiDielac Gold - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: RiDielac Gold; nhóm Bột dinh dưỡng; https://livestream.vinamilk.com.vn/
+fg_0171,Kem hộp Vinamilk Dừa - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Kem; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0172,Kem hộp Vinamilk Dừa - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Kem; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0173,Kem hộp Vinamilk Dừa - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Kem; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0174,Kem hộp Vinamilk Dừa - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Kem; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0175,Kem hộp Vinamilk Dừa - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Kem; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0176,Kem hộp Vinamilk Gelato Dừa - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk Gelato; nhóm Kem; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0177,Kem hộp Vinamilk Gelato Dừa - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk Gelato; nhóm Kem; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0178,Kem hộp Vinamilk Gelato Dừa - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk Gelato; nhóm Kem; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0179,Kem hộp Vinamilk Gelato Dừa - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk Gelato; nhóm Kem; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0180,Kem hộp Vinamilk Gelato Dừa - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk Gelato; nhóm Kem; https://www.vinamilk.com.vn/products/sua-bot-pedia-kenji-1
+fg_0181,Sữa chua ăn Vinamilk Có đường - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa chua ăn; https://partners.vinamilk.com.vn/collections/all-products
+fg_0182,Sữa chua ăn Vinamilk Có đường - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa chua ăn; https://partners.vinamilk.com.vn/collections/all-products
+fg_0183,Sữa chua ăn Vinamilk Có đường - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa chua ăn; https://partners.vinamilk.com.vn/collections/all-products
+fg_0184,Sữa chua ăn Vinamilk Có đường - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa chua ăn; https://partners.vinamilk.com.vn/collections/all-products
+fg_0185,Sữa chua ăn Vinamilk Có đường - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa chua ăn; https://partners.vinamilk.com.vn/collections/all-products
+fg_0186,Sữa chua ăn Vinamilk Không đường - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa chua ăn; https://partners.vinamilk.com.vn/collections/all-products
+fg_0187,Sữa chua ăn Vinamilk Không đường - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa chua ăn; https://partners.vinamilk.com.vn/collections/all-products
+fg_0188,Sữa chua ăn Vinamilk Không đường - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa chua ăn; https://partners.vinamilk.com.vn/collections/all-products
+fg_0189,Sữa chua ăn Vinamilk Không đường - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa chua ăn; https://partners.vinamilk.com.vn/collections/all-products
+fg_0190,Sữa chua ăn Vinamilk Không đường - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Sữa chua ăn; https://partners.vinamilk.com.vn/collections/all-products
+fg_0191,Sữa chua uống Probi - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Probi; nhóm Sữa chua uống; https://partners.vinamilk.com.vn/collections/all-products
+fg_0192,Sữa chua uống Probi - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Probi; nhóm Sữa chua uống; https://partners.vinamilk.com.vn/collections/all-products
+fg_0193,Sữa chua uống Probi - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Probi; nhóm Sữa chua uống; https://partners.vinamilk.com.vn/collections/all-products
+fg_0194,Sữa chua uống Probi - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Probi; nhóm Sữa chua uống; https://partners.vinamilk.com.vn/collections/all-products
+fg_0195,Sữa chua uống Probi - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Probi; nhóm Sữa chua uống; https://partners.vinamilk.com.vn/collections/all-products
+fg_0196,Phô mai Vinamilk - 110 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Phô mai; https://www.vinamilk.com.vn/static/uploads/bc_thuong_nien/1398182024-7e25ebe2588a7b30e90438bd67863da4777dfe4bbb6d919cb6a6b9c98867b980.pdf
+fg_0197,Phô mai Vinamilk - 180 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Phô mai; https://www.vinamilk.com.vn/static/uploads/bc_thuong_nien/1398182024-7e25ebe2588a7b30e90438bd67863da4777dfe4bbb6d919cb6a6b9c98867b980.pdf
+fg_0198,Phô mai Vinamilk - 220 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Phô mai; https://www.vinamilk.com.vn/static/uploads/bc_thuong_nien/1398182024-7e25ebe2588a7b30e90438bd67863da4777dfe4bbb6d919cb6a6b9c98867b980.pdf
+fg_0199,Phô mai Vinamilk - 400 ml,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Phô mai; https://www.vinamilk.com.vn/static/uploads/bc_thuong_nien/1398182024-7e25ebe2588a7b30e90438bd67863da4777dfe4bbb6d919cb6a6b9c98867b980.pdf
+fg_0200,Phô mai Vinamilk - Thùng tiêu chuẩn,finished_product,finished_product,piece,true,1000,active,Tham chiếu công khai: Vinamilk; nhóm Phô mai; https://www.vinamilk.com.vn/static/uploads/bc_thuong_nien/1398182024-7e25ebe2588a7b30e90438bd67863da4777dfe4bbb6d919cb6a6b9c98867b980.pdf

@@ -1,0 +1,4 @@
+﻿shift_code,shift_name,starts_at,ends_at
+shift_morning,Ca sáng,06:00:00,14:00:00
+shift_afternoon,Ca chiều,14:00:00,22:00:00
+shift_night,Ca đêm,22:00:00,06:00:00

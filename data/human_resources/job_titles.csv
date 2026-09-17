@@ -1,0 +1,31 @@
+﻿job_title_code,job_title_name,base_salary_reference
+chief_executive_officer,Tổng giám đốc,85000000
+division_director,Giám đốc khối,60000000
+department_manager,Trưởng phòng,42000000
+factory_manager,Quản đốc nhà máy,45000000
+production_supervisor,Giám sát sản xuất,26000000
+production_planner,Chuyên viên kế hoạch sản xuất,22000000
+production_operator,Nhân viên vận hành sản xuất,13500000
+packaging_operator,Nhân viên đóng gói,12000000
+warehouse_supervisor,Giám sát kho,22000000
+warehouse_keeper,Thủ kho,15500000
+forklift_operator,Nhân viên xe nâng,13000000
+quality_manager,Trưởng bộ phận chất lượng,38000000
+quality_engineer,Kỹ sư chất lượng,23000000
+laboratory_technician,Kỹ thuật viên phòng thí nghiệm,18000000
+maintenance_engineer,Kỹ sư bảo trì,23000000
+maintenance_technician,Kỹ thuật viên bảo trì,17000000
+food_engineer,Kỹ sư công nghệ thực phẩm,24000000
+research_specialist,Chuyên viên nghiên cứu sản phẩm,25000000
+procurement_specialist,Chuyên viên thu mua,21000000
+supply_chain_specialist,Chuyên viên chuỗi cung ứng,22000000
+human_resources_specialist,Chuyên viên nhân sự,19000000
+payroll_specialist,Chuyên viên tiền lương,21000000
+accountant,Kế toán viên,19000000
+financial_analyst,Chuyên viên phân tích tài chính,24000000
+sales_specialist,Chuyên viên kinh doanh,20000000
+marketing_specialist,Chuyên viên marketing,22000000
+system_administrator,Quản trị hệ thống,26000000
+software_engineer,Kỹ sư phần mềm,28000000
+safety_specialist,Chuyên viên an toàn lao động,20000000
+administrative_staff,Nhân viên hành chính,15000000

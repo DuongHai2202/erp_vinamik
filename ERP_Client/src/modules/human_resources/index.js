@@ -1,0 +1,1 @@
+export { default as human_resources_page } from './human_resources_page';

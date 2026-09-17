@@ -1,0 +1,392 @@
+{
+  "api_base_url": "http://127.0.0.1:8080",
+  "phase": "production",
+  "failures": [],
+  "skipped": [
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00504:vmk0398:2026-02-07T22:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00509:vmk0469:2026-05-13T14:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00509:vmk0480:2026-05-13T22:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00514:vmk0548:2026-07-20T06:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00519:vmk0073:2026-01-10T22:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00519:vmk0076:2026-01-10T06:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00524:vmk0144:2026-03-17T14:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00529:vmk0223:2026-06-03T06:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00529:vmk0226:2026-06-03T14:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00534:vmk0302:2026-08-10T22:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00539:vmk0373:2026-02-20T14:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00539:vmk0381:2026-02-20T22:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00544:vmk0449:2026-04-07T06:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00549:vmk0520:2026-07-13T22:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00549:vmk0528:2026-07-13T06:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00554:vmk0048:2026-09-20T14:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00559:vmk0124:2026-03-10T06:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00559:vmk0127:2026-03-10T14:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00564:vmk0195:2026-05-17T22:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00569:vmk0271:2026-08-03T14:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00569:vmk0274:2026-08-03T22:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00574:vmk0350:2026-01-10T06:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00579:vmk0421:2026-04-20T22:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00579:vmk0432:2026-04-20T06:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00584:vmk0500:2026-06-07T14:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00589:vmk0025:2026-09-13T06:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00589:vmk0028:2026-09-13T14:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00594:vmk0096:2026-02-20T22:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00599:vmk0175:2026-05-10T14:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "assignment",
+      "code": "production_order_2026_00599:vmk0178:2026-05-10T22:00:00+07:00",
+      "reason": "POST /api/v1/production/assignments HTTP 400: Assignments cannot be added to a cancelled or completed production order."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00504_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00504_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00509_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00509_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00514_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00514_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00519_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00519_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00524_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00524_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00529_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00529_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00534_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00534_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00539_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00539_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00544_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00544_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00549_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00549_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00554_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00554_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00559_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00559_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00564_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00564_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00569_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00569_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00574_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00574_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00579_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00579_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00584_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00584_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00589_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00589_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00594_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00594_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00599_1",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "consumption",
+      "code": "material_consumption_00599_2",
+      "reason": "Production order is completed and cannot receive material consumption."
+    },
+    {
+      "phase": "output",
+      "code": "production_output_00556",
+      "reason": "POST /api/v1/production/orders/579/outputs HTTP 409: The production order already has an output for this lot."
+    },
+    {
+      "phase": "output",
+      "code": "production_output_00557",
+      "reason": "POST /api/v1/production/orders/580/outputs HTTP 409: The production order already has an output for this lot."
+    },
+    {
+      "phase": "output",
+      "code": "production_output_00558",
+      "reason": "POST /api/v1/production/orders/581/outputs HTTP 409: The production order already has an output for this lot."
+    },
+    {
+      "phase": "output",
+      "code": "production_output_00559",
+      "reason": "POST /api/v1/production/orders/582/outputs HTTP 409: The production order already has an output for this lot."
+    },
+    {
+      "phase": "output",
+      "code": "production_output_00585",
+      "reason": "POST /api/v1/production/orders/608/outputs HTTP 409: Production output exceeds the production order target quantity."
+    },
+    {
+      "phase": "output",
+      "code": "production_output_00586",
+      "reason": "POST /api/v1/production/orders/609/outputs HTTP 409: Production output exceeds the production order target quantity."
+    },
+    {
+      "phase": "output",
+      "code": "production_output_00587",
+      "reason": "POST /api/v1/production/orders/610/outputs HTTP 409: Production output exceeds the production order target quantity."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+﻿department_code,department_name,parent_department_code
+board,Ban điều hành,
+human_resources,Phòng Nhân sự,board
+finance,Phòng Tài chính - Kế toán,board
+procurement,Phòng Thu mua,board
+quality_assurance,Phòng Đảm bảo chất lượng,board
+research_development,Trung tâm Nghiên cứu và Phát triển,board
+supply_chain,Khối Chuỗi cung ứng,board
+warehouse_raw,Kho nguyên liệu,supply_chain
+warehouse_finished,Kho thành phẩm,supply_chain
+production_fresh_milk,Xưởng Sữa nước,board
+production_yogurt,Xưởng Sữa chua,board
+production_powder,Xưởng Sữa bột,board
+production_beverage,Xưởng Nước giải khát,board
+maintenance,Phòng Kỹ thuật và Bảo trì,board
+laboratory,Phòng Thí nghiệm,quality_assurance
+sales,Khối Kinh doanh,board
+marketing,Phòng Marketing,sales
+information_technology,Phòng Công nghệ thông tin,board
+safety_environment,Phòng An toàn và Môi trường,board
+planning,Phòng Kế hoạch sản xuất,supply_chain

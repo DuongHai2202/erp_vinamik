@@ -1,0 +1,901 @@
+﻿request_code,employee_code,leave_type_code,starts_on,ends_on,is_paid,reason,status,decided_at,decision_note
+leave_2025_00001,vmk0024,annual_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00002,vmk0041,sick_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00003,vmk0058,personal_unpaid,2025-03-03,2025-03-05,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00004,vmk0075,maternity_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00005,vmk0092,family_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00006,vmk0109,annual_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00007,vmk0126,sick_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00008,vmk0143,personal_unpaid,2026-02-20,2026-02-21,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00009,vmk0160,maternity_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00010,vmk0177,family_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00011,vmk0194,annual_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00012,vmk0211,sick_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00013,vmk0228,personal_unpaid,2025-01-13,2025-01-13,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00014,vmk0245,maternity_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00015,vmk0262,family_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00016,vmk0279,annual_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00017,vmk0296,sick_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00018,vmk0313,personal_unpaid,2026-12-06,2026-12-08,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00019,vmk0330,maternity_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00020,vmk0347,family_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00021,vmk0364,annual_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00022,vmk0381,sick_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00023,vmk0398,personal_unpaid,2025-11-23,2025-11-24,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00024,vmk0415,maternity_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00025,vmk0432,family_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00026,vmk0449,annual_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00027,vmk0466,sick_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00028,vmk0483,personal_unpaid,2026-10-16,2026-10-16,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00029,vmk0500,maternity_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00030,vmk0517,family_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00031,vmk0534,annual_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00032,vmk0551,sick_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00033,vmk0568,personal_unpaid,2025-09-09,2025-09-11,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00034,vmk0015,maternity_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00035,vmk0032,family_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00036,vmk0049,annual_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00037,vmk0066,sick_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00038,vmk0083,personal_unpaid,2026-08-02,2026-08-03,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00039,vmk0100,maternity_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00040,vmk0117,family_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00041,vmk0134,annual_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00042,vmk0151,sick_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00043,vmk0168,personal_unpaid,2025-07-19,2025-07-19,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00044,vmk0185,maternity_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00045,vmk0202,family_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00046,vmk0219,annual_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00047,vmk0236,sick_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00048,vmk0253,personal_unpaid,2026-06-12,2026-06-14,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00049,vmk0270,maternity_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00050,vmk0287,family_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00051,vmk0304,annual_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00052,vmk0321,sick_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00053,vmk0338,personal_unpaid,2025-05-05,2025-05-06,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00054,vmk0355,maternity_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00055,vmk0372,family_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00056,vmk0389,annual_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00057,vmk0406,sick_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00058,vmk0423,personal_unpaid,2026-04-22,2026-04-22,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00059,vmk0440,maternity_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00060,vmk0457,family_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00061,vmk0474,annual_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00062,vmk0491,sick_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00063,vmk0508,personal_unpaid,2025-03-15,2025-03-17,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00064,vmk0525,maternity_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00065,vmk0542,family_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00066,vmk0559,annual_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00067,vmk0006,sick_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00068,vmk0023,personal_unpaid,2026-02-08,2026-02-09,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00069,vmk0040,maternity_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00070,vmk0057,family_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00071,vmk0074,annual_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00072,vmk0091,sick_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00073,vmk0108,personal_unpaid,2025-01-01,2025-01-01,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00074,vmk0125,maternity_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00075,vmk0142,family_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00076,vmk0159,annual_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00077,vmk0176,sick_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00078,vmk0193,personal_unpaid,2026-12-18,2026-12-20,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00079,vmk0210,maternity_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00080,vmk0227,family_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00081,vmk0244,annual_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00082,vmk0261,sick_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00083,vmk0278,personal_unpaid,2025-11-11,2025-11-12,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00084,vmk0295,maternity_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00085,vmk0312,family_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00086,vmk0329,annual_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00087,vmk0346,sick_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00088,vmk0363,personal_unpaid,2026-10-04,2026-10-04,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00089,vmk0380,maternity_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00090,vmk0397,family_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00091,vmk0414,annual_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00092,vmk0431,sick_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00093,vmk0448,personal_unpaid,2025-09-21,2025-09-23,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00094,vmk0465,maternity_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00095,vmk0482,family_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00096,vmk0499,annual_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00097,vmk0516,sick_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00098,vmk0533,personal_unpaid,2026-08-14,2026-08-15,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00099,vmk0550,maternity_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00100,vmk0567,family_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00101,vmk0014,annual_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00102,vmk0031,sick_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00103,vmk0048,personal_unpaid,2025-07-07,2025-07-07,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00104,vmk0065,maternity_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00105,vmk0082,family_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00106,vmk0099,annual_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00107,vmk0116,sick_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00108,vmk0133,personal_unpaid,2026-06-24,2026-06-26,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00109,vmk0150,maternity_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00110,vmk0167,family_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00111,vmk0184,annual_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00112,vmk0201,sick_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00113,vmk0218,personal_unpaid,2025-05-17,2025-05-18,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00114,vmk0235,maternity_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00115,vmk0252,family_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00116,vmk0269,annual_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00117,vmk0286,sick_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00118,vmk0303,personal_unpaid,2026-04-10,2026-04-10,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00119,vmk0320,maternity_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00120,vmk0337,family_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00121,vmk0354,annual_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00122,vmk0371,sick_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00123,vmk0388,personal_unpaid,2025-03-03,2025-03-05,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00124,vmk0405,maternity_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00125,vmk0422,family_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00126,vmk0439,annual_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00127,vmk0456,sick_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00128,vmk0473,personal_unpaid,2026-02-20,2026-02-21,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00129,vmk0490,maternity_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00130,vmk0507,family_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00131,vmk0524,annual_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00132,vmk0541,sick_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00133,vmk0558,personal_unpaid,2025-01-13,2025-01-13,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00134,vmk0005,maternity_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00135,vmk0022,family_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00136,vmk0039,annual_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00137,vmk0056,sick_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00138,vmk0073,personal_unpaid,2026-12-06,2026-12-08,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00139,vmk0090,maternity_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00140,vmk0107,family_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00141,vmk0124,annual_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00142,vmk0141,sick_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00143,vmk0158,personal_unpaid,2025-11-23,2025-11-24,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00144,vmk0175,maternity_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00145,vmk0192,family_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00146,vmk0209,annual_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00147,vmk0226,sick_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00148,vmk0243,personal_unpaid,2026-10-16,2026-10-16,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00149,vmk0260,maternity_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00150,vmk0277,family_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00151,vmk0294,annual_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00152,vmk0311,sick_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00153,vmk0328,personal_unpaid,2025-09-09,2025-09-11,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00154,vmk0345,maternity_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00155,vmk0362,family_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00156,vmk0379,annual_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00157,vmk0396,sick_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00158,vmk0413,personal_unpaid,2026-08-02,2026-08-03,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00159,vmk0430,maternity_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00160,vmk0447,family_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00161,vmk0464,annual_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00162,vmk0481,sick_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00163,vmk0498,personal_unpaid,2025-07-19,2025-07-19,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00164,vmk0515,maternity_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00165,vmk0532,family_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00166,vmk0549,annual_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00167,vmk0566,sick_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00168,vmk0013,personal_unpaid,2026-06-12,2026-06-14,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00169,vmk0030,maternity_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00170,vmk0047,family_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00171,vmk0064,annual_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00172,vmk0081,sick_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00173,vmk0098,personal_unpaid,2025-05-05,2025-05-06,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00174,vmk0115,maternity_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00175,vmk0132,family_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00176,vmk0149,annual_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00177,vmk0166,sick_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00178,vmk0183,personal_unpaid,2026-04-22,2026-04-22,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00179,vmk0200,maternity_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00180,vmk0217,family_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00181,vmk0234,annual_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00182,vmk0251,sick_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00183,vmk0268,personal_unpaid,2025-03-15,2025-03-17,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00184,vmk0285,maternity_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00185,vmk0302,family_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00186,vmk0319,annual_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00187,vmk0336,sick_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00188,vmk0353,personal_unpaid,2026-02-08,2026-02-09,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00189,vmk0370,maternity_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00190,vmk0387,family_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00191,vmk0404,annual_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00192,vmk0421,sick_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00193,vmk0438,personal_unpaid,2025-01-01,2025-01-01,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00194,vmk0455,maternity_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00195,vmk0472,family_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00196,vmk0489,annual_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00197,vmk0506,sick_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00198,vmk0523,personal_unpaid,2026-12-18,2026-12-20,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00199,vmk0540,maternity_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00200,vmk0557,family_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00201,vmk0004,annual_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00202,vmk0021,sick_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00203,vmk0038,personal_unpaid,2025-11-11,2025-11-12,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00204,vmk0055,maternity_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00205,vmk0072,family_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00206,vmk0089,annual_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00207,vmk0106,sick_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00208,vmk0123,personal_unpaid,2026-10-04,2026-10-04,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00209,vmk0140,maternity_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00210,vmk0157,family_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00211,vmk0174,annual_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00212,vmk0191,sick_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00213,vmk0208,personal_unpaid,2025-09-21,2025-09-23,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00214,vmk0225,maternity_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00215,vmk0242,family_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00216,vmk0259,annual_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00217,vmk0276,sick_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00218,vmk0293,personal_unpaid,2026-08-14,2026-08-15,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00219,vmk0310,maternity_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00220,vmk0327,family_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00221,vmk0344,annual_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00222,vmk0361,sick_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00223,vmk0378,personal_unpaid,2025-07-07,2025-07-07,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00224,vmk0395,maternity_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00225,vmk0412,family_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00226,vmk0429,annual_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00227,vmk0446,sick_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00228,vmk0463,personal_unpaid,2026-06-24,2026-06-26,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00229,vmk0480,maternity_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00230,vmk0497,family_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00231,vmk0514,annual_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00232,vmk0531,sick_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00233,vmk0548,personal_unpaid,2025-05-17,2025-05-18,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00234,vmk0565,maternity_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00235,vmk0012,family_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00236,vmk0029,annual_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00237,vmk0046,sick_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00238,vmk0063,personal_unpaid,2026-04-10,2026-04-10,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00239,vmk0080,maternity_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00240,vmk0097,family_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00241,vmk0114,annual_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00242,vmk0131,sick_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00243,vmk0148,personal_unpaid,2025-03-03,2025-03-05,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00244,vmk0165,maternity_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00245,vmk0182,family_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00246,vmk0199,annual_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00247,vmk0216,sick_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00248,vmk0233,personal_unpaid,2026-02-20,2026-02-21,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00249,vmk0250,maternity_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00250,vmk0267,family_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00251,vmk0284,annual_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00252,vmk0301,sick_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00253,vmk0318,personal_unpaid,2025-01-13,2025-01-13,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00254,vmk0335,maternity_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00255,vmk0352,family_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00256,vmk0369,annual_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00257,vmk0386,sick_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00258,vmk0403,personal_unpaid,2026-12-06,2026-12-08,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00259,vmk0420,maternity_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00260,vmk0437,family_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00261,vmk0454,annual_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00262,vmk0471,sick_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00263,vmk0488,personal_unpaid,2025-11-23,2025-11-24,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00264,vmk0505,maternity_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00265,vmk0522,family_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00266,vmk0539,annual_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00267,vmk0556,sick_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00268,vmk0003,personal_unpaid,2026-10-16,2026-10-16,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00269,vmk0020,maternity_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00270,vmk0037,family_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00271,vmk0054,annual_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00272,vmk0071,sick_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00273,vmk0088,personal_unpaid,2025-09-09,2025-09-11,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00274,vmk0105,maternity_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00275,vmk0122,family_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00276,vmk0139,annual_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00277,vmk0156,sick_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00278,vmk0173,personal_unpaid,2026-08-02,2026-08-03,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00279,vmk0190,maternity_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00280,vmk0207,family_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00281,vmk0224,annual_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00282,vmk0241,sick_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00283,vmk0258,personal_unpaid,2025-07-19,2025-07-19,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00284,vmk0275,maternity_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00285,vmk0292,family_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00286,vmk0309,annual_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00287,vmk0326,sick_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00288,vmk0343,personal_unpaid,2026-06-12,2026-06-14,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00289,vmk0360,maternity_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00290,vmk0377,family_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00291,vmk0394,annual_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00292,vmk0411,sick_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00293,vmk0428,personal_unpaid,2025-05-05,2025-05-06,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00294,vmk0445,maternity_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00295,vmk0462,family_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00296,vmk0479,annual_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00297,vmk0496,sick_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00298,vmk0513,personal_unpaid,2026-04-22,2026-04-22,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00299,vmk0530,maternity_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00300,vmk0547,family_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00301,vmk0564,annual_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00302,vmk0011,sick_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00303,vmk0028,personal_unpaid,2025-03-15,2025-03-17,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00304,vmk0045,maternity_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00305,vmk0062,family_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00306,vmk0079,annual_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00307,vmk0096,sick_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00308,vmk0113,personal_unpaid,2026-02-08,2026-02-09,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00309,vmk0130,maternity_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00310,vmk0147,family_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00311,vmk0164,annual_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00312,vmk0181,sick_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00313,vmk0198,personal_unpaid,2025-01-01,2025-01-01,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00314,vmk0215,maternity_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00315,vmk0232,family_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00316,vmk0249,annual_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00317,vmk0266,sick_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00318,vmk0283,personal_unpaid,2026-12-18,2026-12-20,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00319,vmk0300,maternity_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00320,vmk0317,family_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00321,vmk0334,annual_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00322,vmk0351,sick_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00323,vmk0368,personal_unpaid,2025-11-11,2025-11-12,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00324,vmk0385,maternity_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00325,vmk0402,family_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00326,vmk0419,annual_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00327,vmk0436,sick_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00328,vmk0453,personal_unpaid,2026-10-04,2026-10-04,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00329,vmk0470,maternity_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00330,vmk0487,family_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00331,vmk0504,annual_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00332,vmk0521,sick_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00333,vmk0538,personal_unpaid,2025-09-21,2025-09-23,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00334,vmk0555,maternity_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00335,vmk0002,family_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00336,vmk0019,annual_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00337,vmk0036,sick_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00338,vmk0053,personal_unpaid,2026-08-14,2026-08-15,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00339,vmk0070,maternity_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00340,vmk0087,family_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00341,vmk0104,annual_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00342,vmk0121,sick_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00343,vmk0138,personal_unpaid,2025-07-07,2025-07-07,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00344,vmk0155,maternity_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00345,vmk0172,family_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00346,vmk0189,annual_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00347,vmk0206,sick_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00348,vmk0223,personal_unpaid,2026-06-24,2026-06-26,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00349,vmk0240,maternity_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00350,vmk0257,family_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00351,vmk0274,annual_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00352,vmk0291,sick_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00353,vmk0308,personal_unpaid,2025-05-17,2025-05-18,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00354,vmk0325,maternity_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00355,vmk0342,family_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00356,vmk0359,annual_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00357,vmk0376,sick_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00358,vmk0393,personal_unpaid,2026-04-10,2026-04-10,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00359,vmk0410,maternity_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00360,vmk0427,family_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00361,vmk0444,annual_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00362,vmk0461,sick_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00363,vmk0478,personal_unpaid,2025-03-03,2025-03-05,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00364,vmk0495,maternity_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00365,vmk0512,family_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00366,vmk0529,annual_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00367,vmk0546,sick_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00368,vmk0563,personal_unpaid,2026-02-20,2026-02-21,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00369,vmk0010,maternity_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00370,vmk0027,family_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00371,vmk0044,annual_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00372,vmk0061,sick_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00373,vmk0078,personal_unpaid,2025-01-13,2025-01-13,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00374,vmk0095,maternity_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00375,vmk0112,family_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00376,vmk0129,annual_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00377,vmk0146,sick_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00378,vmk0163,personal_unpaid,2026-12-06,2026-12-08,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00379,vmk0180,maternity_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00380,vmk0197,family_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00381,vmk0214,annual_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00382,vmk0231,sick_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00383,vmk0248,personal_unpaid,2025-11-23,2025-11-24,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00384,vmk0265,maternity_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00385,vmk0282,family_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00386,vmk0299,annual_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00387,vmk0316,sick_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00388,vmk0333,personal_unpaid,2026-10-16,2026-10-16,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00389,vmk0350,maternity_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00390,vmk0367,family_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00391,vmk0384,annual_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00392,vmk0401,sick_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00393,vmk0418,personal_unpaid,2025-09-09,2025-09-11,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00394,vmk0435,maternity_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00395,vmk0452,family_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00396,vmk0469,annual_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00397,vmk0486,sick_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00398,vmk0503,personal_unpaid,2026-08-02,2026-08-03,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00399,vmk0520,maternity_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00400,vmk0537,family_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00401,vmk0554,annual_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00402,vmk0001,sick_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00403,vmk0018,personal_unpaid,2025-07-19,2025-07-19,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00404,vmk0035,maternity_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00405,vmk0052,family_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00406,vmk0069,annual_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00407,vmk0086,sick_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00408,vmk0103,personal_unpaid,2026-06-12,2026-06-14,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00409,vmk0120,maternity_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00410,vmk0137,family_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00411,vmk0154,annual_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00412,vmk0171,sick_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00413,vmk0188,personal_unpaid,2025-05-05,2025-05-06,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00414,vmk0205,maternity_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00415,vmk0222,family_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00416,vmk0239,annual_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00417,vmk0256,sick_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00418,vmk0273,personal_unpaid,2026-04-22,2026-04-22,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00419,vmk0290,maternity_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00420,vmk0307,family_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00421,vmk0324,annual_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00422,vmk0341,sick_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00423,vmk0358,personal_unpaid,2025-03-15,2025-03-17,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00424,vmk0375,maternity_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00425,vmk0392,family_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00426,vmk0409,annual_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00427,vmk0426,sick_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00428,vmk0443,personal_unpaid,2026-02-08,2026-02-09,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00429,vmk0460,maternity_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00430,vmk0477,family_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00431,vmk0494,annual_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00432,vmk0511,sick_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00433,vmk0528,personal_unpaid,2025-01-01,2025-01-01,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00434,vmk0545,maternity_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00435,vmk0562,family_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00436,vmk0009,annual_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00437,vmk0026,sick_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00438,vmk0043,personal_unpaid,2026-12-18,2026-12-20,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00439,vmk0060,maternity_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00440,vmk0077,family_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00441,vmk0094,annual_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00442,vmk0111,sick_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00443,vmk0128,personal_unpaid,2025-11-11,2025-11-12,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00444,vmk0145,maternity_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00445,vmk0162,family_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00446,vmk0179,annual_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00447,vmk0196,sick_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00448,vmk0213,personal_unpaid,2026-10-04,2026-10-04,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00449,vmk0230,maternity_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00450,vmk0247,family_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00451,vmk0264,annual_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00452,vmk0281,sick_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00453,vmk0298,personal_unpaid,2025-09-21,2025-09-23,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00454,vmk0315,maternity_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00455,vmk0332,family_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00456,vmk0349,annual_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00457,vmk0366,sick_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00458,vmk0383,personal_unpaid,2026-08-14,2026-08-15,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00459,vmk0400,maternity_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00460,vmk0417,family_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00461,vmk0434,annual_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00462,vmk0451,sick_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00463,vmk0468,personal_unpaid,2025-07-07,2025-07-07,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00464,vmk0485,maternity_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00465,vmk0502,family_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00466,vmk0519,annual_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00467,vmk0536,sick_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00468,vmk0553,personal_unpaid,2026-06-24,2026-06-26,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00469,vmk0570,maternity_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00470,vmk0017,family_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00471,vmk0034,annual_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00472,vmk0051,sick_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00473,vmk0068,personal_unpaid,2025-05-17,2025-05-18,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00474,vmk0085,maternity_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00475,vmk0102,family_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00476,vmk0119,annual_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00477,vmk0136,sick_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00478,vmk0153,personal_unpaid,2026-04-10,2026-04-10,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00479,vmk0170,maternity_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00480,vmk0187,family_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00481,vmk0204,annual_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00482,vmk0221,sick_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00483,vmk0238,personal_unpaid,2025-03-03,2025-03-05,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00484,vmk0255,maternity_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00485,vmk0272,family_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00486,vmk0289,annual_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00487,vmk0306,sick_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00488,vmk0323,personal_unpaid,2026-02-20,2026-02-21,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00489,vmk0340,maternity_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00490,vmk0357,family_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00491,vmk0374,annual_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00492,vmk0391,sick_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00493,vmk0408,personal_unpaid,2025-01-13,2025-01-13,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00494,vmk0425,maternity_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00495,vmk0442,family_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00496,vmk0459,annual_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00497,vmk0476,sick_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00498,vmk0493,personal_unpaid,2026-12-06,2026-12-08,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00499,vmk0510,maternity_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00500,vmk0527,family_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00501,vmk0544,annual_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00502,vmk0561,sick_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00503,vmk0008,personal_unpaid,2025-11-23,2025-11-24,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00504,vmk0025,maternity_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00505,vmk0042,family_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00506,vmk0059,annual_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00507,vmk0076,sick_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00508,vmk0093,personal_unpaid,2026-10-16,2026-10-16,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00509,vmk0110,maternity_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00510,vmk0127,family_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00511,vmk0144,annual_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00512,vmk0161,sick_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00513,vmk0178,personal_unpaid,2025-09-09,2025-09-11,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00514,vmk0195,maternity_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00515,vmk0212,family_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00516,vmk0229,annual_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00517,vmk0246,sick_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00518,vmk0263,personal_unpaid,2026-08-02,2026-08-03,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00519,vmk0280,maternity_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00520,vmk0297,family_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00521,vmk0314,annual_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00522,vmk0331,sick_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00523,vmk0348,personal_unpaid,2025-07-19,2025-07-19,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00524,vmk0365,maternity_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00525,vmk0382,family_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00526,vmk0399,annual_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00527,vmk0416,sick_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00528,vmk0433,personal_unpaid,2026-06-12,2026-06-14,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00529,vmk0450,maternity_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00530,vmk0467,family_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00531,vmk0484,annual_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00532,vmk0501,sick_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00533,vmk0518,personal_unpaid,2025-05-05,2025-05-06,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00534,vmk0535,maternity_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00535,vmk0552,family_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00536,vmk0569,annual_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00537,vmk0016,sick_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00538,vmk0033,personal_unpaid,2026-04-22,2026-04-22,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00539,vmk0050,maternity_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00540,vmk0067,family_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00541,vmk0084,annual_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00542,vmk0101,sick_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00543,vmk0118,personal_unpaid,2025-03-15,2025-03-17,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00544,vmk0135,maternity_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00545,vmk0152,family_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00546,vmk0169,annual_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00547,vmk0186,sick_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00548,vmk0203,personal_unpaid,2026-02-08,2026-02-09,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00549,vmk0220,maternity_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00550,vmk0237,family_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00551,vmk0254,annual_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00552,vmk0271,sick_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00553,vmk0288,personal_unpaid,2025-01-01,2025-01-01,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00554,vmk0305,maternity_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00555,vmk0322,family_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00556,vmk0339,annual_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00557,vmk0356,sick_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00558,vmk0373,personal_unpaid,2026-12-18,2026-12-20,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00559,vmk0390,maternity_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00560,vmk0407,family_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00561,vmk0424,annual_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00562,vmk0441,sick_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00563,vmk0458,personal_unpaid,2025-11-11,2025-11-12,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00564,vmk0475,maternity_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00565,vmk0492,family_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00566,vmk0509,annual_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00567,vmk0526,sick_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00568,vmk0543,personal_unpaid,2026-10-04,2026-10-04,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00569,vmk0560,maternity_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00570,vmk0007,family_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00571,vmk0024,annual_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00572,vmk0041,sick_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00573,vmk0058,personal_unpaid,2025-09-21,2025-09-23,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00574,vmk0075,maternity_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00575,vmk0092,family_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00576,vmk0109,annual_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00577,vmk0126,sick_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00578,vmk0143,personal_unpaid,2026-08-14,2026-08-15,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00579,vmk0160,maternity_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00580,vmk0177,family_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00581,vmk0194,annual_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00582,vmk0211,sick_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00583,vmk0228,personal_unpaid,2025-07-07,2025-07-07,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00584,vmk0245,maternity_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00585,vmk0262,family_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00586,vmk0279,annual_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00587,vmk0296,sick_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00588,vmk0313,personal_unpaid,2026-06-24,2026-06-26,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00589,vmk0330,maternity_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00590,vmk0347,family_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00591,vmk0364,annual_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00592,vmk0381,sick_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00593,vmk0398,personal_unpaid,2025-05-17,2025-05-18,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00594,vmk0415,maternity_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00595,vmk0432,family_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00596,vmk0449,annual_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00597,vmk0466,sick_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00598,vmk0483,personal_unpaid,2026-04-10,2026-04-10,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00599,vmk0500,maternity_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00600,vmk0517,family_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00601,vmk0534,annual_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00602,vmk0551,sick_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00603,vmk0568,personal_unpaid,2025-03-03,2025-03-05,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00604,vmk0015,maternity_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00605,vmk0032,family_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00606,vmk0049,annual_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00607,vmk0066,sick_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00608,vmk0083,personal_unpaid,2026-02-20,2026-02-21,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00609,vmk0100,maternity_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00610,vmk0117,family_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00611,vmk0134,annual_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00612,vmk0151,sick_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00613,vmk0168,personal_unpaid,2025-01-13,2025-01-13,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00614,vmk0185,maternity_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00615,vmk0202,family_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00616,vmk0219,annual_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00617,vmk0236,sick_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00618,vmk0253,personal_unpaid,2026-12-06,2026-12-08,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00619,vmk0270,maternity_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00620,vmk0287,family_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00621,vmk0304,annual_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00622,vmk0321,sick_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00623,vmk0338,personal_unpaid,2025-11-23,2025-11-24,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00624,vmk0355,maternity_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00625,vmk0372,family_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00626,vmk0389,annual_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00627,vmk0406,sick_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00628,vmk0423,personal_unpaid,2026-10-16,2026-10-16,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00629,vmk0440,maternity_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00630,vmk0457,family_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00631,vmk0474,annual_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00632,vmk0491,sick_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00633,vmk0508,personal_unpaid,2025-09-09,2025-09-11,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00634,vmk0525,maternity_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00635,vmk0542,family_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00636,vmk0559,annual_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00637,vmk0006,sick_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00638,vmk0023,personal_unpaid,2026-08-02,2026-08-03,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00639,vmk0040,maternity_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00640,vmk0057,family_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00641,vmk0074,annual_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00642,vmk0091,sick_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00643,vmk0108,personal_unpaid,2025-07-19,2025-07-19,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00644,vmk0125,maternity_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00645,vmk0142,family_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00646,vmk0159,annual_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00647,vmk0176,sick_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00648,vmk0193,personal_unpaid,2026-06-12,2026-06-14,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00649,vmk0210,maternity_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00650,vmk0227,family_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00651,vmk0244,annual_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00652,vmk0261,sick_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00653,vmk0278,personal_unpaid,2025-05-05,2025-05-06,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00654,vmk0295,maternity_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00655,vmk0312,family_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00656,vmk0329,annual_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00657,vmk0346,sick_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00658,vmk0363,personal_unpaid,2026-04-22,2026-04-22,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00659,vmk0380,maternity_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00660,vmk0397,family_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00661,vmk0414,annual_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00662,vmk0431,sick_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00663,vmk0448,personal_unpaid,2025-03-15,2025-03-17,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00664,vmk0465,maternity_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00665,vmk0482,family_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00666,vmk0499,annual_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00667,vmk0516,sick_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00668,vmk0533,personal_unpaid,2026-02-08,2026-02-09,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00669,vmk0550,maternity_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00670,vmk0567,family_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00671,vmk0014,annual_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00672,vmk0031,sick_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00673,vmk0048,personal_unpaid,2025-01-01,2025-01-01,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00674,vmk0065,maternity_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00675,vmk0082,family_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00676,vmk0099,annual_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00677,vmk0116,sick_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00678,vmk0133,personal_unpaid,2026-12-18,2026-12-20,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00679,vmk0150,maternity_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00680,vmk0167,family_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00681,vmk0184,annual_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00682,vmk0201,sick_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00683,vmk0218,personal_unpaid,2025-11-11,2025-11-12,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00684,vmk0235,maternity_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00685,vmk0252,family_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00686,vmk0269,annual_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00687,vmk0286,sick_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00688,vmk0303,personal_unpaid,2026-10-04,2026-10-04,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00689,vmk0320,maternity_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00690,vmk0337,family_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00691,vmk0354,annual_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00692,vmk0371,sick_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00693,vmk0388,personal_unpaid,2025-09-21,2025-09-23,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00694,vmk0405,maternity_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00695,vmk0422,family_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00696,vmk0439,annual_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00697,vmk0456,sick_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00698,vmk0473,personal_unpaid,2026-08-14,2026-08-15,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00699,vmk0490,maternity_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00700,vmk0507,family_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00701,vmk0524,annual_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00702,vmk0541,sick_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00703,vmk0558,personal_unpaid,2025-07-07,2025-07-07,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00704,vmk0005,maternity_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00705,vmk0022,family_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00706,vmk0039,annual_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00707,vmk0056,sick_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00708,vmk0073,personal_unpaid,2026-06-24,2026-06-26,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00709,vmk0090,maternity_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00710,vmk0107,family_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00711,vmk0124,annual_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00712,vmk0141,sick_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00713,vmk0158,personal_unpaid,2025-05-17,2025-05-18,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00714,vmk0175,maternity_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00715,vmk0192,family_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00716,vmk0209,annual_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00717,vmk0226,sick_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00718,vmk0243,personal_unpaid,2026-04-10,2026-04-10,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00719,vmk0260,maternity_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00720,vmk0277,family_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00721,vmk0294,annual_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00722,vmk0311,sick_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00723,vmk0328,personal_unpaid,2025-03-03,2025-03-05,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00724,vmk0345,maternity_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00725,vmk0362,family_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00726,vmk0379,annual_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00727,vmk0396,sick_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00728,vmk0413,personal_unpaid,2026-02-20,2026-02-21,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00729,vmk0430,maternity_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00730,vmk0447,family_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00731,vmk0464,annual_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00732,vmk0481,sick_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00733,vmk0498,personal_unpaid,2025-01-13,2025-01-13,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00734,vmk0515,maternity_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00735,vmk0532,family_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00736,vmk0549,annual_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00737,vmk0566,sick_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00738,vmk0013,personal_unpaid,2026-12-06,2026-12-08,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00739,vmk0030,maternity_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00740,vmk0047,family_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00741,vmk0064,annual_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00742,vmk0081,sick_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00743,vmk0098,personal_unpaid,2025-11-23,2025-11-24,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00744,vmk0115,maternity_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00745,vmk0132,family_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00746,vmk0149,annual_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00747,vmk0166,sick_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00748,vmk0183,personal_unpaid,2026-10-16,2026-10-16,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00749,vmk0200,maternity_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00750,vmk0217,family_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00751,vmk0234,annual_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00752,vmk0251,sick_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00753,vmk0268,personal_unpaid,2025-09-09,2025-09-11,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00754,vmk0285,maternity_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00755,vmk0302,family_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00756,vmk0319,annual_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00757,vmk0336,sick_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00758,vmk0353,personal_unpaid,2026-08-02,2026-08-03,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00759,vmk0370,maternity_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00760,vmk0387,family_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00761,vmk0404,annual_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00762,vmk0421,sick_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00763,vmk0438,personal_unpaid,2025-07-19,2025-07-19,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00764,vmk0455,maternity_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00765,vmk0472,family_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00766,vmk0489,annual_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00767,vmk0506,sick_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00768,vmk0523,personal_unpaid,2026-06-12,2026-06-14,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00769,vmk0540,maternity_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00770,vmk0557,family_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00771,vmk0004,annual_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00772,vmk0021,sick_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00773,vmk0038,personal_unpaid,2025-05-05,2025-05-06,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00774,vmk0055,maternity_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00775,vmk0072,family_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00776,vmk0089,annual_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00777,vmk0106,sick_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00778,vmk0123,personal_unpaid,2026-04-22,2026-04-22,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00779,vmk0140,maternity_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00780,vmk0157,family_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00781,vmk0174,annual_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00782,vmk0191,sick_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00783,vmk0208,personal_unpaid,2025-03-15,2025-03-17,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00784,vmk0225,maternity_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00785,vmk0242,family_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00786,vmk0259,annual_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00787,vmk0276,sick_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00788,vmk0293,personal_unpaid,2026-02-08,2026-02-09,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00789,vmk0310,maternity_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00790,vmk0327,family_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00791,vmk0344,annual_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00792,vmk0361,sick_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00793,vmk0378,personal_unpaid,2025-01-01,2025-01-01,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00794,vmk0395,maternity_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00795,vmk0412,family_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00796,vmk0429,annual_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00797,vmk0446,sick_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00798,vmk0463,personal_unpaid,2026-12-18,2026-12-20,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00799,vmk0480,maternity_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00800,vmk0497,family_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00801,vmk0514,annual_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00802,vmk0531,sick_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00803,vmk0548,personal_unpaid,2025-11-11,2025-11-12,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00804,vmk0565,maternity_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00805,vmk0012,family_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00806,vmk0029,annual_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00807,vmk0046,sick_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00808,vmk0063,personal_unpaid,2026-10-04,2026-10-04,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00809,vmk0080,maternity_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00810,vmk0097,family_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00811,vmk0114,annual_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00812,vmk0131,sick_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00813,vmk0148,personal_unpaid,2025-09-21,2025-09-23,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00814,vmk0165,maternity_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00815,vmk0182,family_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00816,vmk0199,annual_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00817,vmk0216,sick_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00818,vmk0233,personal_unpaid,2026-08-14,2026-08-15,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00819,vmk0250,maternity_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00820,vmk0267,family_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00821,vmk0284,annual_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00822,vmk0301,sick_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00823,vmk0318,personal_unpaid,2025-07-07,2025-07-07,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00824,vmk0335,maternity_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00825,vmk0352,family_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00826,vmk0369,annual_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00827,vmk0386,sick_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00828,vmk0403,personal_unpaid,2026-06-24,2026-06-26,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00829,vmk0420,maternity_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00830,vmk0437,family_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00831,vmk0454,annual_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00832,vmk0471,sick_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00833,vmk0488,personal_unpaid,2025-05-17,2025-05-18,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00834,vmk0505,maternity_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00835,vmk0522,family_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00836,vmk0539,annual_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00837,vmk0556,sick_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00838,vmk0003,personal_unpaid,2026-04-10,2026-04-10,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00839,vmk0020,maternity_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00840,vmk0037,family_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00841,vmk0054,annual_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00842,vmk0071,sick_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00843,vmk0088,personal_unpaid,2025-03-03,2025-03-05,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00844,vmk0105,maternity_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00845,vmk0122,family_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00846,vmk0139,annual_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00847,vmk0156,sick_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00848,vmk0173,personal_unpaid,2026-02-20,2026-02-21,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00849,vmk0190,maternity_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00850,vmk0207,family_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00851,vmk0224,annual_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00852,vmk0241,sick_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00853,vmk0258,personal_unpaid,2025-01-13,2025-01-13,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00854,vmk0275,maternity_leave,2026-08-02,2026-08-03,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00855,vmk0292,family_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00856,vmk0309,annual_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00857,vmk0326,sick_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00858,vmk0343,personal_unpaid,2026-12-06,2026-12-08,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00859,vmk0360,maternity_leave,2025-07-19,2025-07-19,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00860,vmk0377,family_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00861,vmk0394,annual_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00862,vmk0411,sick_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00863,vmk0428,personal_unpaid,2025-11-23,2025-11-24,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00864,vmk0445,maternity_leave,2026-06-12,2026-06-14,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00865,vmk0462,family_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00866,vmk0479,annual_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00867,vmk0496,sick_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00868,vmk0513,personal_unpaid,2026-10-16,2026-10-16,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00869,vmk0530,maternity_leave,2025-05-05,2025-05-06,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00870,vmk0547,family_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00871,vmk0564,annual_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00872,vmk0011,sick_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00873,vmk0028,personal_unpaid,2025-09-09,2025-09-11,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00874,vmk0045,maternity_leave,2026-04-22,2026-04-22,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00875,vmk0062,family_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00876,vmk0079,annual_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00877,vmk0096,sick_leave,2025-01-13,2025-01-13,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-01-10T08:00:00+07:00,Approved according to company policy.
+leave_2025_00878,vmk0113,personal_unpaid,2026-08-02,2026-08-03,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-07-30T08:00:00+07:00,Approved according to company policy.
+leave_2025_00879,vmk0130,maternity_leave,2025-03-15,2025-03-17,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-03-12T08:00:00+07:00,Approved according to company policy.
+leave_2025_00880,vmk0147,family_leave,2026-10-04,2026-10-04,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00881,vmk0164,annual_leave,2025-05-17,2025-05-18,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-14T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00882,vmk0181,sick_leave,2026-12-06,2026-12-08,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00883,vmk0198,personal_unpaid,2025-07-19,2025-07-19,false,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-16T08:00:00+07:00,Approved according to company policy.
+leave_2025_00884,vmk0215,maternity_leave,2026-02-08,2026-02-09,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-05T08:00:00+07:00,Approved according to company policy.
+leave_2025_00885,vmk0232,family_leave,2025-09-21,2025-09-23,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-18T08:00:00+07:00,Approved according to company policy.
+leave_2025_00886,vmk0249,annual_leave,2026-04-10,2026-04-10,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00887,vmk0266,sick_leave,2025-11-23,2025-11-24,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-20T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00888,vmk0283,personal_unpaid,2026-06-12,2026-06-14,false,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00889,vmk0300,maternity_leave,2025-01-01,2025-01-01,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2024-12-29T08:00:00+07:00,Approved according to company policy.
+leave_2025_00890,vmk0317,family_leave,2026-08-14,2026-08-15,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-08-11T08:00:00+07:00,Approved according to company policy.
+leave_2025_00891,vmk0334,annual_leave,2025-03-03,2025-03-05,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-02-28T08:00:00+07:00,Approved according to company policy.
+leave_2025_00892,vmk0351,sick_leave,2026-10-16,2026-10-16,true,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00893,vmk0368,personal_unpaid,2025-05-05,2025-05-06,false,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-05-02T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00894,vmk0385,maternity_leave,2026-12-18,2026-12-20,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,
+leave_2025_00895,vmk0402,family_leave,2025-07-07,2025-07-07,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-07-04T08:00:00+07:00,Approved according to company policy.
+leave_2025_00896,vmk0419,annual_leave,2026-02-20,2026-02-21,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2026-02-17T08:00:00+07:00,Approved according to company policy.
+leave_2025_00897,vmk0436,sick_leave,2025-09-09,2025-09-11,true,Nghỉ theo kế hoạch đã đăng ký.,approved,2025-09-06T08:00:00+07:00,Approved according to company policy.
+leave_2025_00898,vmk0453,personal_unpaid,2026-04-22,2026-04-22,false,Nghỉ theo kế hoạch đã đăng ký.,pending,,
+leave_2025_00899,vmk0470,maternity_leave,2025-11-11,2025-11-12,true,Nghỉ theo kế hoạch đã đăng ký.,rejected,2025-11-08T08:00:00+07:00,Request does not meet current policy.
+leave_2025_00900,vmk0487,family_leave,2026-06-24,2026-06-26,true,Nghỉ theo kế hoạch đã đăng ký.,cancelled,,

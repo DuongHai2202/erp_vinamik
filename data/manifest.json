@@ -1,0 +1,47 @@
+{
+  "data_version": "large_seed_2026_09",
+  "generated_at": "2026-09-16T10:54:05.709412+00:00",
+  "random_seed": 20260916,
+  "synthetic_personal_data": true,
+  "public_product_reference_count": 40,
+  "modules": {
+    "human_resources": {
+      "departments": 20,
+      "job_titles": 30,
+      "work_shifts": 3,
+      "employees": 600,
+      "contracts": 600,
+      "leave_requests": 900,
+      "reward_discipline": 420,
+      "payroll_periods": 12
+    },
+    "inventory": {
+      "categories": 9,
+      "suppliers": 30,
+      "warehouses": 6,
+      "locations": 60,
+      "stock_items": 520,
+      "lots": 1180,
+      "receipts": 950,
+      "receipt_lines": 2250,
+      "issues": 420,
+      "issue_lines": 840,
+      "transfers": 250,
+      "transfer_lines": 250,
+      "stock_movements": 3590,
+      "stock_balances": 2476
+    },
+    "production": {
+      "plans": 250,
+      "plan_lines": 500,
+      "boms": 200,
+      "bom_lines": 1000,
+      "orders": 600,
+      "material_requirements": 3000,
+      "order_events": 1200,
+      "assignments": 900,
+      "material_consumptions": 1200,
+      "outputs": 600
+    }
+  }
+}

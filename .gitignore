@@ -1,0 +1,39 @@
+# Runtime and secrets
+.env
+.env.*
+!.env.example
+
+# Java / Spring
+**/target/
+**/.mvn-cache/
+ERP_Backend/*.log
+
+# Node / Vite
+ERP_Client/node_modules/
+ERP_Client/dist/
+ERP_Client/.vite/
+ERP_Client/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE and OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Agent, browser, and generated runtime artifacts
+.agent/
+.agents/
+.codex_temp/
+.impeccable/
+runtime_logs/
+**/__pycache__/
+*.pyc
+*.log
+
+# Local test outputs
+*.dump
+*.sql.gz

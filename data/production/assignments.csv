@@ -1,0 +1,901 @@
+﻿order_code,employee_code,shift_code,assignment_name,starts_at,ends_at,status,notes
+production_order_2026_00001,vmk0010,shift_morning,Vận hành thiết bị,2026-01-01T06:00:00+07:00,2026-01-01T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00001,vmk0011,shift_afternoon,Kiểm soát đóng gói,2026-01-01T14:00:00+07:00,2026-01-01T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00002,vmk0013,shift_afternoon,Kiểm soát đóng gói,2026-01-02T14:00:00+07:00,2026-01-02T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00003,vmk0031,shift_night,Bàn giao ca,2026-02-06T22:00:00+07:00,2026-02-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00003,vmk0042,shift_morning,Vận hành thiết bị,2026-02-06T06:00:00+07:00,2026-02-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00004,vmk0048,shift_morning,Vận hành thiết bị,2026-02-07T06:00:00+07:00,2026-02-07T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00005,vmk0062,shift_afternoon,Kiểm soát đóng gói,2026-03-07T14:00:00+07:00,2026-03-07T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00005,vmk0065,shift_night,Bàn giao ca,2026-03-07T22:00:00+07:00,2026-03-08T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00006,vmk0076,shift_night,Bàn giao ca,2026-03-08T22:00:00+07:00,2026-03-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00007,vmk0093,shift_morning,Vận hành thiết bị,2026-04-12T06:00:00+07:00,2026-04-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00007,vmk0096,shift_afternoon,Kiểm soát đóng gói,2026-04-12T14:00:00+07:00,2026-04-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00008,vmk0110,shift_afternoon,Kiểm soát đóng gói,2026-04-13T14:00:00+07:00,2026-04-13T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00009,vmk0124,shift_night,Bàn giao ca,2026-05-13T22:00:00+07:00,2026-05-14T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00009,vmk0127,shift_morning,Vận hành thiết bị,2026-05-13T06:00:00+07:00,2026-05-13T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00010,vmk0138,shift_morning,Vận hành thiết bị,2026-05-14T06:00:00+07:00,2026-05-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00011,vmk0155,shift_afternoon,Kiểm soát đóng gói,2026-06-18T14:00:00+07:00,2026-06-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00011,vmk0158,shift_night,Bàn giao ca,2026-06-18T22:00:00+07:00,2026-06-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00012,vmk0172,shift_night,Bàn giao ca,2026-06-19T22:00:00+07:00,2026-06-20T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00013,vmk0186,shift_morning,Vận hành thiết bị,2026-07-19T06:00:00+07:00,2026-07-19T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00013,vmk0189,shift_afternoon,Kiểm soát đóng gói,2026-07-19T14:00:00+07:00,2026-07-19T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00014,vmk0195,shift_afternoon,Kiểm soát đóng gói,2026-07-20T14:00:00+07:00,2026-07-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00015,vmk0209,shift_night,Bàn giao ca,2026-08-04T22:00:00+07:00,2026-08-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00015,vmk0220,shift_morning,Vận hành thiết bị,2026-08-04T06:00:00+07:00,2026-08-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00016,vmk0226,shift_morning,Vận hành thiết bị,2026-08-05T06:00:00+07:00,2026-08-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00017,vmk0243,shift_afternoon,Kiểm soát đóng gói,2026-09-05T14:00:00+07:00,2026-09-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00017,vmk0251,shift_night,Bàn giao ca,2026-09-05T22:00:00+07:00,2026-09-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00018,vmk0257,shift_night,Bàn giao ca,2026-09-06T22:00:00+07:00,2026-09-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00019,vmk0271,shift_morning,Vận hành thiết bị,2026-01-10T06:00:00+07:00,2026-01-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00019,vmk0274,shift_afternoon,Kiểm soát đóng gói,2026-01-10T14:00:00+07:00,2026-01-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00020,vmk0288,shift_afternoon,Kiểm soát đóng gói,2026-01-11T14:00:00+07:00,2026-01-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00021,vmk0305,shift_night,Bàn giao ca,2026-02-11T22:00:00+07:00,2026-02-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00021,vmk0308,shift_morning,Vận hành thiết bị,2026-02-11T06:00:00+07:00,2026-02-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00022,vmk0319,shift_morning,Vận hành thiết bị,2026-02-12T06:00:00+07:00,2026-02-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00023,vmk0333,shift_afternoon,Kiểm soát đóng gói,2026-03-16T14:00:00+07:00,2026-03-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00023,vmk0336,shift_night,Bàn giao ca,2026-03-16T22:00:00+07:00,2026-03-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00024,vmk0350,shift_night,Bàn giao ca,2026-03-17T22:00:00+07:00,2026-03-18T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00025,vmk0367,shift_morning,Vận hành thiết bị,2026-04-17T06:00:00+07:00,2026-04-17T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00025,vmk0370,shift_afternoon,Kiểm soát đóng gói,2026-04-17T14:00:00+07:00,2026-04-17T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00026,vmk0381,shift_afternoon,Kiểm soát đóng gói,2026-04-18T14:00:00+07:00,2026-04-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00027,vmk0390,shift_night,Bàn giao ca,2026-05-22T22:00:00+07:00,2026-05-23T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00027,vmk0398,shift_morning,Vận hành thiết bị,2026-05-22T06:00:00+07:00,2026-05-22T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00028,vmk0404,shift_morning,Vận hành thiết bị,2026-05-23T06:00:00+07:00,2026-05-23T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00029,vmk0421,shift_afternoon,Kiểm soát đóng gói,2026-06-03T14:00:00+07:00,2026-06-03T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00029,vmk0432,shift_night,Bàn giao ca,2026-06-03T22:00:00+07:00,2026-06-04T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00030,vmk0438,shift_night,Bàn giao ca,2026-06-04T22:00:00+07:00,2026-06-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00031,vmk0452,shift_morning,Vận hành thiết bị,2026-07-08T06:00:00+07:00,2026-07-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00031,vmk0455,shift_afternoon,Kiểm soát đóng gói,2026-07-08T14:00:00+07:00,2026-07-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00032,vmk0466,shift_afternoon,Kiểm soát đóng gói,2026-07-09T14:00:00+07:00,2026-07-09T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00033,vmk0483,shift_night,Bàn giao ca,2026-08-09T22:00:00+07:00,2026-08-10T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00033,vmk0486,shift_morning,Vận hành thiết bị,2026-08-09T06:00:00+07:00,2026-08-09T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00034,vmk0500,shift_morning,Vận hành thiết bị,2026-08-10T06:00:00+07:00,2026-08-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00035,vmk0514,shift_afternoon,Kiểm soát đóng gói,2026-09-14T14:00:00+07:00,2026-09-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00035,vmk0517,shift_night,Bàn giao ca,2026-09-14T22:00:00+07:00,2026-09-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00036,vmk0528,shift_night,Bàn giao ca,2026-09-15T22:00:00+07:00,2026-09-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00037,vmk0545,shift_morning,Vận hành thiết bị,2026-01-15T06:00:00+07:00,2026-01-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00037,vmk0548,shift_afternoon,Kiểm soát đóng gói,2026-01-15T14:00:00+07:00,2026-01-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00038,vmk0011,shift_afternoon,Kiểm soát đóng gói,2026-01-16T14:00:00+07:00,2026-01-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00039,vmk0025,shift_night,Bàn giao ca,2026-02-20T22:00:00+07:00,2026-02-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00039,vmk0028,shift_morning,Vận hành thiết bị,2026-02-20T06:00:00+07:00,2026-02-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00040,vmk0042,shift_morning,Vận hành thiết bị,2026-02-21T06:00:00+07:00,2026-02-21T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00041,vmk0056,shift_afternoon,Kiểm soát đóng gói,2026-03-01T14:00:00+07:00,2026-03-01T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00041,vmk0059,shift_night,Bàn giao ca,2026-03-01T22:00:00+07:00,2026-03-02T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00042,vmk0065,shift_night,Bàn giao ca,2026-03-02T22:00:00+07:00,2026-03-03T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00043,vmk0079,shift_morning,Vận hành thiết bị,2026-04-06T06:00:00+07:00,2026-04-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00043,vmk0090,shift_afternoon,Kiểm soát đóng gói,2026-04-06T14:00:00+07:00,2026-04-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00044,vmk0096,shift_afternoon,Kiểm soát đóng gói,2026-04-07T14:00:00+07:00,2026-04-07T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00045,vmk0113,shift_night,Bàn giao ca,2026-05-07T22:00:00+07:00,2026-05-08T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00045,vmk0121,shift_morning,Vận hành thiết bị,2026-05-07T06:00:00+07:00,2026-05-07T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00046,vmk0127,shift_morning,Vận hành thiết bị,2026-05-08T06:00:00+07:00,2026-05-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00047,vmk0141,shift_afternoon,Kiểm soát đóng gói,2026-06-12T14:00:00+07:00,2026-06-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00047,vmk0144,shift_night,Bàn giao ca,2026-06-12T22:00:00+07:00,2026-06-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00048,vmk0158,shift_night,Bàn giao ca,2026-06-13T22:00:00+07:00,2026-06-14T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00049,vmk0175,shift_morning,Vận hành thiết bị,2026-07-13T06:00:00+07:00,2026-07-13T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00049,vmk0178,shift_afternoon,Kiểm soát đóng gói,2026-07-13T14:00:00+07:00,2026-07-13T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00050,vmk0189,shift_afternoon,Kiểm soát đóng gói,2026-07-14T14:00:00+07:00,2026-07-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00051,vmk0203,shift_night,Bàn giao ca,2026-08-18T22:00:00+07:00,2026-08-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00051,vmk0206,shift_morning,Vận hành thiết bị,2026-08-18T06:00:00+07:00,2026-08-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00052,vmk0220,shift_morning,Vận hành thiết bị,2026-08-19T06:00:00+07:00,2026-08-19T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00053,vmk0237,shift_afternoon,Kiểm soát đóng gói,2026-09-19T14:00:00+07:00,2026-09-19T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00053,vmk0240,shift_night,Bàn giao ca,2026-09-19T22:00:00+07:00,2026-09-20T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00054,vmk0251,shift_night,Bàn giao ca,2026-09-20T22:00:00+07:00,2026-09-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00055,vmk0260,shift_morning,Vận hành thiết bị,2026-01-04T06:00:00+07:00,2026-01-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00055,vmk0268,shift_afternoon,Kiểm soát đóng gói,2026-01-04T14:00:00+07:00,2026-01-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00056,vmk0274,shift_afternoon,Kiểm soát đóng gói,2026-01-05T14:00:00+07:00,2026-01-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00057,vmk0291,shift_night,Bàn giao ca,2026-02-05T22:00:00+07:00,2026-02-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00057,vmk0302,shift_morning,Vận hành thiết bị,2026-02-05T06:00:00+07:00,2026-02-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00058,vmk0308,shift_morning,Vận hành thiết bị,2026-02-06T06:00:00+07:00,2026-02-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00059,vmk0322,shift_afternoon,Kiểm soát đóng gói,2026-03-10T14:00:00+07:00,2026-03-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00059,vmk0325,shift_night,Bàn giao ca,2026-03-10T22:00:00+07:00,2026-03-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00060,vmk0336,shift_night,Bàn giao ca,2026-03-11T22:00:00+07:00,2026-03-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00061,vmk0353,shift_morning,Vận hành thiết bị,2026-04-11T06:00:00+07:00,2026-04-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00061,vmk0356,shift_afternoon,Kiểm soát đóng gói,2026-04-11T14:00:00+07:00,2026-04-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00062,vmk0370,shift_afternoon,Kiểm soát đóng gói,2026-04-12T14:00:00+07:00,2026-04-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00063,vmk0384,shift_night,Bàn giao ca,2026-05-16T22:00:00+07:00,2026-05-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00063,vmk0387,shift_morning,Vận hành thiết bị,2026-05-16T06:00:00+07:00,2026-05-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00064,vmk0398,shift_morning,Vận hành thiết bị,2026-05-17T06:00:00+07:00,2026-05-17T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00065,vmk0415,shift_afternoon,Kiểm soát đóng gói,2026-06-17T14:00:00+07:00,2026-06-17T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00065,vmk0418,shift_night,Bàn giao ca,2026-06-17T22:00:00+07:00,2026-06-18T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00066,vmk0432,shift_night,Bàn giao ca,2026-06-18T22:00:00+07:00,2026-06-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00067,vmk0446,shift_morning,Vận hành thiết bị,2026-07-22T06:00:00+07:00,2026-07-22T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00067,vmk0449,shift_afternoon,Kiểm soát đóng gói,2026-07-22T14:00:00+07:00,2026-07-22T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00068,vmk0455,shift_afternoon,Kiểm soát đóng gói,2026-07-23T14:00:00+07:00,2026-07-23T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00069,vmk0469,shift_night,Bàn giao ca,2026-08-03T22:00:00+07:00,2026-08-04T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00069,vmk0480,shift_morning,Vận hành thiết bị,2026-08-03T06:00:00+07:00,2026-08-03T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00070,vmk0486,shift_morning,Vận hành thiết bị,2026-08-04T06:00:00+07:00,2026-08-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00071,vmk0503,shift_afternoon,Kiểm soát đóng gói,2026-09-08T14:00:00+07:00,2026-09-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00071,vmk0511,shift_night,Bàn giao ca,2026-09-08T22:00:00+07:00,2026-09-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00072,vmk0517,shift_night,Bàn giao ca,2026-09-09T22:00:00+07:00,2026-09-10T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00073,vmk0531,shift_morning,Vận hành thiết bị,2026-01-09T06:00:00+07:00,2026-01-09T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00073,vmk0534,shift_afternoon,Kiểm soát đóng gói,2026-01-09T14:00:00+07:00,2026-01-09T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00074,vmk0548,shift_afternoon,Kiểm soát đóng gói,2026-01-10T14:00:00+07:00,2026-01-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00075,vmk0012,shift_night,Bàn giao ca,2026-02-14T22:00:00+07:00,2026-02-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00075,vmk0013,shift_morning,Vận hành thiết bị,2026-02-14T06:00:00+07:00,2026-02-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00076,vmk0028,shift_morning,Vận hành thiết bị,2026-02-15T06:00:00+07:00,2026-02-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00077,vmk0045,shift_afternoon,Kiểm soát đóng gói,2026-03-15T14:00:00+07:00,2026-03-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00077,vmk0048,shift_night,Bàn giao ca,2026-03-15T22:00:00+07:00,2026-03-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00078,vmk0059,shift_night,Bàn giao ca,2026-03-16T22:00:00+07:00,2026-03-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00079,vmk0073,shift_morning,Vận hành thiết bị,2026-04-20T06:00:00+07:00,2026-04-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00079,vmk0076,shift_afternoon,Kiểm soát đóng gói,2026-04-20T14:00:00+07:00,2026-04-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00080,vmk0090,shift_afternoon,Kiểm soát đóng gói,2026-04-21T14:00:00+07:00,2026-04-21T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00081,vmk0107,shift_night,Bàn giao ca,2026-05-01T22:00:00+07:00,2026-05-02T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00081,vmk0110,shift_morning,Vận hành thiết bị,2026-05-01T06:00:00+07:00,2026-05-01T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00082,vmk0121,shift_morning,Vận hành thiết bị,2026-05-02T06:00:00+07:00,2026-05-02T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00083,vmk0130,shift_afternoon,Kiểm soát đóng gói,2026-06-06T14:00:00+07:00,2026-06-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00083,vmk0138,shift_night,Bàn giao ca,2026-06-06T22:00:00+07:00,2026-06-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00084,vmk0144,shift_night,Bàn giao ca,2026-06-07T22:00:00+07:00,2026-06-08T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00085,vmk0161,shift_morning,Vận hành thiết bị,2026-07-07T06:00:00+07:00,2026-07-07T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00085,vmk0172,shift_afternoon,Kiểm soát đóng gói,2026-07-07T14:00:00+07:00,2026-07-07T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00086,vmk0178,shift_afternoon,Kiểm soát đóng gói,2026-07-08T14:00:00+07:00,2026-07-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00087,vmk0192,shift_night,Bàn giao ca,2026-08-12T22:00:00+07:00,2026-08-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00087,vmk0195,shift_morning,Vận hành thiết bị,2026-08-12T06:00:00+07:00,2026-08-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00088,vmk0206,shift_morning,Vận hành thiết bị,2026-08-13T06:00:00+07:00,2026-08-13T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00089,vmk0223,shift_afternoon,Kiểm soát đóng gói,2026-09-13T14:00:00+07:00,2026-09-13T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00089,vmk0226,shift_night,Bàn giao ca,2026-09-13T22:00:00+07:00,2026-09-14T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00090,vmk0240,shift_night,Bàn giao ca,2026-09-14T22:00:00+07:00,2026-09-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00091,vmk0254,shift_morning,Vận hành thiết bị,2026-01-18T06:00:00+07:00,2026-01-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00091,vmk0257,shift_afternoon,Kiểm soát đóng gói,2026-01-18T14:00:00+07:00,2026-01-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00092,vmk0268,shift_afternoon,Kiểm soát đóng gói,2026-01-19T14:00:00+07:00,2026-01-19T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00093,vmk0285,shift_night,Bàn giao ca,2026-02-19T22:00:00+07:00,2026-02-20T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00093,vmk0288,shift_morning,Vận hành thiết bị,2026-02-19T06:00:00+07:00,2026-02-19T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00094,vmk0302,shift_morning,Vận hành thiết bị,2026-02-20T06:00:00+07:00,2026-02-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00095,vmk0316,shift_afternoon,Kiểm soát đóng gói,2026-03-04T14:00:00+07:00,2026-03-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00095,vmk0319,shift_night,Bàn giao ca,2026-03-04T22:00:00+07:00,2026-03-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00096,vmk0325,shift_night,Bàn giao ca,2026-03-05T22:00:00+07:00,2026-03-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00097,vmk0339,shift_morning,Vận hành thiết bị,2026-04-05T06:00:00+07:00,2026-04-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00097,vmk0350,shift_afternoon,Kiểm soát đóng gói,2026-04-05T14:00:00+07:00,2026-04-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00098,vmk0356,shift_afternoon,Kiểm soát đóng gói,2026-04-06T14:00:00+07:00,2026-04-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00099,vmk0373,shift_night,Bàn giao ca,2026-05-10T22:00:00+07:00,2026-05-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00099,vmk0381,shift_morning,Vận hành thiết bị,2026-05-10T06:00:00+07:00,2026-05-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00100,vmk0387,shift_morning,Vận hành thiết bị,2026-05-11T06:00:00+07:00,2026-05-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00101,vmk0401,shift_afternoon,Kiểm soát đóng gói,2026-06-11T14:00:00+07:00,2026-06-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00101,vmk0404,shift_night,Bàn giao ca,2026-06-11T22:00:00+07:00,2026-06-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00102,vmk0418,shift_night,Bàn giao ca,2026-06-12T22:00:00+07:00,2026-06-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00103,vmk0435,shift_morning,Vận hành thiết bị,2026-07-16T06:00:00+07:00,2026-07-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00103,vmk0438,shift_afternoon,Kiểm soát đóng gói,2026-07-16T14:00:00+07:00,2026-07-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00104,vmk0449,shift_afternoon,Kiểm soát đóng gói,2026-07-17T14:00:00+07:00,2026-07-17T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00105,vmk0463,shift_night,Bàn giao ca,2026-08-17T22:00:00+07:00,2026-08-18T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00105,vmk0466,shift_morning,Vận hành thiết bị,2026-08-17T06:00:00+07:00,2026-08-17T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00106,vmk0480,shift_morning,Vận hành thiết bị,2026-08-18T06:00:00+07:00,2026-08-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00107,vmk0497,shift_afternoon,Kiểm soát đóng gói,2026-09-22T14:00:00+07:00,2026-09-22T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00107,vmk0500,shift_night,Bàn giao ca,2026-09-22T22:00:00+07:00,2026-09-23T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00108,vmk0511,shift_night,Bàn giao ca,2026-09-23T22:00:00+07:00,2026-09-24T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00109,vmk0520,shift_morning,Vận hành thiết bị,2026-01-03T06:00:00+07:00,2026-01-03T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00109,vmk0528,shift_afternoon,Kiểm soát đóng gói,2026-01-03T14:00:00+07:00,2026-01-03T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00110,vmk0534,shift_afternoon,Kiểm soát đóng gói,2026-01-04T14:00:00+07:00,2026-01-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00111,vmk0010,shift_night,Bàn giao ca,2026-02-08T22:00:00+07:00,2026-02-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00111,vmk0011,shift_morning,Vận hành thiết bị,2026-02-08T06:00:00+07:00,2026-02-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00112,vmk0013,shift_morning,Vận hành thiết bị,2026-02-09T06:00:00+07:00,2026-02-09T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00113,vmk0031,shift_afternoon,Kiểm soát đóng gói,2026-03-09T14:00:00+07:00,2026-03-09T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00113,vmk0042,shift_night,Bàn giao ca,2026-03-09T22:00:00+07:00,2026-03-10T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00114,vmk0048,shift_night,Bàn giao ca,2026-03-10T22:00:00+07:00,2026-03-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00115,vmk0062,shift_morning,Vận hành thiết bị,2026-04-14T06:00:00+07:00,2026-04-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00115,vmk0065,shift_afternoon,Kiểm soát đóng gói,2026-04-14T14:00:00+07:00,2026-04-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00116,vmk0076,shift_afternoon,Kiểm soát đóng gói,2026-04-15T14:00:00+07:00,2026-04-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00117,vmk0093,shift_night,Bàn giao ca,2026-05-15T22:00:00+07:00,2026-05-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00117,vmk0096,shift_morning,Vận hành thiết bị,2026-05-15T06:00:00+07:00,2026-05-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00118,vmk0110,shift_morning,Vận hành thiết bị,2026-05-16T06:00:00+07:00,2026-05-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00119,vmk0124,shift_afternoon,Kiểm soát đóng gói,2026-06-20T14:00:00+07:00,2026-06-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00119,vmk0127,shift_night,Bàn giao ca,2026-06-20T22:00:00+07:00,2026-06-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00120,vmk0138,shift_night,Bàn giao ca,2026-06-21T22:00:00+07:00,2026-06-22T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00121,vmk0155,shift_morning,Vận hành thiết bị,2026-07-01T06:00:00+07:00,2026-07-01T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00121,vmk0158,shift_afternoon,Kiểm soát đóng gói,2026-07-01T14:00:00+07:00,2026-07-01T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00122,vmk0172,shift_afternoon,Kiểm soát đóng gói,2026-07-02T14:00:00+07:00,2026-07-02T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00123,vmk0186,shift_night,Bàn giao ca,2026-08-06T22:00:00+07:00,2026-08-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00123,vmk0189,shift_morning,Vận hành thiết bị,2026-08-06T06:00:00+07:00,2026-08-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00124,vmk0195,shift_morning,Vận hành thiết bị,2026-08-07T06:00:00+07:00,2026-08-07T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00125,vmk0209,shift_afternoon,Kiểm soát đóng gói,2026-09-07T14:00:00+07:00,2026-09-07T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00125,vmk0220,shift_night,Bàn giao ca,2026-09-07T22:00:00+07:00,2026-09-08T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00126,vmk0226,shift_night,Bàn giao ca,2026-09-08T22:00:00+07:00,2026-09-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00127,vmk0243,shift_morning,Vận hành thiết bị,2026-01-12T06:00:00+07:00,2026-01-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00127,vmk0251,shift_afternoon,Kiểm soát đóng gói,2026-01-12T14:00:00+07:00,2026-01-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00128,vmk0257,shift_afternoon,Kiểm soát đóng gói,2026-01-13T14:00:00+07:00,2026-01-13T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00129,vmk0271,shift_night,Bàn giao ca,2026-02-13T22:00:00+07:00,2026-02-14T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00129,vmk0274,shift_morning,Vận hành thiết bị,2026-02-13T06:00:00+07:00,2026-02-13T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00130,vmk0288,shift_morning,Vận hành thiết bị,2026-02-14T06:00:00+07:00,2026-02-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00131,vmk0305,shift_afternoon,Kiểm soát đóng gói,2026-03-18T14:00:00+07:00,2026-03-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00131,vmk0308,shift_night,Bàn giao ca,2026-03-18T22:00:00+07:00,2026-03-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00132,vmk0319,shift_night,Bàn giao ca,2026-03-19T22:00:00+07:00,2026-03-20T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00133,vmk0333,shift_morning,Vận hành thiết bị,2026-04-19T06:00:00+07:00,2026-04-19T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00133,vmk0336,shift_afternoon,Kiểm soát đóng gói,2026-04-19T14:00:00+07:00,2026-04-19T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00134,vmk0350,shift_afternoon,Kiểm soát đóng gói,2026-04-20T14:00:00+07:00,2026-04-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00135,vmk0367,shift_night,Bàn giao ca,2026-05-04T22:00:00+07:00,2026-05-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00135,vmk0370,shift_morning,Vận hành thiết bị,2026-05-04T06:00:00+07:00,2026-05-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00136,vmk0381,shift_morning,Vận hành thiết bị,2026-05-05T06:00:00+07:00,2026-05-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00137,vmk0390,shift_afternoon,Kiểm soát đóng gói,2026-06-05T14:00:00+07:00,2026-06-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00137,vmk0398,shift_night,Bàn giao ca,2026-06-05T22:00:00+07:00,2026-06-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00138,vmk0404,shift_night,Bàn giao ca,2026-06-06T22:00:00+07:00,2026-06-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00139,vmk0421,shift_morning,Vận hành thiết bị,2026-07-10T06:00:00+07:00,2026-07-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00139,vmk0432,shift_afternoon,Kiểm soát đóng gói,2026-07-10T14:00:00+07:00,2026-07-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00140,vmk0438,shift_afternoon,Kiểm soát đóng gói,2026-07-11T14:00:00+07:00,2026-07-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00141,vmk0452,shift_night,Bàn giao ca,2026-08-11T22:00:00+07:00,2026-08-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00141,vmk0455,shift_morning,Vận hành thiết bị,2026-08-11T06:00:00+07:00,2026-08-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00142,vmk0466,shift_morning,Vận hành thiết bị,2026-08-12T06:00:00+07:00,2026-08-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00143,vmk0483,shift_afternoon,Kiểm soát đóng gói,2026-09-16T14:00:00+07:00,2026-09-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00143,vmk0486,shift_night,Bàn giao ca,2026-09-16T22:00:00+07:00,2026-09-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00144,vmk0500,shift_night,Bàn giao ca,2026-09-17T22:00:00+07:00,2026-09-18T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00145,vmk0514,shift_morning,Vận hành thiết bị,2026-01-17T06:00:00+07:00,2026-01-17T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00145,vmk0517,shift_afternoon,Kiểm soát đóng gói,2026-01-17T14:00:00+07:00,2026-01-17T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00146,vmk0528,shift_afternoon,Kiểm soát đóng gói,2026-01-18T14:00:00+07:00,2026-01-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00147,vmk0545,shift_night,Bàn giao ca,2026-02-22T22:00:00+07:00,2026-02-23T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00147,vmk0548,shift_morning,Vận hành thiết bị,2026-02-22T06:00:00+07:00,2026-02-22T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00148,vmk0011,shift_morning,Vận hành thiết bị,2026-02-23T06:00:00+07:00,2026-02-23T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00149,vmk0025,shift_afternoon,Kiểm soát đóng gói,2026-03-03T14:00:00+07:00,2026-03-03T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00149,vmk0028,shift_night,Bàn giao ca,2026-03-03T22:00:00+07:00,2026-03-04T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00150,vmk0042,shift_night,Bàn giao ca,2026-03-04T22:00:00+07:00,2026-03-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00151,vmk0056,shift_morning,Vận hành thiết bị,2026-04-08T06:00:00+07:00,2026-04-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00151,vmk0059,shift_afternoon,Kiểm soát đóng gói,2026-04-08T14:00:00+07:00,2026-04-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00152,vmk0065,shift_afternoon,Kiểm soát đóng gói,2026-04-09T14:00:00+07:00,2026-04-09T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00153,vmk0079,shift_night,Bàn giao ca,2026-05-09T22:00:00+07:00,2026-05-10T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00153,vmk0090,shift_morning,Vận hành thiết bị,2026-05-09T06:00:00+07:00,2026-05-09T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00154,vmk0096,shift_morning,Vận hành thiết bị,2026-05-10T06:00:00+07:00,2026-05-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00155,vmk0113,shift_afternoon,Kiểm soát đóng gói,2026-06-14T14:00:00+07:00,2026-06-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00155,vmk0121,shift_night,Bàn giao ca,2026-06-14T22:00:00+07:00,2026-06-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00156,vmk0127,shift_night,Bàn giao ca,2026-06-15T22:00:00+07:00,2026-06-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00157,vmk0141,shift_morning,Vận hành thiết bị,2026-07-15T06:00:00+07:00,2026-07-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00157,vmk0144,shift_afternoon,Kiểm soát đóng gói,2026-07-15T14:00:00+07:00,2026-07-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00158,vmk0158,shift_afternoon,Kiểm soát đóng gói,2026-07-16T14:00:00+07:00,2026-07-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00159,vmk0175,shift_night,Bàn giao ca,2026-08-20T22:00:00+07:00,2026-08-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00159,vmk0178,shift_morning,Vận hành thiết bị,2026-08-20T06:00:00+07:00,2026-08-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00160,vmk0189,shift_morning,Vận hành thiết bị,2026-08-21T06:00:00+07:00,2026-08-21T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00161,vmk0203,shift_afternoon,Kiểm soát đóng gói,2026-09-01T14:00:00+07:00,2026-09-01T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00161,vmk0206,shift_night,Bàn giao ca,2026-09-01T22:00:00+07:00,2026-09-02T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00162,vmk0220,shift_night,Bàn giao ca,2026-09-02T22:00:00+07:00,2026-09-03T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00163,vmk0237,shift_morning,Vận hành thiết bị,2026-01-06T06:00:00+07:00,2026-01-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00163,vmk0240,shift_afternoon,Kiểm soát đóng gói,2026-01-06T14:00:00+07:00,2026-01-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00164,vmk0251,shift_afternoon,Kiểm soát đóng gói,2026-01-07T14:00:00+07:00,2026-01-07T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00165,vmk0260,shift_night,Bàn giao ca,2026-02-07T22:00:00+07:00,2026-02-08T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00165,vmk0268,shift_morning,Vận hành thiết bị,2026-02-07T06:00:00+07:00,2026-02-07T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00166,vmk0274,shift_morning,Vận hành thiết bị,2026-02-08T06:00:00+07:00,2026-02-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00167,vmk0291,shift_afternoon,Kiểm soát đóng gói,2026-03-12T14:00:00+07:00,2026-03-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00167,vmk0302,shift_night,Bàn giao ca,2026-03-12T22:00:00+07:00,2026-03-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00168,vmk0308,shift_night,Bàn giao ca,2026-03-13T22:00:00+07:00,2026-03-14T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00169,vmk0322,shift_morning,Vận hành thiết bị,2026-04-13T06:00:00+07:00,2026-04-13T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00169,vmk0325,shift_afternoon,Kiểm soát đóng gói,2026-04-13T14:00:00+07:00,2026-04-13T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00170,vmk0336,shift_afternoon,Kiểm soát đóng gói,2026-04-14T14:00:00+07:00,2026-04-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00171,vmk0353,shift_night,Bàn giao ca,2026-05-18T22:00:00+07:00,2026-05-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00171,vmk0356,shift_morning,Vận hành thiết bị,2026-05-18T06:00:00+07:00,2026-05-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00172,vmk0370,shift_morning,Vận hành thiết bị,2026-05-19T06:00:00+07:00,2026-05-19T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00173,vmk0384,shift_afternoon,Kiểm soát đóng gói,2026-06-19T14:00:00+07:00,2026-06-19T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00173,vmk0387,shift_night,Bàn giao ca,2026-06-19T22:00:00+07:00,2026-06-20T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00174,vmk0398,shift_night,Bàn giao ca,2026-06-20T22:00:00+07:00,2026-06-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00175,vmk0415,shift_morning,Vận hành thiết bị,2026-07-04T06:00:00+07:00,2026-07-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00175,vmk0418,shift_afternoon,Kiểm soát đóng gói,2026-07-04T14:00:00+07:00,2026-07-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00176,vmk0432,shift_afternoon,Kiểm soát đóng gói,2026-07-05T14:00:00+07:00,2026-07-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00177,vmk0446,shift_night,Bàn giao ca,2026-08-05T22:00:00+07:00,2026-08-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00177,vmk0449,shift_morning,Vận hành thiết bị,2026-08-05T06:00:00+07:00,2026-08-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00178,vmk0455,shift_morning,Vận hành thiết bị,2026-08-06T06:00:00+07:00,2026-08-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00179,vmk0469,shift_afternoon,Kiểm soát đóng gói,2026-09-10T14:00:00+07:00,2026-09-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00179,vmk0480,shift_night,Bàn giao ca,2026-09-10T22:00:00+07:00,2026-09-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00180,vmk0486,shift_night,Bàn giao ca,2026-09-11T22:00:00+07:00,2026-09-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00181,vmk0503,shift_morning,Vận hành thiết bị,2026-01-11T06:00:00+07:00,2026-01-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00181,vmk0511,shift_afternoon,Kiểm soát đóng gói,2026-01-11T14:00:00+07:00,2026-01-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00182,vmk0517,shift_afternoon,Kiểm soát đóng gói,2026-01-12T14:00:00+07:00,2026-01-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00183,vmk0531,shift_night,Bàn giao ca,2026-02-16T22:00:00+07:00,2026-02-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00183,vmk0534,shift_morning,Vận hành thiết bị,2026-02-16T06:00:00+07:00,2026-02-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00184,vmk0548,shift_morning,Vận hành thiết bị,2026-02-17T06:00:00+07:00,2026-02-17T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00185,vmk0012,shift_afternoon,Kiểm soát đóng gói,2026-03-17T14:00:00+07:00,2026-03-17T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00185,vmk0013,shift_night,Bàn giao ca,2026-03-17T22:00:00+07:00,2026-03-18T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00186,vmk0028,shift_night,Bàn giao ca,2026-03-18T22:00:00+07:00,2026-03-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00187,vmk0045,shift_morning,Vận hành thiết bị,2026-04-22T06:00:00+07:00,2026-04-22T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00187,vmk0048,shift_afternoon,Kiểm soát đóng gói,2026-04-22T14:00:00+07:00,2026-04-22T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00188,vmk0059,shift_afternoon,Kiểm soát đóng gói,2026-04-23T14:00:00+07:00,2026-04-23T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00189,vmk0073,shift_night,Bàn giao ca,2026-05-03T22:00:00+07:00,2026-05-04T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00189,vmk0076,shift_morning,Vận hành thiết bị,2026-05-03T06:00:00+07:00,2026-05-03T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00190,vmk0090,shift_morning,Vận hành thiết bị,2026-05-04T06:00:00+07:00,2026-05-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00191,vmk0107,shift_afternoon,Kiểm soát đóng gói,2026-06-08T14:00:00+07:00,2026-06-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00191,vmk0110,shift_night,Bàn giao ca,2026-06-08T22:00:00+07:00,2026-06-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00192,vmk0121,shift_night,Bàn giao ca,2026-06-09T22:00:00+07:00,2026-06-10T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00193,vmk0130,shift_morning,Vận hành thiết bị,2026-07-09T06:00:00+07:00,2026-07-09T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00193,vmk0138,shift_afternoon,Kiểm soát đóng gói,2026-07-09T14:00:00+07:00,2026-07-09T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00194,vmk0144,shift_afternoon,Kiểm soát đóng gói,2026-07-10T14:00:00+07:00,2026-07-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00195,vmk0161,shift_night,Bàn giao ca,2026-08-14T22:00:00+07:00,2026-08-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00195,vmk0172,shift_morning,Vận hành thiết bị,2026-08-14T06:00:00+07:00,2026-08-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00196,vmk0178,shift_morning,Vận hành thiết bị,2026-08-15T06:00:00+07:00,2026-08-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00197,vmk0192,shift_afternoon,Kiểm soát đóng gói,2026-09-15T14:00:00+07:00,2026-09-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00197,vmk0195,shift_night,Bàn giao ca,2026-09-15T22:00:00+07:00,2026-09-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00198,vmk0206,shift_night,Bàn giao ca,2026-09-16T22:00:00+07:00,2026-09-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00199,vmk0223,shift_morning,Vận hành thiết bị,2026-01-20T06:00:00+07:00,2026-01-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00199,vmk0226,shift_afternoon,Kiểm soát đóng gói,2026-01-20T14:00:00+07:00,2026-01-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00200,vmk0240,shift_afternoon,Kiểm soát đóng gói,2026-01-21T14:00:00+07:00,2026-01-21T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00201,vmk0254,shift_night,Bàn giao ca,2026-02-01T22:00:00+07:00,2026-02-02T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00201,vmk0257,shift_morning,Vận hành thiết bị,2026-02-01T06:00:00+07:00,2026-02-01T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00202,vmk0268,shift_morning,Vận hành thiết bị,2026-02-02T06:00:00+07:00,2026-02-02T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00203,vmk0285,shift_afternoon,Kiểm soát đóng gói,2026-03-06T14:00:00+07:00,2026-03-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00203,vmk0288,shift_night,Bàn giao ca,2026-03-06T22:00:00+07:00,2026-03-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00204,vmk0302,shift_night,Bàn giao ca,2026-03-07T22:00:00+07:00,2026-03-08T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00205,vmk0316,shift_morning,Vận hành thiết bị,2026-04-07T06:00:00+07:00,2026-04-07T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00205,vmk0319,shift_afternoon,Kiểm soát đóng gói,2026-04-07T14:00:00+07:00,2026-04-07T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00206,vmk0325,shift_afternoon,Kiểm soát đóng gói,2026-04-08T14:00:00+07:00,2026-04-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00207,vmk0339,shift_night,Bàn giao ca,2026-05-12T22:00:00+07:00,2026-05-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00207,vmk0350,shift_morning,Vận hành thiết bị,2026-05-12T06:00:00+07:00,2026-05-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00208,vmk0356,shift_morning,Vận hành thiết bị,2026-05-13T06:00:00+07:00,2026-05-13T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00209,vmk0373,shift_afternoon,Kiểm soát đóng gói,2026-06-13T14:00:00+07:00,2026-06-13T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00209,vmk0381,shift_night,Bàn giao ca,2026-06-13T22:00:00+07:00,2026-06-14T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00210,vmk0387,shift_night,Bàn giao ca,2026-06-14T22:00:00+07:00,2026-06-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00211,vmk0401,shift_morning,Vận hành thiết bị,2026-07-18T06:00:00+07:00,2026-07-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00211,vmk0404,shift_afternoon,Kiểm soát đóng gói,2026-07-18T14:00:00+07:00,2026-07-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00212,vmk0418,shift_afternoon,Kiểm soát đóng gói,2026-07-19T14:00:00+07:00,2026-07-19T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00213,vmk0435,shift_night,Bàn giao ca,2026-08-19T22:00:00+07:00,2026-08-20T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00213,vmk0438,shift_morning,Vận hành thiết bị,2026-08-19T06:00:00+07:00,2026-08-19T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00214,vmk0449,shift_morning,Vận hành thiết bị,2026-08-20T06:00:00+07:00,2026-08-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00215,vmk0463,shift_afternoon,Kiểm soát đóng gói,2026-09-04T14:00:00+07:00,2026-09-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00215,vmk0466,shift_night,Bàn giao ca,2026-09-04T22:00:00+07:00,2026-09-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00216,vmk0480,shift_night,Bàn giao ca,2026-09-05T22:00:00+07:00,2026-09-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00217,vmk0497,shift_morning,Vận hành thiết bị,2026-01-05T06:00:00+07:00,2026-01-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00217,vmk0500,shift_afternoon,Kiểm soát đóng gói,2026-01-05T14:00:00+07:00,2026-01-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00218,vmk0511,shift_afternoon,Kiểm soát đóng gói,2026-01-06T14:00:00+07:00,2026-01-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00219,vmk0520,shift_night,Bàn giao ca,2026-02-10T22:00:00+07:00,2026-02-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00219,vmk0528,shift_morning,Vận hành thiết bị,2026-02-10T06:00:00+07:00,2026-02-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00220,vmk0534,shift_morning,Vận hành thiết bị,2026-02-11T06:00:00+07:00,2026-02-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00221,vmk0010,shift_afternoon,Kiểm soát đóng gói,2026-03-11T14:00:00+07:00,2026-03-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00221,vmk0011,shift_night,Bàn giao ca,2026-03-11T22:00:00+07:00,2026-03-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00222,vmk0013,shift_night,Bàn giao ca,2026-03-12T22:00:00+07:00,2026-03-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00223,vmk0031,shift_morning,Vận hành thiết bị,2026-04-16T06:00:00+07:00,2026-04-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00223,vmk0042,shift_afternoon,Kiểm soát đóng gói,2026-04-16T14:00:00+07:00,2026-04-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00224,vmk0048,shift_afternoon,Kiểm soát đóng gói,2026-04-17T14:00:00+07:00,2026-04-17T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00225,vmk0062,shift_night,Bàn giao ca,2026-05-17T22:00:00+07:00,2026-05-18T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00225,vmk0065,shift_morning,Vận hành thiết bị,2026-05-17T06:00:00+07:00,2026-05-17T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00226,vmk0076,shift_morning,Vận hành thiết bị,2026-05-18T06:00:00+07:00,2026-05-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00227,vmk0093,shift_afternoon,Kiểm soát đóng gói,2026-06-22T14:00:00+07:00,2026-06-22T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00227,vmk0096,shift_night,Bàn giao ca,2026-06-22T22:00:00+07:00,2026-06-23T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00228,vmk0110,shift_night,Bàn giao ca,2026-06-23T22:00:00+07:00,2026-06-24T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00229,vmk0124,shift_morning,Vận hành thiết bị,2026-07-03T06:00:00+07:00,2026-07-03T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00229,vmk0127,shift_afternoon,Kiểm soát đóng gói,2026-07-03T14:00:00+07:00,2026-07-03T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00230,vmk0138,shift_afternoon,Kiểm soát đóng gói,2026-07-04T14:00:00+07:00,2026-07-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00231,vmk0155,shift_night,Bàn giao ca,2026-08-08T22:00:00+07:00,2026-08-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00231,vmk0158,shift_morning,Vận hành thiết bị,2026-08-08T06:00:00+07:00,2026-08-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00232,vmk0172,shift_morning,Vận hành thiết bị,2026-08-09T06:00:00+07:00,2026-08-09T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00233,vmk0186,shift_afternoon,Kiểm soát đóng gói,2026-09-09T14:00:00+07:00,2026-09-09T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00233,vmk0189,shift_night,Bàn giao ca,2026-09-09T22:00:00+07:00,2026-09-10T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00234,vmk0195,shift_night,Bàn giao ca,2026-09-10T22:00:00+07:00,2026-09-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00235,vmk0209,shift_morning,Vận hành thiết bị,2026-01-14T06:00:00+07:00,2026-01-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00235,vmk0220,shift_afternoon,Kiểm soát đóng gói,2026-01-14T14:00:00+07:00,2026-01-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00236,vmk0226,shift_afternoon,Kiểm soát đóng gói,2026-01-15T14:00:00+07:00,2026-01-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00237,vmk0243,shift_night,Bàn giao ca,2026-02-15T22:00:00+07:00,2026-02-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00237,vmk0251,shift_morning,Vận hành thiết bị,2026-02-15T06:00:00+07:00,2026-02-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00238,vmk0257,shift_morning,Vận hành thiết bị,2026-02-16T06:00:00+07:00,2026-02-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00239,vmk0271,shift_afternoon,Kiểm soát đóng gói,2026-03-20T14:00:00+07:00,2026-03-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00239,vmk0274,shift_night,Bàn giao ca,2026-03-20T22:00:00+07:00,2026-03-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00240,vmk0288,shift_night,Bàn giao ca,2026-03-21T22:00:00+07:00,2026-03-22T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00241,vmk0305,shift_morning,Vận hành thiết bị,2026-04-01T06:00:00+07:00,2026-04-01T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00241,vmk0308,shift_afternoon,Kiểm soát đóng gói,2026-04-01T14:00:00+07:00,2026-04-01T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00242,vmk0319,shift_afternoon,Kiểm soát đóng gói,2026-04-02T14:00:00+07:00,2026-04-02T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00243,vmk0333,shift_night,Bàn giao ca,2026-05-06T22:00:00+07:00,2026-05-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00243,vmk0336,shift_morning,Vận hành thiết bị,2026-05-06T06:00:00+07:00,2026-05-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00244,vmk0350,shift_morning,Vận hành thiết bị,2026-05-07T06:00:00+07:00,2026-05-07T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00245,vmk0367,shift_afternoon,Kiểm soát đóng gói,2026-06-07T14:00:00+07:00,2026-06-07T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00245,vmk0370,shift_night,Bàn giao ca,2026-06-07T22:00:00+07:00,2026-06-08T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00246,vmk0381,shift_night,Bàn giao ca,2026-06-08T22:00:00+07:00,2026-06-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00247,vmk0390,shift_morning,Vận hành thiết bị,2026-07-12T06:00:00+07:00,2026-07-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00247,vmk0398,shift_afternoon,Kiểm soát đóng gói,2026-07-12T14:00:00+07:00,2026-07-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00248,vmk0404,shift_afternoon,Kiểm soát đóng gói,2026-07-13T14:00:00+07:00,2026-07-13T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00249,vmk0421,shift_night,Bàn giao ca,2026-08-13T22:00:00+07:00,2026-08-14T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00249,vmk0432,shift_morning,Vận hành thiết bị,2026-08-13T06:00:00+07:00,2026-08-13T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00250,vmk0438,shift_morning,Vận hành thiết bị,2026-08-14T06:00:00+07:00,2026-08-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00251,vmk0452,shift_afternoon,Kiểm soát đóng gói,2026-09-18T14:00:00+07:00,2026-09-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00251,vmk0455,shift_night,Bàn giao ca,2026-09-18T22:00:00+07:00,2026-09-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00252,vmk0466,shift_night,Bàn giao ca,2026-09-19T22:00:00+07:00,2026-09-20T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00253,vmk0483,shift_morning,Vận hành thiết bị,2026-01-19T06:00:00+07:00,2026-01-19T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00253,vmk0486,shift_afternoon,Kiểm soát đóng gói,2026-01-19T14:00:00+07:00,2026-01-19T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00254,vmk0500,shift_afternoon,Kiểm soát đóng gói,2026-01-20T14:00:00+07:00,2026-01-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00255,vmk0514,shift_night,Bàn giao ca,2026-02-04T22:00:00+07:00,2026-02-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00255,vmk0517,shift_morning,Vận hành thiết bị,2026-02-04T06:00:00+07:00,2026-02-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00256,vmk0528,shift_morning,Vận hành thiết bị,2026-02-05T06:00:00+07:00,2026-02-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00257,vmk0545,shift_afternoon,Kiểm soát đóng gói,2026-03-05T14:00:00+07:00,2026-03-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00257,vmk0548,shift_night,Bàn giao ca,2026-03-05T22:00:00+07:00,2026-03-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00258,vmk0011,shift_night,Bàn giao ca,2026-03-06T22:00:00+07:00,2026-03-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00259,vmk0025,shift_morning,Vận hành thiết bị,2026-04-10T06:00:00+07:00,2026-04-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00259,vmk0028,shift_afternoon,Kiểm soát đóng gói,2026-04-10T14:00:00+07:00,2026-04-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00260,vmk0042,shift_afternoon,Kiểm soát đóng gói,2026-04-11T14:00:00+07:00,2026-04-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00261,vmk0056,shift_night,Bàn giao ca,2026-05-11T22:00:00+07:00,2026-05-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00261,vmk0059,shift_morning,Vận hành thiết bị,2026-05-11T06:00:00+07:00,2026-05-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00262,vmk0065,shift_morning,Vận hành thiết bị,2026-05-12T06:00:00+07:00,2026-05-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00263,vmk0079,shift_afternoon,Kiểm soát đóng gói,2026-06-16T14:00:00+07:00,2026-06-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00263,vmk0090,shift_night,Bàn giao ca,2026-06-16T22:00:00+07:00,2026-06-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00264,vmk0096,shift_night,Bàn giao ca,2026-06-17T22:00:00+07:00,2026-06-18T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00265,vmk0113,shift_morning,Vận hành thiết bị,2026-07-17T06:00:00+07:00,2026-07-17T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00265,vmk0121,shift_afternoon,Kiểm soát đóng gói,2026-07-17T14:00:00+07:00,2026-07-17T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00266,vmk0127,shift_afternoon,Kiểm soát đóng gói,2026-07-18T14:00:00+07:00,2026-07-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00267,vmk0141,shift_night,Bàn giao ca,2026-08-22T22:00:00+07:00,2026-08-23T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00267,vmk0144,shift_morning,Vận hành thiết bị,2026-08-22T06:00:00+07:00,2026-08-22T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00268,vmk0158,shift_morning,Vận hành thiết bị,2026-08-23T06:00:00+07:00,2026-08-23T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00269,vmk0175,shift_afternoon,Kiểm soát đóng gói,2026-09-03T14:00:00+07:00,2026-09-03T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00269,vmk0178,shift_night,Bàn giao ca,2026-09-03T22:00:00+07:00,2026-09-04T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00270,vmk0189,shift_night,Bàn giao ca,2026-09-04T22:00:00+07:00,2026-09-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00271,vmk0203,shift_morning,Vận hành thiết bị,2026-01-08T06:00:00+07:00,2026-01-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00271,vmk0206,shift_afternoon,Kiểm soát đóng gói,2026-01-08T14:00:00+07:00,2026-01-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00272,vmk0220,shift_afternoon,Kiểm soát đóng gói,2026-01-09T14:00:00+07:00,2026-01-09T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00273,vmk0237,shift_night,Bàn giao ca,2026-02-09T22:00:00+07:00,2026-02-10T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00273,vmk0240,shift_morning,Vận hành thiết bị,2026-02-09T06:00:00+07:00,2026-02-09T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00274,vmk0251,shift_morning,Vận hành thiết bị,2026-02-10T06:00:00+07:00,2026-02-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00275,vmk0260,shift_afternoon,Kiểm soát đóng gói,2026-03-14T14:00:00+07:00,2026-03-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00275,vmk0268,shift_night,Bàn giao ca,2026-03-14T22:00:00+07:00,2026-03-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00276,vmk0274,shift_night,Bàn giao ca,2026-03-15T22:00:00+07:00,2026-03-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00277,vmk0291,shift_morning,Vận hành thiết bị,2026-04-15T06:00:00+07:00,2026-04-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00277,vmk0302,shift_afternoon,Kiểm soát đóng gói,2026-04-15T14:00:00+07:00,2026-04-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00278,vmk0308,shift_afternoon,Kiểm soát đóng gói,2026-04-16T14:00:00+07:00,2026-04-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00279,vmk0322,shift_night,Bàn giao ca,2026-05-20T22:00:00+07:00,2026-05-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00279,vmk0325,shift_morning,Vận hành thiết bị,2026-05-20T06:00:00+07:00,2026-05-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00280,vmk0336,shift_morning,Vận hành thiết bị,2026-05-21T06:00:00+07:00,2026-05-21T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00281,vmk0353,shift_afternoon,Kiểm soát đóng gói,2026-06-01T14:00:00+07:00,2026-06-01T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00281,vmk0356,shift_night,Bàn giao ca,2026-06-01T22:00:00+07:00,2026-06-02T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00282,vmk0370,shift_night,Bàn giao ca,2026-06-02T22:00:00+07:00,2026-06-03T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00283,vmk0384,shift_morning,Vận hành thiết bị,2026-07-06T06:00:00+07:00,2026-07-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00283,vmk0387,shift_afternoon,Kiểm soát đóng gói,2026-07-06T14:00:00+07:00,2026-07-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00284,vmk0398,shift_afternoon,Kiểm soát đóng gói,2026-07-07T14:00:00+07:00,2026-07-07T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00285,vmk0415,shift_night,Bàn giao ca,2026-08-07T22:00:00+07:00,2026-08-08T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00285,vmk0418,shift_morning,Vận hành thiết bị,2026-08-07T06:00:00+07:00,2026-08-07T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00286,vmk0432,shift_morning,Vận hành thiết bị,2026-08-08T06:00:00+07:00,2026-08-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00287,vmk0446,shift_afternoon,Kiểm soát đóng gói,2026-09-12T14:00:00+07:00,2026-09-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00287,vmk0449,shift_night,Bàn giao ca,2026-09-12T22:00:00+07:00,2026-09-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00288,vmk0455,shift_night,Bàn giao ca,2026-09-13T22:00:00+07:00,2026-09-14T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00289,vmk0469,shift_morning,Vận hành thiết bị,2026-01-13T06:00:00+07:00,2026-01-13T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00289,vmk0480,shift_afternoon,Kiểm soát đóng gói,2026-01-13T14:00:00+07:00,2026-01-13T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00290,vmk0486,shift_afternoon,Kiểm soát đóng gói,2026-01-14T14:00:00+07:00,2026-01-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00291,vmk0503,shift_night,Bàn giao ca,2026-02-18T22:00:00+07:00,2026-02-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00291,vmk0511,shift_morning,Vận hành thiết bị,2026-02-18T06:00:00+07:00,2026-02-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00292,vmk0517,shift_morning,Vận hành thiết bị,2026-02-19T06:00:00+07:00,2026-02-19T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00293,vmk0531,shift_afternoon,Kiểm soát đóng gói,2026-03-19T14:00:00+07:00,2026-03-19T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00293,vmk0534,shift_night,Bàn giao ca,2026-03-19T22:00:00+07:00,2026-03-20T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00294,vmk0548,shift_night,Bàn giao ca,2026-03-20T22:00:00+07:00,2026-03-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00295,vmk0012,shift_morning,Vận hành thiết bị,2026-04-04T06:00:00+07:00,2026-04-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00295,vmk0013,shift_afternoon,Kiểm soát đóng gói,2026-04-04T14:00:00+07:00,2026-04-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00296,vmk0028,shift_afternoon,Kiểm soát đóng gói,2026-04-05T14:00:00+07:00,2026-04-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00297,vmk0045,shift_night,Bàn giao ca,2026-05-05T22:00:00+07:00,2026-05-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00297,vmk0048,shift_morning,Vận hành thiết bị,2026-05-05T06:00:00+07:00,2026-05-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00298,vmk0059,shift_morning,Vận hành thiết bị,2026-05-06T06:00:00+07:00,2026-05-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00299,vmk0073,shift_afternoon,Kiểm soát đóng gói,2026-06-10T14:00:00+07:00,2026-06-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00299,vmk0076,shift_night,Bàn giao ca,2026-06-10T22:00:00+07:00,2026-06-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00300,vmk0090,shift_night,Bàn giao ca,2026-06-11T22:00:00+07:00,2026-06-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00301,vmk0107,shift_morning,Vận hành thiết bị,2026-07-11T06:00:00+07:00,2026-07-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00301,vmk0110,shift_afternoon,Kiểm soát đóng gói,2026-07-11T14:00:00+07:00,2026-07-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00302,vmk0121,shift_afternoon,Kiểm soát đóng gói,2026-07-12T14:00:00+07:00,2026-07-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00303,vmk0130,shift_night,Bàn giao ca,2026-08-16T22:00:00+07:00,2026-08-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00303,vmk0138,shift_morning,Vận hành thiết bị,2026-08-16T06:00:00+07:00,2026-08-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00304,vmk0144,shift_morning,Vận hành thiết bị,2026-08-17T06:00:00+07:00,2026-08-17T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00305,vmk0161,shift_afternoon,Kiểm soát đóng gói,2026-09-17T14:00:00+07:00,2026-09-17T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00305,vmk0172,shift_night,Bàn giao ca,2026-09-17T22:00:00+07:00,2026-09-18T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00306,vmk0178,shift_night,Bàn giao ca,2026-09-18T22:00:00+07:00,2026-09-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00307,vmk0192,shift_morning,Vận hành thiết bị,2026-01-22T06:00:00+07:00,2026-01-22T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00307,vmk0195,shift_afternoon,Kiểm soát đóng gói,2026-01-22T14:00:00+07:00,2026-01-22T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00308,vmk0206,shift_afternoon,Kiểm soát đóng gói,2026-01-23T14:00:00+07:00,2026-01-23T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00309,vmk0223,shift_night,Bàn giao ca,2026-02-03T22:00:00+07:00,2026-02-04T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00309,vmk0226,shift_morning,Vận hành thiết bị,2026-02-03T06:00:00+07:00,2026-02-03T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00310,vmk0240,shift_morning,Vận hành thiết bị,2026-02-04T06:00:00+07:00,2026-02-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00311,vmk0254,shift_afternoon,Kiểm soát đóng gói,2026-03-08T14:00:00+07:00,2026-03-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00311,vmk0257,shift_night,Bàn giao ca,2026-03-08T22:00:00+07:00,2026-03-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00312,vmk0268,shift_night,Bàn giao ca,2026-03-09T22:00:00+07:00,2026-03-10T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00313,vmk0285,shift_morning,Vận hành thiết bị,2026-04-09T06:00:00+07:00,2026-04-09T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00313,vmk0288,shift_afternoon,Kiểm soát đóng gói,2026-04-09T14:00:00+07:00,2026-04-09T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00314,vmk0302,shift_afternoon,Kiểm soát đóng gói,2026-04-10T14:00:00+07:00,2026-04-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00315,vmk0316,shift_night,Bàn giao ca,2026-05-14T22:00:00+07:00,2026-05-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00315,vmk0319,shift_morning,Vận hành thiết bị,2026-05-14T06:00:00+07:00,2026-05-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00316,vmk0325,shift_morning,Vận hành thiết bị,2026-05-15T06:00:00+07:00,2026-05-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00317,vmk0339,shift_afternoon,Kiểm soát đóng gói,2026-06-15T14:00:00+07:00,2026-06-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00317,vmk0350,shift_night,Bàn giao ca,2026-06-15T22:00:00+07:00,2026-06-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00318,vmk0356,shift_night,Bàn giao ca,2026-06-16T22:00:00+07:00,2026-06-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00319,vmk0373,shift_morning,Vận hành thiết bị,2026-07-20T06:00:00+07:00,2026-07-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00319,vmk0381,shift_afternoon,Kiểm soát đóng gói,2026-07-20T14:00:00+07:00,2026-07-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00320,vmk0387,shift_afternoon,Kiểm soát đóng gói,2026-07-21T14:00:00+07:00,2026-07-21T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00321,vmk0401,shift_night,Bàn giao ca,2026-08-01T22:00:00+07:00,2026-08-02T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00321,vmk0404,shift_morning,Vận hành thiết bị,2026-08-01T06:00:00+07:00,2026-08-01T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00322,vmk0418,shift_morning,Vận hành thiết bị,2026-08-02T06:00:00+07:00,2026-08-02T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00323,vmk0435,shift_afternoon,Kiểm soát đóng gói,2026-09-06T14:00:00+07:00,2026-09-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00323,vmk0438,shift_night,Bàn giao ca,2026-09-06T22:00:00+07:00,2026-09-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00324,vmk0449,shift_night,Bàn giao ca,2026-09-07T22:00:00+07:00,2026-09-08T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00325,vmk0463,shift_morning,Vận hành thiết bị,2026-01-07T06:00:00+07:00,2026-01-07T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00325,vmk0466,shift_afternoon,Kiểm soát đóng gói,2026-01-07T14:00:00+07:00,2026-01-07T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00326,vmk0480,shift_afternoon,Kiểm soát đóng gói,2026-01-08T14:00:00+07:00,2026-01-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00327,vmk0497,shift_night,Bàn giao ca,2026-02-12T22:00:00+07:00,2026-02-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00327,vmk0500,shift_morning,Vận hành thiết bị,2026-02-12T06:00:00+07:00,2026-02-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00328,vmk0511,shift_morning,Vận hành thiết bị,2026-02-13T06:00:00+07:00,2026-02-13T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00329,vmk0520,shift_afternoon,Kiểm soát đóng gói,2026-03-13T14:00:00+07:00,2026-03-13T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00329,vmk0528,shift_night,Bàn giao ca,2026-03-13T22:00:00+07:00,2026-03-14T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00330,vmk0534,shift_night,Bàn giao ca,2026-03-14T22:00:00+07:00,2026-03-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00331,vmk0010,shift_morning,Vận hành thiết bị,2026-04-18T06:00:00+07:00,2026-04-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00331,vmk0011,shift_afternoon,Kiểm soát đóng gói,2026-04-18T14:00:00+07:00,2026-04-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00332,vmk0013,shift_afternoon,Kiểm soát đóng gói,2026-04-19T14:00:00+07:00,2026-04-19T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00333,vmk0031,shift_night,Bàn giao ca,2026-05-19T22:00:00+07:00,2026-05-20T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00333,vmk0042,shift_morning,Vận hành thiết bị,2026-05-19T06:00:00+07:00,2026-05-19T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00334,vmk0048,shift_morning,Vận hành thiết bị,2026-05-20T06:00:00+07:00,2026-05-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00335,vmk0062,shift_afternoon,Kiểm soát đóng gói,2026-06-04T14:00:00+07:00,2026-06-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00335,vmk0065,shift_night,Bàn giao ca,2026-06-04T22:00:00+07:00,2026-06-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00336,vmk0076,shift_night,Bàn giao ca,2026-06-05T22:00:00+07:00,2026-06-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00337,vmk0093,shift_morning,Vận hành thiết bị,2026-07-05T06:00:00+07:00,2026-07-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00337,vmk0096,shift_afternoon,Kiểm soát đóng gói,2026-07-05T14:00:00+07:00,2026-07-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00338,vmk0110,shift_afternoon,Kiểm soát đóng gói,2026-07-06T14:00:00+07:00,2026-07-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00339,vmk0124,shift_night,Bàn giao ca,2026-08-10T22:00:00+07:00,2026-08-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00339,vmk0127,shift_morning,Vận hành thiết bị,2026-08-10T06:00:00+07:00,2026-08-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00340,vmk0138,shift_morning,Vận hành thiết bị,2026-08-11T06:00:00+07:00,2026-08-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00341,vmk0155,shift_afternoon,Kiểm soát đóng gói,2026-09-11T14:00:00+07:00,2026-09-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00341,vmk0158,shift_night,Bàn giao ca,2026-09-11T22:00:00+07:00,2026-09-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00342,vmk0172,shift_night,Bàn giao ca,2026-09-12T22:00:00+07:00,2026-09-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00343,vmk0186,shift_morning,Vận hành thiết bị,2026-01-16T06:00:00+07:00,2026-01-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00343,vmk0189,shift_afternoon,Kiểm soát đóng gói,2026-01-16T14:00:00+07:00,2026-01-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00344,vmk0195,shift_afternoon,Kiểm soát đóng gói,2026-01-17T14:00:00+07:00,2026-01-17T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00345,vmk0209,shift_night,Bàn giao ca,2026-02-17T22:00:00+07:00,2026-02-18T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00345,vmk0220,shift_morning,Vận hành thiết bị,2026-02-17T06:00:00+07:00,2026-02-17T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00346,vmk0226,shift_morning,Vận hành thiết bị,2026-02-18T06:00:00+07:00,2026-02-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00347,vmk0243,shift_afternoon,Kiểm soát đóng gói,2026-03-22T14:00:00+07:00,2026-03-22T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00347,vmk0251,shift_night,Bàn giao ca,2026-03-22T22:00:00+07:00,2026-03-23T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00348,vmk0257,shift_night,Bàn giao ca,2026-03-23T22:00:00+07:00,2026-03-24T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00349,vmk0271,shift_morning,Vận hành thiết bị,2026-04-03T06:00:00+07:00,2026-04-03T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00349,vmk0274,shift_afternoon,Kiểm soát đóng gói,2026-04-03T14:00:00+07:00,2026-04-03T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00350,vmk0288,shift_afternoon,Kiểm soát đóng gói,2026-04-04T14:00:00+07:00,2026-04-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00351,vmk0305,shift_night,Bàn giao ca,2026-05-08T22:00:00+07:00,2026-05-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00351,vmk0308,shift_morning,Vận hành thiết bị,2026-05-08T06:00:00+07:00,2026-05-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00352,vmk0319,shift_morning,Vận hành thiết bị,2026-05-09T06:00:00+07:00,2026-05-09T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00353,vmk0333,shift_afternoon,Kiểm soát đóng gói,2026-06-09T14:00:00+07:00,2026-06-09T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00353,vmk0336,shift_night,Bàn giao ca,2026-06-09T22:00:00+07:00,2026-06-10T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00354,vmk0350,shift_night,Bàn giao ca,2026-06-10T22:00:00+07:00,2026-06-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00355,vmk0367,shift_morning,Vận hành thiết bị,2026-07-14T06:00:00+07:00,2026-07-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00355,vmk0370,shift_afternoon,Kiểm soát đóng gói,2026-07-14T14:00:00+07:00,2026-07-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00356,vmk0381,shift_afternoon,Kiểm soát đóng gói,2026-07-15T14:00:00+07:00,2026-07-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00357,vmk0390,shift_night,Bàn giao ca,2026-08-15T22:00:00+07:00,2026-08-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00357,vmk0398,shift_morning,Vận hành thiết bị,2026-08-15T06:00:00+07:00,2026-08-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00358,vmk0404,shift_morning,Vận hành thiết bị,2026-08-16T06:00:00+07:00,2026-08-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00359,vmk0421,shift_afternoon,Kiểm soát đóng gói,2026-09-20T14:00:00+07:00,2026-09-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00359,vmk0432,shift_night,Bàn giao ca,2026-09-20T22:00:00+07:00,2026-09-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00360,vmk0438,shift_night,Bàn giao ca,2026-09-21T22:00:00+07:00,2026-09-22T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00361,vmk0452,shift_morning,Vận hành thiết bị,2026-01-01T06:00:00+07:00,2026-01-01T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00361,vmk0455,shift_afternoon,Kiểm soát đóng gói,2026-01-01T14:00:00+07:00,2026-01-01T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00362,vmk0466,shift_afternoon,Kiểm soát đóng gói,2026-01-02T14:00:00+07:00,2026-01-02T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00363,vmk0483,shift_night,Bàn giao ca,2026-02-06T22:00:00+07:00,2026-02-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00363,vmk0486,shift_morning,Vận hành thiết bị,2026-02-06T06:00:00+07:00,2026-02-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00364,vmk0500,shift_morning,Vận hành thiết bị,2026-02-07T06:00:00+07:00,2026-02-07T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00365,vmk0514,shift_afternoon,Kiểm soát đóng gói,2026-03-07T14:00:00+07:00,2026-03-07T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00365,vmk0517,shift_night,Bàn giao ca,2026-03-07T22:00:00+07:00,2026-03-08T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00366,vmk0528,shift_night,Bàn giao ca,2026-03-08T22:00:00+07:00,2026-03-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00367,vmk0545,shift_morning,Vận hành thiết bị,2026-04-12T06:00:00+07:00,2026-04-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00367,vmk0548,shift_afternoon,Kiểm soát đóng gói,2026-04-12T14:00:00+07:00,2026-04-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00368,vmk0011,shift_afternoon,Kiểm soát đóng gói,2026-04-13T14:00:00+07:00,2026-04-13T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00369,vmk0025,shift_night,Bàn giao ca,2026-05-13T22:00:00+07:00,2026-05-14T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00369,vmk0028,shift_morning,Vận hành thiết bị,2026-05-13T06:00:00+07:00,2026-05-13T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00370,vmk0042,shift_morning,Vận hành thiết bị,2026-05-14T06:00:00+07:00,2026-05-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00371,vmk0056,shift_afternoon,Kiểm soát đóng gói,2026-06-18T14:00:00+07:00,2026-06-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00371,vmk0059,shift_night,Bàn giao ca,2026-06-18T22:00:00+07:00,2026-06-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00372,vmk0065,shift_night,Bàn giao ca,2026-06-19T22:00:00+07:00,2026-06-20T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00373,vmk0079,shift_morning,Vận hành thiết bị,2026-07-19T06:00:00+07:00,2026-07-19T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00373,vmk0090,shift_afternoon,Kiểm soát đóng gói,2026-07-19T14:00:00+07:00,2026-07-19T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00374,vmk0096,shift_afternoon,Kiểm soát đóng gói,2026-07-20T14:00:00+07:00,2026-07-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00375,vmk0113,shift_night,Bàn giao ca,2026-08-04T22:00:00+07:00,2026-08-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00375,vmk0121,shift_morning,Vận hành thiết bị,2026-08-04T06:00:00+07:00,2026-08-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00376,vmk0127,shift_morning,Vận hành thiết bị,2026-08-05T06:00:00+07:00,2026-08-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00377,vmk0141,shift_afternoon,Kiểm soát đóng gói,2026-09-05T14:00:00+07:00,2026-09-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00377,vmk0144,shift_night,Bàn giao ca,2026-09-05T22:00:00+07:00,2026-09-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00378,vmk0158,shift_night,Bàn giao ca,2026-09-06T22:00:00+07:00,2026-09-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00379,vmk0175,shift_morning,Vận hành thiết bị,2026-01-10T06:00:00+07:00,2026-01-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00379,vmk0178,shift_afternoon,Kiểm soát đóng gói,2026-01-10T14:00:00+07:00,2026-01-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00380,vmk0189,shift_afternoon,Kiểm soát đóng gói,2026-01-11T14:00:00+07:00,2026-01-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00381,vmk0203,shift_night,Bàn giao ca,2026-02-11T22:00:00+07:00,2026-02-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00381,vmk0206,shift_morning,Vận hành thiết bị,2026-02-11T06:00:00+07:00,2026-02-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00382,vmk0220,shift_morning,Vận hành thiết bị,2026-02-12T06:00:00+07:00,2026-02-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00383,vmk0237,shift_afternoon,Kiểm soát đóng gói,2026-03-16T14:00:00+07:00,2026-03-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00383,vmk0240,shift_night,Bàn giao ca,2026-03-16T22:00:00+07:00,2026-03-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00384,vmk0251,shift_night,Bàn giao ca,2026-03-17T22:00:00+07:00,2026-03-18T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00385,vmk0260,shift_morning,Vận hành thiết bị,2026-04-17T06:00:00+07:00,2026-04-17T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00385,vmk0268,shift_afternoon,Kiểm soát đóng gói,2026-04-17T14:00:00+07:00,2026-04-17T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00386,vmk0274,shift_afternoon,Kiểm soát đóng gói,2026-04-18T14:00:00+07:00,2026-04-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00387,vmk0291,shift_night,Bàn giao ca,2026-05-22T22:00:00+07:00,2026-05-23T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00387,vmk0302,shift_morning,Vận hành thiết bị,2026-05-22T06:00:00+07:00,2026-05-22T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00388,vmk0308,shift_morning,Vận hành thiết bị,2026-05-23T06:00:00+07:00,2026-05-23T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00389,vmk0322,shift_afternoon,Kiểm soát đóng gói,2026-06-03T14:00:00+07:00,2026-06-03T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00389,vmk0325,shift_night,Bàn giao ca,2026-06-03T22:00:00+07:00,2026-06-04T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00390,vmk0336,shift_night,Bàn giao ca,2026-06-04T22:00:00+07:00,2026-06-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00391,vmk0353,shift_morning,Vận hành thiết bị,2026-07-08T06:00:00+07:00,2026-07-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00391,vmk0356,shift_afternoon,Kiểm soát đóng gói,2026-07-08T14:00:00+07:00,2026-07-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00392,vmk0370,shift_afternoon,Kiểm soát đóng gói,2026-07-09T14:00:00+07:00,2026-07-09T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00393,vmk0384,shift_night,Bàn giao ca,2026-08-09T22:00:00+07:00,2026-08-10T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00393,vmk0387,shift_morning,Vận hành thiết bị,2026-08-09T06:00:00+07:00,2026-08-09T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00394,vmk0398,shift_morning,Vận hành thiết bị,2026-08-10T06:00:00+07:00,2026-08-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00395,vmk0415,shift_afternoon,Kiểm soát đóng gói,2026-09-14T14:00:00+07:00,2026-09-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00395,vmk0418,shift_night,Bàn giao ca,2026-09-14T22:00:00+07:00,2026-09-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00396,vmk0432,shift_night,Bàn giao ca,2026-09-15T22:00:00+07:00,2026-09-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00397,vmk0446,shift_morning,Vận hành thiết bị,2026-01-15T06:00:00+07:00,2026-01-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00397,vmk0449,shift_afternoon,Kiểm soát đóng gói,2026-01-15T14:00:00+07:00,2026-01-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00398,vmk0455,shift_afternoon,Kiểm soát đóng gói,2026-01-16T14:00:00+07:00,2026-01-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00399,vmk0469,shift_night,Bàn giao ca,2026-02-20T22:00:00+07:00,2026-02-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00399,vmk0480,shift_morning,Vận hành thiết bị,2026-02-20T06:00:00+07:00,2026-02-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00400,vmk0486,shift_morning,Vận hành thiết bị,2026-02-21T06:00:00+07:00,2026-02-21T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00401,vmk0503,shift_afternoon,Kiểm soát đóng gói,2026-03-01T14:00:00+07:00,2026-03-01T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00401,vmk0511,shift_night,Bàn giao ca,2026-03-01T22:00:00+07:00,2026-03-02T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00402,vmk0517,shift_night,Bàn giao ca,2026-03-02T22:00:00+07:00,2026-03-03T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00403,vmk0531,shift_morning,Vận hành thiết bị,2026-04-06T06:00:00+07:00,2026-04-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00403,vmk0534,shift_afternoon,Kiểm soát đóng gói,2026-04-06T14:00:00+07:00,2026-04-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00404,vmk0548,shift_afternoon,Kiểm soát đóng gói,2026-04-07T14:00:00+07:00,2026-04-07T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00405,vmk0012,shift_night,Bàn giao ca,2026-05-07T22:00:00+07:00,2026-05-08T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00405,vmk0013,shift_morning,Vận hành thiết bị,2026-05-07T06:00:00+07:00,2026-05-07T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00406,vmk0028,shift_morning,Vận hành thiết bị,2026-05-08T06:00:00+07:00,2026-05-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00407,vmk0045,shift_afternoon,Kiểm soát đóng gói,2026-06-12T14:00:00+07:00,2026-06-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00407,vmk0048,shift_night,Bàn giao ca,2026-06-12T22:00:00+07:00,2026-06-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00408,vmk0059,shift_night,Bàn giao ca,2026-06-13T22:00:00+07:00,2026-06-14T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00409,vmk0073,shift_morning,Vận hành thiết bị,2026-07-13T06:00:00+07:00,2026-07-13T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00409,vmk0076,shift_afternoon,Kiểm soát đóng gói,2026-07-13T14:00:00+07:00,2026-07-13T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00410,vmk0090,shift_afternoon,Kiểm soát đóng gói,2026-07-14T14:00:00+07:00,2026-07-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00411,vmk0107,shift_night,Bàn giao ca,2026-08-18T22:00:00+07:00,2026-08-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00411,vmk0110,shift_morning,Vận hành thiết bị,2026-08-18T06:00:00+07:00,2026-08-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00412,vmk0121,shift_morning,Vận hành thiết bị,2026-08-19T06:00:00+07:00,2026-08-19T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00413,vmk0130,shift_afternoon,Kiểm soát đóng gói,2026-09-19T14:00:00+07:00,2026-09-19T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00413,vmk0138,shift_night,Bàn giao ca,2026-09-19T22:00:00+07:00,2026-09-20T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00414,vmk0144,shift_night,Bàn giao ca,2026-09-20T22:00:00+07:00,2026-09-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00415,vmk0161,shift_morning,Vận hành thiết bị,2026-01-04T06:00:00+07:00,2026-01-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00415,vmk0172,shift_afternoon,Kiểm soát đóng gói,2026-01-04T14:00:00+07:00,2026-01-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00416,vmk0178,shift_afternoon,Kiểm soát đóng gói,2026-01-05T14:00:00+07:00,2026-01-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00417,vmk0192,shift_night,Bàn giao ca,2026-02-05T22:00:00+07:00,2026-02-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00417,vmk0195,shift_morning,Vận hành thiết bị,2026-02-05T06:00:00+07:00,2026-02-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00418,vmk0206,shift_morning,Vận hành thiết bị,2026-02-06T06:00:00+07:00,2026-02-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00419,vmk0223,shift_afternoon,Kiểm soát đóng gói,2026-03-10T14:00:00+07:00,2026-03-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00419,vmk0226,shift_night,Bàn giao ca,2026-03-10T22:00:00+07:00,2026-03-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00420,vmk0240,shift_night,Bàn giao ca,2026-03-11T22:00:00+07:00,2026-03-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00421,vmk0254,shift_morning,Vận hành thiết bị,2026-04-11T06:00:00+07:00,2026-04-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00421,vmk0257,shift_afternoon,Kiểm soát đóng gói,2026-04-11T14:00:00+07:00,2026-04-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00422,vmk0268,shift_afternoon,Kiểm soát đóng gói,2026-04-12T14:00:00+07:00,2026-04-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00423,vmk0285,shift_night,Bàn giao ca,2026-05-16T22:00:00+07:00,2026-05-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00423,vmk0288,shift_morning,Vận hành thiết bị,2026-05-16T06:00:00+07:00,2026-05-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00424,vmk0302,shift_morning,Vận hành thiết bị,2026-05-17T06:00:00+07:00,2026-05-17T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00425,vmk0316,shift_afternoon,Kiểm soát đóng gói,2026-06-17T14:00:00+07:00,2026-06-17T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00425,vmk0319,shift_night,Bàn giao ca,2026-06-17T22:00:00+07:00,2026-06-18T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00426,vmk0325,shift_night,Bàn giao ca,2026-06-18T22:00:00+07:00,2026-06-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00427,vmk0339,shift_morning,Vận hành thiết bị,2026-07-22T06:00:00+07:00,2026-07-22T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00427,vmk0350,shift_afternoon,Kiểm soát đóng gói,2026-07-22T14:00:00+07:00,2026-07-22T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00428,vmk0356,shift_afternoon,Kiểm soát đóng gói,2026-07-23T14:00:00+07:00,2026-07-23T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00429,vmk0373,shift_night,Bàn giao ca,2026-08-03T22:00:00+07:00,2026-08-04T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00429,vmk0381,shift_morning,Vận hành thiết bị,2026-08-03T06:00:00+07:00,2026-08-03T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00430,vmk0387,shift_morning,Vận hành thiết bị,2026-08-04T06:00:00+07:00,2026-08-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00431,vmk0401,shift_afternoon,Kiểm soát đóng gói,2026-09-08T14:00:00+07:00,2026-09-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00431,vmk0404,shift_night,Bàn giao ca,2026-09-08T22:00:00+07:00,2026-09-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00432,vmk0418,shift_night,Bàn giao ca,2026-09-09T22:00:00+07:00,2026-09-10T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00433,vmk0435,shift_morning,Vận hành thiết bị,2026-01-09T06:00:00+07:00,2026-01-09T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00433,vmk0438,shift_afternoon,Kiểm soát đóng gói,2026-01-09T14:00:00+07:00,2026-01-09T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00434,vmk0449,shift_afternoon,Kiểm soát đóng gói,2026-01-10T14:00:00+07:00,2026-01-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00435,vmk0463,shift_night,Bàn giao ca,2026-02-14T22:00:00+07:00,2026-02-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00435,vmk0466,shift_morning,Vận hành thiết bị,2026-02-14T06:00:00+07:00,2026-02-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00436,vmk0480,shift_morning,Vận hành thiết bị,2026-02-15T06:00:00+07:00,2026-02-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00437,vmk0497,shift_afternoon,Kiểm soát đóng gói,2026-03-15T14:00:00+07:00,2026-03-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00437,vmk0500,shift_night,Bàn giao ca,2026-03-15T22:00:00+07:00,2026-03-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00438,vmk0511,shift_night,Bàn giao ca,2026-03-16T22:00:00+07:00,2026-03-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00439,vmk0520,shift_morning,Vận hành thiết bị,2026-04-20T06:00:00+07:00,2026-04-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00439,vmk0528,shift_afternoon,Kiểm soát đóng gói,2026-04-20T14:00:00+07:00,2026-04-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00440,vmk0534,shift_afternoon,Kiểm soát đóng gói,2026-04-21T14:00:00+07:00,2026-04-21T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00441,vmk0010,shift_night,Bàn giao ca,2026-05-01T22:00:00+07:00,2026-05-02T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00441,vmk0011,shift_morning,Vận hành thiết bị,2026-05-01T06:00:00+07:00,2026-05-01T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00442,vmk0013,shift_morning,Vận hành thiết bị,2026-05-02T06:00:00+07:00,2026-05-02T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00443,vmk0031,shift_afternoon,Kiểm soát đóng gói,2026-06-06T14:00:00+07:00,2026-06-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00443,vmk0042,shift_night,Bàn giao ca,2026-06-06T22:00:00+07:00,2026-06-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00444,vmk0048,shift_night,Bàn giao ca,2026-06-07T22:00:00+07:00,2026-06-08T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00445,vmk0062,shift_morning,Vận hành thiết bị,2026-07-07T06:00:00+07:00,2026-07-07T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00445,vmk0065,shift_afternoon,Kiểm soát đóng gói,2026-07-07T14:00:00+07:00,2026-07-07T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00446,vmk0076,shift_afternoon,Kiểm soát đóng gói,2026-07-08T14:00:00+07:00,2026-07-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00447,vmk0093,shift_night,Bàn giao ca,2026-08-12T22:00:00+07:00,2026-08-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00447,vmk0096,shift_morning,Vận hành thiết bị,2026-08-12T06:00:00+07:00,2026-08-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00448,vmk0110,shift_morning,Vận hành thiết bị,2026-08-13T06:00:00+07:00,2026-08-13T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00449,vmk0124,shift_afternoon,Kiểm soát đóng gói,2026-09-13T14:00:00+07:00,2026-09-13T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00449,vmk0127,shift_night,Bàn giao ca,2026-09-13T22:00:00+07:00,2026-09-14T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00450,vmk0138,shift_night,Bàn giao ca,2026-09-14T22:00:00+07:00,2026-09-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00451,vmk0155,shift_morning,Vận hành thiết bị,2026-01-18T06:00:00+07:00,2026-01-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00451,vmk0158,shift_afternoon,Kiểm soát đóng gói,2026-01-18T14:00:00+07:00,2026-01-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00452,vmk0172,shift_afternoon,Kiểm soát đóng gói,2026-01-19T14:00:00+07:00,2026-01-19T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00453,vmk0186,shift_night,Bàn giao ca,2026-02-19T22:00:00+07:00,2026-02-20T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00453,vmk0189,shift_morning,Vận hành thiết bị,2026-02-19T06:00:00+07:00,2026-02-19T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00454,vmk0195,shift_morning,Vận hành thiết bị,2026-02-20T06:00:00+07:00,2026-02-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00455,vmk0209,shift_afternoon,Kiểm soát đóng gói,2026-03-04T14:00:00+07:00,2026-03-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00455,vmk0220,shift_night,Bàn giao ca,2026-03-04T22:00:00+07:00,2026-03-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00456,vmk0226,shift_night,Bàn giao ca,2026-03-05T22:00:00+07:00,2026-03-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00457,vmk0243,shift_morning,Vận hành thiết bị,2026-04-05T06:00:00+07:00,2026-04-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00457,vmk0251,shift_afternoon,Kiểm soát đóng gói,2026-04-05T14:00:00+07:00,2026-04-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00458,vmk0257,shift_afternoon,Kiểm soát đóng gói,2026-04-06T14:00:00+07:00,2026-04-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00459,vmk0271,shift_night,Bàn giao ca,2026-05-10T22:00:00+07:00,2026-05-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00459,vmk0274,shift_morning,Vận hành thiết bị,2026-05-10T06:00:00+07:00,2026-05-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00460,vmk0288,shift_morning,Vận hành thiết bị,2026-05-11T06:00:00+07:00,2026-05-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00461,vmk0305,shift_afternoon,Kiểm soát đóng gói,2026-06-11T14:00:00+07:00,2026-06-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00461,vmk0308,shift_night,Bàn giao ca,2026-06-11T22:00:00+07:00,2026-06-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00462,vmk0319,shift_night,Bàn giao ca,2026-06-12T22:00:00+07:00,2026-06-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00463,vmk0333,shift_morning,Vận hành thiết bị,2026-07-16T06:00:00+07:00,2026-07-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00463,vmk0336,shift_afternoon,Kiểm soát đóng gói,2026-07-16T14:00:00+07:00,2026-07-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00464,vmk0350,shift_afternoon,Kiểm soát đóng gói,2026-07-17T14:00:00+07:00,2026-07-17T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00465,vmk0367,shift_night,Bàn giao ca,2026-08-17T22:00:00+07:00,2026-08-18T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00465,vmk0370,shift_morning,Vận hành thiết bị,2026-08-17T06:00:00+07:00,2026-08-17T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00466,vmk0381,shift_morning,Vận hành thiết bị,2026-08-18T06:00:00+07:00,2026-08-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00467,vmk0390,shift_afternoon,Kiểm soát đóng gói,2026-09-22T14:00:00+07:00,2026-09-22T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00467,vmk0398,shift_night,Bàn giao ca,2026-09-22T22:00:00+07:00,2026-09-23T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00468,vmk0404,shift_night,Bàn giao ca,2026-09-23T22:00:00+07:00,2026-09-24T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00469,vmk0421,shift_morning,Vận hành thiết bị,2026-01-03T06:00:00+07:00,2026-01-03T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00469,vmk0432,shift_afternoon,Kiểm soát đóng gói,2026-01-03T14:00:00+07:00,2026-01-03T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00470,vmk0438,shift_afternoon,Kiểm soát đóng gói,2026-01-04T14:00:00+07:00,2026-01-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00471,vmk0452,shift_night,Bàn giao ca,2026-02-08T22:00:00+07:00,2026-02-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00471,vmk0455,shift_morning,Vận hành thiết bị,2026-02-08T06:00:00+07:00,2026-02-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00472,vmk0466,shift_morning,Vận hành thiết bị,2026-02-09T06:00:00+07:00,2026-02-09T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00473,vmk0483,shift_afternoon,Kiểm soát đóng gói,2026-03-09T14:00:00+07:00,2026-03-09T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00473,vmk0486,shift_night,Bàn giao ca,2026-03-09T22:00:00+07:00,2026-03-10T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00474,vmk0500,shift_night,Bàn giao ca,2026-03-10T22:00:00+07:00,2026-03-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00475,vmk0514,shift_morning,Vận hành thiết bị,2026-04-14T06:00:00+07:00,2026-04-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00475,vmk0517,shift_afternoon,Kiểm soát đóng gói,2026-04-14T14:00:00+07:00,2026-04-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00476,vmk0528,shift_afternoon,Kiểm soát đóng gói,2026-04-15T14:00:00+07:00,2026-04-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00477,vmk0545,shift_night,Bàn giao ca,2026-05-15T22:00:00+07:00,2026-05-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00477,vmk0548,shift_morning,Vận hành thiết bị,2026-05-15T06:00:00+07:00,2026-05-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00478,vmk0011,shift_morning,Vận hành thiết bị,2026-05-16T06:00:00+07:00,2026-05-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00479,vmk0025,shift_afternoon,Kiểm soát đóng gói,2026-06-20T14:00:00+07:00,2026-06-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00479,vmk0028,shift_night,Bàn giao ca,2026-06-20T22:00:00+07:00,2026-06-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00480,vmk0042,shift_night,Bàn giao ca,2026-06-21T22:00:00+07:00,2026-06-22T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00481,vmk0056,shift_morning,Vận hành thiết bị,2026-07-01T06:00:00+07:00,2026-07-01T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00481,vmk0059,shift_afternoon,Kiểm soát đóng gói,2026-07-01T14:00:00+07:00,2026-07-01T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00482,vmk0065,shift_afternoon,Kiểm soát đóng gói,2026-07-02T14:00:00+07:00,2026-07-02T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00483,vmk0079,shift_night,Bàn giao ca,2026-08-06T22:00:00+07:00,2026-08-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00483,vmk0090,shift_morning,Vận hành thiết bị,2026-08-06T06:00:00+07:00,2026-08-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00484,vmk0096,shift_morning,Vận hành thiết bị,2026-08-07T06:00:00+07:00,2026-08-07T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00485,vmk0113,shift_afternoon,Kiểm soát đóng gói,2026-09-07T14:00:00+07:00,2026-09-07T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00485,vmk0121,shift_night,Bàn giao ca,2026-09-07T22:00:00+07:00,2026-09-08T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00486,vmk0127,shift_night,Bàn giao ca,2026-09-08T22:00:00+07:00,2026-09-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00487,vmk0141,shift_morning,Vận hành thiết bị,2026-01-12T06:00:00+07:00,2026-01-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00487,vmk0144,shift_afternoon,Kiểm soát đóng gói,2026-01-12T14:00:00+07:00,2026-01-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00488,vmk0158,shift_afternoon,Kiểm soát đóng gói,2026-01-13T14:00:00+07:00,2026-01-13T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00489,vmk0175,shift_night,Bàn giao ca,2026-02-13T22:00:00+07:00,2026-02-14T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00489,vmk0178,shift_morning,Vận hành thiết bị,2026-02-13T06:00:00+07:00,2026-02-13T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00490,vmk0189,shift_morning,Vận hành thiết bị,2026-02-14T06:00:00+07:00,2026-02-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00491,vmk0203,shift_afternoon,Kiểm soát đóng gói,2026-03-18T14:00:00+07:00,2026-03-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00491,vmk0206,shift_night,Bàn giao ca,2026-03-18T22:00:00+07:00,2026-03-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00492,vmk0220,shift_night,Bàn giao ca,2026-03-19T22:00:00+07:00,2026-03-20T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00493,vmk0237,shift_morning,Vận hành thiết bị,2026-04-19T06:00:00+07:00,2026-04-19T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00493,vmk0240,shift_afternoon,Kiểm soát đóng gói,2026-04-19T14:00:00+07:00,2026-04-19T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00494,vmk0251,shift_afternoon,Kiểm soát đóng gói,2026-04-20T14:00:00+07:00,2026-04-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00495,vmk0260,shift_night,Bàn giao ca,2026-05-04T22:00:00+07:00,2026-05-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00495,vmk0268,shift_morning,Vận hành thiết bị,2026-05-04T06:00:00+07:00,2026-05-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00496,vmk0274,shift_morning,Vận hành thiết bị,2026-05-05T06:00:00+07:00,2026-05-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00497,vmk0291,shift_afternoon,Kiểm soát đóng gói,2026-06-05T14:00:00+07:00,2026-06-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00497,vmk0302,shift_night,Bàn giao ca,2026-06-05T22:00:00+07:00,2026-06-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00498,vmk0308,shift_night,Bàn giao ca,2026-06-06T22:00:00+07:00,2026-06-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00499,vmk0322,shift_morning,Vận hành thiết bị,2026-07-10T06:00:00+07:00,2026-07-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00499,vmk0325,shift_afternoon,Kiểm soát đóng gói,2026-07-10T14:00:00+07:00,2026-07-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00500,vmk0336,shift_afternoon,Kiểm soát đóng gói,2026-07-11T14:00:00+07:00,2026-07-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00501,vmk0353,shift_night,Bàn giao ca,2026-01-01T22:00:00+07:00,2026-01-02T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00501,vmk0356,shift_morning,Vận hành thiết bị,2026-01-01T06:00:00+07:00,2026-01-01T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00502,vmk0370,shift_morning,Vận hành thiết bị,2026-01-02T06:00:00+07:00,2026-01-02T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00503,vmk0384,shift_afternoon,Kiểm soát đóng gói,2026-02-06T14:00:00+07:00,2026-02-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00503,vmk0387,shift_night,Bàn giao ca,2026-02-06T22:00:00+07:00,2026-02-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00504,vmk0398,shift_night,Bàn giao ca,2026-02-07T22:00:00+07:00,2026-02-08T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00505,vmk0415,shift_morning,Vận hành thiết bị,2026-03-07T06:00:00+07:00,2026-03-07T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00505,vmk0418,shift_afternoon,Kiểm soát đóng gói,2026-03-07T14:00:00+07:00,2026-03-07T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00506,vmk0432,shift_afternoon,Kiểm soát đóng gói,2026-03-08T14:00:00+07:00,2026-03-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00507,vmk0446,shift_night,Bàn giao ca,2026-04-12T22:00:00+07:00,2026-04-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00507,vmk0449,shift_morning,Vận hành thiết bị,2026-04-12T06:00:00+07:00,2026-04-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00508,vmk0455,shift_morning,Vận hành thiết bị,2026-04-13T06:00:00+07:00,2026-04-13T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00509,vmk0469,shift_afternoon,Kiểm soát đóng gói,2026-05-13T14:00:00+07:00,2026-05-13T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00509,vmk0480,shift_night,Bàn giao ca,2026-05-13T22:00:00+07:00,2026-05-14T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00510,vmk0486,shift_night,Bàn giao ca,2026-05-14T22:00:00+07:00,2026-05-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00511,vmk0503,shift_morning,Vận hành thiết bị,2026-06-18T06:00:00+07:00,2026-06-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00511,vmk0511,shift_afternoon,Kiểm soát đóng gói,2026-06-18T14:00:00+07:00,2026-06-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00512,vmk0517,shift_afternoon,Kiểm soát đóng gói,2026-06-19T14:00:00+07:00,2026-06-19T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00513,vmk0531,shift_night,Bàn giao ca,2026-07-19T22:00:00+07:00,2026-07-20T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00513,vmk0534,shift_morning,Vận hành thiết bị,2026-07-19T06:00:00+07:00,2026-07-19T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00514,vmk0548,shift_morning,Vận hành thiết bị,2026-07-20T06:00:00+07:00,2026-07-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00515,vmk0012,shift_afternoon,Kiểm soát đóng gói,2026-08-04T14:00:00+07:00,2026-08-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00515,vmk0013,shift_night,Bàn giao ca,2026-08-04T22:00:00+07:00,2026-08-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00516,vmk0028,shift_night,Bàn giao ca,2026-08-05T22:00:00+07:00,2026-08-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00517,vmk0045,shift_morning,Vận hành thiết bị,2026-09-05T06:00:00+07:00,2026-09-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00517,vmk0048,shift_afternoon,Kiểm soát đóng gói,2026-09-05T14:00:00+07:00,2026-09-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00518,vmk0059,shift_afternoon,Kiểm soát đóng gói,2026-09-06T14:00:00+07:00,2026-09-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00519,vmk0073,shift_night,Bàn giao ca,2026-01-10T22:00:00+07:00,2026-01-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00519,vmk0076,shift_morning,Vận hành thiết bị,2026-01-10T06:00:00+07:00,2026-01-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00520,vmk0090,shift_morning,Vận hành thiết bị,2026-01-11T06:00:00+07:00,2026-01-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00521,vmk0107,shift_afternoon,Kiểm soát đóng gói,2026-02-11T14:00:00+07:00,2026-02-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00521,vmk0110,shift_night,Bàn giao ca,2026-02-11T22:00:00+07:00,2026-02-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00522,vmk0121,shift_night,Bàn giao ca,2026-02-12T22:00:00+07:00,2026-02-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00523,vmk0130,shift_morning,Vận hành thiết bị,2026-03-16T06:00:00+07:00,2026-03-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00523,vmk0138,shift_afternoon,Kiểm soát đóng gói,2026-03-16T14:00:00+07:00,2026-03-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00524,vmk0144,shift_afternoon,Kiểm soát đóng gói,2026-03-17T14:00:00+07:00,2026-03-17T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00525,vmk0161,shift_night,Bàn giao ca,2026-04-17T22:00:00+07:00,2026-04-18T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00525,vmk0172,shift_morning,Vận hành thiết bị,2026-04-17T06:00:00+07:00,2026-04-17T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00526,vmk0178,shift_morning,Vận hành thiết bị,2026-04-18T06:00:00+07:00,2026-04-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00527,vmk0192,shift_afternoon,Kiểm soát đóng gói,2026-05-22T14:00:00+07:00,2026-05-22T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00527,vmk0195,shift_night,Bàn giao ca,2026-05-22T22:00:00+07:00,2026-05-23T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00528,vmk0206,shift_night,Bàn giao ca,2026-05-23T22:00:00+07:00,2026-05-24T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00529,vmk0223,shift_morning,Vận hành thiết bị,2026-06-03T06:00:00+07:00,2026-06-03T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00529,vmk0226,shift_afternoon,Kiểm soát đóng gói,2026-06-03T14:00:00+07:00,2026-06-03T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00530,vmk0240,shift_afternoon,Kiểm soát đóng gói,2026-06-04T14:00:00+07:00,2026-06-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00531,vmk0254,shift_night,Bàn giao ca,2026-07-08T22:00:00+07:00,2026-07-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00531,vmk0257,shift_morning,Vận hành thiết bị,2026-07-08T06:00:00+07:00,2026-07-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00532,vmk0268,shift_morning,Vận hành thiết bị,2026-07-09T06:00:00+07:00,2026-07-09T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00533,vmk0285,shift_afternoon,Kiểm soát đóng gói,2026-08-09T14:00:00+07:00,2026-08-09T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00533,vmk0288,shift_night,Bàn giao ca,2026-08-09T22:00:00+07:00,2026-08-10T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00534,vmk0302,shift_night,Bàn giao ca,2026-08-10T22:00:00+07:00,2026-08-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00535,vmk0316,shift_morning,Vận hành thiết bị,2026-09-14T06:00:00+07:00,2026-09-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00535,vmk0319,shift_afternoon,Kiểm soát đóng gói,2026-09-14T14:00:00+07:00,2026-09-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00536,vmk0325,shift_afternoon,Kiểm soát đóng gói,2026-09-15T14:00:00+07:00,2026-09-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00537,vmk0339,shift_night,Bàn giao ca,2026-01-15T22:00:00+07:00,2026-01-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00537,vmk0350,shift_morning,Vận hành thiết bị,2026-01-15T06:00:00+07:00,2026-01-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00538,vmk0356,shift_morning,Vận hành thiết bị,2026-01-16T06:00:00+07:00,2026-01-16T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00539,vmk0373,shift_afternoon,Kiểm soát đóng gói,2026-02-20T14:00:00+07:00,2026-02-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00539,vmk0381,shift_night,Bàn giao ca,2026-02-20T22:00:00+07:00,2026-02-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00540,vmk0387,shift_night,Bàn giao ca,2026-02-21T22:00:00+07:00,2026-02-22T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00541,vmk0401,shift_morning,Vận hành thiết bị,2026-03-01T06:00:00+07:00,2026-03-01T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00541,vmk0404,shift_afternoon,Kiểm soát đóng gói,2026-03-01T14:00:00+07:00,2026-03-01T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00542,vmk0418,shift_afternoon,Kiểm soát đóng gói,2026-03-02T14:00:00+07:00,2026-03-02T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00543,vmk0435,shift_night,Bàn giao ca,2026-04-06T22:00:00+07:00,2026-04-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00543,vmk0438,shift_morning,Vận hành thiết bị,2026-04-06T06:00:00+07:00,2026-04-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00544,vmk0449,shift_morning,Vận hành thiết bị,2026-04-07T06:00:00+07:00,2026-04-07T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00545,vmk0463,shift_afternoon,Kiểm soát đóng gói,2026-05-07T14:00:00+07:00,2026-05-07T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00545,vmk0466,shift_night,Bàn giao ca,2026-05-07T22:00:00+07:00,2026-05-08T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00546,vmk0480,shift_night,Bàn giao ca,2026-05-08T22:00:00+07:00,2026-05-09T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00547,vmk0497,shift_morning,Vận hành thiết bị,2026-06-12T06:00:00+07:00,2026-06-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00547,vmk0500,shift_afternoon,Kiểm soát đóng gói,2026-06-12T14:00:00+07:00,2026-06-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00548,vmk0511,shift_afternoon,Kiểm soát đóng gói,2026-06-13T14:00:00+07:00,2026-06-13T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00549,vmk0520,shift_night,Bàn giao ca,2026-07-13T22:00:00+07:00,2026-07-14T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00549,vmk0528,shift_morning,Vận hành thiết bị,2026-07-13T06:00:00+07:00,2026-07-13T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00550,vmk0534,shift_morning,Vận hành thiết bị,2026-07-14T06:00:00+07:00,2026-07-14T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00551,vmk0010,shift_afternoon,Kiểm soát đóng gói,2026-08-18T14:00:00+07:00,2026-08-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00551,vmk0011,shift_night,Bàn giao ca,2026-08-18T22:00:00+07:00,2026-08-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00552,vmk0013,shift_night,Bàn giao ca,2026-08-19T22:00:00+07:00,2026-08-20T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00553,vmk0031,shift_morning,Vận hành thiết bị,2026-09-19T06:00:00+07:00,2026-09-19T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00553,vmk0042,shift_afternoon,Kiểm soát đóng gói,2026-09-19T14:00:00+07:00,2026-09-19T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00554,vmk0048,shift_afternoon,Kiểm soát đóng gói,2026-09-20T14:00:00+07:00,2026-09-20T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00555,vmk0062,shift_night,Bàn giao ca,2026-01-04T22:00:00+07:00,2026-01-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00555,vmk0065,shift_morning,Vận hành thiết bị,2026-01-04T06:00:00+07:00,2026-01-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00556,vmk0076,shift_morning,Vận hành thiết bị,2026-01-05T06:00:00+07:00,2026-01-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00557,vmk0093,shift_afternoon,Kiểm soát đóng gói,2026-02-05T14:00:00+07:00,2026-02-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00557,vmk0096,shift_night,Bàn giao ca,2026-02-05T22:00:00+07:00,2026-02-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00558,vmk0110,shift_night,Bàn giao ca,2026-02-06T22:00:00+07:00,2026-02-07T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00559,vmk0124,shift_morning,Vận hành thiết bị,2026-03-10T06:00:00+07:00,2026-03-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00559,vmk0127,shift_afternoon,Kiểm soát đóng gói,2026-03-10T14:00:00+07:00,2026-03-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00560,vmk0138,shift_afternoon,Kiểm soát đóng gói,2026-03-11T14:00:00+07:00,2026-03-11T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00561,vmk0155,shift_night,Bàn giao ca,2026-04-11T22:00:00+07:00,2026-04-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00561,vmk0158,shift_morning,Vận hành thiết bị,2026-04-11T06:00:00+07:00,2026-04-11T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00562,vmk0172,shift_morning,Vận hành thiết bị,2026-04-12T06:00:00+07:00,2026-04-12T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00563,vmk0186,shift_afternoon,Kiểm soát đóng gói,2026-05-16T14:00:00+07:00,2026-05-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00563,vmk0189,shift_night,Bàn giao ca,2026-05-16T22:00:00+07:00,2026-05-17T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00564,vmk0195,shift_night,Bàn giao ca,2026-05-17T22:00:00+07:00,2026-05-18T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00565,vmk0209,shift_morning,Vận hành thiết bị,2026-06-17T06:00:00+07:00,2026-06-17T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00565,vmk0220,shift_afternoon,Kiểm soát đóng gói,2026-06-17T14:00:00+07:00,2026-06-17T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00566,vmk0226,shift_afternoon,Kiểm soát đóng gói,2026-06-18T14:00:00+07:00,2026-06-18T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00567,vmk0243,shift_night,Bàn giao ca,2026-07-22T22:00:00+07:00,2026-07-23T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00567,vmk0251,shift_morning,Vận hành thiết bị,2026-07-22T06:00:00+07:00,2026-07-22T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00568,vmk0257,shift_morning,Vận hành thiết bị,2026-07-23T06:00:00+07:00,2026-07-23T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00569,vmk0271,shift_afternoon,Kiểm soát đóng gói,2026-08-03T14:00:00+07:00,2026-08-03T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00569,vmk0274,shift_night,Bàn giao ca,2026-08-03T22:00:00+07:00,2026-08-04T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00570,vmk0288,shift_night,Bàn giao ca,2026-08-04T22:00:00+07:00,2026-08-05T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00571,vmk0305,shift_morning,Vận hành thiết bị,2026-09-08T06:00:00+07:00,2026-09-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00571,vmk0308,shift_afternoon,Kiểm soát đóng gói,2026-09-08T14:00:00+07:00,2026-09-08T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00572,vmk0319,shift_afternoon,Kiểm soát đóng gói,2026-09-09T14:00:00+07:00,2026-09-09T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00573,vmk0333,shift_night,Bàn giao ca,2026-01-09T22:00:00+07:00,2026-01-10T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00573,vmk0336,shift_morning,Vận hành thiết bị,2026-01-09T06:00:00+07:00,2026-01-09T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00574,vmk0350,shift_morning,Vận hành thiết bị,2026-01-10T06:00:00+07:00,2026-01-10T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00575,vmk0367,shift_afternoon,Kiểm soát đóng gói,2026-02-14T14:00:00+07:00,2026-02-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00575,vmk0370,shift_night,Bàn giao ca,2026-02-14T22:00:00+07:00,2026-02-15T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00576,vmk0381,shift_night,Bàn giao ca,2026-02-15T22:00:00+07:00,2026-02-16T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00577,vmk0390,shift_morning,Vận hành thiết bị,2026-03-15T06:00:00+07:00,2026-03-15T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00577,vmk0398,shift_afternoon,Kiểm soát đóng gói,2026-03-15T14:00:00+07:00,2026-03-15T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00578,vmk0404,shift_afternoon,Kiểm soát đóng gói,2026-03-16T14:00:00+07:00,2026-03-16T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00579,vmk0421,shift_night,Bàn giao ca,2026-04-20T22:00:00+07:00,2026-04-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00579,vmk0432,shift_morning,Vận hành thiết bị,2026-04-20T06:00:00+07:00,2026-04-20T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00580,vmk0438,shift_morning,Vận hành thiết bị,2026-04-21T06:00:00+07:00,2026-04-21T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00581,vmk0452,shift_afternoon,Kiểm soát đóng gói,2026-05-01T14:00:00+07:00,2026-05-01T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00581,vmk0455,shift_night,Bàn giao ca,2026-05-01T22:00:00+07:00,2026-05-02T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00582,vmk0466,shift_night,Bàn giao ca,2026-05-02T22:00:00+07:00,2026-05-03T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00583,vmk0483,shift_morning,Vận hành thiết bị,2026-06-06T06:00:00+07:00,2026-06-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00583,vmk0486,shift_afternoon,Kiểm soát đóng gói,2026-06-06T14:00:00+07:00,2026-06-06T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00584,vmk0500,shift_afternoon,Kiểm soát đóng gói,2026-06-07T14:00:00+07:00,2026-06-07T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00585,vmk0514,shift_night,Bàn giao ca,2026-07-07T22:00:00+07:00,2026-07-08T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00585,vmk0517,shift_morning,Vận hành thiết bị,2026-07-07T06:00:00+07:00,2026-07-07T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00586,vmk0528,shift_morning,Vận hành thiết bị,2026-07-08T06:00:00+07:00,2026-07-08T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00587,vmk0545,shift_afternoon,Kiểm soát đóng gói,2026-08-12T14:00:00+07:00,2026-08-12T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00587,vmk0548,shift_night,Bàn giao ca,2026-08-12T22:00:00+07:00,2026-08-13T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00588,vmk0011,shift_night,Bàn giao ca,2026-08-13T22:00:00+07:00,2026-08-14T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00589,vmk0025,shift_morning,Vận hành thiết bị,2026-09-13T06:00:00+07:00,2026-09-13T14:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00589,vmk0028,shift_afternoon,Kiểm soát đóng gói,2026-09-13T14:00:00+07:00,2026-09-13T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00590,vmk0042,shift_afternoon,Kiểm soát đóng gói,2026-09-14T14:00:00+07:00,2026-09-14T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00591,vmk0056,shift_night,Bàn giao ca,2026-01-18T22:00:00+07:00,2026-01-19T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00591,vmk0059,shift_morning,Vận hành thiết bị,2026-01-18T06:00:00+07:00,2026-01-18T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00592,vmk0065,shift_morning,Vận hành thiết bị,2026-01-19T06:00:00+07:00,2026-01-19T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00593,vmk0079,shift_afternoon,Kiểm soát đóng gói,2026-02-19T14:00:00+07:00,2026-02-19T22:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00593,vmk0090,shift_night,Bàn giao ca,2026-02-19T22:00:00+07:00,2026-02-20T06:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00594,vmk0096,shift_night,Bàn giao ca,2026-02-20T22:00:00+07:00,2026-02-21T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00595,vmk0113,shift_morning,Vận hành thiết bị,2026-03-04T06:00:00+07:00,2026-03-04T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00595,vmk0121,shift_afternoon,Kiểm soát đóng gói,2026-03-04T14:00:00+07:00,2026-03-04T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00596,vmk0127,shift_afternoon,Kiểm soát đóng gói,2026-03-05T14:00:00+07:00,2026-03-05T22:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00597,vmk0141,shift_night,Bàn giao ca,2026-04-05T22:00:00+07:00,2026-04-06T06:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00597,vmk0144,shift_morning,Vận hành thiết bị,2026-04-05T06:00:00+07:00,2026-04-05T14:00:00+07:00,planned,Phân công theo ca sản xuất.
+production_order_2026_00598,vmk0158,shift_morning,Vận hành thiết bị,2026-04-06T06:00:00+07:00,2026-04-06T14:00:00+07:00,active,Phân công theo ca sản xuất.
+production_order_2026_00599,vmk0175,shift_afternoon,Kiểm soát đóng gói,2026-05-10T14:00:00+07:00,2026-05-10T22:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00599,vmk0178,shift_night,Bàn giao ca,2026-05-10T22:00:00+07:00,2026-05-11T06:00:00+07:00,completed,Phân công theo ca sản xuất.
+production_order_2026_00600,vmk0189,shift_night,Bàn giao ca,2026-05-11T22:00:00+07:00,2026-05-12T06:00:00+07:00,planned,Phân công theo ca sản xuất.

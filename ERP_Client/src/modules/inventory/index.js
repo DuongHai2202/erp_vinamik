@@ -1,0 +1,1 @@
+export { default as inventory_page } from './inventory_page';

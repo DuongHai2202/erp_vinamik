@@ -1,0 +1,7 @@
+﻿warehouse_code,warehouse_name,address,status
+wh_raw_south,Kho nguyên liệu Nhà máy Sữa Việt Nam,"Lô A-4,5,6,7-CN đường NA7, KCN Mỹ Phước 2, Bình Dương",active
+wh_raw_north,Xí nghiệp Kho vận Hà Nội,"Km 10 Quốc lộ 5, xã Dương Xá, huyện Gia Lâm, Hà Nội",active
+wh_finished_south,Kho thành phẩm Nhà máy Sữa Thống Nhất,"12 Đặng Văn Bi, phường Trường Thọ, TP Thủ Đức, TP Hồ Chí Minh",active
+wh_finished_north,Kho thành phẩm Tiên Sơn,"Khu công nghiệp Tiên Sơn, tỉnh Bắc Ninh",active
+wh_cold,Trung tâm sữa tươi nguyên liệu Củ Chi,"Khu công nghiệp Đông Nam, huyện Củ Chi, TP Hồ Chí Minh",active
+wh_packaging,Kho bao bì Nhà máy Sữa Bột Việt Nam,"Số 9 Đại lộ Tự Do, KCN Việt Nam - Singapore 1, Bình Dương",active
