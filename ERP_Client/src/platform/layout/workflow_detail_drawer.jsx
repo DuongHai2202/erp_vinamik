@@ -5,7 +5,7 @@ import { DatabaseOutlined, DeleteOutlined, EditOutlined, PlusOutlined, SendOutli
 import { has_permission } from '../common/permission_utils';
 import { request_api } from '../common/api_client';
 import { LookupField } from './workflow_fields';
-import { format_date_vn, format_datetime_vn, format_field_value, format_vnd, to_iso_date, VietnameseDateInput } from '../common/formatters';
+import { format_date_vn, format_datetime_vn, format_field_value, format_number_vn, format_vnd, to_iso_date, VietnameseDateInput } from '../common/formatters';
 
 const AntdApp = antd_app;
 const large_table_threshold = 40;
@@ -115,6 +115,42 @@ function display_business_value(value, field_key) {
   return display_value(value, field_key);
 }
 
+const line_field_labels = {
+  line_number: 'STT',
+  item_code: 'Mã vật tư',
+  item_name: 'Tên vật tư',
+  material_item_code: 'Mã vật tư',
+  material_item_name: 'Tên vật tư',
+  unit_code_snapshot: 'Đơn vị tính',
+  unit_code: 'Đơn vị tính',
+  quantity_per_base: 'Định mức cơ bản',
+  base_quantity_snapshot: 'Định mức cơ bản',
+  required_quantity: 'Số lượng cần',
+  available_quantity: 'Số lượng khả dụng',
+  shortage_quantity: 'Số lượng thiếu',
+  scrap_percent: 'Tỷ lệ hao hụt (%)',
+  scrap_percent_snapshot: 'Tỷ lệ hao hụt (%)',
+  location_code: 'Vị trí',
+  source_location_code: 'Vị trí xuất',
+  destination_location_code: 'Vị trí nhập',
+  lot_code: 'Mã lô',
+  quantity: 'Số lượng',
+  system_quantity: 'Theo sổ',
+  counted_quantity: 'Số đếm',
+  difference_quantity: 'Chênh lệch',
+  counted_at: 'Thời điểm đếm',
+};
+
+function format_progress_quantity(value) {
+  if (value === null || value === undefined || value === '') return '—';
+  return format_number_vn(value, 3);
+}
+
+function format_progress_percent(value) {
+  if (value === null || value === undefined || value === '') return '—';
+  return format_number_vn(value, 2) + '%';
+}
+
 function response_data(response) {
   return response?.data || null;
 }
@@ -141,7 +177,7 @@ function LinesTable({ lines, kind }) {
     ];
   } else {
     const keys = Object.keys(lines[0]).filter((key) => !key.endsWith('_id') && key !== 'notes');
-    columns = keys.slice(0, 8).map((key) => ({ title: key.replaceAll('_', ' '), dataIndex: key, render: (value) => display_business_value(value, key) }));
+    columns = keys.slice(0, 8).map((key) => ({ title: line_field_labels[key] || key.replaceAll('_', ' '), dataIndex: key, render: (value) => display_business_value(value, key) }));
   }
   return <Table size="small" rowKey={(item, index) => String(item.stocktake_line_id || item.receipt_line_id || item.issue_line_id || item.transfer_line_id || item.bom_line_id || index)} dataSource={lines} columns={columns} pagination={false} {...table_render_props(lines.length, 620)} />;
 }
@@ -492,7 +528,18 @@ function WorkflowDetailDrawer({ config, record, open, on_close, current_user, on
       {config.detail_kind === 'stocktake' && <><Divider /><Typography.Title level={5}>Dòng kiểm kê</Typography.Title><StocktakeLines detail={detail} on_changed={refresh} current_user={current_user} /></>}
       {config.detail_kind !== 'payroll' && config.detail_kind !== 'production_order' && detail.lines && <><Divider /><Typography.Title level={5}>Dòng chi tiết</Typography.Title><LinesTable lines={detail.lines} kind={config.detail_kind} /></>}
       {related.balances && <><Divider /><Typography.Title level={5}>Tồn khả dụng tại kho</Typography.Title><Table size="small" rowKey={(item, index) => item.stock_item_id + '-' + item.warehouse_location_id + '-' + (item.stock_lot_id || 'none') + '-' + index} dataSource={related.balances} pagination={{ pageSize: 15, showSizeChanger: false }} {...table_render_props(related.balances.length, 760, 320)} columns={[{ title: 'Mã vật tư', dataIndex: 'item_code' }, { title: 'Tên vật tư', dataIndex: 'item_name' }, { title: 'Vị trí', dataIndex: 'location_code' }, { title: 'Lô', dataIndex: 'lot_code' }, { title: 'Số dư', dataIndex: 'on_hand_quantity' }, { title: 'Đơn vị', dataIndex: 'unit_code' }]} /></>}
-      {config.detail_kind === 'production_order' && <><Divider /><Typography.Title level={5}>Tiến độ lệnh</Typography.Title>{related.progress ? <div className="production_progress_cards"><div><span>Đã đạt</span><strong>{display_value(related.progress.actual_good_quantity)}</strong></div><div><span>Hàng lỗi</span><strong>{display_value(related.progress.actual_defective_quantity)}</strong></div><div><span>Hoàn thành</span><strong>{display_value(related.progress.completion_percent)}%</strong></div><div><span>Còn lại</span><strong>{display_value(related.progress.remaining_quantity)}</strong></div></div> : <Typography.Text type="secondary">Chưa có dữ liệu tiến độ.</Typography.Text>}
+      {config.detail_kind === 'production_order' && <><Divider /><Typography.Title level={5}>Tiến độ lệnh</Typography.Title>{related.progress ? <div className="production_progress_cards" aria-label="Tóm tắt tiến độ lệnh">
+        {[
+          ['actual_good_quantity', 'Đã đạt', 'Số lượng đạt'],
+          ['actual_defective_quantity', 'Hàng lỗi', 'Số lượng lỗi'],
+          ['completion_percent', 'Hoàn thành', 'Tỷ lệ so với kế hoạch'],
+          ['remaining_quantity', 'Còn lại', 'Số lượng chưa đạt'],
+        ].map(([key, label, caption]) => <div className="production_progress_metric" key={key}>
+          <span className="production_progress_metric_label">{label}</span>
+          <strong className="production_progress_metric_value">{key === 'completion_percent' ? format_progress_percent(related.progress[key]) : format_progress_quantity(related.progress[key])}</strong>
+          <small className="production_progress_metric_caption">{caption}</small>
+        </div>)}
+      </div> : <Typography.Text type="secondary">Chưa có dữ liệu tiến độ.</Typography.Text>}
         {related.material_needs && <><Typography.Title level={5}>Nhu cầu vật tư thực tế</Typography.Title><Table size="small" rowKey="material_stock_item_id" dataSource={related.material_needs.items || []} pagination={false} scroll={{ x: 700 }} columns={[{ title: 'Mã vật tư', dataIndex: 'material_item_code' }, { title: 'Tên vật tư', dataIndex: 'material_item_name' }, { title: 'Đơn vị', dataIndex: 'unit_code' }, { title: 'Cần dùng', dataIndex: 'required_quantity' }, { title: 'Khả dụng', dataIndex: 'available_quantity' }, { title: 'Thiếu', dataIndex: 'shortage_quantity', render: (value) => <Tag color={Number(value) > 0 ? 'red' : 'green'}>{display_value(value)}</Tag> }]} /></>}        {related.progress?.events?.length ? <><Typography.Title level={5}>Lịch sử tiến độ</Typography.Title><Table size="small" rowKey="production_order_event_id" dataSource={related.progress.events} pagination={false} columns={[{ title: 'Sự kiện', dataIndex: 'event_type' }, { title: 'Trạng thái trước', dataIndex: 'previous_status', render: (value) => status_labels[value] || value || 'Chưa cập nhật' }, { title: 'Trạng thái sau', dataIndex: 'new_status', render: (value) => status_labels[value] || value || 'Chưa cập nhật' }, { title: 'Thời điểm', dataIndex: 'occurred_at', render: (value) => format_datetime_vn(value) }]} /></> : null}        {detail.material_requirements && <><Typography.Title level={5}>Nhu cầu vật tư theo BOM</Typography.Title><LinesTable lines={detail.material_requirements} kind="material_requirements" /></>}
         <Space wrap className="workflow_detail_actions">{has_permission(current_user, 'production_output_create') && ['released', 'in_progress', 'paused', 'completed'].includes(detail.status) && <Button type="primary" icon={<PlusOutlined />} onClick={() => { set_editing_output(null); set_output_open(true); }}>Ghi nhận sản lượng</Button>}{has_permission(current_user, 'production_order_update') && ['released', 'in_progress', 'paused'].includes(detail.status) && <Button icon={<DatabaseOutlined />} onClick={() => set_consumption_open(true)}>Ghi nhận tiêu hao</Button>}</Space>
         {related.outputs && <><Typography.Title level={5}>Sản lượng đã ghi nhận</Typography.Title><Table size="small" rowKey="production_output_id" dataSource={related.outputs} pagination={false} {...table_render_props(related.outputs.length, 850, 320)} columns={[
