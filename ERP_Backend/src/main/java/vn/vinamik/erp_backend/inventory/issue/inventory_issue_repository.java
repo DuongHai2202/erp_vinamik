@@ -47,6 +47,41 @@ public class inventory_issue_repository {
         return issue_id;
     }
 
+    public boolean idempotency_key_exists(String idempotency_key, Long issue_id) {
+        Long count = issue_id == null
+                ? jpa_query_executor.queryForObject("SELECT count(*) FROM inventory.issue WHERE idempotency_key = ?", Long.class, idempotency_key)
+                : jpa_query_executor.queryForObject("SELECT count(*) FROM inventory.issue WHERE idempotency_key = ? AND issue_id <> ?", Long.class, idempotency_key, issue_id);
+        return count != null && count > 0;
+    }
+
+    public int update_issue(long issue_id, String issue_code, Long warehouse_id, String source_module,
+                            Long source_document_id, String reason_code, String idempotency_key,
+                            String notes, long actor_user_id) {
+        return jpa_query_executor.update(
+                "UPDATE inventory.issue SET issue_code = ?, warehouse_id = ?, source_module = ?, source_document_id = ?, reason_code = ?, idempotency_key = ?, notes = ?, updated_at = now(), updated_by_user_id = ? WHERE issue_id = ? AND status = 'draft'",
+                issue_code, warehouse_id, source_module, source_document_id, reason_code, idempotency_key,
+                notes, actor_user_id, issue_id);
+    }
+
+    public int delete_lines(long issue_id) {
+        return jpa_query_executor.update("DELETE FROM inventory.issue_line WHERE issue_id = ?", issue_id);
+    }
+
+    public int delete_draft(long issue_id) {
+        return jpa_query_executor.update("DELETE FROM inventory.issue WHERE issue_id = ? AND status = 'draft'", issue_id);
+    }
+
+    public int cancel(long issue_id, long actor_user_id) {
+        return jpa_query_executor.update(
+                "UPDATE inventory.issue SET status = 'cancelled', updated_at = now(), updated_by_user_id = ? WHERE issue_id = ? AND status IN ('draft', 'pending')",
+                actor_user_id, issue_id);
+    }
+    public int mark_pending(long issue_id, long actor_user_id) {
+        return jpa_query_executor.update(
+                "UPDATE inventory.issue SET status = 'pending', updated_at = now(), updated_by_user_id = ? WHERE issue_id = ? AND status = 'draft'",
+                actor_user_id, issue_id);
+    }
+
     public void insert_line(long issue_id, int line_number, issue_line_request line) {
         jpa_query_executor.update(
                 "INSERT INTO inventory.issue_line (issue_id, line_number, stock_item_id, warehouse_location_id, stock_lot_id, quantity) VALUES (?, ?, ?, ?, ?, ?)",
@@ -118,9 +153,10 @@ public class inventory_issue_repository {
         return count != null && count > 0;
     }
 
-    public boolean issue_code_exists(String issue_code) {
-        Long count = jpa_query_executor.queryForObject(
-                "SELECT count(*) FROM inventory.issue WHERE issue_code = ?", Long.class, issue_code);
+    public boolean issue_code_exists(String issue_code, Long issue_id) {
+        Long count = issue_id == null
+                ? jpa_query_executor.queryForObject("SELECT count(*) FROM inventory.issue WHERE issue_code = ?", Long.class, issue_code)
+                : jpa_query_executor.queryForObject("SELECT count(*) FROM inventory.issue WHERE issue_code = ? AND issue_id <> ?", Long.class, issue_code, issue_id);
         return count != null && count > 0;
     }
 

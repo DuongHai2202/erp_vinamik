@@ -14,6 +14,7 @@ Optional:
 Examples:
     py -3 data/load_fixture_via_api.py --phase hr
     py -3 data/load_fixture_via_api.py --phase inventory_master
+    py -3 data/load_fixture_via_api.py --phase stocktakes
     py -3 data/load_fixture_via_api.py --phase production
 """
 
@@ -138,7 +139,7 @@ class load_context:
                 "receipt": "receipt_id", "issue": "issue_id", "transfer": "transfer_id",
                 "plan": "production_plan_id", "plan_line": "production_plan_line_id", "bom": "bom_id",
                 "order": "production_order_id", "assignment": "production_assignment_id",
-                "output": "production_output_id",
+                "output": "production_output_id", "stocktake": "stocktake_id",
             }
             preferred = preferred_ids.get(kind)
             if preferred in value and value[preferred] is not None:
@@ -147,7 +148,7 @@ class load_context:
             for key in (f"{kind}_id", "id", "employment_contract_id", "leave_request_id",
                         "employee_reward_discipline_id", "receipt_id", "issue_id", "transfer_id",
                         "production_plan_id", "production_plan_line_id", "bom_id",
-                        "production_order_id", "production_assignment_id", "production_output_id",
+                        "production_order_id", "production_assignment_id", "production_output_id", "stocktake_id",
                         "stock_item_id", "unit_of_measure_id", "item_category_id", "supplier_id",
                         "warehouse_id", "warehouse_location_id"):
                 if key in value and value[key] is not None:
@@ -215,6 +216,7 @@ def list_existing(client: api_client, path: str, code_field: str, item_key: str 
         "plan_code": "production_plan_id",
         "bom_code": "bom_id",
         "order_code": "production_order_id",
+        "stocktake_code": "stocktake_id",
     }
     preferred_id_field = preferred_id_fields.get(code_field)
     result: dict[str, int] = {}
@@ -354,10 +356,12 @@ def load_contracts(context: load_context) -> None:
             })
             contract_id = context.remember("contract", code, value)
             desired_status = row.get("status") or "draft"
-            if desired_status != "draft":
-                context.client.post_data(f"/api/v1/human_resources/contracts/{contract_id}/status", {"status": "active", "notes": "Fixture activation."})
+            if desired_status == "cancelled":
+                context.client.post_data(f"/api/v1/human_resources/contracts/{contract_id}/status", {"status": "cancelled", "notes": "Hủy bản ghi theo trạng thái dữ liệu nguồn."})
+            elif desired_status != "draft":
+                context.client.post_data(f"/api/v1/human_resources/contracts/{contract_id}/status", {"status": "active", "notes": "Kích hoạt bản ghi dữ liệu theo trạng thái đã khai báo."})
                 if desired_status != "active":
-                    context.client.post_data(f"/api/v1/human_resources/contracts/{contract_id}/status", {"status": desired_status, "notes": "Fixture status."})
+                    context.client.post_data(f"/api/v1/human_resources/contracts/{contract_id}/status", {"status": desired_status, "notes": "Cập nhật trạng thái theo dữ liệu nguồn."})
         except (api_error, KeyError) as error:
             context.record_failure("contract", code, error)
         report_progress("contract", index, len(rows), code)
@@ -384,7 +388,7 @@ def load_absences(context: load_context) -> None:
             leave_id = context.remember("leave", code, value)
             if desired_status == "approved" or desired_status == "rejected":
                 context.client.post_data(f"/api/v1/human_resources/absences/{leave_id}/decision", {
-                    "status": desired_status, "decision_note": row.get("decision_note") or "Fixture decision."})
+                    "status": desired_status, "decision_note": row.get("decision_note") or "Ghi nhận quyết định theo dữ liệu nguồn."})
             elif desired_status == "cancelled":
                 context.client.post_data(f"/api/v1/human_resources/absences/{leave_id}/cancel", {})
         except (api_error, KeyError) as error:
@@ -406,13 +410,17 @@ def load_rewards(context: load_context) -> None:
                 "employee_id": context.maps["employee"][row["employee_code"]],
                 "event_type": row["event_type"], "effective_on": row["effective_on"],
                 "reason": row["reason"], "amount": to_decimal(row.get("amount")),
-                "currency_code": row.get("currency_code") or "VND", "status": "pending",
+                "currency_code": row.get("currency_code") or "VND", "status": row.get("status") if row.get("status") in {"draft", "pending"} else "pending",
             })
             record_id = context.remember("reward", code, value)
             desired_status = row.get("status") or "pending"
             if desired_status == "approved" or desired_status == "rejected":
                 context.client.post_data(f"/api/v1/human_resources/rewards_discipline/{record_id}/decision", {
-                    "status": desired_status, "decision_note": row.get("decision_note") or "Fixture decision."})
+                    "status": desired_status, "decision_note": row.get("decision_note") or "Ghi nhận quyết định theo dữ liệu nguồn."})
+            elif desired_status == "cancelled":
+                context.client.post_data(f"/api/v1/human_resources/rewards_discipline/{record_id}/cancel", {})
+            elif desired_status == "pending" and value.get("status") == "draft":
+                context.client.post_data(f"/api/v1/human_resources/rewards_discipline/{record_id}/submit", {})
         except (api_error, KeyError) as error:
             context.record_failure("reward", code, error)
         report_progress("reward", index, len(rows), code)
@@ -430,7 +438,17 @@ def load_payroll_periods(context: load_context) -> None:
             year, month = row["starts_on"].split("-")[:2]
             value = context.client.post_data("/api/v1/human_resources/payroll/periods", {
                 "year": int(year), "month": int(month)})
-            context.remember("payroll_period", code, value)
+            period_id = context.remember("payroll_period", code, value)
+            desired_status = row.get("status") or "draft"
+            if desired_status in {"calculated", "approved", "rejected", "locked"}:
+                context.client.post_data(f"/api/v1/human_resources/payroll/periods/{period_id}/calculate", {})
+            if desired_status == "approved":
+                context.client.post_data(f"/api/v1/human_resources/payroll/periods/{period_id}/approve", {})
+            elif desired_status == "rejected":
+                context.client.post_data(f"/api/v1/human_resources/payroll/periods/{period_id}/reject", {"decision_note": "Kỳ lương cần rà soát lại theo dữ liệu nguồn."})
+            elif desired_status == "locked":
+                context.client.post_data(f"/api/v1/human_resources/payroll/periods/{period_id}/approve", {})
+                context.client.post_data(f"/api/v1/human_resources/payroll/periods/{period_id}/lock", {})
         except (api_error, KeyError) as error:
             context.record_failure("payroll_period", code, error)
         report_progress("payroll_period", index, len(rows), code)
@@ -590,6 +608,55 @@ def load_stock_items(context: load_context) -> None:
         report_progress("stock_item", index, len(rows), code)
 
 
+def load_stocktakes(context: load_context) -> None:
+    """Create inventory stocktake sessions from the current balance projection.
+
+    The backend owns stocktake lines: creating a session snapshots every
+    balance in that warehouse.  For fixture rows that need to reach submitted,
+    approved or posted, count each snapshot at its system quantity first; this
+    keeps the imported session balanced while exercising the real state machine.
+    """
+    rows = read_rows("inventory/stocktakes.csv")
+    context.maps["stocktake"] = list_existing(context.client, "/api/v1/inventory/stocktakes", "stocktake_code")
+    for index, row in enumerate(rows, 1):
+        code = row["stocktake_code"]
+        desired_status = row.get("status") or "counting"
+        try:
+            if code in context.maps["stocktake"]:
+                stocktake_id = context.maps["stocktake"][code]
+                current = context.client.get_data(f"/api/v1/inventory/stocktakes/{stocktake_id}")
+            else:
+                value = context.client.post_data("/api/v1/inventory/stocktakes", {
+                    "stocktake_code": code,
+                    "warehouse_id": context.maps["warehouse"][row["warehouse_code"]],
+                    "notes": row.get("notes") or None,
+                })
+                stocktake_id = context.remember("stocktake", code, value)
+                current = value
+
+            current_status = str(current.get("status") or "counting")
+            if desired_status in {"submitted", "approved", "posted"} and current_status == "counting":
+                for line in current.get("lines", []) if isinstance(current, dict) else []:
+                    if line.get("counted_quantity") is None:
+                        context.client.post_data(
+                            f"/api/v1/inventory/stocktakes/{stocktake_id}/lines/{line['stocktake_line_id']}/count",
+                            {"counted_quantity": line.get("system_quantity", 0)},
+                        )
+                context.client.post_data(f"/api/v1/inventory/stocktakes/{stocktake_id}/submit", {})
+                current_status = "submitted"
+            if desired_status in {"approved", "posted"} and current_status == "submitted":
+                context.client.post_data(f"/api/v1/inventory/stocktakes/{stocktake_id}/approve", {})
+                current_status = "approved"
+            if desired_status == "posted" and current_status == "approved":
+                context.client.post_data(f"/api/v1/inventory/stocktakes/{stocktake_id}/post", {})
+                current_status = "posted"
+            if desired_status == "cancelled" and current_status in {"counting", "submitted", "approved"}:
+                context.client.post_data(f"/api/v1/inventory/stocktakes/{stocktake_id}/cancel", {})
+        except (api_error, KeyError, TypeError) as error:
+            context.record_failure("stocktake", code, error)
+        report_progress("stocktake", index, len(rows), code)
+
+
 def load_inventory_transactions(context: load_context) -> None:
     # Lots are created by the Inventory public contract.  The HTTP surface has
     # no standalone lot-create command; the production output command creates
@@ -598,6 +665,9 @@ def load_inventory_transactions(context: load_context) -> None:
     load_receipts(context)
     load_issues(context)
     load_transfers(context)
+    # Stocktakes must be created after receipts/issues/transfers so their
+    # snapshots reflect the current inventory balance projection.
+    load_stocktakes(context)
 
 
 def grouped_lines(relative_path: str, key: str) -> dict[str, list[dict[str, str]]]:
@@ -615,11 +685,19 @@ def load_receipts(context: load_context) -> None:
         code = row["receipt_code"]
         if code in context.maps["receipt"]:
             try:
-                current = context.client.get_data(f"/api/v1/inventory/receipts/{context.maps['receipt'][code]}")
-                if current.get("status") != "posted":
-                    context.client.post_data(f"/api/v1/inventory/receipts/{context.maps['receipt'][code]}/post", {})
+                receipt_id = context.maps["receipt"][code]
+                current = context.client.get_data(f"/api/v1/inventory/receipts/{receipt_id}")
+                current_status = current.get("status")
+                desired_status = row.get("status") or "draft"
+                if current_status != desired_status:
+                    if desired_status == "pending" and current_status == "draft":
+                        context.client.post_data(f"/api/v1/inventory/receipts/{receipt_id}/submit", {})
+                    elif desired_status == "posted" and current_status in {"draft", "pending"}:
+                        context.client.post_data(f"/api/v1/inventory/receipts/{receipt_id}/post", {})
+                    elif desired_status == "cancelled" and current_status in {"draft", "pending"}:
+                        context.client.post_data(f"/api/v1/inventory/receipts/{receipt_id}/cancel", {})
             except api_error as error:
-                context.record_failure("receipt_post", code, error)
+                context.record_failure("receipt_status", code, error)
             report_progress("receipt", index, len(rows), code)
             continue
         try:
@@ -642,6 +720,10 @@ def load_receipts(context: load_context) -> None:
             receipt_id = context.remember("receipt", code, value)
             if row.get("status") == "posted":
                 context.client.post_data(f"/api/v1/inventory/receipts/{receipt_id}/post", {})
+            elif row.get("status") == "pending":
+                context.client.post_data(f"/api/v1/inventory/receipts/{receipt_id}/submit", {})
+            elif row.get("status") == "cancelled":
+                context.client.post_data(f"/api/v1/inventory/receipts/{receipt_id}/cancel", {})
         except (api_error, KeyError) as error:
             context.record_failure("receipt", code, error)
         report_progress("receipt", index, len(rows), code)
@@ -655,11 +737,19 @@ def load_issues(context: load_context) -> None:
         code = row["issue_code"]
         if code in context.maps["issue"]:
             try:
-                current = context.client.get_data(f"/api/v1/inventory/issues/{context.maps['issue'][code]}")
-                if current.get("status") != "posted":
-                    context.client.post_data(f"/api/v1/inventory/issues/{context.maps['issue'][code]}/post", {})
+                issue_id = context.maps["issue"][code]
+                current = context.client.get_data(f"/api/v1/inventory/issues/{issue_id}")
+                current_status = current.get("status")
+                desired_status = row.get("status") or "draft"
+                if current_status != desired_status:
+                    if desired_status == "pending" and current_status == "draft":
+                        context.client.post_data(f"/api/v1/inventory/issues/{issue_id}/submit", {})
+                    elif desired_status == "posted" and current_status in {"draft", "pending"}:
+                        context.client.post_data(f"/api/v1/inventory/issues/{issue_id}/post", {})
+                    elif desired_status == "cancelled" and current_status in {"draft", "pending"}:
+                        context.client.post_data(f"/api/v1/inventory/issues/{issue_id}/cancel", {})
             except api_error as error:
-                context.record_failure("issue_post", code, error)
+                context.record_failure("issue_status", code, error)
             report_progress("issue", index, len(rows), code)
             continue
         try:
@@ -683,6 +773,10 @@ def load_issues(context: load_context) -> None:
             issue_id = context.remember("issue", code, value)
             if row.get("status") == "posted":
                 context.client.post_data(f"/api/v1/inventory/issues/{issue_id}/post", {})
+            elif row.get("status") == "pending":
+                context.client.post_data(f"/api/v1/inventory/issues/{issue_id}/submit", {})
+            elif row.get("status") == "cancelled":
+                context.client.post_data(f"/api/v1/inventory/issues/{issue_id}/cancel", {})
         except (api_error, KeyError) as error:
             context.record_failure("issue", code, error)
         report_progress("issue", index, len(rows), code)
@@ -696,11 +790,19 @@ def load_transfers(context: load_context) -> None:
         code = row["transfer_code"]
         if code in context.maps["transfer"]:
             try:
-                current = context.client.get_data(f"/api/v1/inventory/transfers/{context.maps['transfer'][code]}")
-                if current.get("status") != "posted":
-                    context.client.post_data(f"/api/v1/inventory/transfers/{context.maps['transfer'][code]}/post", {})
+                transfer_id = context.maps["transfer"][code]
+                current = context.client.get_data(f"/api/v1/inventory/transfers/{transfer_id}")
+                current_status = current.get("status")
+                desired_status = row.get("status") or "draft"
+                if current_status != desired_status:
+                    if desired_status == "pending" and current_status == "draft":
+                        context.client.post_data(f"/api/v1/inventory/transfers/{transfer_id}/submit", {})
+                    elif desired_status == "posted" and current_status in {"draft", "pending"}:
+                        context.client.post_data(f"/api/v1/inventory/transfers/{transfer_id}/post", {})
+                    elif desired_status == "cancelled" and current_status in {"draft", "pending"}:
+                        context.client.post_data(f"/api/v1/inventory/transfers/{transfer_id}/cancel", {})
             except api_error as error:
-                context.record_failure("transfer_post", code, error)
+                context.record_failure("transfer_status", code, error)
             report_progress("transfer", index, len(rows), code)
             continue
         try:
@@ -721,6 +823,10 @@ def load_transfers(context: load_context) -> None:
             transfer_id = context.remember("transfer", code, value)
             if row.get("status") == "posted":
                 context.client.post_data(f"/api/v1/inventory/transfers/{transfer_id}/post", {})
+            elif row.get("status") == "pending":
+                context.client.post_data(f"/api/v1/inventory/transfers/{transfer_id}/submit", {})
+            elif row.get("status") == "cancelled":
+                context.client.post_data(f"/api/v1/inventory/transfers/{transfer_id}/cancel", {})
         except (api_error, KeyError) as error:
             context.record_failure("transfer", code, error)
         report_progress("transfer", index, len(rows), code)
@@ -977,6 +1083,8 @@ def load_assignments(context: load_context) -> None:
             desired = row.get("status") or "planned"
             if desired == "active" and current == "planned":
                 context.client.post_data(f"/api/v1/production/assignments/{assignment_id}/status", {"status": "active"})
+            elif desired == "cancelled" and current in {"planned", "active"}:
+                context.client.post_data(f"/api/v1/production/assignments/{assignment_id}/status", {"status": "cancelled"})
             elif desired == "completed":
                 if current == "planned":
                     context.client.post_data(f"/api/v1/production/assignments/{assignment_id}/status", {"status": "active"})
@@ -1099,7 +1207,11 @@ def load_outputs(context: load_context) -> None:
                     if item.get("idempotency_key"):
                         existing_by_order[order_id][str(item["idempotency_key"])] = (
                             int(item["production_output_id"]), str(item.get("status") or "draft"))
-            existing = existing_by_order[order_id].get(code)
+                    if item.get("lot_code"):
+                        existing_by_order[order_id][f"lot:{item['lot_code']}"] = (
+                            int(item["production_output_id"]), str(item.get("status") or "draft"))
+            existing = (existing_by_order[order_id].get(code)
+                        or existing_by_order[order_id].get(f"lot:{row['lot_code']}"))
             if existing:
                 output_id, current = existing
             else:
@@ -1123,13 +1235,18 @@ def load_outputs(context: load_context) -> None:
                     if error.status != 409 or "idempotency key" not in str(error).lower():
                         raise
                     payload["idempotency_key"] = f"{code}_repair"
-                    payload["notes"] = f"{row.get('notes') or ''} Bản ghi đã chuẩn hóa khi nạp dữ liệu.".strip()
+                    payload["notes"] = f"{row.get('notes') or ''} Bản ghi được chuẩn hóa khi nạp vào hệ thống.".strip()
                     value = context.client.post_data(f"/api/v1/production/orders/{order_id}/outputs", payload)
                 output_id = context.remember("output", code, value)
                 current = str(value.get("status") or "pending_receipt")
                 existing_by_order[order_id][code] = (output_id, current)
+                existing_by_order[order_id][f"lot:{row['lot_code']}"] = (output_id, current)
             if (row.get("status") or "draft") == "received" and current != "received":
                 context.client.post_data(f"/api/v1/production/orders/{order_id}/outputs/{output_id}/post", {})
+            elif (row.get("status") or "draft") == "failed" and current != "failed":
+                context.client.post_data(f"/api/v1/production/orders/{order_id}/outputs/{output_id}/fail", {})
+            elif (row.get("status") or "draft") == "cancelled" and current != "cancelled":
+                context.client.post_data(f"/api/v1/production/orders/{order_id}/outputs/{output_id}/cancel", {})
         except (api_error, KeyError, ValueError) as error:
             if isinstance(error, api_error) and any(message in str(error).lower() for message in (
                     "already has an output for this lot", "output exceeds the production order target quantity")):
@@ -1165,7 +1282,7 @@ def load_production(context: load_context) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--phase", choices=["hr", "inventory_master", "inventory_transactions", "production", "all"], default="all")
+    parser.add_argument("--phase", choices=["hr", "inventory_master", "inventory_transactions", "stocktakes", "production", "all"], default="all")
     args = parser.parse_args()
     username = os.environ.get("ERP_ADMIN_USERNAME")
     password = os.environ.get("ERP_ADMIN_PASSWORD")
@@ -1185,6 +1302,11 @@ def main() -> int:
             if "stock_item" not in context.maps:
                 load_inventory_master(context)
             load_inventory_transactions(context)
+        if args.phase == "stocktakes":
+            # This focused phase is useful when master data and balances are
+            # already loaded but the stocktake sessions are missing.
+            load_inventory_master(context)
+            load_stocktakes(context)
         if args.phase in {"production", "all"}:
             if "stock_item" not in context.maps:
                 load_inventory_master(context)

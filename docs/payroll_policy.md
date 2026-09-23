@@ -33,3 +33,17 @@ Ngày nghỉ không lương chỉ đếm phần giao với kỳ và chỉ đếm
 - Vòng đời là `draft` hoặc `rejected` → `calculated` → `approved` → `locked`.
 - Kỳ `locked`, bản ghi và dòng lương snapshot bị chặn sửa/xóa bằng trigger PostgreSQL. Nguồn HR vẫn tiếp tục vòng đời bình thường; mọi thay đổi về sau không làm thay đổi snapshot và kết quả của kỳ đã khóa.
 - Phiên bản này không tính thuế, bảo hiểm, phụ cấp, làm thêm giờ hoặc thanh toán ngân hàng.
+
+
+## Ví dụ dữ liệu đã tính
+
+Kỳ payroll_2026_02 trong môi trường dữ liệu kiểm thử đã được tính ở trạng thái calculated, gồm 570 nhân viên và tổng thực lĩnh 13.677.937.500 VND.
+
+- Nhân viên vmk0023 – Đỗ Mạnh Duy: lương hợp đồng 26.500.000 VND, ngày công chuẩn 24, nghỉ không lương được duyệt 1 ngày.
+- Đơn giá ngày = 26.500.000 / 24 = 1.104.166,666667 VND.
+- Khoản trừ nghỉ không lương = 1.104.166,666667, làm tròn 1.104.166,67 VND.
+- Thực lĩnh = 26.500.000 - 1.104.166,67 = 25.395.833,33 VND.
+
+Một ví dụ khác là vmk0096 – Dương Xuân Tiến: lương hợp đồng 17.250.000 VND, thưởng đã duyệt 9.250.000 VND, không có nghỉ không lương hoặc phạt; tổng và thực lĩnh là 26.500.000 VND. Các dòng cấu thành được lưu snapshot cùng kỳ, nên khi kỳ chuyển sang locked, thay đổi hợp đồng hoặc hồ sơ nguồn về sau không làm thay đổi kết quả đã khóa.
+
+Giao diện hiển thị nhãn tiếng Việt như “Lương cơ bản”, “Nghỉ không lương”, “Thưởng”, “Kỷ luật” và “Hợp đồng lao động”; mã dòng kỹ thuật vẫn giữ trong API để liên kết và kiểm toán.

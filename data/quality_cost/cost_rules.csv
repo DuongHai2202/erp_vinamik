@@ -1,0 +1,13 @@
+﻿rule_code,material_valuation_method,labor_basis,overhead_basis,defective_policy,effective_from,effective_to,currency_code,rounding_scale,notes
+fixture_cost_rule_2026_01,weighted_average,actual_hours,good_quantity,exclude_from_good,2026-01-01,2026-01-31,VND,2,Quy tắc tính giá thành theo chi phí thực tế tháng 01/2026.
+fixture_cost_rule_2026_02,weighted_average,actual_hours,good_quantity,exclude_from_good,2026-02-01,2026-02-28,VND,2,Quy tắc tính giá thành theo chi phí thực tế tháng 02/2026.
+fixture_cost_rule_2026_03,weighted_average,actual_hours,good_quantity,exclude_from_good,2026-03-01,2026-03-31,VND,2,Quy tắc tính giá thành theo chi phí thực tế tháng 03/2026.
+fixture_cost_rule_2026_04,weighted_average,actual_hours,good_quantity,exclude_from_good,2026-04-01,2026-04-30,VND,2,Quy tắc tính giá thành theo chi phí thực tế tháng 04/2026.
+fixture_cost_rule_2026_05,weighted_average,actual_hours,good_quantity,exclude_from_good,2026-05-01,2026-05-31,VND,2,Quy tắc tính giá thành theo chi phí thực tế tháng 05/2026.
+fixture_cost_rule_2026_06,weighted_average,actual_hours,good_quantity,exclude_from_good,2026-06-01,2026-06-30,VND,2,Quy tắc tính giá thành theo chi phí thực tế tháng 06/2026.
+fixture_cost_rule_2026_07,weighted_average,actual_hours,good_quantity,exclude_from_good,2026-07-01,2026-07-31,VND,2,Quy tắc tính giá thành theo chi phí thực tế tháng 07/2026.
+fixture_cost_rule_2026_08,weighted_average,actual_hours,good_quantity,exclude_from_good,2026-08-01,2026-08-31,VND,2,Quy tắc tính giá thành theo chi phí thực tế tháng 08/2026.
+fixture_cost_rule_2026_09,weighted_average,actual_hours,good_quantity,exclude_from_good,2026-09-01,2026-09-30,VND,2,Quy tắc tính giá thành theo chi phí thực tế tháng 09/2026.
+fixture_cost_rule_2026_10,weighted_average,actual_hours,good_quantity,exclude_from_good,2026-10-01,2026-10-31,VND,2,Quy tắc tính giá thành theo chi phí thực tế tháng 10/2026.
+fixture_cost_rule_2026_11,weighted_average,actual_hours,good_quantity,exclude_from_good,2026-11-01,2026-11-30,VND,2,Quy tắc tính giá thành theo chi phí thực tế tháng 11/2026.
+fixture_cost_rule_2026_12,weighted_average,actual_hours,good_quantity,exclude_from_good,2026-12-01,2026-12-31,VND,2,Quy tắc tính giá thành theo chi phí thực tế tháng 12/2026.

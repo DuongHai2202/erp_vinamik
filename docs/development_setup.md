@@ -35,9 +35,11 @@ ERP_DB_PASSWORD=replace_with_a_secret
 ERP_AUTH_SECURE_COOKIE=true
 ERP_BOOTSTRAP_ADMIN_USERNAME=admin
 ERP_BOOTSTRAP_ADMIN_PASSWORD=replace_with_a_long_secret
+# Chỉ dùng local/test khi cần có phiên kiểm kê mẫu sau khi backend khởi động
+ERP_FIXTURE_STOCKTAKE_ENABLED=false
 ```
 
-`ERP_BOOTSTRAP_ADMIN_*` is used only when the identity tables are empty. The bootstrap password must be at least 12 characters. Remove or clear these variables after the first administrator has been created. The first account is stored as the single protected `super_admin`; it receives every active permission and cannot be disabled, demoted or deleted through the application. Session cookies require HTTPS and `ERP_AUTH_SECURE_COOKIE=true` in a shared or production environment.
+`ERP_BOOTSTRAP_ADMIN_*` is used only when the identity tables are empty. The bootstrap password must be at least 12 characters. Remove or clear these variables after the first administrator has been created. The first account is stored as the single protected `super_admin`; it receives every active permission and cannot be disabled, demoted or deleted through the application. Session cookies require HTTPS and `ERP_AUTH_SECURE_COOKIE=true` in a shared or production environment. `ERP_FIXTURE_STOCKTAKE_ENABLED=true` is an explicit local/test switch: it creates six counting sessions through the Inventory service when no stocktake exists; keep it `false` in shared or production environments.
 
 Run the backend from `ERP_Backend`:
 
@@ -88,7 +90,7 @@ npm run lint
 npm run build
 ```
 
-The current backend includes the shared identity platform, employee management, employment contracts, leave/absence workflow, reward/discipline inputs, inventory master/receipt/issue/transfer/stocktake/balance flows, HR and Inventory reference master-data APIs, and production plan/BOM/order/material/assignment/output/progress flows. Payroll calculation remains deferred until its day-count formula is approved; frontend business screens, deployment packaging, and the two deferred modules remain in the task backlog until verified against the same contracts.
+The current backend includes the shared identity platform, employee management, employment contracts, leave/absence workflow, reward/discipline inputs, payroll calculation with the monthly_mon_sat_v1 snapshot formula, inventory master/receipt/issue/transfer/stocktake/balance flows, HR and Inventory reference master-data APIs, production plan/BOM/order/material/assignment/output/progress flows, and the quality_cost MVP. Data/reporting remains deferred until its scope is approved; frontend business screens and deployment packaging must still be verified against the same contracts.
 ## Flyway và JPA
 
 The order is deliberate: an administrator creates the PostgreSQL database once, Flyway creates and upgrades the `identity`, `hr`, `inventory`, and `production` schemas, then Hibernate/JPA validates the mappings with `spring.jpa.hibernate.ddl-auto=validate`. The backend uses JPA repositories for all persistence; ledger posting, balance projection, row locks, idempotency and PostgreSQL-specific read models use bound native queries inside module-owned JPA repositories where needed. Application code does not use JDBC/Spring JDBC APIs. The PostgreSQL JDBC driver remains an internal Hibernate/JPA dependency. Hibernate must not be configured with `ddl-auto=update` or `ddl-auto=create`.

@@ -97,4 +97,21 @@ public class human_resources_employee_read_repository {
                 Long.class, job_title_id);
         return total != null && total > 0;
     }
+    public List<employee_lookup_row> lookup_active(String search, int limit) {
+        return lookup_active(search, limit, null);
+    }
+
+    public List<employee_lookup_row> lookup_active(String search, int limit, Long include_employee_id) {
+        return jpa_query_executor.query(
+                "SELECT employee.employee_id, employee.employee_code, employee.full_name, employee.employment_status "
+                        + "FROM hr.employee AS employee "
+                        + "WHERE (employee.employment_status = 'active' OR employee.employee_id = CAST(? AS bigint)) "
+                        + "AND (CAST(? AS text) IS NULL OR employee.employee_id = CAST(? AS bigint) OR lower(employee.employee_code) LIKE '%' || ? || '%' "
+                        + "OR lower(employee.full_name) LIKE '%' || ? || '%') "
+                        + "ORDER BY CASE WHEN employee.employee_id = CAST(? AS bigint) THEN 0 ELSE 1 END, employee.employee_code LIMIT ?",
+                (result_set, row_number) -> new employee_lookup_row(
+                        result_set.getLong("employee_id"), result_set.getString("employee_code"),
+                        result_set.getString("full_name"), result_set.getString("employment_status")),
+                include_employee_id, search, include_employee_id, search, search, include_employee_id, limit);
+    }
 }

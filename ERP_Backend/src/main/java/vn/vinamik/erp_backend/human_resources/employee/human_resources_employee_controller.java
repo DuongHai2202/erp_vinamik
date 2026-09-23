@@ -38,6 +38,16 @@ public class human_resources_employee_controller {
         return new api_success_response<>("Employees retrieved successfully.", employee_service.search(search, status, page, page_size));
     }
 
+
+    @GetMapping("/lookup")
+    @PreAuthorize("hasAnyAuthority('hr_employee_read', 'hr_employee_create', 'hr_employee_update', 'hr_contract_create', 'hr_contract_update', 'hr_absence_create', 'hr_absence_update', 'hr_reward_create', 'hr_reward_update', 'production_assignment_read', 'production_assignment_create', 'production_assignment_update')")
+    public api_success_response<java.util.List<employee_lookup_response>> lookup_active(
+            @RequestParam(required = false) String search,
+            @RequestParam(defaultValue = "200") int limit,
+            @RequestParam(required = false, name = "include_employee_id") Long include_employee_id) {
+        return new api_success_response<>("Active employee lookup retrieved successfully.",
+                employee_service.lookup_active(search, limit, include_employee_id));
+    }
     @GetMapping("/{employee_id}")
     @PreAuthorize("hasAuthority('hr_employee_read')")
     public api_success_response<employee_response> find_by_id(@PathVariable long employee_id) {

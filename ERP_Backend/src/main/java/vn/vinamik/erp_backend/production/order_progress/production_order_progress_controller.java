@@ -17,7 +17,7 @@ public class production_order_progress_controller {
     }
 
     @GetMapping("/{production_order_id}/progress")
-    @PreAuthorize("hasAuthority('production_order_read')")
+    @PreAuthorize("hasAnyAuthority('production_order_read', 'production_output_read')")
     public api_success_response<production_order_progress_response> find_by_order_id(
             @PathVariable long production_order_id) {
         return new api_success_response<>(

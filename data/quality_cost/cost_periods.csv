@@ -1,0 +1,13 @@
+﻿period_code,starts_on,ends_on,rule_code,target_status,notes
+fixture_cost_period_2026_01,2026-01-01,2026-01-31,fixture_cost_rule_2026_01,draft,"Kỳ giá thành tháng 01/2026, đã đối chiếu nguồn Kho và Sản xuất."
+fixture_cost_period_2026_02,2026-02-01,2026-02-28,fixture_cost_rule_2026_02,open,"Kỳ giá thành tháng 02/2026, đã đối chiếu nguồn Kho và Sản xuất."
+fixture_cost_period_2026_03,2026-03-01,2026-03-31,fixture_cost_rule_2026_03,calculating,"Kỳ giá thành tháng 03/2026, đã đối chiếu nguồn Kho và Sản xuất."
+fixture_cost_period_2026_04,2026-04-01,2026-04-30,fixture_cost_rule_2026_04,calculated,"Kỳ giá thành tháng 04/2026, đã đối chiếu nguồn Kho và Sản xuất."
+fixture_cost_period_2026_05,2026-05-01,2026-05-31,fixture_cost_rule_2026_05,approved,"Kỳ giá thành tháng 05/2026, đã đối chiếu nguồn Kho và Sản xuất."
+fixture_cost_period_2026_06,2026-06-01,2026-06-30,fixture_cost_rule_2026_06,locked,"Kỳ giá thành tháng 06/2026, đã đối chiếu nguồn Kho và Sản xuất."
+fixture_cost_period_2026_07,2026-07-01,2026-07-31,fixture_cost_rule_2026_07,cancelled,"Kỳ giá thành tháng 07/2026, đã đối chiếu nguồn Kho và Sản xuất."
+fixture_cost_period_2026_08,2026-08-01,2026-08-31,fixture_cost_rule_2026_08,draft,"Kỳ giá thành tháng 08/2026, đã đối chiếu nguồn Kho và Sản xuất."
+fixture_cost_period_2026_09,2026-09-01,2026-09-30,fixture_cost_rule_2026_09,open,"Kỳ giá thành tháng 09/2026, đã đối chiếu nguồn Kho và Sản xuất."
+fixture_cost_period_2026_10,2026-10-01,2026-10-31,fixture_cost_rule_2026_10,calculating,"Kỳ giá thành tháng 10/2026, đã đối chiếu nguồn Kho và Sản xuất."
+fixture_cost_period_2026_11,2026-11-01,2026-11-30,fixture_cost_rule_2026_11,calculated,"Kỳ giá thành tháng 11/2026, đã đối chiếu nguồn Kho và Sản xuất."
+fixture_cost_period_2026_12,2026-12-01,2026-12-31,fixture_cost_rule_2026_12,approved,"Kỳ giá thành tháng 12/2026, đã đối chiếu nguồn Kho và Sản xuất."

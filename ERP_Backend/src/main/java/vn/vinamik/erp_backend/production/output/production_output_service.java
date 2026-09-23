@@ -103,6 +103,78 @@ public class production_output_service {
     }
 
     @Transactional
+    public production_output_response update(long production_order_id, long output_id, production_output_request request,
+                                             authenticated_user actor, String correlation_id) {
+        validate_request(request);
+        production_output_repository.order_snapshot order = output_repository.load_order(production_order_id, true);
+        production_output_response current = output_repository.find_by_id_for_update(production_order_id, output_id);
+        if (!"draft".equals(current.status())) {
+            throw new IllegalArgumentException("Only draft production outputs can be edited.");
+        }
+        BigDecimal total_quantity = request.good_quantity().add(request.defective_quantity());
+        BigDecimal existing_total = output_repository.total_output_quantity_except(production_order_id, output_id);
+        if (existing_total.add(total_quantity).compareTo(order.target_quantity()) > 0) {
+            throw new field_conflict_exception("good_quantity", "Production output exceeds the production order target quantity.");
+        }
+        if (output_repository.find_by_order_lot_except(production_order_id, request.lot_code().trim(), output_id) != null) {
+            throw new field_conflict_exception("lot_code", "The production order already has an output for this lot.");
+        }
+        String idempotency_key = request.idempotency_key().trim();
+        if (output_repository.idempotency_key_exists_for_other(idempotency_key, output_id)) {
+            throw new field_conflict_exception("idempotency_key", "Idempotency key is already used.");
+        }
+        String status = request.good_quantity().signum() > 0 ? "pending_receipt" : "draft";
+        if (output_repository.update_draft(output_id, production_order_id, request.lot_code().trim(), request.manufactured_on(),
+                request.expires_on(), normalize_quantity(request.good_quantity()), normalize_quantity(request.defective_quantity()),
+                request.warehouse_id(), request.warehouse_location_id(), status, idempotency_key, normalize_optional(request.notes())) == 0) {
+            throw new resource_not_found_exception("Draft production output");
+        }
+        production_output_response result = output_repository.find_by_id(output_id);
+        audit_writer.write(actor.user_id(), "production", "production_output_update", "production_output",
+                String.valueOf(output_id), correlation_id, Map.of("production_order_id", production_order_id));
+        logger.info("Đã cập nhật sản lượng thành phẩm; production_output_id={}, actor_user_id={}, correlation_id={}", output_id, actor.user_id(), correlation_id);
+        return result;
+    }
+
+    @Transactional
+    public void delete(long production_order_id, long output_id, authenticated_user actor, String correlation_id) {
+        output_repository.find_by_id_for_update(production_order_id, output_id);
+        if (output_repository.delete_draft(production_order_id, output_id) == 0) {
+            throw new IllegalArgumentException("Only draft production outputs can be deleted.");
+        }
+        audit_writer.write(actor.user_id(), "production", "production_output_delete", "production_output",
+                String.valueOf(output_id), correlation_id, Map.of("production_order_id", production_order_id));
+        logger.info("Đã xóa bản nháp sản lượng thành phẩm; production_output_id={}, actor_user_id={}, correlation_id={}", output_id, actor.user_id(), correlation_id);
+    }
+
+    @Transactional
+    public production_output_response cancel(long production_order_id, long output_id, authenticated_user actor, String correlation_id) {
+        output_repository.find_by_id_for_update(production_order_id, output_id);
+        if (output_repository.cancel(production_order_id, output_id) == 0) {
+            throw new IllegalArgumentException("Only unposted production outputs can be cancelled.");
+        }
+        production_output_response result = output_repository.find_by_id(output_id);
+        audit_writer.write(actor.user_id(), "production", "production_output_cancel", "production_output",
+                String.valueOf(output_id), correlation_id, Map.of("production_order_id", production_order_id));
+        logger.info("Đã hủy sản lượng thành phẩm; production_output_id={}, actor_user_id={}, correlation_id={}", output_id, actor.user_id(), correlation_id);
+        return result;
+    }
+
+    @Transactional
+    public production_output_response fail(long production_order_id, long output_id, authenticated_user actor, String correlation_id) {
+        output_repository.find_by_id_for_update(production_order_id, output_id);
+        if (output_repository.mark_failed(production_order_id, output_id) == 0) {
+            throw new IllegalArgumentException("Only unposted production outputs can be marked as failed.");
+        }
+        production_output_response result = output_repository.find_by_id(output_id);
+        audit_writer.write(actor.user_id(), "production", "production_output_fail", "production_output",
+                String.valueOf(output_id), correlation_id, Map.of("production_order_id", production_order_id));
+        logger.info("Đã đánh dấu sản lượng không đạt; production_output_id={}, production_order_id={}, actor_user_id={}, correlation_id={}",
+                output_id, production_order_id, actor.user_id(), correlation_id);
+        return result;
+    }
+
+    @Transactional
     public production_output_response post(long production_order_id, long output_id,
                                            authenticated_user actor, String correlation_id) {
         production_output_repository.order_snapshot order =

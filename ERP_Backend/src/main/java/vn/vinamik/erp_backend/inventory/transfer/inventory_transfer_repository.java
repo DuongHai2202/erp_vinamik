@@ -59,6 +59,41 @@ public class inventory_transfer_repository {
         return transfer_id;
     }
 
+    public boolean idempotency_key_exists(String idempotency_key, Long transfer_id) {
+        Long count = transfer_id == null
+                ? jpa_query_executor.queryForObject("SELECT count(*) FROM inventory.transfer WHERE idempotency_key = ?", Long.class, idempotency_key)
+                : jpa_query_executor.queryForObject("SELECT count(*) FROM inventory.transfer WHERE idempotency_key = ? AND transfer_id <> ?", Long.class, idempotency_key, transfer_id);
+        return count != null && count > 0;
+    }
+
+    public int update_transfer(long transfer_id, String transfer_code, long source_warehouse_id,
+                               long destination_warehouse_id, String idempotency_key, String notes,
+                               long actor_user_id) {
+        return jpa_query_executor.update(
+                "UPDATE inventory.transfer SET transfer_code = ?, source_warehouse_id = ?, destination_warehouse_id = ?, idempotency_key = ?, notes = ?, updated_at = now(), updated_by_user_id = ? WHERE transfer_id = ? AND status = 'draft'",
+                transfer_code, source_warehouse_id, destination_warehouse_id, idempotency_key, notes,
+                actor_user_id, transfer_id);
+    }
+
+    public int delete_lines(long transfer_id) {
+        return jpa_query_executor.update("DELETE FROM inventory.transfer_line WHERE transfer_id = ?", transfer_id);
+    }
+
+    public int delete_draft(long transfer_id) {
+        return jpa_query_executor.update("DELETE FROM inventory.transfer WHERE transfer_id = ? AND status = 'draft'", transfer_id);
+    }
+
+    public int cancel(long transfer_id, long actor_user_id) {
+        return jpa_query_executor.update(
+                "UPDATE inventory.transfer SET status = 'cancelled', updated_at = now(), updated_by_user_id = ? WHERE transfer_id = ? AND status IN ('draft', 'pending')",
+                actor_user_id, transfer_id);
+    }
+    public int mark_pending(long transfer_id, long actor_user_id) {
+        return jpa_query_executor.update(
+                "UPDATE inventory.transfer SET status = 'pending', updated_at = now(), updated_by_user_id = ? WHERE transfer_id = ? AND status = 'draft'",
+                actor_user_id, transfer_id);
+    }
+
     public void insert_line(long transfer_id, int line_number, transfer_line_request line) {
         jpa_query_executor.update(
                 "INSERT INTO inventory.transfer_line (transfer_id, line_number, stock_item_id, stock_lot_id, source_location_id, destination_location_id, quantity) VALUES (?, ?, ?, ?, ?, ?, ?)",
@@ -142,8 +177,8 @@ public class inventory_transfer_repository {
                 warehouse_id);
     }
 
-    public boolean transfer_code_exists(String transfer_code) {
-        return count_value("SELECT count(*) FROM inventory.transfer WHERE transfer_code = ?", transfer_code);
+    public boolean transfer_code_exists(String transfer_code, Long transfer_id) {
+        return count_value("SELECT count(*) FROM inventory.transfer WHERE transfer_code = ? AND (? IS NULL OR transfer_id <> ?)", transfer_code, transfer_id, transfer_id);
     }
 
     private List<transfer_line_response> load_lines(long transfer_id) {

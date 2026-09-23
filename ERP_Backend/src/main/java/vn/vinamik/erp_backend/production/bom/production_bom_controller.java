@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -62,6 +63,13 @@ public class production_bom_controller {
             @AuthenticationPrincipal authenticated_user actor,
             HttpServletRequest http_request) {
         return new api_success_response<>("BOM updated successfully.", bom_service.update(bom_id, request, actor, correlation_id(http_request)));
+    }
+
+    @DeleteMapping("/{bom_id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PreAuthorize("hasAuthority('production_bom_delete')")
+    public void delete(@PathVariable long bom_id, @AuthenticationPrincipal authenticated_user actor, HttpServletRequest http_request) {
+        bom_service.delete(bom_id, actor, correlation_id(http_request));
     }
 
     @PostMapping("/{bom_id}/status")

@@ -1,6 +1,6 @@
 {
   "data_version": "large_seed_2026_09",
-  "generated_at": "2026-09-16T10:54:05.709412+00:00",
+  "generated_at": "2026-09-23T08:14:01.135676+00:00",
   "random_seed": 20260916,
   "synthetic_personal_data": true,
   "public_product_reference_count": 40,
@@ -10,9 +10,9 @@
       "job_titles": 30,
       "work_shifts": 3,
       "employees": 600,
-      "contracts": 600,
-      "leave_requests": 900,
-      "reward_discipline": 420,
+      "contracts": 605,
+      "leave_requests": 901,
+      "reward_discipline": 421,
       "payroll_periods": 12
     },
     "inventory": {
@@ -22,14 +22,15 @@
       "locations": 60,
       "stock_items": 520,
       "lots": 1180,
-      "receipts": 950,
-      "receipt_lines": 2250,
-      "issues": 420,
-      "issue_lines": 840,
-      "transfers": 250,
-      "transfer_lines": 250,
-      "stock_movements": 3590,
-      "stock_balances": 2476
+      "receipts": 953,
+      "receipt_lines": 2253,
+      "issues": 423,
+      "issue_lines": 843,
+      "transfers": 253,
+      "transfer_lines": 253,
+      "stocktakes": 6,
+      "stock_movements": 1120,
+      "stock_balances": 846
     },
     "production": {
       "plans": 250,
@@ -39,9 +40,17 @@
       "orders": 600,
       "material_requirements": 3000,
       "order_events": 1200,
-      "assignments": 900,
-      "material_consumptions": 1200,
+      "assignments": 720,
+      "material_consumptions": 720,
       "outputs": 600
+    },
+    "quality_cost": {
+      "cost_rules": 12,
+      "cost_periods": 12,
+      "inspections": 125,
+      "nonconformances": 100,
+      "calculations": 125,
+      "price_proposals": 125
     }
   }
 }

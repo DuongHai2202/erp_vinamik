@@ -1,4 +1,4 @@
-import { Button, Result } from 'antd';
+import { Result } from 'antd';
 import { Link } from 'react-router-dom';
 
 function NotFoundPage() {
@@ -6,7 +6,7 @@ function NotFoundPage() {
     status="404"
     title="Page not found."
     subTitle="The page you requested does not exist or is no longer available."
-    extra={<Button type="primary"><Link to="/">Về tổng quan</Link></Button>}
+    extra={<Link className="ant-btn ant-btn-primary" to="/">Về tổng quan</Link>}
   />;
 }
 

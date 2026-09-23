@@ -76,6 +76,21 @@ public class production_bom_service {
     }
 
     @Transactional
+    public void delete(long bom_id, authenticated_user actor, String correlation_id) {
+        bom_response current = bom_repository.find(bom_id);
+        if (!"draft".equals(current.status())) {
+            throw new IllegalArgumentException("Only draft BOMs can be deleted.");
+        }
+        bom_repository.delete_lines(bom_id);
+        if (bom_repository.delete_draft(bom_id) == 0) {
+            throw new resource_not_found_exception("Draft BOM");
+        }
+        audit_writer.write(actor.user_id(), "production", "bom_delete", "bom", String.valueOf(bom_id), correlation_id,
+                Map.of("bom_code", current.bom_code()));
+        logger.info("Đã xóa bản nháp định mức; bom_id={}, actor_user_id={}, correlation_id={}", bom_id, actor.user_id(), correlation_id);
+    }
+
+    @Transactional
     public bom_response update(long bom_id, bom_request request, authenticated_user actor,
                                String correlation_id) {
         validate_request(request);

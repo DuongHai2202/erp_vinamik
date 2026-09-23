@@ -130,6 +130,21 @@ public class human_resources_contract_service {
         return changed;
     }
 
+    @Transactional
+    public void delete(long employment_contract_id, authenticated_user actor, String correlation_id) {
+        String current_status = contract_repository.current_status(employment_contract_id);
+        if (!current_status.equals("draft")) {
+            throw new IllegalArgumentException("Only draft employment contracts can be deleted.");
+        }
+        if (contract_repository.delete_draft(employment_contract_id) == 0) {
+            throw new resource_not_found_exception("Draft employment contract");
+        }
+        audit_writer.write(actor.user_id(), "hr", "contract_delete", "employment_contract",
+                String.valueOf(employment_contract_id), correlation_id, Map.of("status", current_status));
+        logger.info("Đã xóa bản nháp hợp đồng lao động; employment_contract_id={}, actor_user_id={}, correlation_id={}",
+                employment_contract_id, actor.user_id(), correlation_id);
+    }
+
     private void validate_request(employment_contract_request request) {
         if (request == null) {
             throw new IllegalArgumentException("Employment contract request is required.");

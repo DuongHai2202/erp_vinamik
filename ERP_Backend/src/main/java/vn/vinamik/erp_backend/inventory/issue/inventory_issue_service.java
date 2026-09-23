@@ -62,7 +62,7 @@ public class inventory_issue_service {
                 return issue_repository.find(existing.getFirst(), false);
             }
         }
-        ensure_unique_issue_code(issue_code);
+        ensure_unique_issue_code(issue_code, null);
         ensure_warehouse_active(request.warehouse_id());
         Long issue_id = issue_repository.insert_issue(
                 issue_code,
@@ -92,6 +92,92 @@ public class inventory_issue_service {
                 Map.of("issue_code", created.issue_code(), "line_count", created.lines().size()));
         logger.info("Đã tạo phiếu xuất kho; issue_id={}, actor_user_id={}, correlation_id={}", issue_id, actor.user_id(), correlation_id);
         return created;
+    }
+
+    @Transactional
+    public issue_response update(long issue_id, issue_request request, authenticated_user actor, String correlation_id) {
+        validate_request(request);
+        issue_response current = issue_repository.find(issue_id, true);
+        if (!current.status().equals("draft")) {
+            throw new IllegalArgumentException("Only draft issues can be edited.");
+        }
+        String issue_code = normalize_required(request.issue_code());
+        String idempotency_key = normalize_optional(request.idempotency_key());
+        ensure_unique_issue_code(issue_code, issue_id);
+        if (idempotency_key != null && issue_repository.idempotency_key_exists(idempotency_key, issue_id)) {
+            throw new field_conflict_exception("idempotency_key", "Idempotency key already belongs to another issue.");
+        }
+        ensure_warehouse_active(request.warehouse_id());
+        for (issue_line_request line : request.lines()) {
+            validate_line(request.warehouse_id(), line);
+        }
+        int updated = issue_repository.update_issue(issue_id, issue_code, request.warehouse_id(),
+                normalize_optional(request.source_module()), request.source_document_id(), normalize_optional(request.reason_code()),
+                idempotency_key, normalize_optional(request.notes()), actor.user_id());
+        if (updated == 0) {
+            throw new resource_not_found_exception("Draft issue");
+        }
+        issue_repository.delete_lines(issue_id);
+        for (int index = 0; index < request.lines().size(); index++) {
+            issue_repository.insert_line(issue_id, index + 1, request.lines().get(index));
+        }
+        issue_response result = issue_repository.find(issue_id, false);
+        audit_writer.write(actor.user_id(), "inventory", "issue_update", "issue", String.valueOf(issue_id), correlation_id,
+                Map.of("issue_code", result.issue_code(), "line_count", result.lines().size()));
+        logger.info("Đã cập nhật phiếu xuất kho; issue_id={}, actor_user_id={}, correlation_id={}", issue_id, actor.user_id(), correlation_id);
+        return result;
+    }
+
+    @Transactional
+    public void delete(long issue_id, authenticated_user actor, String correlation_id) {
+        issue_response current = issue_repository.find(issue_id, true);
+        if (!current.status().equals("draft")) {
+            throw new IllegalArgumentException("Only draft issues can be deleted.");
+        }
+        issue_repository.delete_lines(issue_id);
+        if (issue_repository.delete_draft(issue_id) == 0) {
+            throw new resource_not_found_exception("Draft issue");
+        }
+        audit_writer.write(actor.user_id(), "inventory", "issue_delete", "issue", String.valueOf(issue_id), correlation_id,
+                Map.of("issue_code", current.issue_code()));
+        logger.info("Đã xóa bản nháp phiếu xuất kho; issue_id={}, actor_user_id={}, correlation_id={}", issue_id, actor.user_id(), correlation_id);
+    }
+
+    @Transactional
+    public issue_response cancel(long issue_id, authenticated_user actor, String correlation_id) {
+        issue_response current = issue_repository.find(issue_id, true);
+        if (!current.status().equals("draft") && !current.status().equals("pending")) {
+            throw new IllegalArgumentException("Only draft or pending issues can be cancelled.");
+        }
+        if (issue_repository.cancel(issue_id, actor.user_id()) == 0) {
+            throw new resource_not_found_exception("Issue");
+        }
+        issue_response result = issue_repository.find(issue_id, false);
+        audit_writer.write(actor.user_id(), "inventory", "issue_cancel", "issue", String.valueOf(issue_id), correlation_id,
+                Map.of("issue_code", result.issue_code()));
+        logger.info("Đã hủy phiếu xuất kho; issue_id={}, actor_user_id={}, correlation_id={}", issue_id, actor.user_id(), correlation_id);
+        return result;
+    }
+    @Transactional
+    public issue_response submit(long issue_id, authenticated_user actor, String correlation_id) {
+        issue_response current = issue_repository.find(issue_id, true);
+        if (current.status().equals("pending")) {
+            return current;
+        }
+        if (!current.status().equals("draft")) {
+            throw new IllegalArgumentException("Only draft issues can be submitted.");
+        }
+        if (current.lines().isEmpty()) {
+            throw new IllegalArgumentException("Issue must contain at least one line before submission.");
+        }
+        if (issue_repository.mark_pending(issue_id, actor.user_id()) == 0) {
+            throw new resource_not_found_exception("Draft issue");
+        }
+        issue_response result = issue_repository.find(issue_id, false);
+        audit_writer.write(actor.user_id(), "inventory", "issue_submit", "issue", String.valueOf(issue_id), correlation_id,
+                Map.of("issue_code", result.issue_code(), "line_count", result.lines().size()));
+        logger.info("Đã gửi duyệt phiếu xuất kho; issue_id={}, actor_user_id={}, correlation_id={}", issue_id, actor.user_id(), correlation_id);
+        return result;
     }
 
     @Transactional
@@ -200,8 +286,8 @@ public class inventory_issue_service {
         }
     }
 
-    private void ensure_unique_issue_code(String issue_code) {
-        if (issue_repository.issue_code_exists(issue_code)) {
+    private void ensure_unique_issue_code(String issue_code, Long issue_id) {
+        if (issue_repository.issue_code_exists(issue_code, issue_id)) {
             throw new field_conflict_exception("issue_code", "Issue code already exists.");
         }
     }

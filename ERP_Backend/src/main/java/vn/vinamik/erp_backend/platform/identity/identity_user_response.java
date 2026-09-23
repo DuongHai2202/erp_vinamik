@@ -7,6 +7,8 @@ public record identity_user_response(
         long user_id,
         String username,
         Long employee_id,
+        String employee_code,
+        String employee_name,
         String status,
         List<String> role_codes,
         Instant created_at,

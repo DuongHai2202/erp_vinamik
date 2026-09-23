@@ -162,7 +162,8 @@ public class identity_admin_repository {
                 : Arrays.stream(role_text.split(",")).toList();
         return new identity_user_response(
                 result_set.getLong("user_id"), result_set.getString("username"),
-                result_set.getObject("employee_id", Long.class), result_set.getString("status"), role_codes,
+                result_set.getObject("employee_id", Long.class), null, null,
+                result_set.getString("status"), role_codes,
                 result_set.get_instant("created_at"),
                 result_set.get_instant("last_login_at"),
                 result_set.getBoolean("is_super_admin"));

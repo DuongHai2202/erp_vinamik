@@ -58,6 +58,14 @@ const route_labels = {
   '/production/orders': 'Lệnh sản xuất',
   '/production/assignments': 'Phân công nhân sự',
   '/production/finished_products': 'Sản lượng thành phẩm',
+  '/quality_cost': 'Tổng quan chất lượng',
+  '/quality_cost/inspections': 'Kiểm tra chất lượng',
+  '/quality_cost/nonconformances': 'Sản phẩm không phù hợp',
+  '/quality_cost/periods': 'Kỳ và chính sách giá thành',
+  '/quality_cost/calculations': 'Tính giá thành',
+  '/quality_cost/price_proposals': 'Đề xuất giá bán',
+  '/quality_cost/price_approvals': 'Phê duyệt bảng giá',
+  '/data_reporting': 'Tổng quan dữ liệu và báo cáo',
   '/settings/users': 'Tài khoản và phân quyền',
   '/settings/registration_requests': 'Yêu cầu cấp tài khoản',
 };
@@ -158,6 +166,7 @@ function AppShell() {
 
   const selected_key = route_labels[location.pathname] ? location.pathname : '/';
   const active_group = navigation_groups.find((group) => group.features.some((item) => item.path === selected_key));
+  const active_group_key = active_group?.key || null;
   const page_label = route_labels[location.pathname] || 'Tổng quan';
   const account_menu = [
     { key: 'profile', disabled: true, label: <span className="account_menu_identity"><strong>{current_user?.username}</strong><small>{current_user?.super_admin ? 'Quản trị tối cao' : 'Tài khoản nghiệp vụ'}</small></span> },
@@ -167,10 +176,22 @@ function AppShell() {
   ];
 
   useEffect(() => {
-    if (active_group && !open_keys.includes(`group_${active_group.key}`)) {
-      set_open_keys((current_keys) => [...current_keys, `group_${active_group.key}`]);
-    }
-  }, [active_group, open_keys]);
+    const route_group_key = active_group_key ? `group_${active_group_key}` : location.pathname.startsWith('/settings/') ? 'group_settings' : null;
+    set_open_keys(route_group_key ? [route_group_key] : []);
+  }, [active_group_key, location.pathname]);
+
+  const on_menu_open_change = (next_keys) => {
+    const latest_key = next_keys.at(-1);
+    set_open_keys(latest_key ? [latest_key] : []);
+  };
+
+  const on_menu_click = ({ key }) => {
+    const selected_group = navigation_groups.find((group) => group.features.some((feature) => feature.path === key));
+    if (selected_group) set_open_keys([`group_${selected_group.key}`]);
+    else if (key === '/') set_open_keys([]);
+    else if (key.startsWith('/settings/')) set_open_keys(['group_settings']);
+    if (is_mobile) set_is_collapsed(true);
+  };
 
   const on_account_action = async ({ key }) => {
     if (key === 'theme') set_customizer_open(true);
@@ -202,7 +223,7 @@ function AppShell() {
           {!is_collapsed && <div className="brand_copy"><strong>Vinamik</strong><span>ĐIỀU PHỐI VẬN HÀNH</span></div>}
         </div>
         {!is_collapsed && <div className={`workspace_pill workspace_pill_${system_state}`}><span className="live_dot" /> Nguồn dữ liệu <small>{system_label}</small></div>}
-        {is_collapsed ? <CollapsedNavigation navigation_groups={navigation_groups} selected_key={selected_key} has_settings={has_permission(current_user, 'identity_user_read') || has_permission(current_user, 'identity_registration_read')} has_user_settings={has_permission(current_user, 'identity_user_read')} has_registration_settings={has_permission(current_user, 'identity_registration_read')} navigate={navigate} /> : <Menu theme="dark" mode="inline" selectedKeys={[selected_key]} openKeys={open_keys} onOpenChange={set_open_keys} items={menu_items} onClick={() => { if (is_mobile) set_is_collapsed(true); }} className="app_menu" />}
+        {is_collapsed ? <CollapsedNavigation navigation_groups={navigation_groups} selected_key={selected_key} has_settings={has_permission(current_user, 'identity_user_read') || has_permission(current_user, 'identity_registration_read')} has_user_settings={has_permission(current_user, 'identity_user_read')} has_registration_settings={has_permission(current_user, 'identity_registration_read')} navigate={navigate} /> : <Menu theme="dark" mode="inline" selectedKeys={[selected_key]} openKeys={open_keys} onOpenChange={on_menu_open_change} items={menu_items} onClick={on_menu_click} className="app_menu" />}
         {!is_collapsed && <div className="sider_footer">
           <div className="sider_footer_icon"><GlobalOutlined /></div>
           <div><strong>{system_label}</strong><span>{latency_ms === null ? 'Dữ liệu trung tâm' : `${latency_ms} ms phản hồi`}</span></div>

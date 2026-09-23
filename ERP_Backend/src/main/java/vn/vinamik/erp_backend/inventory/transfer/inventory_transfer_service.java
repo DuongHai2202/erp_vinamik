@@ -70,7 +70,7 @@ public class inventory_transfer_service {
                 return transfer_repository.find(existing.getFirst(), false);
             }
         }
-        ensure_unique_transfer_code(transfer_code);
+        ensure_unique_transfer_code(transfer_code, null);
         ensure_warehouse_active(request.source_warehouse_id());
         ensure_warehouse_active(request.destination_warehouse_id());
         Long transfer_id = transfer_repository.insert_transfer(transfer_code, request.source_warehouse_id(),
@@ -96,6 +96,92 @@ public class inventory_transfer_service {
         logger.info("Đã tạo phiếu điều chuyển kho; transfer_id={}, actor_user_id={}, correlation_id={}",
                 transfer_id, actor.user_id(), correlation_id);
         return created;
+    }
+
+    @Transactional
+    public transfer_response update(long transfer_id, transfer_request request, authenticated_user actor, String correlation_id) {
+        validate_request(request);
+        transfer_response current = transfer_repository.find(transfer_id, true);
+        if (!current.status().equals("draft")) {
+            throw new IllegalArgumentException("Only draft transfers can be edited.");
+        }
+        String transfer_code = normalize_required(request.transfer_code());
+        String idempotency_key = normalize_optional(request.idempotency_key());
+        ensure_unique_transfer_code(transfer_code, transfer_id);
+        if (idempotency_key != null && transfer_repository.idempotency_key_exists(idempotency_key, transfer_id)) {
+            throw new field_conflict_exception("idempotency_key", "Idempotency key already belongs to another transfer.");
+        }
+        ensure_warehouse_active(request.source_warehouse_id());
+        ensure_warehouse_active(request.destination_warehouse_id());
+        for (transfer_line_request line : request.lines()) {
+            validate_line(request.source_warehouse_id(), request.destination_warehouse_id(), line);
+        }
+        int updated = transfer_repository.update_transfer(transfer_id, transfer_code, request.source_warehouse_id(),
+                request.destination_warehouse_id(), idempotency_key, normalize_optional(request.notes()), actor.user_id());
+        if (updated == 0) {
+            throw new resource_not_found_exception("Draft transfer");
+        }
+        transfer_repository.delete_lines(transfer_id);
+        for (int index = 0; index < request.lines().size(); index++) {
+            transfer_repository.insert_line(transfer_id, index + 1, request.lines().get(index));
+        }
+        transfer_response result = transfer_repository.find(transfer_id, false);
+        audit_writer.write(actor.user_id(), "inventory", "transfer_update", "transfer", String.valueOf(transfer_id), correlation_id,
+                Map.of("transfer_code", result.transfer_code(), "line_count", result.lines().size()));
+        logger.info("Đã cập nhật phiếu điều chuyển kho; transfer_id={}, actor_user_id={}, correlation_id={}", transfer_id, actor.user_id(), correlation_id);
+        return result;
+    }
+
+    @Transactional
+    public void delete(long transfer_id, authenticated_user actor, String correlation_id) {
+        transfer_response current = transfer_repository.find(transfer_id, true);
+        if (!current.status().equals("draft")) {
+            throw new IllegalArgumentException("Only draft transfers can be deleted.");
+        }
+        transfer_repository.delete_lines(transfer_id);
+        if (transfer_repository.delete_draft(transfer_id) == 0) {
+            throw new resource_not_found_exception("Draft transfer");
+        }
+        audit_writer.write(actor.user_id(), "inventory", "transfer_delete", "transfer", String.valueOf(transfer_id), correlation_id,
+                Map.of("transfer_code", current.transfer_code()));
+        logger.info("Đã xóa bản nháp phiếu điều chuyển kho; transfer_id={}, actor_user_id={}, correlation_id={}", transfer_id, actor.user_id(), correlation_id);
+    }
+
+    @Transactional
+    public transfer_response cancel(long transfer_id, authenticated_user actor, String correlation_id) {
+        transfer_response current = transfer_repository.find(transfer_id, true);
+        if (!current.status().equals("draft") && !current.status().equals("pending")) {
+            throw new IllegalArgumentException("Only draft or pending transfers can be cancelled.");
+        }
+        if (transfer_repository.cancel(transfer_id, actor.user_id()) == 0) {
+            throw new resource_not_found_exception("Transfer");
+        }
+        transfer_response result = transfer_repository.find(transfer_id, false);
+        audit_writer.write(actor.user_id(), "inventory", "transfer_cancel", "transfer", String.valueOf(transfer_id), correlation_id,
+                Map.of("transfer_code", result.transfer_code()));
+        logger.info("Đã hủy phiếu điều chuyển kho; transfer_id={}, actor_user_id={}, correlation_id={}", transfer_id, actor.user_id(), correlation_id);
+        return result;
+    }
+    @Transactional
+    public transfer_response submit(long transfer_id, authenticated_user actor, String correlation_id) {
+        transfer_response current = transfer_repository.find(transfer_id, true);
+        if (current.status().equals("pending")) {
+            return current;
+        }
+        if (!current.status().equals("draft")) {
+            throw new IllegalArgumentException("Only draft transfers can be submitted.");
+        }
+        if (current.lines().isEmpty()) {
+            throw new IllegalArgumentException("Transfer must contain at least one line before submission.");
+        }
+        if (transfer_repository.mark_pending(transfer_id, actor.user_id()) == 0) {
+            throw new resource_not_found_exception("Draft transfer");
+        }
+        transfer_response result = transfer_repository.find(transfer_id, false);
+        audit_writer.write(actor.user_id(), "inventory", "transfer_submit", "transfer", String.valueOf(transfer_id), correlation_id,
+                Map.of("transfer_code", result.transfer_code(), "line_count", result.lines().size()));
+        logger.info("Đã gửi duyệt phiếu điều chuyển kho; transfer_id={}, actor_user_id={}, correlation_id={}", transfer_id, actor.user_id(), correlation_id);
+        return result;
     }
 
     @Transactional
@@ -262,8 +348,8 @@ public class inventory_transfer_service {
         }
     }
 
-    private void ensure_unique_transfer_code(String transfer_code) {
-        if (transfer_repository.transfer_code_exists(transfer_code)) {
+    private void ensure_unique_transfer_code(String transfer_code, Long transfer_id) {
+        if (transfer_repository.transfer_code_exists(transfer_code, transfer_id)) {
             throw new field_conflict_exception("transfer_code", "Transfer code already exists.");
         }
     }

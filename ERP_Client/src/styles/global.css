@@ -231,20 +231,6 @@ a { color: inherit; }
 }
 /* Overview: the module matrix is the visual signature of Vinamik. */
 .overview_page { max-width: 1430px; margin: 0 auto; }
-.overview_hero { position: relative; display: flex; min-height: 280px; align-items: stretch; justify-content: space-between; gap: 24px; margin-bottom: 40px; overflow: hidden; border: 1px solid color-mix(in srgb, var(--vinamik-blue) 70%, #fff); border-radius: 12px; color: var(--vinamik-logo-white); background: var(--vinamik-blue-deep); box-shadow: none; }
-.overview_hero::after { position: absolute; right: 28%; bottom: -1px; width: 42%; height: 1px; content: ""; background: rgba(255, 255, 255, .3); }
-.overview_hero_index { position: absolute; top: 24px; left: 28px; color: #92a8c8; font-size: 11px; font-weight: 750; letter-spacing: .14em; }
-.overview_hero_copy { position: relative; z-index: 1; max-width: 720px; padding: 58px 42px 42px; }
-.overview_hero .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: #9dc2ff; font-size: 11px; font-weight: 800; letter-spacing: .13em; }
-.overview_hero h1 { max-width: 690px; margin: 15px 0 14px !important; color: #fff !important; font-size: clamp(31px, 4.6vw, 54px) !important; line-height: 1.06; letter-spacing: -.045em; }
-.overview_hero p { max-width: 640px; margin-bottom: 22px; color: #cfdaea; font-size: 15px; line-height: 1.65; }
-.overview_hero_actions { display: flex; flex-wrap: wrap; gap: 11px; }
-.overview_hero_actions .ant-btn-default { border-color: rgba(255, 255, 255, .32); color: #fff; background: transparent; }
-.overview_hero_actions .ant-btn-default:hover { border-color: #fff; color: #fff; background: rgba(255, 255, 255, .08); }
-.overview_hero_signal { position: relative; z-index: 1; display: flex; min-width: 188px; align-items: center; justify-content: center; gap: 15px; margin: 28px 38px 28px 0; border-left: 1px solid rgba(255, 255, 255, .2); color: #b7c6dd; }
-.overview_hero_signal strong { color: #fff; font-size: 74px; font-weight: 500; letter-spacing: -.07em; line-height: .85; }
-.overview_hero_signal small { font-size: 12px; line-height: 1.5; }
-.signal_line { position: absolute; top: 12%; bottom: 12%; left: -1px; width: 2px; background: var(--erp-accent); }
 .overview_section { margin-bottom: 42px; }
 .overview_section_heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin: 0 0 15px; }
 .overview_section_heading h3 { margin: 0 0 6px !important; font-size: 27px !important; letter-spacing: -.035em; }
@@ -393,8 +379,6 @@ a { color: inherit; }
 @media (max-width: 960px) {
   .app_header_inner { padding-inline: 18px; }
   .app_content_inner { padding-inline: 20px; }
-  .overview_hero_signal { min-width: 150px; margin-right: 20px; }
-  .overview_hero_signal strong { font-size: 58px; }
   .module_row { display: block; }
   .module_row_identity { min-height: 125px; border-right: 0; border-bottom: 1px solid var(--erp-border); }
   .module_row_features { min-height: 133px; }
@@ -414,12 +398,6 @@ a { color: inherit; }
   .app_content_inner { min-height: 100%; padding: 23px 14px 45px; }
   .page_heading { display: block; }
   .page_heading .ant-typography { margin-bottom: 8px; }
-  .overview_hero { display: block; min-height: 0; margin-bottom: 32px; }
-  .overview_hero_copy { padding: 55px 23px 28px; }
-  .overview_hero h1 { font-size: 34px !important; }
-  .overview_hero_signal { min-height: 70px; margin: 0 23px 24px; justify-content: flex-start; border-top: 1px solid rgba(255, 255, 255, .2); border-left: 0; }
-  .signal_line { top: -1px; right: auto; bottom: auto; left: 0; width: 56px; height: 2px; }
-  .overview_hero_signal strong { font-size: 50px; }
   .overview_section_heading { display: block; }
   .sync_marker { margin-top: 13px; }
   .module_row_identity { padding: 22px 19px; }
@@ -538,6 +516,7 @@ a { color: inherit; }
 .page_heading > div:first-child { min-width: 0; }
 .page_heading > .ant-tag { flex: 0 0 auto; margin-bottom: 7px; }
 .workflow_error { margin: 12px 2px 0; }
+.workspace_error { margin: 0 0 14px; }
 .workflow_detail_grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; overflow: hidden; border: 1px solid var(--erp-border); border-radius: 10px; background: var(--erp-border); }
 .workflow_detail_grid > div { display: grid; min-width: 0; gap: 5px; padding: 12px 14px; background: var(--erp-surface); }
 .workflow_detail_grid span { overflow: hidden; color: var(--erp-text-faint); font-size: 11px; font-weight: 700; letter-spacing: .04em; text-overflow: ellipsis; text-transform: uppercase; }
@@ -609,3 +588,2449 @@ a { color: inherit; }
 .module_data_page_inventory .module_heading_mark { border-radius: 8px; }
 .module_data_page_production .module_heading_mark { border-radius: 8px 15px 8px 15px; transform: rotate(-3deg); }
 .module_data_page_production .module_heading_mark > .anticon { transform: rotate(3deg); }
+
+/* Shared modern row actions: stable geometry, restrained icon buttons and touch-safe hit areas. */
+.record_action_bar {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.record_action_button.ant-btn {
+  display: inline-flex;
+  min-width: 36px;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 9px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--erp-text-soft);
+  transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+.record_action_button.ant-btn .anticon { font-size: 16px; }
+.record_action_button.ant-btn:hover,
+.record_action_button.ant-btn:focus-visible {
+  color: var(--erp-accent);
+  border-color: var(--erp-border);
+  background: var(--erp-accent-soft);
+}
+.record_action_button.ant-btn:active { transform: none; filter: brightness(.97); }
+.record_action_primary.ant-btn {
+  padding-inline: 10px;
+  color: var(--erp-accent);
+  border-color: color-mix(in srgb, var(--erp-accent) 18%, var(--erp-border));
+  background: color-mix(in srgb, var(--erp-accent-soft) 56%, var(--erp-surface));
+  font-weight: 600;
+}
+.record_action_transition.ant-btn { color: var(--erp-accent); font-weight: 600; }
+.record_action_danger.ant-btn:hover,
+.record_action_danger.ant-btn:focus-visible {
+  color: #b42318;
+  border-color: #f5b9b3;
+  background: #fff2f0;
+}
+.record_action_icon.ant-btn,
+.record_action_overflow.ant-btn { width: 36px; padding-inline: 0; }
+.record_action_label { line-height: 1; }
+.record_action_bar .ant-dropdown-trigger { flex: 0 0 36px; }
+@media (max-width: 900px) {
+  .record_action_label { display: none; }
+  .record_action_primary.ant-btn { width: 36px; padding-inline: 0; }
+  .record_action_primary.ant-btn::after {
+    content: "Mở";
+    position: absolute;
+    width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .record_action_button.ant-btn { transition: none; }
+}
+
+.column_drawer .ant-drawer-body { display: flex; min-height: 0; flex-direction: column; gap: 12px; }
+.column_drawer_title { display: flex; align-items: center; gap: 10px; }
+.column_drawer_title > .anticon { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 9px; color: var(--erp-accent); background: var(--erp-accent-soft); }
+.column_drawer_title strong, .column_drawer_title span { display: block; }
+.column_drawer_title span { margin-top: 3px; color: var(--erp-text-faint); font-size: 12px; font-weight: 400; }
+.column_drawer_count { color: var(--erp-text-faint); font-size: 12px; }
+.column_drawer_list { min-height: 0; flex: 1 1 auto; overflow: auto; padding: 3px 2px; }
+.column_drawer_item { display: flex; min-height: 42px; align-items: center; gap: 10px; padding: 7px 9px; border-bottom: 1px solid color-mix(in srgb, var(--erp-border) 65%, transparent); color: var(--erp-text); cursor: pointer; transition: background-color 140ms ease; }
+.column_drawer_item:hover { background: var(--erp-accent-soft); }
+.column_drawer_item span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.data_workspace_columns_button.ant-btn { min-width: 74px; }
+@media (max-width: 720px) {
+  .data_workspace_columns_button.ant-btn { width: 100%; }
+}
+
+/* Unified Vinamik UI contract
+   Keep one geometry contract after the legacy styles. Module identity is expressed through a
+   small accent marker and information order; controls, tables and sheets share one rhythm. */
+:root {
+  --app_header_height: 68px;
+  --erp_control_height: 40px;
+  --erp_touch_height: 44px;
+  --erp_control_radius: 10px;
+  --erp_surface_radius: 14px;
+  --erp_shadow_soft: 0 12px 32px rgba(21, 39, 91, .08);
+  --erp_shadow_sheet: 0 24px 64px rgba(7, 18, 62, .18);
+  --erp_focus_ring: 0 0 0 3px color-mix(in srgb, var(--erp-accent) 18%, transparent);
+}
+
+html,
+body,
+#root {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+.ant-btn,
+.ant-select,
+.ant-input-search,
+.ant-pagination-item,
+.ant-pagination-prev,
+.ant-pagination-next {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app_layout,
+.app_layout > .ant-layout,
+.app_layout > .ant-layout > .ant-layout {
+  width: 100%;
+  height: 100dvh;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.app_sider {
+  align-self: stretch;
+  height: 100%;
+  min-height: 0;
+  background: var(--erp-sidebar) !important;
+  border-inline-end: 1px solid color-mix(in srgb, var(--erp-sidebar-text) 10%, transparent);
+}
+
+.app_sider .ant-layout-sider-children {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.app_sider .ant-menu {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 8px 10px 96px;
+  background: transparent;
+  border-inline-end: 0;
+}
+
+.app_sider .ant-menu-dark .ant-menu-item,
+.app_sider .ant-menu-dark .ant-menu-submenu-title {
+  min-height: 42px;
+  height: 42px;
+  margin: 3px 0;
+  align-items: center;
+  border-radius: 10px;
+  color: var(--erp-sidebar-text);
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.app_sider .ant-menu-dark .ant-menu-item:hover,
+.app_sider .ant-menu-dark .ant-menu-submenu-title:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, .08);
+}
+
+.app_sider .ant-menu-dark .ant-menu-item-selected {
+  color: #fff;
+  background: color-mix(in srgb, var(--erp-accent) 78%, var(--erp-sidebar));
+  box-shadow: inset 3px 0 0 var(--vinamik-logo-white);
+}
+
+.app_sider .ant-menu-dark .ant-menu-item-selected::after {
+  display: none;
+}
+
+.app_sider .ant-menu-sub.ant-menu-inline {
+  padding: 2px 0 5px 14px;
+  background: transparent;
+}
+
+.app_sider .ant-menu-sub .ant-menu-item {
+  min-height: 38px;
+  height: 38px;
+  margin-block: 2px;
+}
+
+.app_sider.ant-layout-sider-collapsed .brand_lockup {
+  justify-content: center;
+  padding-inline: 0;
+}
+
+.app_sider.ant-layout-sider-collapsed .collapsed_nav {
+  width: 100%;
+  justify-items: center;
+  padding-inline: 8px;
+}
+
+.collapsed_nav_item {
+  width: 52px;
+  height: 44px;
+  border-radius: 10px;
+}
+
+.collapsed_nav_item.is_active {
+  color: #fff;
+  border-color: color-mix(in srgb, var(--vinamik-logo-white) 24%, transparent);
+  background: color-mix(in srgb, var(--erp-accent) 82%, var(--erp-sidebar));
+  box-shadow: inset 3px 0 0 var(--vinamik-logo-white);
+}
+
+.app_header {
+  position: relative;
+  z-index: 10;
+  flex: 0 0 var(--app_header_height);
+  width: 100%;
+  height: var(--app_header_height);
+  min-height: var(--app_header_height);
+  padding: 0;
+  border-bottom: 1px solid var(--erp-border);
+  background: var(--erp-surface);
+}
+
+.app_header_inner {
+  display: grid;
+  width: 100%;
+  max-width: 1740px;
+  height: 100%;
+  min-width: 0;
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 0 clamp(16px, 2.6vw, 42px);
+}
+
+.header_left,
+.header_right {
+  display: flex;
+  min-width: 0;
+  height: var(--erp_control_height);
+  align-items: center;
+  gap: 8px;
+}
+
+.header_left .ant-breadcrumb {
+  min-width: 0;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 40px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.header_left .ant-breadcrumb-link {
+  color: var(--erp-text-soft);
+}
+
+.header_left .ant-breadcrumb-separator {
+  color: var(--erp-text-faint);
+}
+
+.header_toggle.icon_button,
+.header_right .icon_button {
+  width: var(--erp_control_height);
+  height: var(--erp_control_height);
+  min-width: var(--erp_control_height);
+  min-height: var(--erp_control_height);
+  border-radius: var(--erp_control_radius);
+}
+
+.command_trigger {
+  display: inline-flex;
+  width: clamp(190px, 19vw, 238px);
+  height: var(--erp_control_height);
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 10px 0 12px;
+  border: 1px solid var(--erp-border);
+  border-radius: var(--erp_control_radius);
+  color: var(--erp-text-soft);
+  background: var(--erp-surface);
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
+}
+
+.command_trigger:hover,
+.command_trigger:focus-visible {
+  color: var(--erp-accent);
+  border-color: color-mix(in srgb, var(--erp-accent) 48%, var(--erp-border));
+  background: var(--erp-accent-soft);
+}
+
+.command_trigger > span {
+  display: inline-flex;
+  min-width: 0;
+  height: 100%;
+  align-items: center;
+  overflow: hidden;
+  line-height: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.command_search_icon {
+  margin-right: 6px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.command_trigger kbd {
+  display: inline-flex;
+  height: 22px;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 0 6px;
+  border: 1px solid var(--erp-border);
+  border-radius: 6px;
+  color: var(--erp-text-faint);
+  background: var(--erp-surface-muted);
+  font-size: 10px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.profile_button {
+  display: flex;
+  width: auto;
+  height: var(--erp_control_height);
+  min-height: var(--erp_control_height);
+  align-items: center;
+  gap: 8px;
+  padding: 3px 6px 3px 4px;
+  border: 0;
+  border-radius: var(--erp_control_radius);
+  color: var(--erp-text);
+  background: transparent;
+  line-height: 1;
+  cursor: pointer;
+  text-align: left;
+}
+
+.profile_button:hover,
+.profile_button:focus-visible {
+  background: var(--erp-surface-muted);
+}
+
+.profile_button .ant-avatar {
+  width: 32px;
+  height: 32px;
+  color: var(--erp-accent);
+  background: var(--erp-accent-soft);
+}
+
+.profile_copy {
+  display: grid;
+  min-width: 72px;
+  gap: 3px;
+  align-content: center;
+  line-height: 1.2;
+}
+
+.profile_copy strong {
+  max-width: 122px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile_copy small {
+  color: var(--erp-text-faint);
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.app_content {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--erp-bg);
+}
+
+.app_content_inner {
+  width: 100%;
+  max-width: 1740px;
+  min-width: 0;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 28px clamp(16px, 2.6vw, 42px) 56px;
+}
+
+.ant-typography {
+  color: var(--erp-text);
+}
+
+.ant-card {
+  border-color: var(--erp-border);
+  border-radius: var(--erp_surface_radius);
+  box-shadow: none;
+}
+
+.ant-btn {
+  display: inline-flex;
+  min-height: var(--erp_control_height);
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: var(--erp_control_radius);
+  transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.ant-btn:not(:disabled):active {
+  transform: none;
+  filter: brightness(.97);
+}
+
+.ant-btn-primary {
+  border-color: var(--erp-accent);
+  background: var(--erp-accent);
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--erp-accent) 18%, transparent);
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus-visible {
+  border-color: color-mix(in srgb, var(--erp-accent) 90%, #000);
+  background: color-mix(in srgb, var(--erp-accent) 90%, #000);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--erp-accent) 22%, transparent);
+}
+
+.ant-btn-default {
+  color: var(--erp-text-soft);
+  border-color: var(--erp-border);
+  background: var(--erp-surface);
+}
+
+.ant-btn-default:hover,
+.ant-btn-default:focus-visible {
+  color: var(--erp-accent);
+  border-color: color-mix(in srgb, var(--erp-accent) 44%, var(--erp-border));
+  background: var(--erp-accent-soft);
+}
+
+.ant-tag {
+  border-radius: 6px;
+  border-color: color-mix(in srgb, currentColor 24%, var(--erp-border));
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.ant-input,
+.ant-input-number,
+.ant-select-selector,
+.ant-picker,
+.ant-input-affix-wrapper {
+  border-color: var(--erp-border) !important;
+  background: var(--erp-surface) !important;
+  border-radius: var(--erp_control_radius) !important;
+}
+
+.ant-input:focus,
+.ant-input-focused,
+.ant-input-affix-wrapper-focused,
+.ant-select-focused .ant-select-selector {
+  border-color: var(--erp-accent) !important;
+  box-shadow: var(--erp_focus_ring) !important;
+}
+
+.ant-input::placeholder {
+  color: var(--erp-text-faint);
+}
+
+.ant-input-search {
+  display: block;
+  min-width: 0;
+  height: var(--erp_control_height);
+}
+
+.list_toolbar,
+.control_row,
+.data_workspace_toolbar {
+  display: flex !important;
+  width: 100%;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.list_toolbar .ant-space-item,
+.control_row .ant-space-item,
+.data_workspace_toolbar .ant-space-item {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.list_toolbar .ant-input-search,
+.control_row .ant-input-search,
+.data_workspace_toolbar .ant-input-search {
+  width: min(100%, 380px) !important;
+  max-width: 100%;
+  flex: 1 1 300px;
+}
+
+.list_toolbar .ant-select,
+.control_row .ant-select,
+.data_workspace_toolbar .ant-select {
+  flex: 0 1 190px;
+  min-width: 150px;
+}
+
+.list_toolbar > .ant-btn,
+.control_row > .ant-btn,
+.data_workspace_toolbar > .ant-btn,
+.list_toolbar .ant-space-item > .ant-btn,
+.control_row .ant-space-item > .ant-btn,
+.data_workspace_toolbar .ant-space-item > .ant-btn {
+  flex: 0 0 auto;
+  height: var(--erp_control_height);
+  min-height: var(--erp_control_height);
+}
+
+.ant-input-search .ant-input-group {
+  display: flex;
+  width: 100%;
+  height: var(--erp_control_height);
+  overflow: hidden;
+  border: 1px solid var(--erp-border);
+  border-radius: var(--erp_control_radius);
+  background: var(--erp-surface);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.ant-input-search .ant-input-group:focus-within {
+  border-color: var(--erp-accent);
+  box-shadow: var(--erp_focus_ring);
+}
+
+.ant-input-search .ant-input-affix-wrapper {
+  width: auto !important;
+  min-width: 0;
+  height: calc(var(--erp_control_height) - 2px) !important;
+  min-height: 0;
+  flex: 1 1 auto;
+  padding: 0 12px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.ant-input-search .ant-input {
+  height: 100%;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.ant-input-search .ant-input-group-addon {
+  display: flex;
+  width: 38px;
+  height: calc(var(--erp_control_height) - 2px);
+  flex: 0 0 38px;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+}
+
+.ant-input-search .ant-input-search-button {
+  width: 38px !important;
+  height: calc(var(--erp_control_height) - 2px) !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-inline-start: 1px solid var(--erp-border) !important;
+  border-radius: 0 !important;
+  color: var(--erp-text-soft);
+  background: transparent;
+  box-shadow: none !important;
+}
+
+.ant-input-search .ant-input-search-button:hover,
+.ant-input-search .ant-input-search-button:focus-visible {
+  color: var(--erp-accent);
+  background: var(--erp-accent-soft);
+}
+
+.ant-select,
+.ant-select-selector {
+  min-height: var(--erp_control_height);
+}
+
+.ant-select-single .ant-select-selector {
+  height: var(--erp_control_height) !important;
+  align-items: center;
+}
+
+.data_workspace,
+.module_page .data_workspace,
+.module_data_page .data_workspace {
+  min-width: 0;
+  margin: 0;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.data_workspace > .ant-card-body {
+  padding: 0;
+}
+
+.data_workspace_heading {
+  display: flex;
+  min-width: 0;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.data_workspace_heading > div:first-child {
+  min-width: 0;
+}
+
+.data_workspace_heading h4 {
+  margin: 0 0 4px !important;
+  color: var(--erp-text);
+  font-size: 20px !important;
+  font-weight: 680;
+  letter-spacing: -.035em;
+}
+
+.data_workspace_heading > div:first-child > span {
+  display: block;
+  color: var(--erp-text-soft);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.data_workspace_controls {
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.data_workspace_permission {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 8px 0 0;
+  color: var(--erp-text-soft);
+  font-size: 12px;
+}
+
+.data_workspace_toolbar {
+  margin-bottom: 14px;
+  padding: 0 0 15px;
+  border-bottom: 1px solid var(--erp-border);
+}
+
+.data_workspace_read_only,
+.read_only_notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 0;
+  border: 0;
+  border-left: 3px solid #d89a38;
+  border-radius: 0;
+  color: var(--erp-text-soft);
+  background: transparent;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.data_workspace_read_only {
+  margin: -2px 0 12px;
+}
+
+.data_workspace_table {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ant-table-wrapper.data_workspace_table {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid var(--erp-border);
+  border-radius: 12px;
+  background: var(--erp-surface);
+  box-shadow: var(--erp_shadow_soft);
+}
+
+.data_workspace_table .ant-table-container,
+.data_workspace_table .ant-table-content {
+  min-width: 0;
+}
+
+.data_workspace_table .ant-table {
+  min-width: 100%;
+  background: var(--erp-surface);
+  font-size: 14px;
+}
+
+.data_workspace_table .ant-table-thead > tr > th {
+  height: 44px;
+  padding: 0 14px;
+  color: var(--erp-text-soft) !important;
+  background: var(--erp-surface-muted) !important;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.data_workspace_table .ant-table-tbody > tr > td {
+  min-height: 52px;
+  padding: 13px 14px;
+  border-bottom-color: var(--erp-border);
+  background: var(--erp-surface);
+  vertical-align: middle;
+}
+
+.data_workspace_table .ant-table-tbody > tr:hover > td {
+  background: color-mix(in srgb, var(--erp-accent) 5%, var(--erp-surface)) !important;
+}
+
+.data_workspace_table .ant-table-tbody > tr {
+  content-visibility: visible;
+  contain: none;
+  will-change: auto;
+}
+
+.data_workspace_table .ant-table-body {
+  scrollbar-gutter: stable;
+}
+
+.data_workspace_pagination {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 2px 0;
+}
+
+.data_workspace_total {
+  flex: 0 0 auto;
+  color: var(--erp-text-soft);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.data_workspace_pagination .ant-pagination {
+  display: flex;
+  min-width: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.data_workspace_pagination .ant-pagination-item,
+.data_workspace_pagination .ant-pagination-prev,
+.data_workspace_pagination .ant-pagination-next,
+.data_workspace_pagination .ant-pagination-options,
+.data_workspace_pagination .ant-pagination-options-size-changer,
+.data_workspace_pagination .ant-select-selector {
+  cursor: pointer;
+}
+
+.data_workspace_pagination .ant-pagination-options-size-changer {
+  user-select: none;
+}
+
+.data_workspace_pagination .ant-pagination-item-active {
+  font-weight: 650;
+}
+
+.data_workspace_columns_button.ant-btn {
+  min-width: 76px;
+}
+
+.module_page {
+  --module-accent: var(--erp-accent);
+  min-width: 0;
+}
+
+.module_page_human_resources {
+  --module-accent: var(--erp-module-human-resources);
+}
+
+.module_page_inventory {
+  --module-accent: var(--erp-module-inventory);
+}
+
+.module_page_production {
+  --module-accent: var(--erp-module-production);
+}
+
+.module_page_intro {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 104px;
+  grid-template-columns: 12px minmax(0, 1fr) minmax(190px, auto);
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 19px;
+  padding: 9px 0 18px;
+  border: 0;
+  border-bottom: 1px solid var(--erp-border);
+  border-radius: 0;
+  background: transparent;
+}
+
+.module_page_intro_copy {
+  min-width: 0;
+}
+
+.module_page_intro_copy .ant-typography-title {
+  margin: 5px 0 5px !important;
+  color: var(--erp-text);
+  font-size: clamp(26px, 3vw, 36px) !important;
+  font-weight: 680;
+  letter-spacing: -.055em;
+  line-height: 1.08;
+}
+
+.module_page_intro_copy .ant-typography-paragraph {
+  max-width: 760px;
+  margin: 0;
+  color: var(--erp-text-soft);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.module_page_kicker {
+  display: block;
+  color: var(--module-accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .17em;
+  line-height: 1.2;
+}
+
+.module_page_context {
+  display: grid;
+  min-width: 190px;
+  gap: 5px;
+  padding: 4px 0 4px 18px;
+  border-left: 1px solid var(--erp-border);
+  color: var(--erp-text-soft);
+  font-size: 11px;
+}
+
+.module_page_context span {
+  color: var(--erp-text-faint);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.module_page_context strong {
+  color: var(--erp-text);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.module_page_human_resources .module_page_intro::before,
+.module_page_inventory .module_page_intro::before,
+.module_page_production .module_page_intro::before {
+  display: block;
+  grid-column: 1;
+  width: 12px;
+  height: 54px;
+  content: "";
+}
+
+.module_page_human_resources .module_page_intro::before {
+  width: 4px;
+  height: 54px;
+  margin-left: 4px;
+  border-radius: 999px;
+  background: var(--module-accent);
+}
+
+.module_page_inventory .module_page_intro::before {
+  width: 12px;
+  height: 54px;
+  border: 1px solid var(--module-accent);
+  border-width: 1px 0 1px 1px;
+  border-radius: 7px 0 0 7px;
+  background: transparent;
+}
+
+.module_page_production .module_page_intro::before {
+  width: 12px;
+  height: 54px;
+  border-left: 4px solid var(--module-accent);
+  border-top: 1px solid color-mix(in srgb, var(--module-accent) 34%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--module-accent) 34%, transparent);
+  border-radius: 3px;
+}
+
+.module_page .data_workspace_heading,
+.module_data_page .data_workspace_heading {
+  align-items: flex-end;
+}
+
+.inventory_view_switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin: 0 0 14px;
+  padding: 3px;
+  border: 1px solid var(--erp-border);
+  border-radius: 10px;
+  background: var(--erp-surface-muted);
+}
+
+.inventory_view_switch .ant-btn {
+  min-height: 36px;
+  border: 0;
+  border-radius: 7px;
+  box-shadow: none;
+}
+
+.inventory_view_switch .ant-btn-default {
+  color: var(--erp-text-soft);
+  background: transparent;
+}
+
+.inventory_view_switch .ant-btn-default:hover,
+.inventory_view_switch .ant-btn-default:focus-visible {
+  color: var(--module-accent);
+  background: var(--erp-surface);
+}
+
+.inventory_view_switch .ant-btn-primary {
+  color: #fff;
+  background: var(--module-accent);
+}
+
+.production_stage_rail,
+.production_stage_strip {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  padding: 9px 0;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--erp-border);
+  color: var(--erp-text-faint);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.production_stage_rail span,
+.production_stage_strip span {
+  color: var(--erp-text-soft);
+}
+
+.production_stage_rail span.is_active,
+.production_stage_strip span:first-child {
+  color: var(--module-accent);
+  font-weight: 750;
+}
+
+.production_stage_rail i,
+.production_stage_strip i {
+  width: 24px;
+  height: 1px;
+  flex: 0 0 auto;
+  background: var(--erp-border);
+}
+
+.module_data_page {
+  --module-accent: var(--erp-accent);
+  --module-soft: var(--erp-accent-soft);
+  min-width: 0;
+}
+
+.module_data_page_human_resources {
+  --module-accent: var(--erp-module-human-resources);
+  --module-soft: color-mix(in srgb, var(--erp-module-human-resources) 8%, var(--erp-surface));
+}
+
+.module_data_page_inventory {
+  --module-accent: var(--erp-module-inventory);
+  --module-soft: color-mix(in srgb, var(--erp-module-inventory) 7%, var(--erp-surface));
+}
+
+.module_data_page_production {
+  --module-accent: var(--erp-module-production);
+  --module-soft: color-mix(in srgb, var(--erp-module-production) 7%, var(--erp-surface));
+}
+
+.module_surface_header {
+  display: flex;
+  min-width: 0;
+  min-height: 104px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 12px;
+  padding: 9px 0 17px;
+  border: 0;
+  border-bottom: 1px solid var(--erp-border);
+  border-left: 4px solid var(--module-accent);
+  border-radius: 0;
+  background: transparent;
+}
+
+.module_surface_header .ant-typography-title {
+  margin: 0 0 4px !important;
+  color: var(--erp-text);
+}
+
+.module_surface_header .ant-typography-paragraph {
+  max-width: 760px;
+  margin: 0;
+  color: var(--erp-text-soft);
+}
+
+.module_surface_header > .ant-tag,
+.module_permission {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.module_permission {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 6px;
+  color: var(--erp-text-soft);
+  font-size: 12px;
+}
+
+.module_context_band {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0 0 13px;
+  padding: 9px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--module-accent) 24%, var(--erp-border));
+  color: var(--erp-text-soft);
+  font-size: 12px;
+}
+
+.module_context_band strong {
+  color: var(--erp-text);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.module_data_page_human_resources .module_heading_mark {
+  border-radius: 50%;
+}
+
+.module_data_page_inventory .module_heading_mark {
+  border-radius: 8px;
+}
+
+.module_data_page_production .module_heading_mark {
+  border-radius: 8px 14px 8px 14px;
+  transform: rotate(-3deg);
+}
+
+.module_data_page_production .module_heading_mark > .anticon {
+  transform: rotate(3deg);
+}
+
+.workflow_create_form .workflow_form_lines {
+  margin-bottom: 18px;
+  padding: 12px;
+  border: 1px solid var(--erp-border);
+  border-radius: 10px;
+  background: var(--erp-surface-muted);
+}
+
+.workflow_form_lines > .ant-typography {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--erp-text);
+}
+
+.workflow_form_line_list {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 9px;
+}
+
+.workflow_form_line {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  gap: 8px;
+  align-items: end;
+  padding: 10px;
+  border: 1px solid var(--erp-border);
+  border-radius: 9px;
+  background: var(--erp-surface);
+}
+
+.workflow_form_line .ant-form-item {
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.workflow_form_line .ant-form-item-label > label {
+  overflow: hidden;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.record_action_bar {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.record_action_button.ant-btn {
+  display: inline-flex;
+  width: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  color: var(--erp-text-soft);
+  background: transparent;
+}
+
+.record_action_button.ant-btn .anticon {
+  font-size: 16px;
+}
+
+.record_action_button.ant-btn:hover,
+.record_action_button.ant-btn:focus-visible {
+  color: var(--erp-accent);
+  border-color: var(--erp-border);
+  background: var(--erp-accent-soft);
+}
+
+.record_action_primary.ant-btn {
+  width: auto;
+  min-width: 56px;
+  padding-inline: 9px;
+  color: var(--erp-accent);
+  border-color: color-mix(in srgb, var(--erp-accent) 20%, var(--erp-border));
+  background: color-mix(in srgb, var(--erp-accent-soft) 55%, var(--erp-surface));
+  font-weight: 600;
+}
+
+.record_action_transition.ant-btn {
+  width: auto;
+  min-width: 56px;
+  padding-inline: 9px;
+  color: var(--erp-accent);
+  font-weight: 600;
+}
+
+.record_action_danger.ant-btn:hover,
+.record_action_danger.ant-btn:focus-visible {
+  color: #b42318;
+  border-color: #f5b9b3;
+  background: #fff2f0;
+}
+
+.record_action_icon.ant-btn,
+.record_action_overflow.ant-btn {
+  width: 36px;
+  padding-inline: 0;
+}
+
+.record_action_labeled.ant-btn {
+  width: auto;
+  min-width: 56px;
+  padding-inline: 9px;
+}
+
+.record_action_bar .ant-dropdown-trigger {
+  flex: 0 0 36px;
+}
+
+.workflow_detail_grid {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 24px;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.workflow_detail_grid > div {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--erp-border);
+  background: transparent;
+}
+
+.workflow_detail_grid span {
+  color: var(--erp-text-faint);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.workflow_detail_grid strong {
+  overflow-wrap: anywhere;
+  color: var(--erp-text);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.stock_availability_hint {
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid var(--erp-border);
+}
+
+.workflow_detail_actions {
+  display: flex;
+  margin-top: 18px;
+}
+
+.workflow_detail_loading {
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  color: var(--erp-text-soft);
+}
+
+.workflow_detail_refreshing,
+.workflow_detail_related_loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--erp-text-soft);
+  font-size: 12px;
+}
+
+.workflow_detail_refreshing {
+  min-height: 24px;
+  margin-bottom: 12px;
+}
+
+.workflow_detail_related_loading {
+  justify-content: center;
+  min-height: 48px;
+  padding: 8px 0;
+}
+
+.workflow_detail_drawer .ant-table-body {
+  overscroll-behavior: contain;
+}
+
+/* Count controls are two independent actions. Space.Compact intentionally removes the
+   separator, which makes the input and save button look like one broken control in
+   narrow stocktake tables. Keep a small, touch-safe gap and full rounded corners. */
+.stocktake_count_editor {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.stocktake_count_editor .ant-input-number {
+  width: 96px;
+  min-width: 0;
+  flex: 1 1 auto;
+  border-radius: 9px !important;
+}
+
+.stocktake_count_editor .ant-input-number-input {
+  height: 32px;
+}
+
+.stocktake_count_editor .ant-btn {
+  min-width: 42px;
+  height: 32px;
+  min-height: 32px;
+  flex: 0 0 auto;
+  padding-inline: 10px;
+  border-radius: 9px;
+}
+
+@media (max-width: 640px) {
+  .stocktake_count_editor {
+    gap: 5px;
+  }
+
+  .stocktake_count_editor .ant-input-number {
+    width: 82px;
+  }
+
+  .stocktake_count_editor .ant-btn {
+    min-width: 40px;
+    padding-inline: 8px;
+  }
+}
+
+.column_drawer .ant-drawer-body {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.column_drawer_list {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.column_drawer_item {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 9px;
+  border-bottom: 1px solid color-mix(in srgb, var(--erp-border) 70%, transparent);
+  color: var(--erp-text);
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.column_drawer_item:hover {
+  background: var(--erp-accent-soft);
+}
+
+.command_drawer .ant-drawer-content-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+  border-radius: 0 0 14px 14px;
+  overflow: hidden;
+}
+
+.workflow_detail_descriptions .ant-descriptions-item-label,
+.workflow_detail_descriptions .ant-descriptions-item-content {
+  background: var(--erp-surface);
+}
+
+.entity_form_modal .ant-modal-body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.entity_form_modal .ant-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 18px;
+}
+
+.entity_form_modal .ant-form > .ant-form-item {
+  min-width: 0;
+  margin-bottom: 17px;
+}
+
+.entity_form_modal .ant-form > .ant-form-item:last-child {
+  grid-column: 1 / -1;
+}
+
+.entity_form_modal .ant-form > .ant-space {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.entity_form_modal .ant-form > .ant-space .ant-form-item {
+  min-width: 0;
+  flex: 1 1 0;
+}
+
+.entity_form_modal .ant-form-item-label > label {
+  color: var(--erp-text-soft);
+  font-size: 13px;
+  font-weight: 560;
+}
+
+.entity_form_modal .ant-input,
+.entity_form_modal .ant-input-number,
+.entity_form_modal .ant-select-selector,
+.entity_form_modal .ant-input-affix-wrapper {
+  min-height: 42px;
+  border-radius: 10px !important;
+}
+
+.entity_form_modal .ant-input-number {
+  width: 100%;
+}
+
+.entity_form_modal .ant-input-number-input {
+  height: 40px;
+}
+
+.entity_form_modal .ant-input-textarea textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.entity_form_modal .ant-form-item-explain-error {
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --app_header_height: 64px;
+  }
+
+  .app_header_inner {
+    padding-inline: 12px;
+    gap: 10px;
+  }
+
+  .header_left,
+  .header_right {
+    gap: 4px;
+  }
+
+  .header_left .ant-breadcrumb {
+    display: none;
+  }
+
+  .command_trigger {
+    width: 40px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .command_trigger > span {
+    font-size: 0;
+  }
+
+  .command_trigger kbd,
+  .profile_copy,
+  .profile_chevron {
+    display: none;
+  }
+
+  .app_content_inner {
+    padding: 20px 14px 44px;
+  }
+
+  .module_page_intro,
+  .module_surface_header {
+    min-height: 0;
+    grid-template-columns: 8px minmax(0, 1fr);
+    gap: 11px;
+    margin-bottom: 17px;
+    padding: 3px 0 14px;
+  }
+
+  .module_page_intro::before {
+    grid-row: span 2;
+  }
+
+  .module_page_context {
+    grid-column: 2;
+    min-width: 0;
+    padding: 10px 0 0;
+    border-top: 1px solid var(--erp-border);
+    border-left: 0;
+  }
+
+  .module_surface_header {
+    display: grid;
+  }
+
+  .module_surface_header > .ant-tag,
+  .module_permission {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 5px;
+  }
+
+  .data_workspace_heading {
+    display: block;
+  }
+
+  .data_workspace_controls {
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .list_toolbar .ant-input-search,
+  .control_row .ant-input-search,
+  .data_workspace_toolbar .ant-input-search {
+    flex-basis: 100%;
+    width: 100% !important;
+  }
+
+  .list_toolbar .ant-select,
+  .control_row .ant-select,
+  .data_workspace_toolbar .ant-select {
+    flex: 1 1 160px;
+  }
+
+  .data_workspace_pagination {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .data_workspace_pagination .ant-pagination {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .workflow_detail_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow_form_line {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflow_form_line > .ant-btn {
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  :root .ant-modal.entity_form_modal {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+  }
+
+  .entity_form_modal .ant-form {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* End unified Vinamik UI contract */
+
+/* Sheets, drawers and dashboard surfaces share the same lightweight geometry. */
+:root .ant-modal-wrap {
+  display: flex !important;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  padding: 16px !important;
+  overscroll-behavior: contain;
+}
+
+:root .ant-modal {
+  top: 0 !important;
+  max-width: calc(100vw - 32px) !important;
+  max-height: calc(100dvh - 32px) !important;
+  margin: auto !important;
+  padding-bottom: 0 !important;
+}
+
+:root .ant-modal-content {
+  display: flex !important;
+  max-height: calc(100dvh - 32px);
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--erp-border);
+  border-radius: 16px;
+  background: var(--erp-surface);
+  box-shadow: var(--erp_shadow_sheet);
+}
+
+:root .ant-modal-header,
+:root .ant-modal-footer {
+  flex: 0 0 auto;
+  margin: 0;
+  border-color: var(--erp-border);
+  background: var(--erp-surface);
+}
+
+:root .ant-modal-header {
+  padding: 20px 24px 15px;
+}
+
+:root .ant-modal-title {
+  color: var(--erp-text);
+  font-size: 18px;
+  font-weight: 680;
+  letter-spacing: -.025em;
+}
+
+:root .ant-modal-body {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 18px 24px 22px;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+:root .ant-modal-footer {
+  padding: 13px 24px 17px;
+}
+
+:root .ant-modal-close {
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--erp-text-faint);
+}
+
+:root .ant-modal-close:hover,
+:root .ant-modal-close:focus-visible {
+  color: var(--erp-accent);
+  background: var(--erp-accent-soft);
+}
+
+:root .ant-modal-mask {
+  background: rgba(7, 12, 42, .42);
+}
+
+:root .ant-drawer-content-wrapper {
+  max-width: 100vw;
+  max-height: 100dvh;
+  overflow: hidden;
+  box-shadow: -18px 0 52px rgba(7, 18, 62, .14);
+}
+
+:root .ant-drawer-content {
+  display: flex !important;
+  min-height: 0;
+  max-height: 100dvh;
+  flex-direction: column;
+  overflow: hidden !important;
+  background: var(--erp-surface);
+}
+
+:root .ant-drawer-header,
+:root .ant-drawer-footer {
+  flex: 0 0 auto;
+  border-color: var(--erp-border);
+  background: var(--erp-surface);
+}
+
+:root .ant-drawer-header {
+  padding: 18px 22px 14px;
+}
+
+:root .ant-drawer-title {
+  color: var(--erp-text);
+  font-size: 18px;
+  font-weight: 680;
+}
+
+:root .ant-drawer-body {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 18px 22px 26px;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+:root .ant-drawer-footer {
+  padding: 13px 22px 16px;
+}
+
+:root .ant-drawer-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.entity_form_modal .ant-modal-content {
+  border-color: color-mix(in srgb, var(--erp-accent) 18%, var(--erp-border));
+}
+
+.entity_form_modal .ant-modal-header {
+  background: var(--erp-surface);
+}
+
+.entity_form_modal .ant-modal-footer {
+  background: var(--erp-surface-muted);
+}
+
+.modal_title_block {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+  padding-right: 34px;
+}
+
+.modal_title_block > span {
+  color: var(--erp-accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  line-height: 1.2;
+}
+
+.modal_title_block > strong {
+  color: var(--erp-text);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1.2;
+}
+
+.modal_title_block > small {
+  max-width: 620px;
+  color: var(--erp-text-soft);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.modal_footer_actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.modal_footer_actions .ant-btn {
+  min-width: 88px;
+}
+
+.module_permission_dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #20a878;
+  box-shadow: 0 0 0 3px rgba(32, 168, 120, .12);
+}
+
+.workflow_detail_drawer .ant-drawer-content-wrapper {
+  border-radius: 16px 0 0 16px;
+}
+
+.workflow_detail_drawer .ant-drawer-body {
+  padding-bottom: 34px;
+}
+
+.workflow_detail_descriptions .ant-descriptions-view {
+  overflow: hidden;
+  border-color: var(--erp-border);
+  border-radius: 10px;
+}
+
+.workflow_detail_descriptions .ant-descriptions-item-label,
+.workflow_detail_descriptions .ant-descriptions-item-content {
+  background: var(--erp-surface);
+  border-color: var(--erp-border);
+}
+
+.workflow_detail_descriptions .ant-descriptions-item-label {
+  color: var(--erp-text-soft);
+  font-size: 12px;
+}
+
+.workflow_detail_descriptions .ant-descriptions-item-content {
+  color: var(--erp-text);
+  font-size: 13px;
+}
+
+.data_workspace_detail .ant-descriptions-view {
+  overflow: hidden;
+  border-color: var(--erp-border);
+  border-radius: 10px;
+}
+
+.data_workspace_detail .ant-descriptions-item-label,
+.data_workspace_detail .ant-descriptions-item-content {
+  border-color: var(--erp-border);
+  background: var(--erp-surface);
+}
+
+.attention_section {
+  margin-bottom: 36px;
+}
+
+.attention_grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  overflow: hidden;
+  border-top: 1px solid var(--erp-border);
+  border-bottom: 1px solid var(--erp-border);
+  background: var(--erp-surface);
+}
+
+.attention_card {
+  --attention-accent: var(--erp-accent);
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 132px;
+  grid-template-columns: 26px minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: "index top" "index value" "index label";
+  column-gap: 12px;
+  padding: 17px 18px;
+  border: 0;
+  border-left: 1px solid var(--erp-border);
+  border-radius: 0;
+  color: var(--erp-text);
+  background: transparent;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.attention_card:first-child {
+  border-left: 0;
+}
+
+.attention_card::after {
+  position: absolute;
+  top: 17px;
+  bottom: 17px;
+  left: 0;
+  width: 3px;
+  border-radius: 0 99px 99px 0;
+  background: var(--attention-accent);
+  content: "";
+}
+
+.attention_card:hover,
+.attention_card:focus-visible {
+  background: color-mix(in srgb, var(--attention-accent) 5%, var(--erp-surface));
+}
+
+.attention_card_index {
+  grid-area: index;
+  align-self: stretch;
+  color: color-mix(in srgb, var(--attention-accent) 70%, var(--erp-text-faint));
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.attention_card_top {
+  display: flex;
+  min-width: 0;
+  grid-area: top;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--erp-text-faint);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.attention_card_top .anticon {
+  color: var(--attention-accent);
+  font-size: 11px;
+}
+
+.attention_card strong {
+  grid-area: value;
+  color: var(--erp-text);
+  font-size: 32px;
+  font-weight: 680;
+  letter-spacing: -.06em;
+  line-height: 1;
+}
+
+.attention_card > span:not(.attention_card_top):not(.attention_card_index) {
+  grid-area: label;
+  align-self: end;
+  color: var(--erp-text-soft);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.attention_card small {
+  grid-column: 2;
+  color: #b4771d;
+  font-size: 11px;
+}
+
+@media (max-width: 960px) {
+  .attention_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .attention_card:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .attention_card:nth-child(n + 3) {
+    border-top: 1px solid var(--erp-border);
+  }
+}
+
+@media (max-width: 720px) {
+  .module_surface_header {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .module_surface_header > .ant-tag,
+  .module_surface_header > .module_permission,
+  .module_permission {
+    grid-column: 1;
+    justify-self: start;
+    margin-top: 5px;
+  }
+
+  .attention_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .attention_card,
+  .attention_card:nth-child(n + 3) {
+    border-top: 1px solid var(--erp-border);
+    border-left: 0;
+  }
+
+  .attention_card:first-child {
+    border-top: 0;
+  }
+
+  .attention_card {
+    min-height: 112px;
+    padding-inline: 16px;
+  }
+
+  :root .ant-modal-header,
+  :root .ant-modal-body,
+  :root .ant-modal-footer,
+  :root .ant-drawer-header,
+  :root .ant-drawer-body,
+  :root .ant-drawer-footer {
+    padding-inline: 17px;
+  }
+
+  :root .ant-drawer-content-wrapper,
+  .workflow_detail_drawer .ant-drawer-content-wrapper {
+    border-radius: 14px 0 0 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ant-btn,
+  .command_trigger,
+  .record_action_button,
+  .column_drawer_item,
+  .attention_card {
+    transition: none !important;
+  }
+}
+
+/* Space wrappers must participate in the same toolbar flex line as their control. */
+.list_toolbar .ant-space-item:has(.ant-input-search),
+.control_row .ant-space-item:has(.ant-input-search),
+.data_workspace_toolbar .ant-space-item:has(.ant-input-search) {
+  min-width: 0;
+  flex: 1 1 300px;
+}
+
+.list_toolbar .ant-space-item:has(.ant-select),
+.control_row .ant-space-item:has(.ant-select),
+.data_workspace_toolbar .ant-space-item:has(.ant-select) {
+  min-width: 150px;
+  flex: 0 1 190px;
+}
+
+.list_toolbar .ant-space-item:has(.ant-btn),
+.control_row .ant-space-item:has(.ant-btn),
+.data_workspace_toolbar .ant-space-item:has(.ant-btn) {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 720px) {
+  .list_toolbar .ant-space-item:has(.ant-input-search),
+  .control_row .ant-space-item:has(.ant-input-search),
+  .data_workspace_toolbar .ant-space-item:has(.ant-input-search) {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+
+/* Action cells are an interaction surface: keep them above fixed-column shadows and never let a
+   long workflow label expand into a neighbouring control. */
+.ant-table-wrapper.data_workspace_table {
+  contain: none;
+}
+.data_workspace_table .ant-table-cell-fix-right {
+  overflow: visible !important;
+  white-space: nowrap;
+}
+.data_workspace_table .record_action_bar {
+  position: relative;
+  z-index: 3;
+  pointer-events: auto;
+}
+.data_workspace_table .record_action_button.ant-btn {
+  position: relative;
+  z-index: 4;
+  flex: 0 0 36px;
+}
+.data_workspace_table .record_action_primary.ant-btn {
+  flex-basis: auto;
+}
+.record_action_tooltip_target {
+  display: inline-flex;
+  min-width: 36px;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+}
+.record_action_tooltip_target .record_action_button.ant-btn {
+  width: 36px;
+}
+.placeholder_back_link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 8px;
+  color: var(--erp-text);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+.placeholder_back_link:hover { color: var(--erp-accent); background: var(--erp-surface-muted); }
+.placeholder_back_link:focus-visible { outline: 2px solid var(--erp-accent); outline-offset: 2px; }
+.data_workspace_table .record_action_primary.ant-btn,
+.data_workspace_table .record_action_labeled.ant-btn {
+  width: auto;
+  min-width: 56px;
+  flex-basis: auto;
+  padding-inline: 9px;
+}
+/* Module masthead: one shared geometry, five permission-aware feature destinations. */
+.module_masthead {
+  --module-accent: var(--erp-accent);
+  min-width: 0;
+  margin-bottom: 22px;
+  padding: 18px 22px 0;
+  border: 1px solid color-mix(in srgb, var(--module-accent) 20%, var(--erp-border));
+  border-radius: 18px;
+  background: var(--erp-surface);
+  box-shadow: none;
+}
+.module_masthead_main {
+  display: grid;
+  min-width: 0;
+  min-height: 126px;
+  grid-template-columns: 62px minmax(0, 1fr) minmax(220px, 300px);
+  align-items: center;
+  gap: 17px;
+}
+.module_masthead_icon {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  place-items: center;
+  color: var(--module-accent);
+  border: 1px solid color-mix(in srgb, var(--module-accent) 30%, var(--erp-border));
+  background: color-mix(in srgb, var(--module-accent) 9%, var(--erp-surface));
+  font-size: 26px;
+}
+.module_masthead_copy { min-width: 0; }
+.module_masthead_kicker {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--module-accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  line-height: 1.2;
+}
+.module_masthead_copy h1 {
+  margin: 0 0 7px;
+  color: var(--erp-text);
+  font-size: clamp(27px, 3vw, 38px);
+  font-weight: 690;
+  letter-spacing: -.055em;
+  line-height: 1.08;
+}
+.module_masthead_copy p {
+  max-width: 790px;
+  margin: 0;
+  color: var(--erp-text-soft);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.module_masthead_context {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+  padding: 8px 0 8px 18px;
+  border-left: 1px solid color-mix(in srgb, var(--module-accent) 26%, var(--erp-border));
+}
+.module_masthead_context span {
+  color: var(--erp-text-faint);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.module_masthead_context strong {
+  overflow: hidden;
+  color: var(--erp-text);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+}
+.module_masthead_context small { color: var(--erp-text-soft); font-size: 11px; line-height: 1.35; }
+.module_masthead_features {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 19px -22px 0;
+  border-top: 1px solid var(--erp-border);
+}
+.module_masthead_feature {
+  display: flex;
+  min-width: 0;
+  min-height: 62px;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 13px;
+  color: var(--erp-text-soft);
+  border-right: 1px solid var(--erp-border);
+  text-decoration: none;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+.module_masthead_feature:last-child { border-right: 0; }
+.module_masthead_feature:hover { color: var(--module-accent); background: color-mix(in srgb, var(--module-accent) 5%, var(--erp-surface)); }
+.module_masthead_feature:focus-visible { z-index: 1; outline: 2px solid var(--module-accent); outline-offset: -2px; }
+.module_masthead_feature.is_active { color: var(--module-accent); background: color-mix(in srgb, var(--module-accent) 8%, var(--erp-surface)); box-shadow: inset 0 -3px 0 var(--module-accent); }
+.module_masthead_feature.is_locked { color: var(--erp-text-faint); cursor: not-allowed; }
+.module_masthead_feature_index { flex: 0 0 auto; color: var(--erp-text-faint); font-size: 10px; font-variant-numeric: tabular-nums; }
+.module_masthead_feature_icon { display: grid; width: 28px; height: 28px; flex: 0 0 auto; place-items: center; color: var(--module-accent); border-radius: 8px; background: color-mix(in srgb, var(--module-accent) 10%, var(--erp-surface)); font-size: 15px; }
+.module_masthead_feature_copy { display: grid; min-width: 0; gap: 2px; }
+.module_masthead_feature_copy strong { overflow: hidden; color: inherit; font-size: 12px; font-weight: 650; line-height: 1.3; text-overflow: ellipsis; }
+.module_masthead_feature_copy small { color: var(--module-accent); font-size: 10px; line-height: 1.2; }
+.module_masthead_feature_lock { margin-left: auto; flex: 0 0 auto; font-size: 12px; }
+.module_masthead_human_resources .module_masthead_icon { border-radius: 50%; }
+.module_masthead_human_resources .module_masthead_feature.is_active .module_masthead_feature_icon { border-radius: 50%; }
+.module_masthead_inventory .module_masthead_icon { border-radius: 13px 5px 13px 5px; }
+.module_masthead_inventory .module_masthead_features { border-top-style: dashed; }
+.module_masthead_inventory .module_masthead_feature.is_active { box-shadow: inset 0 -3px 0 var(--module-accent), inset 0 3px 0 color-mix(in srgb, var(--module-accent) 28%, transparent); }
+.module_masthead_production .module_masthead_icon { border-radius: 14px 7px 14px 7px; transform: rotate(-3deg); }
+.module_masthead_production .module_masthead_icon > .anticon { transform: rotate(3deg); }
+.module_masthead_production .module_masthead_feature.is_active { border-bottom: 3px solid var(--module-accent); }
+@media (max-width: 1100px) {
+  .module_masthead_main { grid-template-columns: 56px minmax(0, 1fr); }
+  .module_masthead_context { grid-column: 2; padding: 9px 0 0; border-top: 1px solid var(--erp-border); border-left: 0; }
+  .module_masthead_features { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .module_masthead_feature:nth-child(3) { border-right: 0; }
+}
+@media (max-width: 640px) {
+  .module_masthead { margin-bottom: 17px; padding: 15px 16px 0; border-radius: 14px; }
+  .module_masthead_main { min-height: 0; grid-template-columns: 46px minmax(0, 1fr); gap: 12px; }
+  .module_masthead_icon { width: 46px; height: 46px; font-size: 20px; }
+  .module_masthead_copy h1 { font-size: 27px; }
+  .module_masthead_copy p { font-size: 12px; }
+  .module_masthead_context { grid-column: 1 / -1; }
+  .module_masthead_features { grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 15px -16px 0; }
+  .module_masthead_feature { min-height: 58px; padding: 9px 10px; }
+  .module_masthead_feature:nth-child(3) { border-right: 1px solid var(--erp-border); }
+  .module_masthead_feature:nth-child(even) { border-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .module_masthead_feature { transition: none; }
+}/* Compact management masthead: show only the module context and current name. */
+.module_masthead_compact {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+  padding: 13px 18px;
+  border: 1px solid color-mix(in srgb, var(--module-accent) 18%, var(--erp-border));
+  border-radius: 14px;
+  background: var(--erp-surface);
+}
+.module_masthead_compact_icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--module-accent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--module-accent) 9%, var(--erp-surface));
+  font-size: 19px;
+}
+.module_masthead_compact_copy {
+  min-width: 0;
+}
+.module_masthead_compact .module_masthead_kicker {
+  margin-bottom: 3px;
+  color: var(--module-accent);
+  font-size: 9px;
+  letter-spacing: .15em;
+}
+.module_masthead_compact_copy h1 {
+  margin: 0;
+  overflow: hidden;
+  color: var(--erp-text);
+  font-size: clamp(22px, 2.3vw, 29px);
+  font-weight: 680;
+  letter-spacing: -.045em;
+  line-height: 1.12;
+  text-overflow: ellipsis;
+}
+@media (max-width: 640px) {
+  .module_masthead_compact {
+    min-height: 62px;
+    margin-bottom: 14px;
+    padding: 10px 13px;
+    border-radius: 12px;
+  }
+  .module_masthead_compact_icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  .module_masthead_compact_copy h1 {
+    font-size: 22px;
+  }
+}
+
+
+/* Module masthead intentionally stays title-only to keep workspace density and focus. */
+.module_masthead_compact {
+  min-height: 48px;
+  margin-bottom: 16px;
+  padding: 0 2px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.module_masthead_compact h1 {
+  margin: 0;
+  overflow: hidden;
+  color: var(--erp-text);
+  font-size: clamp(25px, 2.6vw, 34px);
+  font-weight: 680;
+  letter-spacing: -.045em;
+  line-height: 1.12;
+  text-overflow: ellipsis;
+}
+/* Shared action cells stay compact: names are exposed by hover/focus tooltips. */
+.record_action_bar {
+  gap: 6px;
+  white-space: nowrap;
+}
+.record_action_tooltip_target {
+  display: inline-flex;
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+}
+.record_action_button.ant-btn,
+.record_action_button.ant-btn.record_action_primary,
+.record_action_button.ant-btn.record_action_labeled,
+.data_workspace_table .record_action_primary.ant-btn,
+.data_workspace_table .record_action_labeled.ant-btn {
+  width: 36px !important;
+  min-width: 36px !important;
+  max-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  flex: 0 0 36px !important;
+  padding: 0 !important;
+  gap: 0;
+  overflow: hidden;
+}
+.record_action_label {
+  display: none !important;
+}
+.record_action_button.ant-btn .anticon {
+  margin: 0;
+}
+
+
+/* Standalone list toolbars need breathing room before their table. DataWorkspace already owns
+   the separator and keeps its nested toolbar compact. */
+.list_toolbar {
+  margin-bottom: 16px !important;
+}
+.data_workspace_toolbar .list_toolbar {
+  margin-bottom: 0 !important;
+}
+
+
+/* Search clear controls keep a generous touch target without changing the field height. */
+.list_toolbar .ant-input-clear-icon,
+.control_row .ant-input-clear-icon,
+.data_workspace_toolbar .ant-input-clear-icon,
+.registration_filter_row .ant-input-clear-icon,
+.column_drawer .ant-input-clear-icon {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  margin-inline-end: 2px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: var(--erp-text-faint);
+  font-size: 16px;
+  transition: color 140ms ease, background-color 140ms ease;
+}
+.list_toolbar .ant-input-clear-icon:hover,
+.control_row .ant-input-clear-icon:hover,
+.data_workspace_toolbar .ant-input-clear-icon:hover,
+.registration_filter_row .ant-input-clear-icon:hover,
+.column_drawer .ant-input-clear-icon:hover {
+  color: var(--erp-accent);
+  background: var(--erp-accent-soft);
+}
+
+/* Pagination affordance: every interactive page control exposes a hand cursor.
+   Ant Design puts the click target on nested buttons/select nodes, so scope the
+   rule to descendants as well as the visible wrapper. Disabled controls retain
+   the not-allowed affordance. */
+.data_workspace_pagination .ant-pagination-item:not(.ant-pagination-disabled),
+.data_workspace_pagination .ant-pagination-item:not(.ant-pagination-disabled) *,
+.data_workspace_pagination .ant-pagination-prev:not(.ant-pagination-disabled),
+.data_workspace_pagination .ant-pagination-prev:not(.ant-pagination-disabled) *,
+.data_workspace_pagination .ant-pagination-next:not(.ant-pagination-disabled),
+.data_workspace_pagination .ant-pagination-next:not(.ant-pagination-disabled) *,
+.data_workspace_pagination .ant-pagination-jump-prev,
+.data_workspace_pagination .ant-pagination-jump-prev *,
+.data_workspace_pagination .ant-pagination-jump-next,
+.data_workspace_pagination .ant-pagination-jump-next *,
+.data_workspace_pagination .ant-pagination-options,
+.data_workspace_pagination .ant-pagination-options *,
+.data_workspace_pagination .ant-pagination-options-size-changer,
+.data_workspace_pagination .ant-pagination-options-size-changer *,
+.data_workspace_pagination .ant-select-selector,
+.data_workspace_pagination .ant-select-selector * {
+  cursor: pointer !important;
+}
+.data_workspace_pagination .ant-pagination-options-size-changer .ant-select,
+.data_workspace_pagination .ant-pagination-options-size-changer .ant-select-selector,
+.data_workspace_pagination .ant-pagination-options-size-changer .ant-select-selection-item,
+.data_workspace_pagination .ant-pagination-options-size-changer .ant-select-arrow {
+  cursor: pointer !important;
+}
+
+.data_workspace_pagination .ant-pagination-disabled,
+.data_workspace_pagination .ant-pagination-disabled * {
+  cursor: not-allowed !important;
+}
+
+.ant-table-pagination .ant-pagination-item:not(.ant-pagination-disabled),
+.ant-table-pagination .ant-pagination-item:not(.ant-pagination-disabled) *,
+.ant-table-pagination .ant-pagination-prev:not(.ant-pagination-disabled),
+.ant-table-pagination .ant-pagination-prev:not(.ant-pagination-disabled) *,
+.ant-table-pagination .ant-pagination-next:not(.ant-pagination-disabled),
+.ant-table-pagination .ant-pagination-next:not(.ant-pagination-disabled) *,
+.ant-table-pagination .ant-pagination-options,
+.ant-table-pagination .ant-pagination-options *,
+.ant-table-pagination .ant-pagination-options-size-changer,
+.ant-table-pagination .ant-pagination-options-size-changer *,
+.ant-table-pagination .ant-select-selector,
+.ant-table-pagination .ant-select-selector * {
+  cursor: pointer !important;
+}
+
+.ant-table-pagination .ant-pagination-disabled,
+.ant-table-pagination .ant-pagination-disabled * {
+  cursor: not-allowed !important;
+}
+
+
+/* Stable pointer interactions: modal confirmation must not zoom while a pointer is held. */
+/* Ant Design's default ant-zoom motion scales confirm dialogs from 0.2 to 1.
+   The workspace uses fixed-size sheets, so the entrance scale causes a visible
+   jump when a pointer remains down during the opening frame. */
+:root .ant-modal-root .ant-zoom-appear,
+:root .ant-modal-root .ant-zoom-enter,
+:root .ant-modal-root .ant-zoom-appear-prepare,
+:root .ant-modal-root .ant-zoom-enter-prepare,
+:root .ant-modal-root .ant-zoom-appear-active,
+:root .ant-modal-root .ant-zoom-enter-active {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* A pressed control keeps its geometry; only its color feedback may change. */
+.ant-btn:not(:disabled):active,
+.record_action_button.ant-btn:active,
+.ant-modal-confirm .ant-btn:not(:disabled):active {
+  transform: none !important;
+  filter: brightness(.97);
+}
+
+/* Prevent a long press from selecting/dragging an action control or invoking
+   touch double-tap zoom on supported pointer devices. */
+.ant-modal-confirm .ant-btn,
+.record_action_button.ant-btn,
+.record_action_bar {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  touch-action: manipulation;
+}

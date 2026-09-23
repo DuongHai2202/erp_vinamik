@@ -53,7 +53,14 @@ public class production_assignment_service {
         long total = assignment_repository.count(production_order_id, employee_id, normalized_status, from_at, to_at);
         List<assignment_row> rows = assignment_repository.search(production_order_id, employee_id, normalized_status,
                 from_at, to_at, safe_page_size, pagination_guard.offset(safe_page, safe_page_size));
-        List<production_assignment_response> items = rows.stream().map(this::to_response).toList();
+        Map<Long, human_resources_employee_snapshot> employees = employee_contract.find_employees(
+                rows.stream().map(assignment_row::employee_id).distinct().toList());
+        Map<Long, human_resources_work_shift_snapshot> shifts = work_shift_contract.find_work_shifts(
+                rows.stream().map(assignment_row::work_shift_id).filter(java.util.Objects::nonNull).distinct().toList());
+        List<production_assignment_response> items = rows.stream()
+                .map(row -> to_response(row, employees.get(row.employee_id()),
+                        row.work_shift_id() == null ? null : shifts.get(row.work_shift_id()), row.order_code()))
+                .toList();
         int total_pages = total == 0 ? 0 : (int) Math.ceil((double) total / safe_page_size);
         return new production_assignment_page_response(items, safe_page, safe_page_size, total, total_pages);
     }

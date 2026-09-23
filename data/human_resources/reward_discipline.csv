@@ -1,421 +1,422 @@
 ﻿record_code,employee_code,event_type,effective_on,reason,amount,currency_code,status,decided_at,decision_note
-hr_event_00001,vmk0001,discipline,2025-01-01,Sai sót chứng từ kho,500000,VND,approved,2025-01-03T08:00:00+07:00,Approved after review.
-hr_event_00002,vmk0020,reward,2026-06-10,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-06-12T08:00:00+07:00,Approved after review.
-hr_event_00003,vmk0039,reward,2025-11-19,Tuân thủ an toàn xuất sắc,1000000,VND,pending,,
-hr_event_00004,vmk0058,reward,2026-04-03,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-04-05T08:00:00+07:00,Rejected after review.
-hr_event_00005,vmk0077,discipline,2025-09-12,Sai sót chứng từ kho,1500000,VND,approved,2025-09-14T08:00:00+07:00,Approved after review.
-hr_event_00006,vmk0096,reward,2026-02-21,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-02-23T08:00:00+07:00,Approved after review.
+hr_event_00001,vmk0001,discipline,2025-01-01,Sai sót chứng từ kho,500000,VND,draft,,
+hr_event_00002,vmk0020,reward,2026-06-10,Tuân thủ an toàn xuất sắc,750000,VND,pending,,
+hr_event_00003,vmk0039,reward,2025-11-19,Tuân thủ an toàn xuất sắc,1000000,VND,approved,2025-11-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00004,vmk0058,reward,2026-04-03,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-04-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00005,vmk0077,discipline,2025-09-12,Sai sót chứng từ kho,1500000,VND,cancelled,,
+hr_event_00006,vmk0096,reward,2026-02-21,Sáng kiến cải tiến quy trình,1750000,VND,draft,,
 hr_event_00007,vmk0115,reward,2025-07-05,Đạt kết quả chất lượng tốt,2000000,VND,pending,,
-hr_event_00008,vmk0134,reward,2026-12-14,Đạt kết quả chất lượng tốt,2250000,VND,rejected,2026-12-16T08:00:00+07:00,Rejected after review.
-hr_event_00009,vmk0153,discipline,2025-05-23,Đi muộn nhiều lần,500000,VND,approved,2025-05-25T08:00:00+07:00,Approved after review.
-hr_event_00010,vmk0172,reward,2026-10-07,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-10-09T08:00:00+07:00,Approved after review.
-hr_event_00011,vmk0191,reward,2025-03-16,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00012,vmk0210,reward,2026-08-25,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-08-27T08:00:00+07:00,Rejected after review.
-hr_event_00013,vmk0229,discipline,2025-01-09,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-01-11T08:00:00+07:00,Approved after review.
-hr_event_00014,vmk0248,reward,2026-06-18,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-06-20T08:00:00+07:00,Approved after review.
-hr_event_00015,vmk0267,reward,2025-11-02,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00016,vmk0286,reward,2026-04-11,Đạt kết quả chất lượng tốt,2250000,VND,rejected,2026-04-13T08:00:00+07:00,Rejected after review.
-hr_event_00017,vmk0305,discipline,2025-09-20,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-09-22T08:00:00+07:00,Approved after review.
-hr_event_00018,vmk0324,reward,2026-02-04,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-02-06T08:00:00+07:00,Approved after review.
-hr_event_00019,vmk0343,reward,2025-07-13,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00020,vmk0362,reward,2026-12-22,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-12-24T08:00:00+07:00,Rejected after review.
-hr_event_00021,vmk0381,discipline,2025-05-06,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-05-08T08:00:00+07:00,Approved after review.
-hr_event_00022,vmk0400,reward,2026-10-15,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-10-17T08:00:00+07:00,Approved after review.
-hr_event_00023,vmk0419,reward,2025-03-24,Đạt kết quả chất lượng tốt,2000000,VND,pending,,
-hr_event_00024,vmk0438,reward,2026-08-08,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-08-10T08:00:00+07:00,Rejected after review.
-hr_event_00025,vmk0457,discipline,2025-01-17,Đi muộn nhiều lần,500000,VND,approved,2025-01-19T08:00:00+07:00,Approved after review.
-hr_event_00026,vmk0476,reward,2026-06-01,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-06-03T08:00:00+07:00,Approved after review.
+hr_event_00008,vmk0134,reward,2026-12-14,Đạt kết quả chất lượng tốt,2250000,VND,approved,2026-12-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00009,vmk0153,discipline,2025-05-23,Đi muộn nhiều lần,500000,VND,rejected,2025-05-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00010,vmk0172,reward,2026-10-07,Hoàn thành vượt kế hoạch sản xuất,750000,VND,cancelled,,
+hr_event_00011,vmk0191,reward,2025-03-16,Đạt kết quả chất lượng tốt,1000000,VND,draft,,
+hr_event_00012,vmk0210,reward,2026-08-25,Sáng kiến cải tiến quy trình,1250000,VND,pending,,
+hr_event_00013,vmk0229,discipline,2025-01-09,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-01-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00014,vmk0248,reward,2026-06-18,Đạt kết quả chất lượng tốt,1750000,VND,rejected,2026-06-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00015,vmk0267,reward,2025-11-02,Tuân thủ an toàn xuất sắc,2000000,VND,cancelled,,
+hr_event_00016,vmk0286,reward,2026-04-11,Đạt kết quả chất lượng tốt,2250000,VND,draft,,
+hr_event_00017,vmk0305,discipline,2025-09-20,Không tuân thủ quy trình bàn giao ca,500000,VND,pending,,
+hr_event_00018,vmk0324,reward,2026-02-04,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-02-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00019,vmk0343,reward,2025-07-13,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,rejected,2025-07-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00020,vmk0362,reward,2026-12-22,Đạt kết quả chất lượng tốt,1250000,VND,cancelled,,
+hr_event_00021,vmk0381,discipline,2025-05-06,Không tuân thủ quy trình bàn giao ca,1500000,VND,draft,,
+hr_event_00022,vmk0400,reward,2026-10-15,Đạt kết quả chất lượng tốt,1750000,VND,pending,,
+hr_event_00023,vmk0419,reward,2025-03-24,Đạt kết quả chất lượng tốt,2000000,VND,approved,2025-03-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00024,vmk0438,reward,2026-08-08,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-08-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00025,vmk0457,discipline,2025-01-17,Đi muộn nhiều lần,500000,VND,cancelled,,
+hr_event_00026,vmk0476,reward,2026-06-01,Sáng kiến cải tiến quy trình,750000,VND,draft,,
 hr_event_00027,vmk0495,reward,2025-11-10,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00028,vmk0514,reward,2026-04-19,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-04-21T08:00:00+07:00,Rejected after review.
-hr_event_00029,vmk0533,discipline,2025-09-03,Đi muộn nhiều lần,1500000,VND,approved,2025-09-05T08:00:00+07:00,Approved after review.
-hr_event_00030,vmk0552,reward,2026-02-12,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-02-14T08:00:00+07:00,Approved after review.
-hr_event_00031,vmk0001,reward,2025-07-21,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00032,vmk0020,reward,2026-12-05,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-12-07T08:00:00+07:00,Rejected after review.
-hr_event_00033,vmk0039,discipline,2025-05-14,Đi muộn nhiều lần,500000,VND,approved,2025-05-16T08:00:00+07:00,Approved after review.
-hr_event_00034,vmk0058,reward,2026-10-23,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-10-25T08:00:00+07:00,Approved after review.
-hr_event_00035,vmk0077,reward,2025-03-07,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00036,vmk0096,reward,2026-08-16,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-08-18T08:00:00+07:00,Rejected after review.
-hr_event_00037,vmk0115,discipline,2025-01-25,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-01-27T08:00:00+07:00,Approved after review.
-hr_event_00038,vmk0134,reward,2026-06-09,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-06-11T08:00:00+07:00,Approved after review.
-hr_event_00039,vmk0153,reward,2025-11-18,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00040,vmk0172,reward,2026-04-02,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-04-04T08:00:00+07:00,Rejected after review.
-hr_event_00041,vmk0191,discipline,2025-09-11,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-09-13T08:00:00+07:00,Approved after review.
-hr_event_00042,vmk0210,reward,2026-02-20,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-02-22T08:00:00+07:00,Approved after review.
-hr_event_00043,vmk0229,reward,2025-07-04,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00044,vmk0248,reward,2026-12-13,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-12-15T08:00:00+07:00,Rejected after review.
-hr_event_00045,vmk0267,discipline,2025-05-22,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-05-24T08:00:00+07:00,Approved after review.
-hr_event_00046,vmk0286,reward,2026-10-06,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-10-08T08:00:00+07:00,Approved after review.
+hr_event_00028,vmk0514,reward,2026-04-19,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,approved,2026-04-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00029,vmk0533,discipline,2025-09-03,Đi muộn nhiều lần,1500000,VND,rejected,2025-09-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00030,vmk0552,reward,2026-02-12,Đạt kết quả chất lượng tốt,1750000,VND,cancelled,,
+hr_event_00031,vmk0001,reward,2025-07-21,Sáng kiến cải tiến quy trình,2000000,VND,draft,,
+hr_event_00032,vmk0020,reward,2026-12-05,Tuân thủ an toàn xuất sắc,2250000,VND,pending,,
+hr_event_00033,vmk0039,discipline,2025-05-14,Đi muộn nhiều lần,500000,VND,approved,2025-05-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00034,vmk0058,reward,2026-10-23,Hoàn thành vượt kế hoạch sản xuất,750000,VND,rejected,2026-10-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00035,vmk0077,reward,2025-03-07,Đạt kết quả chất lượng tốt,1000000,VND,cancelled,,
+hr_event_00036,vmk0096,reward,2026-08-16,Sáng kiến cải tiến quy trình,1250000,VND,draft,,
+hr_event_00037,vmk0115,discipline,2025-01-25,Không hoàn thành đào tạo bắt buộc,1500000,VND,pending,,
+hr_event_00038,vmk0134,reward,2026-06-09,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-06-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00039,vmk0153,reward,2025-11-18,Tuân thủ an toàn xuất sắc,2000000,VND,rejected,2025-11-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00040,vmk0172,reward,2026-04-02,Sáng kiến cải tiến quy trình,2250000,VND,cancelled,,
+hr_event_00041,vmk0191,discipline,2025-09-11,Không hoàn thành đào tạo bắt buộc,500000,VND,draft,,
+hr_event_00042,vmk0210,reward,2026-02-20,Tuân thủ an toàn xuất sắc,750000,VND,pending,,
+hr_event_00043,vmk0229,reward,2025-07-04,Đạt kết quả chất lượng tốt,1000000,VND,approved,2025-07-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00044,vmk0248,reward,2026-12-13,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-12-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00045,vmk0267,discipline,2025-05-22,Không hoàn thành đào tạo bắt buộc,1500000,VND,cancelled,,
+hr_event_00046,vmk0286,reward,2026-10-06,Sáng kiến cải tiến quy trình,1750000,VND,draft,,
 hr_event_00047,vmk0305,reward,2025-03-15,Đạt kết quả chất lượng tốt,2000000,VND,pending,,
-hr_event_00048,vmk0324,reward,2026-08-24,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-08-26T08:00:00+07:00,Rejected after review.
-hr_event_00049,vmk0343,discipline,2025-01-08,Đi muộn nhiều lần,500000,VND,approved,2025-01-10T08:00:00+07:00,Approved after review.
-hr_event_00050,vmk0362,reward,2026-06-17,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-06-19T08:00:00+07:00,Approved after review.
-hr_event_00051,vmk0381,reward,2025-11-01,Tuân thủ an toàn xuất sắc,1000000,VND,pending,,
-hr_event_00052,vmk0400,reward,2026-04-10,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-04-12T08:00:00+07:00,Rejected after review.
-hr_event_00053,vmk0419,discipline,2025-09-19,Sai sót chứng từ kho,1500000,VND,approved,2025-09-21T08:00:00+07:00,Approved after review.
-hr_event_00054,vmk0438,reward,2026-02-03,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-02-05T08:00:00+07:00,Approved after review.
-hr_event_00055,vmk0457,reward,2025-07-12,Đạt kết quả chất lượng tốt,2000000,VND,pending,,
-hr_event_00056,vmk0476,reward,2026-12-21,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-12-23T08:00:00+07:00,Rejected after review.
-hr_event_00057,vmk0495,discipline,2025-05-05,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-05-07T08:00:00+07:00,Approved after review.
-hr_event_00058,vmk0514,reward,2026-10-14,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-10-16T08:00:00+07:00,Approved after review.
-hr_event_00059,vmk0533,reward,2025-03-23,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00060,vmk0552,reward,2026-08-07,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-08-09T08:00:00+07:00,Rejected after review.
-hr_event_00061,vmk0001,discipline,2025-01-16,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-01-18T08:00:00+07:00,Approved after review.
-hr_event_00062,vmk0020,reward,2026-06-25,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-06-27T08:00:00+07:00,Approved after review.
-hr_event_00063,vmk0039,reward,2025-11-09,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00064,vmk0058,reward,2026-04-18,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-04-20T08:00:00+07:00,Rejected after review.
-hr_event_00065,vmk0077,discipline,2025-09-02,Sai sót chứng từ kho,500000,VND,approved,2025-09-04T08:00:00+07:00,Approved after review.
-hr_event_00066,vmk0096,reward,2026-02-11,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-02-13T08:00:00+07:00,Approved after review.
+hr_event_00048,vmk0324,reward,2026-08-24,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,approved,2026-08-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00049,vmk0343,discipline,2025-01-08,Đi muộn nhiều lần,500000,VND,rejected,2025-01-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00050,vmk0362,reward,2026-06-17,Tuân thủ an toàn xuất sắc,750000,VND,cancelled,,
+hr_event_00051,vmk0381,reward,2025-11-01,Tuân thủ an toàn xuất sắc,1000000,VND,draft,,
+hr_event_00052,vmk0400,reward,2026-04-10,Sáng kiến cải tiến quy trình,1250000,VND,pending,,
+hr_event_00053,vmk0419,discipline,2025-09-19,Sai sót chứng từ kho,1500000,VND,approved,2025-09-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00054,vmk0438,reward,2026-02-03,Sáng kiến cải tiến quy trình,1750000,VND,rejected,2026-02-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00055,vmk0457,reward,2025-07-12,Đạt kết quả chất lượng tốt,2000000,VND,cancelled,,
+hr_event_00056,vmk0476,reward,2026-12-21,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,draft,,
+hr_event_00057,vmk0495,discipline,2025-05-05,Không hoàn thành đào tạo bắt buộc,500000,VND,pending,,
+hr_event_00058,vmk0514,reward,2026-10-14,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-10-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00059,vmk0533,reward,2025-03-23,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,rejected,2025-03-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00060,vmk0552,reward,2026-08-07,Sáng kiến cải tiến quy trình,1250000,VND,cancelled,,
+hr_event_00061,vmk0001,discipline,2025-01-16,Không hoàn thành đào tạo bắt buộc,1500000,VND,draft,,
+hr_event_00062,vmk0020,reward,2026-06-25,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,pending,,
+hr_event_00063,vmk0039,reward,2025-11-09,Tuân thủ an toàn xuất sắc,2000000,VND,approved,2025-11-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00064,vmk0058,reward,2026-04-18,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-04-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00065,vmk0077,discipline,2025-09-02,Sai sót chứng từ kho,500000,VND,cancelled,,
+hr_event_00066,vmk0096,reward,2026-02-11,Sáng kiến cải tiến quy trình,750000,VND,draft,,
 hr_event_00067,vmk0115,reward,2025-07-20,Tuân thủ an toàn xuất sắc,1000000,VND,pending,,
-hr_event_00068,vmk0134,reward,2026-12-04,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-12-06T08:00:00+07:00,Rejected after review.
-hr_event_00069,vmk0153,discipline,2025-05-13,Đi muộn nhiều lần,1500000,VND,approved,2025-05-15T08:00:00+07:00,Approved after review.
-hr_event_00070,vmk0172,reward,2026-10-22,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-10-24T08:00:00+07:00,Approved after review.
-hr_event_00071,vmk0191,reward,2025-03-06,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00072,vmk0210,reward,2026-08-15,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-08-17T08:00:00+07:00,Rejected after review.
-hr_event_00073,vmk0229,discipline,2025-01-24,Đi muộn nhiều lần,500000,VND,approved,2025-01-26T08:00:00+07:00,Approved after review.
-hr_event_00074,vmk0248,reward,2026-06-08,Đạt kết quả chất lượng tốt,750000,VND,approved,2026-06-10T08:00:00+07:00,Approved after review.
-hr_event_00075,vmk0267,reward,2025-11-17,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00076,vmk0286,reward,2026-04-01,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-04-03T08:00:00+07:00,Rejected after review.
-hr_event_00077,vmk0305,discipline,2025-09-10,Đi muộn nhiều lần,1500000,VND,approved,2025-09-12T08:00:00+07:00,Approved after review.
-hr_event_00078,vmk0324,reward,2026-02-19,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-02-21T08:00:00+07:00,Approved after review.
-hr_event_00079,vmk0343,reward,2025-07-03,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00080,vmk0362,reward,2026-12-12,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-12-14T08:00:00+07:00,Rejected after review.
-hr_event_00081,vmk0381,discipline,2025-05-21,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-05-23T08:00:00+07:00,Approved after review.
-hr_event_00082,vmk0400,reward,2026-10-05,Đạt kết quả chất lượng tốt,750000,VND,approved,2026-10-07T08:00:00+07:00,Approved after review.
-hr_event_00083,vmk0419,reward,2025-03-14,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00084,vmk0438,reward,2026-08-23,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-08-25T08:00:00+07:00,Rejected after review.
-hr_event_00085,vmk0457,discipline,2025-01-07,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-01-09T08:00:00+07:00,Approved after review.
-hr_event_00086,vmk0476,reward,2026-06-16,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-06-18T08:00:00+07:00,Approved after review.
+hr_event_00068,vmk0134,reward,2026-12-04,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,approved,2026-12-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00069,vmk0153,discipline,2025-05-13,Đi muộn nhiều lần,1500000,VND,rejected,2025-05-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00070,vmk0172,reward,2026-10-22,Tuân thủ an toàn xuất sắc,1750000,VND,cancelled,,
+hr_event_00071,vmk0191,reward,2025-03-06,Sáng kiến cải tiến quy trình,2000000,VND,draft,,
+hr_event_00072,vmk0210,reward,2026-08-15,Sáng kiến cải tiến quy trình,2250000,VND,pending,,
+hr_event_00073,vmk0229,discipline,2025-01-24,Đi muộn nhiều lần,500000,VND,approved,2025-01-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00074,vmk0248,reward,2026-06-08,Đạt kết quả chất lượng tốt,750000,VND,rejected,2026-06-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00075,vmk0267,reward,2025-11-17,Sáng kiến cải tiến quy trình,1000000,VND,cancelled,,
+hr_event_00076,vmk0286,reward,2026-04-01,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,draft,,
+hr_event_00077,vmk0305,discipline,2025-09-10,Đi muộn nhiều lần,1500000,VND,pending,,
+hr_event_00078,vmk0324,reward,2026-02-19,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-02-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00079,vmk0343,reward,2025-07-03,Tuân thủ an toàn xuất sắc,2000000,VND,rejected,2025-07-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00080,vmk0362,reward,2026-12-12,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,cancelled,,
+hr_event_00081,vmk0381,discipline,2025-05-21,Không hoàn thành đào tạo bắt buộc,500000,VND,draft,,
+hr_event_00082,vmk0400,reward,2026-10-05,Đạt kết quả chất lượng tốt,750000,VND,pending,,
+hr_event_00083,vmk0419,reward,2025-03-14,Đạt kết quả chất lượng tốt,1000000,VND,approved,2025-03-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00084,vmk0438,reward,2026-08-23,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-08-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00085,vmk0457,discipline,2025-01-07,Không hoàn thành đào tạo bắt buộc,1500000,VND,cancelled,,
+hr_event_00086,vmk0476,reward,2026-06-16,Sáng kiến cải tiến quy trình,1750000,VND,draft,,
 hr_event_00087,vmk0495,reward,2025-11-25,Đạt kết quả chất lượng tốt,2000000,VND,pending,,
-hr_event_00088,vmk0514,reward,2026-04-09,Đạt kết quả chất lượng tốt,2250000,VND,rejected,2026-04-11T08:00:00+07:00,Rejected after review.
-hr_event_00089,vmk0533,discipline,2025-09-18,Đi muộn nhiều lần,500000,VND,approved,2025-09-20T08:00:00+07:00,Approved after review.
-hr_event_00090,vmk0552,reward,2026-02-02,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-02-04T08:00:00+07:00,Approved after review.
-hr_event_00091,vmk0001,reward,2025-07-11,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00092,vmk0020,reward,2026-12-20,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-12-22T08:00:00+07:00,Rejected after review.
-hr_event_00093,vmk0039,discipline,2025-05-04,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-05-06T08:00:00+07:00,Approved after review.
-hr_event_00094,vmk0058,reward,2026-10-13,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-10-15T08:00:00+07:00,Approved after review.
-hr_event_00095,vmk0077,reward,2025-03-22,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00096,vmk0096,reward,2026-08-06,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-08-08T08:00:00+07:00,Rejected after review.
-hr_event_00097,vmk0115,discipline,2025-01-15,Đi muộn nhiều lần,500000,VND,approved,2025-01-17T08:00:00+07:00,Approved after review.
-hr_event_00098,vmk0134,reward,2026-06-24,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-06-26T08:00:00+07:00,Approved after review.
-hr_event_00099,vmk0153,reward,2025-11-08,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00100,vmk0172,reward,2026-04-17,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-04-19T08:00:00+07:00,Rejected after review.
-hr_event_00101,vmk0191,discipline,2025-09-01,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-09-03T08:00:00+07:00,Approved after review.
-hr_event_00102,vmk0210,reward,2026-02-10,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-02-12T08:00:00+07:00,Approved after review.
-hr_event_00103,vmk0229,reward,2025-07-19,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00104,vmk0248,reward,2026-12-03,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-12-05T08:00:00+07:00,Rejected after review.
-hr_event_00105,vmk0267,discipline,2025-05-12,Sai sót chứng từ kho,500000,VND,approved,2025-05-14T08:00:00+07:00,Approved after review.
-hr_event_00106,vmk0286,reward,2026-10-21,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-10-23T08:00:00+07:00,Approved after review.
+hr_event_00088,vmk0514,reward,2026-04-09,Đạt kết quả chất lượng tốt,2250000,VND,approved,2026-04-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00089,vmk0533,discipline,2025-09-18,Đi muộn nhiều lần,500000,VND,rejected,2025-09-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00090,vmk0552,reward,2026-02-02,Tuân thủ an toàn xuất sắc,750000,VND,cancelled,,
+hr_event_00091,vmk0001,reward,2025-07-11,Sáng kiến cải tiến quy trình,1000000,VND,draft,,
+hr_event_00092,vmk0020,reward,2026-12-20,Đạt kết quả chất lượng tốt,1250000,VND,pending,,
+hr_event_00093,vmk0039,discipline,2025-05-04,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-05-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00094,vmk0058,reward,2026-10-13,Tuân thủ an toàn xuất sắc,1750000,VND,rejected,2026-10-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00095,vmk0077,reward,2025-03-22,Tuân thủ an toàn xuất sắc,2000000,VND,cancelled,,
+hr_event_00096,vmk0096,reward,2026-08-06,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,draft,,
+hr_event_00097,vmk0115,discipline,2025-01-15,Đi muộn nhiều lần,500000,VND,pending,,
+hr_event_00098,vmk0134,reward,2026-06-24,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-06-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00099,vmk0153,reward,2025-11-08,Đạt kết quả chất lượng tốt,1000000,VND,rejected,2025-11-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00100,vmk0172,reward,2026-04-17,Tuân thủ an toàn xuất sắc,1250000,VND,cancelled,,
+hr_event_00101,vmk0191,discipline,2025-09-01,Không hoàn thành đào tạo bắt buộc,1500000,VND,draft,,
+hr_event_00102,vmk0210,reward,2026-02-10,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,pending,,
+hr_event_00103,vmk0229,reward,2025-07-19,Sáng kiến cải tiến quy trình,2000000,VND,approved,2025-07-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00104,vmk0248,reward,2026-12-03,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-12-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00105,vmk0267,discipline,2025-05-12,Sai sót chứng từ kho,500000,VND,cancelled,,
+hr_event_00106,vmk0286,reward,2026-10-21,Hoàn thành vượt kế hoạch sản xuất,750000,VND,draft,,
 hr_event_00107,vmk0305,reward,2025-03-05,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00108,vmk0324,reward,2026-08-14,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-08-16T08:00:00+07:00,Rejected after review.
-hr_event_00109,vmk0343,discipline,2025-01-23,Đi muộn nhiều lần,1500000,VND,approved,2025-01-25T08:00:00+07:00,Approved after review.
-hr_event_00110,vmk0362,reward,2026-06-07,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-06-09T08:00:00+07:00,Approved after review.
-hr_event_00111,vmk0381,reward,2025-11-16,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00112,vmk0400,reward,2026-04-25,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-04-27T08:00:00+07:00,Rejected after review.
-hr_event_00113,vmk0419,discipline,2025-09-09,Sai sót chứng từ kho,500000,VND,approved,2025-09-11T08:00:00+07:00,Approved after review.
-hr_event_00114,vmk0438,reward,2026-02-18,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-02-20T08:00:00+07:00,Approved after review.
-hr_event_00115,vmk0457,reward,2025-07-02,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00116,vmk0476,reward,2026-12-11,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-12-13T08:00:00+07:00,Rejected after review.
-hr_event_00117,vmk0495,discipline,2025-05-20,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-05-22T08:00:00+07:00,Approved after review.
-hr_event_00118,vmk0514,reward,2026-10-04,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-10-06T08:00:00+07:00,Approved after review.
-hr_event_00119,vmk0533,reward,2025-03-13,Đạt kết quả chất lượng tốt,2000000,VND,pending,,
-hr_event_00120,vmk0552,reward,2026-08-22,Đạt kết quả chất lượng tốt,2250000,VND,rejected,2026-08-24T08:00:00+07:00,Rejected after review.
-hr_event_00121,vmk0001,discipline,2025-01-06,Sai sót chứng từ kho,500000,VND,approved,2025-01-08T08:00:00+07:00,Approved after review.
-hr_event_00122,vmk0020,reward,2026-06-15,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-06-17T08:00:00+07:00,Approved after review.
-hr_event_00123,vmk0039,reward,2025-11-24,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00124,vmk0058,reward,2026-04-08,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-04-10T08:00:00+07:00,Rejected after review.
-hr_event_00125,vmk0077,discipline,2025-09-17,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-09-19T08:00:00+07:00,Approved after review.
-hr_event_00126,vmk0096,reward,2026-02-01,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-02-03T08:00:00+07:00,Approved after review.
+hr_event_00108,vmk0324,reward,2026-08-14,Tuân thủ an toàn xuất sắc,1250000,VND,approved,2026-08-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00109,vmk0343,discipline,2025-01-23,Đi muộn nhiều lần,1500000,VND,rejected,2025-01-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00110,vmk0362,reward,2026-06-07,Tuân thủ an toàn xuất sắc,1750000,VND,cancelled,,
+hr_event_00111,vmk0381,reward,2025-11-16,Tuân thủ an toàn xuất sắc,2000000,VND,draft,,
+hr_event_00112,vmk0400,reward,2026-04-25,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,pending,,
+hr_event_00113,vmk0419,discipline,2025-09-09,Sai sót chứng từ kho,500000,VND,approved,2025-09-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00114,vmk0438,reward,2026-02-18,Sáng kiến cải tiến quy trình,750000,VND,rejected,2026-02-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00115,vmk0457,reward,2025-07-02,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,cancelled,,
+hr_event_00116,vmk0476,reward,2026-12-11,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,draft,,
+hr_event_00117,vmk0495,discipline,2025-05-20,Không tuân thủ quy trình bàn giao ca,1500000,VND,pending,,
+hr_event_00118,vmk0514,reward,2026-10-04,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-10-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00119,vmk0533,reward,2025-03-13,Đạt kết quả chất lượng tốt,2000000,VND,rejected,2025-03-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00120,vmk0552,reward,2026-08-22,Đạt kết quả chất lượng tốt,2250000,VND,cancelled,,
+hr_event_00121,vmk0001,discipline,2025-01-06,Sai sót chứng từ kho,500000,VND,draft,,
+hr_event_00122,vmk0020,reward,2026-06-15,Hoàn thành vượt kế hoạch sản xuất,750000,VND,pending,,
+hr_event_00123,vmk0039,reward,2025-11-24,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,approved,2025-11-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00124,vmk0058,reward,2026-04-08,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-04-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00125,vmk0077,discipline,2025-09-17,Không hoàn thành đào tạo bắt buộc,1500000,VND,cancelled,,
+hr_event_00126,vmk0096,reward,2026-02-01,Đạt kết quả chất lượng tốt,1750000,VND,draft,,
 hr_event_00127,vmk0115,reward,2025-07-10,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00128,vmk0134,reward,2026-12-19,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-12-21T08:00:00+07:00,Rejected after review.
-hr_event_00129,vmk0153,discipline,2025-05-03,Đi muộn nhiều lần,500000,VND,approved,2025-05-05T08:00:00+07:00,Approved after review.
-hr_event_00130,vmk0172,reward,2026-10-12,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-10-14T08:00:00+07:00,Approved after review.
-hr_event_00131,vmk0191,reward,2025-03-21,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00132,vmk0210,reward,2026-08-05,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-08-07T08:00:00+07:00,Rejected after review.
-hr_event_00133,vmk0229,discipline,2025-01-14,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-01-16T08:00:00+07:00,Approved after review.
-hr_event_00134,vmk0248,reward,2026-06-23,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-06-25T08:00:00+07:00,Approved after review.
-hr_event_00135,vmk0267,reward,2025-11-07,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,pending,,
-hr_event_00136,vmk0286,reward,2026-04-16,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-04-18T08:00:00+07:00,Rejected after review.
-hr_event_00137,vmk0305,discipline,2025-09-25,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-09-27T08:00:00+07:00,Approved after review.
-hr_event_00138,vmk0324,reward,2026-02-09,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-02-11T08:00:00+07:00,Approved after review.
-hr_event_00139,vmk0343,reward,2025-07-18,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00140,vmk0362,reward,2026-12-02,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-12-04T08:00:00+07:00,Rejected after review.
-hr_event_00141,vmk0381,discipline,2025-05-11,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-05-13T08:00:00+07:00,Approved after review.
-hr_event_00142,vmk0400,reward,2026-10-20,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-10-22T08:00:00+07:00,Approved after review.
-hr_event_00143,vmk0419,reward,2025-03-04,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,pending,,
-hr_event_00144,vmk0438,reward,2026-08-13,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-08-15T08:00:00+07:00,Rejected after review.
-hr_event_00145,vmk0457,discipline,2025-01-22,Sai sót chứng từ kho,500000,VND,approved,2025-01-24T08:00:00+07:00,Approved after review.
-hr_event_00146,vmk0476,reward,2026-06-06,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-06-08T08:00:00+07:00,Approved after review.
+hr_event_00128,vmk0134,reward,2026-12-19,Tuân thủ an toàn xuất sắc,2250000,VND,approved,2026-12-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00129,vmk0153,discipline,2025-05-03,Đi muộn nhiều lần,500000,VND,rejected,2025-05-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00130,vmk0172,reward,2026-10-12,Sáng kiến cải tiến quy trình,750000,VND,cancelled,,
+hr_event_00131,vmk0191,reward,2025-03-21,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,draft,,
+hr_event_00132,vmk0210,reward,2026-08-05,Tuân thủ an toàn xuất sắc,1250000,VND,pending,,
+hr_event_00133,vmk0229,discipline,2025-01-14,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-01-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00134,vmk0248,reward,2026-06-23,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,rejected,2026-06-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00135,vmk0267,reward,2025-11-07,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,cancelled,,
+hr_event_00136,vmk0286,reward,2026-04-16,Tuân thủ an toàn xuất sắc,2250000,VND,draft,,
+hr_event_00137,vmk0305,discipline,2025-09-25,Không hoàn thành đào tạo bắt buộc,500000,VND,pending,,
+hr_event_00138,vmk0324,reward,2026-02-09,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-02-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00139,vmk0343,reward,2025-07-18,Đạt kết quả chất lượng tốt,1000000,VND,rejected,2025-07-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00140,vmk0362,reward,2026-12-02,Tuân thủ an toàn xuất sắc,1250000,VND,cancelled,,
+hr_event_00141,vmk0381,discipline,2025-05-11,Không tuân thủ quy trình bàn giao ca,1500000,VND,draft,,
+hr_event_00142,vmk0400,reward,2026-10-20,Tuân thủ an toàn xuất sắc,1750000,VND,pending,,
+hr_event_00143,vmk0419,reward,2025-03-04,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,approved,2025-03-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00144,vmk0438,reward,2026-08-13,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-08-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00145,vmk0457,discipline,2025-01-22,Sai sót chứng từ kho,500000,VND,cancelled,,
+hr_event_00146,vmk0476,reward,2026-06-06,Hoàn thành vượt kế hoạch sản xuất,750000,VND,draft,,
 hr_event_00147,vmk0495,reward,2025-11-15,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00148,vmk0514,reward,2026-04-24,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-04-26T08:00:00+07:00,Rejected after review.
-hr_event_00149,vmk0533,discipline,2025-09-08,Đi muộn nhiều lần,1500000,VND,approved,2025-09-10T08:00:00+07:00,Approved after review.
-hr_event_00150,vmk0552,reward,2026-02-17,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-02-19T08:00:00+07:00,Approved after review.
-hr_event_00151,vmk0001,reward,2025-07-01,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00152,vmk0020,reward,2026-12-10,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-12-12T08:00:00+07:00,Rejected after review.
-hr_event_00153,vmk0039,discipline,2025-05-19,Sai sót chứng từ kho,500000,VND,approved,2025-05-21T08:00:00+07:00,Approved after review.
-hr_event_00154,vmk0058,reward,2026-10-03,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-10-05T08:00:00+07:00,Approved after review.
-hr_event_00155,vmk0077,reward,2025-03-12,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00156,vmk0096,reward,2026-08-21,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-08-23T08:00:00+07:00,Rejected after review.
-hr_event_00157,vmk0115,discipline,2025-01-05,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-01-07T08:00:00+07:00,Approved after review.
-hr_event_00158,vmk0134,reward,2026-06-14,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-06-16T08:00:00+07:00,Approved after review.
-hr_event_00159,vmk0153,reward,2025-11-23,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00160,vmk0172,reward,2026-04-07,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-04-09T08:00:00+07:00,Rejected after review.
-hr_event_00161,vmk0191,discipline,2025-09-16,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-09-18T08:00:00+07:00,Approved after review.
-hr_event_00162,vmk0210,reward,2026-02-25,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-02-27T08:00:00+07:00,Approved after review.
-hr_event_00163,vmk0229,reward,2025-07-09,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00164,vmk0248,reward,2026-12-18,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-12-20T08:00:00+07:00,Rejected after review.
-hr_event_00165,vmk0267,discipline,2025-05-02,Sai sót chứng từ kho,1500000,VND,approved,2025-05-04T08:00:00+07:00,Approved after review.
-hr_event_00166,vmk0286,reward,2026-10-11,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-10-13T08:00:00+07:00,Approved after review.
+hr_event_00148,vmk0514,reward,2026-04-24,Sáng kiến cải tiến quy trình,1250000,VND,approved,2026-04-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00149,vmk0533,discipline,2025-09-08,Đi muộn nhiều lần,1500000,VND,rejected,2025-09-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00150,vmk0552,reward,2026-02-17,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,cancelled,,
+hr_event_00151,vmk0001,reward,2025-07-01,Sáng kiến cải tiến quy trình,2000000,VND,draft,,
+hr_event_00152,vmk0020,reward,2026-12-10,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,pending,,
+hr_event_00153,vmk0039,discipline,2025-05-19,Sai sót chứng từ kho,500000,VND,approved,2025-05-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00154,vmk0058,reward,2026-10-03,Hoàn thành vượt kế hoạch sản xuất,750000,VND,rejected,2026-10-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00155,vmk0077,reward,2025-03-12,Sáng kiến cải tiến quy trình,1000000,VND,cancelled,,
+hr_event_00156,vmk0096,reward,2026-08-21,Đạt kết quả chất lượng tốt,1250000,VND,draft,,
+hr_event_00157,vmk0115,discipline,2025-01-05,Không tuân thủ quy trình bàn giao ca,1500000,VND,pending,,
+hr_event_00158,vmk0134,reward,2026-06-14,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-06-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00159,vmk0153,reward,2025-11-23,Sáng kiến cải tiến quy trình,2000000,VND,rejected,2025-11-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00160,vmk0172,reward,2026-04-07,Sáng kiến cải tiến quy trình,2250000,VND,cancelled,,
+hr_event_00161,vmk0191,discipline,2025-09-16,Không tuân thủ quy trình bàn giao ca,500000,VND,draft,,
+hr_event_00162,vmk0210,reward,2026-02-25,Hoàn thành vượt kế hoạch sản xuất,750000,VND,pending,,
+hr_event_00163,vmk0229,reward,2025-07-09,Sáng kiến cải tiến quy trình,1000000,VND,approved,2025-07-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00164,vmk0248,reward,2026-12-18,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-12-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00165,vmk0267,discipline,2025-05-02,Sai sót chứng từ kho,1500000,VND,cancelled,,
+hr_event_00166,vmk0286,reward,2026-10-11,Tuân thủ an toàn xuất sắc,1750000,VND,draft,,
 hr_event_00167,vmk0305,reward,2025-03-20,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00168,vmk0324,reward,2026-08-04,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-08-06T08:00:00+07:00,Rejected after review.
-hr_event_00169,vmk0343,discipline,2025-01-13,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-01-15T08:00:00+07:00,Approved after review.
-hr_event_00170,vmk0362,reward,2026-06-22,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-06-24T08:00:00+07:00,Approved after review.
-hr_event_00171,vmk0381,reward,2025-11-06,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00172,vmk0400,reward,2026-04-15,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-04-17T08:00:00+07:00,Rejected after review.
-hr_event_00173,vmk0419,discipline,2025-09-24,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-09-26T08:00:00+07:00,Approved after review.
-hr_event_00174,vmk0438,reward,2026-02-08,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-02-10T08:00:00+07:00,Approved after review.
-hr_event_00175,vmk0457,reward,2025-07-17,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00176,vmk0476,reward,2026-12-01,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-12-03T08:00:00+07:00,Rejected after review.
-hr_event_00177,vmk0495,discipline,2025-05-10,Sai sót chứng từ kho,500000,VND,approved,2025-05-12T08:00:00+07:00,Approved after review.
-hr_event_00178,vmk0514,reward,2026-10-19,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-10-21T08:00:00+07:00,Approved after review.
-hr_event_00179,vmk0533,reward,2025-03-03,Tuân thủ an toàn xuất sắc,1000000,VND,pending,,
-hr_event_00180,vmk0552,reward,2026-08-12,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-08-14T08:00:00+07:00,Rejected after review.
-hr_event_00181,vmk0001,discipline,2025-01-21,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-01-23T08:00:00+07:00,Approved after review.
-hr_event_00182,vmk0020,reward,2026-06-05,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-06-07T08:00:00+07:00,Approved after review.
-hr_event_00183,vmk0039,reward,2025-11-14,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,pending,,
-hr_event_00184,vmk0058,reward,2026-04-23,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-04-25T08:00:00+07:00,Rejected after review.
-hr_event_00185,vmk0077,discipline,2025-09-07,Sai sót chứng từ kho,500000,VND,approved,2025-09-09T08:00:00+07:00,Approved after review.
-hr_event_00186,vmk0096,reward,2026-02-16,Đạt kết quả chất lượng tốt,750000,VND,approved,2026-02-18T08:00:00+07:00,Approved after review.
+hr_event_00168,vmk0324,reward,2026-08-04,Sáng kiến cải tiến quy trình,2250000,VND,approved,2026-08-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00169,vmk0343,discipline,2025-01-13,Không hoàn thành đào tạo bắt buộc,500000,VND,rejected,2025-01-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00170,vmk0362,reward,2026-06-22,Hoàn thành vượt kế hoạch sản xuất,750000,VND,cancelled,,
+hr_event_00171,vmk0381,reward,2025-11-06,Đạt kết quả chất lượng tốt,1000000,VND,draft,,
+hr_event_00172,vmk0400,reward,2026-04-15,Đạt kết quả chất lượng tốt,1250000,VND,pending,,
+hr_event_00173,vmk0419,discipline,2025-09-24,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-09-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00174,vmk0438,reward,2026-02-08,Sáng kiến cải tiến quy trình,1750000,VND,rejected,2026-02-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00175,vmk0457,reward,2025-07-17,Sáng kiến cải tiến quy trình,2000000,VND,cancelled,,
+hr_event_00176,vmk0476,reward,2026-12-01,Sáng kiến cải tiến quy trình,2250000,VND,draft,,
+hr_event_00177,vmk0495,discipline,2025-05-10,Sai sót chứng từ kho,500000,VND,pending,,
+hr_event_00178,vmk0514,reward,2026-10-19,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-10-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00179,vmk0533,reward,2025-03-03,Tuân thủ an toàn xuất sắc,1000000,VND,rejected,2025-03-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00180,vmk0552,reward,2026-08-12,Tuân thủ an toàn xuất sắc,1250000,VND,cancelled,,
+hr_event_00181,vmk0001,discipline,2025-01-21,Không tuân thủ quy trình bàn giao ca,1500000,VND,draft,,
+hr_event_00182,vmk0020,reward,2026-06-05,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,pending,,
+hr_event_00183,vmk0039,reward,2025-11-14,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,approved,2025-11-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00184,vmk0058,reward,2026-04-23,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-04-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00185,vmk0077,discipline,2025-09-07,Sai sót chứng từ kho,500000,VND,cancelled,,
+hr_event_00186,vmk0096,reward,2026-02-16,Đạt kết quả chất lượng tốt,750000,VND,draft,,
 hr_event_00187,vmk0115,reward,2025-07-25,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00188,vmk0134,reward,2026-12-09,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-12-11T08:00:00+07:00,Rejected after review.
-hr_event_00189,vmk0153,discipline,2025-05-18,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-05-20T08:00:00+07:00,Approved after review.
-hr_event_00190,vmk0172,reward,2026-10-02,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-10-04T08:00:00+07:00,Approved after review.
-hr_event_00191,vmk0191,reward,2025-03-11,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00192,vmk0210,reward,2026-08-20,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-08-22T08:00:00+07:00,Rejected after review.
-hr_event_00193,vmk0229,discipline,2025-01-04,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-01-06T08:00:00+07:00,Approved after review.
-hr_event_00194,vmk0248,reward,2026-06-13,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-06-15T08:00:00+07:00,Approved after review.
-hr_event_00195,vmk0267,reward,2025-11-22,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00196,vmk0286,reward,2026-04-06,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-04-08T08:00:00+07:00,Rejected after review.
-hr_event_00197,vmk0305,discipline,2025-09-15,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-09-17T08:00:00+07:00,Approved after review.
-hr_event_00198,vmk0324,reward,2026-02-24,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-02-26T08:00:00+07:00,Approved after review.
-hr_event_00199,vmk0343,reward,2025-07-08,Đạt kết quả chất lượng tốt,2000000,VND,pending,,
-hr_event_00200,vmk0362,reward,2026-12-17,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-12-19T08:00:00+07:00,Rejected after review.
-hr_event_00201,vmk0381,discipline,2025-05-01,Sai sót chứng từ kho,500000,VND,approved,2025-05-03T08:00:00+07:00,Approved after review.
-hr_event_00202,vmk0400,reward,2026-10-10,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-10-12T08:00:00+07:00,Approved after review.
-hr_event_00203,vmk0419,reward,2025-03-19,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00204,vmk0438,reward,2026-08-03,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-08-05T08:00:00+07:00,Rejected after review.
-hr_event_00205,vmk0457,discipline,2025-01-12,Sai sót chứng từ kho,1500000,VND,approved,2025-01-14T08:00:00+07:00,Approved after review.
-hr_event_00206,vmk0476,reward,2026-06-21,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-06-23T08:00:00+07:00,Approved after review.
+hr_event_00188,vmk0134,reward,2026-12-09,Đạt kết quả chất lượng tốt,1250000,VND,approved,2026-12-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00189,vmk0153,discipline,2025-05-18,Không tuân thủ quy trình bàn giao ca,1500000,VND,rejected,2025-05-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00190,vmk0172,reward,2026-10-02,Tuân thủ an toàn xuất sắc,1750000,VND,cancelled,,
+hr_event_00191,vmk0191,reward,2025-03-11,Tuân thủ an toàn xuất sắc,2000000,VND,draft,,
+hr_event_00192,vmk0210,reward,2026-08-20,Sáng kiến cải tiến quy trình,2250000,VND,pending,,
+hr_event_00193,vmk0229,discipline,2025-01-04,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-01-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00194,vmk0248,reward,2026-06-13,Hoàn thành vượt kế hoạch sản xuất,750000,VND,rejected,2026-06-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00195,vmk0267,reward,2025-11-22,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,cancelled,,
+hr_event_00196,vmk0286,reward,2026-04-06,Tuân thủ an toàn xuất sắc,1250000,VND,draft,,
+hr_event_00197,vmk0305,discipline,2025-09-15,Không tuân thủ quy trình bàn giao ca,1500000,VND,pending,,
+hr_event_00198,vmk0324,reward,2026-02-24,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-02-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00199,vmk0343,reward,2025-07-08,Đạt kết quả chất lượng tốt,2000000,VND,rejected,2025-07-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00200,vmk0362,reward,2026-12-17,Tuân thủ an toàn xuất sắc,2250000,VND,cancelled,,
+hr_event_00201,vmk0381,discipline,2025-05-01,Sai sót chứng từ kho,500000,VND,draft,,
+hr_event_00202,vmk0400,reward,2026-10-10,Sáng kiến cải tiến quy trình,750000,VND,pending,,
+hr_event_00203,vmk0419,reward,2025-03-19,Đạt kết quả chất lượng tốt,1000000,VND,approved,2025-03-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00204,vmk0438,reward,2026-08-03,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-08-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00205,vmk0457,discipline,2025-01-12,Sai sót chứng từ kho,1500000,VND,cancelled,,
+hr_event_00206,vmk0476,reward,2026-06-21,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,draft,,
 hr_event_00207,vmk0495,reward,2025-11-05,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00208,vmk0514,reward,2026-04-14,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-04-16T08:00:00+07:00,Rejected after review.
-hr_event_00209,vmk0533,discipline,2025-09-23,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-09-25T08:00:00+07:00,Approved after review.
-hr_event_00210,vmk0552,reward,2026-02-07,Đạt kết quả chất lượng tốt,750000,VND,approved,2026-02-09T08:00:00+07:00,Approved after review.
-hr_event_00211,vmk0001,reward,2025-07-16,Tuân thủ an toàn xuất sắc,1000000,VND,pending,,
-hr_event_00212,vmk0020,reward,2026-12-25,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-12-27T08:00:00+07:00,Rejected after review.
-hr_event_00213,vmk0039,discipline,2025-05-09,Sai sót chứng từ kho,1500000,VND,approved,2025-05-11T08:00:00+07:00,Approved after review.
-hr_event_00214,vmk0058,reward,2026-10-18,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-10-20T08:00:00+07:00,Approved after review.
-hr_event_00215,vmk0077,reward,2025-03-02,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00216,vmk0096,reward,2026-08-11,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-08-13T08:00:00+07:00,Rejected after review.
-hr_event_00217,vmk0115,discipline,2025-01-20,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-01-22T08:00:00+07:00,Approved after review.
-hr_event_00218,vmk0134,reward,2026-06-04,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-06-06T08:00:00+07:00,Approved after review.
-hr_event_00219,vmk0153,reward,2025-11-13,Tuân thủ an toàn xuất sắc,1000000,VND,pending,,
-hr_event_00220,vmk0172,reward,2026-04-22,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-04-24T08:00:00+07:00,Rejected after review.
-hr_event_00221,vmk0191,discipline,2025-09-06,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-09-08T08:00:00+07:00,Approved after review.
-hr_event_00222,vmk0210,reward,2026-02-15,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-02-17T08:00:00+07:00,Approved after review.
-hr_event_00223,vmk0229,reward,2025-07-24,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00224,vmk0248,reward,2026-12-08,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-12-10T08:00:00+07:00,Rejected after review.
-hr_event_00225,vmk0267,discipline,2025-05-17,Sai sót chứng từ kho,500000,VND,approved,2025-05-19T08:00:00+07:00,Approved after review.
-hr_event_00226,vmk0286,reward,2026-10-01,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-10-03T08:00:00+07:00,Approved after review.
+hr_event_00208,vmk0514,reward,2026-04-14,Sáng kiến cải tiến quy trình,2250000,VND,approved,2026-04-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00209,vmk0533,discipline,2025-09-23,Không tuân thủ quy trình bàn giao ca,500000,VND,rejected,2025-09-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00210,vmk0552,reward,2026-02-07,Đạt kết quả chất lượng tốt,750000,VND,cancelled,,
+hr_event_00211,vmk0001,reward,2025-07-16,Tuân thủ an toàn xuất sắc,1000000,VND,draft,,
+hr_event_00212,vmk0020,reward,2026-12-25,Đạt kết quả chất lượng tốt,1250000,VND,pending,,
+hr_event_00213,vmk0039,discipline,2025-05-09,Sai sót chứng từ kho,1500000,VND,approved,2025-05-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00214,vmk0058,reward,2026-10-18,Đạt kết quả chất lượng tốt,1750000,VND,rejected,2026-10-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00215,vmk0077,reward,2025-03-02,Sáng kiến cải tiến quy trình,2000000,VND,cancelled,,
+hr_event_00216,vmk0096,reward,2026-08-11,Tuân thủ an toàn xuất sắc,2250000,VND,draft,,
+hr_event_00217,vmk0115,discipline,2025-01-20,Không hoàn thành đào tạo bắt buộc,500000,VND,pending,,
+hr_event_00218,vmk0134,reward,2026-06-04,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-06-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00219,vmk0153,reward,2025-11-13,Tuân thủ an toàn xuất sắc,1000000,VND,rejected,2025-11-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00220,vmk0172,reward,2026-04-22,Đạt kết quả chất lượng tốt,1250000,VND,cancelled,,
+hr_event_00221,vmk0191,discipline,2025-09-06,Không hoàn thành đào tạo bắt buộc,1500000,VND,draft,,
+hr_event_00222,vmk0210,reward,2026-02-15,Sáng kiến cải tiến quy trình,1750000,VND,pending,,
+hr_event_00223,vmk0229,reward,2025-07-24,Tuân thủ an toàn xuất sắc,2000000,VND,approved,2025-07-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00224,vmk0248,reward,2026-12-08,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-12-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00225,vmk0267,discipline,2025-05-17,Sai sót chứng từ kho,500000,VND,cancelled,,
+hr_event_00226,vmk0286,reward,2026-10-01,Sáng kiến cải tiến quy trình,750000,VND,draft,,
 hr_event_00227,vmk0305,reward,2025-03-10,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00228,vmk0324,reward,2026-08-19,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-08-21T08:00:00+07:00,Rejected after review.
-hr_event_00229,vmk0343,discipline,2025-01-03,Đi muộn nhiều lần,1500000,VND,approved,2025-01-05T08:00:00+07:00,Approved after review.
-hr_event_00230,vmk0362,reward,2026-06-12,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-06-14T08:00:00+07:00,Approved after review.
-hr_event_00231,vmk0381,reward,2025-11-21,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00232,vmk0400,reward,2026-04-05,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-04-07T08:00:00+07:00,Rejected after review.
-hr_event_00233,vmk0419,discipline,2025-09-14,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-09-16T08:00:00+07:00,Approved after review.
-hr_event_00234,vmk0438,reward,2026-02-23,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-02-25T08:00:00+07:00,Approved after review.
-hr_event_00235,vmk0457,reward,2025-07-07,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00236,vmk0476,reward,2026-12-16,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-12-18T08:00:00+07:00,Rejected after review.
-hr_event_00237,vmk0495,discipline,2025-05-25,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-05-27T08:00:00+07:00,Approved after review.
-hr_event_00238,vmk0514,reward,2026-10-09,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-10-11T08:00:00+07:00,Approved after review.
-hr_event_00239,vmk0533,reward,2025-03-18,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,pending,,
-hr_event_00240,vmk0552,reward,2026-08-02,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-08-04T08:00:00+07:00,Rejected after review.
-hr_event_00241,vmk0001,discipline,2025-01-11,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-01-13T08:00:00+07:00,Approved after review.
-hr_event_00242,vmk0020,reward,2026-06-20,Đạt kết quả chất lượng tốt,750000,VND,approved,2026-06-22T08:00:00+07:00,Approved after review.
-hr_event_00243,vmk0039,reward,2025-11-04,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00244,vmk0058,reward,2026-04-13,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-04-15T08:00:00+07:00,Rejected after review.
-hr_event_00245,vmk0077,discipline,2025-09-22,Sai sót chứng từ kho,1500000,VND,approved,2025-09-24T08:00:00+07:00,Approved after review.
-hr_event_00246,vmk0096,reward,2026-02-06,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-02-08T08:00:00+07:00,Approved after review.
+hr_event_00228,vmk0324,reward,2026-08-19,Tuân thủ an toàn xuất sắc,1250000,VND,approved,2026-08-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00229,vmk0343,discipline,2025-01-03,Đi muộn nhiều lần,1500000,VND,rejected,2025-01-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00230,vmk0362,reward,2026-06-12,Sáng kiến cải tiến quy trình,1750000,VND,cancelled,,
+hr_event_00231,vmk0381,reward,2025-11-21,Sáng kiến cải tiến quy trình,2000000,VND,draft,,
+hr_event_00232,vmk0400,reward,2026-04-05,Sáng kiến cải tiến quy trình,2250000,VND,pending,,
+hr_event_00233,vmk0419,discipline,2025-09-14,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-09-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00234,vmk0438,reward,2026-02-23,Sáng kiến cải tiến quy trình,750000,VND,rejected,2026-02-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00235,vmk0457,reward,2025-07-07,Sáng kiến cải tiến quy trình,1000000,VND,cancelled,,
+hr_event_00236,vmk0476,reward,2026-12-16,Tuân thủ an toàn xuất sắc,1250000,VND,draft,,
+hr_event_00237,vmk0495,discipline,2025-05-25,Không tuân thủ quy trình bàn giao ca,1500000,VND,pending,,
+hr_event_00238,vmk0514,reward,2026-10-09,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-10-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00239,vmk0533,reward,2025-03-18,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,rejected,2025-03-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00240,vmk0552,reward,2026-08-02,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,cancelled,,
+hr_event_00241,vmk0001,discipline,2025-01-11,Không tuân thủ quy trình bàn giao ca,500000,VND,draft,,
+hr_event_00242,vmk0020,reward,2026-06-20,Đạt kết quả chất lượng tốt,750000,VND,pending,,
+hr_event_00243,vmk0039,reward,2025-11-04,Đạt kết quả chất lượng tốt,1000000,VND,approved,2025-11-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00244,vmk0058,reward,2026-04-13,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-04-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00245,vmk0077,discipline,2025-09-22,Sai sót chứng từ kho,1500000,VND,cancelled,,
+hr_event_00246,vmk0096,reward,2026-02-06,Tuân thủ an toàn xuất sắc,1750000,VND,draft,,
 hr_event_00247,vmk0115,reward,2025-07-15,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,pending,,
-hr_event_00248,vmk0134,reward,2026-12-24,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-12-26T08:00:00+07:00,Rejected after review.
-hr_event_00249,vmk0153,discipline,2025-05-08,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-05-10T08:00:00+07:00,Approved after review.
-hr_event_00250,vmk0172,reward,2026-10-17,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-10-19T08:00:00+07:00,Approved after review.
-hr_event_00251,vmk0191,reward,2025-03-01,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00252,vmk0210,reward,2026-08-10,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-08-12T08:00:00+07:00,Rejected after review.
-hr_event_00253,vmk0229,discipline,2025-01-19,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-01-21T08:00:00+07:00,Approved after review.
-hr_event_00254,vmk0248,reward,2026-06-03,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-06-05T08:00:00+07:00,Approved after review.
-hr_event_00255,vmk0267,reward,2025-11-12,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00256,vmk0286,reward,2026-04-21,Đạt kết quả chất lượng tốt,2250000,VND,rejected,2026-04-23T08:00:00+07:00,Rejected after review.
-hr_event_00257,vmk0305,discipline,2025-09-05,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-09-07T08:00:00+07:00,Approved after review.
-hr_event_00258,vmk0324,reward,2026-02-14,Đạt kết quả chất lượng tốt,750000,VND,approved,2026-02-16T08:00:00+07:00,Approved after review.
-hr_event_00259,vmk0343,reward,2025-07-23,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00260,vmk0362,reward,2026-12-07,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-12-09T08:00:00+07:00,Rejected after review.
-hr_event_00261,vmk0381,discipline,2025-05-16,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-05-18T08:00:00+07:00,Approved after review.
-hr_event_00262,vmk0400,reward,2026-10-25,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-10-27T08:00:00+07:00,Approved after review.
-hr_event_00263,vmk0419,reward,2025-03-09,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,pending,,
-hr_event_00264,vmk0438,reward,2026-08-18,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-08-20T08:00:00+07:00,Rejected after review.
-hr_event_00265,vmk0457,discipline,2025-01-02,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-01-04T08:00:00+07:00,Approved after review.
-hr_event_00266,vmk0476,reward,2026-06-11,Đạt kết quả chất lượng tốt,750000,VND,approved,2026-06-13T08:00:00+07:00,Approved after review.
+hr_event_00248,vmk0134,reward,2026-12-24,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,approved,2026-12-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00249,vmk0153,discipline,2025-05-08,Không tuân thủ quy trình bàn giao ca,500000,VND,rejected,2025-05-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00250,vmk0172,reward,2026-10-17,Hoàn thành vượt kế hoạch sản xuất,750000,VND,cancelled,,
+hr_event_00251,vmk0191,reward,2025-03-01,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,draft,,
+hr_event_00252,vmk0210,reward,2026-08-10,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,pending,,
+hr_event_00253,vmk0229,discipline,2025-01-19,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-01-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00254,vmk0248,reward,2026-06-03,Đạt kết quả chất lượng tốt,1750000,VND,rejected,2026-06-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00255,vmk0267,reward,2025-11-12,Tuân thủ an toàn xuất sắc,2000000,VND,cancelled,,
+hr_event_00256,vmk0286,reward,2026-04-21,Đạt kết quả chất lượng tốt,2250000,VND,draft,,
+hr_event_00257,vmk0305,discipline,2025-09-05,Không tuân thủ quy trình bàn giao ca,500000,VND,pending,,
+hr_event_00258,vmk0324,reward,2026-02-14,Đạt kết quả chất lượng tốt,750000,VND,approved,2026-02-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00259,vmk0343,reward,2025-07-23,Đạt kết quả chất lượng tốt,1000000,VND,rejected,2025-07-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00260,vmk0362,reward,2026-12-07,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,cancelled,,
+hr_event_00261,vmk0381,discipline,2025-05-16,Không hoàn thành đào tạo bắt buộc,1500000,VND,draft,,
+hr_event_00262,vmk0400,reward,2026-10-25,Đạt kết quả chất lượng tốt,1750000,VND,pending,,
+hr_event_00263,vmk0419,reward,2025-03-09,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,approved,2025-03-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00264,vmk0438,reward,2026-08-18,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-08-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00265,vmk0457,discipline,2025-01-02,Không hoàn thành đào tạo bắt buộc,500000,VND,cancelled,,
+hr_event_00266,vmk0476,reward,2026-06-11,Đạt kết quả chất lượng tốt,750000,VND,draft,,
 hr_event_00267,vmk0495,reward,2025-11-20,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00268,vmk0514,reward,2026-04-04,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-04-06T08:00:00+07:00,Rejected after review.
-hr_event_00269,vmk0533,discipline,2025-09-13,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-09-15T08:00:00+07:00,Approved after review.
-hr_event_00270,vmk0552,reward,2026-02-22,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-02-24T08:00:00+07:00,Approved after review.
-hr_event_00271,vmk0001,reward,2025-07-06,Đạt kết quả chất lượng tốt,2000000,VND,pending,,
-hr_event_00272,vmk0020,reward,2026-12-15,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-12-17T08:00:00+07:00,Rejected after review.
-hr_event_00273,vmk0039,discipline,2025-05-24,Đi muộn nhiều lần,500000,VND,approved,2025-05-26T08:00:00+07:00,Approved after review.
-hr_event_00274,vmk0058,reward,2026-10-08,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-10-10T08:00:00+07:00,Approved after review.
-hr_event_00275,vmk0077,reward,2025-03-17,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00276,vmk0096,reward,2026-08-01,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-08-03T08:00:00+07:00,Rejected after review.
-hr_event_00277,vmk0115,discipline,2025-01-10,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-01-12T08:00:00+07:00,Approved after review.
-hr_event_00278,vmk0134,reward,2026-06-19,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-06-21T08:00:00+07:00,Approved after review.
-hr_event_00279,vmk0153,reward,2025-11-03,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00280,vmk0172,reward,2026-04-12,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-04-14T08:00:00+07:00,Rejected after review.
-hr_event_00281,vmk0191,discipline,2025-09-21,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-09-23T08:00:00+07:00,Approved after review.
-hr_event_00282,vmk0210,reward,2026-02-05,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-02-07T08:00:00+07:00,Approved after review.
-hr_event_00283,vmk0229,reward,2025-07-14,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00284,vmk0248,reward,2026-12-23,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-12-25T08:00:00+07:00,Rejected after review.
-hr_event_00285,vmk0267,discipline,2025-05-07,Sai sót chứng từ kho,1500000,VND,approved,2025-05-09T08:00:00+07:00,Approved after review.
-hr_event_00286,vmk0286,reward,2026-10-16,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-10-18T08:00:00+07:00,Approved after review.
+hr_event_00268,vmk0514,reward,2026-04-04,Sáng kiến cải tiến quy trình,1250000,VND,approved,2026-04-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00269,vmk0533,discipline,2025-09-13,Không hoàn thành đào tạo bắt buộc,1500000,VND,rejected,2025-09-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00270,vmk0552,reward,2026-02-22,Đạt kết quả chất lượng tốt,1750000,VND,cancelled,,
+hr_event_00271,vmk0001,reward,2025-07-06,Đạt kết quả chất lượng tốt,2000000,VND,draft,,
+hr_event_00272,vmk0020,reward,2026-12-15,Sáng kiến cải tiến quy trình,2250000,VND,pending,,
+hr_event_00273,vmk0039,discipline,2025-05-24,Đi muộn nhiều lần,500000,VND,approved,2025-05-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00274,vmk0058,reward,2026-10-08,Sáng kiến cải tiến quy trình,750000,VND,rejected,2026-10-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00275,vmk0077,reward,2025-03-17,Sáng kiến cải tiến quy trình,1000000,VND,cancelled,,
+hr_event_00276,vmk0096,reward,2026-08-01,Đạt kết quả chất lượng tốt,1250000,VND,draft,,
+hr_event_00277,vmk0115,discipline,2025-01-10,Không hoàn thành đào tạo bắt buộc,1500000,VND,pending,,
+hr_event_00278,vmk0134,reward,2026-06-19,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-06-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00279,vmk0153,reward,2025-11-03,Sáng kiến cải tiến quy trình,2000000,VND,rejected,2025-11-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00280,vmk0172,reward,2026-04-12,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,cancelled,,
+hr_event_00281,vmk0191,discipline,2025-09-21,Không tuân thủ quy trình bàn giao ca,500000,VND,draft,,
+hr_event_00282,vmk0210,reward,2026-02-05,Hoàn thành vượt kế hoạch sản xuất,750000,VND,pending,,
+hr_event_00283,vmk0229,reward,2025-07-14,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,approved,2025-07-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00284,vmk0248,reward,2026-12-23,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-12-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00285,vmk0267,discipline,2025-05-07,Sai sót chứng từ kho,1500000,VND,cancelled,,
+hr_event_00286,vmk0286,reward,2026-10-16,Sáng kiến cải tiến quy trình,1750000,VND,draft,,
 hr_event_00287,vmk0305,reward,2025-03-25,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,pending,,
-hr_event_00288,vmk0324,reward,2026-08-09,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-08-11T08:00:00+07:00,Rejected after review.
-hr_event_00289,vmk0343,discipline,2025-01-18,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-01-20T08:00:00+07:00,Approved after review.
-hr_event_00290,vmk0362,reward,2026-06-02,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-06-04T08:00:00+07:00,Approved after review.
-hr_event_00291,vmk0381,reward,2025-11-11,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00292,vmk0400,reward,2026-04-20,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-04-22T08:00:00+07:00,Rejected after review.
-hr_event_00293,vmk0419,discipline,2025-09-04,Đi muộn nhiều lần,1500000,VND,approved,2025-09-06T08:00:00+07:00,Approved after review.
-hr_event_00294,vmk0438,reward,2026-02-13,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-02-15T08:00:00+07:00,Approved after review.
-hr_event_00295,vmk0457,reward,2025-07-22,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00296,vmk0476,reward,2026-12-06,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-12-08T08:00:00+07:00,Rejected after review.
-hr_event_00297,vmk0495,discipline,2025-05-15,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-05-17T08:00:00+07:00,Approved after review.
-hr_event_00298,vmk0514,reward,2026-10-24,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-10-26T08:00:00+07:00,Approved after review.
-hr_event_00299,vmk0533,reward,2025-03-08,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00300,vmk0552,reward,2026-08-17,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-08-19T08:00:00+07:00,Rejected after review.
-hr_event_00301,vmk0001,discipline,2025-01-01,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-01-03T08:00:00+07:00,Approved after review.
-hr_event_00302,vmk0020,reward,2026-06-10,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-06-12T08:00:00+07:00,Approved after review.
-hr_event_00303,vmk0039,reward,2025-11-19,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,pending,,
-hr_event_00304,vmk0058,reward,2026-04-03,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-04-05T08:00:00+07:00,Rejected after review.
-hr_event_00305,vmk0077,discipline,2025-09-12,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-09-14T08:00:00+07:00,Approved after review.
-hr_event_00306,vmk0096,reward,2026-02-21,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-02-23T08:00:00+07:00,Approved after review.
+hr_event_00288,vmk0324,reward,2026-08-09,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,approved,2026-08-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00289,vmk0343,discipline,2025-01-18,Không tuân thủ quy trình bàn giao ca,500000,VND,rejected,2025-01-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00290,vmk0362,reward,2026-06-02,Sáng kiến cải tiến quy trình,750000,VND,cancelled,,
+hr_event_00291,vmk0381,reward,2025-11-11,Sáng kiến cải tiến quy trình,1000000,VND,draft,,
+hr_event_00292,vmk0400,reward,2026-04-20,Tuân thủ an toàn xuất sắc,1250000,VND,pending,,
+hr_event_00293,vmk0419,discipline,2025-09-04,Đi muộn nhiều lần,1500000,VND,approved,2025-09-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00294,vmk0438,reward,2026-02-13,Sáng kiến cải tiến quy trình,1750000,VND,rejected,2026-02-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00295,vmk0457,reward,2025-07-22,Tuân thủ an toàn xuất sắc,2000000,VND,cancelled,,
+hr_event_00296,vmk0476,reward,2026-12-06,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,draft,,
+hr_event_00297,vmk0495,discipline,2025-05-15,Không tuân thủ quy trình bàn giao ca,500000,VND,pending,,
+hr_event_00298,vmk0514,reward,2026-10-24,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-10-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00299,vmk0533,reward,2025-03-08,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,rejected,2025-03-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00300,vmk0552,reward,2026-08-17,Đạt kết quả chất lượng tốt,1250000,VND,cancelled,,
+hr_event_00301,vmk0001,discipline,2025-01-01,Không tuân thủ quy trình bàn giao ca,1500000,VND,draft,,
+hr_event_00302,vmk0020,reward,2026-06-10,Tuân thủ an toàn xuất sắc,1750000,VND,pending,,
+hr_event_00303,vmk0039,reward,2025-11-19,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,approved,2025-11-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00304,vmk0058,reward,2026-04-03,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-04-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00305,vmk0077,discipline,2025-09-12,Không hoàn thành đào tạo bắt buộc,500000,VND,cancelled,,
+hr_event_00306,vmk0096,reward,2026-02-21,Tuân thủ an toàn xuất sắc,750000,VND,draft,,
 hr_event_00307,vmk0115,reward,2025-07-05,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00308,vmk0134,reward,2026-12-14,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-12-16T08:00:00+07:00,Rejected after review.
-hr_event_00309,vmk0153,discipline,2025-05-23,Đi muộn nhiều lần,1500000,VND,approved,2025-05-25T08:00:00+07:00,Approved after review.
-hr_event_00310,vmk0172,reward,2026-10-07,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-10-09T08:00:00+07:00,Approved after review.
-hr_event_00311,vmk0191,reward,2025-03-16,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00312,vmk0210,reward,2026-08-25,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-08-27T08:00:00+07:00,Rejected after review.
-hr_event_00313,vmk0229,discipline,2025-01-09,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-01-11T08:00:00+07:00,Approved after review.
-hr_event_00314,vmk0248,reward,2026-06-18,Đạt kết quả chất lượng tốt,750000,VND,approved,2026-06-20T08:00:00+07:00,Approved after review.
-hr_event_00315,vmk0267,reward,2025-11-02,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00316,vmk0286,reward,2026-04-11,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-04-13T08:00:00+07:00,Rejected after review.
-hr_event_00317,vmk0305,discipline,2025-09-20,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-09-22T08:00:00+07:00,Approved after review.
-hr_event_00318,vmk0324,reward,2026-02-04,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-02-06T08:00:00+07:00,Approved after review.
-hr_event_00319,vmk0343,reward,2025-07-13,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00320,vmk0362,reward,2026-12-22,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-12-24T08:00:00+07:00,Rejected after review.
-hr_event_00321,vmk0381,discipline,2025-05-06,Sai sót chứng từ kho,500000,VND,approved,2025-05-08T08:00:00+07:00,Approved after review.
-hr_event_00322,vmk0400,reward,2026-10-15,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-10-17T08:00:00+07:00,Approved after review.
-hr_event_00323,vmk0419,reward,2025-03-24,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00324,vmk0438,reward,2026-08-08,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-08-10T08:00:00+07:00,Rejected after review.
-hr_event_00325,vmk0457,discipline,2025-01-17,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-01-19T08:00:00+07:00,Approved after review.
-hr_event_00326,vmk0476,reward,2026-06-01,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-06-03T08:00:00+07:00,Approved after review.
+hr_event_00308,vmk0134,reward,2026-12-14,Sáng kiến cải tiến quy trình,1250000,VND,approved,2026-12-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00309,vmk0153,discipline,2025-05-23,Đi muộn nhiều lần,1500000,VND,rejected,2025-05-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00310,vmk0172,reward,2026-10-07,Đạt kết quả chất lượng tốt,1750000,VND,cancelled,,
+hr_event_00311,vmk0191,reward,2025-03-16,Tuân thủ an toàn xuất sắc,2000000,VND,draft,,
+hr_event_00312,vmk0210,reward,2026-08-25,Tuân thủ an toàn xuất sắc,2250000,VND,pending,,
+hr_event_00313,vmk0229,discipline,2025-01-09,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-01-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00314,vmk0248,reward,2026-06-18,Đạt kết quả chất lượng tốt,750000,VND,rejected,2026-06-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00315,vmk0267,reward,2025-11-02,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,cancelled,,
+hr_event_00316,vmk0286,reward,2026-04-11,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,draft,,
+hr_event_00317,vmk0305,discipline,2025-09-20,Không tuân thủ quy trình bàn giao ca,1500000,VND,pending,,
+hr_event_00318,vmk0324,reward,2026-02-04,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-02-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00319,vmk0343,reward,2025-07-13,Tuân thủ an toàn xuất sắc,2000000,VND,rejected,2025-07-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00320,vmk0362,reward,2026-12-22,Sáng kiến cải tiến quy trình,2250000,VND,cancelled,,
+hr_event_00321,vmk0381,discipline,2025-05-06,Sai sót chứng từ kho,500000,VND,draft,,
+hr_event_00322,vmk0400,reward,2026-10-15,Tuân thủ an toàn xuất sắc,750000,VND,pending,,
+hr_event_00323,vmk0419,reward,2025-03-24,Sáng kiến cải tiến quy trình,1000000,VND,approved,2025-03-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00324,vmk0438,reward,2026-08-08,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-08-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00325,vmk0457,discipline,2025-01-17,Không hoàn thành đào tạo bắt buộc,1500000,VND,cancelled,,
+hr_event_00326,vmk0476,reward,2026-06-01,Đạt kết quả chất lượng tốt,1750000,VND,draft,,
 hr_event_00327,vmk0495,reward,2025-11-10,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00328,vmk0514,reward,2026-04-19,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-04-21T08:00:00+07:00,Rejected after review.
-hr_event_00329,vmk0533,discipline,2025-09-03,Đi muộn nhiều lần,500000,VND,approved,2025-09-05T08:00:00+07:00,Approved after review.
-hr_event_00330,vmk0552,reward,2026-02-12,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-02-14T08:00:00+07:00,Approved after review.
-hr_event_00331,vmk0001,reward,2025-07-21,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00332,vmk0020,reward,2026-12-05,Tuân thủ an toàn xuất sắc,1250000,VND,rejected,2026-12-07T08:00:00+07:00,Rejected after review.
-hr_event_00333,vmk0039,discipline,2025-05-14,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-05-16T08:00:00+07:00,Approved after review.
-hr_event_00334,vmk0058,reward,2026-10-23,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-10-25T08:00:00+07:00,Approved after review.
-hr_event_00335,vmk0077,reward,2025-03-07,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00336,vmk0096,reward,2026-08-16,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-08-18T08:00:00+07:00,Rejected after review.
-hr_event_00337,vmk0115,discipline,2025-01-25,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-01-27T08:00:00+07:00,Approved after review.
-hr_event_00338,vmk0134,reward,2026-06-09,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-06-11T08:00:00+07:00,Approved after review.
-hr_event_00339,vmk0153,reward,2025-11-18,Sáng kiến cải tiến quy trình,1000000,VND,pending,,
-hr_event_00340,vmk0172,reward,2026-04-02,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-04-04T08:00:00+07:00,Rejected after review.
-hr_event_00341,vmk0191,discipline,2025-09-11,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-09-13T08:00:00+07:00,Approved after review.
-hr_event_00342,vmk0210,reward,2026-02-20,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-02-22T08:00:00+07:00,Approved after review.
-hr_event_00343,vmk0229,reward,2025-07-04,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,pending,,
-hr_event_00344,vmk0248,reward,2026-12-13,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-12-15T08:00:00+07:00,Rejected after review.
-hr_event_00345,vmk0267,discipline,2025-05-22,Sai sót chứng từ kho,500000,VND,approved,2025-05-24T08:00:00+07:00,Approved after review.
-hr_event_00346,vmk0286,reward,2026-10-06,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-10-08T08:00:00+07:00,Approved after review.
+hr_event_00328,vmk0514,reward,2026-04-19,Tuân thủ an toàn xuất sắc,2250000,VND,approved,2026-04-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00329,vmk0533,discipline,2025-09-03,Đi muộn nhiều lần,500000,VND,rejected,2025-09-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00330,vmk0552,reward,2026-02-12,Tuân thủ an toàn xuất sắc,750000,VND,cancelled,,
+hr_event_00331,vmk0001,reward,2025-07-21,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,draft,,
+hr_event_00332,vmk0020,reward,2026-12-05,Tuân thủ an toàn xuất sắc,1250000,VND,pending,,
+hr_event_00333,vmk0039,discipline,2025-05-14,Không tuân thủ quy trình bàn giao ca,1500000,VND,approved,2025-05-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00334,vmk0058,reward,2026-10-23,Đạt kết quả chất lượng tốt,1750000,VND,rejected,2026-10-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00335,vmk0077,reward,2025-03-07,Sáng kiến cải tiến quy trình,2000000,VND,cancelled,,
+hr_event_00336,vmk0096,reward,2026-08-16,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,draft,,
+hr_event_00337,vmk0115,discipline,2025-01-25,Không tuân thủ quy trình bàn giao ca,500000,VND,pending,,
+hr_event_00338,vmk0134,reward,2026-06-09,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-06-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00339,vmk0153,reward,2025-11-18,Sáng kiến cải tiến quy trình,1000000,VND,rejected,2025-11-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00340,vmk0172,reward,2026-04-02,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,cancelled,,
+hr_event_00341,vmk0191,discipline,2025-09-11,Không hoàn thành đào tạo bắt buộc,1500000,VND,draft,,
+hr_event_00342,vmk0210,reward,2026-02-20,Sáng kiến cải tiến quy trình,1750000,VND,pending,,
+hr_event_00343,vmk0229,reward,2025-07-04,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,approved,2025-07-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00344,vmk0248,reward,2026-12-13,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-12-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00345,vmk0267,discipline,2025-05-22,Sai sót chứng từ kho,500000,VND,cancelled,,
+hr_event_00346,vmk0286,reward,2026-10-06,Hoàn thành vượt kế hoạch sản xuất,750000,VND,draft,,
 hr_event_00347,vmk0305,reward,2025-03-15,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00348,vmk0324,reward,2026-08-24,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,rejected,2026-08-26T08:00:00+07:00,Rejected after review.
-hr_event_00349,vmk0343,discipline,2025-01-08,Đi muộn nhiều lần,1500000,VND,approved,2025-01-10T08:00:00+07:00,Approved after review.
-hr_event_00350,vmk0362,reward,2026-06-17,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-06-19T08:00:00+07:00,Approved after review.
-hr_event_00351,vmk0381,reward,2025-11-01,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,pending,,
-hr_event_00352,vmk0400,reward,2026-04-10,Đạt kết quả chất lượng tốt,2250000,VND,rejected,2026-04-12T08:00:00+07:00,Rejected after review.
-hr_event_00353,vmk0419,discipline,2025-09-19,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-09-21T08:00:00+07:00,Approved after review.
-hr_event_00354,vmk0438,reward,2026-02-03,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-02-05T08:00:00+07:00,Approved after review.
-hr_event_00355,vmk0457,reward,2025-07-12,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00356,vmk0476,reward,2026-12-21,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-12-23T08:00:00+07:00,Rejected after review.
-hr_event_00357,vmk0495,discipline,2025-05-05,Sai sót chứng từ kho,1500000,VND,approved,2025-05-07T08:00:00+07:00,Approved after review.
-hr_event_00358,vmk0514,reward,2026-10-14,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-10-16T08:00:00+07:00,Approved after review.
-hr_event_00359,vmk0533,reward,2025-03-23,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00360,vmk0552,reward,2026-08-07,Sáng kiến cải tiến quy trình,2250000,VND,rejected,2026-08-09T08:00:00+07:00,Rejected after review.
-hr_event_00361,vmk0001,discipline,2025-01-16,Đi muộn nhiều lần,500000,VND,approved,2025-01-18T08:00:00+07:00,Approved after review.
-hr_event_00362,vmk0020,reward,2026-06-25,Sáng kiến cải tiến quy trình,750000,VND,approved,2026-06-27T08:00:00+07:00,Approved after review.
-hr_event_00363,vmk0039,reward,2025-11-09,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00364,vmk0058,reward,2026-04-18,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-04-20T08:00:00+07:00,Rejected after review.
-hr_event_00365,vmk0077,discipline,2025-09-02,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-09-04T08:00:00+07:00,Approved after review.
-hr_event_00366,vmk0096,reward,2026-02-11,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,approved,2026-02-13T08:00:00+07:00,Approved after review.
+hr_event_00348,vmk0324,reward,2026-08-24,Hoàn thành vượt kế hoạch sản xuất,1250000,VND,approved,2026-08-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00349,vmk0343,discipline,2025-01-08,Đi muộn nhiều lần,1500000,VND,rejected,2025-01-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00350,vmk0362,reward,2026-06-17,Sáng kiến cải tiến quy trình,1750000,VND,cancelled,,
+hr_event_00351,vmk0381,reward,2025-11-01,Hoàn thành vượt kế hoạch sản xuất,2000000,VND,draft,,
+hr_event_00352,vmk0400,reward,2026-04-10,Đạt kết quả chất lượng tốt,2250000,VND,pending,,
+hr_event_00353,vmk0419,discipline,2025-09-19,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-09-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00354,vmk0438,reward,2026-02-03,Tuân thủ an toàn xuất sắc,750000,VND,rejected,2026-02-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00355,vmk0457,reward,2025-07-12,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,cancelled,,
+hr_event_00356,vmk0476,reward,2026-12-21,Đạt kết quả chất lượng tốt,1250000,VND,draft,,
+hr_event_00357,vmk0495,discipline,2025-05-05,Sai sót chứng từ kho,1500000,VND,pending,,
+hr_event_00358,vmk0514,reward,2026-10-14,Đạt kết quả chất lượng tốt,1750000,VND,approved,2026-10-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00359,vmk0533,reward,2025-03-23,Sáng kiến cải tiến quy trình,2000000,VND,rejected,2025-03-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00360,vmk0552,reward,2026-08-07,Sáng kiến cải tiến quy trình,2250000,VND,cancelled,,
+hr_event_00361,vmk0001,discipline,2025-01-16,Đi muộn nhiều lần,500000,VND,draft,,
+hr_event_00362,vmk0020,reward,2026-06-25,Sáng kiến cải tiến quy trình,750000,VND,pending,,
+hr_event_00363,vmk0039,reward,2025-11-09,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,approved,2025-11-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00364,vmk0058,reward,2026-04-18,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-04-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00365,vmk0077,discipline,2025-09-02,Không hoàn thành đào tạo bắt buộc,1500000,VND,cancelled,,
+hr_event_00366,vmk0096,reward,2026-02-11,Hoàn thành vượt kế hoạch sản xuất,1750000,VND,draft,,
 hr_event_00367,vmk0115,reward,2025-07-20,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00368,vmk0134,reward,2026-12-04,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-12-06T08:00:00+07:00,Rejected after review.
-hr_event_00369,vmk0153,discipline,2025-05-13,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-05-15T08:00:00+07:00,Approved after review.
-hr_event_00370,vmk0172,reward,2026-10-22,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-10-24T08:00:00+07:00,Approved after review.
-hr_event_00371,vmk0191,reward,2025-03-06,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00372,vmk0210,reward,2026-08-15,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-08-17T08:00:00+07:00,Rejected after review.
-hr_event_00373,vmk0229,discipline,2025-01-24,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-01-26T08:00:00+07:00,Approved after review.
-hr_event_00374,vmk0248,reward,2026-06-08,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-06-10T08:00:00+07:00,Approved after review.
-hr_event_00375,vmk0267,reward,2025-11-17,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00376,vmk0286,reward,2026-04-01,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,rejected,2026-04-03T08:00:00+07:00,Rejected after review.
-hr_event_00377,vmk0305,discipline,2025-09-10,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-09-12T08:00:00+07:00,Approved after review.
-hr_event_00378,vmk0324,reward,2026-02-19,Đạt kết quả chất lượng tốt,750000,VND,approved,2026-02-21T08:00:00+07:00,Approved after review.
-hr_event_00379,vmk0343,reward,2025-07-03,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00380,vmk0362,reward,2026-12-12,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-12-14T08:00:00+07:00,Rejected after review.
-hr_event_00381,vmk0381,discipline,2025-05-21,Đi muộn nhiều lần,1500000,VND,approved,2025-05-23T08:00:00+07:00,Approved after review.
-hr_event_00382,vmk0400,reward,2026-10-05,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-10-07T08:00:00+07:00,Approved after review.
-hr_event_00383,vmk0419,reward,2025-03-14,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00384,vmk0438,reward,2026-08-23,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-08-25T08:00:00+07:00,Rejected after review.
-hr_event_00385,vmk0457,discipline,2025-01-07,Sai sót chứng từ kho,500000,VND,approved,2025-01-09T08:00:00+07:00,Approved after review.
-hr_event_00386,vmk0476,reward,2026-06-16,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-06-18T08:00:00+07:00,Approved after review.
+hr_event_00368,vmk0134,reward,2026-12-04,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,approved,2026-12-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00369,vmk0153,discipline,2025-05-13,Không tuân thủ quy trình bàn giao ca,500000,VND,rejected,2025-05-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00370,vmk0172,reward,2026-10-22,Tuân thủ an toàn xuất sắc,750000,VND,cancelled,,
+hr_event_00371,vmk0191,reward,2025-03-06,Đạt kết quả chất lượng tốt,1000000,VND,draft,,
+hr_event_00372,vmk0210,reward,2026-08-15,Đạt kết quả chất lượng tốt,1250000,VND,pending,,
+hr_event_00373,vmk0229,discipline,2025-01-24,Không hoàn thành đào tạo bắt buộc,1500000,VND,approved,2025-01-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00374,vmk0248,reward,2026-06-08,Tuân thủ an toàn xuất sắc,1750000,VND,rejected,2026-06-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00375,vmk0267,reward,2025-11-17,Tuân thủ an toàn xuất sắc,2000000,VND,cancelled,,
+hr_event_00376,vmk0286,reward,2026-04-01,Hoàn thành vượt kế hoạch sản xuất,2250000,VND,draft,,
+hr_event_00377,vmk0305,discipline,2025-09-10,Không hoàn thành đào tạo bắt buộc,500000,VND,pending,,
+hr_event_00378,vmk0324,reward,2026-02-19,Đạt kết quả chất lượng tốt,750000,VND,approved,2026-02-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00379,vmk0343,reward,2025-07-03,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,rejected,2025-07-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00380,vmk0362,reward,2026-12-12,Sáng kiến cải tiến quy trình,1250000,VND,cancelled,,
+hr_event_00381,vmk0381,discipline,2025-05-21,Đi muộn nhiều lần,1500000,VND,draft,,
+hr_event_00382,vmk0400,reward,2026-10-05,Tuân thủ an toàn xuất sắc,1750000,VND,pending,,
+hr_event_00383,vmk0419,reward,2025-03-14,Tuân thủ an toàn xuất sắc,2000000,VND,approved,2025-03-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00384,vmk0438,reward,2026-08-23,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-08-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00385,vmk0457,discipline,2025-01-07,Sai sót chứng từ kho,500000,VND,cancelled,,
+hr_event_00386,vmk0476,reward,2026-06-16,Tuân thủ an toàn xuất sắc,750000,VND,draft,,
 hr_event_00387,vmk0495,reward,2025-11-25,Tuân thủ an toàn xuất sắc,1000000,VND,pending,,
-hr_event_00388,vmk0514,reward,2026-04-09,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-04-11T08:00:00+07:00,Rejected after review.
-hr_event_00389,vmk0533,discipline,2025-09-18,Sai sót chứng từ kho,1500000,VND,approved,2025-09-20T08:00:00+07:00,Approved after review.
-hr_event_00390,vmk0552,reward,2026-02-02,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-02-04T08:00:00+07:00,Approved after review.
-hr_event_00391,vmk0001,reward,2025-07-11,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00392,vmk0020,reward,2026-12-20,Đạt kết quả chất lượng tốt,2250000,VND,rejected,2026-12-22T08:00:00+07:00,Rejected after review.
-hr_event_00393,vmk0039,discipline,2025-05-04,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-05-06T08:00:00+07:00,Approved after review.
-hr_event_00394,vmk0058,reward,2026-10-13,Tuân thủ an toàn xuất sắc,750000,VND,approved,2026-10-15T08:00:00+07:00,Approved after review.
-hr_event_00395,vmk0077,reward,2025-03-22,Đạt kết quả chất lượng tốt,1000000,VND,pending,,
-hr_event_00396,vmk0096,reward,2026-08-06,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-08-08T08:00:00+07:00,Rejected after review.
-hr_event_00397,vmk0115,discipline,2025-01-15,Đi muộn nhiều lần,1500000,VND,approved,2025-01-17T08:00:00+07:00,Approved after review.
-hr_event_00398,vmk0134,reward,2026-06-24,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-06-26T08:00:00+07:00,Approved after review.
-hr_event_00399,vmk0153,reward,2025-11-08,Sáng kiến cải tiến quy trình,2000000,VND,pending,,
-hr_event_00400,vmk0172,reward,2026-04-17,Tuân thủ an toàn xuất sắc,2250000,VND,rejected,2026-04-19T08:00:00+07:00,Rejected after review.
-hr_event_00401,vmk0191,discipline,2025-09-01,Sai sót chứng từ kho,500000,VND,approved,2025-09-03T08:00:00+07:00,Approved after review.
-hr_event_00402,vmk0210,reward,2026-02-10,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-02-12T08:00:00+07:00,Approved after review.
-hr_event_00403,vmk0229,reward,2025-07-19,Tuân thủ an toàn xuất sắc,1000000,VND,pending,,
-hr_event_00404,vmk0248,reward,2026-12-03,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-12-05T08:00:00+07:00,Rejected after review.
-hr_event_00405,vmk0267,discipline,2025-05-12,Sai sót chứng từ kho,1500000,VND,approved,2025-05-14T08:00:00+07:00,Approved after review.
-hr_event_00406,vmk0286,reward,2026-10-21,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-10-23T08:00:00+07:00,Approved after review.
+hr_event_00388,vmk0514,reward,2026-04-09,Đạt kết quả chất lượng tốt,1250000,VND,approved,2026-04-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00389,vmk0533,discipline,2025-09-18,Sai sót chứng từ kho,1500000,VND,rejected,2025-09-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00390,vmk0552,reward,2026-02-02,Sáng kiến cải tiến quy trình,1750000,VND,cancelled,,
+hr_event_00391,vmk0001,reward,2025-07-11,Tuân thủ an toàn xuất sắc,2000000,VND,draft,,
+hr_event_00392,vmk0020,reward,2026-12-20,Đạt kết quả chất lượng tốt,2250000,VND,pending,,
+hr_event_00393,vmk0039,discipline,2025-05-04,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-05-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00394,vmk0058,reward,2026-10-13,Tuân thủ an toàn xuất sắc,750000,VND,rejected,2026-10-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00395,vmk0077,reward,2025-03-22,Đạt kết quả chất lượng tốt,1000000,VND,cancelled,,
+hr_event_00396,vmk0096,reward,2026-08-06,Sáng kiến cải tiến quy trình,1250000,VND,draft,,
+hr_event_00397,vmk0115,discipline,2025-01-15,Đi muộn nhiều lần,1500000,VND,pending,,
+hr_event_00398,vmk0134,reward,2026-06-24,Sáng kiến cải tiến quy trình,1750000,VND,approved,2026-06-26T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00399,vmk0153,reward,2025-11-08,Sáng kiến cải tiến quy trình,2000000,VND,rejected,2025-11-10T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00400,vmk0172,reward,2026-04-17,Tuân thủ an toàn xuất sắc,2250000,VND,cancelled,,
+hr_event_00401,vmk0191,discipline,2025-09-01,Sai sót chứng từ kho,500000,VND,draft,,
+hr_event_00402,vmk0210,reward,2026-02-10,Hoàn thành vượt kế hoạch sản xuất,750000,VND,pending,,
+hr_event_00403,vmk0229,reward,2025-07-19,Tuân thủ an toàn xuất sắc,1000000,VND,approved,2025-07-21T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00404,vmk0248,reward,2026-12-03,Đạt kết quả chất lượng tốt,1250000,VND,rejected,2026-12-05T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00405,vmk0267,discipline,2025-05-12,Sai sót chứng từ kho,1500000,VND,cancelled,,
+hr_event_00406,vmk0286,reward,2026-10-21,Sáng kiến cải tiến quy trình,1750000,VND,draft,,
 hr_event_00407,vmk0305,reward,2025-03-05,Tuân thủ an toàn xuất sắc,2000000,VND,pending,,
-hr_event_00408,vmk0324,reward,2026-08-14,Đạt kết quả chất lượng tốt,2250000,VND,rejected,2026-08-16T08:00:00+07:00,Rejected after review.
-hr_event_00409,vmk0343,discipline,2025-01-23,Không hoàn thành đào tạo bắt buộc,500000,VND,approved,2025-01-25T08:00:00+07:00,Approved after review.
-hr_event_00410,vmk0362,reward,2026-06-07,Đạt kết quả chất lượng tốt,750000,VND,approved,2026-06-09T08:00:00+07:00,Approved after review.
-hr_event_00411,vmk0381,reward,2025-11-16,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,pending,,
-hr_event_00412,vmk0400,reward,2026-04-25,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-04-27T08:00:00+07:00,Rejected after review.
-hr_event_00413,vmk0419,discipline,2025-09-09,Sai sót chứng từ kho,1500000,VND,approved,2025-09-11T08:00:00+07:00,Approved after review.
-hr_event_00414,vmk0438,reward,2026-02-18,Tuân thủ an toàn xuất sắc,1750000,VND,approved,2026-02-20T08:00:00+07:00,Approved after review.
-hr_event_00415,vmk0457,reward,2025-07-02,Đạt kết quả chất lượng tốt,2000000,VND,pending,,
-hr_event_00416,vmk0476,reward,2026-12-11,Đạt kết quả chất lượng tốt,2250000,VND,rejected,2026-12-13T08:00:00+07:00,Rejected after review.
-hr_event_00417,vmk0495,discipline,2025-05-20,Không tuân thủ quy trình bàn giao ca,500000,VND,approved,2025-05-22T08:00:00+07:00,Approved after review.
-hr_event_00418,vmk0514,reward,2026-10-04,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-10-06T08:00:00+07:00,Approved after review.
-hr_event_00419,vmk0533,reward,2025-03-13,Tuân thủ an toàn xuất sắc,1000000,VND,pending,,
-hr_event_00420,vmk0552,reward,2026-08-22,Sáng kiến cải tiến quy trình,1250000,VND,rejected,2026-08-24T08:00:00+07:00,Rejected after review.
+hr_event_00408,vmk0324,reward,2026-08-14,Đạt kết quả chất lượng tốt,2250000,VND,approved,2026-08-16T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00409,vmk0343,discipline,2025-01-23,Không hoàn thành đào tạo bắt buộc,500000,VND,rejected,2025-01-25T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00410,vmk0362,reward,2026-06-07,Đạt kết quả chất lượng tốt,750000,VND,cancelled,,
+hr_event_00411,vmk0381,reward,2025-11-16,Hoàn thành vượt kế hoạch sản xuất,1000000,VND,draft,,
+hr_event_00412,vmk0400,reward,2026-04-25,Sáng kiến cải tiến quy trình,1250000,VND,pending,,
+hr_event_00413,vmk0419,discipline,2025-09-09,Sai sót chứng từ kho,1500000,VND,approved,2025-09-11T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00414,vmk0438,reward,2026-02-18,Tuân thủ an toàn xuất sắc,1750000,VND,rejected,2026-02-20T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00415,vmk0457,reward,2025-07-02,Đạt kết quả chất lượng tốt,2000000,VND,cancelled,,
+hr_event_00416,vmk0476,reward,2026-12-11,Đạt kết quả chất lượng tốt,2250000,VND,draft,,
+hr_event_00417,vmk0495,discipline,2025-05-20,Không tuân thủ quy trình bàn giao ca,500000,VND,pending,,
+hr_event_00418,vmk0514,reward,2026-10-04,Hoàn thành vượt kế hoạch sản xuất,750000,VND,approved,2026-10-06T08:00:00+07:00,Đã được phê duyệt sau khi kiểm tra.
+hr_event_00419,vmk0533,reward,2025-03-13,Tuân thủ an toàn xuất sắc,1000000,VND,rejected,2025-03-15T08:00:00+07:00,Không được phê duyệt sau khi kiểm tra.
+hr_event_00420,vmk0552,reward,2026-08-22,Sáng kiến cải tiến quy trình,1250000,VND,cancelled,,
+hr_event_2026_state_draft,vmk0001,reward,2026-10-15,Đề xuất khen thưởng đang chờ hoàn thiện hồ sơ.,1000000,VND,draft,,

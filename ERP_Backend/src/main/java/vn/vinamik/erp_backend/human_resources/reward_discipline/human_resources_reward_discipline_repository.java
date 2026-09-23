@@ -82,6 +82,17 @@ public class human_resources_reward_discipline_repository {
                 actor_user_id, record_id);
     }
 
+    public int cancel(long record_id, long actor_user_id) {
+        return jpa_query_executor.update(
+                "UPDATE hr.employee_reward_discipline SET status = 'cancelled', updated_at = now(), updated_by_user_id = ? WHERE employee_reward_discipline_id = ? AND status IN ('draft', 'pending')",
+                actor_user_id, record_id);
+    }
+
+    public int delete_draft(long record_id) {
+        return jpa_query_executor.update(
+                "DELETE FROM hr.employee_reward_discipline WHERE employee_reward_discipline_id = ? AND status = 'draft'",
+                record_id);
+    }
     public int submit(long record_id, long actor_user_id) {
         return jpa_query_executor.update(
                 "UPDATE hr.employee_reward_discipline SET status = 'pending', updated_at = now(), updated_by_user_id = ? "

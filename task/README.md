@@ -8,7 +8,7 @@ Backlog này chia việc thành các đầu việc nhỏ, độc lập để có
 2. `01-human-resources/`: hoàn thiện Quản lý nhân sự.
 3. `02-inventory-materials/`: hoàn thiện Quản lý kho và nguyên vật liệu.
 4. `03-production/`: hoàn thiện Quản lý sản xuất sau khi có dữ liệu nhân sự và tồn kho để tích hợp.
-5. `90-deferred-quality-cost/` và `91-deferred-data-reporting/`: chỉ giữ phạm vi và danh sách chức năng; chưa phân rã triển khai, bắt đầu sau khi ba module ưu tiên chạy xuyên suốt.
+5. quality_cost: đã được người dùng ưu tiên lại để triển khai MVP năm chức năng; data_reporting tiếp tục backlog cho đến khi có quyết định mới.
 
 ## Quy ước kiến trúc
 
@@ -17,7 +17,7 @@ Backlog này chia việc thành các đầu việc nhỏ, độc lập để có
 - Phần dùng chung nằm ở `common`/`platform`, không sao chép tiện ích qua các module. Đăng nhập, user/role/permission và audit là platform.
 - Mặc định người dùng chỉ xem được dữ liệu nếu chưa có quyền ghi. Kiểm tra quyền phải có ở backend; ẩn nút trên giao diện không thay thế được kiểm tra backend.
 - Chức năng hàng tồn kho chỉ cập nhật qua nghiệp vụ/sổ giao dịch kho. Sản xuất không được tự sửa số dư hoặc ghi thẳng bảng kho.
-- Mỗi module nghiệp vụ được chốt đúng năm nhóm chức năng trong file 00-module-scope.md. Không tự mở rộng phạm vi hoặc làm hai module deferred trước khi được ưu tiên lại.
+- Mỗi module nghiệp vụ được chốt đúng năm nhóm chức năng trong file 00-module-scope.md. Phạm vi quality_cost chỉ được triển khai theo quyết định ưu tiên lại của người dùng; data_reporting vẫn chưa triển khai.
 - Thiết kế CSDL chuẩn, chủ sở hữu bảng, quy tắc kiểu dữ liệu và hợp đồng tham chiếu nằm tại docs/database_design.md; không tạo schema song song theo cách diễn giải riêng của từng task.
 - Identifier CSDL, permission code và tên migration dùng tiếng Anh chữ thường theo snake_case; migration Flyway dùng prefix chữ thường v.
 
@@ -47,4 +47,6 @@ Các file deferred chưa phải yêu cầu làm ngay. Với mỗi task cần c�
 
 - Backend: xem 00-foundation/19-backend-coding-standards.md.
 - Frontend/UI/UX: xem 00-foundation/20-frontend-ui-ux-standard.md; hiệu suất/dữ liệu lớn: xem 00-foundation/21-frontend-performance-standard.md.
+- Icon và dải thao tác bản ghi: xem 00-foundation/22_frontend_action_icon_standard.md; roadmap chi tiết: xem docs/client_ui_ux_upgrade_plan.md.
+- Data workspace và bố cục riêng module: xem 00-foundation/23_data_workspace_module_composition.md.
 - Task cụ thể có thể bổ sung tiêu chí nhưng không được phá ranh giới module, quy ước ngôn ngữ hoặc quyền truy cập đã thống nhất.

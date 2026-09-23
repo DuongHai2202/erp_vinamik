@@ -7,6 +7,7 @@ import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,8 +34,10 @@ public class production_material_needs_service {
             throw new IllegalArgumentException("The production order has no material requirements.");
         }
         Map<Long, BigDecimal> available_quantities = stock_balance_contract.find_available_quantities(
-                requirements.stream().map(requirement -> requirement.material_stock_item_id()).toList());
-        List<material_need_response> items = requirements.stream().map(requirement -> {
+                requirements.stream().map(requirement -> requirement.material_stock_item_id()).distinct().toList());
+        Map<Long, production_material_needs_repository.requirement> aggregated_requirements =
+                aggregate_requirements(requirements);
+        List<material_need_response> items = aggregated_requirements.values().stream().map(requirement -> {
             BigDecimal available = normalize(available_quantities.getOrDefault(
                     requirement.material_stock_item_id(), BigDecimal.ZERO));
             BigDecimal required = normalize(requirement.required_quantity());
@@ -45,6 +48,19 @@ public class production_material_needs_service {
         }).toList();
         return new material_needs_response(order.production_order_id(), order.order_code(),
                 order.target_quantity(), items);
+    }
+
+    private Map<Long, production_material_needs_repository.requirement> aggregate_requirements(
+            List<production_material_needs_repository.requirement> requirements) {
+        Map<Long, production_material_needs_repository.requirement> aggregated = new LinkedHashMap<>();
+        for (production_material_needs_repository.requirement requirement : requirements) {
+            aggregated.merge(requirement.material_stock_item_id(), requirement,
+                    (current, incoming) -> new production_material_needs_repository.requirement(
+                            current.material_stock_item_id(), current.material_item_code(),
+                            current.material_item_name(), current.unit_code(),
+                            normalize(current.required_quantity()).add(normalize(incoming.required_quantity()))));
+        }
+        return aggregated;
     }
 
     private BigDecimal normalize(BigDecimal value) {

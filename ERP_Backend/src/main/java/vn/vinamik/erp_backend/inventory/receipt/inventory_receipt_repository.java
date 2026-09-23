@@ -45,6 +45,41 @@ public class inventory_receipt_repository {
         return receipt_id;
     }
 
+    public boolean idempotency_key_exists(String idempotency_key, Long receipt_id) {
+        Long count = receipt_id == null
+                ? jpa_query_executor.queryForObject("SELECT count(*) FROM inventory.receipt WHERE idempotency_key = ?", Long.class, idempotency_key)
+                : jpa_query_executor.queryForObject("SELECT count(*) FROM inventory.receipt WHERE idempotency_key = ? AND receipt_id <> ?", Long.class, idempotency_key, receipt_id);
+        return count != null && count > 0;
+    }
+
+    public int update_receipt(long receipt_id, String receipt_code, Long warehouse_id, Long supplier_id,
+                              String source_module, Long source_document_id, String reference_number,
+                              String idempotency_key, String notes, long actor_user_id) {
+        return jpa_query_executor.update(
+                "UPDATE inventory.receipt SET receipt_code = ?, warehouse_id = ?, supplier_id = ?, source_module = ?, source_document_id = ?, reference_number = ?, idempotency_key = ?, notes = ?, updated_at = now(), updated_by_user_id = ? WHERE receipt_id = ? AND status = 'draft'",
+                receipt_code, warehouse_id, supplier_id, source_module, source_document_id, reference_number,
+                idempotency_key, notes, actor_user_id, receipt_id);
+    }
+
+    public int delete_lines(long receipt_id) {
+        return jpa_query_executor.update("DELETE FROM inventory.receipt_line WHERE receipt_id = ?", receipt_id);
+    }
+
+    public int delete_draft(long receipt_id) {
+        return jpa_query_executor.update("DELETE FROM inventory.receipt WHERE receipt_id = ? AND status = 'draft'", receipt_id);
+    }
+
+    public int cancel(long receipt_id, long actor_user_id) {
+        return jpa_query_executor.update(
+                "UPDATE inventory.receipt SET status = 'cancelled', updated_at = now(), updated_by_user_id = ? WHERE receipt_id = ? AND status IN ('draft', 'pending')",
+                actor_user_id, receipt_id);
+    }
+    public int mark_pending(long receipt_id, long actor_user_id) {
+        return jpa_query_executor.update(
+                "UPDATE inventory.receipt SET status = 'pending', updated_at = now(), updated_by_user_id = ? WHERE receipt_id = ? AND status = 'draft'",
+                actor_user_id, receipt_id);
+    }
+
     public void insert_line(long receipt_id, int line_number, receipt_line_request line) {
         jpa_query_executor.update(
                 "INSERT INTO inventory.receipt_line (receipt_id, line_number, stock_item_id, warehouse_location_id, stock_lot_id, quantity) VALUES (?, ?, ?, ?, ?, ?)",

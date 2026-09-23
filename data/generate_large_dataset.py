@@ -251,23 +251,35 @@ def generate_human_resources() -> dict[str, list[dict]]:
             "hired_on_display": format_date_vi(hired_on),
             "terminated_on": terminated_on.isoformat() if terminated_on else "",
             "terminated_on_display": format_date_vi(terminated_on),
-            "notes": "Dữ liệu nhân sự tổng hợp phục vụ kiểm thử tải.",
+            "notes": "Hồ sơ đã được đối chiếu với thông tin tuyển dụng và đơn vị công tác.",
         })
         base_salary = job_title_salary[job_title_code] + (index % 8) * 750000
-        contract_status = "active" if employment_status in {"active", "on_leave"} else ("terminated" if employment_status == "terminated" else "expired")
+        contract_status = ("draft" if index in {0, 1} else ("cancelled" if index in {2, 3} else ("active" if employment_status in {"active", "on_leave"} else ("terminated" if employment_status == "terminated" else "expired"))))
+        # Keep a small, deterministic set of active fixed-term contracts inside
+        # the 15-day renewal window used by the contracts screen.  The dates
+        # are part of the 2026-09 fixture snapshot and make the warning filter
+        # testable without manufacturing records at runtime.
+        expiring_effective_to = {
+            4: "2026-09-30",
+            8: "2026-10-01",
+            12: "2026-10-03",
+            16: "2026-10-05",
+            20: "2026-10-08",
+        }
+        effective_to = expiring_effective_to.get(index, "") if contract_status == "active" else date(2025, 12, 31).isoformat()
         contract_rows.append({
             "contract_code": f"contract_2024_{employee_number:04d}",
             "employee_code": employee_code,
             "contract_type": "indefinite" if index % 4 else "fixed_term_36_months",
             "effective_from": max(hired_on, date(2024, 1, 1)).isoformat(),
-            "effective_to": "" if contract_status == "active" else date(2025, 12, 31).isoformat(),
+            "effective_to": effective_to,
             "base_salary": base_salary,
             "currency_code": "VND",
             "status": contract_status,
-            "notes": "Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.",
+            "notes": "Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.",
         })
     leave_types = [("annual_leave", True), ("sick_leave", True), ("personal_unpaid", False), ("maternity_leave", True), ("family_leave", True)]
-    leave_statuses = ["approved", "approved", "approved", "pending", "rejected", "cancelled"]
+    leave_statuses = ["draft", "pending", "approved", "rejected", "cancelled"]
     leave_rows = []
     for index in range(900):
         employee_index = (index * 17 + 23) % 570
@@ -284,14 +296,14 @@ def generate_human_resources() -> dict[str, list[dict]]:
             "reason": "Nghỉ theo kế hoạch đã đăng ký.",
             "status": status,
             "decided_at": iso_timestamp(starts_on - timedelta(days=3)) if status in {"approved", "rejected"} else "",
-            "decision_note": "Approved according to company policy." if status == "approved" else ("Request does not meet current policy." if status == "rejected" else ""),
+            "decision_note": "Đã được quản lý phê duyệt theo quy định nội bộ." if status == "approved" else ("Đề nghị chưa đáp ứng điều kiện phê duyệt." if status == "rejected" else ""),
         })
     reward_reasons = ["Hoàn thành vượt kế hoạch sản xuất", "Sáng kiến cải tiến quy trình", "Tuân thủ an toàn xuất sắc", "Đạt kết quả chất lượng tốt"]
     discipline_reasons = ["Không tuân thủ quy trình bàn giao ca", "Đi muộn nhiều lần", "Sai sót chứng từ kho", "Không hoàn thành đào tạo bắt buộc"]
     reward_rows = []
     for index in range(420):
         event_type = "reward" if index % 4 else "discipline"
-        status = ["approved", "approved", "pending", "rejected"][index % 4]
+        status = ["draft", "pending", "approved", "rejected", "cancelled"][index % 5]
         effective_on = date(2025 + index % 2, 1 + (index * 5 % 12), 1 + (index * 9 % 25))
         reward_rows.append({
             "record_code": f"hr_event_{index + 1:05d}",
@@ -303,7 +315,7 @@ def generate_human_resources() -> dict[str, list[dict]]:
             "currency_code": "VND",
             "status": status,
             "decided_at": iso_timestamp(effective_on + timedelta(days=2)) if status in {"approved", "rejected"} else "",
-            "decision_note": "Approved after review." if status == "approved" else ("Rejected after review." if status == "rejected" else ""),
+            "decision_note": "Đã được phê duyệt sau khi kiểm tra." if status == "approved" else ("Không được phê duyệt sau khi kiểm tra." if status == "rejected" else ""),
         })
     payroll_rows = []
     for month_value in range(1, 13):
@@ -316,8 +328,54 @@ def generate_human_resources() -> dict[str, list[dict]]:
             "ends_on": ends_on.isoformat(),
             "standard_working_days": standard_days,
             "calculation_version": "monthly_mon_sat_v1",
-            "status": "draft",
+            "status": ["draft", "calculated", "approved", "rejected", "locked"][month_value % 5],
         })
+    # Keep explicit lifecycle examples so the list contains several editable
+    # drafts in addition to the generated historical statuses.
+    contract_rows.extend([
+        {
+            "contract_code": "contract_2026_state_draft", "employee_code": "vmk0591",
+            "contract_type": "fixed_term_12_months", "effective_from": "2026-01-01",
+            "effective_to": "2026-12-31", "base_salary": 18500000, "currency_code": "VND",
+            "status": "draft", "notes": "Hợp đồng chờ hoàn thiện hồ sơ và phê duyệt.",
+        },
+        {
+            "contract_code": "contract_2026_state_cancelled", "employee_code": "vmk0592",
+            "contract_type": "fixed_term_12_months", "effective_from": "2026-01-01",
+            "effective_to": "2026-12-31", "base_salary": 17250000, "currency_code": "VND",
+            "status": "cancelled", "notes": "Hợp đồng đã hủy theo yêu cầu nghiệp vụ.",
+        },
+        {
+            "contract_code": "contract_2026_state_draft_0002", "employee_code": "vmk0592",
+            "contract_type": "fixed_term_12_months", "effective_from": "2026-10-01",
+            "effective_to": "2027-09-30", "base_salary": 18500000, "currency_code": "VND",
+            "status": "draft", "notes": "Hồ sơ tái ký đang chờ bổ sung giấy tờ và phê duyệt.",
+        },
+        {
+            "contract_code": "contract_2026_state_draft_0003", "employee_code": "vmk0593",
+            "contract_type": "fixed_term_12_months", "effective_from": "2026-10-01",
+            "effective_to": "2027-09-30", "base_salary": 19250000, "currency_code": "VND",
+            "status": "draft", "notes": "Bản nháp hợp đồng chờ đối chiếu thông tin nhân viên.",
+        },
+        {
+            "contract_code": "contract_2026_state_draft_0004", "employee_code": "vmk0594",
+            "contract_type": "fixed_term_12_months", "effective_from": "2026-10-01",
+            "effective_to": "2027-09-30", "base_salary": 20000000, "currency_code": "VND",
+            "status": "draft", "notes": "Bản nháp hợp đồng chờ người lao động xác nhận.",
+        },
+    ])
+    leave_rows.append({
+        "request_code": "leave_2026_state_draft", "employee_code": "vmk0001",
+        "leave_type_code": "annual_leave", "starts_on": "2026-11-10", "ends_on": "2026-11-12",
+        "is_paid": "true", "reason": "Đơn nghỉ đang được hoàn thiện.", "status": "draft",
+        "decided_at": "", "decision_note": "",
+    })
+    reward_rows.append({
+        "record_code": "hr_event_2026_state_draft", "employee_code": "vmk0001",
+        "event_type": "reward", "effective_on": "2026-10-15",
+        "reason": "Đề xuất khen thưởng đang chờ hoàn thiện hồ sơ.", "amount": 1000000,
+        "currency_code": "VND", "status": "draft", "decided_at": "", "decision_note": "",
+    })
     return {
         "departments": [{"department_code": code, "department_name": name, "parent_department_code": parent} for code, name, parent in department_specs],
         "job_titles": [{"job_title_code": code, "job_title_name": name, "base_salary_reference": salary} for code, name, salary in job_title_specs],
@@ -343,11 +401,27 @@ def generate_inventory() -> dict[str, list[dict]]:
         {"category_code": "finished_product", "category_name": "Thành phẩm"},
     ]
     provinces = ["Thành phố Hồ Chí Minh", "Bình Dương", "Đồng Nai", "Long An", "Hà Nội", "Bắc Ninh", "Đà Nẵng", "Cần Thơ"]
-    supplier_specialties = ["Nguyên liệu sữa", "Bao bì thực phẩm", "Vitamin và khoáng chất", "Trái cây cô đặc", "Men vi sinh", "Đường thực phẩm"]
+    supplier_name_templates = [
+        "Công ty TNHH Nguyên liệu An Phú", "Công ty Cổ phần Bao bì Minh Thành",
+        "Công ty TNHH Dinh dưỡng Việt Phát", "Công ty Cổ phần Hương liệu Nam Việt",
+        "Công ty TNHH Men vi sinh Hưng Thịnh", "Công ty Cổ phần Đường thực phẩm Đại Nam",
+        "Công ty TNHH Nguyên liệu Thành Công", "Công ty Cổ phần Bao bì Tân Hòa",
+        "Công ty TNHH Khoáng chất Bình Minh", "Công ty Cổ phần Nông sản Phú Gia",
+        "Công ty TNHH Công nghệ thực phẩm Đông Á", "Công ty Cổ phần Vật tư Sữa Việt",
+        "Công ty TNHH Hương liệu An Khang", "Công ty Cổ phần Bao bì Hòa Bình",
+        "Công ty TNHH Phụ gia Thực phẩm Thành Đạt", "Công ty Cổ phần Nông sản Mekong",
+        "Công ty TNHH Dịch vụ Kho vận Nam Phương", "Công ty Cổ phần Vật liệu Đóng gói Việt",
+        "Công ty TNHH Nguyên liệu Thịnh Phát", "Công ty Cổ phần Dinh dưỡng An Việt",
+        "Công ty TNHH Sản xuất Bao bì Phúc An", "Công ty Cổ phần Hương liệu Việt Hưng",
+        "Công ty TNHH Thực phẩm Xanh Sài Gòn", "Công ty Cổ phần Nguyên liệu Hòa Phú",
+        "Công ty TNHH Vật tư Công nghiệp Đại Việt", "Công ty Cổ phần Chất lượng Tân Minh",
+        "Công ty TNHH Cung ứng Nguyên liệu Phương Nam", "Công ty Cổ phần Bao bì Việt Thành",
+        "Công ty TNHH Dịch vụ Kỹ thuật Sữa Việt", "Công ty Cổ phần Chuỗi cung ứng Minh An",
+    ]
     supplier_rows = [{
         "supplier_code": f"supplier_{index + 1:03d}",
-        "supplier_name": f"Nhà cung cấp {supplier_specialties[index % len(supplier_specialties)]} {index + 1:02d}",
-        "phone_number": "",
+        "supplier_name": supplier_name_templates[index],
+        "phone_number": employee_phone_number(700 + index),
         "email": f"supplier.{index + 1:03d}@vinamilk.test",
         "address": provinces[index % len(provinces)],
         "status": "active" if index < 27 else "inactive",
@@ -379,7 +453,7 @@ def generate_inventory() -> dict[str, list[dict]]:
             "lot_controlled": str(category_code != "packaging").lower(),
             "minimum_stock_quantity": 500 if unit_code != "piece" else 5000,
             "status": "active" if index < 310 else "inactive",
-            "description": "Danh mục nguyên liệu tổng hợp theo nghiệp vụ doanh nghiệp sữa.",
+            "description": "Mặt hàng được theo dõi theo đơn vị tính và lô trong quy trình kho.",
         })
     package_variants = ["110 ml", "180 ml", "220 ml", "400 ml", "Thùng tiêu chuẩn"]
     for product_index, (product_name, product_category, brand, source_url) in enumerate(product_references):
@@ -421,6 +495,7 @@ def generate_inventory() -> dict[str, list[dict]]:
         receipt_code = f"receipt_2025_{index + 1:05d}"
         warehouse_code = warehouse_specs[index % len(warehouse_specs)][0]
         receipt_day = date(2025 + index % 2, 1 + (index * 5 % 12), 1 + (index * 11 % 24))
+        receipt_status = ["draft", "pending", "posted", "cancelled"][index % 4]
         receipt_rows.append({
             "receipt_code": receipt_code,
             "warehouse_code": warehouse_code,
@@ -428,10 +503,10 @@ def generate_inventory() -> dict[str, list[dict]]:
             "source_module": "",
             "source_document_code": "",
             "reference_number": f"purchase_order_{2025 + index % 2}_{index + 1:05d}",
-            "status": "posted",
+            "status": receipt_status,
             "idempotency_key": f"receipt_{2025 + index % 2}_{index + 1:05d}",
             "posted_at": iso_timestamp(receipt_day, 9),
-            "notes": "Phiếu nhập dữ liệu tải lớn.",
+            "notes": "Nhập hàng theo kế hoạch cung ứng nguyên liệu.",
         })
         for line_index in range(3):
             item = stock_item_rows[(index * 3 + line_index) % len(stock_item_rows)]
@@ -447,40 +522,46 @@ def generate_inventory() -> dict[str, list[dict]]:
                 "lot_code": lot_code,
                 "quantity": quantity,
             })
-            stock_seed_entries.append({"item_code": item["item_code"], "warehouse_code": warehouse_code, "location_code": location_code, "lot_code": lot_code, "quantity": quantity})
-            stock_movements.append({
-                "source_document_type": "receipt",
-                "source_document_code": receipt_code,
-                "source_document_line_number": line_index + 1,
-                "movement_leg": "single",
-                "movement_type": "receipt",
-                "item_code": item["item_code"],
-                "location_code": location_code,
-                "lot_code": lot_code,
-                "quantity_delta": quantity,
-                "idempotency_key": f"receipt_post_{index + 1:05d}_{line_index + 1}",
-            })
-            add_balance(balance_map, item["item_code"], location_code, lot_code, quantity)
+            if receipt_status == "posted":
+                stock_seed_entries.append({"item_code": item["item_code"], "warehouse_code": warehouse_code, "location_code": location_code, "lot_code": lot_code, "quantity": quantity})
+                stock_movements.append({
+                    "source_document_type": "receipt",
+                    "source_document_code": receipt_code,
+                    "source_document_line_number": line_index + 1,
+                    "movement_leg": "single",
+                    "movement_type": "receipt",
+                    "item_code": item["item_code"],
+                    "location_code": location_code,
+                    "lot_code": lot_code,
+                    "quantity_delta": quantity,
+                    "idempotency_key": f"receipt_post_{index + 1:05d}_{line_index + 1}",
+                })
+                add_balance(balance_map, item["item_code"], location_code, lot_code, quantity)
     raw_item_codes = {item["item_code"] for item in stock_item_rows[:320]}
     raw_stock_seed_entries = [entry for entry in stock_seed_entries if entry["item_code"] in raw_item_codes]
+    raw_stock_entries_by_warehouse = defaultdict(list)
+    for entry in raw_stock_seed_entries:
+        raw_stock_entries_by_warehouse[entry["warehouse_code"]].append(entry)
     issue_rows = []
     issue_line_rows = []
     for index in range(420):
         issue_code = f"issue_2026_{index + 1:05d}"
         first_candidate = raw_stock_seed_entries[(index * 2) % len(raw_stock_seed_entries)]
+        warehouse_candidates = raw_stock_entries_by_warehouse[first_candidate["warehouse_code"]]
+        issue_status = ["draft", "pending", "posted", "cancelled"][index % 4]
         issue_rows.append({
             "issue_code": issue_code,
             "warehouse_code": first_candidate["warehouse_code"],
             "source_module": "production",
             "source_document_code": f"production_order_2026_{index + 1:05d}",
             "reason_code": "production_consumption",
-            "status": "posted",
+            "status": issue_status,
             "idempotency_key": f"issue_2026_{index + 1:05d}",
             "posted_at": iso_timestamp(date(2026, 1 + (index * 7 % 9), 1 + (index * 13 % 24)), 7),
             "notes": "Xuất nguyên liệu cho sản xuất.",
         })
         for line_index in range(2):
-            candidate = raw_stock_seed_entries[(index * 2 + line_index) % len(raw_stock_seed_entries)]
+            candidate = warehouse_candidates[(index + line_index) % len(warehouse_candidates)]
             quantity = 10 + ((index + line_index * 3) % 40)
             issue_line_rows.append({
                 "issue_code": issue_code,
@@ -490,19 +571,20 @@ def generate_inventory() -> dict[str, list[dict]]:
                 "lot_code": candidate["lot_code"],
                 "quantity": quantity,
             })
-            stock_movements.append({
-                "source_document_type": "issue",
-                "source_document_code": issue_code,
-                "source_document_line_number": line_index + 1,
-                "movement_leg": "single",
-                "movement_type": "issue",
-                "item_code": candidate["item_code"],
-                "location_code": candidate["location_code"],
-                "lot_code": candidate["lot_code"],
-                "quantity_delta": -quantity,
-                "idempotency_key": f"issue_post_{index + 1:05d}_{line_index + 1}",
-            })
-            add_balance(balance_map, candidate["item_code"], candidate["location_code"], candidate["lot_code"], -quantity)
+            if issue_status == "posted":
+                stock_movements.append({
+                    "source_document_type": "issue",
+                    "source_document_code": issue_code,
+                    "source_document_line_number": line_index + 1,
+                    "movement_leg": "single",
+                    "movement_type": "issue",
+                    "item_code": candidate["item_code"],
+                    "location_code": candidate["location_code"],
+                    "lot_code": candidate["lot_code"],
+                    "quantity_delta": -quantity,
+                    "idempotency_key": f"issue_post_{index + 1:05d}_{line_index + 1}",
+                })
+                add_balance(balance_map, candidate["item_code"], candidate["location_code"], candidate["lot_code"], -quantity)
     transfer_rows = []
     transfer_line_rows = []
     for index in range(250):
@@ -514,11 +596,12 @@ def generate_inventory() -> dict[str, list[dict]]:
         transfer_code = f"transfer_2026_{index + 1:05d}"
         quantity = 5 + index % 20
         destination_location_code = locations_by_warehouse[destination_warehouse_code][index % 10]
+        transfer_status = ["draft", "pending", "posted", "cancelled"][index % 4]
         transfer_rows.append({
             "transfer_code": transfer_code,
             "source_warehouse_code": source_warehouse_code,
             "destination_warehouse_code": destination_warehouse_code,
-            "status": "posted",
+            "status": transfer_status,
             "idempotency_key": f"transfer_2026_{index + 1:05d}",
             "posted_at": iso_timestamp(date(2026, 1 + (index * 3 % 9), 1 + (index * 7 % 24)), 13),
             "notes": "Điều chuyển cân đối tồn kho.",
@@ -532,20 +615,82 @@ def generate_inventory() -> dict[str, list[dict]]:
             "destination_location_code": destination_location_code,
             "quantity": quantity,
         })
-        for movement_leg, location_code, signed_quantity in [("source", candidate["location_code"], -quantity), ("destination", destination_location_code, quantity)]:
-            stock_movements.append({
-                "source_document_type": "transfer",
-                "source_document_code": transfer_code,
-                "source_document_line_number": 1,
-                "movement_leg": movement_leg,
-                "movement_type": "transfer",
-                "item_code": candidate["item_code"],
-                "location_code": location_code,
-                "lot_code": candidate["lot_code"],
-                "quantity_delta": signed_quantity,
-                "idempotency_key": f"transfer_post_{index + 1:05d}_{movement_leg}",
-            })
-            add_balance(balance_map, candidate["item_code"], location_code, candidate["lot_code"], signed_quantity)
+        if transfer_status == "posted":
+            for movement_leg, location_code, signed_quantity in [("source", candidate["location_code"], -quantity), ("destination", destination_location_code, quantity)]:
+                stock_movements.append({
+                    "source_document_type": "transfer",
+                    "source_document_code": transfer_code,
+                    "source_document_line_number": 1,
+                    "movement_leg": movement_leg,
+                    "movement_type": "transfer",
+                    "item_code": candidate["item_code"],
+                    "location_code": location_code,
+                    "lot_code": candidate["lot_code"],
+                    "quantity_delta": signed_quantity,
+                    "idempotency_key": f"transfer_post_{index + 1:05d}_{movement_leg}",
+                })
+                add_balance(balance_map, candidate["item_code"], location_code, candidate["lot_code"], signed_quantity)
+    # Add three isolated status examples per transaction type. They use the
+    # same valid item/location references but do not affect stock balances until
+    # a user explicitly posts the document.
+    example = raw_stock_seed_entries[0]
+    for state in ("draft", "pending", "cancelled"):
+        receipt_code = f"receipt_2026_state_{state}"
+        receipt_rows.append({
+            "receipt_code": receipt_code, "warehouse_code": example["warehouse_code"],
+            "supplier_code": "supplier_001", "source_module": "", "source_document_code": "",
+            "reference_number": f"purchase_order_state_{state}", "status": state,
+            "idempotency_key": f"receipt_state_{state}", "posted_at": "",
+            "notes": f"Phiếu nhập ở trạng thái {state}.",
+        })
+        receipt_line_rows.append({
+            "receipt_code": receipt_code, "line_number": 1, "item_code": example["item_code"],
+            "location_code": example["location_code"], "lot_code": example["lot_code"], "quantity": 100,
+        })
+        issue_code = f"issue_2026_state_{state}"
+        issue_rows.append({
+            "issue_code": issue_code, "warehouse_code": example["warehouse_code"],
+            "source_module": "", "source_document_code": "", "reason_code": "inventory_review",
+            "status": state, "idempotency_key": f"issue_state_{state}", "posted_at": "",
+            "notes": f"Phiếu xuất ở trạng thái {state}.",
+        })
+        issue_line_rows.append({
+            "issue_code": issue_code, "line_number": 1, "item_code": example["item_code"],
+            "location_code": example["location_code"], "lot_code": example["lot_code"], "quantity": 1,
+        })
+        transfer_code = f"transfer_2026_state_{state}"
+        destination = warehouse_specs[1][0] if warehouse_specs[1][0] != example["warehouse_code"] else warehouse_specs[2][0]
+        destination_location = locations_by_warehouse[destination][0]
+        transfer_rows.append({
+            "transfer_code": transfer_code, "source_warehouse_code": example["warehouse_code"],
+            "destination_warehouse_code": destination, "status": state,
+            "idempotency_key": f"transfer_state_{state}", "posted_at": "",
+            "notes": f"Phiếu điều chuyển ở trạng thái {state}.",
+        })
+        transfer_line_rows.append({
+            "transfer_code": transfer_code, "line_number": 1, "item_code": example["item_code"],
+            "lot_code": example["lot_code"], "source_location_code": example["location_code"],
+            "destination_location_code": destination_location, "quantity": 1,
+        })
+    # A stocktake is a warehouse-owned session.  The API snapshots balances
+    # when the session is created, so the fixture only carries the header and
+    # lets the loader create real stocktake lines from the current ledger.
+    # Keep one session per warehouse so the active-session rule remains valid.
+    stocktake_statuses = [
+        ("wh_raw_south", "counting"),
+        ("wh_raw_north", "submitted"),
+        ("wh_finished_south", "approved"),
+        ("wh_finished_north", "posted"),
+        ("wh_cold", "cancelled"),
+        ("wh_packaging", "counting"),
+    ]
+    stocktake_rows = [{
+        "stocktake_code": f"stocktake_2026_{index + 1:02d}_{warehouse_code}",
+        "warehouse_code": warehouse_code,
+        "status": status,
+        "notes": f"Phiên kiểm kê định kỳ tháng {index + 1:02d}/2026; đối chiếu số đếm thực tế với sổ tồn.",
+    } for index, (warehouse_code, status) in enumerate(stocktake_statuses)]
+
     return {
         "categories": category_rows,
         "suppliers": supplier_rows,
@@ -559,6 +704,7 @@ def generate_inventory() -> dict[str, list[dict]]:
         "issue_lines": issue_line_rows,
         "transfers": transfer_rows,
         "transfer_lines": transfer_line_rows,
+        "stocktakes": stocktake_rows,
         "stock_movements": stock_movements,
         "stock_balances": [],
         "_balance_map": balance_map,
@@ -585,7 +731,7 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
             "starts_on": starts_on.isoformat(),
             "ends_on": (starts_on + timedelta(days=6)).isoformat(),
             "status": ["approved", "released", "completed", "draft"][index % 4],
-            "notes": "Kế hoạch dữ liệu tải lớn.",
+            "notes": "Kế hoạch lập theo nhu cầu phân phối, tồn an toàn và năng lực dây chuyền.",
         })
         for line_index in range(2):
             product = finished_items[(index * 2 + line_index) % len(finished_items)]
@@ -596,7 +742,7 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
                 "unit_code": "piece",
                 "target_quantity": 10000 + ((index * 211 + line_index * 1000) % 30000),
                 "required_on": (starts_on + timedelta(days=5 + line_index)).isoformat(),
-                "notes": "Sản lượng kế hoạch theo tuần.",
+                "notes": "Sản lượng kế hoạch theo nhu cầu phân phối và lịch dây chuyền.",
             })
     bom_rows = []
     bom_line_rows = []
@@ -612,7 +758,7 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
             "valid_from": "2025-01-01",
             "valid_to": "",
             "status": "active",
-            "notes": "Định mức mô phỏng cho một nghìn đơn vị thành phẩm.",
+            "notes": "Định mức nguyên liệu chuẩn cho một nghìn đơn vị thành phẩm.",
         })
         bom_lines_by_item[product["item_code"]] = []
         for line_index in range(5):
@@ -628,7 +774,7 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
                 "unit_code": material["unit_code"],
                 "quantity_per_base": 30 + ((index * 13 + line_index * 29) % 700),
                 "scrap_percent": [0.5, 1.0, 1.5, 2.0, 0.0][line_index],
-                "notes": "Định mức nguyên liệu theo mẻ chuẩn.",
+                "notes": "Định mức nguyên liệu đã phê duyệt theo mẻ chuẩn.",
             })
     order_rows = []
     requirement_rows = []
@@ -659,7 +805,7 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
             "planned_ends_on": (planned_start + timedelta(days=2)).isoformat(),
             "production_line_name": f"Dây chuyền {index % 12 + 1:02d}",
             "status": order_status,
-            "notes": "Lệnh sản xuất dữ liệu tải lớn.",
+            "notes": "Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.",
         })
         for line_index, bom_line_code in enumerate(bom_lines_by_item[plan_line["item_code"]]):
             bom_line = next(row for row in bom_line_rows if row["bom_line_code"] == bom_line_code)
@@ -678,25 +824,27 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
             {"order_code": order_code, "event_type": "status_changed", "previous_status": "draft", "new_status": order_status, "note": "Tạo và cập nhật lệnh theo kế hoạch.", "occurred_at": iso_timestamp(planned_start - timedelta(days=1), 8), "idempotency_key": f"order_event_status_{index + 1:05d}"},
             {"order_code": order_code, "event_type": "progress_note", "previous_status": order_status, "new_status": order_status, "note": "Đã cập nhật tiến độ ca sản xuất.", "occurred_at": iso_timestamp(planned_start + timedelta(days=1), 16), "idempotency_key": f"order_event_progress_{index + 1:05d}"},
         ])
-        assignment_count = 1 if index % 2 else 2
-        for assignment_index in range(assignment_count):
-            employee_code = production_employee_codes[(index * 3 + assignment_index) % len(production_employee_codes)]
-            shift_code, _, start_text, _ = shift_specs[(index + assignment_index) % len(shift_specs)]
-            start_hour = int(start_text[:2])
-            start_datetime = datetime.combine(planned_start, time(start_hour), tzinfo=utc_plus_seven)
-            assignment_rows.append({
-                "order_code": order_code,
-                "employee_code": employee_code,
-                "shift_code": shift_code,
-                "assignment_name": ["Vận hành thiết bị", "Kiểm soát đóng gói", "Bàn giao ca"][(index + assignment_index) % 3],
-                "starts_at": start_datetime.isoformat(),
-                "ends_at": (start_datetime + timedelta(hours=8)).isoformat(),
-                "status": "completed" if order_status == "completed" else ("active" if order_status == "in_progress" else "planned"),
-                "notes": "Phân công theo ca sản xuất.",
-            })
+        if order_status != "completed":
+            assignment_count = 1 if index % 2 else 2
+            for assignment_index in range(assignment_count):
+                employee_code = production_employee_codes[(index * 3 + assignment_index) % len(production_employee_codes)]
+                shift_code, _, start_text, _ = shift_specs[(index + assignment_index) % len(shift_specs)]
+                start_hour = int(start_text[:2])
+                start_datetime = datetime.combine(planned_start, time(start_hour), tzinfo=utc_plus_seven)
+                assignment_rows.append({
+                    "order_code": order_code,
+                    "employee_code": employee_code,
+                    "shift_code": shift_code,
+                    "assignment_name": ["Vận hành thiết bị", "Kiểm soát đóng gói", "Bàn giao ca"][(index + assignment_index) % 3],
+                    "starts_at": start_datetime.isoformat(),
+                    "ends_at": (start_datetime + timedelta(hours=8)).isoformat(),
+                    "status": ("cancelled" if index % 29 == 0 else ("completed" if index % 17 == 0 else ("active" if order_status == "in_progress" else "planned"))),
+                    "notes": "Phân công nhân sự theo ca và khu vực dây chuyền.",
+                })
         issue_code = f"issue_2026_{index % 420 + 1:05d}"
-        for consumption_index, issue_line in enumerate(issue_line_rows_by_order[issue_code][:2]):
-            consumption_rows.append({
+        if order_status in {"released", "in_progress", "paused"}:
+            for consumption_index, issue_line in enumerate(issue_line_rows_by_order[issue_code][:2]):
+                consumption_rows.append({
                 "order_code": order_code,
                 "material_item_code": issue_line["item_code"],
                 "inventory_issue_code": issue_code,
@@ -705,10 +853,10 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
                 "consumed_quantity": round(float(issue_line["quantity"]) * (0.92 + (index % 5) * 0.01), 6),
                 "consumed_at": iso_timestamp(planned_start + timedelta(days=1), 10 + consumption_index),
                 "idempotency_key": f"material_consumption_{index + 1:05d}_{consumption_index + 1}",
-                "notes": "Tiêu hao thực tế đối chiếu với phiếu xuất.",
+                "notes": "Tiêu hao thực tế đã đối chiếu với phiếu xuất vật tư.",
             })
         manufactured_on = planned_start + timedelta(days=1)
-        output_status = "received" if index < 300 else ("pending_receipt" if index < 480 else "draft")
+        output_status = "failed" if 570 <= index < 580 else ("cancelled" if index >= 580 else ("received" if index < 300 else ("pending_receipt" if index < 480 else "draft")))
         lot_code = f"production_lot_2026_{index + 1:05d}"
         warehouse_code = "wh_finished_south" if index % 2 == 0 else "wh_finished_north"
         location_code = inventory_data["_locations_by_warehouse"][warehouse_code][index % 10]
@@ -719,14 +867,14 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
             "lot_code": lot_code,
             "manufactured_on": manufactured_on.isoformat(),
             "expires_on": (manufactured_on + timedelta(days=240)).isoformat(),
-            "good_quantity": 1800 + (index * 101 % 7000),
-            "defective_quantity": index % 17,
+            "good_quantity": min(1800 + (index * 101 % 7000), 2000 + (index * 137 % 8000) - (index % 17)),
+            "defective_quantity": min(index % 17, 2000 + (index * 137 % 8000) - min(1800 + (index * 101 % 7000), 2000 + (index * 137 % 8000))),
             "status": output_status,
             "idempotency_key": f"production_output_{index + 1:05d}",
             "inventory_receipt_code": receipt_code,
             "warehouse_code": warehouse_code,
             "location_code": location_code,
-            "notes": "Sản lượng thành phẩm theo lô.",
+            "notes": "Sản lượng đạt và lỗi đã đối chiếu với biên bản ca.",
         })
         if output_status == "received":
             inventory_data["lots"].append({"item_code": plan_line["item_code"], "lot_code": lot_code, "manufactured_on": manufactured_on.isoformat(), "expires_on": (manufactured_on + timedelta(days=240)).isoformat(), "status": "active"})
@@ -784,11 +932,137 @@ def write_collection(directory_name: str, collection_name: str, rows: list[dict]
     write_csv(f"{directory_name}/{collection_name}.csv", list(rows[0]), rows)
 
 
+
+def generate_quality_cost(production_data: dict[str, list[dict]], inventory_data: dict[str, list[dict]]) -> dict[str, list[dict]]:
+    """Generate quality and cost records linked to the production and inventory fixture."""
+    item_by_code = {row["item_code"]: row for row in inventory_data["stock_items"]}
+    output_rows = production_data["outputs"]
+    defect_codes = [
+        ("appearance", "Ngoại quan không đạt"),
+        ("seal_integrity", "Độ kín bao bì không đạt"),
+        ("net_weight", "Khối lượng tịnh lệch chuẩn"),
+        ("microbiology", "Chỉ tiêu vi sinh cần xử lý"),
+        ("label_information", "Thông tin nhãn cần điều chỉnh"),
+    ]
+    rules: list[dict] = []
+    periods: list[dict] = []
+    for month_value in range(1, 13):
+        rules.append({
+            "rule_code": f"fixture_cost_rule_2026_{month_value:02d}",
+            "material_valuation_method": "weighted_average",
+            "labor_basis": "actual_hours",
+            "overhead_basis": "good_quantity",
+            "defective_policy": "exclude_from_good",
+            "effective_from": month_start(2026, month_value).isoformat(),
+            "effective_to": month_end(2026, month_value).isoformat(),
+            "currency_code": "VND",
+            "rounding_scale": 2,
+            "notes": f"Quy tắc tính giá thành theo chi phí thực tế tháng {month_value:02d}/2026.",
+        })
+        periods.append({
+            "period_code": f"fixture_cost_period_2026_{month_value:02d}",
+            "starts_on": month_start(2026, month_value).isoformat(),
+            "ends_on": month_end(2026, month_value).isoformat(),
+            "rule_code": f"fixture_cost_rule_2026_{month_value:02d}",
+            "target_status": ["draft", "open", "calculating", "calculated", "approved", "locked", "cancelled"][(month_value - 1) % 7],
+            "notes": f"Kỳ giá thành tháng {month_value:02d}/2026, đã đối chiếu nguồn Kho và Sản xuất.",
+        })
+    inspections: list[dict] = []
+    nonconformances: list[dict] = []
+    calculations: list[dict] = []
+    price_proposals: list[dict] = []
+    inspection_statuses = ["draft", "submitted", "passed", "failed", "held", "released", "cancelled"]
+    nonconformance_statuses = ["open", "in_progress", "resolved", "cancelled"]
+    price_statuses = ["draft", "pending", "approved", "rejected", "published", "cancelled"]
+    for index, output in enumerate(output_rows[:125]):
+        order_code = output["order_code"]
+        item = item_by_code[output["item_code"]]
+        good_quantity = float(output["good_quantity"])
+        defective_quantity = float(output["defective_quantity"])
+        inspected_quantity = round(good_quantity + defective_quantity + 25 + (index % 8) * 5, 6)
+        month_value = index % 12 + 1
+        inspection_code = f"fixture_quality_inspection_2026_{index + 1:05d}"
+        inspection_target = inspection_statuses[index % len(inspection_statuses)]
+        inspections.append({
+            "inspection_code": inspection_code,
+            "production_order_code": order_code,
+            "production_output_code": output["idempotency_key"],
+            "stock_item_code": item["item_code"],
+            "lot_code": output["lot_code"],
+            "inspected_quantity": f"{inspected_quantity:.6f}",
+            "good_quantity": f"{good_quantity:.6f}",
+            "defective_quantity": f"{defective_quantity:.6f}",
+            "inspected_on": output["manufactured_on"],
+            "target_status": inspection_target,
+            "notes": "Biên bản kiểm tra chất lượng đầu ra đã đối chiếu với lô sản xuất.",
+        })
+        if defective_quantity > 0:
+            defect_code, defect_label = defect_codes[index % len(defect_codes)]
+            nonconformance_status = nonconformance_statuses[index % len(nonconformance_statuses)]
+            nonconformances.append({
+                "nonconformance_code": f"fixture_nonconformance_2026_{index + 1:05d}",
+                "inspection_code": inspection_code,
+                "defect_code": defect_code,
+                "defect_label": defect_label,
+                "quantity": f"{defective_quantity:.6f}",
+                "disposition": ["hold", "rework", "scrap", "return"][index % 4],
+                "target_status": nonconformance_status,
+                "notes": f"{defect_label}; đã mở phiếu xử lý theo quy trình chất lượng.",
+            })
+        material_cost = round(good_quantity * (1200 + (index % 7) * 85), 2)
+        direct_labor_cost = round(good_quantity * (180 + (index % 5) * 15), 2)
+        overhead_cost = round(good_quantity * (140 + (index % 4) * 20), 2)
+        adjustment_amount = round(-good_quantity * 3 if index % 10 == 0 else good_quantity * 2, 2)
+        total_cost = round(material_cost + direct_labor_cost + overhead_cost + adjustment_amount, 2)
+        unit_cost = round(total_cost / good_quantity, 6) if good_quantity else 0
+        calculation_code = f"fixture_calculation_2026_{index + 1:05d}"
+        calculation_target = ["calculated", "approved", "locked", "cancelled"][index % 4]
+        calculations.append({
+            "calculation_code": calculation_code,
+            "period_code": f"fixture_cost_period_2026_{month_value:02d}",
+            "production_order_code": order_code,
+            "stock_item_code": item["item_code"],
+            "stock_item_name": item["item_name"],
+            "good_quantity": f"{good_quantity:.6f}",
+            "material_cost": f"{material_cost:.2f}",
+            "direct_labor_cost": f"{direct_labor_cost:.2f}",
+            "overhead_cost": f"{overhead_cost:.2f}",
+            "adjustment_amount": f"{adjustment_amount:.2f}",
+            "total_cost": f"{total_cost:.2f}",
+            "unit_cost": f"{unit_cost:.6f}",
+            "target_status": calculation_target,
+            "notes": f"Mã kiểm tra {calculation_code}; phân bổ theo sản lượng đạt và chi phí thực tế.",
+        })
+        margin_percent = float(8 + (index % 8) * 2)
+        proposed_price = round(unit_cost * (1 + margin_percent / 100), 2)
+        price_proposals.append({
+            "proposal_code": f"fixture_price_proposal_2026_{index + 1:05d}",
+            "period_code": f"fixture_cost_period_2026_{month_value:02d}",
+            "stock_item_code": item["item_code"],
+            "stock_item_name": item["item_name"],
+            "unit_cost": f"{unit_cost:.6f}",
+            "margin_percent": f"{margin_percent:.4f}",
+            "proposed_price": f"{proposed_price:.2f}",
+            "effective_on": month_end(2026, month_value).isoformat(),
+            "currency_code": "VND",
+            "target_status": price_statuses[index % len(price_statuses)],
+            "notes": "Đề xuất giá bán tham chiếu từ giá thành đơn vị và biên lợi nhuận kế hoạch.",
+        })
+    return {
+        "cost_rules": rules,
+        "cost_periods": periods,
+        "inspections": inspections,
+        "nonconformances": nonconformances,
+        "calculations": calculations,
+        "price_proposals": price_proposals,
+    }
+
 def main() -> None:
     human_resources_data = generate_human_resources()
     inventory_data = generate_inventory()
     production_data = generate_production(human_resources_data, inventory_data)
     finalize_inventory(inventory_data)
+    quality_cost_data = generate_quality_cost(production_data, inventory_data)
 
     write_csv("reference/vinamilk_product_catalog.csv", ["product_name", "product_category", "brand", "source_url"], [
         {"product_name": row[0], "product_category": row[1], "brand": row[2], "source_url": row[3]} for row in product_references
@@ -800,6 +1074,8 @@ def main() -> None:
             write_collection("inventory", collection_name, rows)
     for collection_name, rows in production_data.items():
         write_collection("production", collection_name, rows)
+    for collection_name, rows in quality_cost_data.items():
+        write_collection("quality_cost", collection_name, rows)
 
     manifest = {
         "data_version": "large_seed_2026_09",
@@ -811,6 +1087,7 @@ def main() -> None:
             "human_resources": {name: len(rows) for name, rows in human_resources_data.items()},
             "inventory": {name: len(rows) for name, rows in inventory_data.items() if not name.startswith("_")},
             "production": {name: len(rows) for name, rows in production_data.items()},
+            "quality_cost": {name: len(rows) for name, rows in quality_cost_data.items()},
         },
     }
     (data_root / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")

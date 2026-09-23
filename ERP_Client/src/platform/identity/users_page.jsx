@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import { App as antd_app, Button, Card, Form, Input, InputNumber, Modal, Result, Select, Space, Table, Tag, Typography } from 'antd';
-import { EditOutlined, KeyOutlined, SafetyOutlined, UserAddOutlined } from '@ant-design/icons';
+import { App as antd_app, Button, Card, Form, Input, Modal, Result, Select, Space, Table, Tag, Typography } from 'antd';
+import { KeyOutlined, SafetyOutlined, UserAddOutlined } from '@ant-design/icons';
 import { has_permission } from '../common/permission_utils';
 import { request_api } from '../common/api_client';
 import { use_auth } from './auth_context';
+import RecordActionBar from '../layout/record_action_bar';
+import DebouncedSearchInput from '../layout/debounced_search_input';
+import { LookupField } from '../layout/workflow_fields';
+import { format_datetime_vn } from '../common/formatters';
 
 const AntdApp = antd_app;
 const status_options = [
@@ -13,15 +17,30 @@ const status_options = [
   { value: 'disabled', label: 'Đã vô hiệu hóa' },
 ];
 const status_labels = Object.fromEntries(status_options.filter((item) => item.value).map((item) => [item.value, item.label]));
+const role_labels = {
+  system_admin: 'Quản trị hệ thống',
+  read_only: 'Chỉ xem dữ liệu',
+  hr_staff: 'Nhân viên nhân sự',
+  hr_manager: 'Quản lý nhân sự',
+  inventory_staff: 'Nhân viên kho',
+  inventory_manager: 'Quản lý kho',
+  production_staff: 'Nhân viên sản xuất',
+  production_manager: 'Quản lý sản xuất',
+};
+
+function role_label(role_code) {
+  return role_labels[role_code] || role_code;
+}
 
 function UsersPage() {
   const { current_user } = use_auth();
-  const { message } = AntdApp.useApp();
+  const { message, modal } = AntdApp.useApp();
   const [users, set_users] = useState([]);
   const [roles, set_roles] = useState([]);
   const [is_loading, set_is_loading] = useState(false);
   const [error_message, set_error_message] = useState('');
   const [filters, set_filters] = useState({ search: '', status: '' });
+  const [search_input, set_search_input] = useState('');
   const [pagination, set_pagination] = useState({ current: 1, page_size: 50, total: 0 });
   const [user_modal_open, set_user_modal_open] = useState(false);
   const [role_modal_open, set_role_modal_open] = useState(false);
@@ -68,6 +87,12 @@ function UsersPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const on_search = (next_search = search_input) => {
+    const next_filters = { ...filters, search: next_search };
+    set_search_input(next_search);
+    set_filters(next_filters);
+    load_users(next_filters, 1, pagination.page_size);
+  };
   const open_create = () => {
     set_editing_user(null);
     user_form.resetFields();
@@ -134,14 +159,22 @@ function UsersPage() {
   const columns = [
     { title: 'Tên đăng nhập', dataIndex: 'username', key: 'username', fixed: 'left', width: 180 },
     { title: 'Trạng thái', dataIndex: 'status', key: 'status', width: 160, render: (value) => <Tag color={value === 'active' ? 'green' : 'default'}>{status_labels[value] || value}</Tag> },
-    { title: 'Role', dataIndex: 'role_codes', key: 'role_codes', render: (values) => <Space wrap>{(values || []).map((value) => <Tag key={value}>{value}</Tag>)}</Space> },
-    { title: 'Nhân viên liên kết', dataIndex: 'employee_id', key: 'employee_id', width: 150, render: (value) => value || '—' },
-    { title: 'Đăng nhập gần nhất', dataIndex: 'last_login_at', key: 'last_login_at', width: 190, render: (value) => value ? new Date(value).toLocaleString('vi-VN') : 'Chưa đăng nhập' },
-    { title: 'Thao tác', key: 'actions', fixed: 'right', width: 180, render: (_, user) => <Space>
-      {can_update && <Button type="text" icon={<EditOutlined />} aria-label="Sửa tài khoản" onClick={() => open_edit(user)} />}
-      {can_manage_roles && <Button type="text" icon={<SafetyOutlined />} aria-label="Gán role" onClick={() => open_roles(user)} />}
-      {can_update && <Button type="text" icon={<KeyOutlined />} aria-label="Đặt lại mật khẩu" onClick={() => open_password(user)} />}
-    </Space> },
+    { title: 'Vai trò', dataIndex: 'role_codes', key: 'role_codes', render: (values) => <Space wrap>{(values || []).map((value) => <Tag key={value}>{role_label(value)}</Tag>)}</Space> },
+    { title: 'Nhân viên liên kết', dataIndex: 'employee_id', key: 'employee_id', width: 220, render: (value, user) => user.employee_code ? `${user.employee_code} — ${user.employee_name || 'Chưa có tên'}` : (value ? `Mã nội bộ #${value}` : 'Chưa liên kết') },
+    { title: 'Đăng nhập gần nhất', dataIndex: 'last_login_at', key: 'last_login_at', width: 190, render: (value) => value ? format_datetime_vn(value) : 'Chưa đăng nhập' },
+    { title: 'Thao tác', key: 'actions', fixed: 'right', width: 220, render: (_, user) => <RecordActionBar
+      on_open={() => modal.info({
+        title: `Chi tiết tài khoản ${user.username}`,
+        content: <div className="workflow_detail_grid"><div><span>Trạng thái</span><strong>{status_labels[user.status] || user.status}</strong></div><div><span>Vai trò</span><strong>{(user.role_codes || []).map(role_label).join(', ') || 'Chưa gán'}</strong></div><div><span>Nhân viên liên kết</span><strong>{user.employee_code ? `${user.employee_code} — ${user.employee_name || 'Chưa có tên'}` : (user.employee_id ? `Mã nội bộ #${user.employee_id}` : 'Chưa liên kết')}</strong></div></div>,
+        okText: 'Đóng',
+      })}
+      on_edit={() => open_edit(user)}
+      can_edit={can_update}
+      workflow_actions={[
+        ...(can_manage_roles ? [{ key: 'roles', label: 'Gán vai trò', icon: <SafetyOutlined />, on_click: () => open_roles(user) }] : []),
+        ...(can_update ? [{ key: 'password', label: 'Đặt lại mật khẩu', icon: <KeyOutlined />, on_click: () => open_password(user) }] : []),
+      ]}
+    /> },
   ];
 
   if (!has_permission(current_user, 'identity_user_read')) {
@@ -152,7 +185,7 @@ function UsersPage() {
     <div className="page_heading"><Typography.Title level={2}>Tài khoản và phân quyền</Typography.Title><Typography.Paragraph>Quản trị tài khoản tập trung; quyền thực tế luôn được kiểm tra ở backend.</Typography.Paragraph></div>
     <Card>
       <Space wrap className="list_toolbar">
-        <Input.Search allowClear placeholder="Tìm tên đăng nhập" value={filters.search} onChange={(event) => set_filters({ ...filters, search: event.target.value })} onSearch={() => load_users(filters, 1, pagination.page_size)} style={{ width: 260 }} />
+        <DebouncedSearchInput placeholder="Tìm tên đăng nhập" value={search_input} on_commit={on_search} style={{ width: 260 }} />
         <Select value={filters.status} options={status_options} onChange={(status) => { const next_filters = { ...filters, status }; set_filters(next_filters); load_users(next_filters, 1, pagination.page_size); }} style={{ width: 180 }} />
         {can_create && <Button type="primary" icon={<UserAddOutlined />} onClick={open_create}>Thêm tài khoản</Button>}
       </Space>
@@ -165,18 +198,31 @@ function UsersPage() {
         {!editing_user && <>
           <Form.Item label="Tên đăng nhập" name="username" rules={[{ required: true, message: 'Username is required.' }]}><Input maxLength={80} /></Form.Item>
           <Form.Item label="Mật khẩu tạm thời" name="password" rules={[{ required: true, min: 12, message: 'Password must contain at least 12 characters.' }]}><Input.Password maxLength={128} /></Form.Item>
-          <Form.Item label="Role ban đầu" name="role_codes"><Select mode="multiple" options={roles.map((role) => ({ value: role.role_code, label: `${role.display_name} (${role.role_code})` }))} /></Form.Item>
+          <Form.Item label="Vai trò ban đầu" name="role_codes"><Select mode="multiple" options={roles.map((role) => ({ value: role.role_code, label: role.display_name || role_label(role.role_code) }))} /></Form.Item>
         </>}
-        <Form.Item label="Mã nhân viên liên kết" name="employee_id"><InputNumber min={1} style={{ width: '100%' }} /></Form.Item>
+        <Form.Item
+          label="Nhân viên liên kết"
+          name="employee_id"
+          extra="Tìm theo mã HR (ví dụ vmk0001) hoặc họ tên. Hệ thống tự lưu mã nội bộ để liên kết dữ liệu."
+        >
+          <LookupField
+            field={{ lookup: 'employees', name: 'employee_id', placeholder: 'Tìm mã nhân viên hoặc họ tên' }}
+            form={user_form}
+            selected_option={editing_user?.employee_id ? {
+              value: editing_user.employee_id,
+              label: [editing_user.employee_code, editing_user.employee_name].filter(Boolean).join(' — ') || `Mã nội bộ #${editing_user.employee_id}`,
+            } : undefined}
+          />
+        </Form.Item>
         {editing_user && <Form.Item label="Trạng thái" name="status" rules={[{ required: true, message: 'Status is required.' }]}><Select options={status_options.filter((item) => item.value)} /></Form.Item>}
         <Space><Button onClick={() => set_user_modal_open(false)}>Hủy</Button><Button type="primary" htmlType="submit">Lưu tài khoản</Button></Space>
       </Form>
     </Modal>
 
-    <Modal open={role_modal_open} title={`Gán role: ${editing_user?.username || ''}`} onCancel={() => set_role_modal_open(false)} footer={null} destroyOnClose>
+    <Modal open={role_modal_open} title={`Gán vai trò: ${editing_user?.username || ''}`} onCancel={() => set_role_modal_open(false)} footer={null} destroyOnClose>
       <Form form={role_form} layout="vertical" onFinish={on_roles_finish} requiredMark={false}>
-        <Form.Item label="Role" name="role_codes" rules={[{ required: true, message: 'Select at least one role.' }]}><Select mode="multiple" options={roles.map((role) => ({ value: role.role_code, label: `${role.display_name} (${role.role_code})` }))} /></Form.Item>
-        <Space><Button onClick={() => set_role_modal_open(false)}>Hủy</Button><Button type="primary" htmlType="submit">Lưu role</Button></Space>
+        <Form.Item label="Vai trò" name="role_codes" rules={[{ required: true, message: 'Select at least one role.' }]}><Select mode="multiple" options={roles.map((role) => ({ value: role.role_code, label: role.display_name || role_label(role.role_code) }))} /></Form.Item>
+        <Space><Button onClick={() => set_role_modal_open(false)}>Hủy</Button><Button type="primary" htmlType="submit">Lưu vai trò</Button></Space>
       </Form>
     </Modal>
 

@@ -39,6 +39,27 @@ public class inventory_stocktake_repository {
                 search, search, search, warehouse_id, warehouse_id, status, status, page_size, offset);
     }
 
+    public long count_all_stocktakes() {
+        Long total = jpa_query_executor.queryForObject(
+                "SELECT count(*) FROM inventory.stocktake", Long.class);
+        return total == null ? 0 : total;
+    }
+
+    public List<fixture_warehouse> active_warehouses_for_fixture() {
+        return jpa_query_executor.query(
+                "SELECT warehouse_id, warehouse_code FROM inventory.warehouse WHERE status = 'active' ORDER BY warehouse_id LIMIT 6",
+                (result_set, row_number) -> new fixture_warehouse(
+                        result_set.getLong("warehouse_id"), result_set.getString("warehouse_code")));
+    }
+
+    public Optional<fixture_actor> active_super_admin_for_fixture() {
+        return jpa_query_executor.query(
+                "SELECT user_id, username FROM identity.user_account WHERE is_super_admin = true AND status = 'active' ORDER BY user_id LIMIT 1",
+                (result_set, row_number) -> new fixture_actor(
+                        result_set.getLong("user_id"), result_set.getString("username")))
+                .stream().findFirst();
+    }
+
     public boolean warehouse_exists_for_update(long warehouse_id) {
         List<Long> warehouses = jpa_query_executor.query(
                 "SELECT warehouse_id FROM inventory.warehouse WHERE warehouse_id = ? FOR UPDATE",
@@ -244,6 +265,13 @@ public class inventory_stocktake_repository {
                 result_set.getString("status"), result_set.getInt("line_count"),
                 result_set.getInt("counted_line_count"), result_set.get_instant("started_at"),
                 result_set.get_instant("posted_at"));
+    }
+
+
+    public record fixture_warehouse(long warehouse_id, String warehouse_code) {
+    }
+
+    public record fixture_actor(long user_id, String username) {
     }
 
 }

@@ -10,6 +10,7 @@ import vn.vinamik.erp_backend.platform.persistence.jpa_result_row;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class human_resources_contract_repository {
@@ -85,6 +86,12 @@ public class human_resources_contract_repository {
                 status, notes, actor_user_id, employment_contract_id);
     }
 
+    public int delete_draft(long employment_contract_id) {
+        return jpa_query_executor.update(
+                "DELETE FROM hr.employment_contract WHERE employment_contract_id = ? AND status = 'draft'",
+                employment_contract_id);
+    }
+
     public String current_status(long employment_contract_id) {
         List<String> statuses = jpa_query_executor.query(
                 "SELECT status FROM hr.employment_contract WHERE employment_contract_id = ?",
@@ -93,6 +100,43 @@ public class human_resources_contract_repository {
             throw new resource_not_found_exception("Employment contract");
         }
         return statuses.getFirst();
+    }
+
+    /** Local fixture helpers. They are only used by the opt-in fixture bootstrapper. */
+    public Optional<fixture_actor> active_super_admin_for_fixture() {
+        return jpa_query_executor.query(
+                "SELECT user_id, username FROM identity.user_account WHERE is_super_admin = true AND status = 'active' ORDER BY user_id LIMIT 1",
+                (result_set, row_number) -> new fixture_actor(
+                        result_set.getLong("user_id"), result_set.getString("username")))
+                .stream().findFirst();
+    }
+
+    public Optional<fixture_employee> employee_by_code_for_fixture(String employee_code) {
+        return jpa_query_executor.query(
+                "SELECT employee_id, employee_code FROM hr.employee WHERE employee_code = ?",
+                (result_set, row_number) -> new fixture_employee(
+                        result_set.getLong("employee_id"), result_set.getString("employee_code")),
+                employee_code).stream().findFirst();
+    }
+
+    public Optional<fixture_contract> contract_by_code_for_fixture(String contract_code) {
+        return jpa_query_executor.query(
+                "SELECT employment_contract_id, employee_id, status, effective_from, effective_to "
+                        + "FROM hr.employment_contract WHERE contract_code = ?",
+                (result_set, row_number) -> new fixture_contract(
+                        result_set.getLong("employment_contract_id"),
+                        result_set.getLong("employee_id"),
+                        result_set.getString("status"),
+                        result_set.get_local_date("effective_from"),
+                        result_set.get_local_date("effective_to")),
+                contract_code).stream().findFirst();
+    }
+
+    public int update_fixture_effective_to(String contract_code, LocalDate effective_to, long actor_user_id) {
+        return jpa_query_executor.update(
+                "UPDATE hr.employment_contract SET effective_to = ?, updated_at = now(), updated_by_user_id = ? "
+                        + "WHERE contract_code = ? AND status = 'active'",
+                effective_to, actor_user_id, contract_code);
     }
 
     public boolean employee_exists(long employee_id) {
@@ -145,4 +189,8 @@ public class human_resources_contract_repository {
                 result_set.getString("status"), days_until_expiry, expiring_soon,
                 result_set.getString("notes"));
     }
+    public record fixture_actor(long user_id, String username) {}
+    public record fixture_employee(long employee_id, String employee_code) {}
+    public record fixture_contract(long employment_contract_id, long employee_id, String status,
+                                   LocalDate effective_from, LocalDate effective_to) {}
 }

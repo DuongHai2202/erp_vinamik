@@ -57,7 +57,7 @@ public class human_resources_master_data_service {
                                                  String correlation_id) {
         validate_department(request, null);
         String code = normalize_required(request.department_code());
-        String name = normalize_required(request.department_name());
+        String name = normalize_text(request.department_name());
         ensure_department_code_available(code, null);
         ensure_parent_department(request.parent_department_id(), null);
         try {
@@ -84,7 +84,7 @@ public class human_resources_master_data_service {
         require_department(department_id);
         try {
             int updated = master_data_repository.update_department(department_id, code,
-                    normalize_required(request.department_name()), request.parent_department_id(),
+                    normalize_text(request.department_name()), request.parent_department_id(),
                     status_or_default(request.status()), actor.user_id());
             if (updated == 0) {
                 throw new resource_not_found_exception("Department");
@@ -142,7 +142,7 @@ public class human_resources_master_data_service {
         String code = normalize_required(request.job_title_code());
         ensure_job_title_code_available(code, null);
         try {
-            Long id = master_data_repository.insert_job_title(code, normalize_required(request.job_title_name()),
+            Long id = master_data_repository.insert_job_title(code, normalize_text(request.job_title_name()),
                     normalize_optional(request.description()), status_or_default(request.status()), actor.user_id());
             job_title_response created = require_job_title(id);
             audit_writer.write(actor.user_id(), "hr", "job_title_create", "job_title",
@@ -164,7 +164,7 @@ public class human_resources_master_data_service {
         require_job_title(job_title_id);
         try {
             int updated = master_data_repository.update_job_title(job_title_id, code,
-                    normalize_required(request.job_title_name()), normalize_optional(request.description()),
+                    normalize_text(request.job_title_name()), normalize_optional(request.description()),
                     status_or_default(request.status()), actor.user_id());
             if (updated == 0) {
                 throw new resource_not_found_exception("Job title");
@@ -227,7 +227,7 @@ public class human_resources_master_data_service {
         String code = normalize_required(request.shift_code());
         ensure_work_shift_code_available(code, null);
         try {
-            Long id = master_data_repository.insert_work_shift(code, normalize_required(request.shift_name()),
+            Long id = master_data_repository.insert_work_shift(code, normalize_text(request.shift_name()),
                     request.starts_at(), request.ends_at(), status_or_default(request.status()), actor.user_id());
             work_shift_response created = require_work_shift(id);
             audit_writer.write(actor.user_id(), "hr", "work_shift_create", "work_shift",
@@ -249,7 +249,7 @@ public class human_resources_master_data_service {
         require_work_shift(work_shift_id);
         try {
             int updated = master_data_repository.update_work_shift(work_shift_id, code,
-                    normalize_required(request.shift_name()), request.starts_at(), request.ends_at(),
+                    normalize_text(request.shift_name()), request.starts_at(), request.ends_at(),
                     status_or_default(request.status()), actor.user_id());
             if (updated == 0) {
                 throw new resource_not_found_exception("Work shift");
@@ -412,6 +412,10 @@ public class human_resources_master_data_service {
     private String status_or_default(String status) {
         String normalized = normalize_lower(status);
         return normalized == null ? "active" : normalized;
+    }
+
+    private String normalize_text(String value) {
+        return value == null ? null : value.trim();
     }
 
     private String normalize_required(String value) {

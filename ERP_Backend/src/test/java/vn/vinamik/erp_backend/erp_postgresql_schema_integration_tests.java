@@ -37,7 +37,7 @@ class erp_postgresql_schema_integration_tests {
     @Test
     @Transactional(readOnly = true)
     void migrations_schemas_and_permission_seed_are_available() {
-        assertEquals(24L, scalar_long(
+        assertEquals(25L, scalar_long(
                 "select count(*) from public.flyway_schema_history where success = true"));
         assertEquals(1L, scalar_long(
                 "select count(*) from pg_indexes where schemaname = 'hr' "

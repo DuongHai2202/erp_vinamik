@@ -42,6 +42,12 @@ public class payroll_repository {
         return result;
     }
 
+    public int delete_draft_period(long payroll_period_id) {
+        return jpa_query_executor.update(
+                "DELETE FROM hr.payroll_period WHERE payroll_period_id = ? AND status = 'draft'",
+                payroll_period_id);
+    }
+
     public void lock_period(long payroll_period_id) {
         Long result = jpa_query_executor.queryForObject(
                 "SELECT payroll_period_id FROM hr.payroll_period WHERE payroll_period_id = ? FOR UPDATE",

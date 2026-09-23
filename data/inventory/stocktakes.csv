@@ -1,0 +1,7 @@
+﻿stocktake_code,warehouse_code,status,notes
+stocktake_2026_01_wh_raw_south,wh_raw_south,counting,Phiên kiểm kê định kỳ tháng 01/2026; đối chiếu số đếm thực tế với sổ tồn.
+stocktake_2026_02_wh_raw_north,wh_raw_north,submitted,Phiên kiểm kê định kỳ tháng 02/2026; đối chiếu số đếm thực tế với sổ tồn.
+stocktake_2026_03_wh_finished_south,wh_finished_south,approved,Phiên kiểm kê định kỳ tháng 03/2026; đối chiếu số đếm thực tế với sổ tồn.
+stocktake_2026_04_wh_finished_north,wh_finished_north,posted,Phiên kiểm kê định kỳ tháng 04/2026; đối chiếu số đếm thực tế với sổ tồn.
+stocktake_2026_05_wh_cold,wh_cold,cancelled,Phiên kiểm kê định kỳ tháng 05/2026; đối chiếu số đếm thực tế với sổ tồn.
+stocktake_2026_06_wh_packaging,wh_packaging,counting,Phiên kiểm kê định kỳ tháng 06/2026; đối chiếu số đếm thực tế với sổ tồn.

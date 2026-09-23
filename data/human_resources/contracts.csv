@@ -1,601 +1,606 @@
 ﻿contract_code,employee_code,contract_type,effective_from,effective_to,base_salary,currency_code,status,notes
-contract_2024_0001,vmk0001,fixed_term_36_months,2024-01-01,,85000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0002,vmk0002,indefinite,2024-01-01,,42750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0003,vmk0003,indefinite,2024-01-01,,43500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0004,vmk0004,indefinite,2024-01-01,,44250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0005,vmk0005,fixed_term_36_months,2024-01-01,,45000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0006,vmk0006,indefinite,2024-01-01,,45750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0007,vmk0007,indefinite,2024-01-01,,46500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0008,vmk0008,indefinite,2024-01-01,,47250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0009,vmk0009,fixed_term_36_months,2024-01-01,,42000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0010,vmk0010,indefinite,2024-01-01,,45750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0011,vmk0011,indefinite,2024-01-01,,46500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0012,vmk0012,indefinite,2024-01-01,,47250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0013,vmk0013,fixed_term_36_months,2024-01-08,,48000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0014,vmk0014,indefinite,2024-01-01,,45750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0015,vmk0015,indefinite,2024-01-01,,46500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0016,vmk0016,indefinite,2024-01-01,,47250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0017,vmk0017,fixed_term_36_months,2024-01-01,,42000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0018,vmk0018,indefinite,2024-01-01,,42750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0019,vmk0019,indefinite,2024-01-01,,43500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0020,vmk0020,indefinite,2024-01-01,,44250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0021,vmk0021,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0022,vmk0022,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0023,vmk0023,indefinite,2024-01-01,,26500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0024,vmk0024,indefinite,2024-01-01,,33250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0025,vmk0025,fixed_term_36_months,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0026,vmk0026,indefinite,2024-06-01,,22750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0027,vmk0027,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0028,vmk0028,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0029,vmk0029,fixed_term_36_months,2024-01-01,,25000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0030,vmk0030,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0031,vmk0031,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0032,vmk0032,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0033,vmk0033,fixed_term_36_months,2024-01-01,,12000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0034,vmk0034,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0035,vmk0035,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0036,vmk0036,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0037,vmk0037,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0038,vmk0038,indefinite,2024-01-01,,19250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0039,vmk0039,indefinite,2024-11-19,,20000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0040,vmk0040,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0041,vmk0041,fixed_term_36_months,2024-01-01,,19000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0042,vmk0042,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0043,vmk0043,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0044,vmk0044,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0045,vmk0045,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0046,vmk0046,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0047,vmk0047,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0048,vmk0048,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0049,vmk0049,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0050,vmk0050,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0051,vmk0051,indefinite,2024-01-01,,18500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0052,vmk0052,indefinite,2024-04-12,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0053,vmk0053,fixed_term_36_months,2024-01-01,,18500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0054,vmk0054,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0055,vmk0055,indefinite,2024-01-01,,17500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0056,vmk0056,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0057,vmk0057,fixed_term_36_months,2024-01-01,,23000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0058,vmk0058,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0059,vmk0059,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0060,vmk0060,indefinite,2024-01-01,,30250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0061,vmk0061,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0062,vmk0062,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0063,vmk0063,indefinite,2024-01-01,,26500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0064,vmk0064,indefinite,2024-01-01,,33250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0065,vmk0065,fixed_term_36_months,2024-09-05,,26000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0066,vmk0066,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0067,vmk0067,indefinite,2024-01-01,,17000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0068,vmk0068,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0069,vmk0069,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0070,vmk0070,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0071,vmk0071,indefinite,2024-01-01,,18000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0072,vmk0072,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0073,vmk0073,fixed_term_36_months,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0074,vmk0074,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0075,vmk0075,indefinite,2024-01-01,,18500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0076,vmk0076,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0077,vmk0077,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0078,vmk0078,indefinite,2024-02-23,,27750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0079,vmk0079,indefinite,2024-01-01,,16500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0080,vmk0080,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0081,vmk0081,fixed_term_36_months,2024-01-01,,12000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0082,vmk0082,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0083,vmk0083,indefinite,2024-01-01,,17000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0084,vmk0084,indefinite,2024-01-01,,24250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0085,vmk0085,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0086,vmk0086,indefinite,2024-01-01,,21750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0087,vmk0087,indefinite,2024-01-01,,17500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0088,vmk0088,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0089,vmk0089,fixed_term_36_months,2024-01-01,,23000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0090,vmk0090,indefinite,2024-01-01,,12750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0091,vmk0091,indefinite,2024-07-16,,27500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0092,vmk0092,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0093,vmk0093,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0094,vmk0094,indefinite,2024-01-01,,41750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0095,vmk0095,indefinite,2024-01-01,,26500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0096,vmk0096,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0097,vmk0097,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0098,vmk0098,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0099,vmk0099,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0100,vmk0100,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0101,vmk0101,fixed_term_36_months,2024-01-01,,25000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0102,vmk0102,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0103,vmk0103,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0104,vmk0104,indefinite,2024-12-09,,27250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0105,vmk0105,fixed_term_36_months,2024-01-01,,23000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0106,vmk0106,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0107,vmk0107,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0108,vmk0108,indefinite,2024-01-01,,30250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0109,vmk0109,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0110,vmk0110,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0111,vmk0111,indefinite,2024-01-01,,16500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0112,vmk0112,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0113,vmk0113,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0114,vmk0114,indefinite,2024-01-01,,28750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0115,vmk0115,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0116,vmk0116,indefinite,2024-01-01,,19250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0117,vmk0117,fixed_term_36_months,2024-05-02,,31000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0118,vmk0118,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0119,vmk0119,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0120,vmk0120,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0121,vmk0121,fixed_term_36_months,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0122,vmk0122,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0123,vmk0123,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0124,vmk0124,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0125,vmk0125,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0126,vmk0126,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0127,vmk0127,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0128,vmk0128,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0129,vmk0129,fixed_term_36_months,2024-01-01,,38000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0130,vmk0130,indefinite,2024-10-20,,24750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0131,vmk0131,indefinite,2024-01-01,,21500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0132,vmk0132,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0133,vmk0133,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0134,vmk0134,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0135,vmk0135,indefinite,2024-01-01,,20000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0136,vmk0136,indefinite,2024-01-01,,24250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0137,vmk0137,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0138,vmk0138,indefinite,2024-01-01,,12750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0139,vmk0139,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0140,vmk0140,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0141,vmk0141,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0142,vmk0142,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0143,vmk0143,indefinite,2024-03-13,,28500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0144,vmk0144,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0145,vmk0145,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0146,vmk0146,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0147,vmk0147,indefinite,2024-01-01,,18500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0148,vmk0148,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0149,vmk0149,fixed_term_36_months,2024-01-01,,16000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0150,vmk0150,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0151,vmk0151,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0152,vmk0152,indefinite,2024-01-01,,18250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0153,vmk0153,fixed_term_36_months,2024-01-01,,15500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0154,vmk0154,indefinite,2024-01-01,,19750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0155,vmk0155,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0156,vmk0156,indefinite,2024-08-06,,28250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0157,vmk0157,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0158,vmk0158,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0159,vmk0159,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0160,vmk0160,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0161,vmk0161,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0162,vmk0162,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0163,vmk0163,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0164,vmk0164,indefinite,2024-01-01,,19250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0165,vmk0165,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0166,vmk0166,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0167,vmk0167,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0168,vmk0168,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0169,vmk0169,fixed_term_36_months,2024-01-24,,15500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0170,vmk0170,indefinite,2024-01-01,,21750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0171,vmk0171,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0172,vmk0172,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0173,vmk0173,fixed_term_36_months,2024-01-01,,31000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0174,vmk0174,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0175,vmk0175,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0176,vmk0176,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0177,vmk0177,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0178,vmk0178,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0179,vmk0179,indefinite,2024-01-01,,21500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0180,vmk0180,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0181,vmk0181,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0182,vmk0182,indefinite,2024-06-17,,29750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0183,vmk0183,indefinite,2024-01-01,,20000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0184,vmk0184,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0185,vmk0185,fixed_term_36_months,2024-01-01,,15500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0186,vmk0186,indefinite,2024-01-01,,12750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0187,vmk0187,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0188,vmk0188,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0189,vmk0189,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0190,vmk0190,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0191,vmk0191,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0192,vmk0192,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0193,vmk0193,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0194,vmk0194,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0195,vmk0195,indefinite,2024-11-10,,27500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0196,vmk0196,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0197,vmk0197,fixed_term_36_months,2024-01-01,,25000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0198,vmk0198,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0199,vmk0199,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0200,vmk0200,indefinite,2024-01-01,,18250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0201,vmk0201,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0202,vmk0202,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0203,vmk0203,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0204,vmk0204,indefinite,2024-01-01,,24250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0205,vmk0205,fixed_term_36_months,2024-01-01,,25000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0206,vmk0206,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0207,vmk0207,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0208,vmk0208,indefinite,2024-04-03,,23250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0209,vmk0209,fixed_term_36_months,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0210,vmk0210,indefinite,2024-01-01,,16250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0211,vmk0211,indefinite,2024-01-01,,18500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0212,vmk0212,indefinite,2024-01-01,,19250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0213,vmk0213,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0214,vmk0214,indefinite,2024-01-01,,16750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0215,vmk0215,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0216,vmk0216,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0217,vmk0217,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0218,vmk0218,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0219,vmk0219,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0220,vmk0220,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0221,vmk0221,fixed_term_36_months,2024-09-21,,22000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0222,vmk0222,indefinite,2024-01-01,,21750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0223,vmk0223,indefinite,2024-01-01,,18000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0224,vmk0224,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0225,vmk0225,fixed_term_36_months,2024-01-01,,38000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0226,vmk0226,indefinite,2024-01-01,,12750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0227,vmk0227,indefinite,2024-01-01,,39500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0228,vmk0228,indefinite,2024-01-01,,22250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0229,vmk0229,fixed_term_36_months,2024-01-01,,20000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0230,vmk0230,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0231,vmk0231,indefinite,2024-01-01,,17500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0232,vmk0232,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0233,vmk0233,fixed_term_36_months,2024-01-01,,38000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0234,vmk0234,indefinite,2024-02-14,,13750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0235,vmk0235,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0236,vmk0236,indefinite,2024-01-01,,21250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0237,vmk0237,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0238,vmk0238,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0239,vmk0239,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0240,vmk0240,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0241,vmk0241,fixed_term_36_months,2024-01-01,,19000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0242,vmk0242,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0243,vmk0243,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0244,vmk0244,indefinite,2024-01-01,,24250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0245,vmk0245,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0246,vmk0246,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0247,vmk0247,indefinite,2024-07-07,,21500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0248,vmk0248,indefinite,2024-01-01,,18250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0249,vmk0249,fixed_term_36_months,2024-01-01,,13000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0250,vmk0250,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0251,vmk0251,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0252,vmk0252,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0253,vmk0253,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0254,vmk0254,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0255,vmk0255,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0256,vmk0256,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0257,vmk0257,fixed_term_36_months,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0258,vmk0258,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0259,vmk0259,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0260,vmk0260,indefinite,2024-12-25,,14250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0261,vmk0261,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0262,vmk0262,indefinite,2024-01-01,,19250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0263,vmk0263,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0264,vmk0264,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0265,vmk0265,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0266,vmk0266,indefinite,2024-01-01,,28750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0267,vmk0267,indefinite,2024-01-01,,18500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0268,vmk0268,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0269,vmk0269,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0270,vmk0270,indefinite,2024-01-01,,41750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0271,vmk0271,indefinite,2024-01-01,,16500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0272,vmk0272,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0273,vmk0273,fixed_term_36_months,2024-05-18,,23000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0274,vmk0274,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0275,vmk0275,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0276,vmk0276,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0277,vmk0277,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0278,vmk0278,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0279,vmk0279,indefinite,2024-01-01,,20000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0280,vmk0280,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0281,vmk0281,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0282,vmk0282,indefinite,2024-01-01,,13750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0283,vmk0283,indefinite,2024-01-01,,21500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0284,vmk0284,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0285,vmk0285,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0286,vmk0286,indefinite,2024-10-11,,23750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0287,vmk0287,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0288,vmk0288,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0289,vmk0289,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0290,vmk0290,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0291,vmk0291,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0292,vmk0292,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0293,vmk0293,fixed_term_36_months,2024-01-01,,31000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0294,vmk0294,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0295,vmk0295,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0296,vmk0296,indefinite,2024-01-01,,18250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0297,vmk0297,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0298,vmk0298,indefinite,2024-01-01,,19750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0299,vmk0299,indefinite,2024-03-04,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0300,vmk0300,indefinite,2024-01-01,,30250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0301,vmk0301,fixed_term_36_months,2024-01-01,,20000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0302,vmk0302,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0303,vmk0303,indefinite,2024-01-01,,32500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0304,vmk0304,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0305,vmk0305,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0306,vmk0306,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0307,vmk0307,indefinite,2024-01-01,,20500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0308,vmk0308,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0309,vmk0309,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0310,vmk0310,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0311,vmk0311,indefinite,2024-01-01,,21500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0312,vmk0312,indefinite,2024-08-22,,27250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0313,vmk0313,fixed_term_36_months,2024-01-01,,15500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0314,vmk0314,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0315,vmk0315,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0316,vmk0316,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0317,vmk0317,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0318,vmk0318,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0319,vmk0319,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0320,vmk0320,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0321,vmk0321,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0322,vmk0322,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0323,vmk0323,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0324,vmk0324,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0325,vmk0325,fixed_term_36_months,2024-01-15,,29000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0326,vmk0326,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0327,vmk0327,indefinite,2024-01-01,,20000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0328,vmk0328,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0329,vmk0329,fixed_term_36_months,2024-01-01,,18000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0330,vmk0330,indefinite,2024-01-01,,13750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0331,vmk0331,indefinite,2024-01-01,,17000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0332,vmk0332,indefinite,2024-01-01,,40250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0333,vmk0333,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0334,vmk0334,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0335,vmk0335,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0336,vmk0336,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0337,vmk0337,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0338,vmk0338,indefinite,2024-06-08,,23750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0339,vmk0339,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0340,vmk0340,indefinite,2024-01-01,,30250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0341,vmk0341,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0342,vmk0342,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0343,vmk0343,indefinite,2024-01-01,,17500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0344,vmk0344,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0345,vmk0345,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0346,vmk0346,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0347,vmk0347,indefinite,2024-01-01,,17000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0348,vmk0348,indefinite,2024-01-01,,40250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0349,vmk0349,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0350,vmk0350,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0351,vmk0351,indefinite,2024-11-01,,20000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0352,vmk0352,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0353,vmk0353,fixed_term_36_months,2024-01-01,,12000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0354,vmk0354,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0355,vmk0355,indefinite,2024-01-01,,19500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0356,vmk0356,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0357,vmk0357,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0358,vmk0358,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0359,vmk0359,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0360,vmk0360,indefinite,2024-01-01,,22250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0361,vmk0361,fixed_term_36_months,2024-01-01,,15500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0362,vmk0362,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0363,vmk0363,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0364,vmk0364,indefinite,2024-04-19,,17750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0365,vmk0365,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0366,vmk0366,indefinite,2024-01-01,,41750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0367,vmk0367,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0368,vmk0368,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0369,vmk0369,fixed_term_36_months,2024-01-01,,18000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0370,vmk0370,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0371,vmk0371,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0372,vmk0372,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0373,vmk0373,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0374,vmk0374,indefinite,2024-01-01,,19250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0375,vmk0375,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0376,vmk0376,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0377,vmk0377,fixed_term_36_months,2024-09-12,,26000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0378,vmk0378,indefinite,2024-01-01,,13750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0379,vmk0379,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0380,vmk0380,indefinite,2024-01-01,,22250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0381,vmk0381,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0382,vmk0382,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0383,vmk0383,indefinite,2024-01-01,,19500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0384,vmk0384,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0385,vmk0385,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0386,vmk0386,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0387,vmk0387,indefinite,2024-01-01,,15000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0388,vmk0388,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0389,vmk0389,fixed_term_36_months,2024-01-01,,41000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0390,vmk0390,indefinite,2024-02-05,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0391,vmk0391,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0392,vmk0392,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0393,vmk0393,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0394,vmk0394,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0395,vmk0395,indefinite,2024-01-01,,14500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0396,vmk0396,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0397,vmk0397,fixed_term_36_months,2024-01-01,,18000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0398,vmk0398,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0399,vmk0399,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0400,vmk0400,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0401,vmk0401,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0402,vmk0402,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0403,vmk0403,indefinite,2024-07-23,,25500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0404,vmk0404,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0405,vmk0405,fixed_term_36_months,2024-01-01,,25000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0406,vmk0406,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0407,vmk0407,indefinite,2024-01-01,,21500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0408,vmk0408,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0409,vmk0409,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0410,vmk0410,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0411,vmk0411,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0412,vmk0412,indefinite,2024-01-01,,15250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0413,vmk0413,fixed_term_36_months,2024-01-01,,25000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0414,vmk0414,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0415,vmk0415,indefinite,2024-01-01,,16500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0416,vmk0416,indefinite,2024-12-16,,30250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0417,vmk0417,fixed_term_36_months,2024-01-01,,18000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0418,vmk0418,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0419,vmk0419,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0420,vmk0420,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0421,vmk0421,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0422,vmk0422,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0423,vmk0423,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0424,vmk0424,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0425,vmk0425,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0426,vmk0426,indefinite,2024-01-01,,16250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0427,vmk0427,indefinite,2024-01-01,,19500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0428,vmk0428,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0429,vmk0429,fixed_term_36_months,2024-05-09,,25000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0430,vmk0430,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0431,vmk0431,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0432,vmk0432,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0433,vmk0433,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0434,vmk0434,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0435,vmk0435,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0436,vmk0436,indefinite,2024-01-01,,22250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0437,vmk0437,fixed_term_36_months,2024-01-01,,16000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0438,vmk0438,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0439,vmk0439,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0440,vmk0440,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0441,vmk0441,fixed_term_36_months,2024-01-01,,17000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0442,vmk0442,indefinite,2024-10-02,,24750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0443,vmk0443,indefinite,2024-01-01,,14500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0444,vmk0444,indefinite,2024-01-01,,30250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0445,vmk0445,fixed_term_36_months,2024-01-01,,23000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0446,vmk0446,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0447,vmk0447,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0448,vmk0448,indefinite,2024-01-01,,33250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0449,vmk0449,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0450,vmk0450,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0451,vmk0451,indefinite,2024-01-01,,19500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0452,vmk0452,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0453,vmk0453,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0454,vmk0454,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0455,vmk0455,indefinite,2024-03-20,,16500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0456,vmk0456,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0457,vmk0457,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0458,vmk0458,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0459,vmk0459,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0460,vmk0460,indefinite,2024-01-01,,15250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0461,vmk0461,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0462,vmk0462,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0463,vmk0463,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0464,vmk0464,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0465,vmk0465,fixed_term_36_months,2024-01-01,,19000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0466,vmk0466,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0467,vmk0467,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0468,vmk0468,indefinite,2024-08-13,,25250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0469,vmk0469,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0470,vmk0470,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0471,vmk0471,indefinite,2024-01-01,,17500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0472,vmk0472,indefinite,2024-01-01,,22250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0473,vmk0473,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0474,vmk0474,indefinite,2024-01-01,,13750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0475,vmk0475,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0476,vmk0476,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0477,vmk0477,fixed_term_36_months,2024-01-01,,16000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0478,vmk0478,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0479,vmk0479,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0480,vmk0480,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0481,vmk0481,fixed_term_36_months,2024-01-06,,38000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0482,vmk0482,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0483,vmk0483,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0484,vmk0484,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0485,vmk0485,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0486,vmk0486,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0487,vmk0487,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0488,vmk0488,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0489,vmk0489,fixed_term_36_months,2024-01-01,,17000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0490,vmk0490,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0491,vmk0491,indefinite,2024-01-01,,17000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0492,vmk0492,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0493,vmk0493,fixed_term_36_months,2024-01-01,,23000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0494,vmk0494,indefinite,2024-06-24,,16750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0495,vmk0495,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0496,vmk0496,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0497,vmk0497,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0498,vmk0498,indefinite,2024-01-01,,28750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0499,vmk0499,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0500,vmk0500,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0501,vmk0501,fixed_term_36_months,2024-01-01,,20000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0502,vmk0502,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0503,vmk0503,indefinite,2024-01-01,,18000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0504,vmk0504,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0505,vmk0505,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0506,vmk0506,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0507,vmk0507,indefinite,2024-11-17,,17000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0508,vmk0508,indefinite,2024-01-01,,24250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0509,vmk0509,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0510,vmk0510,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0511,vmk0511,indefinite,2024-01-01,,18000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0512,vmk0512,indefinite,2024-01-01,,24250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0513,vmk0513,fixed_term_36_months,2024-01-01,,15500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0514,vmk0514,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0515,vmk0515,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0516,vmk0516,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0517,vmk0517,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0518,vmk0518,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0519,vmk0519,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0520,vmk0520,indefinite,2024-04-10,,18750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0521,vmk0521,fixed_term_36_months,2024-01-01,,23000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0522,vmk0522,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0523,vmk0523,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0524,vmk0524,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0525,vmk0525,fixed_term_36_months,2024-01-01,,16000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0526,vmk0526,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0527,vmk0527,indefinite,2024-01-01,,26500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0528,vmk0528,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0529,vmk0529,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0530,vmk0530,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0531,vmk0531,indefinite,2024-01-01,,15000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0532,vmk0532,indefinite,2024-01-01,,30250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0533,vmk0533,fixed_term_36_months,2024-09-03,,27000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0534,vmk0534,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0535,vmk0535,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0536,vmk0536,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0537,vmk0537,fixed_term_36_months,2024-01-01,,17000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0538,vmk0538,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0539,vmk0539,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0540,vmk0540,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0541,vmk0541,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0542,vmk0542,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0543,vmk0543,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0544,vmk0544,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0545,vmk0545,fixed_term_36_months,2024-01-01,,12000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0546,vmk0546,indefinite,2024-02-21,,24750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0547,vmk0547,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0548,vmk0548,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0549,vmk0549,fixed_term_36_months,2024-01-01,,31000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0550,vmk0550,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0551,vmk0551,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0552,vmk0552,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0553,vmk0553,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0554,vmk0554,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0555,vmk0555,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0556,vmk0556,indefinite,2024-01-01,,15250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0557,vmk0557,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0558,vmk0558,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0559,vmk0559,indefinite,2024-07-14,,26500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0560,vmk0560,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0561,vmk0561,fixed_term_36_months,2024-01-01,,18000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0562,vmk0562,indefinite,2024-01-01,,12750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0563,vmk0563,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0564,vmk0564,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0565,vmk0565,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0566,vmk0566,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0567,vmk0567,indefinite,2024-01-01,,18000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0568,vmk0568,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0569,vmk0569,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0570,vmk0570,indefinite,2024-01-01,,13750000,VND,active,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0571,vmk0571,indefinite,2024-01-01,2025-12-31,18500000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0572,vmk0572,indefinite,2024-12-07,2025-12-31,17250000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0573,vmk0573,fixed_term_36_months,2024-01-01,2025-12-31,16000000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0574,vmk0574,indefinite,2024-01-01,2025-12-31,18750000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0575,vmk0575,indefinite,2024-01-01,2025-12-31,27500000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0576,vmk0576,indefinite,2024-01-01,2025-12-31,17250000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0577,vmk0577,fixed_term_36_months,2024-01-01,2025-12-31,13500000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0578,vmk0578,indefinite,2024-01-01,2025-12-31,16250000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0579,vmk0579,indefinite,2024-01-01,2025-12-31,15000000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0580,vmk0580,indefinite,2024-01-01,2025-12-31,30250000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0581,vmk0581,fixed_term_36_months,2024-01-01,2025-12-31,26000000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0582,vmk0582,indefinite,2024-01-01,2025-12-31,15750000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0583,vmk0583,indefinite,2024-01-01,2025-12-31,17500000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0584,vmk0584,indefinite,2024-01-01,2025-12-31,26250000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0585,vmk0585,fixed_term_36_months,2024-05-25,2025-12-31,24000000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0586,vmk0586,indefinite,2024-01-01,2025-12-31,14250000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0587,vmk0587,indefinite,2024-01-01,2025-12-31,23500000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0588,vmk0588,indefinite,2024-01-01,2025-12-31,26250000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0589,vmk0589,fixed_term_36_months,2024-01-01,2025-12-31,15000000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0590,vmk0590,indefinite,2024-01-01,2025-12-31,19250000,VND,expired,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0591,vmk0591,indefinite,2024-01-01,2025-12-31,17500000,VND,terminated,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0592,vmk0592,indefinite,2024-01-01,2025-12-31,25250000,VND,terminated,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0593,vmk0593,fixed_term_36_months,2024-01-01,2025-12-31,24000000,VND,terminated,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0594,vmk0594,indefinite,2024-01-01,2025-12-31,19750000,VND,terminated,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0595,vmk0595,indefinite,2024-01-01,2025-12-31,21500000,VND,terminated,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0596,vmk0596,indefinite,2024-01-01,2025-12-31,28250000,VND,terminated,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0597,vmk0597,fixed_term_36_months,2024-01-01,2025-12-31,29000000,VND,terminated,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0598,vmk0598,indefinite,2024-10-18,2025-12-31,27750000,VND,terminated,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0599,vmk0599,indefinite,2024-01-01,2025-12-31,30500000,VND,terminated,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
-contract_2024_0600,vmk0600,indefinite,2024-01-01,2025-12-31,27250000,VND,terminated,Hợp đồng tổng hợp phục vụ kiểm thử nghiệp vụ.
+contract_2024_0001,vmk0001,fixed_term_36_months,2024-01-01,2025-12-31,85000000,VND,draft,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0002,vmk0002,indefinite,2024-01-01,2025-12-31,42750000,VND,draft,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0003,vmk0003,indefinite,2024-01-01,2025-12-31,43500000,VND,cancelled,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0004,vmk0004,indefinite,2024-01-01,2025-12-31,44250000,VND,cancelled,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0005,vmk0005,fixed_term_36_months,2024-01-01,2026-09-30,45000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0006,vmk0006,indefinite,2024-01-01,,45750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0007,vmk0007,indefinite,2024-01-01,,46500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0008,vmk0008,indefinite,2024-01-01,,47250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0009,vmk0009,fixed_term_36_months,2024-01-01,2026-10-01,42000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0010,vmk0010,indefinite,2024-01-01,,45750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0011,vmk0011,indefinite,2024-01-01,,46500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0012,vmk0012,indefinite,2024-01-01,,47250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0013,vmk0013,fixed_term_36_months,2024-01-08,2026-10-03,48000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0014,vmk0014,indefinite,2024-01-01,,45750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0015,vmk0015,indefinite,2024-01-01,,46500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0016,vmk0016,indefinite,2024-01-01,,47250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0017,vmk0017,fixed_term_36_months,2024-01-01,2026-10-05,42000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0018,vmk0018,indefinite,2024-01-01,,42750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0019,vmk0019,indefinite,2024-01-01,,43500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0020,vmk0020,indefinite,2024-01-01,,44250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0021,vmk0021,fixed_term_36_months,2024-01-01,2026-10-08,16500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0022,vmk0022,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0023,vmk0023,indefinite,2024-01-01,,26500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0024,vmk0024,indefinite,2024-01-01,,33250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0025,vmk0025,fixed_term_36_months,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0026,vmk0026,indefinite,2024-06-01,,22750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0027,vmk0027,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0028,vmk0028,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0029,vmk0029,fixed_term_36_months,2024-01-01,,25000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0030,vmk0030,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0031,vmk0031,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0032,vmk0032,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0033,vmk0033,fixed_term_36_months,2024-01-01,,12000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0034,vmk0034,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0035,vmk0035,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0036,vmk0036,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0037,vmk0037,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0038,vmk0038,indefinite,2024-01-01,,19250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0039,vmk0039,indefinite,2024-11-19,,20000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0040,vmk0040,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0041,vmk0041,fixed_term_36_months,2024-01-01,,19000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0042,vmk0042,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0043,vmk0043,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0044,vmk0044,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0045,vmk0045,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0046,vmk0046,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0047,vmk0047,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0048,vmk0048,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0049,vmk0049,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0050,vmk0050,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0051,vmk0051,indefinite,2024-01-01,,18500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0052,vmk0052,indefinite,2024-04-12,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0053,vmk0053,fixed_term_36_months,2024-01-01,,18500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0054,vmk0054,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0055,vmk0055,indefinite,2024-01-01,,17500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0056,vmk0056,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0057,vmk0057,fixed_term_36_months,2024-01-01,,23000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0058,vmk0058,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0059,vmk0059,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0060,vmk0060,indefinite,2024-01-01,,30250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0061,vmk0061,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0062,vmk0062,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0063,vmk0063,indefinite,2024-01-01,,26500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0064,vmk0064,indefinite,2024-01-01,,33250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0065,vmk0065,fixed_term_36_months,2024-09-05,,26000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0066,vmk0066,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0067,vmk0067,indefinite,2024-01-01,,17000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0068,vmk0068,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0069,vmk0069,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0070,vmk0070,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0071,vmk0071,indefinite,2024-01-01,,18000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0072,vmk0072,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0073,vmk0073,fixed_term_36_months,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0074,vmk0074,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0075,vmk0075,indefinite,2024-01-01,,18500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0076,vmk0076,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0077,vmk0077,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0078,vmk0078,indefinite,2024-02-23,,27750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0079,vmk0079,indefinite,2024-01-01,,16500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0080,vmk0080,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0081,vmk0081,fixed_term_36_months,2024-01-01,,12000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0082,vmk0082,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0083,vmk0083,indefinite,2024-01-01,,17000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0084,vmk0084,indefinite,2024-01-01,,24250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0085,vmk0085,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0086,vmk0086,indefinite,2024-01-01,,21750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0087,vmk0087,indefinite,2024-01-01,,17500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0088,vmk0088,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0089,vmk0089,fixed_term_36_months,2024-01-01,,23000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0090,vmk0090,indefinite,2024-01-01,,12750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0091,vmk0091,indefinite,2024-07-16,,27500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0092,vmk0092,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0093,vmk0093,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0094,vmk0094,indefinite,2024-01-01,,41750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0095,vmk0095,indefinite,2024-01-01,,26500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0096,vmk0096,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0097,vmk0097,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0098,vmk0098,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0099,vmk0099,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0100,vmk0100,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0101,vmk0101,fixed_term_36_months,2024-01-01,,25000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0102,vmk0102,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0103,vmk0103,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0104,vmk0104,indefinite,2024-12-09,,27250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0105,vmk0105,fixed_term_36_months,2024-01-01,,23000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0106,vmk0106,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0107,vmk0107,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0108,vmk0108,indefinite,2024-01-01,,30250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0109,vmk0109,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0110,vmk0110,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0111,vmk0111,indefinite,2024-01-01,,16500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0112,vmk0112,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0113,vmk0113,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0114,vmk0114,indefinite,2024-01-01,,28750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0115,vmk0115,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0116,vmk0116,indefinite,2024-01-01,,19250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0117,vmk0117,fixed_term_36_months,2024-05-02,,31000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0118,vmk0118,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0119,vmk0119,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0120,vmk0120,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0121,vmk0121,fixed_term_36_months,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0122,vmk0122,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0123,vmk0123,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0124,vmk0124,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0125,vmk0125,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0126,vmk0126,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0127,vmk0127,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0128,vmk0128,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0129,vmk0129,fixed_term_36_months,2024-01-01,,38000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0130,vmk0130,indefinite,2024-10-20,,24750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0131,vmk0131,indefinite,2024-01-01,,21500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0132,vmk0132,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0133,vmk0133,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0134,vmk0134,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0135,vmk0135,indefinite,2024-01-01,,20000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0136,vmk0136,indefinite,2024-01-01,,24250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0137,vmk0137,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0138,vmk0138,indefinite,2024-01-01,,12750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0139,vmk0139,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0140,vmk0140,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0141,vmk0141,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0142,vmk0142,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0143,vmk0143,indefinite,2024-03-13,,28500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0144,vmk0144,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0145,vmk0145,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0146,vmk0146,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0147,vmk0147,indefinite,2024-01-01,,18500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0148,vmk0148,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0149,vmk0149,fixed_term_36_months,2024-01-01,,16000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0150,vmk0150,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0151,vmk0151,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0152,vmk0152,indefinite,2024-01-01,,18250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0153,vmk0153,fixed_term_36_months,2024-01-01,,15500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0154,vmk0154,indefinite,2024-01-01,,19750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0155,vmk0155,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0156,vmk0156,indefinite,2024-08-06,,28250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0157,vmk0157,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0158,vmk0158,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0159,vmk0159,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0160,vmk0160,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0161,vmk0161,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0162,vmk0162,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0163,vmk0163,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0164,vmk0164,indefinite,2024-01-01,,19250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0165,vmk0165,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0166,vmk0166,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0167,vmk0167,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0168,vmk0168,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0169,vmk0169,fixed_term_36_months,2024-01-24,,15500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0170,vmk0170,indefinite,2024-01-01,,21750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0171,vmk0171,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0172,vmk0172,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0173,vmk0173,fixed_term_36_months,2024-01-01,,31000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0174,vmk0174,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0175,vmk0175,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0176,vmk0176,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0177,vmk0177,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0178,vmk0178,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0179,vmk0179,indefinite,2024-01-01,,21500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0180,vmk0180,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0181,vmk0181,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0182,vmk0182,indefinite,2024-06-17,,29750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0183,vmk0183,indefinite,2024-01-01,,20000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0184,vmk0184,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0185,vmk0185,fixed_term_36_months,2024-01-01,,15500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0186,vmk0186,indefinite,2024-01-01,,12750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0187,vmk0187,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0188,vmk0188,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0189,vmk0189,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0190,vmk0190,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0191,vmk0191,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0192,vmk0192,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0193,vmk0193,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0194,vmk0194,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0195,vmk0195,indefinite,2024-11-10,,27500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0196,vmk0196,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0197,vmk0197,fixed_term_36_months,2024-01-01,,25000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0198,vmk0198,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0199,vmk0199,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0200,vmk0200,indefinite,2024-01-01,,18250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0201,vmk0201,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0202,vmk0202,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0203,vmk0203,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0204,vmk0204,indefinite,2024-01-01,,24250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0205,vmk0205,fixed_term_36_months,2024-01-01,,25000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0206,vmk0206,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0207,vmk0207,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0208,vmk0208,indefinite,2024-04-03,,23250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0209,vmk0209,fixed_term_36_months,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0210,vmk0210,indefinite,2024-01-01,,16250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0211,vmk0211,indefinite,2024-01-01,,18500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0212,vmk0212,indefinite,2024-01-01,,19250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0213,vmk0213,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0214,vmk0214,indefinite,2024-01-01,,16750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0215,vmk0215,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0216,vmk0216,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0217,vmk0217,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0218,vmk0218,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0219,vmk0219,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0220,vmk0220,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0221,vmk0221,fixed_term_36_months,2024-09-21,,22000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0222,vmk0222,indefinite,2024-01-01,,21750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0223,vmk0223,indefinite,2024-01-01,,18000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0224,vmk0224,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0225,vmk0225,fixed_term_36_months,2024-01-01,,38000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0226,vmk0226,indefinite,2024-01-01,,12750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0227,vmk0227,indefinite,2024-01-01,,39500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0228,vmk0228,indefinite,2024-01-01,,22250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0229,vmk0229,fixed_term_36_months,2024-01-01,,20000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0230,vmk0230,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0231,vmk0231,indefinite,2024-01-01,,17500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0232,vmk0232,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0233,vmk0233,fixed_term_36_months,2024-01-01,,38000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0234,vmk0234,indefinite,2024-02-14,,13750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0235,vmk0235,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0236,vmk0236,indefinite,2024-01-01,,21250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0237,vmk0237,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0238,vmk0238,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0239,vmk0239,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0240,vmk0240,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0241,vmk0241,fixed_term_36_months,2024-01-01,,19000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0242,vmk0242,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0243,vmk0243,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0244,vmk0244,indefinite,2024-01-01,,24250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0245,vmk0245,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0246,vmk0246,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0247,vmk0247,indefinite,2024-07-07,,21500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0248,vmk0248,indefinite,2024-01-01,,18250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0249,vmk0249,fixed_term_36_months,2024-01-01,,13000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0250,vmk0250,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0251,vmk0251,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0252,vmk0252,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0253,vmk0253,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0254,vmk0254,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0255,vmk0255,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0256,vmk0256,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0257,vmk0257,fixed_term_36_months,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0258,vmk0258,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0259,vmk0259,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0260,vmk0260,indefinite,2024-12-25,,14250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0261,vmk0261,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0262,vmk0262,indefinite,2024-01-01,,19250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0263,vmk0263,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0264,vmk0264,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0265,vmk0265,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0266,vmk0266,indefinite,2024-01-01,,28750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0267,vmk0267,indefinite,2024-01-01,,18500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0268,vmk0268,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0269,vmk0269,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0270,vmk0270,indefinite,2024-01-01,,41750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0271,vmk0271,indefinite,2024-01-01,,16500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0272,vmk0272,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0273,vmk0273,fixed_term_36_months,2024-05-18,,23000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0274,vmk0274,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0275,vmk0275,indefinite,2024-01-01,,22500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0276,vmk0276,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0277,vmk0277,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0278,vmk0278,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0279,vmk0279,indefinite,2024-01-01,,20000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0280,vmk0280,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0281,vmk0281,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0282,vmk0282,indefinite,2024-01-01,,13750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0283,vmk0283,indefinite,2024-01-01,,21500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0284,vmk0284,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0285,vmk0285,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0286,vmk0286,indefinite,2024-10-11,,23750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0287,vmk0287,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0288,vmk0288,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0289,vmk0289,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0290,vmk0290,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0291,vmk0291,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0292,vmk0292,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0293,vmk0293,fixed_term_36_months,2024-01-01,,31000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0294,vmk0294,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0295,vmk0295,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0296,vmk0296,indefinite,2024-01-01,,18250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0297,vmk0297,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0298,vmk0298,indefinite,2024-01-01,,19750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0299,vmk0299,indefinite,2024-03-04,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0300,vmk0300,indefinite,2024-01-01,,30250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0301,vmk0301,fixed_term_36_months,2024-01-01,,20000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0302,vmk0302,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0303,vmk0303,indefinite,2024-01-01,,32500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0304,vmk0304,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0305,vmk0305,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0306,vmk0306,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0307,vmk0307,indefinite,2024-01-01,,20500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0308,vmk0308,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0309,vmk0309,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0310,vmk0310,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0311,vmk0311,indefinite,2024-01-01,,21500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0312,vmk0312,indefinite,2024-08-22,,27250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0313,vmk0313,fixed_term_36_months,2024-01-01,,15500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0314,vmk0314,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0315,vmk0315,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0316,vmk0316,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0317,vmk0317,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0318,vmk0318,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0319,vmk0319,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0320,vmk0320,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0321,vmk0321,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0322,vmk0322,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0323,vmk0323,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0324,vmk0324,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0325,vmk0325,fixed_term_36_months,2024-01-15,,29000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0326,vmk0326,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0327,vmk0327,indefinite,2024-01-01,,20000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0328,vmk0328,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0329,vmk0329,fixed_term_36_months,2024-01-01,,18000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0330,vmk0330,indefinite,2024-01-01,,13750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0331,vmk0331,indefinite,2024-01-01,,17000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0332,vmk0332,indefinite,2024-01-01,,40250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0333,vmk0333,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0334,vmk0334,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0335,vmk0335,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0336,vmk0336,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0337,vmk0337,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0338,vmk0338,indefinite,2024-06-08,,23750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0339,vmk0339,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0340,vmk0340,indefinite,2024-01-01,,30250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0341,vmk0341,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0342,vmk0342,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0343,vmk0343,indefinite,2024-01-01,,17500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0344,vmk0344,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0345,vmk0345,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0346,vmk0346,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0347,vmk0347,indefinite,2024-01-01,,17000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0348,vmk0348,indefinite,2024-01-01,,40250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0349,vmk0349,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0350,vmk0350,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0351,vmk0351,indefinite,2024-11-01,,20000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0352,vmk0352,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0353,vmk0353,fixed_term_36_months,2024-01-01,,12000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0354,vmk0354,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0355,vmk0355,indefinite,2024-01-01,,19500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0356,vmk0356,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0357,vmk0357,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0358,vmk0358,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0359,vmk0359,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0360,vmk0360,indefinite,2024-01-01,,22250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0361,vmk0361,fixed_term_36_months,2024-01-01,,15500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0362,vmk0362,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0363,vmk0363,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0364,vmk0364,indefinite,2024-04-19,,17750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0365,vmk0365,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0366,vmk0366,indefinite,2024-01-01,,41750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0367,vmk0367,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0368,vmk0368,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0369,vmk0369,fixed_term_36_months,2024-01-01,,18000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0370,vmk0370,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0371,vmk0371,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0372,vmk0372,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0373,vmk0373,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0374,vmk0374,indefinite,2024-01-01,,19250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0375,vmk0375,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0376,vmk0376,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0377,vmk0377,fixed_term_36_months,2024-09-12,,26000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0378,vmk0378,indefinite,2024-01-01,,13750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0379,vmk0379,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0380,vmk0380,indefinite,2024-01-01,,22250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0381,vmk0381,fixed_term_36_months,2024-01-01,,29000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0382,vmk0382,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0383,vmk0383,indefinite,2024-01-01,,19500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0384,vmk0384,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0385,vmk0385,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0386,vmk0386,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0387,vmk0387,indefinite,2024-01-01,,15000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0388,vmk0388,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0389,vmk0389,fixed_term_36_months,2024-01-01,,41000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0390,vmk0390,indefinite,2024-02-05,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0391,vmk0391,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0392,vmk0392,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0393,vmk0393,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0394,vmk0394,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0395,vmk0395,indefinite,2024-01-01,,14500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0396,vmk0396,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0397,vmk0397,fixed_term_36_months,2024-01-01,,18000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0398,vmk0398,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0399,vmk0399,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0400,vmk0400,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0401,vmk0401,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0402,vmk0402,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0403,vmk0403,indefinite,2024-07-23,,25500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0404,vmk0404,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0405,vmk0405,fixed_term_36_months,2024-01-01,,25000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0406,vmk0406,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0407,vmk0407,indefinite,2024-01-01,,21500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0408,vmk0408,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0409,vmk0409,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0410,vmk0410,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0411,vmk0411,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0412,vmk0412,indefinite,2024-01-01,,15250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0413,vmk0413,fixed_term_36_months,2024-01-01,,25000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0414,vmk0414,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0415,vmk0415,indefinite,2024-01-01,,16500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0416,vmk0416,indefinite,2024-12-16,,30250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0417,vmk0417,fixed_term_36_months,2024-01-01,,18000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0418,vmk0418,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0419,vmk0419,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0420,vmk0420,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0421,vmk0421,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0422,vmk0422,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0423,vmk0423,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0424,vmk0424,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0425,vmk0425,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0426,vmk0426,indefinite,2024-01-01,,16250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0427,vmk0427,indefinite,2024-01-01,,19500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0428,vmk0428,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0429,vmk0429,fixed_term_36_months,2024-05-09,,25000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0430,vmk0430,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0431,vmk0431,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0432,vmk0432,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0433,vmk0433,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0434,vmk0434,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0435,vmk0435,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0436,vmk0436,indefinite,2024-01-01,,22250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0437,vmk0437,fixed_term_36_months,2024-01-01,,16000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0438,vmk0438,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0439,vmk0439,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0440,vmk0440,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0441,vmk0441,fixed_term_36_months,2024-01-01,,17000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0442,vmk0442,indefinite,2024-10-02,,24750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0443,vmk0443,indefinite,2024-01-01,,14500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0444,vmk0444,indefinite,2024-01-01,,30250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0445,vmk0445,fixed_term_36_months,2024-01-01,,23000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0446,vmk0446,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0447,vmk0447,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0448,vmk0448,indefinite,2024-01-01,,33250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0449,vmk0449,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0450,vmk0450,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0451,vmk0451,indefinite,2024-01-01,,19500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0452,vmk0452,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0453,vmk0453,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0454,vmk0454,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0455,vmk0455,indefinite,2024-03-20,,16500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0456,vmk0456,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0457,vmk0457,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0458,vmk0458,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0459,vmk0459,indefinite,2024-01-01,,13500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0460,vmk0460,indefinite,2024-01-01,,15250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0461,vmk0461,fixed_term_36_months,2024-01-01,,26000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0462,vmk0462,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0463,vmk0463,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0464,vmk0464,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0465,vmk0465,fixed_term_36_months,2024-01-01,,19000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0466,vmk0466,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0467,vmk0467,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0468,vmk0468,indefinite,2024-08-13,,25250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0469,vmk0469,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0470,vmk0470,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0471,vmk0471,indefinite,2024-01-01,,17500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0472,vmk0472,indefinite,2024-01-01,,22250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0473,vmk0473,fixed_term_36_months,2024-01-01,,22000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0474,vmk0474,indefinite,2024-01-01,,13750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0475,vmk0475,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0476,vmk0476,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0477,vmk0477,fixed_term_36_months,2024-01-01,,16000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0478,vmk0478,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0479,vmk0479,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0480,vmk0480,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0481,vmk0481,fixed_term_36_months,2024-01-06,,38000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0482,vmk0482,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0483,vmk0483,indefinite,2024-01-01,,27500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0484,vmk0484,indefinite,2024-01-01,,23250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0485,vmk0485,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0486,vmk0486,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0487,vmk0487,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0488,vmk0488,indefinite,2024-01-01,,31250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0489,vmk0489,fixed_term_36_months,2024-01-01,,17000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0490,vmk0490,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0491,vmk0491,indefinite,2024-01-01,,17000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0492,vmk0492,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0493,vmk0493,fixed_term_36_months,2024-01-01,,23000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0494,vmk0494,indefinite,2024-06-24,,16750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0495,vmk0495,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0496,vmk0496,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0497,vmk0497,fixed_term_36_months,2024-01-01,,24000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0498,vmk0498,indefinite,2024-01-01,,28750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0499,vmk0499,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0500,vmk0500,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0501,vmk0501,fixed_term_36_months,2024-01-01,,20000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0502,vmk0502,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0503,vmk0503,indefinite,2024-01-01,,18000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0504,vmk0504,indefinite,2024-01-01,,20750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0505,vmk0505,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0506,vmk0506,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0507,vmk0507,indefinite,2024-11-17,,17000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0508,vmk0508,indefinite,2024-01-01,,24250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0509,vmk0509,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0510,vmk0510,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0511,vmk0511,indefinite,2024-01-01,,18000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0512,vmk0512,indefinite,2024-01-01,,24250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0513,vmk0513,fixed_term_36_months,2024-01-01,,15500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0514,vmk0514,indefinite,2024-01-01,,24750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0515,vmk0515,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0516,vmk0516,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0517,vmk0517,fixed_term_36_months,2024-01-01,,15000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0518,vmk0518,indefinite,2024-01-01,,15750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0519,vmk0519,indefinite,2024-01-01,,25500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0520,vmk0520,indefinite,2024-04-10,,18750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0521,vmk0521,fixed_term_36_months,2024-01-01,,23000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0522,vmk0522,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0523,vmk0523,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0524,vmk0524,indefinite,2024-01-01,,20250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0525,vmk0525,fixed_term_36_months,2024-01-01,,16000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0526,vmk0526,indefinite,2024-01-01,,27750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0527,vmk0527,indefinite,2024-01-01,,26500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0528,vmk0528,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0529,vmk0529,fixed_term_36_months,2024-01-01,,21000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0530,vmk0530,indefinite,2024-01-01,,22750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0531,vmk0531,indefinite,2024-01-01,,15000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0532,vmk0532,indefinite,2024-01-01,,30250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0533,vmk0533,fixed_term_36_months,2024-09-03,,27000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0534,vmk0534,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0535,vmk0535,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0536,vmk0536,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0537,vmk0537,fixed_term_36_months,2024-01-01,,17000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0538,vmk0538,indefinite,2024-01-01,,14250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0539,vmk0539,indefinite,2024-01-01,,23500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0540,vmk0540,indefinite,2024-01-01,,26250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0541,vmk0541,fixed_term_36_months,2024-01-01,,16500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0542,vmk0542,indefinite,2024-01-01,,25750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0543,vmk0543,indefinite,2024-01-01,,30500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0544,vmk0544,indefinite,2024-01-01,,29250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0545,vmk0545,fixed_term_36_months,2024-01-01,,12000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0546,vmk0546,indefinite,2024-02-21,,24750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0547,vmk0547,indefinite,2024-01-01,,24500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0548,vmk0548,indefinite,2024-01-01,,28250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0549,vmk0549,fixed_term_36_months,2024-01-01,,31000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0550,vmk0550,indefinite,2024-01-01,,23750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0551,vmk0551,indefinite,2024-01-01,,28500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0552,vmk0552,indefinite,2024-01-01,,27250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0553,vmk0553,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0554,vmk0554,indefinite,2024-01-01,,17750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0555,vmk0555,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0556,vmk0556,indefinite,2024-01-01,,15250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0557,vmk0557,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0558,vmk0558,indefinite,2024-01-01,,26750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0559,vmk0559,indefinite,2024-07-14,,26500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0560,vmk0560,indefinite,2024-01-01,,17250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0561,vmk0561,fixed_term_36_months,2024-01-01,,18000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0562,vmk0562,indefinite,2024-01-01,,12750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0563,vmk0563,indefinite,2024-01-01,,29500000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0564,vmk0564,indefinite,2024-01-01,,25250000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0565,vmk0565,fixed_term_36_months,2024-01-01,,27000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0566,vmk0566,indefinite,2024-01-01,,29750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0567,vmk0567,indefinite,2024-01-01,,18000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0568,vmk0568,indefinite,2024-01-01,,18750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0569,vmk0569,fixed_term_36_months,2024-01-01,,28000000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0570,vmk0570,indefinite,2024-01-01,,13750000,VND,active,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0571,vmk0571,indefinite,2024-01-01,2025-12-31,18500000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0572,vmk0572,indefinite,2024-12-07,2025-12-31,17250000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0573,vmk0573,fixed_term_36_months,2024-01-01,2025-12-31,16000000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0574,vmk0574,indefinite,2024-01-01,2025-12-31,18750000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0575,vmk0575,indefinite,2024-01-01,2025-12-31,27500000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0576,vmk0576,indefinite,2024-01-01,2025-12-31,17250000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0577,vmk0577,fixed_term_36_months,2024-01-01,2025-12-31,13500000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0578,vmk0578,indefinite,2024-01-01,2025-12-31,16250000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0579,vmk0579,indefinite,2024-01-01,2025-12-31,15000000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0580,vmk0580,indefinite,2024-01-01,2025-12-31,30250000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0581,vmk0581,fixed_term_36_months,2024-01-01,2025-12-31,26000000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0582,vmk0582,indefinite,2024-01-01,2025-12-31,15750000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0583,vmk0583,indefinite,2024-01-01,2025-12-31,17500000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0584,vmk0584,indefinite,2024-01-01,2025-12-31,26250000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0585,vmk0585,fixed_term_36_months,2024-05-25,2025-12-31,24000000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0586,vmk0586,indefinite,2024-01-01,2025-12-31,14250000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0587,vmk0587,indefinite,2024-01-01,2025-12-31,23500000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0588,vmk0588,indefinite,2024-01-01,2025-12-31,26250000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0589,vmk0589,fixed_term_36_months,2024-01-01,2025-12-31,15000000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0590,vmk0590,indefinite,2024-01-01,2025-12-31,19250000,VND,expired,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0591,vmk0591,indefinite,2024-01-01,2025-12-31,17500000,VND,terminated,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0592,vmk0592,indefinite,2024-01-01,2025-12-31,25250000,VND,terminated,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0593,vmk0593,fixed_term_36_months,2024-01-01,2025-12-31,24000000,VND,terminated,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0594,vmk0594,indefinite,2024-01-01,2025-12-31,19750000,VND,terminated,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0595,vmk0595,indefinite,2024-01-01,2025-12-31,21500000,VND,terminated,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0596,vmk0596,indefinite,2024-01-01,2025-12-31,28250000,VND,terminated,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0597,vmk0597,fixed_term_36_months,2024-01-01,2025-12-31,29000000,VND,terminated,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0598,vmk0598,indefinite,2024-10-18,2025-12-31,27750000,VND,terminated,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0599,vmk0599,indefinite,2024-01-01,2025-12-31,30500000,VND,terminated,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2024_0600,vmk0600,indefinite,2024-01-01,2025-12-31,27250000,VND,terminated,Hợp đồng lưu bản điện tử và bản giấy theo quy trình nhân sự.
+contract_2026_state_draft,vmk0591,fixed_term_12_months,2026-01-01,2026-12-31,18500000,VND,draft,Hợp đồng chờ hoàn thiện hồ sơ và phê duyệt.
+contract_2026_state_cancelled,vmk0592,fixed_term_12_months,2026-01-01,2026-12-31,17250000,VND,cancelled,Hợp đồng đã hủy theo yêu cầu nghiệp vụ.
+contract_2026_state_draft_0002,vmk0592,fixed_term_12_months,2026-10-01,2027-09-30,18500000,VND,draft,Hồ sơ tái ký đang chờ bổ sung giấy tờ và phê duyệt.
+contract_2026_state_draft_0003,vmk0593,fixed_term_12_months,2026-10-01,2027-09-30,19250000,VND,draft,Bản nháp hợp đồng chờ đối chiếu thông tin nhân viên.
+contract_2026_state_draft_0004,vmk0594,fixed_term_12_months,2026-10-01,2027-09-30,20000000,VND,draft,Bản nháp hợp đồng chờ người lao động xác nhận.

@@ -60,15 +60,45 @@ const navigation_registry = [
       { path: '/production/finished_products', label: 'Sản lượng thành phẩm', icon: ShopOutlined, permission: 'production_output_read' },
     ],
   },
+  {
+    key: 'quality_cost',
+    title: 'Quản lý chất lượng',
+    short_title: 'Chất lượng',
+    description: 'Kiểm tra chất lượng, tính giá thành và phê duyệt giá bán theo kỳ.',
+    color: 'var(--erp-module-quality-cost)',
+    icon: CheckCircleFilled,
+    permission: 'quality_inspection_read',
+    features: [
+      { path: '/quality_cost/inspections', label: 'Kiểm tra chất lượng', icon: CheckCircleFilled, permission: 'quality_inspection_read' },
+      { path: '/quality_cost/nonconformances', label: 'Sản phẩm không phù hợp', icon: FileSearchOutlined, permission: 'quality_nonconformance_read' },
+      { path: '/quality_cost/calculations', label: 'Tính giá thành', icon: DatabaseOutlined, permission: 'cost_calculation_read' },
+      { path: '/quality_cost/price_proposals', label: 'Đề xuất giá bán', icon: ShopOutlined, permission: 'price_proposal_read' },
+      { path: '/quality_cost/price_approvals', label: 'Phê duyệt bảng giá', icon: CheckCircleFilled, permission: 'price_proposal_read' },
+    ],
+  },
+  {
+    key: 'data_reporting',
+    title: 'Quản lý dữ liệu và báo cáo',
+    short_title: 'Dữ liệu và báo cáo',
+    description: 'Phân hệ được giữ trong backlog để thống nhất chỉ tiêu và nguồn dữ liệu báo cáo.',
+    color: 'var(--erp-module-data-reporting)',
+    icon: FileSearchOutlined,
+    planned: true,
+    features: [
+      { path: '/data_reporting', label: 'Tổng quan phân hệ', icon: FileSearchOutlined, planned: true },
+    ],
+  },
 ];
 
 function get_visible_navigation(current_user) {
   return navigation_registry
     .map((module) => ({
       ...module,
-      features: module.features.filter((feature) => current_user?.permission_codes?.includes(feature.permission)),
+      features: module.planned
+        ? module.features
+        : module.features.filter((feature) => current_user?.permission_codes?.includes(feature.permission)),
     }))
-    .filter((module) => current_user?.permission_codes?.includes(module.permission) && module.features.length > 0);
+    .filter((module) => module.features.length > 0);
 }
 
 export { get_visible_navigation, navigation_registry };

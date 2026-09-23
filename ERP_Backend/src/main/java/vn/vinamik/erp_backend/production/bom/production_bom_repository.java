@@ -126,6 +126,12 @@ public class production_bom_repository {
                 line.quantity_per_base(), scrap_percent, notes);
     }
 
+    public int delete_draft(long bom_id) {
+        return jpa_query_executor.update(
+                "DELETE FROM production.bom WHERE bom_id = ? AND status = 'draft'",
+                bom_id);
+    }
+
     public int change_status(long bom_id, String status, long actor_user_id) {
         return jpa_query_executor.update(
                 "UPDATE production.bom SET status = ?, updated_at = now(), updated_by_user_id = ? WHERE bom_id = ?",

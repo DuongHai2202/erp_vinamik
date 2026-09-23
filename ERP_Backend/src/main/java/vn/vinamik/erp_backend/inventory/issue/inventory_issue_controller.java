@@ -6,8 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -51,6 +53,33 @@ public class inventory_issue_controller {
             @AuthenticationPrincipal authenticated_user actor,
             HttpServletRequest http_request) {
         return new api_success_response<>("Issue created successfully.", issue_service.create(request, actor, correlation_id(http_request)));
+    }
+
+    @PutMapping("/{issue_id}")
+    @PreAuthorize("hasAuthority('inventory_issue_update')")
+    public api_success_response<issue_response> update(@PathVariable long issue_id, @Valid @RequestBody issue_request request,
+                                                       @AuthenticationPrincipal authenticated_user actor, HttpServletRequest http_request) {
+        return new api_success_response<>("Issue updated successfully.", issue_service.update(issue_id, request, actor, correlation_id(http_request)));
+    }
+
+    @DeleteMapping("/{issue_id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PreAuthorize("hasAuthority('inventory_issue_delete')")
+    public void delete(@PathVariable long issue_id, @AuthenticationPrincipal authenticated_user actor, HttpServletRequest http_request) {
+        issue_service.delete(issue_id, actor, correlation_id(http_request));
+    }
+
+    @PostMapping("/{issue_id}/cancel")
+    @PreAuthorize("hasAuthority('inventory_issue_update')")
+    public api_success_response<issue_response> cancel(@PathVariable long issue_id,
+                                                       @AuthenticationPrincipal authenticated_user actor, HttpServletRequest http_request) {
+        return new api_success_response<>("Issue cancelled successfully.", issue_service.cancel(issue_id, actor, correlation_id(http_request)));
+    }
+    @PostMapping("/{issue_id}/submit")
+    @PreAuthorize("hasAuthority('inventory_issue_update')")
+    public api_success_response<issue_response> submit(@PathVariable long issue_id,
+                                                       @AuthenticationPrincipal authenticated_user actor, HttpServletRequest http_request) {
+        return new api_success_response<>("Issue submitted successfully.", issue_service.submit(issue_id, actor, correlation_id(http_request)));
     }
 
     @PostMapping("/{issue_id}/post")

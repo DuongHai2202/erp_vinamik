@@ -28,7 +28,7 @@ public class production_order_controller {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('production_order_read')")
+    @PreAuthorize("hasAnyAuthority('production_order_read', 'production_output_read')")
     public api_success_response<production_order_page_response> search(
             @RequestParam(required = false) String search,
             @RequestParam(required = false) String status,
@@ -46,7 +46,7 @@ public class production_order_controller {
                 order_service.count_overdue());
     }
     @GetMapping("/{production_order_id}")
-    @PreAuthorize("hasAuthority('production_order_read')")
+    @PreAuthorize("hasAnyAuthority('production_order_read', 'production_output_read')")
     public api_success_response<production_order_response> find_by_id(@PathVariable long production_order_id) {
         return new api_success_response<>("Production order retrieved successfully.", order_service.find_by_id(production_order_id));
     }

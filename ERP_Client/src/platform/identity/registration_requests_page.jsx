@@ -1,20 +1,24 @@
-import { Button, Card, Form, Input, InputNumber, Modal, Select, Space, Table, Tag, Typography, message as antd_message } from 'antd';
-import { CheckOutlined, CloseOutlined, EyeOutlined, LockOutlined } from '@ant-design/icons';
+import { App as antd_app, Button, Card, Form, Input, Modal, Select, Space, Table, Tag, Typography, message as antd_message } from 'antd';
+import { CheckOutlined, CloseOutlined, LockOutlined } from '@ant-design/icons';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { has_permission } from '../common/permission_utils';
 import { request_api } from '../common/api_client';
 import { use_auth } from './auth_context';
+import RecordActionBar from '../layout/record_action_bar';
+import DebouncedSearchInput from '../layout/debounced_search_input';
+import { LookupField } from '../layout/workflow_fields';
+import { format_datetime_vn } from '../common/formatters';
 
 const status_labels = { pending: 'Chờ duyệt', approved: 'Đã duyệt', rejected: 'Từ chối', expired: 'Đã hết hạn' };
 const status_colors = { pending: 'gold', approved: 'green', rejected: 'red', expired: 'default' };
 
 function format_datetime(value) {
-  if (!value) return '—';
-  return new Intl.DateTimeFormat('vi-VN', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(value));
+  return value ? format_datetime_vn(value) : 'Chưa cập nhật';
 }
 
 function RegistrationRequestsPage() {
   const { current_user } = use_auth();
+  const { modal } = antd_app.useApp();
   const [message, message_context] = antd_message.useMessage();
   const [items, set_items] = useState([]);
   const [roles, set_roles] = useState([]);
@@ -91,8 +95,18 @@ function RegistrationRequestsPage() {
     { title: 'GỬI LÚC', dataIndex: 'requested_at', key: 'requested_at', width: 175, render: format_datetime },
     { title: 'HẾT HẠN', dataIndex: 'expires_at', key: 'expires_at', width: 175, render: format_datetime },
     { title: 'TRẠNG THÁI', dataIndex: 'status', key: 'status', width: 120, render: (value) => <Tag color={status_colors[value]}>{status_labels[value] || value}</Tag> },
-    { title: 'THAO TÁC', key: 'actions', width: 190, fixed: 'right', render: (_, record) => record.status === 'pending' && can_approve ? <Space size={4}><Button type="text" icon={<CheckOutlined />} onClick={() => open_approve(record)}>Duyệt</Button><Button type="text" danger icon={<CloseOutlined />} onClick={() => { set_reject_record(record); reject_form.resetFields(); }}>Từ chối</Button></Space> : <Button type="text" icon={<EyeOutlined />} disabled>Xem</Button> },
-  ], [can_approve, open_approve, reject_form]);
+    { title: 'THAO TÁC', key: 'actions', width: 260, fixed: 'right', render: (_, record) => <RecordActionBar
+      on_open={() => modal.info({
+        title: `Chi tiết yêu cầu ${record.username}`,
+        content: <div className="workflow_detail_grid"><div><span>Họ và tên</span><strong>{record.full_name}</strong></div><div><span>Email</span><strong>{record.work_email}</strong></div><div><span>Nhân viên</span><strong>{record.employee_code || 'Chưa cung cấp'}</strong></div><div><span>Trạng thái</span><strong>{status_labels[record.status] || record.status}</strong></div></div>,
+        okText: 'Đóng',
+      })}
+      workflow_actions={record.status === 'pending' && can_approve ? [
+        { key: 'approve', label: 'Duyệt', icon: <CheckOutlined />, on_click: () => open_approve(record) },
+        { key: 'reject', label: 'Từ chối', icon: <CloseOutlined />, on_click: () => { set_reject_record(record); reject_form.resetFields(); } },
+      ] : []}
+    /> },
+  ], [can_approve, modal, open_approve, reject_form]);
 
   if (!can_read) return <div className="identity_denied"><LockOutlined /><Typography.Title level={3}>Không có quyền truy cập</Typography.Title><Typography.Paragraph>Registration review permission is required.</Typography.Paragraph></div>;
 
@@ -101,13 +115,23 @@ function RegistrationRequestsPage() {
     <div className="identity_admin_page registration_requests_page">
       <div className="page_heading"><div><Typography.Title level={2}>Yêu cầu cấp tài khoản</Typography.Title><Typography.Paragraph>Kiểm tra nhân sự, gán vai trò tối thiểu và duyệt tài khoản trước khi đăng nhập.</Typography.Paragraph></div><Tag color={can_approve ? 'blue' : 'gold'} icon={can_approve ? <CheckOutlined /> : <LockOutlined />}>{can_approve ? 'Có quyền duyệt' : 'Chỉ xem'}</Tag></div>
       <Card bordered={false} className="identity_admin_surface">
-        <div className="control_row registration_filter_row"><Input.Search allowClear placeholder="Tìm theo tên, email hoặc username" value={search} onChange={(event) => set_search(event.target.value)} onSearch={() => { set_search_query(search); set_page(1); }} /><Select value={status || undefined} allowClear placeholder="Tất cả trạng thái" options={Object.entries(status_labels).map(([value, label]) => ({ value, label }))} onChange={(value) => { set_status(value || ''); set_page(1); }} /><Button onClick={() => load_data(1)}>Tải lại</Button></div>
+        <div className="control_row registration_filter_row"><DebouncedSearchInput placeholder="Tìm theo tên, email hoặc username" value={search} on_commit={(next_search) => { set_search(next_search); set_search_query(next_search); set_page(1); }} /><Select value={status || undefined} allowClear placeholder="Tất cả trạng thái" options={Object.entries(status_labels).map(([value, label]) => ({ value, label }))} onChange={(value) => { set_status(value || ''); set_page(1); }} /><Button onClick={() => load_data(1)}>Tải lại</Button></div>
         <Table rowKey="registration_request_id" loading={is_loading} columns={columns} dataSource={items} scroll={{ x: 1120, y: 560 }} pagination={{ current: page, pageSize: 50, total, showSizeChanger: false, showTotal: (value, range) => String(range[0]) + '–' + String(range[1]) + ' / ' + String(value) + ' yêu cầu' }} onChange={(pagination) => load_data(pagination.current)} />
       </Card>
       <Modal open={Boolean(approve_record)} title="Duyệt yêu cầu cấp tài khoản" onCancel={() => set_approve_record(null)} footer={null} destroyOnClose>
-        <Typography.Paragraph>Gắn yêu cầu <strong>{approve_record?.username}</strong> với nhân viên thật trong HR và chọn vai trò tối thiểu.</Typography.Paragraph>
+        <Typography.Paragraph>
+          Gắn yêu cầu <strong>{approve_record?.username}</strong> với hồ sơ nhân viên trong HR. Tìm theo mã nhân viên
+          <strong>{approve_record?.employee_code ? ` ${approve_record.employee_code}` : ''}</strong> hoặc họ tên; hệ thống tự gửi mã nội bộ cho backend.
+        </Typography.Paragraph>
         <Form form={approve_form} layout="vertical" onFinish={submit_approve} requiredMark={false}>
-          <Form.Item label="Mã định danh nhân viên" name="employee_id" rules={[{ required: true, message: 'Employee is required.' }]}><InputNumber min={1} style={{ width: '100%' }} placeholder="Nhập employee_id trong HR" /></Form.Item>
+          <Form.Item
+            label="Nhân viên HR liên kết"
+            name="employee_id"
+            rules={[{ required: true, message: 'Employee is required.' }]}
+            extra="Chọn đúng hồ sơ đang làm việc để cấp tài khoản."
+          >
+            <LookupField field={{ lookup: 'employees', name: 'employee_id', required: true, placeholder: 'Tìm theo mã hoặc họ tên nhân viên' }} form={approve_form} />
+          </Form.Item>
           <Form.Item label="Vai trò được cấp" name="role_codes" rules={[{ required: true, message: 'At least one role is required.' }]}><Select mode="multiple" options={roles.map((role) => ({ value: role.role_code, label: role.display_name }))} placeholder="Chọn vai trò" /></Form.Item>
           <Space><Button onClick={() => set_approve_record(null)}>Hủy</Button><Button type="primary" htmlType="submit">Duyệt và tạo tài khoản</Button></Space>
         </Form>

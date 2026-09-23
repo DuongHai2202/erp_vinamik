@@ -51,7 +51,13 @@ public class production_material_consumption_repository {
                         result_set.getString("material_item_name_snapshot")),
                 production_order_id);
         Map<Long, material_requirement_snapshot> result = new LinkedHashMap<>();
-        rows.forEach(row -> result.put(row.material_stock_item_id(), row));
+        for (material_requirement_snapshot row : rows) {
+            result.merge(row.material_stock_item_id(), row,
+                    (current, incoming) -> new material_requirement_snapshot(
+                            current.material_stock_item_id(), current.unit_code(),
+                            normalize_quantity(current.required_quantity()).add(normalize_quantity(incoming.required_quantity())),
+                            current.material_item_code(), current.material_item_name()));
+        }
         return result;
     }
 
@@ -78,14 +84,11 @@ public class production_material_consumption_repository {
     public List<material_consumption_response> list_by_order(long production_order_id, String order_code) {
         List<consumption_line_with_key> rows = jpa_query_executor.query(
                 "SELECT consumption.idempotency_key, consumption.material_consumption_id, consumption.inventory_issue_line_id, "
-                        + "consumption.material_stock_item_id, bom_line.material_item_code_snapshot, "
-                        + "bom_line.material_item_name_snapshot, consumption.unit_code_snapshot, "
+                        + "consumption.material_stock_item_id, requirement_snapshot.material_item_code_snapshot, "
+                        + "requirement_snapshot.material_item_name_snapshot, consumption.unit_code_snapshot, "
                         + "consumption.consumed_quantity, consumption.consumed_at "
                         + "FROM production.material_consumption AS consumption "
-                        + "JOIN production.production_order_material_requirement AS requirement "
-                        + "ON requirement.production_order_id = consumption.production_order_id "
-                        + "AND requirement.material_stock_item_id = consumption.material_stock_item_id "
-                        + "JOIN production.bom_line AS bom_line ON bom_line.bom_line_id = requirement.bom_line_id "
+                        + "JOIN LATERAL (SELECT bom_line.material_item_code_snapshot, bom_line.material_item_name_snapshot " + "FROM production.production_order_material_requirement AS requirement " + "JOIN production.bom_line AS bom_line ON bom_line.bom_line_id = requirement.bom_line_id " + "WHERE requirement.production_order_id = consumption.production_order_id " + "AND requirement.material_stock_item_id = consumption.material_stock_item_id " + "ORDER BY requirement.production_order_material_requirement_id LIMIT 1) AS requirement_snapshot ON true "
                         + "WHERE consumption.production_order_id = ? "
                         + "ORDER BY consumption.idempotency_key, consumption.line_number",
                 this::map_line_with_key, production_order_id);
@@ -116,14 +119,11 @@ public class production_material_consumption_repository {
     private List<material_consumption_line_response> query_lines(long production_order_id, String request_key) {
         return jpa_query_executor.query(
                 "SELECT consumption.material_consumption_id, consumption.inventory_issue_line_id, "
-                        + "consumption.material_stock_item_id, bom_line.material_item_code_snapshot, "
-                        + "bom_line.material_item_name_snapshot, consumption.unit_code_snapshot, "
+                        + "consumption.material_stock_item_id, requirement_snapshot.material_item_code_snapshot, "
+                        + "requirement_snapshot.material_item_name_snapshot, consumption.unit_code_snapshot, "
                         + "consumption.consumed_quantity, consumption.consumed_at "
                         + "FROM production.material_consumption AS consumption "
-                        + "JOIN production.production_order_material_requirement AS requirement "
-                        + "ON requirement.production_order_id = consumption.production_order_id "
-                        + "AND requirement.material_stock_item_id = consumption.material_stock_item_id "
-                        + "JOIN production.bom_line AS bom_line ON bom_line.bom_line_id = requirement.bom_line_id "
+                        + "JOIN LATERAL (SELECT bom_line.material_item_code_snapshot, bom_line.material_item_name_snapshot " + "FROM production.production_order_material_requirement AS requirement " + "JOIN production.bom_line AS bom_line ON bom_line.bom_line_id = requirement.bom_line_id " + "WHERE requirement.production_order_id = consumption.production_order_id " + "AND requirement.material_stock_item_id = consumption.material_stock_item_id " + "ORDER BY requirement.production_order_material_requirement_id LIMIT 1) AS requirement_snapshot ON true "
                         + "WHERE consumption.production_order_id = ? AND consumption.idempotency_key = ? "
                         + "ORDER BY consumption.line_number",
                 this::map_line, production_order_id, request_key);
@@ -145,6 +145,10 @@ public class production_material_consumption_repository {
         return new consumption_line_with_key(result_set.getString("idempotency_key"), map_line(result_set, row_number));
     }
 
+
+    private BigDecimal normalize_quantity(BigDecimal value) {
+        return value == null ? BigDecimal.ZERO : value;
+    }
 
     record production_order_snapshot(long production_order_id, String order_code, String status) {
     }

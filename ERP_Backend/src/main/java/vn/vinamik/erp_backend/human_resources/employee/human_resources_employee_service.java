@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.human_resources.employee.entity.employee_entity;
 import vn.vinamik.erp_backend.human_resources.employee.repository.employee_read_row;
+import vn.vinamik.erp_backend.human_resources.employee.repository.employee_lookup_row;
 import vn.vinamik.erp_backend.human_resources.employee.repository.human_resources_employee_read_repository;
 import vn.vinamik.erp_backend.human_resources.employee.repository.human_resources_employee_repository;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
@@ -68,6 +69,20 @@ public class human_resources_employee_service {
         return to_response(read_repository.find_by_id(employee_id));
     }
 
+
+    @Transactional(readOnly = true)
+    public List<employee_lookup_response> lookup_active(String search, int limit) {
+        return lookup_active(search, limit, null);
+    }
+
+    @Transactional(readOnly = true)
+    public List<employee_lookup_response> lookup_active(String search, int limit, Long include_employee_id) {
+        int safe_limit = Math.min(Math.max(limit, 1), 200);
+        String normalized_search = normalize_lower(search);
+        return read_repository.lookup_active(normalized_search, safe_limit, include_employee_id).stream()
+                .map(row -> new employee_lookup_response(row.employee_id(), row.employee_code(), row.full_name(), row.employment_status()))
+                .toList();
+    }
     @Transactional
     public employee_response create(employee_request request, authenticated_user actor, String correlation_id) {
         validate_request(request);
@@ -271,6 +286,3 @@ public class human_resources_employee_service {
                 row.notes());
     }
 }
-
-
-

@@ -1,31 +1,31 @@
 ﻿supplier_code,supplier_name,phone_number,email,address,status
-supplier_001,Nhà cung cấp Nguyên liệu sữa 01,,supplier.001@vinamilk.test,Thành phố Hồ Chí Minh,active
-supplier_002,Nhà cung cấp Bao bì thực phẩm 02,,supplier.002@vinamilk.test,Bình Dương,active
-supplier_003,Nhà cung cấp Vitamin và khoáng chất 03,,supplier.003@vinamilk.test,Đồng Nai,active
-supplier_004,Nhà cung cấp Trái cây cô đặc 04,,supplier.004@vinamilk.test,Long An,active
-supplier_005,Nhà cung cấp Men vi sinh 05,,supplier.005@vinamilk.test,Hà Nội,active
-supplier_006,Nhà cung cấp Đường thực phẩm 06,,supplier.006@vinamilk.test,Bắc Ninh,active
-supplier_007,Nhà cung cấp Nguyên liệu sữa 07,,supplier.007@vinamilk.test,Đà Nẵng,active
-supplier_008,Nhà cung cấp Bao bì thực phẩm 08,,supplier.008@vinamilk.test,Cần Thơ,active
-supplier_009,Nhà cung cấp Vitamin và khoáng chất 09,,supplier.009@vinamilk.test,Thành phố Hồ Chí Minh,active
-supplier_010,Nhà cung cấp Trái cây cô đặc 10,,supplier.010@vinamilk.test,Bình Dương,active
-supplier_011,Nhà cung cấp Men vi sinh 11,,supplier.011@vinamilk.test,Đồng Nai,active
-supplier_012,Nhà cung cấp Đường thực phẩm 12,,supplier.012@vinamilk.test,Long An,active
-supplier_013,Nhà cung cấp Nguyên liệu sữa 13,,supplier.013@vinamilk.test,Hà Nội,active
-supplier_014,Nhà cung cấp Bao bì thực phẩm 14,,supplier.014@vinamilk.test,Bắc Ninh,active
-supplier_015,Nhà cung cấp Vitamin và khoáng chất 15,,supplier.015@vinamilk.test,Đà Nẵng,active
-supplier_016,Nhà cung cấp Trái cây cô đặc 16,,supplier.016@vinamilk.test,Cần Thơ,active
-supplier_017,Nhà cung cấp Men vi sinh 17,,supplier.017@vinamilk.test,Thành phố Hồ Chí Minh,active
-supplier_018,Nhà cung cấp Đường thực phẩm 18,,supplier.018@vinamilk.test,Bình Dương,active
-supplier_019,Nhà cung cấp Nguyên liệu sữa 19,,supplier.019@vinamilk.test,Đồng Nai,active
-supplier_020,Nhà cung cấp Bao bì thực phẩm 20,,supplier.020@vinamilk.test,Long An,active
-supplier_021,Nhà cung cấp Vitamin và khoáng chất 21,,supplier.021@vinamilk.test,Hà Nội,active
-supplier_022,Nhà cung cấp Trái cây cô đặc 22,,supplier.022@vinamilk.test,Bắc Ninh,active
-supplier_023,Nhà cung cấp Men vi sinh 23,,supplier.023@vinamilk.test,Đà Nẵng,active
-supplier_024,Nhà cung cấp Đường thực phẩm 24,,supplier.024@vinamilk.test,Cần Thơ,active
-supplier_025,Nhà cung cấp Nguyên liệu sữa 25,,supplier.025@vinamilk.test,Thành phố Hồ Chí Minh,active
-supplier_026,Nhà cung cấp Bao bì thực phẩm 26,,supplier.026@vinamilk.test,Bình Dương,active
-supplier_027,Nhà cung cấp Vitamin và khoáng chất 27,,supplier.027@vinamilk.test,Đồng Nai,active
-supplier_028,Nhà cung cấp Trái cây cô đặc 28,,supplier.028@vinamilk.test,Long An,inactive
-supplier_029,Nhà cung cấp Men vi sinh 29,,supplier.029@vinamilk.test,Hà Nội,inactive
-supplier_030,Nhà cung cấp Đường thực phẩm 30,,supplier.030@vinamilk.test,Bắc Ninh,inactive
+supplier_001,Công ty TNHH Nguyên liệu An Phú,0846777867,supplier.001@vinamilk.test,Thành phố Hồ Chí Minh,active
+supplier_002,Công ty Cổ phần Bao bì Minh Thành,0856785786,supplier.002@vinamilk.test,Bình Dương,active
+supplier_003,Công ty TNHH Dinh dưỡng Việt Phát,0866793705,supplier.003@vinamilk.test,Đồng Nai,active
+supplier_004,Công ty Cổ phần Hương liệu Nam Việt,0886801624,supplier.004@vinamilk.test,Long An,active
+supplier_005,Công ty TNHH Men vi sinh Hưng Thịnh,0896809543,supplier.005@vinamilk.test,Hà Nội,active
+supplier_006,Công ty Cổ phần Đường thực phẩm Đại Nam,0906817462,supplier.006@vinamilk.test,Bắc Ninh,active
+supplier_007,Công ty TNHH Nguyên liệu Thành Công,0916825381,supplier.007@vinamilk.test,Đà Nẵng,active
+supplier_008,Công ty Cổ phần Bao bì Tân Hòa,0936833300,supplier.008@vinamilk.test,Cần Thơ,active
+supplier_009,Công ty TNHH Khoáng chất Bình Minh,0946841219,supplier.009@vinamilk.test,Thành phố Hồ Chí Minh,active
+supplier_010,Công ty Cổ phần Nông sản Phú Gia,0966849138,supplier.010@vinamilk.test,Bình Dương,active
+supplier_011,Công ty TNHH Công nghệ thực phẩm Đông Á,0976857057,supplier.011@vinamilk.test,Đồng Nai,active
+supplier_012,Công ty Cổ phần Vật tư Sữa Việt,0986864976,supplier.012@vinamilk.test,Long An,active
+supplier_013,Công ty TNHH Hương liệu An Khang,0996872895,supplier.013@vinamilk.test,Hà Nội,active
+supplier_014,Công ty Cổ phần Bao bì Hòa Bình,0326880814,supplier.014@vinamilk.test,Bắc Ninh,active
+supplier_015,Công ty TNHH Phụ gia Thực phẩm Thành Đạt,0336888733,supplier.015@vinamilk.test,Đà Nẵng,active
+supplier_016,Công ty Cổ phần Nông sản Mekong,0346896652,supplier.016@vinamilk.test,Cần Thơ,active
+supplier_017,Công ty TNHH Dịch vụ Kho vận Nam Phương,0356904571,supplier.017@vinamilk.test,Thành phố Hồ Chí Minh,active
+supplier_018,Công ty Cổ phần Vật liệu Đóng gói Việt,0366912490,supplier.018@vinamilk.test,Bình Dương,active
+supplier_019,Công ty TNHH Nguyên liệu Thịnh Phát,0376920409,supplier.019@vinamilk.test,Đồng Nai,active
+supplier_020,Công ty Cổ phần Dinh dưỡng An Việt,0386928328,supplier.020@vinamilk.test,Long An,active
+supplier_021,Công ty TNHH Sản xuất Bao bì Phúc An,0396936247,supplier.021@vinamilk.test,Hà Nội,active
+supplier_022,Công ty Cổ phần Hương liệu Việt Hưng,0566944166,supplier.022@vinamilk.test,Bắc Ninh,active
+supplier_023,Công ty TNHH Thực phẩm Xanh Sài Gòn,0586952085,supplier.023@vinamilk.test,Đà Nẵng,active
+supplier_024,Công ty Cổ phần Nguyên liệu Hòa Phú,0706960004,supplier.024@vinamilk.test,Cần Thơ,active
+supplier_025,Công ty TNHH Vật tư Công nghiệp Đại Việt,0766967923,supplier.025@vinamilk.test,Thành phố Hồ Chí Minh,active
+supplier_026,Công ty Cổ phần Chất lượng Tân Minh,0776975842,supplier.026@vinamilk.test,Bình Dương,active
+supplier_027,Công ty TNHH Cung ứng Nguyên liệu Phương Nam,0786983761,supplier.027@vinamilk.test,Đồng Nai,active
+supplier_028,Công ty Cổ phần Bao bì Việt Thành,0796991680,supplier.028@vinamilk.test,Long An,inactive
+supplier_029,Công ty TNHH Dịch vụ Kỹ thuật Sữa Việt,0816999599,supplier.029@vinamilk.test,Hà Nội,inactive
+supplier_030,Công ty Cổ phần Chuỗi cung ứng Minh An,0827007518,supplier.030@vinamilk.test,Bắc Ninh,inactive

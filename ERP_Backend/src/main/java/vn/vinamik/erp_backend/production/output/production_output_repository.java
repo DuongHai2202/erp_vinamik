@@ -105,6 +105,55 @@ public class production_output_repository {
         return outputs.isEmpty() ? null : outputs.getFirst();
     }
 
+    public BigDecimal total_output_quantity_except(long production_order_id, long output_id) {
+        BigDecimal total = jpa_query_executor.queryForObject(
+                "SELECT coalesce(sum(good_quantity + defective_quantity), 0) FROM production.production_output WHERE production_order_id = ? AND production_output_id <> ? AND status <> 'cancelled'",
+                BigDecimal.class, production_order_id, output_id);
+        return total == null ? BigDecimal.ZERO : total;
+    }
+
+    public production_output_response find_by_order_lot_except(long production_order_id, String lot_code, long output_id) {
+        List<production_output_response> outputs = jpa_query_executor.query(
+                output_select_sql() + " WHERE output.production_order_id = ? AND output.lot_code_snapshot = ? AND output.production_output_id <> ?",
+                this::map_response, production_order_id, lot_code, output_id);
+        return outputs.isEmpty() ? null : outputs.getFirst();
+    }
+
+    public boolean idempotency_key_exists_for_other(String idempotency_key, long output_id) {
+        Long count = jpa_query_executor.queryForObject(
+                "SELECT count(*) FROM production.production_output WHERE idempotency_key = ? AND production_output_id <> ?",
+                Long.class, idempotency_key, output_id);
+        return count != null && count > 0;
+    }
+
+    public int update_draft(long output_id, long production_order_id, String lot_code, LocalDate manufactured_on,
+                            LocalDate expires_on, BigDecimal good_quantity, BigDecimal defective_quantity,
+                            long warehouse_id, long warehouse_location_id, String status, String idempotency_key,
+                            String notes) {
+        return jpa_query_executor.update(
+                "UPDATE production.production_output SET lot_code_snapshot = ?, manufactured_on = ?, expires_on = ?, good_quantity = ?, defective_quantity = ?, inventory_warehouse_id = ?, inventory_warehouse_location_id = ?, status = ?, idempotency_key = ?, notes = ? WHERE production_output_id = ? AND production_order_id = ? AND status = 'draft'",
+                lot_code, manufactured_on, expires_on, good_quantity, defective_quantity, warehouse_id,
+                warehouse_location_id, status, idempotency_key, notes, output_id, production_order_id);
+    }
+
+    public int delete_draft(long production_order_id, long output_id) {
+        return jpa_query_executor.update(
+                "DELETE FROM production.production_output WHERE production_order_id = ? AND production_output_id = ? AND status = 'draft'",
+                production_order_id, output_id);
+    }
+
+    public int cancel(long production_order_id, long output_id) {
+        return jpa_query_executor.update(
+                "UPDATE production.production_output SET status = 'cancelled' WHERE production_order_id = ? AND production_output_id = ? AND status IN ('draft', 'pending_receipt') AND inventory_receipt_id IS NULL",
+                production_order_id, output_id);
+    }
+
+    public int mark_failed(long production_order_id, long output_id) {
+        return jpa_query_executor.update(
+                "UPDATE production.production_output SET status = 'failed' WHERE production_order_id = ? AND production_output_id = ? AND status IN ('draft', 'pending_receipt') AND inventory_receipt_id IS NULL",
+                production_order_id, output_id);
+    }
+
     public boolean idempotency_key_exists(String idempotency_key) {
         Long count = jpa_query_executor.queryForObject(
                 "SELECT count(*) FROM production.production_output WHERE idempotency_key = ?", Long.class, idempotency_key);

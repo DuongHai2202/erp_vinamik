@@ -1,18 +1,17 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
-  AppstoreOutlined,
   ArrowRightOutlined,
   CheckCircleFilled,
   ClockCircleOutlined,
   GlobalOutlined,
   LockOutlined,
   ReloadOutlined,
-  SafetyCertificateOutlined,
   WarningOutlined,
 } from '@ant-design/icons';
 import { Button, Spin, Tag, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import { has_permission } from '../common/permission_utils';
+import { format_datetime_vn } from '../common/formatters';
 import { request_api } from '../common/api_client';
 import { use_system_status } from '../common/system_status_context';
 import { use_auth } from '../identity/auth_context';
@@ -22,6 +21,7 @@ const queue_definitions = [
   {
     key: 'hr_absence',
     module_key: 'human_resources',
+    module_label: 'Nhân sự',
     label: 'Yêu cầu nghỉ chờ duyệt',
     permission: 'hr_absence_read',
     path: '/human_resources/absences',
@@ -33,6 +33,7 @@ const queue_definitions = [
   {
     key: 'inventory_unposted',
     module_key: 'inventory',
+    module_label: 'Kho',
     label: 'Phiếu kho chưa ghi sổ',
     permissions: ['inventory_receipt_read', 'inventory_issue_read'],
     path: '/inventory/receipts',
@@ -53,6 +54,7 @@ const queue_definitions = [
   {
     key: 'production_overdue',
     module_key: 'production',
+    module_label: 'Sản xuất',
     label: 'Lệnh sản xuất quá hạn',
     permission: 'production_order_read',
     path: '/production/orders',
@@ -64,12 +66,18 @@ const queue_definitions = [
   {
     key: 'payroll_open',
     module_key: 'human_resources',
+    module_label: 'Tiền lương',
     label: 'Kỳ lương đang mở',
     permission: 'hr_payroll_read',
     path: '/human_resources/payroll',
     load: async () => {
-      const response = await request_api('/api/v1/human_resources/payroll/periods?status=draft&page=0&page_size=1');
-      return response.data.total_items;
+      // A payroll period remains open until it is locked. Count every
+      // reviewable lifecycle state instead of only draft periods.
+      const open_statuses = ['draft', 'calculated', 'approved', 'rejected'];
+      const responses = await Promise.all(open_statuses.map((status) => request_api(
+        `/api/v1/human_resources/payroll/periods?status=${status}&page=0&page_size=1`,
+      )));
+      return responses.reduce((total, response) => total + Number(response.data.total_items || 0), 0);
     },
   },
 ];
@@ -93,7 +101,18 @@ function activity_label(action_code) {
 
 function format_activity_time(value) {
   if (!value) return 'Vừa cập nhật';
-  return new Intl.DateTimeFormat('vi-VN', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(value));
+  const text = String(value);
+  const date = value instanceof Date || text.includes('T') ? new Date(value) : null;
+  if (!date || Number.isNaN(date.getTime())) return format_datetime_vn(value);
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('vi-VN', {
+    day: '2-digit', month: '2-digit', year: 'numeric',
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false,
+  }).formatToParts(date).map((part) => [part.type, part.value]));
+  return `${parts.day}/${parts.month}/${parts.year} ${parts.hour}:${parts.minute}:${parts.second}`;
+}
+
+function can_read_module(current_user, module) {
+  return module.planned || module.features.some((feature) => feature.permission && has_permission(current_user, feature.permission));
 }
 
 function useWorkQueue(current_user) {
@@ -136,9 +155,10 @@ function OverviewPage() {
   const [activity_loading, set_activity_loading] = useState(false);
 
   const visible_navigation = useMemo(() => get_visible_navigation(current_user), [current_user]);
-  const first_feature = visible_navigation[0]?.features[0];
   const available_features = visible_navigation.reduce((total, module) => total + module.features.length, 0);
-  const read_only = navigation_registry.some((module) => has_permission(current_user, module.permission) && module.features.some((feature) => !has_permission(current_user, feature.permission)));
+  const read_only = navigation_registry.some((module) => !module.planned
+    && can_read_module(current_user, module)
+    && module.features.some((feature) => feature.permission && !has_permission(current_user, feature.permission)));
 
   const load_activities = useCallback(async () => {
     if (!has_permission(current_user, 'identity_audit_read')) {
@@ -168,23 +188,7 @@ function OverviewPage() {
   }[system_state] || { label: 'Chưa xác định', color: 'default' };
 
   return <div className="overview_page">
-    <section className="overview_hero">
-      <div className="overview_hero_index">V / 01</div>
-      <div className="overview_hero_copy">
-        <Typography.Text className="eyebrow"><span className="live_dot" /> TRUNG TÂM ĐIỀU HÀNH VINAMIK</Typography.Text>
-        <Typography.Title level={1}>Một nhịp vận hành,<br />mọi quyết định rõ ràng.</Typography.Title>
-        <Typography.Paragraph>Chào {current_user?.username || 'bạn'}, đây là không gian điều phối theo quyền tài khoản và dữ liệu trung tâm.</Typography.Paragraph>
-        <div className="overview_hero_actions">
-          {first_feature ? <Link to={first_feature.path}><Button type="primary" icon={<AppstoreOutlined />}>Mở {first_feature.label.toLowerCase()}</Button></Link> : <Button type="primary" disabled icon={<LockOutlined />}>Chưa có chức năng được cấp quyền</Button>}
-          {has_permission(current_user, 'identity_user_read') && <Link to="/settings/users"><Button type="default" icon={<SafetyCertificateOutlined />}>Kiểm tra quyền</Button></Link>}
-        </div>
-      </div>
-      <div className="overview_hero_signal" aria-label={`${visible_navigation.length} phân hệ đang được cấp quyền`}>
-        <span className="signal_line" />
-        <strong>{String(visible_navigation.length).padStart(2, '0')}</strong>
-        <small>phân hệ<br />đang mở</small>
-      </div>
-    </section>
+
 
     <section className="overview_section attention_section">
       <div className="overview_section_heading">
@@ -195,9 +199,10 @@ function OverviewPage() {
         <Button type="text" icon={<ReloadOutlined />} onClick={() => { load_queue(); load_activities(); }} loading={queue_loading || activity_loading}>Làm mới</Button>
       </div>
       <div className="attention_grid">
-        {queue.map((item) => <Link to={item.path} className={`attention_card attention_card_${item.state}`} key={item.key}>
-          <span className="attention_card_top"><span>{item.module_key === 'human_resources' ? 'Nhân sự' : item.module_key === 'inventory' ? 'Kho' : 'Sản xuất'}</span><ArrowRightOutlined /></span>
-          <strong>{item.count === null ? '—' : item.count}</strong>
+        {queue.map((item, index) => <Link to={item.path} className={`attention_card attention_card_${item.module_key} attention_card_${item.state}`} key={item.key}>
+          <span className="attention_card_index">{String(index + 1).padStart(2, '0')}</span>
+          <span className="attention_card_top"><span>{item.module_label}</span><ArrowRightOutlined /></span>
+          <strong>{item.count === null ? 'Chưa cập nhật' : item.count}</strong>
           <span>{item.label}</span>
           {item.state === 'error' && <small>Không tải được dữ liệu</small>}
         </Link>)}
@@ -218,7 +223,7 @@ function OverviewPage() {
       <div className="module_matrix">
         {navigation_registry.map((module) => {
           const ModuleIcon = module.icon;
-          const module_readable = has_permission(current_user, module.permission);
+          const module_readable = can_read_module(current_user, module);
           return <article className={`module_row ${module_readable ? '' : 'module_row_locked'}`} style={{ '--module-accent': module.color }} key={module.key}>
             <div className="module_row_identity">
               <div className="module_row_icon"><ModuleIcon /></div>
@@ -226,13 +231,14 @@ function OverviewPage() {
                 <Typography.Title level={4}>{module.title}</Typography.Title>
                 <Typography.Paragraph>{module.description}</Typography.Paragraph>
               </div>
-              {!module_readable && <Tag color="gold" icon={<LockOutlined />}>Chưa cấp quyền</Tag>}
+              {module.planned && <Tag color="gold" icon={<ClockCircleOutlined />}>Đang chuẩn bị</Tag>}
+              {!module.planned && !module_readable && <Tag color="gold" icon={<LockOutlined />}>Chưa cấp quyền</Tag>}
               {module_readable && <Link to={module.features[0].path} className="module_open" aria-label={`Mở ${module.title}`}><ArrowRightOutlined /></Link>}
             </div>
             <div className="module_row_features">
               {module.features.map((feature, index) => {
                 const FeatureIcon = feature.icon;
-                const can_read = has_permission(current_user, feature.permission);
+                const can_read = module.planned || has_permission(current_user, feature.permission);
                 return can_read ? <Link to={feature.path} className="module_feature" key={feature.path}>
                   <span className="module_feature_index">{String(index + 1).padStart(2, '0')}</span>
                   <span className="module_feature_icon"><FeatureIcon /></span>

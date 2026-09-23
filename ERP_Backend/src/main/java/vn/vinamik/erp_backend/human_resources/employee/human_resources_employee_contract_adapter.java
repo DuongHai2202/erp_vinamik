@@ -32,15 +32,25 @@ public class human_resources_employee_contract_adapter implements human_resource
     @Override
     public Map<Long, human_resources_employee_snapshot> find_employees(Collection<Long> employee_ids) {
         Map<Long, human_resources_employee_snapshot> employees = new LinkedHashMap<>();
-        if (employee_ids == null) {
+        if (employee_ids == null || employee_ids.isEmpty()) {
             return employees;
         }
-        for (Long employee_id : employee_ids) {
-            if (employee_id == null) {
-                continue;
-            }
-            find_employee(employee_id).ifPresent(employee -> employees.put(employee.employee_id(), employee));
+        List<Long> normalized_ids = employee_ids.stream()
+                .filter(employee_id -> employee_id != null && employee_id > 0)
+                .distinct()
+                .toList();
+        if (normalized_ids.isEmpty()) {
+            return employees;
         }
+        String placeholders = String.join(", ", java.util.Collections.nCopies(normalized_ids.size(), "?"));
+        List<human_resources_employee_snapshot> rows = jpa_query_executor.query(
+                "SELECT employee_id, employee_code, full_name, employment_status "
+                        + "FROM hr.employee WHERE employee_id IN (" + placeholders + ")",
+                (result_set, row_number) -> new human_resources_employee_snapshot(
+                        result_set.getLong("employee_id"), result_set.getString("employee_code"),
+                        result_set.getString("full_name"), result_set.getString("employment_status")),
+                normalized_ids.toArray());
+        rows.forEach(employee -> employees.put(employee.employee_id(), employee));
         return employees;
     }
 }

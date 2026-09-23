@@ -1,0 +1,12 @@
+{
+  "api_base_url": "http://127.0.0.1:8080",
+  "created": 475,
+  "skipped": 24,
+  "failures": [],
+  "created_by_resource": {
+    "inspections": 125,
+    "nonconformances": 100,
+    "calculations": 125,
+    "price_proposals": 125
+  }
+}

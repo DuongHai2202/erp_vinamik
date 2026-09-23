@@ -5,11 +5,11 @@ import { ConfigProvider, theme as antd_theme } from 'antd';
 import viVN from 'antd/locale/vi_VN';
 import { SystemStatusProvider } from './platform/common/system_status_context';
 import { AuthProvider } from './platform/identity/auth_context';
-import AppShell from './platform/layout/app_shell';
-import NotFoundPage from './platform/layout/not_found_page';
-import ProtectedRoute from './platform/layout/protected_route';
-import OverviewPage from './platform/layout/overview_page';
 import { ThemeProvider, use_theme } from './platform/layout/theme_context';
+const AppShell = lazy(() => import('./platform/layout/app_shell'));
+const NotFoundPage = lazy(() => import('./platform/layout/not_found_page'));
+const ProtectedRoute = lazy(() => import('./platform/layout/protected_route'));
+const OverviewPage = lazy(() => import('./platform/layout/overview_page'));
 const LoginPage = lazy(() => import('./platform/identity/login_page'));
 const RegistrationPage = lazy(() => import('./platform/identity/registration_page'));
 const RegistrationRequestsPage = lazy(() => import('./platform/identity/registration_requests_page'));
@@ -19,6 +19,7 @@ const ContractsPage = lazy(() => import('./modules/human_resources/contracts_pag
 const InventoryPage = lazy(() => import('./modules/inventory/inventory_page'));
 const ProductionPage = lazy(() => import('./modules/production/production_page'));
 const ModuleDataPage = lazy(() => import('./platform/layout/module_data_page'));
+const ModulePlaceholderPage = lazy(() => import('./platform/layout/module_placeholder_page'));
 import './styles/global.css';
 
 function ApplicationRoutes() {
@@ -45,6 +46,14 @@ function ApplicationRoutes() {
             <Route path="production/orders" element={<ModuleDataPage feature_key="orders" />} />
             <Route path="production/assignments" element={<ModuleDataPage feature_key="assignments" />} />
             <Route path="production/finished_products" element={<ModuleDataPage feature_key="finished_products" />} />
+            <Route path="quality_cost" element={<ModulePlaceholderPage module_key="quality_cost" feature_key="overview" />} />
+            <Route path="quality_cost/inspections" element={<ModuleDataPage feature_key="quality_inspections" />} />
+            <Route path="quality_cost/nonconformances" element={<ModuleDataPage feature_key="quality_nonconformances" />} />
+            <Route path="quality_cost/periods" element={<ModuleDataPage feature_key="cost_periods" />} />
+            <Route path="quality_cost/calculations" element={<ModuleDataPage feature_key="cost_calculations" />} />
+            <Route path="quality_cost/price_proposals" element={<ModuleDataPage feature_key="price_proposals" />} />
+            <Route path="quality_cost/price_approvals" element={<ModuleDataPage feature_key="price_approvals" />} />
+            <Route path="data_reporting" element={<ModulePlaceholderPage module_key="data_reporting" feature_key="overview" />} />
             <Route path="settings/users" element={<UsersPage />} />
             <Route path="settings/registration_requests" element={<RegistrationRequestsPage />} />
             <Route path="*" element={<NotFoundPage />} />

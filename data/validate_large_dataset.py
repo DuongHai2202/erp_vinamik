@@ -8,6 +8,7 @@ import json
 import re
 import sys
 from datetime import date, datetime
+from collections import defaultdict
 from pathlib import Path
 
 
@@ -41,6 +42,20 @@ def require_reference(rows: list[dict[str, str]], field_name: str, allowed: set[
             continue
         if value not in allowed:
             errors.append(f"{label} row {row_number} has unknown {field_name}={value}")
+
+
+def require_status_coverage(
+    rows: list[dict[str, str]],
+    field_name: str,
+    expected: set[str],
+    label: str,
+) -> None:
+    actual = {row.get(field_name, "") for row in rows}
+    missing = expected - actual
+    if missing:
+        errors.append(
+            f"{label} missing statuses in {field_name}: {', '.join(sorted(missing))}"
+        )
 
 
 def validate_employee_contact_and_dates(rows: list[dict[str, str]]) -> None:
@@ -112,7 +127,9 @@ def main() -> int:
     inventory_issue_lines = read_csv("inventory/issue_lines.csv")
     inventory_transfers = read_csv("inventory/transfers.csv")
     inventory_transfer_lines = read_csv("inventory/transfer_lines.csv")
+    inventory_stocktakes = read_csv("inventory/stocktakes.csv")
     inventory_balances = read_csv("inventory/stock_balances.csv")
+    inventory_movements = read_csv("inventory/stock_movements.csv")
     production_plans = read_csv("production/plans.csv")
     production_plan_lines = read_csv("production/plan_lines.csv")
     production_boms = read_csv("production/boms.csv")
@@ -123,6 +140,12 @@ def main() -> int:
     production_assignments = read_csv("production/assignments.csv")
     production_consumptions = read_csv("production/material_consumptions.csv")
     production_outputs = read_csv("production/outputs.csv")
+    quality_cost_rules = read_csv("quality_cost/cost_rules.csv")
+    quality_cost_periods = read_csv("quality_cost/cost_periods.csv")
+    quality_inspections = read_csv("quality_cost/inspections.csv")
+    quality_nonconformances = read_csv("quality_cost/nonconformances.csv")
+    quality_calculations = read_csv("quality_cost/calculations.csv")
+    quality_price_proposals = read_csv("quality_cost/price_proposals.csv")
 
     employee_codes = codes(hr_employees, "employee_code", "employees")
     department_codes = codes(hr_departments, "department_code", "departments")
@@ -139,16 +162,76 @@ def main() -> int:
     receipt_codes = codes(inventory_receipts, "receipt_code", "receipts")
     issue_codes = codes(inventory_issues, "issue_code", "issues")
     transfer_codes = codes(inventory_transfers, "transfer_code", "transfers")
+    stocktake_codes = codes(inventory_stocktakes, "stocktake_code", "stocktakes")
     plan_codes = codes(production_plans, "plan_code", "plans")
     bom_codes = codes(production_boms, "bom_code", "boms")
     order_codes = codes(production_orders, "order_code", "orders")
+    quality_rule_codes = codes(quality_cost_rules, "rule_code", "quality_cost_rules")
+    quality_period_codes = codes(quality_cost_periods, "period_code", "quality_cost_periods")
+    quality_inspection_codes = codes(quality_inspections, "inspection_code", "quality_inspections")
+    codes(quality_nonconformances, "nonconformance_code", "quality_nonconformances")
+    codes(quality_calculations, "calculation_code", "quality_calculations")
+    codes(quality_price_proposals, "proposal_code", "quality_price_proposals")
 
     if len(hr_employees) < 500:
         errors.append(f"employees has {len(hr_employees)} rows; expected at least 500")
     if len(inventory_items) < 500:
         errors.append(f"stock_items has {len(inventory_items)} rows; expected at least 500")
+    if len(inventory_stocktakes) < 5:
+        errors.append(f"stocktakes has {len(inventory_stocktakes)} rows; expected at least 5")
     if len(production_orders) < 500:
         errors.append(f"orders has {len(production_orders)} rows; expected at least 500")
+    if len(quality_cost_rules) < 12:
+        errors.append(f"quality_cost rules has {len(quality_cost_rules)} rows; expected at least 12")
+    if len(quality_cost_periods) < 12:
+        errors.append(f"quality_cost periods has {len(quality_cost_periods)} rows; expected at least 12")
+    if len(quality_inspections) < 100:
+        errors.append(f"quality_cost inspections has {len(quality_inspections)} rows; expected at least 100")
+    if len(quality_calculations) < 100:
+        errors.append(f"quality_cost calculations has {len(quality_calculations)} rows; expected at least 100")
+    if len(quality_price_proposals) < 100:
+        errors.append(f"quality_cost price proposals has {len(quality_price_proposals)} rows; expected at least 100")
+    require_status_coverage(hr_employees, "employment_status",
+                            {"active", "on_leave", "inactive", "terminated"}, "employees")
+    require_status_coverage(hr_contracts, "status",
+                            {"draft", "active", "expired", "terminated", "cancelled"}, "contracts")
+    require_status_coverage(hr_leave_requests, "status",
+                            {"draft", "pending", "approved", "rejected", "cancelled"}, "leave_requests")
+    require_status_coverage(hr_rewards, "status",
+                            {"draft", "pending", "approved", "rejected", "cancelled"}, "reward_discipline")
+    require_status_coverage(read_csv("human_resources/payroll_periods.csv"), "status",
+                            {"draft", "calculated", "approved", "rejected", "locked"}, "payroll_periods")
+    require_status_coverage(inventory_items, "status", {"active", "inactive"}, "stock_items")
+    require_status_coverage(inventory_suppliers, "status", {"active", "inactive"}, "suppliers")
+    require_status_coverage(inventory_receipts, "status",
+                            {"draft", "pending", "posted", "cancelled"}, "receipts")
+    require_status_coverage(inventory_issues, "status",
+                            {"draft", "pending", "posted", "cancelled"}, "issues")
+    require_status_coverage(inventory_transfers, "status",
+                            {"draft", "pending", "posted", "cancelled"}, "transfers")
+    require_status_coverage(inventory_stocktakes, "status",
+                            {"counting", "submitted", "approved", "posted", "cancelled"}, "stocktakes")
+    require_status_coverage(production_plans, "status",
+                            {"draft", "approved", "released", "completed"}, "production_plans")
+    require_status_coverage(production_orders, "status",
+                            {"planned", "released", "in_progress", "paused", "completed"}, "production_orders")
+    require_status_coverage(production_assignments, "status",
+                            {"planned", "active", "completed", "cancelled"}, "assignments")
+    require_status_coverage(production_outputs, "status",
+                            {"draft", "pending_receipt", "received", "failed", "cancelled"}, "outputs")
+    require_status_coverage(quality_cost_periods, "target_status",
+                            {"draft", "open", "calculating", "calculated", "approved", "locked", "cancelled"},
+                            "quality_cost_periods")
+    require_status_coverage(quality_inspections, "target_status",
+                            {"draft", "submitted", "passed", "failed", "held", "released", "cancelled"},
+                            "quality_inspections")
+    require_status_coverage(quality_nonconformances, "target_status",
+                            {"open", "in_progress", "resolved", "cancelled"}, "quality_nonconformances")
+    require_status_coverage(quality_calculations, "target_status",
+                            {"calculated", "approved", "locked", "cancelled"}, "quality_calculations")
+    require_status_coverage(quality_price_proposals, "target_status",
+                            {"draft", "pending", "approved", "rejected", "published", "cancelled"},
+                            "quality_price_proposals")
     validate_employee_contact_and_dates(hr_employees)
     require_reference(hr_employees, "department_code", department_codes, "employees")
     require_reference(hr_employees, "job_title_code", job_title_codes, "employees")
@@ -172,6 +255,7 @@ def main() -> int:
     require_reference(inventory_issue_lines, "location_code", location_codes, "issue_lines")
     require_reference(inventory_transfers, "source_warehouse_code", warehouse_codes, "transfers")
     require_reference(inventory_transfers, "destination_warehouse_code", warehouse_codes, "transfers")
+    require_reference(inventory_stocktakes, "warehouse_code", warehouse_codes, "stocktakes")
     require_reference(inventory_transfer_lines, "transfer_code", transfer_codes, "transfer_lines")
     require_reference(inventory_transfer_lines, "item_code", item_codes, "transfer_lines")
     require_reference(production_plan_lines, "plan_code", plan_codes, "plan_lines")
@@ -193,6 +277,15 @@ def main() -> int:
     require_reference(production_outputs, "order_code", order_codes, "outputs")
     require_reference(production_outputs, "item_code", item_codes, "outputs")
     require_reference(production_outputs, "inventory_receipt_code", receipt_codes, "outputs", allow_empty=True)
+    require_reference(quality_cost_periods, "rule_code", quality_rule_codes, "quality_cost_periods")
+    require_reference(quality_inspections, "production_order_code", order_codes, "quality_inspections")
+    require_reference(quality_inspections, "stock_item_code", item_codes, "quality_inspections")
+    require_reference(quality_nonconformances, "inspection_code", quality_inspection_codes, "quality_nonconformances")
+    require_reference(quality_calculations, "period_code", quality_period_codes, "quality_calculations")
+    require_reference(quality_calculations, "production_order_code", order_codes, "quality_calculations")
+    require_reference(quality_calculations, "stock_item_code", item_codes, "quality_calculations")
+    require_reference(quality_price_proposals, "period_code", quality_period_codes, "quality_price_proposals")
+    require_reference(quality_price_proposals, "stock_item_code", item_codes, "quality_price_proposals")
     for row in inventory_lots + inventory_receipt_lines + inventory_issue_lines + inventory_transfer_lines + inventory_balances:
         item_code = row.get("item_code", "")
         lot_code = row.get("lot_code", "")
@@ -200,7 +293,120 @@ def main() -> int:
             errors.append(f"unknown lot {item_code}/{lot_code}")
     for row in inventory_balances:
         if float(row.get("on_hand_quantity", "0")) < 0:
-            errors.append(f"negative stock balance for {row.get('item_code')}/{row.get('location_code')}/{row.get('lot_code')}")
+            errors.append(f"negative stock balance for {row.get("item_code")}/{row.get("location_code")}/{row.get("lot_code")}")
+
+    location_to_warehouse = {row["location_code"]: row["warehouse_code"] for row in inventory_locations}
+    receipt_by_code = {row["receipt_code"]: row for row in inventory_receipts}
+    issue_by_code = {row["issue_code"]: row for row in inventory_issues}
+    transfer_by_code = {row["transfer_code"]: row for row in inventory_transfers}
+    for line_number, row in enumerate(inventory_receipt_lines, start=2):
+        parent = receipt_by_code.get(row["receipt_code"])
+        if parent and location_to_warehouse.get(row["location_code"]) != parent["warehouse_code"]:
+            errors.append(f"receipt line {line_number} location does not belong to receipt warehouse")
+    for line_number, row in enumerate(inventory_issue_lines, start=2):
+        parent = issue_by_code.get(row["issue_code"])
+        if parent and location_to_warehouse.get(row["location_code"]) != parent["warehouse_code"]:
+            errors.append(f"issue line {line_number} location does not belong to issue warehouse")
+    for line_number, row in enumerate(inventory_transfer_lines, start=2):
+        parent = transfer_by_code.get(row["transfer_code"])
+        if not parent:
+            continue
+        if location_to_warehouse.get(row["source_location_code"]) != parent["source_warehouse_code"]:
+            errors.append(f"transfer line {line_number} source location does not belong to source warehouse")
+        if location_to_warehouse.get(row["destination_location_code"]) != parent["destination_warehouse_code"]:
+            errors.append(f"transfer line {line_number} destination location does not belong to destination warehouse")
+
+    movement_totals = defaultdict(float)
+    balance_totals = defaultdict(float)
+    for row in inventory_movements:
+        key = (row["item_code"], row["location_code"], row.get("lot_code", ""))
+        movement_totals[key] += float(row["quantity_delta"])
+    for row in inventory_balances:
+        key = (row["item_code"], row["location_code"], row.get("lot_code", ""))
+        balance_totals[key] += float(row["on_hand_quantity"])
+    for key in set(movement_totals) | set(balance_totals):
+        if abs(round(movement_totals[key] - max(balance_totals[key], 0), 6)) > 0.000001:
+            errors.append(f"stock balance reconciliation failed for {key}: movement={movement_totals[key]}, balance={balance_totals[key]}")
+
+    plan_lines_by_key = {(row["plan_code"], int(row["line_number"])): row for row in production_plan_lines}
+    boms_by_code = {row["bom_code"]: row for row in production_boms}
+    bom_lines_by_code = {row["bom_line_code"]: row for row in production_bom_lines}
+    orders_by_code = {row["order_code"]: row for row in production_orders}
+    for line_number, row in enumerate(production_orders, start=2):
+        plan_line = plan_lines_by_key.get((row["plan_code"], int(row["plan_line_number"])))
+        if not plan_line or plan_line["item_code"] != row["item_code"]:
+            errors.append(f"production order {line_number} does not match its plan line")
+        bom = boms_by_code.get(row["bom_code"])
+        if not bom or bom["item_code"] != row["item_code"]:
+            errors.append(f"production order {line_number} does not match its BOM item")
+        if float(row["target_quantity"]) <= 0:
+            errors.append(f"production order {line_number} has non-positive target quantity")
+    for line_number, row in enumerate(production_requirements, start=2):
+        bom_line = bom_lines_by_code.get(row["bom_line_code"])
+        order = orders_by_code.get(row["order_code"])
+        if not bom_line or bom_line["bom_code"] != row["bom_code"] or bom_line["material_item_code"] != row["material_item_code"]:
+            errors.append(f"material requirement {line_number} does not match its BOM line")
+        if bom_line and order:
+            expected = round(float(bom_line["quantity_per_base"]) * float(order["target_quantity"]) / float(row["base_quantity_snapshot"]) * (1 + float(row["scrap_percent_snapshot"]) / 100), 6)
+            if abs(expected - round(float(row["required_quantity"]), 6)) > 0.000001:
+                errors.append(f"material requirement {line_number} formula mismatch")
+    for line_number, row in enumerate(production_outputs, start=2):
+        order = orders_by_code.get(row["order_code"])
+        total_quantity = float(row["good_quantity"]) + float(row["defective_quantity"])
+        if order and total_quantity > float(order["target_quantity"]) + 0.000001:
+            errors.append(f"production output {line_number} exceeds order target")
+        manufactured_on = datetime.strptime(row["manufactured_on"], "%Y-%m-%d").date()
+        expires_on = datetime.strptime(row["expires_on"], "%Y-%m-%d").date()
+        if expires_on <= manufactured_on:
+            errors.append(f"production output {line_number} expires before manufactured date")
+
+    for line_number, row in enumerate(quality_inspections, start=2):
+        inspected = float(row["inspected_quantity"])
+        good = float(row["good_quantity"])
+        defective = float(row["defective_quantity"])
+        if inspected <= 0 or good < 0 or defective < 0 or good + defective > inspected + 0.000001:
+            errors.append(f"quality inspection {line_number} has invalid quantity split")
+        if row.get("target_status") not in {"draft", "submitted", "passed", "failed", "held", "released", "cancelled"}:
+            errors.append(f"quality inspection {line_number} has invalid target status")
+    inspections_by_code = {row["inspection_code"]: row for row in quality_inspections}
+    for line_number, row in enumerate(quality_nonconformances, start=2):
+        inspection = inspections_by_code.get(row["inspection_code"])
+        if inspection is None or float(row["quantity"]) <= 0:
+            errors.append(f"quality nonconformance {line_number} has invalid inspection or quantity")
+        if row.get("target_status") not in {"open", "in_progress", "resolved", "cancelled"}:
+            errors.append(f"quality nonconformance {line_number} has invalid target status")
+    for line_number, row in enumerate(quality_calculations, start=2):
+        material = round(float(row["material_cost"]), 2)
+        labor = round(float(row["direct_labor_cost"]), 2)
+        overhead = round(float(row["overhead_cost"]), 2)
+        adjustment = round(float(row["adjustment_amount"]), 2)
+        expected_total = round(material + labor + overhead + adjustment, 2)
+        actual_total = round(float(row["total_cost"]), 2)
+        if abs(expected_total - actual_total) > 0.01:
+            errors.append(f"quality calculation {line_number} total formula mismatch")
+        good_quantity = float(row["good_quantity"])
+        expected_unit = round(actual_total / good_quantity, 6)
+        if abs(expected_unit - round(float(row["unit_cost"]), 6)) > 0.000001:
+            errors.append(f"quality calculation {line_number} unit formula mismatch")
+        if row.get("target_status") not in {"calculated", "approved", "locked", "cancelled"}:
+            errors.append(f"quality calculation {line_number} has invalid target status")
+    for line_number, row in enumerate(quality_price_proposals, start=2):
+        expected_price = round(float(row["unit_cost"]) * (1 + float(row["margin_percent"]) / 100), 2)
+        if abs(expected_price - round(float(row["proposed_price"]), 2)) > 0.01:
+            errors.append(f"quality price proposal {line_number} margin formula mismatch")
+        if row.get("target_status") not in {"draft", "pending", "approved", "rejected", "published", "cancelled"}:
+            errors.append(f"quality price proposal {line_number} has invalid target status")
+
+    warnings = []
+    placeholder_pattern = re.compile(r"\b(?:demo|fake|mock|placeholder|sample|mô phỏng|tải lớn|phục vụ kiểm thử)\b", re.IGNORECASE)
+    for file_name, rows in {
+        "employees": hr_employees, "contracts": hr_contracts, "stock_items": inventory_items,
+        "plans": production_plans, "boms": production_boms, "orders": production_orders,
+    }.items():
+        for line_number, row in enumerate(rows, start=2):
+            for field_name, value in row.items():
+                if value and placeholder_pattern.search(value):
+                    warnings.append(f"{file_name} row {line_number} field {field_name} contains visible test wording")
 
     result = {
         "valid": not errors,
@@ -212,8 +418,18 @@ def main() -> int:
             "production_orders": len(production_orders),
             "inventory_receipts": len(inventory_receipts),
             "inventory_issues": len(inventory_issues),
+            "inventory_stocktakes": len(inventory_stocktakes),
             "production_outputs": len(production_outputs),
+            "inventory_movements": len(inventory_movements),
+            "inventory_balances": len(inventory_balances),
+            "quality_cost_rules": len(quality_cost_rules),
+            "quality_cost_periods": len(quality_cost_periods),
+            "quality_inspections": len(quality_inspections),
+            "quality_nonconformances": len(quality_nonconformances),
+            "quality_calculations": len(quality_calculations),
+            "quality_price_proposals": len(quality_price_proposals),
         },
+        "warnings": warnings,
     }
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if not errors else 1

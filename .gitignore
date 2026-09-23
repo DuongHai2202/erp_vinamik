@@ -37,3 +37,6 @@ runtime_logs/
 # Local test outputs
 *.dump
 *.sql.gz
+
+# Root-level Vite cache
+/.vite/

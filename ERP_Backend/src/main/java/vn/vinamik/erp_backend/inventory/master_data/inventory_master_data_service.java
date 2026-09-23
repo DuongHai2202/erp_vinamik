@@ -56,7 +56,7 @@ public class inventory_master_data_service {
         String code = normalize_required(request.unit_code());
         ensure_unit_code_available(code, null);
         try {
-            Long id = master_data_repository.insert_unit(code, normalize_required(request.unit_name()),
+            Long id = master_data_repository.insert_unit(code, normalize_text(request.unit_name()),
                     decimal_places(request), status_or_default(request.status()), actor.user_id());
             inventory_unit_response result = require_unit(id);
             audit_writer.write(actor.user_id(), "inventory", "unit_create", "unit_of_measure",
@@ -77,7 +77,7 @@ public class inventory_master_data_service {
         ensure_unit_code_available(code, id);
         require_unit(id);
         try {
-            int updated = master_data_repository.update_unit(id, code, normalize_required(request.unit_name()),
+            int updated = master_data_repository.update_unit(id, code, normalize_text(request.unit_name()),
                     decimal_places(request), status_or_default(request.status()), actor.user_id());
             if (updated == 0) {
                 throw new resource_not_found_exception("Unit of measure");
@@ -133,7 +133,7 @@ public class inventory_master_data_service {
         String code = normalize_required(request.category_code());
         ensure_category_code_available(code, null);
         try {
-            Long id = master_data_repository.insert_category(code, normalize_required(request.category_name()),
+            Long id = master_data_repository.insert_category(code, normalize_text(request.category_name()),
                     status_or_default(request.status()), actor.user_id());
             inventory_category_response result = require_category(id);
             audit_writer.write(actor.user_id(), "inventory", "category_create", "item_category",
@@ -155,7 +155,7 @@ public class inventory_master_data_service {
         require_category(id);
         try {
             int updated = master_data_repository.update_category(id, code,
-                    normalize_required(request.category_name()), status_or_default(request.status()), actor.user_id());
+                    normalize_text(request.category_name()), status_or_default(request.status()), actor.user_id());
             if (updated == 0) {
                 throw new resource_not_found_exception("Item category");
             }
@@ -211,7 +211,7 @@ public class inventory_master_data_service {
         String code = normalize_required(request.supplier_code());
         ensure_supplier_code_available(code, null);
         try {
-            Long id = master_data_repository.insert_supplier(code, normalize_required(request.supplier_name()),
+            Long id = master_data_repository.insert_supplier(code, normalize_text(request.supplier_name()),
                     normalize_optional(request.phone_number()), normalize_email(request.email()),
                     normalize_optional(request.address()), status_or_default(request.status()), actor.user_id());
             inventory_supplier_response result = require_supplier(id);
@@ -233,7 +233,7 @@ public class inventory_master_data_service {
         ensure_supplier_code_available(code, id);
         require_supplier(id);
         try {
-            int updated = master_data_repository.update_supplier(id, code, normalize_required(request.supplier_name()),
+            int updated = master_data_repository.update_supplier(id, code, normalize_text(request.supplier_name()),
                     normalize_optional(request.phone_number()), normalize_email(request.email()),
                     normalize_optional(request.address()), status_or_default(request.status()), actor.user_id());
             if (updated == 0) {
@@ -291,7 +291,7 @@ public class inventory_master_data_service {
         String code = normalize_required(request.warehouse_code());
         ensure_warehouse_code_available(code, null);
         try {
-            Long id = master_data_repository.insert_warehouse(code, normalize_required(request.warehouse_name()),
+            Long id = master_data_repository.insert_warehouse(code, normalize_text(request.warehouse_name()),
                     normalize_optional(request.address()), status_or_default(request.status()), actor.user_id());
             inventory_warehouse_response result = require_warehouse(id);
             audit_writer.write(actor.user_id(), "inventory", "warehouse_create", "warehouse",
@@ -313,7 +313,7 @@ public class inventory_master_data_service {
         require_warehouse(id);
         try {
             int updated = master_data_repository.update_warehouse(id, code,
-                    normalize_required(request.warehouse_name()), normalize_optional(request.address()),
+                    normalize_text(request.warehouse_name()), normalize_optional(request.address()),
                     status_or_default(request.status()), actor.user_id());
             if (updated == 0) {
                 throw new resource_not_found_exception("Warehouse");
@@ -373,7 +373,7 @@ public class inventory_master_data_service {
         ensure_location_code_available(request.warehouse_id(), code, null);
         try {
             Long id = master_data_repository.insert_location(request.warehouse_id(), code,
-                    normalize_required(request.location_name()), status_or_default(request.status()), actor.user_id());
+                    normalize_text(request.location_name()), status_or_default(request.status()), actor.user_id());
             inventory_location_response result = require_location(id);
             audit_writer.write(actor.user_id(), "inventory", "location_create", "warehouse_location",
                     String.valueOf(id), correlation_id, Map.of("location_code", code));
@@ -397,7 +397,7 @@ public class inventory_master_data_service {
         ensure_location_code_available(request.warehouse_id(), code, id);
         try {
             int updated = master_data_repository.update_location(id, code,
-                    normalize_required(request.location_name()), status_or_default(request.status()), actor.user_id());
+                    normalize_text(request.location_name()), status_or_default(request.status()), actor.user_id());
             if (updated == 0) {
                 throw new resource_not_found_exception("Warehouse location");
             }
@@ -612,6 +612,10 @@ public class inventory_master_data_service {
     private String status_or_default(String status) {
         String normalized = normalize_lower(status);
         return normalized == null ? "active" : normalized;
+    }
+
+    private String normalize_text(String value) {
+        return value == null ? null : value.trim();
     }
 
     private String normalize_required(String value) {

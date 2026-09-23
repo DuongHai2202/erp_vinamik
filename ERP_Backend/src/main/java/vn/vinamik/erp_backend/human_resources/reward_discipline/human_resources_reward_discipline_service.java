@@ -118,6 +118,41 @@ public class human_resources_reward_discipline_service {
     }
 
     @Transactional
+    public reward_discipline_response cancel(long record_id, authenticated_user actor, String correlation_id) {
+        String current = reward_discipline_repository.current_status(record_id);
+        if (!current.equals("draft") && !current.equals("pending")) {
+            throw new IllegalArgumentException("Only draft or pending reward or discipline records can be cancelled.");
+        }
+        if (reward_discipline_repository.payroll_locked(record_id)) {
+            throw new IllegalArgumentException("Payroll-locked reward or discipline records cannot be cancelled.");
+        }
+        if (reward_discipline_repository.cancel(record_id, actor.user_id()) == 0) {
+            throw new resource_not_found_exception("Reward or discipline record");
+        }
+        reward_discipline_response result = reward_discipline_repository.find_by_id(record_id);
+        audit_writer.write(actor.user_id(), "hr", "reward_discipline_cancel", "employee_reward_discipline",
+                String.valueOf(record_id), correlation_id, Map.of("status", result.status()));
+        logger.info("Đã hủy bản ghi thưởng hoặc kỷ luật; record_id={}, actor_user_id={}, correlation_id={}", record_id, actor.user_id(), correlation_id);
+        return result;
+    }
+
+    @Transactional
+    public void delete(long record_id, authenticated_user actor, String correlation_id) {
+        String current = reward_discipline_repository.current_status(record_id);
+        if (!current.equals("draft")) {
+            throw new IllegalArgumentException("Only draft reward or discipline records can be deleted.");
+        }
+        if (reward_discipline_repository.payroll_locked(record_id)) {
+            throw new IllegalArgumentException("Payroll-locked reward or discipline records cannot be deleted.");
+        }
+        if (reward_discipline_repository.delete_draft(record_id) == 0) {
+            throw new resource_not_found_exception("Draft reward or discipline record");
+        }
+        audit_writer.write(actor.user_id(), "hr", "reward_discipline_delete", "employee_reward_discipline",
+                String.valueOf(record_id), correlation_id, Map.of("status", current));
+        logger.info("Đã xóa bản nháp thưởng hoặc kỷ luật; record_id={}, actor_user_id={}, correlation_id={}", record_id, actor.user_id(), correlation_id);
+    }
+    @Transactional
     public reward_discipline_response submit(long record_id, authenticated_user actor, String correlation_id) {
         return change_status(record_id, "pending", null, actor, correlation_id);
     }

@@ -1,0 +1,13 @@
+full_name,work_email,employee_code,username,department_code,role_hint
+Hồ Quang Sơn,hoquangson.0021@vinamilk.test,vmk0021,hoquangson,human_resources,hr_staff
+Ngô Hữu Ngọc,ngohuungoc.0022@vinamilk.test,vmk0022,ngohuungoc,warehouse_finished,inventory_staff
+Đỗ Mạnh Duy,domanhduy.0023@vinamilk.test,vmk0023,domanhduy,sales,read_only
+Huỳnh Hoài Thành,huynhhoaithanh.0024@vinamilk.test,vmk0024,huynhhoaithanh,finance,read_only
+Huỳnh Xuân Thành,huynhxuanthanh.0025@vinamilk.test,vmk0025,huynhxuanthanh,production_fresh_milk,production_staff
+Phạm Thùy Nga,phamthuynga.0026@vinamilk.test,vmk0026,phamthuynga,marketing,read_only
+Đặng Kim Yến,dangkimyen.0027@vinamilk.test,vmk0027,dangkimyen,quality_assurance,read_only
+Huỳnh Đình Thủy,huynhdinhthuy.0028@vinamilk.test,vmk0028,huynhdinhthuy,production_powder,production_staff
+Đỗ Hồng Hải,dohonghai.0029@vinamilk.test,vmk0029,dohonghai,safety_environment,read_only
+Ngô Trọng Quyên,ngotrongquyen.0030@vinamilk.test,vmk0030,ngotrongquyen,research_development,read_only
+Đặng Công Nhân,dangcongnhan.0031@vinamilk.test,vmk0031,dangcongnhan,production_beverage,production_staff
+Đinh Xuân Thu,dinhxuanthu.0032@vinamilk.test,vmk0032,dinhxuanthu,planning,read_only

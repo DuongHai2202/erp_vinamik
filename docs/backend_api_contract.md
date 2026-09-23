@@ -161,7 +161,7 @@ Resource: `/api/v1/production/plans`
 - `POST /{production_plan_id}/status` changes the lifecycle with the corresponding approval permission.
 - `DELETE /{production_plan_id}` is a draft-only delete and requires `production_plan_delete`.
 
-Plan lines reference inventory-owned material IDs. The backend validates active items through the inventory public contract and stores the item code/name/unit snapshot for the plan line.
+Plan lines reference inventory-owned material IDs. The backend validates active items through the inventory public contract and stores the item code/name/unit snapshot for the plan line. If a line is already referenced by a production order, a draft plan may still update its header, quantities, required dates and notes in place; replacing the product list or line count is rejected so the foreign-key reference used by the order remains intact.
 
 
 ### BOM and production orders
@@ -222,4 +222,50 @@ Resource: `/api/v1/identity`
 - Disabled/locked users are rejected by the next authentication request. Password reset clears failed-login lock state without returning the password.
 
 
+
+
+### crud extensions
+
+The following lifecycle endpoints complete the draft-oriented CRUD contract while preserving append-only ledgers and payroll snapshots.
+
+Human resources:
+- POST /api/v1/human_resources/rewards_discipline/{record_id}/cancel cancels a draft or pending reward/discipline record; permission hr_reward_update.
+- DELETE /api/v1/human_resources/rewards_discipline/{record_id} permanently deletes a draft reward/discipline record that is not referenced by a locked payroll snapshot; permission hr_reward_delete.
+- DELETE /api/v1/human_resources/payroll/periods/{payroll_period_id} permanently deletes a draft payroll period before calculation; permission hr_payroll_delete.
+
+Inventory:
+- PUT /api/v1/inventory/receipts/{receipt_id} replaces header and lines for draft or pending; permission inventory_receipt_update.
+- POST /api/v1/inventory/receipts/{receipt_id}/cancel cancels an unposted draft or pending receipt; permission inventory_receipt_update.
+- DELETE /api/v1/inventory/receipts/{receipt_id} permanently deletes a draft receipt and its lines; permission inventory_receipt_delete.
+- PUT /api/v1/inventory/issues/{issue_id} replaces header and lines for draft or pending; permission inventory_issue_update.
+- POST /api/v1/inventory/issues/{issue_id}/cancel cancels an unposted draft or pending issue; permission inventory_issue_update.
+- DELETE /api/v1/inventory/issues/{issue_id} permanently deletes a draft issue and its lines; permission inventory_issue_delete.
+- PUT /api/v1/inventory/transfers/{transfer_id} replaces header and lines for draft or pending; permission inventory_transfer_update.
+- POST /api/v1/inventory/transfers/{transfer_id}/cancel cancels an unposted draft or pending transfer; permission inventory_transfer_update.
+- DELETE /api/v1/inventory/transfers/{transfer_id} permanently deletes a draft transfer and its lines; permission inventory_transfer_delete.
+
+Production:
+- DELETE /api/v1/production/boms/{bom_id} permanently deletes a draft BOM and its lines; permission production_bom_delete. Active and inactive versions are retained for history.
+- PUT /api/v1/production/orders/{production_order_id}/outputs/{output_id} edits an output in draft; permission production_output_update. An output with good quantity is pending_receipt and must be cancelled or posted, not edited.
+- POST /api/v1/production/orders/{production_order_id}/outputs/{output_id}/cancel cancels an output that has not been received into Inventory; permission production_output_update.
+- POST /api/v1/production/orders/{production_order_id}/outputs/{output_id}/fail marks an unposted output as failed for quality follow-up; permission production_output_update. Failed outputs cannot be posted or edited.
+- DELETE /api/v1/production/orders/{production_order_id}/outputs/{output_id} permanently deletes a draft output; permission production_output_delete. Received outputs and linked receipts are immutable.
+
+All delete endpoints are transactional, authorization-protected, audited, and return an English client message. Server-side validation remains authoritative for state, references, idempotency and ledger safety.
+## quality and cost
+
+Resource prefix: /api/v1/quality_cost.
+
+Five user-facing areas are inspections, nonconformances, calculations, price_proposals and price_approvals. The periods and rules endpoints are support resources used by costing.
+
+| Method | Path | Permission | Purpose |
+|---|---|---|---|
+| GET | /inspections, /nonconformances, /calculations, /price_proposals, /price_approvals | resource read | Server-paginated lists with search, status, page and page_size. |
+| GET | /{resource}/{id} | resource read | Detail for opening the drawer or edit form. |
+| POST | /inspections, /nonconformances, /calculations, /price_proposals | resource create | Create a draft/open quality record, calculated cost result or draft price proposal. |
+| PUT | /{resource}/{id} | resource update | Edit only mutable records. Calculated cost results can be edited before approval; approved or locked records are immutable. |
+| POST | /{resource}/{id}/status | resource approve | Apply the validated state transition with audit metadata. |
+| DELETE | /inspections/{id}, /nonconformances/{id}, /calculations/{id}, /price_proposals/{id} | resource delete | Delete only a draft/open/unapproved record; locked snapshots cannot be deleted. |
+
+Cost calculation uses total_cost = material_cost + direct_labor_cost + overhead_cost + adjustment_amount and unit_cost = total_cost / good_quantity. Source snapshots and valuation policy are intentionally the next data-audit phase; the API currently rejects invalid quantities and negative cost components.
 

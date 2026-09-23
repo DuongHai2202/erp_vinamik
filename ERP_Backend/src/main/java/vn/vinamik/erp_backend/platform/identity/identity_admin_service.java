@@ -11,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
+import vn.vinamik.erp_backend.human_resources.api.human_resources_employee_contract;
+import vn.vinamik.erp_backend.human_resources.api.human_resources_employee_snapshot;
 
 import java.util.HashSet;
 import java.util.List;
@@ -24,14 +26,17 @@ public class identity_admin_service {
     private static final int max_page_size = 100;
     private static final Set<String> valid_statuses = Set.of("active", "locked", "disabled");
     private final identity_admin_repository admin_repository;
+    private final human_resources_employee_contract employee_contract;
     private final PasswordEncoder password_encoder;
     private final audit_event_writer audit_writer;
 
     public identity_admin_service(
             identity_admin_repository admin_repository,
+            human_resources_employee_contract employee_contract,
             PasswordEncoder password_encoder,
             audit_event_writer audit_writer) {
         this.admin_repository = admin_repository;
+        this.employee_contract = employee_contract;
         this.password_encoder = password_encoder;
         this.audit_writer = audit_writer;
     }
@@ -47,12 +52,32 @@ public class identity_admin_service {
         List<identity_user_response> items = admin_repository.search_users(
                 normalized_search, normalized_status, safe_page_size, pagination_guard.offset(safe_page, safe_page_size));
         int total_pages = total == 0 ? 0 : (int) Math.ceil((double) total / safe_page_size);
-        return new identity_user_page_response(items, safe_page, safe_page_size, total, total_pages);
+        return new identity_user_page_response(enrich_employee_display(items), safe_page, safe_page_size, total, total_pages);
     }
 
     @Transactional(readOnly = true)
     public identity_user_response find_user(long user_id) {
-        return admin_repository.find_user(user_id);
+        return enrich_employee_display(List.of(admin_repository.find_user(user_id))).getFirst();
+    }
+
+    private List<identity_user_response> enrich_employee_display(List<identity_user_response> users) {
+        List<Long> employee_ids = users.stream()
+                .map(identity_user_response::employee_id)
+                .filter(employee_id -> employee_id != null && employee_id > 0)
+                .distinct()
+                .toList();
+        Map<Long, human_resources_employee_snapshot> employees = employee_contract.find_employees(employee_ids);
+        return users.stream().map(user -> {
+            human_resources_employee_snapshot employee = user.employee_id() == null
+                    ? null
+                    : employees.get(user.employee_id());
+            return new identity_user_response(
+                    user.user_id(), user.username(), user.employee_id(),
+                    employee == null ? null : employee.employee_code(),
+                    employee == null ? null : employee.full_name(),
+                    user.status(), user.role_codes(), user.created_at(),
+                    user.last_login_at(), user.super_admin());
+        }).toList();
     }
 
     @Transactional(readOnly = true)

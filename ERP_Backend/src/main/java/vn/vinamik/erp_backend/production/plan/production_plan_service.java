@@ -84,14 +84,24 @@ public class production_plan_service {
             throw new IllegalArgumentException("Only draft production plans can be edited.");
         }
         List<inventory_material_snapshot> items = validate_inventory_lines(request.lines());
+        production_plan_response existing_plan = plan_repository.find(plan_id);
+        boolean has_orders = plan_repository.has_orders(plan_id);
+        if (has_orders && !same_line_identity(existing_plan.lines(), request.lines())) {
+            throw new field_conflict_exception("lines",
+                    "Production plan lines already referenced by production orders cannot be replaced. Keep the existing products and line count, or create a new plan.");
+        }
         int updated = plan_repository.update(plan_id, plan_code, request.plan_name().trim(),
                 request.planned_on(), request.starts_on(), request.ends_on(),
                 normalize_optional(request.notes()), actor.user_id());
         if (updated == 0) {
             throw new resource_not_found_exception("Draft production plan");
         }
-        plan_repository.delete_lines(plan_id);
-        insert_lines(plan_id, request.lines(), items);
+        if (has_orders) {
+            update_existing_lines(existing_plan.lines(), request.lines(), items, plan_id);
+        } else {
+            plan_repository.delete_lines(plan_id);
+            insert_lines(plan_id, request.lines(), items);
+        }
         production_plan_response updated_plan = plan_repository.find(plan_id);
         audit_writer.write(actor.user_id(), "production", "production_plan_update", "production_plan",
                 String.valueOf(plan_id), correlation_id, Map.of("plan_code", updated_plan.plan_code()));
@@ -155,6 +165,32 @@ public class production_plan_service {
             inventory_material_snapshot item = items.get(index);
             plan_repository.insert_line(plan_id, index + 1, line, item.stock_item_id(),
                     item.item_code(), item.item_name(), item.unit_code(), normalize_optional(line.notes()));
+        }
+    }
+
+    private boolean same_line_identity(List<production_plan_line_response> existing_lines,
+                                       List<production_plan_line_request> requested_lines) {
+        if (existing_lines.size() != requested_lines.size()) {
+            return false;
+        }
+        for (int index = 0; index < requested_lines.size(); index++) {
+            if (existing_lines.get(index).stock_item_id() != requested_lines.get(index).stock_item_id()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void update_existing_lines(List<production_plan_line_response> existing_lines,
+                                       List<production_plan_line_request> requested_lines,
+                                       List<inventory_material_snapshot> items,
+                                       long plan_id) {
+        for (int index = 0; index < requested_lines.size(); index++) {
+            production_plan_line_request line = requested_lines.get(index);
+            inventory_material_snapshot item = items.get(index);
+            plan_repository.update_line(existing_lines.get(index).production_plan_line_id(), plan_id, line,
+                    item.stock_item_id(), item.item_code(), item.item_name(), item.unit_code(),
+                    normalize_optional(line.notes()));
         }
     }
 

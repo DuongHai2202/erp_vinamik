@@ -16,7 +16,7 @@ import static org.mockito.Mockito.when;
 class identity_admin_service_tests {
     @Test
     void refuses_to_lock_own_account_before_database_call() {
-        identity_admin_service service = new identity_admin_service(null, null, null);
+        identity_admin_service service = new identity_admin_service(null, null, null, null);
         authenticated_user actor = new authenticated_user(7L, "admin", List.of("identity_user_update"));
 
         assertThrows(IllegalArgumentException.class, () -> service.update_user(
@@ -29,7 +29,7 @@ class identity_admin_service_tests {
     @Test
     void refuses_to_remove_system_admin_role_from_super_admin() {
         identity_admin_repository repository = mock(identity_admin_repository.class);
-        identity_admin_service service = new identity_admin_service(repository, null, mock(audit_event_writer.class));
+        identity_admin_service service = new identity_admin_service(repository, null, null, mock(audit_event_writer.class));
         authenticated_user actor = new authenticated_user(
                 7L, "admin", List.of("identity_role_update", "identity_role_admin"));
         when(repository.exists_user(1L)).thenReturn(true);
@@ -48,7 +48,7 @@ class identity_admin_service_tests {
     @Test
     void refuses_to_disable_super_admin_before_database_update() {
         identity_admin_repository repository = mock(identity_admin_repository.class);
-        identity_admin_service service = new identity_admin_service(repository, null, mock(audit_event_writer.class));
+        identity_admin_service service = new identity_admin_service(repository, null, null, mock(audit_event_writer.class));
         authenticated_user actor = new authenticated_user(
                 7L, "admin", List.of("identity_user_update"));
         when(repository.exists_user(1L)).thenReturn(true);

@@ -88,6 +88,16 @@ public class production_plan_repository {
         jpa_query_executor.update("DELETE FROM production.production_plan_line WHERE production_plan_id = ?", plan_id);
     }
 
+    public void update_line(long line_id, long plan_id, production_plan_line_request line,
+                            long stock_item_id, String item_code, String item_name, String unit_code, String notes) {
+        jpa_query_executor.update(
+                "UPDATE production.production_plan_line SET stock_item_id = ?, stock_item_code_snapshot = ?, "
+                        + "stock_item_name_snapshot = ?, unit_code_snapshot = ?, target_quantity = ?, required_on = ?, notes = ? "
+                        + "WHERE production_plan_line_id = ? AND production_plan_id = ?",
+                stock_item_id, item_code, item_name, unit_code, line.target_quantity(), line.required_on(), notes,
+                line_id, plan_id);
+    }
+
     public void insert_line(long plan_id, int line_number, production_plan_line_request line,
                             long stock_item_id, String item_code, String item_name, String unit_code, String notes) {
         jpa_query_executor.update(

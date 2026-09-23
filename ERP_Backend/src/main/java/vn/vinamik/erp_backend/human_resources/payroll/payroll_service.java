@@ -10,6 +10,7 @@ import vn.vinamik.erp_backend.platform.common.audit_event_writer;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.master_data_page_response;
 import vn.vinamik.erp_backend.platform.common.pagination_guard;
+import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
 
 import java.math.BigDecimal;
@@ -87,6 +88,20 @@ public class payroll_service {
         } catch (DataIntegrityViolationException exception) {
             throw new field_conflict_exception("month", "Payroll period already exists.");
         }
+    }
+
+    @Transactional
+    public void delete_period(long payroll_period_id, authenticated_user actor, String correlation_id) {
+        payroll_period_response period = payroll_repository.find_period(payroll_period_id);
+        if (!"draft".equals(period.status())) {
+            throw new IllegalArgumentException("Only draft payroll periods can be deleted.");
+        }
+        if (payroll_repository.delete_draft_period(payroll_period_id) == 0) {
+            throw new resource_not_found_exception("Draft payroll period");
+        }
+        audit_writer.write(actor.user_id(), "hr", "payroll_period_delete", "payroll_period", String.valueOf(payroll_period_id), correlation_id,
+                Map.of("period_code", period.period_code()));
+        logger.info("Đã xóa kỳ lương bản nháp; payroll_period_id={}, actor_user_id={}, correlation_id={}", payroll_period_id, actor.user_id(), correlation_id);
     }
 
     @Transactional(isolation = Isolation.REPEATABLE_READ)

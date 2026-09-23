@@ -86,6 +86,93 @@ public class inventory_receipt_service {
     }
 
     @Transactional
+    public receipt_response update(long receipt_id, receipt_request request, authenticated_user actor, String correlation_id) {
+        validate_request(request);
+        receipt_response current = receipt_repository.find(receipt_id, true);
+        if (!current.status().equals("draft")) {
+            throw new IllegalArgumentException("Only draft receipts can be edited.");
+        }
+        String receipt_code = normalize_required(request.receipt_code());
+        String idempotency_key = normalize_optional(request.idempotency_key());
+        ensure_unique_receipt_code(receipt_code, receipt_id);
+        if (idempotency_key != null && receipt_repository.idempotency_key_exists(idempotency_key, receipt_id)) {
+            throw new field_conflict_exception("idempotency_key", "Idempotency key already belongs to another receipt.");
+        }
+        ensure_warehouse_active(request.warehouse_id());
+        ensure_supplier_active(request.supplier_id());
+        for (receipt_line_request line : request.lines()) {
+            validate_line(request.warehouse_id(), line);
+        }
+        int updated = receipt_repository.update_receipt(receipt_id, receipt_code, request.warehouse_id(), request.supplier_id(),
+                normalize_optional(request.source_module()), request.source_document_id(), normalize_optional(request.reference_number()),
+                idempotency_key, normalize_optional(request.notes()), actor.user_id());
+        if (updated == 0) {
+            throw new resource_not_found_exception("Draft receipt");
+        }
+        receipt_repository.delete_lines(receipt_id);
+        for (int index = 0; index < request.lines().size(); index++) {
+            receipt_repository.insert_line(receipt_id, index + 1, request.lines().get(index));
+        }
+        receipt_response result = receipt_repository.find(receipt_id, false);
+        audit_writer.write(actor.user_id(), "inventory", "receipt_update", "receipt", String.valueOf(receipt_id), correlation_id,
+                Map.of("receipt_code", result.receipt_code(), "line_count", result.lines().size()));
+        logger.info("Đã cập nhật phiếu nhập kho; receipt_id={}, actor_user_id={}, correlation_id={}", receipt_id, actor.user_id(), correlation_id);
+        return result;
+    }
+
+    @Transactional
+    public void delete(long receipt_id, authenticated_user actor, String correlation_id) {
+        receipt_response current = receipt_repository.find(receipt_id, true);
+        if (!current.status().equals("draft")) {
+            throw new IllegalArgumentException("Only draft receipts can be deleted.");
+        }
+        receipt_repository.delete_lines(receipt_id);
+        if (receipt_repository.delete_draft(receipt_id) == 0) {
+            throw new resource_not_found_exception("Draft receipt");
+        }
+        audit_writer.write(actor.user_id(), "inventory", "receipt_delete", "receipt", String.valueOf(receipt_id), correlation_id,
+                Map.of("receipt_code", current.receipt_code()));
+        logger.info("Đã xóa bản nháp phiếu nhập kho; receipt_id={}, actor_user_id={}, correlation_id={}", receipt_id, actor.user_id(), correlation_id);
+    }
+
+    @Transactional
+    public receipt_response cancel(long receipt_id, authenticated_user actor, String correlation_id) {
+        receipt_response current = receipt_repository.find(receipt_id, true);
+        if (!current.status().equals("draft") && !current.status().equals("pending")) {
+            throw new IllegalArgumentException("Only draft or pending receipts can be cancelled.");
+        }
+        if (receipt_repository.cancel(receipt_id, actor.user_id()) == 0) {
+            throw new resource_not_found_exception("Receipt");
+        }
+        receipt_response result = receipt_repository.find(receipt_id, false);
+        audit_writer.write(actor.user_id(), "inventory", "receipt_cancel", "receipt", String.valueOf(receipt_id), correlation_id,
+                Map.of("receipt_code", result.receipt_code()));
+        logger.info("Đã hủy phiếu nhập kho; receipt_id={}, actor_user_id={}, correlation_id={}", receipt_id, actor.user_id(), correlation_id);
+        return result;
+    }
+    @Transactional
+    public receipt_response submit(long receipt_id, authenticated_user actor, String correlation_id) {
+        receipt_response current = receipt_repository.find(receipt_id, true);
+        if (current.status().equals("pending")) {
+            return current;
+        }
+        if (!current.status().equals("draft")) {
+            throw new IllegalArgumentException("Only draft receipts can be submitted.");
+        }
+        if (current.lines().isEmpty()) {
+            throw new IllegalArgumentException("Receipt must contain at least one line before submission.");
+        }
+        if (receipt_repository.mark_pending(receipt_id, actor.user_id()) == 0) {
+            throw new resource_not_found_exception("Draft receipt");
+        }
+        receipt_response result = receipt_repository.find(receipt_id, false);
+        audit_writer.write(actor.user_id(), "inventory", "receipt_submit", "receipt", String.valueOf(receipt_id), correlation_id,
+                Map.of("receipt_code", result.receipt_code(), "line_count", result.lines().size()));
+        logger.info("Đã gửi duyệt phiếu nhập kho; receipt_id={}, actor_user_id={}, correlation_id={}", receipt_id, actor.user_id(), correlation_id);
+        return result;
+    }
+
+    @Transactional
     public receipt_response post(long receipt_id, authenticated_user actor, String correlation_id) {
         receipt_response receipt = receipt_repository.find(receipt_id, true);
         if (receipt.status().equals("posted")) {

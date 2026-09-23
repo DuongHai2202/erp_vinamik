@@ -6,8 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,6 +56,33 @@ public class inventory_transfer_controller {
             HttpServletRequest http_request) {
         return new api_success_response<>("Transfer created successfully.", transfer_service.create(
                 request, actor, correlation_id(http_request)));
+    }
+
+    @PutMapping("/{transfer_id}")
+    @PreAuthorize("hasAuthority('inventory_transfer_update')")
+    public api_success_response<transfer_response> update(@PathVariable long transfer_id, @Valid @RequestBody transfer_request request,
+                                                          @AuthenticationPrincipal authenticated_user actor, HttpServletRequest http_request) {
+        return new api_success_response<>("Transfer updated successfully.", transfer_service.update(transfer_id, request, actor, correlation_id(http_request)));
+    }
+
+    @DeleteMapping("/{transfer_id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PreAuthorize("hasAuthority('inventory_transfer_delete')")
+    public void delete(@PathVariable long transfer_id, @AuthenticationPrincipal authenticated_user actor, HttpServletRequest http_request) {
+        transfer_service.delete(transfer_id, actor, correlation_id(http_request));
+    }
+
+    @PostMapping("/{transfer_id}/cancel")
+    @PreAuthorize("hasAuthority('inventory_transfer_update')")
+    public api_success_response<transfer_response> cancel(@PathVariable long transfer_id,
+                                                          @AuthenticationPrincipal authenticated_user actor, HttpServletRequest http_request) {
+        return new api_success_response<>("Transfer cancelled successfully.", transfer_service.cancel(transfer_id, actor, correlation_id(http_request)));
+    }
+    @PostMapping("/{transfer_id}/submit")
+    @PreAuthorize("hasAuthority('inventory_transfer_update')")
+    public api_success_response<transfer_response> submit(@PathVariable long transfer_id,
+                                                          @AuthenticationPrincipal authenticated_user actor, HttpServletRequest http_request) {
+        return new api_success_response<>("Transfer submitted successfully.", transfer_service.submit(transfer_id, actor, correlation_id(http_request)));
     }
 
     @PostMapping("/{transfer_id}/post")

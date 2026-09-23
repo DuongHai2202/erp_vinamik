@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -80,6 +81,20 @@ public class human_resources_reward_discipline_controller {
         return new api_success_response<>("Reward or discipline record updated successfully.", reward_discipline_service.update(record_id, request, actor, correlation_id(http_request)));
     }
 
+    @DeleteMapping("/{record_id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PreAuthorize("hasAuthority('hr_reward_delete')")
+    public void delete(@PathVariable long record_id, @AuthenticationPrincipal authenticated_user actor, HttpServletRequest http_request) {
+        reward_discipline_service.delete(record_id, actor, correlation_id(http_request));
+    }
+
+    @PostMapping("/{record_id}/cancel")
+    @PreAuthorize("hasAuthority('hr_reward_update')")
+    public api_success_response<reward_discipline_response> cancel(@PathVariable long record_id,
+                                                                    @AuthenticationPrincipal authenticated_user actor, HttpServletRequest http_request) {
+        return new api_success_response<>("Reward or discipline record cancelled successfully.",
+                reward_discipline_service.cancel(record_id, actor, correlation_id(http_request)));
+    }
     @PostMapping("/{record_id}/submit")
     @PreAuthorize("hasAuthority('hr_reward_update')")
     public api_success_response<reward_discipline_response> submit(
