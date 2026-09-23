@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Alert, App as antd_app, Button, Drawer, Form, Input, InputNumber, Modal, Select, Space, Table, Tag, Typography } from 'antd';
+import { Alert, App as antd_app, Button, Drawer, Form, Input, InputNumber, Modal, Select, Space, Spin, Table, Tag, Typography } from 'antd';
 import { FilterOutlined, MinusCircleOutlined, PlusOutlined, ReloadOutlined } from '@ant-design/icons';
 import { has_permission } from '../../platform/common/permission_utils';
 import { request_api } from '../../platform/common/api_client';
@@ -36,6 +36,7 @@ function ProductionPage() {
   const [pagination, set_pagination] = useState(() => ({ current: Math.max(Number(search_params.get('page')) || 1, 1), page_size: 50, total: 0 }));
   const [is_form_open, set_is_form_open] = useState(false);
   const [is_detail_open, set_is_detail_open] = useState(false);
+  const [is_detail_loading, set_is_detail_loading] = useState(false);
   const [selected_plan, set_selected_plan] = useState(null);
   const [editing_plan, set_editing_plan] = useState(null);
   const [filter_drawer_open, set_filter_drawer_open] = useState(false);
@@ -43,6 +44,8 @@ function ProductionPage() {
   const [form] = Form.useForm();
   const plans_request_ref = useRef(null);
   const stock_items_request_ref = useRef(null);
+  const detail_request_ref = useRef(null);
+  const detail_request_sequence = useRef(0);
   const [active_action_key, set_active_action_key] = useState('');
 
   const can_create = has_permission(current_user, 'production_plan_create');
@@ -136,6 +139,8 @@ function ProductionPage() {
   useEffect(() => () => {
     plans_request_ref.current?.abort();
     stock_items_request_ref.current?.abort();
+    detail_request_sequence.current += 1;
+    detail_request_ref.current?.abort();
   }, []);
 
   const open_create = () => {
@@ -156,13 +161,37 @@ function ProductionPage() {
     }
   };
 
+  const close_detail = () => {
+    detail_request_sequence.current += 1;
+    detail_request_ref.current?.abort();
+    detail_request_ref.current = null;
+    set_is_detail_loading(false);
+    set_is_detail_open(false);
+    set_selected_plan(null);
+  };
+
   const open_detail = async (plan) => {
+    detail_request_ref.current?.abort();
+    const controller = new AbortController();
+    const sequence = detail_request_sequence.current + 1;
+    detail_request_sequence.current = sequence;
+    detail_request_ref.current = controller;
+    set_selected_plan(plan);
+    set_is_detail_loading(true);
+    set_is_detail_open(true);
     try {
-      const response = await request_api(`/api/v1/production/plans/${plan.production_plan_id}`);
+      const response = await request_api('/api/v1/production/plans/' + plan.production_plan_id, { signal: controller.signal });
+      if (controller.signal.aborted || sequence !== detail_request_sequence.current) return;
       set_selected_plan(response.data);
-      set_is_detail_open(true);
     } catch (error) {
+      if (controller.signal.aborted || error?.name === 'AbortError' || sequence !== detail_request_sequence.current) return;
       message.error(error.message || 'Production plan could not be loaded.');
+      close_detail();
+    } finally {
+      if (detail_request_ref.current === controller) {
+        detail_request_ref.current = null;
+        set_is_detail_loading(false);
+      }
     }
   };
 
@@ -354,10 +383,11 @@ function ProductionPage() {
 
       </Form>
     </Modal>
-    <Modal open={is_detail_open} title={selected_plan ? `Chi tiết ${selected_plan.plan_code}` : 'Chi tiết kế hoạch'} onCancel={() => set_is_detail_open(false)} footer={null} width={820}>
-      {selected_plan && <Space direction="vertical" style={{ width: '100%' }}>
+    <Modal open={is_detail_open} title={selected_plan ? 'Chi tiết ' + selected_plan.plan_code : 'Chi tiết kế hoạch'} onCancel={close_detail} footer={null} width={820} destroyOnClose>
+      {is_detail_loading && <div className="workflow_detail_loading"><Spin tip="Đang tải chi tiết kế hoạch..." /></div>}
+      {!is_detail_loading && selected_plan && <Space direction="vertical" style={{ width: '100%' }}>
         <Typography.Paragraph>{selected_plan.plan_name} · {plan_status_labels[selected_plan.status] || selected_plan.status}</Typography.Paragraph>
-        <Table rowKey="production_plan_line_id" size="small" pagination={false} dataSource={selected_plan.lines} columns={[{ title: 'Mã vật tư/thành phẩm', dataIndex: 'stock_item_code' }, { title: 'Tên', dataIndex: 'stock_item_name' }, { title: 'Đơn vị', dataIndex: 'unit_code' }, { title: 'Số lượng', dataIndex: 'target_quantity' }, { title: 'Hạn cần', dataIndex: 'required_on', render: (value) => value ? format_date_vn(value) : 'Chưa lập' }]} />
+        <Table rowKey="production_plan_line_id" size="small" pagination={false} dataSource={selected_plan.lines || []} columns={[{ title: 'Mã vật tư/thành phẩm', dataIndex: 'stock_item_code' }, { title: 'Tên', dataIndex: 'stock_item_name' }, { title: 'Đơn vị', dataIndex: 'unit_code' }, { title: 'Số lượng', dataIndex: 'target_quantity' }, { title: 'Hạn cần', dataIndex: 'required_on', render: (value) => value ? format_date_vn(value) : 'Chưa lập' }]} />
       </Space>}
     </Modal>
     </div>
