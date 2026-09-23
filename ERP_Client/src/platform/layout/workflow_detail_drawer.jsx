@@ -389,9 +389,13 @@ function WorkflowDetailDrawer({ config, record, open, on_close, current_user, on
   const { message, modal } = AntdApp.useApp();
 
   const detail_request_sequence = useRef(0);
+  const detail_abort_ref = useRef(null);
 
   const load_detail = useCallback(async () => {
     if (!record || !open) return;
+    detail_abort_ref.current?.abort();
+    const controller = new AbortController();
+    detail_abort_ref.current = controller;
     const sequence = detail_request_sequence.current + 1;
     detail_request_sequence.current = sequence;
     // Paint the drawer with the row that is already in memory. The complete detail
@@ -403,7 +407,7 @@ function WorkflowDetailDrawer({ config, record, open, on_close, current_user, on
     set_related_loading(false);
     set_detail_refreshing(true);
     try {
-      const response = await request_api(config.endpoint + '/' + record[config.row_key]);
+      const response = await request_api(config.endpoint + '/' + record[config.row_key], { signal: controller.signal });
       if (sequence !== detail_request_sequence.current) return;
       const loaded_detail = response_data(response) || record;
       set_detail(loaded_detail);
@@ -413,14 +417,14 @@ function WorkflowDetailDrawer({ config, record, open, on_close, current_user, on
       if (sequence !== detail_request_sequence.current) return;
       const requests = [];
       if (config.detail_kind === 'payroll') {
-        requests.push(request_api(config.endpoint + '/' + record[config.row_key] + '/records?page=0&page_size=200')
+        requests.push(request_api(config.endpoint + '/' + record[config.row_key] + '/records?page=0&page_size=200', { signal: controller.signal })
           .then((value) => ['payroll_records', response_data(value)?.items || []]));
       }
       if (['issue', 'transfer'].includes(config.detail_kind)
           && has_permission(current_user, 'inventory_material_read')) {
         const warehouse_id = loaded_detail.warehouse_id || loaded_detail.source_warehouse_id;
         if (warehouse_id) {
-          requests.push(request_api('/api/v1/inventory/balances?warehouse_id=' + warehouse_id + '&page=0&page_size=200')
+          requests.push(request_api('/api/v1/inventory/balances?warehouse_id=' + warehouse_id + '&page=0&page_size=200', { signal: controller.signal })
             .then((value) => ['balances', response_data(value)?.items || []]));
         }
       }
@@ -428,17 +432,17 @@ function WorkflowDetailDrawer({ config, record, open, on_close, current_user, on
         const can_read_order = has_permission(current_user, 'production_order_read');
         const can_read_output = has_permission(current_user, 'production_output_read');
         if (can_read_order || can_read_output) {
-          requests.push(request_api('/api/v1/production/orders/' + record.production_order_id + '/progress')
+          requests.push(request_api('/api/v1/production/orders/' + record.production_order_id + '/progress', { signal: controller.signal })
             .then((value) => ['progress', response_data(value)]));
         }
         if (can_read_order) {
-          requests.push(request_api('/api/v1/production/orders/' + record.production_order_id + '/material-needs')
+          requests.push(request_api('/api/v1/production/orders/' + record.production_order_id + '/material-needs', { signal: controller.signal })
             .then((value) => ['material_needs', response_data(value)]));
-          requests.push(request_api('/api/v1/production/orders/' + record.production_order_id + '/material-consumption')
+          requests.push(request_api('/api/v1/production/orders/' + record.production_order_id + '/material-consumption', { signal: controller.signal })
             .then((value) => ['consumption', response_data(value) || []]));
         }
         if (can_read_output) {
-          requests.push(request_api('/api/v1/production/orders/' + record.production_order_id + '/outputs')
+          requests.push(request_api('/api/v1/production/orders/' + record.production_order_id + '/outputs', { signal: controller.signal })
             .then((value) => ['outputs', response_data(value) || []]));
         }
       }
@@ -448,20 +452,28 @@ function WorkflowDetailDrawer({ config, record, open, on_close, current_user, on
       set_related(Object.fromEntries(entries.filter((item) => item.status === 'fulfilled').map((item) => item.value)));
       set_related_loading(false);
     } catch (error) {
-      if (sequence !== detail_request_sequence.current) return;
+      if (controller.signal.aborted || error?.name === 'AbortError' || sequence !== detail_request_sequence.current) return;
       message.error(error.message || 'The record detail could not be loaded.');
       set_detail(record);
       set_related_loading(false);
     } finally {
-      if (sequence === detail_request_sequence.current) {
-        set_loading(false);
-        set_detail_refreshing(false);
+      if (detail_abort_ref.current === controller) {
+        detail_abort_ref.current = null;
+        if (sequence === detail_request_sequence.current) {
+          set_loading(false);
+          set_detail_refreshing(false);
+        }
       }
     }
   }, [config, current_user, message, open, record]);
 
   useEffect(() => {
     load_detail();
+    return () => {
+      detail_request_sequence.current += 1;
+      detail_abort_ref.current?.abort();
+      detail_abort_ref.current = null;
+    };
   }, [load_detail]);
 
   const refresh = useCallback(async () => {
