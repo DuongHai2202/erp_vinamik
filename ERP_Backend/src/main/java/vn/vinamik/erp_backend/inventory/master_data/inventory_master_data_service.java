@@ -3,15 +3,18 @@ package vn.vinamik.erp_backend.inventory.master_data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.master_data_page_response;
 import vn.vinamik.erp_backend.platform.common.pagination_guard;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -24,11 +27,20 @@ public class inventory_master_data_service {
 
     private final inventory_master_data_repository master_data_repository;
     private final audit_event_writer audit_writer;
+    private final business_code_generator code_generator;
+
+    @Autowired
+    public inventory_master_data_service(inventory_master_data_repository master_data_repository,
+                                         audit_event_writer audit_writer,
+                                         business_code_generator code_generator) {
+        this.master_data_repository = master_data_repository;
+        this.audit_writer = audit_writer;
+        this.code_generator = code_generator;
+    }
 
     public inventory_master_data_service(inventory_master_data_repository master_data_repository,
                                          audit_event_writer audit_writer) {
-        this.master_data_repository = master_data_repository;
-        this.audit_writer = audit_writer;
+        this(master_data_repository, audit_writer, null);
     }
 
     @Transactional(readOnly = true)
@@ -53,7 +65,13 @@ public class inventory_master_data_service {
     public inventory_unit_response create_unit(inventory_unit_request request, authenticated_user actor,
                                                String correlation_id) {
         validate_unit(request);
-        String code = normalize_required(request.unit_code());
+        String code = normalize_optional(request.unit_code());
+        if (code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            code = code_generator.next_yearly("unit", "unit_", LocalDate.now(), 6);
+        }
         ensure_unit_code_available(code, null);
         try {
             Long id = master_data_repository.insert_unit(code, normalize_text(request.unit_name()),
@@ -73,9 +91,12 @@ public class inventory_master_data_service {
     public inventory_unit_response update_unit(long id, inventory_unit_request request,
                                                authenticated_user actor, String correlation_id) {
         validate_unit(request);
-        String code = normalize_required(request.unit_code());
+        inventory_unit_response current = require_unit(id);
+        String code = normalize_optional(request.unit_code());
+        if (code == null) {
+            code = current.unit_code();
+        }
         ensure_unit_code_available(code, id);
-        require_unit(id);
         try {
             int updated = master_data_repository.update_unit(id, code, normalize_text(request.unit_name()),
                     decimal_places(request), status_or_default(request.status()), actor.user_id());
@@ -130,7 +151,13 @@ public class inventory_master_data_service {
     public inventory_category_response create_category(inventory_category_request request,
                                                        authenticated_user actor, String correlation_id) {
         validate_category(request);
-        String code = normalize_required(request.category_code());
+        String code = normalize_optional(request.category_code());
+        if (code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            code = code_generator.next_yearly("category", "category_", LocalDate.now(), 6);
+        }
         ensure_category_code_available(code, null);
         try {
             Long id = master_data_repository.insert_category(code, normalize_text(request.category_name()),
@@ -150,9 +177,12 @@ public class inventory_master_data_service {
     public inventory_category_response update_category(long id, inventory_category_request request,
                                                        authenticated_user actor, String correlation_id) {
         validate_category(request);
-        String code = normalize_required(request.category_code());
+        inventory_category_response current = require_category(id);
+        String code = normalize_optional(request.category_code());
+        if (code == null) {
+            code = current.category_code();
+        }
         ensure_category_code_available(code, id);
-        require_category(id);
         try {
             int updated = master_data_repository.update_category(id, code,
                     normalize_text(request.category_name()), status_or_default(request.status()), actor.user_id());
@@ -208,7 +238,13 @@ public class inventory_master_data_service {
     public inventory_supplier_response create_supplier(inventory_supplier_request request,
                                                        authenticated_user actor, String correlation_id) {
         validate_supplier(request);
-        String code = normalize_required(request.supplier_code());
+        String code = normalize_optional(request.supplier_code());
+        if (code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            code = code_generator.next_yearly("supplier", "supplier_", LocalDate.now(), 6);
+        }
         ensure_supplier_code_available(code, null);
         try {
             Long id = master_data_repository.insert_supplier(code, normalize_text(request.supplier_name()),
@@ -229,9 +265,12 @@ public class inventory_master_data_service {
     public inventory_supplier_response update_supplier(long id, inventory_supplier_request request,
                                                        authenticated_user actor, String correlation_id) {
         validate_supplier(request);
-        String code = normalize_required(request.supplier_code());
+        inventory_supplier_response current = require_supplier(id);
+        String code = normalize_optional(request.supplier_code());
+        if (code == null) {
+            code = current.supplier_code();
+        }
         ensure_supplier_code_available(code, id);
-        require_supplier(id);
         try {
             int updated = master_data_repository.update_supplier(id, code, normalize_text(request.supplier_name()),
                     normalize_optional(request.phone_number()), normalize_email(request.email()),
@@ -288,7 +327,13 @@ public class inventory_master_data_service {
     public inventory_warehouse_response create_warehouse(inventory_warehouse_request request,
                                                          authenticated_user actor, String correlation_id) {
         validate_warehouse(request);
-        String code = normalize_required(request.warehouse_code());
+        String code = normalize_optional(request.warehouse_code());
+        if (code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            code = code_generator.next_yearly("warehouse", "warehouse_", LocalDate.now(), 6);
+        }
         ensure_warehouse_code_available(code, null);
         try {
             Long id = master_data_repository.insert_warehouse(code, normalize_text(request.warehouse_name()),
@@ -308,9 +353,12 @@ public class inventory_master_data_service {
     public inventory_warehouse_response update_warehouse(long id, inventory_warehouse_request request,
                                                          authenticated_user actor, String correlation_id) {
         validate_warehouse(request);
-        String code = normalize_required(request.warehouse_code());
+        inventory_warehouse_response current = require_warehouse(id);
+        String code = normalize_optional(request.warehouse_code());
+        if (code == null) {
+            code = current.warehouse_code();
+        }
         ensure_warehouse_code_available(code, id);
-        require_warehouse(id);
         try {
             int updated = master_data_repository.update_warehouse(id, code,
                     normalize_text(request.warehouse_name()), normalize_optional(request.address()),
@@ -369,7 +417,13 @@ public class inventory_master_data_service {
                                                        authenticated_user actor, String correlation_id) {
         validate_location(request);
         ensure_active_warehouse(request.warehouse_id());
-        String code = normalize_required(request.location_code());
+        String code = normalize_optional(request.location_code());
+        if (code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            code = code_generator.next_yearly("warehouse_location", "location_", LocalDate.now(), 6);
+        }
         ensure_location_code_available(request.warehouse_id(), code, null);
         try {
             Long id = master_data_repository.insert_location(request.warehouse_id(), code,
@@ -393,7 +447,10 @@ public class inventory_master_data_service {
         if (current.warehouse_id() != request.warehouse_id()) {
             throw new field_conflict_exception("warehouse_id", "Warehouse location cannot be moved after creation.");
         }
-        String code = normalize_required(request.location_code());
+        String code = normalize_optional(request.location_code());
+        if (code == null) {
+            code = current.location_code();
+        }
         ensure_location_code_available(request.warehouse_id(), code, id);
         try {
             int updated = master_data_repository.update_location(id, code,
@@ -432,7 +489,7 @@ public class inventory_master_data_service {
         if (request == null) {
             throw new IllegalArgumentException("Unit request is required.");
         }
-        require_text(request.unit_code(), "Unit code", 32);
+        validate_optional_text(request.unit_code(), "Unit code", 32);
         require_text(request.unit_name(), "Unit name", 100);
         short decimal_places = decimal_places(request);
         if (decimal_places < 0 || decimal_places > 6) {
@@ -445,7 +502,7 @@ public class inventory_master_data_service {
         if (request == null) {
             throw new IllegalArgumentException("Category request is required.");
         }
-        require_text(request.category_code(), "Category code", 40);
+        validate_optional_text(request.category_code(), "Category code", 40);
         require_text(request.category_name(), "Category name", 120);
         validate_status(status_or_default(request.status()));
     }
@@ -454,7 +511,7 @@ public class inventory_master_data_service {
         if (request == null) {
             throw new IllegalArgumentException("Supplier request is required.");
         }
-        require_text(request.supplier_code(), "Supplier code", 60);
+        validate_optional_text(request.supplier_code(), "Supplier code", 60);
         require_text(request.supplier_name(), "Supplier name", 180);
         if (normalize_optional(request.phone_number()) != null && normalize_optional(request.phone_number()).length() > 30) {
             throw new IllegalArgumentException("Phone number must contain at most 30 characters.");
@@ -472,7 +529,7 @@ public class inventory_master_data_service {
         if (request == null) {
             throw new IllegalArgumentException("Warehouse request is required.");
         }
-        require_text(request.warehouse_code(), "Warehouse code", 40);
+        validate_optional_text(request.warehouse_code(), "Warehouse code", 40);
         require_text(request.warehouse_name(), "Warehouse name", 160);
         if (normalize_optional(request.address()) != null && normalize_optional(request.address()).length() > 2000) {
             throw new IllegalArgumentException("Warehouse address must contain at most 2000 characters.");
@@ -487,7 +544,7 @@ public class inventory_master_data_service {
         if (request.warehouse_id() == null || request.warehouse_id() <= 0) {
             throw new IllegalArgumentException("Warehouse is required.");
         }
-        require_text(request.location_code(), "Location code", 60);
+        validate_optional_text(request.location_code(), "Location code", 60);
         require_text(request.location_name(), "Location name", 160);
         validate_status(status_or_default(request.status()));
     }
@@ -600,6 +657,13 @@ public class inventory_master_data_service {
         String normalized = normalize_optional(value);
         if (normalized == null || normalized.length() > max_length) {
             throw new IllegalArgumentException(label + " is required and must contain at most " + max_length + " characters.");
+        }
+    }
+
+    private void validate_optional_text(String value, String label, int max_length) {
+        String normalized = normalize_optional(value);
+        if (normalized != null && normalized.length() > max_length) {
+            throw new IllegalArgumentException(label + " must contain at most " + max_length + " characters.");
         }
     }
 

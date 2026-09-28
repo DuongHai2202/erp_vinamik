@@ -237,7 +237,7 @@ function HumanResourcesPage() {
 
     <Modal className="entity_form_modal entity_form_modal_hr" width={760} open={is_modal_open} title={<div className="modal_title_block"><span>HỒ SƠ NHÂN VIÊN</span><strong>{editing_employee ? 'Sửa hồ sơ nhân viên' : 'Thêm nhân viên'}</strong><small>Thông tin dùng chung cho các phân hệ cần truy nguyên người thực hiện.</small></div>} onCancel={close_modal} footer={<div className="modal_footer_actions"><Button onClick={close_modal}>Hủy</Button><Button type="primary" htmlType="submit" form="employee_form">Lưu hồ sơ</Button></div>} destroyOnClose>
       <Form id="employee_form" form={form} layout="vertical" onFinish={on_finish} requiredMark={false}>
-        <Form.Item label="Mã nhân viên" name="employee_code" rules={[{ required: true, message: 'Employee code is required.' }]}><Input maxLength={40} /></Form.Item>
+        <Form.Item label="Mã nhân viên" name="employee_code" extra="Tự sinh khi lưu"><Input maxLength={40} disabled placeholder="Tự sinh khi lưu" /></Form.Item>
         <Form.Item label="Họ và tên" name="full_name" rules={[{ required: true, message: 'Full name is required.' }]}><Input maxLength={160} /></Form.Item>
         <Form.Item label="Số điện thoại" name="phone_number"><Input maxLength={30} /></Form.Item>
         <Form.Item label="Email" name="email" rules={[{ type: 'email', message: 'Email format is invalid.' }]}><Input maxLength={254} /></Form.Item>

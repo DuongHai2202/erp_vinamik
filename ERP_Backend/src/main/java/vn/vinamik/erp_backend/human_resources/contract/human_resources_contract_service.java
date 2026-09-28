@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
@@ -23,11 +24,20 @@ public class human_resources_contract_service {
     private static final List<String> editable_statuses = List.of("draft");
     private final human_resources_contract_repository contract_repository;
     private final audit_event_writer audit_writer;
+    private final business_code_generator code_generator;
+
+    @org.springframework.beans.factory.annotation.Autowired
+    public human_resources_contract_service(human_resources_contract_repository contract_repository,
+                                            audit_event_writer audit_writer,
+                                            business_code_generator code_generator) {
+        this.contract_repository = contract_repository;
+        this.audit_writer = audit_writer;
+        this.code_generator = code_generator;
+    }
 
     public human_resources_contract_service(human_resources_contract_repository contract_repository,
                                             audit_event_writer audit_writer) {
-        this.contract_repository = contract_repository;
-        this.audit_writer = audit_writer;
+        this(contract_repository, audit_writer, null);
     }
 
     @Transactional(readOnly = true)
@@ -61,7 +71,13 @@ public class human_resources_contract_service {
         if (!editable_statuses.contains(status)) {
             throw new IllegalArgumentException("New contracts must start in draft status.");
         }
-        String contract_code = normalize_required(request.contract_code());
+        String contract_code = normalize_optional(request.contract_code());
+        if (contract_code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            contract_code = code_generator.next_yearly("employment_contract", "contract_", request.effective_from(), 6);
+        }
         ensure_unique_code(contract_code, null);
         ensure_employee_exists(request.employee_id());
         long contract_id = contract_repository.insert(contract_code, request.employee_id(),
@@ -81,7 +97,10 @@ public class human_resources_contract_service {
     public employment_contract_response update(long employment_contract_id, employment_contract_request request,
                                                authenticated_user actor, String correlation_id) {
         validate_request(request);
-        String contract_code = normalize_required(request.contract_code());
+        String contract_code = normalize_optional(request.contract_code());
+        if (contract_code == null) {
+            contract_code = contract_repository.find_by_id(employment_contract_id).contract_code();
+        }
         ensure_unique_code(contract_code, employment_contract_id);
         ensure_employee_exists(request.employee_id());
         String current_status = contract_repository.current_status(employment_contract_id);
@@ -149,13 +168,12 @@ public class human_resources_contract_service {
         if (request == null) {
             throw new IllegalArgumentException("Employment contract request is required.");
         }
-        if (normalize_optional(request.contract_code()) == null
-                || normalize_optional(request.contract_code()).length() > 60
+        if ((request.contract_code() != null && normalize_optional(request.contract_code()).length() > 60)
                 || request.employee_id() == null || request.employee_id() <= 0
                 || normalize_optional(request.contract_type()) == null
                 || request.effective_from() == null
                 || request.base_salary() == null) {
-            throw new IllegalArgumentException("Contract code, employee, type, start date and base salary are required.");
+            throw new IllegalArgumentException("Employee, contract type, start date and base salary are required; the contract code is generated automatically when omitted.");
         }
         if (request.effective_to() != null && request.effective_to().isBefore(request.effective_from())) {
             throw new IllegalArgumentException("Contract end date cannot be before start date.");

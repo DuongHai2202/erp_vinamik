@@ -7,7 +7,6 @@ import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 
 public record leave_request(
-        @NotBlank(message = "Leave request code is required.")
         @Size(max = 60, message = "Leave request code must contain at most 60 characters.")
         String request_code,
         @NotNull(message = "Employee is required.")

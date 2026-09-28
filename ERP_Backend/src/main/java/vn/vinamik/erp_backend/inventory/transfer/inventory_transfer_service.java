@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
@@ -17,6 +18,7 @@ import java.util.Map;
 import java.util.NavigableMap;
 import java.util.Optional;
 import java.util.TreeMap;
+import java.time.LocalDate;
 
 @Service
 public class inventory_transfer_service {
@@ -29,10 +31,18 @@ public class inventory_transfer_service {
 
     private final inventory_transfer_repository transfer_repository;
     private final audit_event_writer audit_writer;
+    private final business_code_generator code_generator;
 
-    public inventory_transfer_service(inventory_transfer_repository transfer_repository, audit_event_writer audit_writer) {
+    @org.springframework.beans.factory.annotation.Autowired
+    public inventory_transfer_service(inventory_transfer_repository transfer_repository, audit_event_writer audit_writer,
+                                      business_code_generator code_generator) {
         this.transfer_repository = transfer_repository;
         this.audit_writer = audit_writer;
+        this.code_generator = code_generator;
+    }
+
+    public inventory_transfer_service(inventory_transfer_repository transfer_repository, audit_event_writer audit_writer) {
+        this(transfer_repository, audit_writer, null);
     }
 
     @Transactional(readOnly = true)
@@ -62,7 +72,13 @@ public class inventory_transfer_service {
     @Transactional
     public transfer_response create(transfer_request request, authenticated_user actor, String correlation_id) {
         validate_request(request);
-        String transfer_code = normalize_required(request.transfer_code());
+        String transfer_code = normalize_optional(request.transfer_code());
+        if (transfer_code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            transfer_code = code_generator.next_yearly("inventory_transfer", "transfer_", LocalDate.now(), 6);
+        }
         String idempotency_key = normalize_optional(request.idempotency_key());
         if (idempotency_key != null) {
             List<Long> existing = transfer_repository.find_by_idempotency_key(idempotency_key);
@@ -105,7 +121,10 @@ public class inventory_transfer_service {
         if (!current.status().equals("draft")) {
             throw new IllegalArgumentException("Only draft transfers can be edited.");
         }
-        String transfer_code = normalize_required(request.transfer_code());
+        String transfer_code = normalize_optional(request.transfer_code());
+        if (transfer_code == null) {
+            transfer_code = current.transfer_code();
+        }
         String idempotency_key = normalize_optional(request.idempotency_key());
         ensure_unique_transfer_code(transfer_code, transfer_id);
         if (idempotency_key != null && transfer_repository.idempotency_key_exists(idempotency_key, transfer_id)) {
@@ -285,7 +304,7 @@ public class inventory_transfer_service {
         }
         String transfer_code = normalize_optional(request.transfer_code());
         if (transfer_code == null || transfer_code.length() > 60) {
-            throw new IllegalArgumentException("Transfer code is required and must contain at most 60 characters.");
+            throw new IllegalArgumentException("Transfer data is invalid; the transfer code is generated automatically when omitted.");
         }
         if (request.source_warehouse_id() == null || request.source_warehouse_id() <= 0
                 || request.destination_warehouse_id() == null || request.destination_warehouse_id() <= 0) {

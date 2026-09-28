@@ -7,6 +7,7 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
@@ -18,6 +19,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.TreeMap;
+import java.time.LocalDate;
 
 @Service
 public class inventory_stocktake_service {
@@ -26,11 +28,20 @@ public class inventory_stocktake_service {
 
     private final inventory_stocktake_repository stocktake_repository;
     private final audit_event_writer audit_writer;
+    private final business_code_generator code_generator;
+
+    @org.springframework.beans.factory.annotation.Autowired
+    public inventory_stocktake_service(inventory_stocktake_repository stocktake_repository,
+                                       audit_event_writer audit_writer,
+                                       business_code_generator code_generator) {
+        this.stocktake_repository = stocktake_repository;
+        this.audit_writer = audit_writer;
+        this.code_generator = code_generator;
+    }
 
     public inventory_stocktake_service(inventory_stocktake_repository stocktake_repository,
                                        audit_event_writer audit_writer) {
-        this.stocktake_repository = stocktake_repository;
-        this.audit_writer = audit_writer;
+        this(stocktake_repository, audit_writer, null);
     }
 
     @Transactional(readOnly = true)
@@ -59,7 +70,13 @@ public class inventory_stocktake_service {
     @Transactional
     public stocktake_response create(stocktake_request request, authenticated_user actor, String correlation_id) {
         validate_request(request);
-        String stocktake_code = normalize_required(request.stocktake_code());
+        String stocktake_code = normalize_optional(request.stocktake_code());
+        if (stocktake_code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            stocktake_code = code_generator.next_yearly("inventory_stocktake", "stocktake_", LocalDate.now(), 6);
+        }
         lock_warehouse(request.warehouse_id());
         ensure_warehouse_active(request.warehouse_id());
         ensure_no_active_stocktake(request.warehouse_id());
@@ -264,7 +281,7 @@ public class inventory_stocktake_service {
         }
         String stocktake_code = normalize_optional(request.stocktake_code());
         if (stocktake_code == null || stocktake_code.length() > 60) {
-            throw new IllegalArgumentException("Stocktake code is required and must contain at most 60 characters.");
+            throw new IllegalArgumentException("Stocktake data is invalid; the stocktake code is generated automatically when omitted.");
         }
         if (request.warehouse_id() == null || request.warehouse_id() <= 0) {
             throw new IllegalArgumentException("Stocktake warehouse is required.");

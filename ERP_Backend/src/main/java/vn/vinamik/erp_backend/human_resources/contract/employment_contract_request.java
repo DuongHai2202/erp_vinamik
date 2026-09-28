@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public record employment_contract_request(
-        @NotBlank(message = "Contract code is required.")
         @Size(max = 60, message = "Contract code must contain at most 60 characters.")
         String contract_code,
         @NotNull(message = "Employee is required.")

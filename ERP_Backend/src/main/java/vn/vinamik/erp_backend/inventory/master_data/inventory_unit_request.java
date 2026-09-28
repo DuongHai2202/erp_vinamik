@@ -6,7 +6,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public record inventory_unit_request(
-        @NotBlank(message = "Unit code is required.")
         @Size(max = 32, message = "Unit code must contain at most 32 characters.")
         String unit_code,
         @NotBlank(message = "Unit name is required.")

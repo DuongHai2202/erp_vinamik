@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
@@ -23,12 +24,22 @@ public class human_resources_reward_discipline_service {
     private static final List<String> valid_statuses = List.of("draft", "pending", "approved", "rejected", "cancelled");
     private final human_resources_reward_discipline_repository reward_discipline_repository;
     private final audit_event_writer audit_writer;
+    private final business_code_generator code_generator;
+
+    @org.springframework.beans.factory.annotation.Autowired
+    public human_resources_reward_discipline_service(
+            human_resources_reward_discipline_repository reward_discipline_repository,
+            audit_event_writer audit_writer,
+            business_code_generator code_generator) {
+        this.reward_discipline_repository = reward_discipline_repository;
+        this.audit_writer = audit_writer;
+        this.code_generator = code_generator;
+    }
 
     public human_resources_reward_discipline_service(
             human_resources_reward_discipline_repository reward_discipline_repository,
             audit_event_writer audit_writer) {
-        this.reward_discipline_repository = reward_discipline_repository;
-        this.audit_writer = audit_writer;
+        this(reward_discipline_repository, audit_writer, null);
     }
 
     @Transactional(readOnly = true)
@@ -69,7 +80,13 @@ public class human_resources_reward_discipline_service {
         if (!requested_status.equals("draft") && !requested_status.equals("pending")) {
             throw new IllegalArgumentException("New reward or discipline records must start in draft or pending status.");
         }
-        String record_code = normalize_required(request.record_code());
+        String record_code = normalize_optional(request.record_code());
+        if (record_code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            record_code = code_generator.next_yearly("reward_discipline", "reward_", request.effective_on(), 6);
+        }
         ensure_unique_code(record_code, null);
         ensure_employee_exists(request.employee_id());
         long record_id = reward_discipline_repository.insert(record_code, request.employee_id(),
@@ -96,7 +113,14 @@ public class human_resources_reward_discipline_service {
         if (!requested_status.equals("draft") && !requested_status.equals("pending")) {
             throw new IllegalArgumentException("Only draft or pending status is allowed while editing a record.");
         }
-        String record_code = normalize_required(request.record_code());
+        reward_discipline_response current_record = reward_discipline_repository.find_by_id(record_id);
+        if (current_record == null) {
+            throw new resource_not_found_exception("Reward or discipline record");
+        }
+        String record_code = normalize_optional(request.record_code());
+        if (record_code == null) {
+            record_code = current_record.record_code();
+        }
         ensure_unique_code(record_code, record_id);
         ensure_employee_exists(request.employee_id());
         if (reward_discipline_repository.payroll_locked(record_id)) {

@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public record reward_discipline_request(
-        @NotBlank(message = "Reward or discipline code is required.")
         @Size(max = 60, message = "Reward or discipline code must contain at most 60 characters.")
         String record_code,
         @NotNull(message = "Employee is required.")

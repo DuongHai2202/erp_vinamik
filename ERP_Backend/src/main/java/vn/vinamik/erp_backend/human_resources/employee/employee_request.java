@@ -7,7 +7,6 @@ import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 
 public record employee_request(
-        @NotBlank(message = "Employee code is required.")
         @Size(max = 40, message = "Employee code must contain at most 40 characters.")
         String employee_code,
         @NotBlank(message = "Full name is required.")

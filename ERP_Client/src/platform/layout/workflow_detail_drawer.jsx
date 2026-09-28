@@ -351,9 +351,9 @@ function OutputFormModal({ order, output, open, on_close, on_saved }) {
   };
   return <Modal className="entity_form_modal entity_form_modal_production_output" open={open} title={<div className="modal_title_block"><span>THÀNH PHẨM</span><strong>{is_editing ? 'Chỉnh sửa sản lượng thành phẩm' : 'Ghi nhận sản lượng thành phẩm'}</strong><small>Số lượng đạt sẽ được bàn giao sang Kho sau khi ghi sổ.</small></div>} onCancel={on_close} footer={<div className="modal_footer_actions"><Button onClick={on_close}>Hủy</Button><Button type="primary" htmlType="submit" form="production_output_form" loading={saving}>{is_editing ? 'Lưu thay đổi' : 'Lưu sản lượng'}</Button></div>} width={720} destroyOnClose>
     <Form id="production_output_form" form={form} layout="vertical" onFinish={on_finish} requiredMark={false}>
-      <Form.Item label="Kho nhận" name="warehouse_id" rules={[{ required: true, message: 'Warehouse is required.' }]}><LookupField field={{ lookup: 'warehouses', required: true, placeholder: 'Chọn kho nhận' }} form={form} /></Form.Item>
-      <Form.Item label="Vị trí nhận" name="warehouse_location_id" rules={[{ required: true, message: 'Warehouse location is required.' }]}><LookupField field={{ lookup: 'warehouse_locations', parent_field: 'warehouse_id', required: true, placeholder: 'Chọn vị trí nhận' }} form={form} /></Form.Item>
-      <Space style={{ width: '100%' }} size="middle"><Form.Item label="Mã lô" name="lot_code" extra="Mã lô sẽ được tự sinh khi lưu" style={{ flex: 1 }}><Input maxLength={80} disabled={!is_editing} placeholder="Tự sinh khi lưu" /></Form.Item><Form.Item label="Ngày sản xuất" name="manufactured_on" rules={[{ required: true, message: 'Manufactured date is required.' }]}><VietnameseDateInput /></Form.Item><Form.Item label="Hạn dùng" name="expires_on"><VietnameseDateInput /></Form.Item></Space>
+      <Form.Item label="Kho nhận" name="warehouse_id" rules={[{ required: true, message: 'Warehouse is required.' }]}><LookupField field={{ lookup: 'warehouses', name: 'warehouse_id', auto_select_first: true, required: true, placeholder: 'Chọn kho nhận' }} form={form} /></Form.Item>
+      <Form.Item label="Vị trí nhận" name="warehouse_location_id" rules={[{ required: true, message: 'Warehouse location is required.' }]}><LookupField field={{ lookup: 'warehouse_locations', name: 'warehouse_location_id', parent_field: 'warehouse_id', auto_select_first: true, required: true, placeholder: 'Chọn vị trí nhận' }} form={form} /></Form.Item>
+      <Space style={{ width: '100%' }} size="middle"><Form.Item label="Mã lô" name="lot_code" extra="Mã lô được backend tự sinh khi lưu" style={{ flex: 1 }}><Input maxLength={80} disabled placeholder="Tự sinh khi lưu" /></Form.Item><Form.Item label="Ngày sản xuất" name="manufactured_on" rules={[{ required: true, message: 'Manufactured date is required.' }]}><VietnameseDateInput /></Form.Item><Form.Item label="Hạn dùng" name="expires_on"><VietnameseDateInput /></Form.Item></Space>
       <Space style={{ width: '100%' }} size="middle"><Form.Item label="Số lượng đạt" name="good_quantity" rules={[{ required: true, message: 'Good quantity is required.' }]}><InputNumber min={0} style={{ width: '100%' }} /></Form.Item><Form.Item label="Số lượng lỗi" name="defective_quantity" rules={[{ required: true, message: 'Defective quantity is required.' }]}><InputNumber min={0} style={{ width: '100%' }} /></Form.Item></Space>
       <Form.Item name="idempotency_key" hidden><Input maxLength={120} /></Form.Item>
       <Form.Item label="Ghi chú" name="notes"><Input.TextArea rows={3} maxLength={2000} /></Form.Item>
@@ -365,11 +365,52 @@ function ConsumptionFormModal({ order, open, on_close, on_saved }) {
   const [form] = Form.useForm();
   const { message } = AntdApp.useApp();
   const [saving, set_saving] = useState(false);
+  const [preparing, set_preparing] = useState(false);
   useEffect(() => {
-    if (open) {
-      form.resetFields();
-      form.setFieldsValue({ idempotency_key: order?.order_code + '-consume-' + Date.now(), lines: [{}] });
-    }
+    let mounted = true;
+    if (!open) return () => { mounted = false; };
+    form.resetFields();
+    form.setFieldsValue({ idempotency_key: order?.order_code + '-consume-' + Date.now(), lines: [{}] });
+    set_preparing(true);
+    request_api('/api/v1/production/orders/' + order.production_order_id + '/material-needs').then(async (response) => {
+      const needs = response_data(response)?.items || [];
+      if (!needs.length) return;
+      const balances_by_material = await Promise.all(needs.map(async (need) => {
+        try {
+          const balance_response = await request_api('/api/v1/inventory/balances?stock_item_id=' + need.material_stock_item_id + '&page=0&page_size=100');
+          return [need.material_stock_item_id, response_data(balance_response)?.items || []];
+        } catch {
+          return [need.material_stock_item_id, []];
+        }
+      }));
+      const balance_map = new Map(balances_by_material);
+      const warehouse_totals = new Map();
+      needs.forEach((need) => (balance_map.get(need.material_stock_item_id) || []).forEach((balance) => {
+        const quantity = Number(balance.on_hand_quantity || 0);
+        if (quantity > 0) warehouse_totals.set(balance.warehouse_id, (warehouse_totals.get(balance.warehouse_id) || 0) + quantity);
+      }));
+      const preferred_warehouse = [...warehouse_totals.entries()].sort((left, right) => right[1] - left[1])[0]?.[0];
+      if (!preferred_warehouse) return;
+      const lines = needs.map((need) => {
+        const balances = (balance_map.get(need.material_stock_item_id) || [])
+          .filter((balance) => balance.warehouse_id === preferred_warehouse && Number(balance.on_hand_quantity || 0) > 0)
+          .sort((left, right) => Number(right.on_hand_quantity || 0) - Number(left.on_hand_quantity || 0));
+        const balance = balances[0];
+        if (!balance) return null;
+        const required = Number(need.required_quantity || 0);
+        const available = Number(balance.on_hand_quantity || 0);
+        return {
+          material_stock_item_id: need.material_stock_item_id,
+          warehouse_location_id: balance.warehouse_location_id,
+          stock_lot_id: balance.stock_lot_id || undefined,
+          consumed_quantity: Math.min(required, available),
+        };
+      }).filter(Boolean);
+      if (mounted && lines.length) form.setFieldsValue({ warehouse_id: preferred_warehouse, lines });
+    }).catch(() => {
+      // The form stays usable for manual entry when material needs are unavailable.
+    }).finally(() => { if (mounted) set_preparing(false); });
+    return () => { mounted = false; };
   }, [form, open, order]);
   const on_finish = async (values) => {
     set_saving(true);
@@ -384,14 +425,14 @@ function ConsumptionFormModal({ order, open, on_close, on_saved }) {
       set_saving(false);
     }
   };
-  return <Modal className="entity_form_modal entity_form_modal_production_consumption" open={open} title={<div className="modal_title_block"><span>TIÊU HAO VẬT TƯ</span><strong>Ghi nhận tiêu hao vật tư</strong><small>Kiểm tra kho và số lượng trước khi ghi nhận giao dịch.</small></div>} onCancel={on_close} footer={<div className="modal_footer_actions"><Button onClick={on_close}>Hủy</Button><Button type="primary" htmlType="submit" form="production_consumption_form" loading={saving}>Lưu tiêu hao</Button></div>} width={820} destroyOnClose>
+  return <Modal className="entity_form_modal entity_form_modal_production_consumption" open={open} title={<div className="modal_title_block"><span>TIÊU HAO VẬT TƯ</span><strong>Ghi nhận tiêu hao vật tư</strong><small>Hệ thống tự lấy nhu cầu theo BOM và chọn vị trí còn tồn nhiều nhất trong kho phù hợp.</small></div>} onCancel={on_close} footer={<div className="modal_footer_actions"><Button onClick={on_close}>Hủy</Button><Button type="primary" htmlType="submit" form="production_consumption_form" loading={saving || preparing} disabled={preparing}>Lưu tiêu hao</Button></div>} width={820} destroyOnClose>
     <Form id="production_consumption_form" form={form} layout="vertical" onFinish={on_finish} requiredMark={false}>
-      <Form.Item label="Kho xuất" name="warehouse_id" rules={[{ required: true, message: 'Warehouse is required.' }]}><LookupField field={{ lookup: 'warehouses', required: true, placeholder: 'Chọn kho xuất' }} form={form} /></Form.Item>
+      <Form.Item label="Kho xuất" name="warehouse_id" rules={[{ required: true, message: 'Warehouse is required.' }]}><LookupField field={{ lookup: 'warehouses', name: 'warehouse_id', auto_select_first: true, required: true, placeholder: 'Chọn kho xuất' }} form={form} /></Form.Item>
       <Form.Item name="idempotency_key" hidden><Input maxLength={120} /></Form.Item>
       <Form.List name="lines" rules={[{ validator: async (_, values) => values?.length ? Promise.resolve() : Promise.reject(new Error('At least one line is required.')) }]}>
         {(fields, { add, remove }) => <div className="workflow_form_lines"><Typography.Text strong>Vật tư đã tiêu hao</Typography.Text>{fields.map(({ key, name, ...rest_field }) => <div className="workflow_form_line" key={key}>
           <Form.Item {...rest_field} name={[name, 'material_stock_item_id']} label="Nguyên vật liệu" rules={[{ required: true, message: 'Material is required.' }]}><LookupField field={{ lookup: 'raw_materials', required: true, placeholder: 'Chọn nguyên vật liệu' }} form={form} /></Form.Item>
-          <Form.Item {...rest_field} name={[name, 'warehouse_location_id']} label="Vị trí kho" rules={[{ required: true, message: 'Warehouse location is required.' }]}><LookupField field={{ lookup: 'warehouse_locations', parent_field: 'warehouse_id', required: true, placeholder: 'Chọn vị trí' }} form={form} /></Form.Item>
+          <Form.Item {...rest_field} name={[name, 'warehouse_location_id']} label="Vị trí kho" rules={[{ required: true, message: 'Warehouse location is required.' }]}><LookupField field={{ lookup: 'warehouse_locations', name: [name, 'warehouse_location_id'], parent_field: 'warehouse_id', auto_select_first: true, required: true, placeholder: 'Chọn vị trí' }} form={form} /></Form.Item>
           <Form.Item {...rest_field} name={[name, 'consumed_quantity']} label="Số lượng" rules={[{ required: true, message: 'Consumed quantity is required.' }]}><InputNumber min={0.000001} style={{ width: '100%' }} /></Form.Item>
           <Button type="text" danger icon={<StopOutlined />} aria-label="Xóa dòng" onClick={() => remove(name)} />
         </div>)}<Button type="dashed" block icon={<PlusOutlined />} onClick={() => add({})}>Thêm dòng vật tư</Button></div>}

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
@@ -15,6 +16,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.time.LocalDate;
 
 @Service
 public class inventory_issue_service {
@@ -22,11 +24,18 @@ public class inventory_issue_service {
     private static final int max_page_size = 100;
     private final inventory_issue_repository issue_repository;
     private final audit_event_writer audit_writer;
+    private final business_code_generator code_generator;
 
     @Autowired
-    public inventory_issue_service(inventory_issue_repository issue_repository, audit_event_writer audit_writer) {
+    public inventory_issue_service(inventory_issue_repository issue_repository, audit_event_writer audit_writer,
+                                   business_code_generator code_generator) {
         this.issue_repository = issue_repository;
         this.audit_writer = audit_writer;
+        this.code_generator = code_generator;
+    }
+
+    public inventory_issue_service(inventory_issue_repository issue_repository, audit_event_writer audit_writer) {
+        this(issue_repository, audit_writer, null);
     }
 
 
@@ -54,7 +63,13 @@ public class inventory_issue_service {
     @Transactional
     public issue_response create(issue_request request, authenticated_user actor, String correlation_id) {
         validate_request(request);
-        String issue_code = normalize_required(request.issue_code());
+        String issue_code = normalize_optional(request.issue_code());
+        if (issue_code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            issue_code = code_generator.next_yearly("inventory_issue", "issue_", LocalDate.now(), 6);
+        }
         String idempotency_key = normalize_optional(request.idempotency_key());
         if (idempotency_key != null) {
             List<Long> existing = issue_repository.find_by_idempotency_key(idempotency_key);
@@ -101,7 +116,10 @@ public class inventory_issue_service {
         if (!current.status().equals("draft")) {
             throw new IllegalArgumentException("Only draft issues can be edited.");
         }
-        String issue_code = normalize_required(request.issue_code());
+        String issue_code = normalize_optional(request.issue_code());
+        if (issue_code == null) {
+            issue_code = current.issue_code();
+        }
         String idempotency_key = normalize_optional(request.idempotency_key());
         ensure_unique_issue_code(issue_code, issue_id);
         if (idempotency_key != null && issue_repository.idempotency_key_exists(idempotency_key, issue_id)) {
@@ -228,7 +246,7 @@ public class inventory_issue_service {
         }
         String issue_code = normalize_optional(request.issue_code());
         if (issue_code == null || issue_code.length() > 60) {
-            throw new IllegalArgumentException("Issue code is required and must contain at most 60 characters.");
+            throw new IllegalArgumentException("Issue data is invalid; the issue code is generated automatically when omitted.");
         }
         if (request.warehouse_id() == null || request.warehouse_id() <= 0) {
             throw new IllegalArgumentException("Warehouse is required.");

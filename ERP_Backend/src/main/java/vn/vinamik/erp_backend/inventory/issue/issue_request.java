@@ -9,7 +9,6 @@ import jakarta.validation.constraints.Size;
 import java.util.List;
 
 public record issue_request(
-        @NotBlank(message = "Issue code is required.")
         @Size(max = 60, message = "Issue code must contain at most 60 characters.")
         String issue_code,
         @NotNull(message = "Warehouse is required.")

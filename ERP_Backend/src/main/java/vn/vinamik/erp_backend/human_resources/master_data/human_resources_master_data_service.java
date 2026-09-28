@@ -3,15 +3,18 @@ package vn.vinamik.erp_backend.human_resources.master_data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.master_data_page_response;
 import vn.vinamik.erp_backend.platform.common.pagination_guard;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Locale;
@@ -25,12 +28,22 @@ public class human_resources_master_data_service {
 
     private final human_resources_master_data_repository master_data_repository;
     private final audit_event_writer audit_writer;
+    private final business_code_generator code_generator;
+
+    @Autowired
+    public human_resources_master_data_service(
+            human_resources_master_data_repository master_data_repository,
+            audit_event_writer audit_writer,
+            business_code_generator code_generator) {
+        this.master_data_repository = master_data_repository;
+        this.audit_writer = audit_writer;
+        this.code_generator = code_generator;
+    }
 
     public human_resources_master_data_service(
             human_resources_master_data_repository master_data_repository,
             audit_event_writer audit_writer) {
-        this.master_data_repository = master_data_repository;
-        this.audit_writer = audit_writer;
+        this(master_data_repository, audit_writer, null);
     }
 
     @Transactional(readOnly = true)
@@ -56,7 +69,13 @@ public class human_resources_master_data_service {
     public department_response create_department(department_request request, authenticated_user actor,
                                                  String correlation_id) {
         validate_department(request, null);
-        String code = normalize_required(request.department_code());
+        String code = normalize_optional(request.department_code());
+        if (code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            code = code_generator.next_yearly("department", "department_", LocalDate.now(), 6);
+        }
         String name = normalize_text(request.department_name());
         ensure_department_code_available(code, null);
         ensure_parent_department(request.parent_department_id(), null);
@@ -78,10 +97,13 @@ public class human_resources_master_data_service {
     public department_response update_department(long department_id, department_request request,
                                                  authenticated_user actor, String correlation_id) {
         validate_department(request, department_id);
-        String code = normalize_required(request.department_code());
+        department_response current = require_department(department_id);
+        String code = normalize_optional(request.department_code());
+        if (code == null) {
+            code = current.department_code();
+        }
         ensure_department_code_available(code, department_id);
         ensure_parent_department(request.parent_department_id(), department_id);
-        require_department(department_id);
         try {
             int updated = master_data_repository.update_department(department_id, code,
                     normalize_text(request.department_name()), request.parent_department_id(),
@@ -139,7 +161,13 @@ public class human_resources_master_data_service {
     public job_title_response create_job_title(job_title_request request, authenticated_user actor,
                                                String correlation_id) {
         validate_job_title(request);
-        String code = normalize_required(request.job_title_code());
+        String code = normalize_optional(request.job_title_code());
+        if (code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            code = code_generator.next_yearly("job_title", "job_title_", LocalDate.now(), 6);
+        }
         ensure_job_title_code_available(code, null);
         try {
             Long id = master_data_repository.insert_job_title(code, normalize_text(request.job_title_name()),
@@ -159,9 +187,12 @@ public class human_resources_master_data_service {
     public job_title_response update_job_title(long job_title_id, job_title_request request,
                                                authenticated_user actor, String correlation_id) {
         validate_job_title(request);
-        String code = normalize_required(request.job_title_code());
+        job_title_response current = require_job_title(job_title_id);
+        String code = normalize_optional(request.job_title_code());
+        if (code == null) {
+            code = current.job_title_code();
+        }
         ensure_job_title_code_available(code, job_title_id);
-        require_job_title(job_title_id);
         try {
             int updated = master_data_repository.update_job_title(job_title_id, code,
                     normalize_text(request.job_title_name()), normalize_optional(request.description()),
@@ -224,7 +255,13 @@ public class human_resources_master_data_service {
     public work_shift_response create_work_shift(work_shift_request request, authenticated_user actor,
                                                  String correlation_id) {
         validate_work_shift(request);
-        String code = normalize_required(request.shift_code());
+        String code = normalize_optional(request.shift_code());
+        if (code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            code = code_generator.next_yearly("work_shift", "shift_", LocalDate.now(), 6);
+        }
         ensure_work_shift_code_available(code, null);
         try {
             Long id = master_data_repository.insert_work_shift(code, normalize_text(request.shift_name()),
@@ -244,9 +281,12 @@ public class human_resources_master_data_service {
     public work_shift_response update_work_shift(long work_shift_id, work_shift_request request,
                                                  authenticated_user actor, String correlation_id) {
         validate_work_shift(request);
-        String code = normalize_required(request.shift_code());
+        work_shift_response current = require_work_shift(work_shift_id);
+        String code = normalize_optional(request.shift_code());
+        if (code == null) {
+            code = current.shift_code();
+        }
         ensure_work_shift_code_available(code, work_shift_id);
-        require_work_shift(work_shift_id);
         try {
             int updated = master_data_repository.update_work_shift(work_shift_id, code,
                     normalize_text(request.shift_name()), request.starts_at(), request.ends_at(),
@@ -285,7 +325,7 @@ public class human_resources_master_data_service {
         if (request == null) {
             throw new IllegalArgumentException("Department request is required.");
         }
-        require_text(request.department_code(), "Department code", 40);
+        validate_optional_text(request.department_code(), "Department code", 40);
         require_text(request.department_name(), "Department name", 160);
         validate_status(status_or_default(request.status()));
         if (request.parent_department_id() != null && request.parent_department_id() <= 0) {
@@ -300,7 +340,7 @@ public class human_resources_master_data_service {
         if (request == null) {
             throw new IllegalArgumentException("Job title request is required.");
         }
-        require_text(request.job_title_code(), "Job title code", 40);
+        validate_optional_text(request.job_title_code(), "Job title code", 40);
         require_text(request.job_title_name(), "Job title name", 160);
         if (normalize_optional(request.description()) != null && normalize_optional(request.description()).length() > 2000) {
             throw new IllegalArgumentException("Job title description must contain at most 2000 characters.");
@@ -312,7 +352,7 @@ public class human_resources_master_data_service {
         if (request == null) {
             throw new IllegalArgumentException("Work shift request is required.");
         }
-        require_text(request.shift_code(), "Work shift code", 40);
+        validate_optional_text(request.shift_code(), "Work shift code", 40);
         require_text(request.shift_name(), "Work shift name", 120);
         if (request.starts_at() == null || request.ends_at() == null) {
             throw new IllegalArgumentException("Work shift start and end time are required.");
@@ -400,6 +440,13 @@ public class human_resources_master_data_service {
         String normalized = normalize_optional(value);
         if (normalized == null || normalized.length() > max_length) {
             throw new IllegalArgumentException(label + " is required and must contain at most " + max_length + " characters.");
+        }
+    }
+
+    private void validate_optional_text(String value, String label, int max_length) {
+        String normalized = normalize_optional(value);
+        if (normalized != null && normalized.length() > max_length) {
+            throw new IllegalArgumentException(label + " must contain at most " + max_length + " characters.");
         }
     }
 

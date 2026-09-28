@@ -9,7 +9,6 @@ import jakarta.validation.constraints.Size;
 import java.util.List;
 
 public record transfer_request(
-        @NotBlank(message = "Transfer code is required.")
         @Size(max = 60, message = "Transfer code must contain at most 60 characters.")
         String transfer_code,
         @NotNull(message = "Source warehouse is required.")

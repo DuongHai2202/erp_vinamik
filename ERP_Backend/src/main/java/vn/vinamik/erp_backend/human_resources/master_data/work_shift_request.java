@@ -7,7 +7,6 @@ import jakarta.validation.constraints.Size;
 import java.time.LocalTime;
 
 public record work_shift_request(
-        @NotBlank(message = "Work shift code is required.")
         @Size(max = 40, message = "Work shift code must contain at most 40 characters.")
         String shift_code,
         @NotBlank(message = "Work shift name is required.")

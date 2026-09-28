@@ -372,7 +372,7 @@ function InventoryPage() {
 
     {active_view === 'materials' && <Modal className="entity_form_modal entity_form_modal_inventory" width={720} open={is_modal_open} title={<div className="modal_title_block"><span>DANH MỤC VẬT TƯ</span><strong>{editing_material ? 'Sửa mặt hàng' : 'Thêm mặt hàng'}</strong><small>Danh mục dùng chung cho tồn kho và sản xuất.</small></div>} onCancel={() => set_is_modal_open(false)} footer={<div className="modal_footer_actions"><Button onClick={() => set_is_modal_open(false)}>Hủy</Button><Button type="primary" htmlType="submit" form="inventory_material_form">Lưu mặt hàng</Button></div>} destroyOnClose>
       <Form id="inventory_material_form" form={form} layout="vertical" onFinish={on_finish} requiredMark={false}>
-        <Form.Item label="Mã mặt hàng" name="item_code" rules={[{ required: true, message: 'Item code is required.' }]}><Input maxLength={60} /></Form.Item>
+        <Form.Item label="Mã mặt hàng" name="item_code" extra="Tự sinh theo loại mặt hàng khi lưu"><Input maxLength={60} disabled placeholder="Tự sinh khi lưu" /></Form.Item>
         <Form.Item label="Tên mặt hàng" name="item_name" rules={[{ required: true, message: 'Item name is required.' }]}><Input maxLength={180} /></Form.Item>
         <Form.Item label="Loại mặt hàng" name="item_type" rules={[{ required: true, message: 'Item type is required.' }]}>
           <Select options={item_type_options} disabled={Boolean(editing_material)} />

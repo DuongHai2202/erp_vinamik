@@ -4,7 +4,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public record department_request(
-        @NotBlank(message = "Department code is required.")
         @Size(max = 40, message = "Department code must contain at most 40 characters.")
         String department_code,
         @NotBlank(message = "Department name is required.")

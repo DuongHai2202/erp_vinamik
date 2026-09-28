@@ -12,6 +12,7 @@ import vn.vinamik.erp_backend.inventory.stock_item.repository.inventory_stock_it
 import vn.vinamik.erp_backend.inventory.stock_item.repository.inventory_stock_item_repository;
 import vn.vinamik.erp_backend.inventory.stock_item.repository.stock_item_read_row;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
@@ -28,15 +29,25 @@ public class inventory_stock_item_service {
     private final inventory_stock_item_repository stock_item_repository;
     private final inventory_stock_item_read_repository read_repository;
     private final audit_event_writer audit_writer;
+    private final business_code_generator code_generator;
 
     @Autowired
     public inventory_stock_item_service(
             inventory_stock_item_repository stock_item_repository,
             inventory_stock_item_read_repository read_repository,
-            audit_event_writer audit_writer) {
+            audit_event_writer audit_writer,
+            business_code_generator code_generator) {
         this.stock_item_repository = stock_item_repository;
         this.read_repository = read_repository;
         this.audit_writer = audit_writer;
+        this.code_generator = code_generator;
+    }
+
+    public inventory_stock_item_service(
+            inventory_stock_item_repository stock_item_repository,
+            inventory_stock_item_read_repository read_repository,
+            audit_event_writer audit_writer) {
+        this(stock_item_repository, read_repository, audit_writer, null);
     }
 
 
@@ -74,8 +85,14 @@ public class inventory_stock_item_service {
     @Transactional
     public stock_item_response create(stock_item_request request, authenticated_user actor, String correlation_id) {
         validate_request(request);
-        String item_code = normalize_lower_required(request.item_code());
         String item_type = item_type_or_default(request.item_type());
+        String item_code = normalize_optional(request.item_code());
+        if (item_code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            item_code = code_generator.next_yearly("stock_item_" + item_type, item_type.equals("finished_product") ? "fg_" : "rm_", java.time.LocalDate.now(), 6);
+        }
         ensure_unique_code(item_code, null);
         stock_item_entity entity = new stock_item_entity(
                 item_code,
@@ -105,11 +122,14 @@ public class inventory_stock_item_service {
     public stock_item_response update(long stock_item_id, stock_item_request request, authenticated_user actor,
                                       String correlation_id) {
         validate_request(request);
-        String item_code = normalize_lower_required(request.item_code());
-        String item_type = item_type_or_default(request.item_type());
-        ensure_unique_code(item_code, stock_item_id);
         stock_item_entity entity = stock_item_repository.findById(stock_item_id)
                 .orElseThrow(() -> new resource_not_found_exception("Stock item"));
+        String item_type = item_type_or_default(request.item_type());
+        String item_code = normalize_optional(request.item_code());
+        if (item_code == null) {
+            item_code = find_by_id(stock_item_id).item_code();
+        }
+        ensure_unique_code(item_code, stock_item_id);
         if (!item_type.equals(entity.item_type())) {
             throw new field_conflict_exception("item_type", "Stock item type cannot be changed after creation.");
         }
@@ -169,8 +189,11 @@ public class inventory_stock_item_service {
         String item_code = normalize_lower(request.item_code());
         String item_name = normalize_optional(request.item_name());
         String item_type = item_type_or_default(request.item_type());
-        if (item_code == null || item_code.length() > 60) {
-            throw new IllegalArgumentException("Item code is required and must contain at most 60 characters.");
+        if (item_code != null && item_code.length() > 60) {
+            throw new IllegalArgumentException("Item code must contain at most 60 characters.");
+        }
+        if (item_code == null && code_generator == null) {
+            throw new IllegalArgumentException("Automatic code generation is unavailable.");
         }
         if (item_name == null || item_name.length() > 180) {
             throw new IllegalArgumentException("Item name is required and must contain at most 180 characters.");

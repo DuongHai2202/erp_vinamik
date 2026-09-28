@@ -155,7 +155,18 @@ function ProductionPage() {
     load_stock_items();
     set_editing_plan(null);
     form.resetFields();
-    form.setFieldsValue({ lines: [{ stock_item_id: undefined, target_quantity: undefined }] });
+    const today = new Date();
+    const end_date = new Date(today);
+    end_date.setDate(end_date.getDate() + 7);
+    const iso = (value) => [value.getFullYear(), value.getMonth() + 1, value.getDate()]
+      .map((part, index) => index === 0 ? String(part) : String(part).padStart(2, '0')).join('-');
+    form.setFieldsValue({
+      plan_code: undefined,
+      planned_on: format_date_vn(iso(today)),
+      starts_on: format_date_vn(iso(today)),
+      ends_on: format_date_vn(iso(end_date)),
+      lines: [{ stock_item_id: undefined, target_quantity: undefined }],
+    });
     set_is_form_open(true);
   };
 

@@ -9,7 +9,6 @@ import jakarta.validation.constraints.Size;
 import java.util.List;
 
 public record receipt_request(
-        @NotBlank(message = "Receipt code is required.")
         @Size(max = 60, message = "Receipt code must contain at most 60 characters.")
         String receipt_code,
         @NotNull(message = "Warehouse is required.")

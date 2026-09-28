@@ -71,13 +71,36 @@ async function fetch_lookup(lookup_key, endpoint, force_refresh = false) {
   if (force_refresh) lookup_cache.delete(cache_key);
   if (cacheable && lookup_cache.has(cache_key)) return lookup_cache.get(cache_key);
   if (lookup_requests.has(cache_key)) return lookup_requests.get(cache_key);
-  const request = request_api(endpoint).then((response) => {
-    const options = response_items(response).map((item) => definition.map_item ? definition.map_item(item) : item).filter((item) => item?.value !== undefined);
+  const request = fetch_all_items(endpoint).then((items) => {
+    const options = items.map((item) => definition.map_item ? definition.map_item(item) : item).filter((item) => item?.value !== undefined);
     if (cacheable) lookup_cache.set(cache_key, options);
     return options;
   }).finally(() => lookup_requests.delete(cache_key));
   lookup_requests.set(cache_key, request);
   return request;
+}
+
+function page_endpoint(endpoint, page) {
+  if (!endpoint || !/[?&]page=\d+/.test(endpoint)) return null;
+  return endpoint.replace(/([?&]page=)\d+/, '$1' + page);
+}
+
+async function fetch_all_items(endpoint) {
+  const first_response = await request_api(endpoint);
+  const first_items = response_items(first_response);
+  const total_pages = Number(first_response?.data?.total_pages || 0);
+  if (total_pages <= 1) return first_items;
+  const pages = await Promise.all(Array.from({ length: total_pages - 1 }, (_, index) => {
+    const next_endpoint = page_endpoint(endpoint, index + 1);
+    return next_endpoint ? request_api(next_endpoint).then(response_items) : [];
+  }));
+  const seen = new Set();
+  return [first_items, ...pages].flat().filter((item) => {
+    const key = String(item?.id ?? item?.stock_item_id ?? item?.employee_id ?? item?.warehouse_id ?? item?.bom_id ?? JSON.stringify(item));
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 function lookup_endpoint(field, parent_value, search_value = '', current_value) {
@@ -101,6 +124,15 @@ function LookupField({ field, form, selected_option, ...control_props }) {
   const [options, set_options] = useState([]);
   const [loading, set_loading] = useState(false);
   const [load_failed, set_load_failed] = useState(false);
+  const parent_value_ref = useRef(parent_value);
+
+  useEffect(() => {
+    if (field.parent_field && parent_value_ref.current !== undefined
+      && String(parent_value_ref.current ?? '') !== String(parent_value ?? '') && field.name) {
+      form.setFieldValue(field.name, undefined);
+    }
+    parent_value_ref.current = parent_value;
+  }, [field.name, field.parent_field, form, parent_value]);
 
   useEffect(() => {
     let mounted = true;
@@ -111,9 +143,19 @@ function LookupField({ field, form, selected_option, ...control_props }) {
     }
     set_loading(true);
     set_load_failed(false);
-    fetch_lookup(field.lookup, endpoint).then((next_options) => { if (mounted) set_options(next_options); }).catch(() => { if (mounted) { set_options([]); set_load_failed(true); } }).finally(() => { if (mounted) set_loading(false); });
+    fetch_lookup(field.lookup, endpoint).then((next_options) => {
+      if (!mounted) return;
+      set_options(next_options);
+      const current = form.getFieldValue(field.name);
+      if (field.auto_select_first && (current === undefined || current === null || current === '') && next_options.length === 1) {
+        form.setFieldValue(field.name, next_options[0].value);
+      }
+    }).catch(() => { if (mounted) { set_options([]); set_load_failed(true); } }).finally(() => { if (mounted) set_loading(false); });
     return () => { mounted = false; };
-  }, [endpoint, field.lookup, field.options]);
+  // Inline modal fields are recreated on every render; endpoint and lookup are
+  // the intentional fetch keys, so adding the whole field object would loop.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [endpoint, field.lookup]);
 
   // A detail endpoint can return a valid foreign-key id that is outside the
   // first page of a lookup. Keep the current option visible so an edit form
@@ -157,7 +199,25 @@ function LookupField({ field, form, selected_option, ...control_props }) {
     if (open) refresh_lookup();
     control_props.onOpenChange?.(open);
   };
-  return <Select {...field.select_props} {...control_props} showSearch allowClear={!field.required} optionFilterProp={is_remote ? undefined : 'label'} filterOption={is_remote ? false : undefined} onSearch={is_remote ? set_search_value : undefined} onBlur={is_remote ? handle_remote_blur : undefined} onOpenChange={handle_open_change} options={field.lookup ? visible_options : (field.options || [])} loading={loading} disabled={Boolean(field.lookup && !endpoint)} placeholder={load_failed ? 'Không tải được danh mục' : field.placeholder || 'Chọn dữ liệu'} style={{ width: '100%', ...(field.select_props?.style || {}) }} />;
+  const handle_change = async (value, option) => {
+    control_props.onChange?.(value, option);
+    if (!value || !field.related_endpoint || !field.auto_fill) return;
+    try {
+      const endpoint_path = field.related_endpoint.replace('{id}', encodeURIComponent(value));
+      const response = await request_api(endpoint_path);
+      const detail = response?.data || {};
+      Object.entries(field.auto_fill).forEach(([target, source]) => {
+        let next = detail[source];
+        if (next && field.auto_fill_datetime?.includes(target) && /^\d{4}-\d{2}-\d{2}$/.test(String(next))) {
+          next = String(next) + (target.startsWith('ends') ? 'T17:00' : 'T08:00');
+        }
+        if (next !== undefined && next !== null) form.setFieldValue(target, next);
+      });
+    } catch {
+      // The selected relation remains valid even when its optional preview cannot be loaded.
+    }
+  };
+  return <Select {...field.select_props} {...control_props} showSearch allowClear={!field.required} optionFilterProp={is_remote ? undefined : 'label'} filterOption={is_remote ? false : undefined} onSearch={is_remote ? set_search_value : undefined} onBlur={is_remote ? handle_remote_blur : undefined} onOpenChange={handle_open_change} onChange={handle_change} options={field.lookup ? visible_options : (field.options || [])} loading={loading} disabled={Boolean(field.lookup && !endpoint)} placeholder={load_failed ? 'Không tải được danh mục' : field.placeholder || 'Chọn dữ liệu'} style={{ width: '100%', ...(field.select_props?.style || {}) }} />;
 }
 
 
@@ -187,11 +247,11 @@ function ProductionPlanField({ form, selected_option, ...control_props }) {
     set_loading(true);
     set_load_failed(false);
     Promise.all(Array.from(production_plan_statuses_for_order).map((status) =>
-      request_api('/api/v1/production/plans?status=' + status + '&page=0&page_size=100')
+      fetch_all_items('/api/v1/production/plans?status=' + status + '&page=0&page_size=100')
     )).then((responses) => {
       if (!mounted) return;
       const seen = new Set();
-      const next_options = responses.flatMap(response_items)
+      const next_options = responses.flat()
         .filter((item) => production_plan_statuses_for_order.has(item.status))
         .map(production_plan_option)
         .filter((option) => {
@@ -364,10 +424,9 @@ function ProductionBomField({ form, selected_option, ...control_props }) {
     }
     set_loading(true);
     const effective_date = to_iso_date(planned_starts_on);
-    request_api('/api/v1/production/boms?stock_item_id=' + encodeURIComponent(stock_item_id)
-      + '&status=active&page=0&page_size=100').then((response) => {
+    fetch_all_items('/api/v1/production/boms?stock_item_id=' + encodeURIComponent(stock_item_id)
+      + '&status=active&page=0&page_size=100').then((items) => {
       if (!mounted) return;
-      const items = response_items(response);
       const effective_items = items.filter((item) => {
         if (!effective_date) return true;
         return (!item.valid_from || item.valid_from <= effective_date)

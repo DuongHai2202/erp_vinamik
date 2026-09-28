@@ -4,7 +4,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public record job_title_request(
-        @NotBlank(message = "Job title code is required.")
         @Size(max = 40, message = "Job title code must contain at most 40 characters.")
         String job_title_code,
         @NotBlank(message = "Job title name is required.")

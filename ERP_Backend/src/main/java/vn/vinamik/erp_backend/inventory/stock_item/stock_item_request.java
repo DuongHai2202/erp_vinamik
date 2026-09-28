@@ -8,7 +8,6 @@ import jakarta.validation.constraints.Size;
 import java.math.BigDecimal;
 
 public record stock_item_request(
-        @NotBlank(message = "Item code is required.")
         @Size(max = 60, message = "Item code must contain at most 60 characters.")
         String item_code,
         @NotBlank(message = "Item name is required.")

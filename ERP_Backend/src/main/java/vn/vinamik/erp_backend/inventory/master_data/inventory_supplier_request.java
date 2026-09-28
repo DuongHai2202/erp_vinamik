@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public record inventory_supplier_request(
-        @NotBlank(message = "Supplier code is required.")
         @Size(max = 60, message = "Supplier code must contain at most 60 characters.")
         String supplier_code,
         @NotBlank(message = "Supplier name is required.")

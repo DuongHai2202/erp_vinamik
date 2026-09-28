@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public record stocktake_request(
-        @NotBlank(message = "Stocktake code is required.")
         @Size(max = 60, message = "Stocktake code must contain at most 60 characters.")
         String stocktake_code,
         @NotNull(message = "Warehouse is required.")

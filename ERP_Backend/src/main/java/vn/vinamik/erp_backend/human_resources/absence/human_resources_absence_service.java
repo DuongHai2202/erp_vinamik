@@ -7,6 +7,7 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
@@ -24,11 +25,20 @@ public class human_resources_absence_service {
 
     private final human_resources_absence_repository absence_repository;
     private final audit_event_writer audit_writer;
+    private final business_code_generator code_generator;
 
+    @org.springframework.beans.factory.annotation.Autowired
     public human_resources_absence_service(human_resources_absence_repository absence_repository,
-                                            audit_event_writer audit_writer) {
+                                            audit_event_writer audit_writer,
+                                            business_code_generator code_generator) {
         this.absence_repository = absence_repository;
         this.audit_writer = audit_writer;
+        this.code_generator = code_generator;
+    }
+
+    public human_resources_absence_service(human_resources_absence_repository absence_repository,
+                                           audit_event_writer audit_writer) {
+        this(absence_repository, audit_writer, null);
     }
 
     @Transactional(readOnly = true)
@@ -61,7 +71,13 @@ public class human_resources_absence_service {
         if (!requested_status.equals("draft") && !requested_status.equals("pending")) {
             throw new IllegalArgumentException("New leave requests must start in draft or pending status.");
         }
-        String request_code = normalize_required(request.request_code());
+        String request_code = normalize_optional(request.request_code());
+        if (request_code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            request_code = code_generator.next_yearly("leave_request", "leave_", request.starts_on(), 6);
+        }
         ensure_unique_code(request_code, null);
         ensure_employee_exists(request.employee_id());
         long leave_request_id;
@@ -93,7 +109,10 @@ public class human_resources_absence_service {
         if (!requested_status.equals("draft") && !requested_status.equals("pending")) {
             throw new IllegalArgumentException("Only draft or pending status is allowed while editing a leave request.");
         }
-        String request_code = normalize_required(request.request_code());
+        String request_code = normalize_optional(request.request_code());
+        if (request_code == null) {
+            request_code = absence_repository.find(leave_request_id).request_code();
+        }
         ensure_unique_code(request_code, leave_request_id);
         ensure_employee_exists(request.employee_id());
         int updated = absence_repository.update(leave_request_id, request_code, request.employee_id(),
@@ -173,12 +192,11 @@ public class human_resources_absence_service {
         if (request == null) {
             throw new IllegalArgumentException("Leave request is required.");
         }
-        if (normalize_optional(request.request_code()) == null
-                || normalize_optional(request.request_code()).length() > 60
+        if ((request.request_code() != null && normalize_optional(request.request_code()).length() > 60)
                 || request.employee_id() == null || request.employee_id() <= 0
                 || normalize_optional(request.leave_type_code()) == null
                 || request.starts_on() == null || request.ends_on() == null) {
-            throw new IllegalArgumentException("Leave request code, employee, leave type and dates are required.");
+            throw new IllegalArgumentException("Employee, leave type and dates are required; the request code is generated automatically when omitted.");
         }
         if (request.ends_on().isBefore(request.starts_on())) {
             throw new IllegalArgumentException("Leave end date cannot be before start date.");

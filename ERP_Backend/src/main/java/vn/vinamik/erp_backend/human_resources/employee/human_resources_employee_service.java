@@ -13,6 +13,7 @@ import vn.vinamik.erp_backend.human_resources.employee.repository.employee_looku
 import vn.vinamik.erp_backend.human_resources.employee.repository.human_resources_employee_read_repository;
 import vn.vinamik.erp_backend.human_resources.employee.repository.human_resources_employee_repository;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
@@ -31,20 +32,23 @@ public class human_resources_employee_service {
     private final human_resources_employee_repository employee_repository;
     private final human_resources_employee_read_repository read_repository;
     private final audit_event_writer audit_writer;
+    private final business_code_generator code_generator;
 
     @Autowired
     public human_resources_employee_service(
             human_resources_employee_repository employee_repository,
             human_resources_employee_read_repository read_repository,
-            audit_event_writer audit_writer) {
+            audit_event_writer audit_writer,
+            business_code_generator code_generator) {
         this.employee_repository = employee_repository;
         this.read_repository = read_repository;
         this.audit_writer = audit_writer;
+        this.code_generator = code_generator;
     }
 
 
     public human_resources_employee_service(human_resources_employee_repository employee_repository, audit_event_writer audit_writer) {
-        this(employee_repository, null, audit_writer);
+        this(employee_repository, null, audit_writer, null);
     }
 
     @Transactional(readOnly = true)
@@ -86,7 +90,13 @@ public class human_resources_employee_service {
     @Transactional
     public employee_response create(employee_request request, authenticated_user actor, String correlation_id) {
         validate_request(request);
-        String employee_code = normalize_required(request.employee_code());
+        String employee_code = normalize_optional(request.employee_code());
+        if (employee_code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Automatic code generation is unavailable.");
+            }
+            employee_code = code_generator.next_yearly("employee", "employee_", request.hired_on(), 6);
+        }
         ensure_unique_code(employee_code, null);
         employee_entity entity = new employee_entity(
                 employee_code,
@@ -119,7 +129,10 @@ public class human_resources_employee_service {
     public employee_response update(long employee_id, employee_request request, authenticated_user actor,
                                     String correlation_id) {
         validate_request(request);
-        String employee_code = normalize_required(request.employee_code());
+        String employee_code = normalize_optional(request.employee_code());
+        if (employee_code == null) {
+            employee_code = find_by_id(employee_id).employee_code();
+        }
         ensure_unique_code(employee_code, employee_id);
         employee_entity entity = employee_repository.findById(employee_id)
                 .orElseThrow(() -> new resource_not_found_exception("Employee"));
@@ -180,11 +193,10 @@ public class human_resources_employee_service {
         if (request == null) {
             throw new IllegalArgumentException("Employee request is required.");
         }
-        if (normalize_optional(request.employee_code()) == null
-                || normalize_optional(request.employee_code()).length() > 40
+        if ((request.employee_code() != null && normalize_optional(request.employee_code()).length() > 40)
                 || normalize_optional(request.full_name()) == null
                 || normalize_optional(request.full_name()).length() > 160) {
-            throw new IllegalArgumentException("Employee code and full name are required.");
+            throw new IllegalArgumentException("Full name is required; the employee code is generated automatically when omitted.");
         }
         normalize_phone_number(request.phone_number());
         if (request.manager_employee_id() != null && request.manager_employee_id() <= 0) {
