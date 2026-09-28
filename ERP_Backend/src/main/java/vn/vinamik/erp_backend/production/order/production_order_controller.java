@@ -33,10 +33,11 @@ public class production_order_controller {
             @RequestParam(required = false) String search,
             @RequestParam(required = false) String status,
             @RequestParam(required = false) Long stock_item_id,
+            @RequestParam(defaultValue = "false") boolean output_ready,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(name = "page_size", defaultValue = "50") int page_size) {
         return new api_success_response<>("Production orders retrieved successfully.", order_service.search(
-                search, status, stock_item_id, page, page_size));
+                search, status, stock_item_id, output_ready, page, page_size));
     }
 
     @GetMapping("/overdue_count")

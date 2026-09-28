@@ -176,10 +176,10 @@ Resource: `/api/v1/production/boms`
 Resource: `/api/v1/production/orders`
 
 - `GET` and `GET /{production_order_id}` require `production_order_read`.
-- `POST` creates a planned order from a plan line and an active effective BOM, snapshots material requirements, and requires `production_order_create`.
+- `POST` creates an order from a plan line and an active effective BOM, snapshots material requirements, and requires `production_order_create`; it starts as `planned` by default and accepts optional `status: draft` for a work-in-progress order.
 - `PUT /{production_order_id}` edits draft/planned orders and regenerates their requirement snapshot; permission `production_order_update`.
 - `POST /{production_order_id}/release` releases an order; permission `production_order_release`.
-- `POST /{production_order_id}/status` accepts operational statuses `in_progress`, `paused`, or `cancelled`; permission `production_order_update`.
+- `POST /{production_order_id}/status` accepts `planned` for `draft -> planned` plus operational statuses `in_progress`, `paused`, or `cancelled`; permission `production_order_update`.
 - `POST /{production_order_id}/complete` completes an order; permission `production_order_complete`.
 - `POST /{production_order_id}/cancel` cancels through the operational status rule; permission `production_order_update`.
 - `GET /{production_order_id}/material-needs` calculates required quantity, available quantity from the Inventory public contract, and shortage without writing inventory data.

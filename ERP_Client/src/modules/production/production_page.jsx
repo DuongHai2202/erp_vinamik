@@ -121,18 +121,26 @@ function ProductionPage() {
     }
   };
 
-  useEffect(() => {
+  const load_stock_items = async () => {
+    stock_items_request_ref.current?.abort();
     const controller = new AbortController();
     stock_items_request_ref.current = controller;
-    request_api('/api/v1/inventory/materials?item_type=finished_product&page_size=100', { signal: controller.signal })
-      .then((response) => { if (!controller.signal.aborted) set_stock_items(response.data.items); })
-      .catch((error) => { if (!controller.signal.aborted && error?.name !== 'AbortError') { set_stock_items([]); set_error_message(error.message || 'Finished products could not be loaded.'); } });
+    try {
+      const response = await request_api('/api/v1/inventory/materials?item_type=finished_product&page=0&page_size=1000&status=active', { signal: controller.signal });
+      if (!controller.signal.aborted) set_stock_items(response.data.items || []);
+    } catch (error) {
+      if (!controller.signal.aborted && error?.name !== 'AbortError') set_error_message(error.message || 'Finished products could not be loaded.');
+    }
+  };
+
+  useEffect(() => {
+    load_stock_items();
     load_plans();
-    // The initial requests intentionally run once with the initial filter state.
     return () => {
-      controller.abort();
       plans_request_ref.current?.abort();
+      stock_items_request_ref.current?.abort();
     };
+    // The initial requests intentionally run once with the initial filter state.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -144,6 +152,7 @@ function ProductionPage() {
   }, []);
 
   const open_create = () => {
+    load_stock_items();
     set_editing_plan(null);
     form.resetFields();
     form.setFieldsValue({ lines: [{ stock_item_id: undefined, target_quantity: undefined }] });
@@ -151,6 +160,7 @@ function ProductionPage() {
   };
 
   const open_edit = async (plan) => {
+    load_stock_items();
     try {
       const response = await request_api(`/api/v1/production/plans/${plan.production_plan_id}`);
       set_editing_plan(response.data);
@@ -359,7 +369,7 @@ function ProductionPage() {
     <Modal className="entity_form_modal entity_form_modal_production" open={is_form_open} title={<div className="modal_title_block"><span>ĐIỀU ĐỘ SẢN XUẤT</span><strong>{editing_plan ? 'Sửa kế hoạch sản xuất' : 'Thêm kế hoạch sản xuất'}</strong><small>Kế hoạch là đầu vào cho lệnh sản xuất và nhu cầu vật tư.</small></div>} onCancel={() => set_is_form_open(false)} footer={<div className="modal_footer_actions"><Button onClick={() => set_is_form_open(false)}>Hủy</Button><Button type="primary" htmlType="submit" form="production_plan_form">Lưu kế hoạch</Button></div>} width={760} destroyOnClose>
       <Form id="production_plan_form" form={form} layout="vertical" onFinish={on_finish} requiredMark={false}>
         <Space size="middle" style={{ display: 'flex' }}>
-          <Form.Item label="Mã kế hoạch" name="plan_code" rules={[{ required: true, message: 'Plan code is required.' }]} style={{ flex: 1 }}><Input maxLength={60} /></Form.Item>
+          <Form.Item label="Mã kế hoạch" name="plan_code" extra="Mã sẽ được tự sinh khi lưu" style={{ flex: 1 }}><Input maxLength={60} disabled placeholder="Tự sinh khi lưu" /></Form.Item>
           <Form.Item label="Tên kế hoạch" name="plan_name" rules={[{ required: true, message: 'Plan name is required.' }]} style={{ flex: 2 }}><Input maxLength={180} /></Form.Item>
         </Space>
         <Space size="middle" style={{ display: 'flex' }}>
@@ -371,7 +381,7 @@ function ProductionPage() {
         <Form.List name="lines">
           {(fields, { add, remove }) => <>
             {fields.map(({ key, name, ...rest_field }) => <Space key={key} align="baseline" style={{ display: 'flex' }}>
-              <Form.Item {...rest_field} name={[name, 'stock_item_id']} rules={[{ required: true, message: 'Stock item is required.' }]}><Select placeholder="Chọn thành phẩm" options={stock_items.map((item) => ({ value: item.stock_item_id, label: `${item.item_code} — ${item.item_name}` }))} style={{ width: 320 }} /></Form.Item>
+              <Form.Item {...rest_field} name={[name, 'stock_item_id']} rules={[{ required: true, message: 'Stock item is required.' }]}><Select showSearch optionFilterProp="label" onFocus={load_stock_items} placeholder="Chọn thành phẩm" options={stock_items.map((item) => ({ value: item.stock_item_id, label: `${item.item_code} — ${item.item_name}` }))} style={{ width: 320 }} /></Form.Item>
               <Form.Item {...rest_field} name={[name, 'target_quantity']} rules={[{ required: true, message: 'Target quantity is required.' }]}><InputNumber min={0.000001} placeholder="Số lượng" style={{ width: 150 }} /></Form.Item>
               <Form.Item {...rest_field} name={[name, 'required_on']}><VietnameseDateInput placeholder="dd/MM/yyyy" /></Form.Item>
               <Button type="text" danger icon={<MinusCircleOutlined />} aria-label="Xóa dòng" onClick={() => remove(name)} />

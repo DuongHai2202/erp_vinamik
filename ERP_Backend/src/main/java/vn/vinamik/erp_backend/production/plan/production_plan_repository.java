@@ -53,9 +53,16 @@ public class production_plan_repository {
         }
         production_plan_response plan = plans.getFirst();
         List<production_plan_line_response> lines = jpa_query_executor.query(
-                "SELECT production_plan_line_id, line_number, stock_item_id, stock_item_code_snapshot, "
-                        + "stock_item_name_snapshot, unit_code_snapshot, target_quantity, required_on, notes "
-                        + "FROM production.production_plan_line WHERE production_plan_id = ? ORDER BY line_number",
+                "SELECT line.production_plan_line_id, line.line_number, line.stock_item_id, line.stock_item_code_snapshot, "
+                        + "line.stock_item_name_snapshot, line.unit_code_snapshot, line.target_quantity, "
+                        + "COALESCE((SELECT SUM(order_row.target_quantity) FROM production.production_order AS order_row "
+                        + "WHERE order_row.production_plan_line_id = line.production_plan_line_id "
+                        + "AND order_row.status <> 'cancelled'), 0) AS allocated_quantity, "
+                        + "GREATEST(line.target_quantity - COALESCE((SELECT SUM(order_row.target_quantity) "
+                        + "FROM production.production_order AS order_row WHERE order_row.production_plan_line_id = line.production_plan_line_id "
+                        + "AND order_row.status <> 'cancelled'), 0), 0) AS remaining_quantity, "
+                        + "line.required_on, line.notes FROM production.production_plan_line AS line "
+                        + "WHERE line.production_plan_id = ? ORDER BY line.line_number",
                 this::map_line, production_plan_id);
         return new production_plan_response(plan.production_plan_id(), plan.plan_code(), plan.plan_name(),
                 plan.planned_on(), plan.starts_on(), plan.ends_on(), plan.status(), plan.notes(), lines);
@@ -176,7 +183,8 @@ public class production_plan_repository {
                 result_set.getString("stock_item_code_snapshot"),
                 result_set.getString("stock_item_name_snapshot"),
                 result_set.getString("unit_code_snapshot"), result_set.getBigDecimal("target_quantity"),
-                to_local_date(result_set, "required_on"), result_set.getString("notes"));
+                to_local_date(result_set, "required_on"), result_set.getString("notes"),
+                result_set.getBigDecimal("allocated_quantity"), result_set.getBigDecimal("remaining_quantity"));
     }
 
     private LocalDate to_local_date(jpa_result_row result_set, String column) {

@@ -46,6 +46,7 @@ Mỗi bảng chỉ có một module sở hữu. Cùng một PostgreSQL database 
 | `role_permission` | Liên kết `role_id`–`permission_id`, khóa chính ghép. Seed theo permission code và chạy lặp không tạo bản ghi trùng. |
 | `user_session` | Phiên có thể thu hồi, gồm `session_id`, `user_id`, hash của refresh/session token, thời hạn, `revoked_at`, `last_used_at`. Không lưu token thô. |
 | `audit_log` | Append-only: actor, thời điểm, module, action code, loại/ID đối tượng, correlation ID và metadata JSONB đã lọc. Không lưu password, token, payload nhạy cảm hoặc bản sao đầy đủ của request. |
+| `business_code_sequence` | Bộ đếm mã nghiệp vụ dùng chung theo `code_type` và `period_key`; khóa chính ghép, `last_value` không âm, cập nhật nguyên tử bằng `INSERT ... ON CONFLICT DO UPDATE`. Không dùng làm khóa nối nghiệp vụ và không xóa để tái sử dụng số đã cấp. |
 
 Quyền là tổ hợp role–permission, không đặt `is_admin`, `is_manager` hoặc một cột role duy nhất trong hồ sơ nhân viên. `user_account.is_super_admin` chỉ có tối đa một bản ghi; tài khoản này được tạo bởi bootstrap hoặc migration nâng cấp, luôn phải ở trạng thái active, giữ role `system_admin` và được cấp tất cả permission đang active. Service và trigger PostgreSQL chặn hạ quyền, vô hiệu hóa hoặc xóa tài khoản này. Backend kiểm tra quyền ở mọi thao tác; thiếu quyền đọc trả 403, chưa xác thực trả 401.
 

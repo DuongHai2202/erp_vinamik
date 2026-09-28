@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.inventory.api.inventory_material_contract;
 import vn.vinamik.erp_backend.inventory.api.inventory_material_snapshot;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
@@ -27,6 +28,9 @@ public class production_plan_service {
     private final production_plan_repository plan_repository;
     private final inventory_material_contract material_contract;
     private final audit_event_writer audit_writer;
+
+    @org.springframework.beans.factory.annotation.Autowired
+    private business_code_generator code_generator;
 
     public production_plan_service(production_plan_repository plan_repository,
                                     inventory_material_contract material_contract,
@@ -59,7 +63,13 @@ public class production_plan_service {
     public production_plan_response create(production_plan_request request, authenticated_user actor,
                                            String correlation_id) {
         validate_request(request);
-        String plan_code = normalize_lower_required(request.plan_code());
+        String plan_code = normalize_lower(request.plan_code());
+        if (plan_code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Plan code is required when automatic code generation is unavailable.");
+            }
+            plan_code = code_generator.next_yearly("production_plan", "plan_", request.planned_on(), 6);
+        }
         ensure_unique_code(plan_code, null);
         List<inventory_material_snapshot> items = validate_inventory_lines(request.lines());
         long plan_id = plan_repository.insert(plan_code, request.plan_name().trim(), request.planned_on(),
@@ -77,7 +87,10 @@ public class production_plan_service {
     public production_plan_response update(long plan_id, production_plan_request request,
                                            authenticated_user actor, String correlation_id) {
         validate_request(request);
-        String plan_code = normalize_lower_required(request.plan_code());
+        String plan_code = normalize_lower(request.plan_code());
+        if (plan_code == null) {
+            plan_code = plan_repository.find(plan_id).plan_code();
+        }
         ensure_unique_code(plan_code, plan_id);
         String current_status = plan_repository.current_status(plan_id);
         if (!"draft".equals(current_status)) {
@@ -223,9 +236,9 @@ public class production_plan_service {
         if (request == null) {
             throw new IllegalArgumentException("Production plan request is required.");
         }
-        if (normalize_optional(request.plan_code()) == null
-                || normalize_optional(request.plan_code()).length() > 60) {
-            throw new IllegalArgumentException("Plan code is required and must contain at most 60 characters.");
+        if (normalize_optional(request.plan_code()) != null
+                && normalize_optional(request.plan_code()).length() > 60) {
+            throw new IllegalArgumentException("Plan code must contain at most 60 characters.");
         }
         if (normalize_optional(request.plan_name()) == null
                 || normalize_optional(request.plan_name()).length() > 180) {

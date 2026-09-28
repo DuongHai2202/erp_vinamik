@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    name: Backend checks
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ERP_Backend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Make Maven wrapper executable
+        run: chmod +x mvnw
+      - name: Run production and shared-code unit tests
+        run: ./mvnw -q -Dtest=vn.vinamik.erp_backend.production.**.*_tests,vn.vinamik.erp_backend.platform.common.business_code_generator_tests test
+      - name: Package backend
+        run: ./mvnw -q -DskipTests package
+      - name: Upload backend artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: erp-backend
+          path: ERP_Backend/target/*.jar
+          if-no-files-found: error
+
+  frontend:
+    name: Frontend checks
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ERP_Client
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: ERP_Client/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint frontend
+        run: npm run lint
+      - name: Build frontend
+        run: npm run build
+      - name: Upload frontend artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: erp-frontend
+          path: ERP_Client/dist
+          if-no-files-found: error

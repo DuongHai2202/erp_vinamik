@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class production_material_consumption_service {
@@ -46,7 +47,10 @@ public class production_material_consumption_service {
         validate_request(request);
         production_material_consumption_repository.production_order_snapshot order =
                 consumption_repository.load_order(production_order_id, true);
-        String request_key = request.idempotency_key().trim();
+        String request_key = normalize_optional(request.idempotency_key());
+        if (request_key == null) {
+            request_key = "consumption_" + UUID.randomUUID();
+        }
         material_consumption_response existing =
                 consumption_repository.find_by_key(production_order_id, request_key, order.order_code());
         if (existing != null) {
@@ -128,8 +132,7 @@ public class production_material_consumption_service {
 
     private void validate_request(material_consumption_request request) {
         if (request == null || request.warehouse_id() == null || request.warehouse_id() <= 0
-                || request.idempotency_key() == null || request.idempotency_key().isBlank()
-                || request.idempotency_key().trim().length() > 120
+                || (request.idempotency_key() != null && request.idempotency_key().trim().length() > 120)
                 || request.lines() == null || request.lines().isEmpty()) {
             throw new IllegalArgumentException("Material consumption request is incomplete.");
         }

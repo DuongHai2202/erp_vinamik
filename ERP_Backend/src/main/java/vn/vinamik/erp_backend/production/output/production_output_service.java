@@ -11,6 +11,7 @@ import vn.vinamik.erp_backend.inventory.api.inventory_receipt_result;
 import vn.vinamik.erp_backend.inventory.api.inventory_stock_lot_contract;
 import vn.vinamik.erp_backend.inventory.api.inventory_stock_lot_snapshot;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
@@ -18,6 +19,7 @@ import vn.vinamik.erp_backend.platform.identity.authenticated_user;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @Service
 public class production_output_service {
@@ -29,6 +31,9 @@ public class production_output_service {
     private final inventory_stock_lot_contract stock_lot_contract;
     private final inventory_receipt_contract receipt_contract;
     private final audit_event_writer audit_writer;
+
+    @org.springframework.beans.factory.annotation.Autowired
+    private business_code_generator code_generator;
 
     public production_output_service(
             production_output_repository output_repository,
@@ -53,7 +58,18 @@ public class production_output_service {
         validate_request(request);
         production_output_repository.order_snapshot order =
                 output_repository.load_order(production_order_id, true);
-        String idempotency_key = request.idempotency_key().trim();
+        String lot_code = normalize_optional(request.lot_code());
+        if (lot_code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Lot code is required when automatic code generation is unavailable.");
+            }
+            lot_code = code_generator.next_daily("production_lot", "lot_" + order.order_code() + "_",
+                    request.manufactured_on(), 6);
+        }
+        String idempotency_key = normalize_optional(request.idempotency_key());
+        if (idempotency_key == null) {
+            idempotency_key = "output_" + UUID.randomUUID();
+        }
         production_output_response existing =
                 output_repository.find_by_idempotency(production_order_id, idempotency_key);
         if (existing != null) {
@@ -69,7 +85,7 @@ public class production_output_service {
                     "good_quantity", "Production output exceeds the production order target quantity.");
         }
         production_output_response same_lot = output_repository.find_by_order_lot(
-                production_order_id, request.lot_code().trim());
+                production_order_id, lot_code);
         if (same_lot != null) {
             throw new field_conflict_exception("lot_code", "The production order already has an output for this lot.");
         }
@@ -77,7 +93,7 @@ public class production_output_service {
             throw new field_conflict_exception("idempotency_key", "Idempotency key is already used.");
         }
         Long output_id = output_repository.insert(
-                production_order_id, order.stock_item_id(), request.lot_code().trim(),
+                production_order_id, order.stock_item_id(), lot_code,
                 request.manufactured_on(), request.expires_on(),
                 normalize_quantity(request.good_quantity()), normalize_quantity(request.defective_quantity()),
                 request.warehouse_id(), request.warehouse_location_id(),
@@ -116,15 +132,22 @@ public class production_output_service {
         if (existing_total.add(total_quantity).compareTo(order.target_quantity()) > 0) {
             throw new field_conflict_exception("good_quantity", "Production output exceeds the production order target quantity.");
         }
-        if (output_repository.find_by_order_lot_except(production_order_id, request.lot_code().trim(), output_id) != null) {
+        String lot_code = normalize_optional(request.lot_code());
+        if (lot_code == null) {
+            lot_code = current.lot_code();
+        }
+        if (output_repository.find_by_order_lot_except(production_order_id, lot_code, output_id) != null) {
             throw new field_conflict_exception("lot_code", "The production order already has an output for this lot.");
         }
-        String idempotency_key = request.idempotency_key().trim();
+        String idempotency_key = normalize_optional(request.idempotency_key());
+        if (idempotency_key == null) {
+            idempotency_key = current.idempotency_key();
+        }
         if (output_repository.idempotency_key_exists_for_other(idempotency_key, output_id)) {
             throw new field_conflict_exception("idempotency_key", "Idempotency key is already used.");
         }
         String status = request.good_quantity().signum() > 0 ? "pending_receipt" : "draft";
-        if (output_repository.update_draft(output_id, production_order_id, request.lot_code().trim(), request.manufactured_on(),
+        if (output_repository.update_draft(output_id, production_order_id, lot_code, request.manufactured_on(),
                 request.expires_on(), normalize_quantity(request.good_quantity()), normalize_quantity(request.defective_quantity()),
                 request.warehouse_id(), request.warehouse_location_id(), status, idempotency_key, normalize_optional(request.notes())) == 0) {
             throw new resource_not_found_exception("Draft production output");
@@ -230,15 +253,13 @@ public class production_output_service {
     private void validate_request(production_output_request request) {
         if (request == null || request.warehouse_id() == null || request.warehouse_id() <= 0
                 || request.warehouse_location_id() == null || request.warehouse_location_id() <= 0
-                || request.lot_code() == null || request.lot_code().isBlank()
-                || request.lot_code().trim().length() > max_lot_code_length
+                || (request.lot_code() != null && request.lot_code().trim().length() > max_lot_code_length)
                 || request.manufactured_on() == null
                 || request.good_quantity() == null || request.defective_quantity() == null
-                || request.idempotency_key() == null || request.idempotency_key().isBlank()
-                || request.idempotency_key().trim().length() > max_idempotency_key_length) {
+                || (request.idempotency_key() != null && request.idempotency_key().trim().length() > max_idempotency_key_length)) {
             throw new IllegalArgumentException("Production output request is incomplete.");
         }
-        if (request.idempotency_key().contains(":")) {
+        if (request.idempotency_key() != null && request.idempotency_key().contains(":")) {
             throw new IllegalArgumentException("Idempotency key must not contain colon.");
         }
         if (request.good_quantity().signum() < 0 || request.defective_quantity().signum() < 0
@@ -265,4 +286,5 @@ public class production_output_service {
         }
         return value.trim();
     }
+
 }

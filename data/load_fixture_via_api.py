@@ -120,6 +120,10 @@ class api_client:
         result = self.request("POST", path, payload)
         return result.get("data") if isinstance(result, dict) else result
 
+    def put_data(self, path: str, payload: dict[str, Any]) -> Any:
+        result = self.request("PUT", path, payload)
+        return result.get("data") if isinstance(result, dict) else result
+
 
 @dataclass
 class load_context:
@@ -894,6 +898,23 @@ def load_boms(context: load_context) -> None:
         report_progress("bom", index, len(rows), code)
 
 
+def production_order_payload(context: load_context, row: dict[str, str], plan_line_id: int) -> dict[str, Any]:
+    source_line = row.get("production_line_name") or "production_line"
+    # Keep the source label while making each imported schedule unambiguous.
+    production_line_name = f"{source_line} ({row['order_code']})"
+    return {
+        "order_code": row["order_code"],
+        "production_plan_line_id": plan_line_id,
+        "bom_id": context.maps["bom"][row["bom_code"]],
+        "target_quantity": to_decimal(row["target_quantity"]),
+        "planned_starts_on": row["planned_starts_on"],
+        "planned_ends_on": row["planned_ends_on"],
+        "production_line_name": production_line_name,
+        "status": row.get("status") or "planned",
+        "notes": row.get("notes") or None,
+    }
+
+
 def load_orders(context: load_context) -> None:
     rows = read_rows("production/orders.csv")
     context.maps["order"] = list_existing(context.client, "/api/v1/production/orders", "order_code")
@@ -904,20 +925,29 @@ def load_orders(context: load_context) -> None:
         context.maps["order_desired_status"][code] = desired
         try:
             if code in context.maps["order"]:
+                order_id = context.maps["order"][code]
+                try:
+                    existing = context.client.get_data(f"/api/v1/production/orders/{order_id}")
+                    current_status = str(existing.get("status")) if isinstance(existing, dict) else ""
+                    if current_status in {"draft", "planned"}:
+                        plan_line_id = context.maps["plan_line"].get(f"{row['plan_code']}:{row['plan_line_number']}")
+                        if plan_line_id is None:
+                            raise KeyError(f"Missing production plan line for {code}.")
+                        # Reconcile old planned rows instead of treating their
+                        # identifier as proof that snapshots are complete.
+                        context.client.put_data(
+                            f"/api/v1/production/orders/{order_id}",
+                            production_order_payload(context, row, plan_line_id))
+                except (api_error, KeyError) as error:
+                    context.record_failure("order_reconcile", code, error)
                 report_progress("order", index, len(rows), code)
                 continue
             plan_line_id = context.maps["plan_line"].get(f"{row['plan_code']}:{row['plan_line_number']}")
             if plan_line_id is None:
                 raise KeyError(f"Missing production plan line for {code}.")
-            source_line = row.get("production_line_name") or "production_line"
-            # The generated schedule reuses twelve line names with overlapping dates.
-            # Keep the source label while making each imported schedule unambiguous.
-            production_line_name = f"{source_line} ({code})"
-            value = context.client.post_data("/api/v1/production/orders", {
-                "order_code": code, "production_plan_line_id": plan_line_id,
-                "bom_id": context.maps["bom"][row["bom_code"]], "target_quantity": to_decimal(row["target_quantity"]),
-                "planned_starts_on": row["planned_starts_on"], "planned_ends_on": row["planned_ends_on"],
-                "production_line_name": production_line_name, "notes": row.get("notes") or None})
+            value = context.client.post_data(
+                "/api/v1/production/orders",
+                production_order_payload(context, row, plan_line_id))
             context.remember("order", code, value)
         except (api_error, KeyError) as error:
             context.record_failure("order", code, error)
@@ -947,11 +977,12 @@ def prepare_orders_for_operations(context: load_context) -> None:
     for index, (code, order_id) in enumerate(context.maps.get("order", {}).items(), 1):
         try:
             current = order_status(context, order_id)
+            if current == "draft":
+                # Draft orders are intentionally kept out of operational
+                # consumption/output preparation until a planner marks them planned.
+                continue
             if current == "planned":
                 context.client.post_data(f"/api/v1/production/orders/{order_id}/release", {})
-            elif current == "draft":
-                raise api_error("POST", f"/api/v1/production/orders/{order_id}/release", 409,
-                                "Draft production orders cannot be prepared for operations.")
         except api_error as error:
             context.record_failure("order_prepare", code, error)
         report_progress("order_prepare", index, len(context.maps.get("order", {})), code)
@@ -1022,8 +1053,27 @@ def assignment_key(order_id: int, employee_id: int, starts_at: str) -> str:
     return f"{order_id}:{employee_id}:{starts_at}"
 
 
-def existing_assignments(context: load_context) -> dict[str, tuple[int, str]]:
+def assignment_schedule_key(order_id: int, starts_at: str) -> str:
+    """Return the stable source key used when an old employee ID is stale.
+
+    Production assignments intentionally keep only an HR employee ID. A
+    database restored from an older fixture can therefore contain the same
+    assignment schedule with an ID that no longer belongs to the current HR
+    master data. The generated source guarantees one assignment per order
+    and start instant, so that pair is safe for a repair pass.
+    """
+    try:
+        instant = datetime.fromisoformat(str(starts_at).replace("Z", "+00:00"))
+        if instant.tzinfo is not None:
+            starts_at = instant.astimezone(timezone.utc).isoformat()
+    except ValueError:
+        starts_at = str(starts_at)
+    return f"{order_id}:{starts_at}"
+
+
+def existing_assignments(context: load_context) -> tuple[dict[str, tuple[int, str]], dict[str, tuple[int, str]]]:
     result: dict[str, tuple[int, str]] = {}
+    schedule_result: dict[str, tuple[int, str]] = {}
     page = 0
     while True:
         data = context.client.get_data("/api/v1/production/assignments", {"page": page, "page_size": 100})
@@ -1031,55 +1081,100 @@ def existing_assignments(context: load_context) -> dict[str, tuple[int, str]]:
         for item in items:
             if not all(item.get(key) is not None for key in ("production_assignment_id", "production_order_id", "employee_id", "starts_at")):
                 continue
-            key = assignment_key(int(item["production_order_id"]), int(item["employee_id"]), str(item["starts_at"]))
-            result[key] = (int(item["production_assignment_id"]), str(item.get("status") or "planned"))
+            production_order_id = int(item["production_order_id"])
+            key = assignment_key(production_order_id, int(item["employee_id"]), str(item["starts_at"]))
+            value = (int(item["production_assignment_id"]), str(item.get("status") or "planned"))
+            result[key] = value
+            schedule_key = assignment_schedule_key(production_order_id, str(item["starts_at"]))
+            # The source data has one row for an order/start pair. Prefer a
+            # planned row when an older import accidentally duplicated that
+            # schedule, because only it can be reconciled through the API.
+            previous = schedule_result.get(schedule_key)
+            if previous is None or (previous[1] != "planned" and value[1] == "planned"):
+                schedule_result[schedule_key] = value
         if not isinstance(data, dict) or page + 1 >= int(data.get("total_pages", 0)):
             break
         page += 1
-    return result
+    return result, schedule_result
 
 
 def load_assignments(context: load_context) -> None:
+    """Load and reconcile assignments through the production service.
+
+    Existing planned rows are updated from the CSV source as well as created
+    rows.  This is important when an earlier import created a row before HR
+    master data was available: rerunning the loader must repair the snapshot
+    shown by the assignment list instead of treating the stale row as done.
+    """
     rows = read_rows("production/assignments.csv")
-    existing = existing_assignments(context)
+    existing, existing_by_schedule = existing_assignments(context)
     for index, row in enumerate(rows, 1):
         code = f"{row['order_code']}:{row['employee_code']}:{row['starts_at']}"
         try:
             order_id = context.maps["order"][row["order_code"]]
             employee_id = context.maps["employee"][row["employee_code"]]
             shift_id = context.maps["work_shift"].get(row.get("shift_code"))
-            key = assignment_key(order_id, employee_id, row["starts_at"])
-            shifted_starts = (datetime.fromisoformat(row["starts_at"].replace("Z", "+00:00"))
+            source_starts = row["starts_at"]
+            source_ends = row["ends_at"]
+            shifted_starts = (datetime.fromisoformat(source_starts.replace("Z", "+00:00"))
                               + timedelta(days=365)).isoformat()
+            shifted_ends = (datetime.fromisoformat(source_ends.replace("Z", "+00:00"))
+                            + timedelta(days=365)).isoformat()
+            key = assignment_key(order_id, employee_id, source_starts)
             shifted_key = assignment_key(order_id, employee_id, shifted_starts)
+            schedule_key = assignment_schedule_key(order_id, source_starts)
+            shifted_schedule_key = assignment_schedule_key(order_id, shifted_starts)
+            payload = {
+                "production_order_id": order_id,
+                "employee_id": employee_id,
+                "work_shift_id": shift_id,
+                "assignment_name": row.get("assignment_name") or None,
+                "starts_at": source_starts,
+                "ends_at": source_ends,
+                "notes": row.get("notes") or None,
+            }
             if key in existing:
                 assignment_id, current = existing[key]
             elif shifted_key in existing:
                 assignment_id, current = existing[shifted_key]
+                payload["starts_at"] = shifted_starts
+                payload["ends_at"] = shifted_ends
+                payload["notes"] = f"{row.get('notes') or ''} Lịch đã chuẩn hóa khi nạp dữ liệu.".strip()
+            elif schedule_key in existing_by_schedule:
+                # Repair a planned row whose employee identity came from an
+                # older HR import. Historical rows are still matched so the
+                # loader does not create duplicates; only planned rows are
+                # eligible for the PUT below.
+                assignment_id, current = existing_by_schedule[schedule_key]
+            elif shifted_schedule_key in existing_by_schedule:
+                assignment_id, current = existing_by_schedule[shifted_schedule_key]
+                payload["starts_at"] = shifted_starts
+                payload["ends_at"] = shifted_ends
+                payload["notes"] = f"{row.get('notes') or ''} Lịch đã chuẩn hóa khi nạp dữ liệu.".strip()
             else:
-                payload = {
-                    "production_order_id": order_id, "employee_id": employee_id,
-                    "work_shift_id": shift_id, "assignment_name": row.get("assignment_name") or None,
-                    "starts_at": row["starts_at"], "ends_at": row["ends_at"],
-                    "notes": row.get("notes") or None}
                 try:
                     value = context.client.post_data("/api/v1/production/assignments", payload)
                 except api_error as error:
                     if error.status != 409 or "overlaps" not in str(error).lower():
                         raise
-                    # The first import pass attached a small tail of rows to the
-                    # wrong order. Keep the source record and move only the
-                    # conflicting schedule into a separate, non-overlapping test
-                    # year so the domain invariant remains true.
-                    starts = datetime.fromisoformat(row["starts_at"].replace("Z", "+00:00")) + timedelta(days=365)
-                    ends = datetime.fromisoformat(row["ends_at"].replace("Z", "+00:00")) + timedelta(days=365)
-                    payload["starts_at"] = starts.isoformat()
-                    payload["ends_at"] = ends.isoformat()
+                    # Keep the source record and move only the conflicting
+                    # schedule into a separate, non-overlapping test year.
+                    payload["starts_at"] = shifted_starts
+                    payload["ends_at"] = shifted_ends
                     payload["notes"] = f"{row.get('notes') or ''} Lịch đã chuẩn hóa khi nạp dữ liệu.".strip()
                     value = context.client.post_data("/api/v1/production/assignments", payload)
                 assignment_id = context.remember("assignment", code, value)
                 current = "planned"
                 existing[assignment_key(order_id, employee_id, str(payload["starts_at"]))] = (assignment_id, current)
+                existing_by_schedule.setdefault(
+                    assignment_schedule_key(order_id, str(payload["starts_at"])), (assignment_id, current))
+
+            # Reconcile only planned rows. Active/completed/cancelled records
+            # are historical and must remain immutable.
+            if current == "planned":
+                context.client.put_data(
+                    f"/api/v1/production/assignments/{assignment_id}", payload)
+
             desired = row.get("status") or "planned"
             if desired == "active" and current == "planned":
                 context.client.post_data(f"/api/v1/production/assignments/{assignment_id}/status", {"status": "active"})
@@ -1097,7 +1192,6 @@ def load_assignments(context: load_context) -> None:
             else:
                 context.record_failure("assignment", code, error)
         report_progress("assignment", index, len(rows), code)
-
 
 def requirement_materials() -> dict[str, list[tuple[str, Decimal]]]:
     boms = {row["bom_code"]: row for row in read_rows("production/boms.csv")}

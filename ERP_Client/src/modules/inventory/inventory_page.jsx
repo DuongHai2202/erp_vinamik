@@ -5,6 +5,7 @@ import { FilterOutlined, PlusOutlined, ReloadOutlined } from '@ant-design/icons'
 import { has_permission } from '../../platform/common/permission_utils';
 import { request_api } from '../../platform/common/api_client';
 import { use_auth } from '../../platform/identity/auth_context';
+import { clear_lookup_cache } from '../../platform/layout/workflow_fields';
 import DataWorkspace from '../../platform/layout/data_workspace';
 import RecordActionBar from '../../platform/layout/record_action_bar';
 import ModuleMasthead from '../../platform/layout/module_masthead';
@@ -20,6 +21,10 @@ const status_labels = { active: 'Đang sử dụng', inactive: 'Ngừng sử d�
 const item_type_options = [
   { value: 'raw_material', label: 'Nguyên vật liệu' },
   { value: 'finished_product', label: 'Thành phẩm' },
+];
+const item_type_filter_options = [
+  { value: 'all', label: 'Tất cả loại' },
+  ...item_type_options,
 ];
 
 function InventoryBalanceView({ current_user }) {
@@ -125,7 +130,7 @@ function InventoryPage() {
   const [categories, set_categories] = useState([]);
   const [is_loading, set_is_loading] = useState(false);
   const [error_message, set_error_message] = useState('');
-  const [filters, set_filters] = useState(() => ({ search: search_params.get('search') || '', status: search_params.get('status') || '', item_type: search_params.get('item_type') || 'raw_material' }));
+  const [filters, set_filters] = useState(() => ({ search: search_params.get('search') || '', status: search_params.get('status') || '', item_type: search_params.get('item_type') || 'all' }));
   const [search_input, set_search_input] = useState(() => search_params.get('search') || '');
   const [pagination, set_pagination] = useState(() => ({ current: Math.max(Number(search_params.get('page')) || 1, 1), page_size: 50, total: 0 }));
   const [is_modal_open, set_is_modal_open] = useState(false);
@@ -133,7 +138,7 @@ function InventoryPage() {
   const [form] = Form.useForm();
   const [active_view, set_active_view] = useState('materials');
   const [filter_drawer_open, set_filter_drawer_open] = useState(false);
-  const [draft_filters, set_draft_filters] = useState({ item_type: search_params.get('item_type') || 'raw_material' });
+  const [draft_filters, set_draft_filters] = useState({ item_type: search_params.get('item_type') || 'all' });
   const materials_request_ref = useRef(null);
   const [active_action_key, set_active_action_key] = useState('');
 
@@ -163,7 +168,7 @@ function InventoryPage() {
     const params = new URLSearchParams({ page: String(next_page - 1), page_size: String(next_page_size) });
     if (next_filters.search.trim()) params.set('search', next_filters.search.trim());
     if (next_filters.status) params.set('status', next_filters.status);
-    params.set('item_type', next_filters.item_type || 'raw_material');
+    params.set('item_type', next_filters.item_type || 'all');
     try {
       const response = await request_api('/api/v1/inventory/materials?' + params.toString(), { signal: controller.signal });
       if (controller.signal.aborted) return;
@@ -206,7 +211,7 @@ function InventoryPage() {
     load_materials(next_filters, 1, pagination.page_size);
   };
   const open_advanced_filters = () => {
-    set_draft_filters({ item_type: filters.item_type || 'raw_material' });
+    set_draft_filters({ item_type: filters.item_type || 'all' });
     set_filter_drawer_open(true);
   };
 
@@ -219,8 +224,8 @@ function InventoryPage() {
   };
 
   const reset_advanced_filters = () => {
-    const next_filters = { ...filters, item_type: 'raw_material' };
-    set_draft_filters({ item_type: 'raw_material' });
+    const next_filters = { ...filters, item_type: 'all' };
+    set_draft_filters({ item_type: 'all' });
     set_filters(next_filters);
     sync_query(next_filters, 1);
     load_materials(next_filters, 1, pagination.page_size);
@@ -230,7 +235,7 @@ function InventoryPage() {
   const open_create = () => {
     set_editing_material(null);
     form.resetFields();
-    form.setFieldsValue({ status: 'active', lot_controlled: false });
+    form.setFieldsValue({ status: 'active', lot_controlled: false, item_type: 'raw_material' });
     set_is_modal_open(true);
   };
 
@@ -261,6 +266,7 @@ function InventoryPage() {
         await request_api('/api/v1/inventory/materials', { method: 'POST', body: JSON.stringify(payload) });
         message.success('Material created successfully.');
       }
+      clear_lookup_cache();
       set_is_modal_open(false);
       form.resetFields();
       await load_materials(filters, pagination.current, pagination.page_size);
@@ -284,6 +290,7 @@ function InventoryPage() {
         set_active_action_key(action_key);
         try {
           await request_api(`/api/v1/inventory/materials/${material.stock_item_id}`, { method: 'DELETE' });
+          clear_lookup_cache();
           message.success('Material deactivated successfully.');
           await load_materials(filters, pagination.current, pagination.page_size);
         } catch (error) {
@@ -296,9 +303,10 @@ function InventoryPage() {
   };
 
   const columns = [
-    { title: 'Mã vật tư', dataIndex: 'item_code', key: 'item_code', fixed: 'left', width: 140 },
-    { title: 'Tên vật tư', dataIndex: 'item_name', key: 'item_name', width: 240 },
-    { title: 'Nhóm', dataIndex: 'category_name', key: 'category_name', render: (value) => value || 'Chưa phân nhóm' },
+    { title: 'Mã mặt hàng', dataIndex: 'item_code', key: 'item_code', fixed: 'left', width: 140 },
+    { title: 'Tên mặt hàng', dataIndex: 'item_name', key: 'item_name', width: 240 },
+    { title: 'Loại mặt hàng', dataIndex: 'item_type', key: 'item_type', render: (value) => item_type_options.find((option) => option.value === value)?.label || value },
+    { title: 'Nhóm vật tư', dataIndex: 'category_name', key: 'category_name', render: (value) => value || 'Chưa phân nhóm' },
     { title: 'Đơn vị tính', dataIndex: 'unit_name', key: 'unit_name', render: (value, material) => value ? `${value} (${material.unit_code})` : 'Chưa có đơn vị' },
     { title: 'Theo dõi lô', dataIndex: 'lot_controlled', key: 'lot_controlled', render: (value) => value ? 'Có' : 'Không' },
     { title: 'Tồn tối thiểu', dataIndex: 'minimum_stock_quantity', key: 'minimum_stock_quantity', render: (value) => value ?? 'Chưa thiết lập' },
@@ -316,8 +324,8 @@ function InventoryPage() {
     <div className="module_page module_page_inventory">
       <ModuleMasthead
         module_key="inventory"
-        description="Danh mục nguyên vật liệu là nguồn dùng chung; số dư chỉ được lấy từ sổ giao dịch kho."
-        current_feature_label={active_view === 'materials' ? 'Danh mục nguyên vật liệu' : 'Số dư tồn kho'}
+        description="Danh mục vật tư và thành phẩm là nguồn dùng chung; số dư chỉ được lấy từ sổ giao dịch kho."
+        current_feature_label={active_view === 'materials' ? 'Danh mục vật tư' : 'Số dư tồn kho'}
       />
     <Space className="inventory_view_switch" size="small">
       <Button type={active_view === 'materials' ? 'primary' : 'default'} onClick={() => set_active_view('materials')}>Danh mục vật tư</Button>
@@ -325,13 +333,13 @@ function InventoryPage() {
     </Space>
     {error_message && <Alert className="workspace_error" type="error" showIcon message={error_message} />}
     {active_view === 'balances' ? <InventoryBalanceView current_user={current_user} /> : <DataWorkspace
-      title="Danh sách nguyên vật liệu"
-      description="Danh mục dùng chung cho Kho và Sản xuất. Dữ liệu được phân trang từ máy chủ để giữ thao tác mượt khi có nhiều bản ghi."
+      title="Danh mục vật tư và thành phẩm"
+      description="Danh mục dùng chung cho Kho và Sản xuất; chọn loại mặt hàng để tạo nguyên vật liệu hoặc thành phẩm."
       toolbar={<Space wrap className="list_toolbar">
-        <DebouncedSearchInput placeholder="Tìm theo mã hoặc tên vật tư" value={search_input} on_commit={on_material_search} style={{ width: 300 }} />
+        <DebouncedSearchInput placeholder="Tìm theo mã hoặc tên mặt hàng" value={search_input} on_commit={on_material_search} style={{ width: 300 }} />
         <Select value={filters.status} options={status_options} onChange={(status) => { const next_filters = { ...filters, status }; set_filters(next_filters); sync_query(next_filters); load_materials(next_filters, 1, pagination.page_size); }} style={{ width: 170 }} />
         <Button icon={<FilterOutlined />} onClick={open_advanced_filters}>Bộ lọc</Button>
-        {can_create && <Button type="primary" icon={<PlusOutlined />} onClick={open_create}>Thêm nguyên vật liệu</Button>}
+        {can_create && <Button type="primary" icon={<PlusOutlined />} onClick={open_create}>Thêm mặt hàng</Button>}
       </Space>}
       columns={columns}
       data_source={materials}
@@ -339,10 +347,10 @@ function InventoryPage() {
       loading={is_loading}
       pagination={pagination}
       on_change={(next_pagination) => { sync_query(filters, next_pagination.current); load_materials(filters, next_pagination.current, next_pagination.pageSize); }}
-      empty_text={error_message ? 'Materials could not be loaded.' : 'Chưa có nguyên vật liệu'}
+      empty_text={error_message ? 'Materials could not be loaded.' : 'Chưa có mặt hàng'}
       total_label="mặt hàng"
       read_only={!can_create && !can_update && !can_deactivate}
-      column_presets={{ overview: ['item_code', 'item_name', 'category_name', 'unit_name', 'status', 'actions'], detail: ['item_code', 'item_name', 'category_name', 'unit_name', 'lot_controlled', 'minimum_stock_quantity', 'status', 'actions'], audit: ['item_code', 'item_name', 'category_name', 'lot_controlled', 'minimum_stock_quantity', 'status'] }}
+      column_presets={{ overview: ['item_code', 'item_name', 'item_type', 'unit_name', 'status', 'actions'], detail: ['item_code', 'item_name', 'item_type', 'category_name', 'unit_name', 'lot_controlled', 'minimum_stock_quantity', 'status', 'actions'], audit: ['item_code', 'item_name', 'item_type', 'category_name', 'lot_controlled', 'minimum_stock_quantity', 'status'] }}
       storage_key={`data_workspace_inventory_${current_user?.username || 'account'}`}
     />}
     <Drawer
@@ -353,19 +361,22 @@ function InventoryPage() {
       footer={<Space style={{ display: 'flex', justifyContent: 'flex-end' }}><Button onClick={reset_advanced_filters} icon={<ReloadOutlined />}>Đặt lại</Button><Button type="primary" onClick={apply_advanced_filters}>Áp dụng</Button></Space>}
     >
       <Typography.Paragraph type="secondary">Bộ lọc được gửi trực tiếp tới máy chủ, phù hợp với danh mục lớn.</Typography.Paragraph>
-      <Typography.Text strong>Loại danh mục</Typography.Text>
+      <Typography.Text strong>Loại mặt hàng</Typography.Text>
       <Select
         style={{ width: '100%', marginTop: 8 }}
         value={draft_filters.item_type}
-        options={item_type_options}
+        options={item_type_filter_options}
         onChange={(item_type) => set_draft_filters({ ...draft_filters, item_type })}
       />
     </Drawer>
 
-    {active_view === 'materials' && <Modal className="entity_form_modal entity_form_modal_inventory" width={720} open={is_modal_open} title={<div className="modal_title_block"><span>DANH MỤC VẬT TƯ</span><strong>{editing_material ? 'Sửa nguyên vật liệu' : 'Thêm nguyên vật liệu'}</strong><small>Danh mục dùng chung cho tồn kho và sản xuất.</small></div>} onCancel={() => set_is_modal_open(false)} footer={<div className="modal_footer_actions"><Button onClick={() => set_is_modal_open(false)}>Hủy</Button><Button type="primary" htmlType="submit" form="inventory_material_form">Lưu mặt hàng</Button></div>} destroyOnClose>
+    {active_view === 'materials' && <Modal className="entity_form_modal entity_form_modal_inventory" width={720} open={is_modal_open} title={<div className="modal_title_block"><span>DANH MỤC VẬT TƯ</span><strong>{editing_material ? 'Sửa mặt hàng' : 'Thêm mặt hàng'}</strong><small>Danh mục dùng chung cho tồn kho và sản xuất.</small></div>} onCancel={() => set_is_modal_open(false)} footer={<div className="modal_footer_actions"><Button onClick={() => set_is_modal_open(false)}>Hủy</Button><Button type="primary" htmlType="submit" form="inventory_material_form">Lưu mặt hàng</Button></div>} destroyOnClose>
       <Form id="inventory_material_form" form={form} layout="vertical" onFinish={on_finish} requiredMark={false}>
-        <Form.Item label="Mã vật tư" name="item_code" rules={[{ required: true, message: 'Item code is required.' }]}><Input maxLength={60} /></Form.Item>
-        <Form.Item label="Tên vật tư" name="item_name" rules={[{ required: true, message: 'Item name is required.' }]}><Input maxLength={180} /></Form.Item>
+        <Form.Item label="Mã mặt hàng" name="item_code" rules={[{ required: true, message: 'Item code is required.' }]}><Input maxLength={60} /></Form.Item>
+        <Form.Item label="Tên mặt hàng" name="item_name" rules={[{ required: true, message: 'Item name is required.' }]}><Input maxLength={180} /></Form.Item>
+        <Form.Item label="Loại mặt hàng" name="item_type" rules={[{ required: true, message: 'Item type is required.' }]}>
+          <Select options={item_type_options} disabled={Boolean(editing_material)} />
+        </Form.Item>
         <Form.Item label="Nhóm vật tư" name="item_category_id"><Select allowClear options={categories.map((item) => ({ value: item.category_id, label: item.category_name }))} /></Form.Item>
         <Form.Item label="Đơn vị tính cơ sở" name="base_unit_of_measure_id" rules={[{ required: true, message: 'Base unit is required.' }]}><Select options={units.map((item) => ({ value: item.unit_id, label: `${item.unit_name} (${item.unit_code})` }))} /></Form.Item>
         <Form.Item label="Theo dõi theo lô" name="lot_controlled" valuePropName="checked"><Checkbox>Có theo dõi lô và hạn dùng</Checkbox></Form.Item>

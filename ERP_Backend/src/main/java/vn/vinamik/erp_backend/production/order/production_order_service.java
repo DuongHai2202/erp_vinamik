@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.inventory.api.inventory_material_contract;
 import vn.vinamik.erp_backend.inventory.api.inventory_material_snapshot;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
@@ -32,6 +33,9 @@ public class production_order_service {
     private final inventory_material_contract material_contract;
     private final audit_event_writer audit_writer;
 
+    @org.springframework.beans.factory.annotation.Autowired
+    private business_code_generator code_generator;
+
     public production_order_service(
             production_order_repository order_repository,
             inventory_material_contract material_contract,
@@ -41,17 +45,26 @@ public class production_order_service {
         this.audit_writer = audit_writer;
     }
 
+    /**
+     * Backward-compatible search overload for callers that need the full order list.
+     */
     @Transactional(readOnly = true)
     public production_order_page_response search(String search, String status, Long stock_item_id,
                                                  int page, int page_size) {
+        return search(search, status, stock_item_id, false, page, page_size);
+    }
+
+    @Transactional(readOnly = true)
+    public production_order_page_response search(String search, String status, Long stock_item_id,
+                                                 boolean output_ready, int page, int page_size) {
         int safe_page = pagination_guard.normalize_page(page);
         int safe_page_size = Math.min(Math.max(page_size, 1), max_page_size);
         String normalized_search = normalize_lower(search);
         String normalized_status = normalize_lower(status);
         validate_status_filter(normalized_status);
-        long total = order_repository.count(normalized_search, normalized_status, stock_item_id);
+        long total = order_repository.count(normalized_search, normalized_status, stock_item_id, output_ready);
         List<production_order_summary> items = order_repository.search(
-                normalized_search, normalized_status, stock_item_id,
+                normalized_search, normalized_status, stock_item_id, output_ready,
                 safe_page_size, pagination_guard.offset(safe_page, safe_page_size));
         int total_pages = total == 0 ? 0 : (int) Math.ceil((double) total / safe_page_size);
         return new production_order_page_response(items, safe_page, safe_page_size, total, total_pages);
@@ -70,7 +83,15 @@ public class production_order_service {
     public production_order_response create(production_order_request request, authenticated_user actor,
                                             String correlation_id) {
         validate_request(request);
-        String order_code = normalize_required(request.order_code());
+        String initial_status = normalize_order_creation_status(request.status());
+        String order_code = normalize_lower(request.order_code());
+        if (order_code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("Production order code is required when automatic code generation is unavailable.");
+            }
+            order_code = code_generator.next_yearly("production_order", "production_order_",
+                    request.planned_starts_on(), 6);
+        }
         ensure_unique_order_code(order_code, null);
         production_order_repository.plan_line_snapshot plan_line =
                 order_repository.lock_plan_line(request.production_plan_line_id());
@@ -88,8 +109,8 @@ public class production_order_service {
                     order_code, plan_line.production_plan_line_id(), product.stock_item_id(), bom.bom_id(),
                     normalize_quantity(request.target_quantity()), product.unit_code(),
                     request.planned_starts_on(), request.planned_ends_on(),
-                    normalize_optional(request.production_line_name()), normalize_optional(request.notes()),
-                    actor.user_id());
+                    normalize_optional(request.production_line_name()), initial_status,
+                    normalize_optional(request.notes()), actor.user_id());
         } catch (DataIntegrityViolationException exception) {
             throw new field_conflict_exception("order_code", "Production order code already exists.");
         }
@@ -110,7 +131,10 @@ public class production_order_service {
         if (!Set.of("draft", "planned").contains(current)) {
             throw new IllegalArgumentException("Only draft or planned production orders can be edited.");
         }
-        String order_code = normalize_required(request.order_code());
+        String order_code = normalize_lower(request.order_code());
+        if (order_code == null) {
+            order_code = order_repository.find_by_id(production_order_id).order_code();
+        }
         ensure_unique_order_code(order_code, production_order_id);
         production_order_repository.plan_line_snapshot plan_line =
                 order_repository.lock_plan_line(request.production_plan_line_id());
@@ -172,8 +196,8 @@ public class production_order_service {
     public production_order_response change_operational_status(long production_order_id, String requested_status,
                                                                authenticated_user actor, String correlation_id) {
         String target = normalize_lower(requested_status);
-        if (!List.of("in_progress", "paused", "cancelled").contains(target)) {
-            throw new IllegalArgumentException("Only operational production order statuses can be changed with this action.");
+        if (!List.of("planned", "in_progress", "paused", "cancelled").contains(target)) {
+            throw new IllegalArgumentException("Only valid production order workflow statuses can be changed with this action.");
         }
         return change_status(production_order_id, target, actor, correlation_id);
     }
@@ -252,6 +276,17 @@ public class production_order_service {
         }
     }
 
+    private String normalize_order_creation_status(String status) {
+        String normalized = normalize_lower(status);
+        if (normalized == null) {
+            return "planned";
+        }
+        if (!Set.of("draft", "planned").contains(normalized)) {
+            throw new IllegalArgumentException("New production orders can only start as draft or planned.");
+        }
+        return normalized;
+    }
+
     private void validate_status(String status) {
         if (status == null || !valid_statuses.contains(status)) {
             throw new IllegalArgumentException("Production order status is invalid.");
@@ -260,6 +295,7 @@ public class production_order_service {
 
     private boolean allowed_transition(String current, String target) {
         return switch (current) {
+            case "draft" -> target.equals("planned") || target.equals("cancelled");
             case "planned" -> target.equals("released") || target.equals("cancelled");
             case "released" -> target.equals("in_progress") || target.equals("cancelled");
             case "in_progress" -> target.equals("paused") || target.equals("completed");
@@ -278,9 +314,9 @@ public class production_order_service {
         if (request == null) {
             throw new IllegalArgumentException("Production order request is required.");
         }
-        if (normalize_optional(request.order_code()) == null
-                || normalize_optional(request.order_code()).length() > 60) {
-            throw new IllegalArgumentException("Production order code is required and must contain at most 60 characters.");
+        if (normalize_optional(request.order_code()) != null
+                && normalize_optional(request.order_code()).length() > 60) {
+            throw new IllegalArgumentException("Production order code must contain at most 60 characters.");
         }
         if (request.production_plan_line_id() == null || request.production_plan_line_id() <= 0) {
             throw new IllegalArgumentException("Production plan line is required.");

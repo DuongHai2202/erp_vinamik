@@ -72,6 +72,33 @@ const empty_detail_labels = {
   valid_to: 'Không thời hạn',
 };
 
+const quantity_field_keys = new Set([
+  'target_quantity',
+  'quantity_per_base',
+  'base_quantity',
+  'base_quantity_snapshot',
+  'required_quantity',
+  'available_quantity',
+  'shortage_quantity',
+  'quantity',
+  'consumed_quantity',
+  'good_quantity',
+  'defective_quantity',
+  'actual_good_quantity',
+  'actual_defective_quantity',
+  'remaining_quantity',
+  'system_quantity',
+  'counted_quantity',
+  'difference_quantity',
+  'scrap_percent',
+  'scrap_percent_snapshot',
+]);
+
+function format_quantity_2(value) {
+  if (value === null || value === undefined || value === '') return '—';
+  return format_number_vn(value, 2);
+}
+
 function display_value(value, field_key) {
   if (value === null || value === undefined || value === '') return empty_detail_labels[field_key] || 'Chưa cập nhật';
   if (typeof value === 'boolean') return value ? 'Có' : 'Không';
@@ -143,7 +170,7 @@ const line_field_labels = {
 
 function format_progress_quantity(value) {
   if (value === null || value === undefined || value === '') return '—';
-  return format_number_vn(value, 3);
+  return format_number_vn(value, 2);
 }
 
 function format_progress_percent(value) {
@@ -177,7 +204,7 @@ function LinesTable({ lines, kind }) {
     ];
   } else {
     const keys = Object.keys(lines[0]).filter((key) => !key.endsWith('_id') && key !== 'notes');
-    columns = keys.slice(0, 8).map((key) => ({ title: line_field_labels[key] || key.replaceAll('_', ' '), dataIndex: key, render: (value) => display_business_value(value, key) }));
+    columns = keys.slice(0, 8).map((key) => ({ title: line_field_labels[key] || key.replaceAll('_', ' '), dataIndex: key, render: (value) => quantity_field_keys.has(key) ? format_quantity_2(value) : display_business_value(value, key) }));
   }
   return <Table size="small" rowKey={(item, index) => String(item.stocktake_line_id || item.receipt_line_id || item.issue_line_id || item.transfer_line_id || item.bom_line_id || index)} dataSource={lines} columns={columns} pagination={false} {...table_render_props(lines.length, 620)} />;
 }
@@ -326,9 +353,9 @@ function OutputFormModal({ order, output, open, on_close, on_saved }) {
     <Form id="production_output_form" form={form} layout="vertical" onFinish={on_finish} requiredMark={false}>
       <Form.Item label="Kho nhận" name="warehouse_id" rules={[{ required: true, message: 'Warehouse is required.' }]}><LookupField field={{ lookup: 'warehouses', required: true, placeholder: 'Chọn kho nhận' }} form={form} /></Form.Item>
       <Form.Item label="Vị trí nhận" name="warehouse_location_id" rules={[{ required: true, message: 'Warehouse location is required.' }]}><LookupField field={{ lookup: 'warehouse_locations', parent_field: 'warehouse_id', required: true, placeholder: 'Chọn vị trí nhận' }} form={form} /></Form.Item>
-      <Space style={{ width: '100%' }} size="middle"><Form.Item label="Mã lô" name="lot_code" rules={[{ required: true, message: 'Lot code is required.' }]}><Input maxLength={80} /></Form.Item><Form.Item label="Ngày sản xuất" name="manufactured_on" rules={[{ required: true, message: 'Manufactured date is required.' }]}><VietnameseDateInput /></Form.Item><Form.Item label="Hạn dùng" name="expires_on"><VietnameseDateInput /></Form.Item></Space>
+      <Space style={{ width: '100%' }} size="middle"><Form.Item label="Mã lô" name="lot_code" extra="Mã lô sẽ được tự sinh khi lưu" style={{ flex: 1 }}><Input maxLength={80} disabled={!is_editing} placeholder="Tự sinh khi lưu" /></Form.Item><Form.Item label="Ngày sản xuất" name="manufactured_on" rules={[{ required: true, message: 'Manufactured date is required.' }]}><VietnameseDateInput /></Form.Item><Form.Item label="Hạn dùng" name="expires_on"><VietnameseDateInput /></Form.Item></Space>
       <Space style={{ width: '100%' }} size="middle"><Form.Item label="Số lượng đạt" name="good_quantity" rules={[{ required: true, message: 'Good quantity is required.' }]}><InputNumber min={0} style={{ width: '100%' }} /></Form.Item><Form.Item label="Số lượng lỗi" name="defective_quantity" rules={[{ required: true, message: 'Defective quantity is required.' }]}><InputNumber min={0} style={{ width: '100%' }} /></Form.Item></Space>
-      <Form.Item label="Mã chống gửi trùng" name="idempotency_key" rules={[{ required: true, message: 'Idempotency key is required.' }]}><Input maxLength={120} disabled={is_editing} /></Form.Item>
+      <Form.Item name="idempotency_key" hidden><Input maxLength={120} /></Form.Item>
       <Form.Item label="Ghi chú" name="notes"><Input.TextArea rows={3} maxLength={2000} /></Form.Item>
     </Form>
   </Modal>;
@@ -360,7 +387,7 @@ function ConsumptionFormModal({ order, open, on_close, on_saved }) {
   return <Modal className="entity_form_modal entity_form_modal_production_consumption" open={open} title={<div className="modal_title_block"><span>TIÊU HAO VẬT TƯ</span><strong>Ghi nhận tiêu hao vật tư</strong><small>Kiểm tra kho và số lượng trước khi ghi nhận giao dịch.</small></div>} onCancel={on_close} footer={<div className="modal_footer_actions"><Button onClick={on_close}>Hủy</Button><Button type="primary" htmlType="submit" form="production_consumption_form" loading={saving}>Lưu tiêu hao</Button></div>} width={820} destroyOnClose>
     <Form id="production_consumption_form" form={form} layout="vertical" onFinish={on_finish} requiredMark={false}>
       <Form.Item label="Kho xuất" name="warehouse_id" rules={[{ required: true, message: 'Warehouse is required.' }]}><LookupField field={{ lookup: 'warehouses', required: true, placeholder: 'Chọn kho xuất' }} form={form} /></Form.Item>
-      <Form.Item label="Mã chống gửi trùng" name="idempotency_key" rules={[{ required: true, message: 'Idempotency key is required.' }]}><Input maxLength={120} /></Form.Item>
+      <Form.Item name="idempotency_key" hidden><Input maxLength={120} /></Form.Item>
       <Form.List name="lines" rules={[{ validator: async (_, values) => values?.length ? Promise.resolve() : Promise.reject(new Error('At least one line is required.')) }]}>
         {(fields, { add, remove }) => <div className="workflow_form_lines"><Typography.Text strong>Vật tư đã tiêu hao</Typography.Text>{fields.map(({ key, name, ...rest_field }) => <div className="workflow_form_line" key={key}>
           <Form.Item {...rest_field} name={[name, 'material_stock_item_id']} label="Nguyên vật liệu" rules={[{ required: true, message: 'Material is required.' }]}><LookupField field={{ lookup: 'raw_materials', required: true, placeholder: 'Chọn nguyên vật liệu' }} form={form} /></Form.Item>
@@ -552,7 +579,7 @@ function WorkflowDetailDrawer({ config, record, open, on_close, current_user, on
           <small className="production_progress_metric_caption">{caption}</small>
         </div>)}
       </div> : <Typography.Text type="secondary">Chưa có dữ liệu tiến độ.</Typography.Text>}
-        {related.material_needs && <><Typography.Title level={5}>Nhu cầu vật tư thực tế</Typography.Title><Table size="small" rowKey="material_stock_item_id" dataSource={related.material_needs.items || []} pagination={false} scroll={{ x: 700 }} columns={[{ title: 'Mã vật tư', dataIndex: 'material_item_code' }, { title: 'Tên vật tư', dataIndex: 'material_item_name' }, { title: 'Đơn vị', dataIndex: 'unit_code' }, { title: 'Cần dùng', dataIndex: 'required_quantity' }, { title: 'Khả dụng', dataIndex: 'available_quantity' }, { title: 'Thiếu', dataIndex: 'shortage_quantity', render: (value) => <Tag color={Number(value) > 0 ? 'red' : 'green'}>{display_value(value)}</Tag> }]} /></>}        {related.progress?.events?.length ? <><Typography.Title level={5}>Lịch sử tiến độ</Typography.Title><Table size="small" rowKey="production_order_event_id" dataSource={related.progress.events} pagination={false} columns={[{ title: 'Sự kiện', dataIndex: 'event_type' }, { title: 'Trạng thái trước', dataIndex: 'previous_status', render: (value) => status_labels[value] || value || 'Chưa cập nhật' }, { title: 'Trạng thái sau', dataIndex: 'new_status', render: (value) => status_labels[value] || value || 'Chưa cập nhật' }, { title: 'Thời điểm', dataIndex: 'occurred_at', render: (value) => format_datetime_vn(value) }]} /></> : null}        {detail.material_requirements && <><Typography.Title level={5}>Nhu cầu vật tư theo BOM</Typography.Title><LinesTable lines={detail.material_requirements} kind="material_requirements" /></>}
+        {related.material_needs && <><Typography.Title level={5}>Nhu cầu vật tư thực tế</Typography.Title><Typography.Paragraph type="secondary" style={{ marginTop: -8, marginBottom: 12 }}><strong>Cần dùng:</strong> nhu cầu đã chốt theo BOM của lệnh, sản lượng kế hoạch và tỷ lệ hao hụt. <strong>Khả dụng:</strong> tổng <code>on_hand_quantity</code> của cùng mã vật tư trong mọi kho, vị trí và lô; số này được đọc lại khi mở hoặc làm mới chi tiết. <strong>Thiếu</strong> = max(Cần dùng - Khả dụng, 0). Các số thập phân chỉ hiển thị tối đa 2 chữ số; số gốc vẫn giữ độ chính xác để tính toán.</Typography.Paragraph><Table size="small" rowKey="material_stock_item_id" dataSource={related.material_needs.items || []} pagination={false} scroll={{ x: 700 }} columns={[{ title: 'Mã vật tư', dataIndex: 'material_item_code' }, { title: 'Tên vật tư', dataIndex: 'material_item_name' }, { title: 'Đơn vị', dataIndex: 'unit_code' }, { title: 'Cần dùng', dataIndex: 'required_quantity', render: (value) => format_quantity_2(value) }, { title: 'Khả dụng', dataIndex: 'available_quantity', render: (value) => format_quantity_2(value) }, { title: 'Thiếu', dataIndex: 'shortage_quantity', render: (value) => <Tag color={Number(value) > 0 ? 'red' : 'green'}>{format_quantity_2(value)}</Tag> }]} /></>}        {related.progress?.events?.length ? <><Typography.Title level={5}>Lịch sử tiến độ</Typography.Title><Table size="small" rowKey="production_order_event_id" dataSource={related.progress.events} pagination={false} columns={[{ title: 'Sự kiện', dataIndex: 'event_type' }, { title: 'Trạng thái trước', dataIndex: 'previous_status', render: (value) => status_labels[value] || value || 'Chưa cập nhật' }, { title: 'Trạng thái sau', dataIndex: 'new_status', render: (value) => status_labels[value] || value || 'Chưa cập nhật' }, { title: 'Thời điểm', dataIndex: 'occurred_at', render: (value) => format_datetime_vn(value) }]} /></> : null}        {detail.material_requirements && <><Typography.Title level={5}>Nhu cầu vật tư theo BOM</Typography.Title><LinesTable lines={detail.material_requirements} kind="material_requirements" /></>}
         <Space wrap className="workflow_detail_actions">{has_permission(current_user, 'production_output_create') && ['released', 'in_progress', 'paused', 'completed'].includes(detail.status) && <Button type="primary" icon={<PlusOutlined />} onClick={() => { set_editing_output(null); set_output_open(true); }}>Ghi nhận sản lượng</Button>}{has_permission(current_user, 'production_order_update') && ['released', 'in_progress', 'paused'].includes(detail.status) && <Button icon={<DatabaseOutlined />} onClick={() => set_consumption_open(true)}>Ghi nhận tiêu hao</Button>}</Space>
         {related.outputs && <><Typography.Title level={5}>Sản lượng đã ghi nhận</Typography.Title><Table size="small" rowKey="production_output_id" dataSource={related.outputs} pagination={false} {...table_render_props(related.outputs.length, 850, 320)} columns={[
           { title: 'Mã lô', dataIndex: 'lot_code' },

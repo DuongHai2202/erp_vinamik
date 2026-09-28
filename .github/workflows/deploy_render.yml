@@ -1,0 +1,48 @@
+name: Deploy Render demo
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    uses: ./.github/workflows/ci.yml
+
+  deploy:
+    name: Deploy to Render
+    needs: checks
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Trigger backend deploy
+        env:
+          deploy_hook_url: ${{ secrets.RENDER_BACKEND_DEPLOY_HOOK_URL }}
+        run: |
+          test -n "$deploy_hook_url"
+          curl --fail --silent --show-error --request POST "$deploy_hook_url"
+
+      - name: Trigger frontend deploy
+        env:
+          deploy_hook_url: ${{ secrets.RENDER_FRONTEND_DEPLOY_HOOK_URL }}
+        run: |
+          test -n "$deploy_hook_url"
+          curl --fail --silent --show-error --request POST "$deploy_hook_url"
+
+      - name: Wait for backend readiness
+        env:
+          backend_url: ${{ vars.RENDER_BACKEND_PUBLIC_URL }}
+        run: |
+          test -n "$backend_url"
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent --show-error "$backend_url/actuator/health/readiness"; then
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "Render backend did not become ready in time."
+          exit 1

@@ -776,6 +776,34 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
                 "scrap_percent": [0.5, 1.0, 1.5, 2.0, 0.0][line_index],
                 "notes": "Định mức nguyên liệu đã phê duyệt theo mẻ chuẩn.",
             })
+    # Keep a draft version for each of the first products so the BOM screen
+    # has real editable data in addition to active versions.
+    for index, product in enumerate(finished_items[:40]):
+        bom_code = f"bom_{product['item_code']}_draft"
+        bom_rows.append({
+            "bom_code": bom_code,
+            "item_code": product["item_code"],
+            "version_number": 2,
+            "base_quantity": 1000,
+            "unit_code": unit_by_item[product["item_code"]],
+            "valid_from": "2026-10-01",
+            "valid_to": "",
+            "status": "draft",
+            "notes": "Bản nháp định mức chờ rà soát và phê duyệt.",
+        })
+        for line_index in range(5):
+            material = raw_items[(index * 5 + line_index * 17 + 7) % len(raw_items)]
+            bom_line_rows.append({
+                "bom_line_code": f"{bom_code}_line_{line_index + 1:02d}",
+                "bom_code": bom_code,
+                "version_number": 2,
+                "line_number": line_index + 1,
+                "material_item_code": material["item_code"],
+                "unit_code": material["unit_code"],
+                "quantity_per_base": 35 + ((index * 17 + line_index * 23) % 650),
+                "scrap_percent": [0.5, 1.0, 1.5, 2.0, 0.0][line_index],
+                "notes": "Dòng vật tư trong bản nháp chờ rà soát.",
+            })
     order_rows = []
     requirement_rows = []
     event_rows = []
@@ -786,11 +814,11 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
     issue_line_rows_by_order = defaultdict(list)
     for row in inventory_data["issue_lines"]:
         issue_line_rows_by_order[row["issue_code"]].append(row)
-    for index in range(600):
+    for index in range(640):
         plan_line = plan_line_rows[index % len(plan_line_rows)]
         order_code = f"production_order_2026_{index + 1:05d}"
         planned_start = plan_start_by_code[plan_line["plan_code"]] + timedelta(days=index % 4)
-        order_status = ["planned", "released", "in_progress", "completed", "paused"][index % 5]
+        order_status = "draft" if index >= 600 else ["planned", "released", "in_progress", "completed", "paused"][index % 5]
         bom_code = f"bom_{plan_line['item_code']}"
         order_rows.append({
             "order_code": order_code,
@@ -799,11 +827,11 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
             "item_code": plan_line["item_code"],
             "bom_code": bom_code,
             "bom_version_number": 1,
-            "target_quantity": 2000 + (index * 137 % 8000),
+            "target_quantity": (100 + (index - 600) * 10) if order_status == "draft" else 2000 + (index * 137 % 8000),
             "unit_code": "piece",
             "planned_starts_on": planned_start.isoformat(),
             "planned_ends_on": (planned_start + timedelta(days=2)).isoformat(),
-            "production_line_name": f"Dây chuyền {index % 12 + 1:02d}",
+            "production_line_name": (f"Dây chuyền nháp {index - 599:02d}" if order_status == "draft" else f"Dây chuyền {index % 12 + 1:02d}"),
             "status": order_status,
             "notes": "Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.",
         })
@@ -824,7 +852,7 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
             {"order_code": order_code, "event_type": "status_changed", "previous_status": "draft", "new_status": order_status, "note": "Tạo và cập nhật lệnh theo kế hoạch.", "occurred_at": iso_timestamp(planned_start - timedelta(days=1), 8), "idempotency_key": f"order_event_status_{index + 1:05d}"},
             {"order_code": order_code, "event_type": "progress_note", "previous_status": order_status, "new_status": order_status, "note": "Đã cập nhật tiến độ ca sản xuất.", "occurred_at": iso_timestamp(planned_start + timedelta(days=1), 16), "idempotency_key": f"order_event_progress_{index + 1:05d}"},
         ])
-        if order_status != "completed":
+        if order_status not in {"completed", "draft"}:
             assignment_count = 1 if index % 2 else 2
             for assignment_index in range(assignment_count):
                 employee_code = production_employee_codes[(index * 3 + assignment_index) % len(production_employee_codes)]
@@ -855,6 +883,8 @@ def generate_production(human_resources_data: dict[str, list[dict]], inventory_d
                 "idempotency_key": f"material_consumption_{index + 1:05d}_{consumption_index + 1}",
                 "notes": "Tiêu hao thực tế đã đối chiếu với phiếu xuất vật tư.",
             })
+        if order_status == "draft":
+            continue
         manufactured_on = planned_start + timedelta(days=1)
         output_status = "failed" if 570 <= index < 580 else ("cancelled" if index >= 580 else ("received" if index < 300 else ("pending_receipt" if index < 480 else "draft")))
         lot_code = f"production_lot_2026_{index + 1:05d}"

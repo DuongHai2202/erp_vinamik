@@ -21,15 +21,15 @@ public class production_order_repository {
         this.jpa_query_executor = jpa_query_executor;
     }
 
-    public long count(String search, String status, Long stock_item_id) {
+    public long count(String search, String status, Long stock_item_id, boolean output_ready) {
         Object[] parameters = order_filter_parameters(search, status, stock_item_id);
         Long total = jpa_query_executor.queryForObject(
-                "SELECT count(*) " + order_filter_where(), Long.class, parameters);
+                "SELECT count(*) " + order_filter_where(output_ready), Long.class, parameters);
         return total == null ? 0 : total;
     }
 
     public List<production_order_summary> search(String search, String status, Long stock_item_id,
-                                                 int page_size, int offset) {
+                                                 boolean output_ready, int page_size, int offset) {
         Object[] parameters = append(order_filter_parameters(search, status, stock_item_id), page_size, offset);
         return jpa_query_executor.query(
                 "SELECT production_order.production_order_id, production_order.order_code, "
@@ -37,7 +37,7 @@ public class production_order_repository {
                         + "plan_line.stock_item_code_snapshot, plan_line.stock_item_name_snapshot, "
                         + "production_order.target_quantity, production_order.planned_starts_on, "
                         + "production_order.planned_ends_on, production_order.status, production_order.released_at "
-                        + order_filter_where()
+                        + order_filter_where(output_ready)
                         + " ORDER BY production_order.planned_starts_on DESC, production_order.order_code, "
                         + "production_order.production_order_id LIMIT ? OFFSET ?",
                 this::map_summary, parameters);
@@ -93,21 +93,30 @@ public class production_order_repository {
 
     public long insert_order(String order_code, long plan_line_id, long stock_item_id, long bom_id,
                              BigDecimal target_quantity, String unit_code, LocalDate planned_starts_on,
-                             LocalDate planned_ends_on, String production_line_name, String notes,
-                             long actor_user_id) {
+                             LocalDate planned_ends_on, String production_line_name, String status,
+                             String notes, long actor_user_id) {
         Long order_id = jpa_query_executor.queryForObject(
                 "INSERT INTO production.production_order "
                         + "(order_code, production_plan_line_id, stock_item_id, bom_id, target_quantity, "
                         + "unit_code_snapshot, planned_starts_on, planned_ends_on, production_line_name, "
                         + "status, notes, created_by_user_id, updated_by_user_id) "
-                        + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'planned', ?, ?, ?) "
+                        + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) "
                         + "RETURNING production_order_id",
                 Long.class, order_code, plan_line_id, stock_item_id, bom_id, target_quantity, unit_code,
-                planned_starts_on, planned_ends_on, production_line_name, notes, actor_user_id, actor_user_id);
+                planned_starts_on, planned_ends_on, production_line_name, status, notes,
+                actor_user_id, actor_user_id);
         if (order_id == null) {
             throw new IllegalStateException("Production order identifier was not returned.");
         }
         return order_id;
+    }
+
+    public long insert_order(String order_code, long plan_line_id, long stock_item_id, long bom_id,
+                             BigDecimal target_quantity, String unit_code, LocalDate planned_starts_on,
+                             LocalDate planned_ends_on, String production_line_name, String notes,
+                             long actor_user_id) {
+        return insert_order(order_code, plan_line_id, stock_item_id, bom_id, target_quantity, unit_code,
+                planned_starts_on, planned_ends_on, production_line_name, "planned", notes, actor_user_id);
     }
 
     public int update_order(long production_order_id, String order_code, long plan_line_id, long stock_item_id,
@@ -318,8 +327,8 @@ public class production_order_repository {
         return new Object[]{search, search, search, search, status, status, stock_item_id, stock_item_id};
     }
 
-    private String order_filter_where() {
-        return "FROM production.production_order AS production_order "
+    private String order_filter_where(boolean output_ready) {
+        String base = "FROM production.production_order AS production_order "
                 + "JOIN production.production_plan_line AS plan_line "
                 + "ON plan_line.production_plan_line_id = production_order.production_plan_line_id "
                 + "WHERE (CAST(? AS text) IS NULL OR lower(production_order.order_code) LIKE '%' || ? || '%' "
@@ -327,6 +336,9 @@ public class production_order_repository {
                 + "OR lower(plan_line.stock_item_name_snapshot) LIKE '%' || ? || '%') "
                 + "AND (CAST(? AS text) IS NULL OR production_order.status = ?) "
                 + "AND (CAST(? AS text) IS NULL OR production_order.stock_item_id = ?)";
+        return output_ready
+                ? base + " AND production_order.status IN ('released', 'in_progress', 'paused', 'completed')"
+                : base;
     }
 
     private Object[] append(Object[] values, Object... suffix) {

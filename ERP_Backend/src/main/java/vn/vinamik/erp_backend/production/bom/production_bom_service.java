@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import vn.vinamik.erp_backend.inventory.api.inventory_material_contract;
 import vn.vinamik.erp_backend.inventory.api.inventory_material_snapshot;
 import vn.vinamik.erp_backend.platform.common.audit_event_writer;
+import vn.vinamik.erp_backend.platform.common.business_code_generator;
 import vn.vinamik.erp_backend.platform.common.field_conflict_exception;
 import vn.vinamik.erp_backend.platform.common.resource_not_found_exception;
 import vn.vinamik.erp_backend.platform.identity.authenticated_user;
@@ -28,6 +29,9 @@ public class production_bom_service {
     private final production_bom_repository bom_repository;
     private final inventory_material_contract material_contract;
     private final audit_event_writer audit_writer;
+
+    @org.springframework.beans.factory.annotation.Autowired
+    private business_code_generator code_generator;
 
     public production_bom_service(production_bom_repository bom_repository,
                                   inventory_material_contract material_contract,
@@ -61,8 +65,16 @@ public class production_bom_service {
         validate_request(request);
         inventory_material_snapshot product = require_material(request.stock_item_id(), "finished_product");
         List<inventory_material_snapshot> materials = validate_material_lines(request.lines());
-        ensure_unique_bom(request.bom_code(), request.stock_item_id(), request.version_number(), null);
-        long bom_id = bom_repository.insert(normalize_required(request.bom_code()), request.stock_item_id(),
+        String bom_code = normalize_lower(request.bom_code());
+        if (bom_code == null) {
+            if (code_generator == null) {
+                throw new IllegalArgumentException("BOM code is required when automatic code generation is unavailable.");
+            }
+            bom_code = code_generator.next("production_bom", "bom_" + product.item_code() + "_v",
+                    String.valueOf(request.version_number()), 6);
+        }
+        ensure_unique_bom(bom_code, request.stock_item_id(), request.version_number(), null);
+        long bom_id = bom_repository.insert(bom_code, request.stock_item_id(),
                 product.item_code(), product.item_name(), request.version_number(), request.base_quantity(),
                 product.unit_code(), request.valid_from(), request.valid_to(), normalize_optional(request.notes()),
                 actor.user_id());
@@ -100,8 +112,12 @@ public class production_bom_service {
         }
         inventory_material_snapshot product = require_material(request.stock_item_id(), "finished_product");
         List<inventory_material_snapshot> materials = validate_material_lines(request.lines());
-        ensure_unique_bom(request.bom_code(), request.stock_item_id(), request.version_number(), bom_id);
-        int updated = bom_repository.update(bom_id, normalize_required(request.bom_code()),
+        String bom_code = normalize_lower(request.bom_code());
+        if (bom_code == null) {
+            bom_code = bom_repository.find(bom_id).bom_code();
+        }
+        ensure_unique_bom(bom_code, request.stock_item_id(), request.version_number(), bom_id);
+        int updated = bom_repository.update(bom_id, bom_code,
                 request.stock_item_id(), product.item_code(), product.item_name(), request.version_number(),
                 request.base_quantity(), product.unit_code(), request.valid_from(), request.valid_to(),
                 normalize_optional(request.notes()), actor.user_id());
@@ -128,7 +144,8 @@ public class production_bom_service {
             throw new IllegalArgumentException("BOM is already in the requested status.");
         }
         if (!((current.equals("draft") && (status.equals("active") || status.equals("inactive")))
-                || (current.equals("inactive") && status.equals("active")))) {
+                || (current.equals("inactive") && status.equals("active"))
+                || (current.equals("active") && status.equals("inactive")))) {
             throw new IllegalArgumentException("BOM status transition is not allowed.");
         }
         if (status.equals("active") && bom_repository.has_active_overlap(bom_id)) {
@@ -196,9 +213,9 @@ public class production_bom_service {
         if (request == null) {
             throw new IllegalArgumentException("BOM request is required.");
         }
-        if (normalize_optional(request.bom_code()) == null
-                || normalize_optional(request.bom_code()).length() > 60) {
-            throw new IllegalArgumentException("BOM code is required and must contain at most 60 characters.");
+        if (normalize_optional(request.bom_code()) != null
+                && normalize_optional(request.bom_code()).length() > 60) {
+            throw new IllegalArgumentException("BOM code must contain at most 60 characters.");
         }
         if (request.stock_item_id() == null || request.stock_item_id() <= 0
                 || request.version_number() == null || request.version_number() < 1

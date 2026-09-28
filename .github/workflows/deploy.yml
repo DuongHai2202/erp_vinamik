@@ -1,0 +1,46 @@
+name: Deploy ERP Vinamik
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: ./.github/workflows/ci.yml
+
+  deploy:
+    name: Deploy to Linux server
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Download backend artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: erp-backend
+          path: release/backend
+      - name: Download frontend artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: erp-frontend
+          path: release/frontend
+      - name: Load SSH key
+        uses: webfactory/ssh-agent@v0.9.1
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+      - name: Trust deployment host
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p "${{ secrets.DEPLOY_PORT || 22 }}" "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+      - name: Copy release
+        run: |
+          scp -P "${{ secrets.DEPLOY_PORT || 22 }}" release/backend/*.jar "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_APP_DIR }}/erp_backend.jar"
+          scp -P "${{ secrets.DEPLOY_PORT || 22 }}" -r release/frontend/. "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_FRONTEND_DIR }}/"
+      - name: Restart backend and verify readiness
+        run: |
+          ssh -p "${{ secrets.DEPLOY_PORT || 22 }}" "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "sudo systemctl restart erp-backend && curl --fail --silent --show-error --retry 20 http://127.0.0.1:8080/actuator/health/readiness"

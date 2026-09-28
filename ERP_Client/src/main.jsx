@@ -33,26 +33,26 @@ function ApplicationRoutes() {
             <Route index element={<OverviewPage />} />
             <Route path="human_resources" element={<HumanResourcesPage />} />
             <Route path="human_resources/contracts" element={<ContractsPage />} />
-            <Route path="human_resources/absences" element={<ModuleDataPage feature_key="absences" />} />
-            <Route path="human_resources/rewards_discipline" element={<ModuleDataPage feature_key="rewards_discipline" />} />
-            <Route path="human_resources/payroll" element={<ModuleDataPage feature_key="payroll" />} />
+            <Route path="human_resources/absences" element={<ModuleDataPage key="absences" feature_key="absences" />} />
+            <Route path="human_resources/rewards_discipline" element={<ModuleDataPage key="rewards_discipline" feature_key="rewards_discipline" />} />
+            <Route path="human_resources/payroll" element={<ModuleDataPage key="payroll" feature_key="payroll" />} />
             <Route path="inventory" element={<InventoryPage />} />
-            <Route path="inventory/receipts" element={<ModuleDataPage feature_key="receipts" />} />
-            <Route path="inventory/issues" element={<ModuleDataPage feature_key="issues" />} />
-            <Route path="inventory/stocktakes" element={<ModuleDataPage feature_key="stocktakes" />} />
-            <Route path="inventory/transfers" element={<ModuleDataPage feature_key="transfers" />} />
+            <Route path="inventory/receipts" element={<ModuleDataPage key="receipts" feature_key="receipts" />} />
+            <Route path="inventory/issues" element={<ModuleDataPage key="issues" feature_key="issues" />} />
+            <Route path="inventory/stocktakes" element={<ModuleDataPage key="stocktakes" feature_key="stocktakes" />} />
+            <Route path="inventory/transfers" element={<ModuleDataPage key="transfers" feature_key="transfers" />} />
             <Route path="production" element={<ProductionPage />} />
-            <Route path="production/materials" element={<ModuleDataPage feature_key="materials" />} />
-            <Route path="production/orders" element={<ModuleDataPage feature_key="orders" />} />
-            <Route path="production/assignments" element={<ModuleDataPage feature_key="assignments" />} />
-            <Route path="production/finished_products" element={<ModuleDataPage feature_key="finished_products" />} />
+            <Route path="production/materials" element={<ModuleDataPage key="materials" feature_key="materials" />} />
+            <Route path="production/orders" element={<ModuleDataPage key="orders" feature_key="orders" />} />
+            <Route path="production/assignments" element={<ModuleDataPage key="assignments" feature_key="assignments" />} />
+            <Route path="production/finished_products" element={<ModuleDataPage key="finished_products" feature_key="finished_products" />} />
             <Route path="quality_cost" element={<ModulePlaceholderPage module_key="quality_cost" feature_key="overview" />} />
-            <Route path="quality_cost/inspections" element={<ModuleDataPage feature_key="quality_inspections" />} />
-            <Route path="quality_cost/nonconformances" element={<ModuleDataPage feature_key="quality_nonconformances" />} />
-            <Route path="quality_cost/periods" element={<ModuleDataPage feature_key="cost_periods" />} />
-            <Route path="quality_cost/calculations" element={<ModuleDataPage feature_key="cost_calculations" />} />
-            <Route path="quality_cost/price_proposals" element={<ModuleDataPage feature_key="price_proposals" />} />
-            <Route path="quality_cost/price_approvals" element={<ModuleDataPage feature_key="price_approvals" />} />
+            <Route path="quality_cost/inspections" element={<ModuleDataPage key="quality_inspections" feature_key="quality_inspections" />} />
+            <Route path="quality_cost/nonconformances" element={<ModuleDataPage key="quality_nonconformances" feature_key="quality_nonconformances" />} />
+            <Route path="quality_cost/periods" element={<ModuleDataPage key="cost_periods" feature_key="cost_periods" />} />
+            <Route path="quality_cost/calculations" element={<ModuleDataPage key="cost_calculations" feature_key="cost_calculations" />} />
+            <Route path="quality_cost/price_proposals" element={<ModuleDataPage key="price_proposals" feature_key="price_proposals" />} />
+            <Route path="quality_cost/price_approvals" element={<ModuleDataPage key="price_approvals" feature_key="price_approvals" />} />
             <Route path="data_reporting" element={<ModulePlaceholderPage module_key="data_reporting" feature_key="overview" />} />
             <Route path="settings/users" element={<UsersPage />} />
             <Route path="settings/registration_requests" element={<RegistrationRequestsPage />} />

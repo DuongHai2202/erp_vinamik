@@ -599,3 +599,43 @@ production_order_2026_00597,plan_2026_0049,1,fg_0097,bom_fg_0097,1,3652,piece,20
 production_order_2026_00598,plan_2026_0049,2,fg_0098,bom_fg_0098,1,3789,piece,2026-04-06,2026-04-08,Dây chuyền 10,in_progress,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
 production_order_2026_00599,plan_2026_0050,1,fg_0099,bom_fg_0099,1,3926,piece,2026-05-10,2026-05-12,Dây chuyền 11,completed,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
 production_order_2026_00600,plan_2026_0050,2,fg_0100,bom_fg_0100,1,4063,piece,2026-05-11,2026-05-13,Dây chuyền 12,paused,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00601,plan_2026_0051,1,fg_0101,bom_fg_0101,1,100,piece,2026-06-11,2026-06-13,Dây chuyền nháp 01,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00602,plan_2026_0051,2,fg_0102,bom_fg_0102,1,110,piece,2026-06-12,2026-06-14,Dây chuyền nháp 02,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00603,plan_2026_0052,1,fg_0103,bom_fg_0103,1,120,piece,2026-07-16,2026-07-18,Dây chuyền nháp 03,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00604,plan_2026_0052,2,fg_0104,bom_fg_0104,1,130,piece,2026-07-17,2026-07-19,Dây chuyền nháp 04,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00605,plan_2026_0053,1,fg_0105,bom_fg_0105,1,140,piece,2026-08-17,2026-08-19,Dây chuyền nháp 05,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00606,plan_2026_0053,2,fg_0106,bom_fg_0106,1,150,piece,2026-08-18,2026-08-20,Dây chuyền nháp 06,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00607,plan_2026_0054,1,fg_0107,bom_fg_0107,1,160,piece,2026-09-22,2026-09-24,Dây chuyền nháp 07,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00608,plan_2026_0054,2,fg_0108,bom_fg_0108,1,170,piece,2026-09-23,2026-09-25,Dây chuyền nháp 08,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00609,plan_2026_0055,1,fg_0109,bom_fg_0109,1,180,piece,2026-01-03,2026-01-05,Dây chuyền nháp 09,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00610,plan_2026_0055,2,fg_0110,bom_fg_0110,1,190,piece,2026-01-04,2026-01-06,Dây chuyền nháp 10,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00611,plan_2026_0056,1,fg_0111,bom_fg_0111,1,200,piece,2026-02-08,2026-02-10,Dây chuyền nháp 11,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00612,plan_2026_0056,2,fg_0112,bom_fg_0112,1,210,piece,2026-02-09,2026-02-11,Dây chuyền nháp 12,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00613,plan_2026_0057,1,fg_0113,bom_fg_0113,1,220,piece,2026-03-09,2026-03-11,Dây chuyền nháp 13,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00614,plan_2026_0057,2,fg_0114,bom_fg_0114,1,230,piece,2026-03-10,2026-03-12,Dây chuyền nháp 14,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00615,plan_2026_0058,1,fg_0115,bom_fg_0115,1,240,piece,2026-04-14,2026-04-16,Dây chuyền nháp 15,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00616,plan_2026_0058,2,fg_0116,bom_fg_0116,1,250,piece,2026-04-15,2026-04-17,Dây chuyền nháp 16,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00617,plan_2026_0059,1,fg_0117,bom_fg_0117,1,260,piece,2026-05-15,2026-05-17,Dây chuyền nháp 17,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00618,plan_2026_0059,2,fg_0118,bom_fg_0118,1,270,piece,2026-05-16,2026-05-18,Dây chuyền nháp 18,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00619,plan_2026_0060,1,fg_0119,bom_fg_0119,1,280,piece,2026-06-20,2026-06-22,Dây chuyền nháp 19,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00620,plan_2026_0060,2,fg_0120,bom_fg_0120,1,290,piece,2026-06-21,2026-06-23,Dây chuyền nháp 20,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00621,plan_2026_0061,1,fg_0121,bom_fg_0121,1,300,piece,2026-07-01,2026-07-03,Dây chuyền nháp 21,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00622,plan_2026_0061,2,fg_0122,bom_fg_0122,1,310,piece,2026-07-02,2026-07-04,Dây chuyền nháp 22,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00623,plan_2026_0062,1,fg_0123,bom_fg_0123,1,320,piece,2026-08-06,2026-08-08,Dây chuyền nháp 23,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00624,plan_2026_0062,2,fg_0124,bom_fg_0124,1,330,piece,2026-08-07,2026-08-09,Dây chuyền nháp 24,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00625,plan_2026_0063,1,fg_0125,bom_fg_0125,1,340,piece,2026-09-07,2026-09-09,Dây chuyền nháp 25,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00626,plan_2026_0063,2,fg_0126,bom_fg_0126,1,350,piece,2026-09-08,2026-09-10,Dây chuyền nháp 26,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00627,plan_2026_0064,1,fg_0127,bom_fg_0127,1,360,piece,2026-01-12,2026-01-14,Dây chuyền nháp 27,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00628,plan_2026_0064,2,fg_0128,bom_fg_0128,1,370,piece,2026-01-13,2026-01-15,Dây chuyền nháp 28,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00629,plan_2026_0065,1,fg_0129,bom_fg_0129,1,380,piece,2026-02-13,2026-02-15,Dây chuyền nháp 29,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00630,plan_2026_0065,2,fg_0130,bom_fg_0130,1,390,piece,2026-02-14,2026-02-16,Dây chuyền nháp 30,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00631,plan_2026_0066,1,fg_0131,bom_fg_0131,1,400,piece,2026-03-18,2026-03-20,Dây chuyền nháp 31,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00632,plan_2026_0066,2,fg_0132,bom_fg_0132,1,410,piece,2026-03-19,2026-03-21,Dây chuyền nháp 32,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00633,plan_2026_0067,1,fg_0133,bom_fg_0133,1,420,piece,2026-04-19,2026-04-21,Dây chuyền nháp 33,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00634,plan_2026_0067,2,fg_0134,bom_fg_0134,1,430,piece,2026-04-20,2026-04-22,Dây chuyền nháp 34,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00635,plan_2026_0068,1,fg_0135,bom_fg_0135,1,440,piece,2026-05-04,2026-05-06,Dây chuyền nháp 35,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00636,plan_2026_0068,2,fg_0136,bom_fg_0136,1,450,piece,2026-05-05,2026-05-07,Dây chuyền nháp 36,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00637,plan_2026_0069,1,fg_0137,bom_fg_0137,1,460,piece,2026-06-05,2026-06-07,Dây chuyền nháp 37,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00638,plan_2026_0069,2,fg_0138,bom_fg_0138,1,470,piece,2026-06-06,2026-06-08,Dây chuyền nháp 38,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00639,plan_2026_0070,1,fg_0139,bom_fg_0139,1,480,piece,2026-07-10,2026-07-12,Dây chuyền nháp 39,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.
+production_order_2026_00640,plan_2026_0070,2,fg_0140,bom_fg_0140,1,490,piece,2026-07-11,2026-07-13,Dây chuyền nháp 40,draft,Lệnh sản xuất phát hành từ kế hoạch đã được duyệt.

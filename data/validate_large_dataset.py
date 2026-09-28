@@ -213,8 +213,10 @@ def main() -> int:
                             {"counting", "submitted", "approved", "posted", "cancelled"}, "stocktakes")
     require_status_coverage(production_plans, "status",
                             {"draft", "approved", "released", "completed"}, "production_plans")
+    require_status_coverage(production_boms, "status",
+                            {"draft", "active"}, "boms")
     require_status_coverage(production_orders, "status",
-                            {"planned", "released", "in_progress", "paused", "completed"}, "production_orders")
+                            {"draft", "planned", "released", "in_progress", "paused", "completed"}, "production_orders")
     require_status_coverage(production_assignments, "status",
                             {"planned", "active", "completed", "cancelled"}, "assignments")
     require_status_coverage(production_outputs, "status",

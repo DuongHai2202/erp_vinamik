@@ -24,7 +24,7 @@ import java.util.Map;
 @Service
 public class inventory_stock_item_service {
     private static final Logger logger = LoggerFactory.getLogger(inventory_stock_item_service.class);
-    private static final int max_page_size = 100;
+    private static final int max_page_size = 1000;
     private final inventory_stock_item_repository stock_item_repository;
     private final inventory_stock_item_read_repository read_repository;
     private final audit_event_writer audit_writer;
@@ -50,7 +50,7 @@ public class inventory_stock_item_service {
         if (normalized_item_type == null) {
             normalized_item_type = "raw_material";
         }
-        if (!List.of("raw_material", "finished_product").contains(normalized_item_type)) {
+        if (!List.of("all", "raw_material", "finished_product").contains(normalized_item_type)) {
             throw new IllegalArgumentException("Item type is invalid.");
         }
         if (normalized_status != null && !List.of("active", "inactive").contains(normalized_status)) {

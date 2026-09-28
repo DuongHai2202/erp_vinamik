@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Form, Select } from 'antd';
 import { request_api } from '../common/api_client';
+import { to_iso_date } from '../common/formatters';
 
 const lookup_cache = new Map();
 const lookup_requests = new Map();
@@ -35,11 +36,11 @@ const lookup_definitions = {
     map_item: (item) => ({ value: item.supplier_id, label: item.supplier_code + ' — ' + item.supplier_name }),
   },
   raw_materials: {
-    endpoint: '/api/v1/inventory/materials?page=0&page_size=200&status=active&item_type=raw_material',
+    endpoint: '/api/v1/inventory/materials?page=0&page_size=1000&status=active&item_type=raw_material',
     map_item: (item) => ({ value: item.stock_item_id, label: item.item_code + ' — ' + item.item_name }),
   },
   finished_products: {
-    endpoint: '/api/v1/inventory/materials?page=0&page_size=200&status=active&item_type=finished_product',
+    endpoint: '/api/v1/inventory/materials?page=0&page_size=1000&status=active&item_type=finished_product',
     map_item: (item) => ({ value: item.stock_item_id, label: item.item_code + ' — ' + item.item_name }),
   },
   boms: {
@@ -63,10 +64,11 @@ function response_items(response) {
   return [];
 }
 
-async function fetch_lookup(lookup_key, endpoint) {
+async function fetch_lookup(lookup_key, endpoint, force_refresh = false) {
   const cache_key = lookup_key + '|' + endpoint;
   const definition = lookup_definitions[lookup_key] || {};
   const cacheable = !definition.remote_search;
+  if (force_refresh) lookup_cache.delete(cache_key);
   if (cacheable && lookup_cache.has(cache_key)) return lookup_cache.get(cache_key);
   if (lookup_requests.has(cache_key)) return lookup_requests.get(cache_key);
   const request = request_api(endpoint).then((response) => {
@@ -145,43 +147,273 @@ function LookupField({ field, form, selected_option, ...control_props }) {
     }
     set_search_value('');
   };
-  return <Select {...field.select_props} {...control_props} showSearch allowClear={!field.required} optionFilterProp={is_remote ? undefined : 'label'} filterOption={is_remote ? false : undefined} onSearch={is_remote ? set_search_value : undefined} onBlur={is_remote ? handle_remote_blur : undefined} options={field.lookup ? visible_options : (field.options || [])} loading={loading} disabled={Boolean(field.lookup && !endpoint)} placeholder={load_failed ? 'Không tải được danh mục' : field.placeholder || 'Chọn dữ liệu'} style={{ width: '100%', ...(field.select_props?.style || {}) }} />;
+  const refresh_lookup = () => {
+    if (!field.lookup || !endpoint) return;
+    set_loading(true);
+    set_load_failed(false);
+    fetch_lookup(field.lookup, endpoint, true).then((next_options) => { set_options(next_options); }).catch(() => { set_options([]); set_load_failed(true); }).finally(() => set_loading(false));
+  };
+  const handle_open_change = (open) => {
+    if (open) refresh_lookup();
+    control_props.onOpenChange?.(open);
+  };
+  return <Select {...field.select_props} {...control_props} showSearch allowClear={!field.required} optionFilterProp={is_remote ? undefined : 'label'} filterOption={is_remote ? false : undefined} onSearch={is_remote ? set_search_value : undefined} onBlur={is_remote ? handle_remote_blur : undefined} onOpenChange={handle_open_change} options={field.lookup ? visible_options : (field.options || [])} loading={loading} disabled={Boolean(field.lookup && !endpoint)} placeholder={load_failed ? 'Không tải được danh mục' : field.placeholder || 'Chọn dữ liệu'} style={{ width: '100%', ...(field.select_props?.style || {}) }} />;
+}
+
+
+const production_plan_status_labels = {
+  draft: 'Bản nháp',
+  approved: 'Đã duyệt',
+  released: 'Đã phát hành',
+};
+
+const production_plan_statuses_for_order = new Set(Object.keys(production_plan_status_labels));
+
+function production_plan_option(item) {
+  return {
+    value: item.production_plan_id,
+    label: item.plan_code + ' — ' + item.plan_name + ' (' + (production_plan_status_labels[item.status] || item.status) + ')',
+    status: item.status,
+  };
+}
+
+function ProductionPlanField({ form, selected_option, ...control_props }) {
+  const [options, set_options] = useState([]);
+  const [loading, set_loading] = useState(false);
+  const [load_failed, set_load_failed] = useState(false);
+
+  useEffect(() => {
+    let mounted = true;
+    set_loading(true);
+    set_load_failed(false);
+    Promise.all(Array.from(production_plan_statuses_for_order).map((status) =>
+      request_api('/api/v1/production/plans?status=' + status + '&page=0&page_size=100')
+    )).then((responses) => {
+      if (!mounted) return;
+      const seen = new Set();
+      const next_options = responses.flatMap(response_items)
+        .filter((item) => production_plan_statuses_for_order.has(item.status))
+        .map(production_plan_option)
+        .filter((option) => {
+          const key = String(option.value);
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+      set_options(next_options);
+    }).catch(() => {
+      if (mounted) {
+        set_options([]);
+        set_load_failed(true);
+      }
+    }).finally(() => {
+      if (mounted) set_loading(false);
+    });
+    return () => { mounted = false; };
+  }, []);
+
+  const selected_value = selected_option?.value;
+  const visible_options = selected_value === undefined || selected_value === null
+    || options.some((option) => String(option.value) === String(selected_value))
+    ? options
+    : [selected_option, ...options];
+
+  const handle_change = (value) => {
+    const previous_value = form.getFieldValue('production_plan_id');
+    control_props.onChange?.(value);
+    if (String(previous_value ?? '') !== String(value ?? '')) {
+      form.setFieldsValue({
+        production_plan_line_id: undefined,
+        bom_id: undefined,
+        target_quantity: undefined,
+        planned_starts_on: undefined,
+        planned_ends_on: undefined,
+        __production_stock_item_id: undefined,
+        __production_plan_line_remaining_quantity: undefined,
+      });
+    }
+  };
+
+  return <Select
+    {...control_props}
+    showSearch
+    allowClear
+    optionFilterProp="label"
+    options={visible_options}
+    loading={loading}
+    onChange={handle_change}
+    placeholder={load_failed ? 'Không tải được kế hoạch' : 'Chọn kế hoạch còn hiệu lực'}
+    style={{ width: '100%' }}
+  />;
 }
 
 function PlanLineField({ form, ...control_props }) {
   const plan_id = Form.useWatch('production_plan_id', form);
+  const line_id = Form.useWatch('production_plan_line_id', form);
   const [options, set_options] = useState([]);
   const [loading, set_loading] = useState(false);
+  const lines_ref = useRef([]);
+  const plan_ref = useRef(null);
+  const line_id_ref = useRef(line_id);
+
+  useEffect(() => {
+    line_id_ref.current = line_id;
+  }, [line_id]);
+
   useEffect(() => {
     let mounted = true;
-    const previous_line_id = form.getFieldValue('production_plan_line_id');
+    lines_ref.current = [];
+    plan_ref.current = null;
     set_options([]);
     if (!plan_id) {
-      if (previous_line_id !== undefined && previous_line_id !== null) form.setFieldValue('production_plan_line_id', undefined);
+      form.setFieldsValue({
+        production_plan_line_id: undefined,
+        target_quantity: undefined,
+        planned_starts_on: undefined,
+        planned_ends_on: undefined,
+        __production_stock_item_id: undefined,
+        __production_plan_line_remaining_quantity: undefined,
+      });
       set_loading(false);
       return () => { mounted = false; };
     }
     set_loading(true);
     request_api('/api/v1/production/plans/' + plan_id).then((response) => {
       if (!mounted) return;
-      const lines = response?.data?.lines || [];
-      const next_options = lines.map((line) => ({ value: line.production_plan_line_id, label: line.stock_item_code + ' — ' + line.stock_item_name + ' · ' + line.target_quantity + ' ' + line.unit_code }));
+      const plan = response?.data;
+      const lines = Array.isArray(plan?.lines) ? plan.lines : [];
+      lines_ref.current = lines;
+      plan_ref.current = plan;
+      const current_line = lines.find((line) => String(line.production_plan_line_id) === String(line_id_ref.current));
+      const selectable_lines = lines.filter((line) => Number(line.remaining_quantity ?? line.target_quantity ?? 0) > 0);
+      const selected_line = current_line || selectable_lines[0];
+      const next_options = selectable_lines.map((line) => {
+        const remaining = line.remaining_quantity ?? line.target_quantity;
+        return {
+          value: line.production_plan_line_id,
+          label: line.stock_item_code + ' — ' + line.stock_item_name + ' · còn ' + remaining + ' ' + line.unit_code,
+        };
+      });
       set_options(next_options);
-      // Preserve the existing line when it belongs to the selected plan. If
-      // the user changes the plan, remove only the stale line after the new
-      // plan has been loaded; this keeps edit forms populated correctly.
-      if (previous_line_id !== undefined && previous_line_id !== null
-        && !next_options.some((option) => String(option.value) === String(previous_line_id))) {
-        form.setFieldValue('production_plan_line_id', undefined);
+      const remaining = selected_line ? (selected_line.remaining_quantity ?? selected_line.target_quantity) : undefined;
+      form.setFieldsValue({
+        production_plan_line_id: selected_line?.production_plan_line_id,
+        target_quantity: remaining,
+        planned_starts_on: plan?.starts_on,
+        planned_ends_on: plan?.ends_on,
+        __production_stock_item_id: selected_line?.stock_item_id,
+        __production_plan_line_remaining_quantity: remaining,
+      });
+    }).catch(() => {
+      if (mounted) {
+        set_options([]);
+        form.setFieldsValue({
+          production_plan_line_id: undefined,
+          target_quantity: undefined,
+          __production_stock_item_id: undefined,
+          __production_plan_line_remaining_quantity: undefined,
+        });
       }
-    }).catch(() => { if (mounted) set_options([]); }).finally(() => { if (mounted) set_loading(false); });
+    }).finally(() => {
+      if (mounted) set_loading(false);
+    });
     return () => { mounted = false; };
   }, [form, plan_id]);
-  return <Select {...control_props} showSearch allowClear optionFilterProp="label" options={options} loading={loading} disabled={!plan_id} placeholder={plan_id ? 'Chọn dòng kế hoạch' : 'Chọn kế hoạch trước'} style={{ width: '100%' }} />;
+
+  useEffect(() => {
+    const line = lines_ref.current.find((item) => String(item.production_plan_line_id) === String(line_id));
+    if (!line) return;
+    const remaining = line.remaining_quantity ?? line.target_quantity;
+    form.setFieldsValue({
+      target_quantity: remaining,
+      __production_stock_item_id: line.stock_item_id,
+      __production_plan_line_remaining_quantity: remaining,
+      planned_starts_on: plan_ref.current?.starts_on,
+      planned_ends_on: plan_ref.current?.ends_on,
+    });
+  }, [form, line_id]);
+
+  return <Select
+    {...control_props}
+    showSearch
+    allowClear
+    optionFilterProp="label"
+    options={options}
+    loading={loading}
+    disabled={!plan_id}
+    placeholder={plan_id ? 'Chọn dòng còn số lượng' : 'Chọn kế hoạch trước'}
+    style={{ width: '100%' }}
+  />;
+}
+
+function ProductionBomField({ form, selected_option, ...control_props }) {
+  const stock_item_id = Form.useWatch('__production_stock_item_id', form);
+  const planned_starts_on = Form.useWatch('planned_starts_on', form);
+  const [options, set_options] = useState([]);
+  const [loading, set_loading] = useState(false);
+  const [load_failed, set_load_failed] = useState(false);
+
+  useEffect(() => {
+    let mounted = true;
+    set_options([]);
+    set_load_failed(false);
+    if (!stock_item_id) {
+      form.setFieldValue('bom_id', undefined);
+      set_loading(false);
+      return () => { mounted = false; };
+    }
+    set_loading(true);
+    const effective_date = to_iso_date(planned_starts_on);
+    request_api('/api/v1/production/boms?stock_item_id=' + encodeURIComponent(stock_item_id)
+      + '&status=active&page=0&page_size=100').then((response) => {
+      if (!mounted) return;
+      const items = response_items(response);
+      const effective_items = items.filter((item) => {
+        if (!effective_date) return true;
+        return (!item.valid_from || item.valid_from <= effective_date)
+          && (!item.valid_to || item.valid_to >= effective_date);
+      });
+      const next_options = effective_items.map((item) => ({
+        value: item.bom_id,
+        label: item.bom_code + ' · v' + item.version_number + ' — ' + item.product_item_name,
+      }));
+      set_options(next_options);
+      const current_value = form.getFieldValue('bom_id');
+      const current_is_valid = next_options.some((option) => String(option.value) === String(current_value));
+      form.setFieldValue('bom_id', current_is_valid ? current_value : next_options[0]?.value);
+    }).catch(() => {
+      if (mounted) {
+        set_options([]);
+        set_load_failed(true);
+        form.setFieldValue('bom_id', undefined);
+      }
+    }).finally(() => {
+      if (mounted) set_loading(false);
+    });
+    return () => { mounted = false; };
+  }, [form, planned_starts_on, stock_item_id]);
+
+  const selected_value = selected_option?.value;
+  const visible_options = selected_value === undefined || selected_value === null
+    || options.some((option) => String(option.value) === String(selected_value))
+    ? options
+    : [selected_option, ...options];
+
+  return <Select
+    {...control_props}
+    showSearch
+    allowClear={false}
+    optionFilterProp="label"
+    options={visible_options}
+    loading={loading}
+    disabled={!stock_item_id || loading}
+    placeholder={load_failed ? 'Không tải được BOM' : stock_item_id ? 'Chọn BOM phù hợp' : 'Chọn dòng kế hoạch trước'}
+    style={{ width: '100%' }}
+  />;
 }
 
 function clear_lookup_cache() {
   lookup_cache.clear();
 }
 
-export { LookupField, PlanLineField, clear_lookup_cache, lookup_definitions };
+export { LookupField, PlanLineField, ProductionBomField, ProductionPlanField, clear_lookup_cache, lookup_definitions };

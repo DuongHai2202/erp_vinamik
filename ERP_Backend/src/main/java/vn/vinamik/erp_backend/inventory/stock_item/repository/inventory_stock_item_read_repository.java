@@ -21,11 +21,11 @@ public class inventory_stock_item_read_repository {
     public long count(String search, String status, String item_type) {
         Long total = jpa_query_executor.queryForObject(
                 "SELECT count(*) FROM inventory.stock_item AS stock_item "
-                        + "WHERE stock_item.item_type = ? "
+                        + "WHERE (CAST(? AS text) = 'all' OR stock_item.item_type = ?) "
                         + "AND (CAST(? AS text) IS NULL OR lower(stock_item.item_code) LIKE '%' || ? || '%' "
                         + "OR lower(stock_item.item_name) LIKE '%' || ? || '%') "
                         + "AND (CAST(? AS text) IS NULL OR stock_item.status = ?)",
-                Long.class, item_type, search, search, search, status, status);
+                Long.class, item_type, item_type, search, search, search, status, status);
         return total == null ? 0 : total;
     }
 
@@ -42,12 +42,12 @@ public class inventory_stock_item_read_repository {
                         + "ON item_category.item_category_id = stock_item.item_category_id "
                         + "JOIN inventory.unit_of_measure AS unit_of_measure "
                         + "ON unit_of_measure.unit_of_measure_id = stock_item.base_unit_of_measure_id "
-                        + "WHERE stock_item.item_type = ? "
+                        + "WHERE (CAST(? AS text) = 'all' OR stock_item.item_type = ?) "
                         + "AND (CAST(? AS text) IS NULL OR lower(stock_item.item_code) LIKE '%' || ? || '%' "
                         + "OR lower(stock_item.item_name) LIKE '%' || ? || '%') "
                         + "AND (CAST(? AS text) IS NULL OR stock_item.status = ?) "
                         + "ORDER BY stock_item.item_code LIMIT ? OFFSET ?",
-                this::map_row, item_type, search, search, search, status, status, page_size, pagination_guard.offset(page, page_size));
+                this::map_row, item_type, item_type, search, search, search, status, status, page_size, pagination_guard.offset(page, page_size));
     }
 
     public stock_item_read_row find_by_id(long stock_item_id) {

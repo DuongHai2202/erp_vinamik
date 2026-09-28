@@ -17,6 +17,10 @@ Agent hoặc developer mới cần đọc theo thứ tự:
 
 Nội dung trong `docs/` là tài liệu nghiệp vụ/tham khảo. Khi có mâu thuẫn, yêu cầu người dùng và `AGENTS.md` được ưu tiên; không tự mở rộng phạm vi chức năng.
 
+## Deploy demo
+
+Để có link truy cập khi máy cá nhân tắt, dùng Blueprint Render tại `render.yaml` và workflow `.github/workflows/deploy_render.yml`. Quy trình chi tiết, biến môi trường và giới hạn gói demo nằm trong `docs/business_code_and_deployment_plan.md`.
+
 ## Bản đồ repository
 
 ~~~text

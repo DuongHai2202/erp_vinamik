@@ -33,7 +33,7 @@ public class inventory_stock_item_controller {
     public api_success_response<stock_item_page_response> search(
             @RequestParam(required = false) String search,
             @RequestParam(required = false) String status,
-            @RequestParam(name = "item_type", defaultValue = "raw_material") String item_type,
+            @RequestParam(name = "item_type", defaultValue = "all") String item_type,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(name = "page_size", defaultValue = "50") int page_size) {
         return new api_success_response<>("Materials retrieved successfully.", stock_item_service.search(search, status, item_type, page, page_size));

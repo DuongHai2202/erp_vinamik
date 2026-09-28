@@ -38,5 +38,8 @@ runtime_logs/
 *.dump
 *.sql.gz
 
+# Local source documents used during analysis
+docs/ERP_ht_24-9-2026.pdf
+
 # Root-level Vite cache
 /.vite/

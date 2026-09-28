@@ -86,6 +86,7 @@ function DataWorkspace({
   total_label = 'bản ghi',
   read_only = false,
   column_presets,
+  required_column_keys = [],
   storage_key = 'vinamik_data_workspace_preset',
   on_open_record,
 }) {
@@ -94,6 +95,10 @@ function DataWorkspace({
   const available_preset_signature = available_presets.join('|');
   const column_keys = useMemo(() => all_columns.map((column) => column.key).filter(Boolean), [all_columns]);
   const column_key_signature = column_keys.join('|');
+  const required_keys = useMemo(
+    () => required_column_keys.filter((key) => column_keys.includes(key)),
+    [column_keys, required_column_keys],
+  );
   const [preset, set_preset] = useState(() => load_preset(storage_key, available_presets));
   const [custom_column_keys, set_custom_column_keys] = useState(() => load_column_keys(storage_key, column_keys));
   const has_detail_preset = available_presets.includes('detail');
@@ -140,10 +145,11 @@ function DataWorkspace({
   }, []);
 
   const selected_keys = useMemo(() => {
-    if (custom_column_keys?.length) return custom_column_keys;
-    if (!available_presets.length) return column_keys;
-    return (column_presets[preset] || column_keys).filter(Boolean);
-  }, [available_presets.length, column_keys, column_presets, custom_column_keys, preset]);
+    const configured_keys = custom_column_keys?.length
+      ? custom_column_keys
+      : !available_presets.length ? column_keys : (column_presets[preset] || column_keys).filter(Boolean);
+    return [...new Set([...configured_keys, ...required_keys])];
+  }, [available_presets.length, column_keys, column_presets, custom_column_keys, preset, required_keys]);
 
   const visible_columns = useMemo(() => all_columns.filter((column) => (
     column.key === 'actions' || selected_keys.includes(column.key)
@@ -156,7 +162,10 @@ function DataWorkspace({
   const table_width = useMemo(() => visible_columns.reduce((total, column) => total + (Number(column.width) || 180), 0), [visible_columns]);
   const open_column_drawer = () => { set_draft_column_keys(selected_keys.filter((key) => key !== 'actions')); set_column_search(''); set_column_drawer_open(true); };
   const apply_column_selection = () => {
-    const next_keys = draft_column_keys.length ? draft_column_keys : selected_keys.filter((key) => key !== 'actions').slice(0, 1);
+    const next_keys = [...new Set([
+      ...(draft_column_keys.length ? draft_column_keys : selected_keys.filter((key) => key !== 'actions').slice(0, 1)),
+      ...required_keys,
+    ])];
     set_custom_column_keys(next_keys);
     set_preset('custom');
     try {
@@ -237,7 +246,6 @@ function DataWorkspace({
       virtual
       scroll={{ x: table_width, y: table_scroll_y }}
       pagination={false}
-      onChange={on_change}
       locale={{ emptyText: <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={empty_text} /> }}
       onRow={(record) => ({
         onDoubleClick: () => (on_open_record ? on_open_record(record) : set_selected_record(record)),
@@ -281,7 +289,7 @@ function DataWorkspace({
       <Input.Search allowClear value={column_search} onChange={(event) => set_column_search(event.target.value)} placeholder="Tìm tên cột" />
       <div className="column_drawer_count">{draft_column_keys.length} cột đang chọn</div>
       <div className="column_drawer_list" role="group" aria-label="Các cột có thể hiển thị">
-        {column_candidates.map((column) => <label key={column.key} className="column_drawer_item"><Checkbox checked={draft_column_keys.includes(column.key)} onChange={(event) => set_draft_column_keys((current) => event.target.checked ? [...current, column.key] : current.filter((key) => key !== column.key))} /><span>{column.title || column.key}</span></label>)}
+        {column_candidates.map((column) => <label key={column.key} className="column_drawer_item"><Checkbox checked={draft_column_keys.includes(column.key)} disabled={required_keys.includes(column.key)} onChange={(event) => set_draft_column_keys((current) => event.target.checked ? [...current, column.key] : current.filter((key) => key !== column.key))} /><span>{column.title || column.key}{required_keys.includes(column.key) && <small> (bắt buộc)</small>}</span></label>)}
         {!column_candidates.length && <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="Không tìm thấy cột" />}
       </div>
     </Drawer>

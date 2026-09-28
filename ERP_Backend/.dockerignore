@@ -1,0 +1,8 @@
+target/
+.mvn-cache/
+.idea/
+.codex_temp/
+*.log
+.env
+.env.*
+!.env.example

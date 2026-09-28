@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 public record production_plan_request(
-        @NotBlank(message = "Plan code is required.")
         @Size(max = 60, message = "Plan code must contain at most 60 characters.")
         String plan_code,
         @NotBlank(message = "Plan name is required.")

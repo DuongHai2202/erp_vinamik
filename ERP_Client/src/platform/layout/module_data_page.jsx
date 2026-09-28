@@ -7,7 +7,7 @@ import { request_api } from '../common/api_client';
 import { use_auth } from '../identity/auth_context';
 import DataWorkspace from './data_workspace';
 import WorkflowDetailDrawer from './workflow_detail_drawer';
-import { LookupField, PlanLineField } from './workflow_fields';
+import { LookupField, PlanLineField, ProductionBomField, ProductionPlanField } from './workflow_fields';
 import RecordActionBar from './record_action_bar';
 import ModuleMasthead from './module_masthead';
 import DebouncedSearchInput from './debounced_search_input';
@@ -200,11 +200,13 @@ const feature_catalog = {
     detail_kind: 'production_order', edit_statuses: ['draft', 'planned'], status_options: ['draft', 'planned', 'released', 'in_progress', 'paused', 'completed', 'cancelled'],
     columns: [['order_code', 'Mã lệnh', 205], ['stock_item_code', 'Mã thành phẩm', 145], ['stock_item_name', 'Tên thành phẩm', 270], ['target_quantity', 'Số lượng kế hoạch', 145], ['planned_starts_on', 'Bắt đầu', 125], ['planned_ends_on', 'Kết thúc', 125], ['status', 'Trạng thái', 125]],
     actions: [
+      { key: 'plan', label: 'Lập lệnh', target_status: 'planned', permission: 'production_order_update', endpoint: (record) => '/api/v1/production/orders/' + record.production_order_id + '/status', body: { status: 'planned' }, statuses: ['draft'] },
       { key: 'release', label: 'Phát hành', target_status: 'released', permission: 'production_order_release', endpoint: (record) => '/api/v1/production/orders/' + record.production_order_id + '/release', statuses: ['planned'] },
+      { key: 'start', label: 'Bắt đầu', target_status: 'in_progress', permission: 'production_order_update', endpoint: (record) => '/api/v1/production/orders/' + record.production_order_id + '/status', body: { status: 'in_progress' }, statuses: ['released'] },
       { key: 'pause', label: 'Tạm dừng', target_status: 'paused', permission: 'production_order_update', endpoint: (record) => '/api/v1/production/orders/' + record.production_order_id + '/status', body: { status: 'paused' }, statuses: ['in_progress'] },
       { key: 'resume', label: 'Tiếp tục', target_status: 'in_progress', permission: 'production_order_update', endpoint: (record) => '/api/v1/production/orders/' + record.production_order_id + '/status', body: { status: 'in_progress' }, statuses: ['paused'] },
       { key: 'complete', label: 'Hoàn tất', target_status: 'completed', permission: 'production_order_complete', endpoint: (record) => '/api/v1/production/orders/' + record.production_order_id + '/complete', statuses: ['in_progress', 'paused'] },
-      { key: 'cancel', label: 'Hủy lệnh', target_status: 'cancelled', permission: 'production_order_update', endpoint: (record) => '/api/v1/production/orders/' + record.production_order_id + '/cancel', statuses: ['planned', 'released'] },
+      { key: 'cancel', label: 'Hủy lệnh', target_status: 'cancelled', permission: 'production_order_update', endpoint: (record) => '/api/v1/production/orders/' + record.production_order_id + '/cancel', statuses: ['draft', 'planned', 'released'] },
     ],
   },
   assignments: {
@@ -224,9 +226,9 @@ const feature_catalog = {
   finished_products: {
     module_key: 'production', title: 'Sản lượng thành phẩm',
     description: 'Theo dõi các lệnh sản xuất đã phát hành để ghi nhận đạt/lỗi và bàn giao sang Kho.',
-    endpoint: '/api/v1/production/orders', row_key: 'production_order_id',
+    endpoint: '/api/v1/production/orders', row_key: 'production_order_id', output_ready: true,
     search_placeholder: 'Tìm theo mã lệnh hoặc thành phẩm', search_param: 'search', status_param: 'status',
-    read_permission: 'production_order_read', create_permission: 'production_output_create', detail_create_permission: 'production_output_create',
+    read_permission: 'production_output_read', create_permission: 'production_output_create', detail_create_permission: 'production_output_create',
     detail_kind: 'production_order', status_options: ['released', 'in_progress', 'paused', 'completed'],
     columns: [['order_code', 'Mã lệnh', 205], ['stock_item_code', 'Mã thành phẩm', 145], ['stock_item_name', 'Tên thành phẩm', 270], ['target_quantity', 'Sản lượng kế hoạch', 150], ['planned_ends_on', 'Hạn hoàn thành', 135], ['status', 'Trạng thái', 125]],
     actions: [],
@@ -364,13 +366,14 @@ const create_schemas = {
   ],
   stocktakes: [{ key: 'stocktake_code', label: 'Mã phiên kiểm kê', required: true }, { key: 'warehouse_id', label: 'Kho kiểm kê', lookup: 'warehouses', required: true }, { key: 'notes', label: 'Ghi chú', type: 'textarea', required: false }],
   materials: [
-    { key: 'bom_code', label: 'Mã định mức', required: true }, { key: 'stock_item_id', label: 'Thành phẩm', lookup: 'finished_products', required: true }, { key: 'version_number', label: 'Phiên bản', type: 'number', min: 1, required: true, default_value: 1 },
+    { key: 'bom_code', label: 'Mã định mức', auto_code: true, required: false }, { key: 'stock_item_id', label: 'Thành phẩm', lookup: 'finished_products', required: true }, { key: 'version_number', label: 'Phiên bản', type: 'number', min: 1, required: true, default_value: 1 },
     { key: 'base_quantity', label: 'Số lượng cơ sở', type: 'number', min: 0.000001, required: true }, { key: 'valid_from', label: 'Hiệu lực từ', type: 'date', required: true }, { key: 'valid_to', label: 'Hiệu lực đến', type: 'date', required: false }, { key: 'notes', label: 'Ghi chú', type: 'textarea', required: false },
     { key: 'lines', label: 'Dòng định mức', type: 'lines', required: true, fields: [{ key: 'material_stock_item_id', label: 'Nguyên vật liệu', lookup: 'raw_materials', required: true }, { key: 'quantity_per_base', label: 'Định lượng', type: 'number', min: 0.000001, required: true }, { key: 'scrap_percent', label: 'Tỷ lệ hao hụt (%)', type: 'number', min: 0, max: 100, required: false }] },
   ],
   orders: [
-    { key: 'order_code', label: 'Mã lệnh', required: true }, { key: 'production_plan_id', label: 'Kế hoạch sản xuất', lookup: 'production_plans', required: true, virtual: true }, { key: 'production_plan_line_id', label: 'Dòng kế hoạch', type: 'plan_line', min: 1, required: true }, { key: 'bom_id', label: 'Định mức BOM', lookup: 'boms', required: true },
+    { key: 'order_code', label: 'Mã lệnh', auto_code: true, required: false }, { key: 'production_plan_id', label: 'Kế hoạch sản xuất', type: 'production_plan', required: true, virtual: true }, { key: 'production_plan_line_id', label: 'Dòng kế hoạch', type: 'plan_line', min: 1, required: true }, { key: 'bom_id', label: 'Định mức BOM', type: 'production_bom', required: true },
     { key: 'target_quantity', label: 'Số lượng kế hoạch', type: 'number', min: 0.000001, required: true }, { key: 'planned_starts_on', label: 'Ngày bắt đầu', type: 'date', required: true }, { key: 'planned_ends_on', label: 'Ngày kết thúc', type: 'date', required: true }, { key: 'production_line_name', label: 'Dây chuyền', required: false }, { key: 'notes', label: 'Ghi chú', type: 'textarea', required: false },
+    { key: 'status', label: 'Trạng thái khởi tạo', type: 'select', options: [{ value: 'draft', label: 'Bản nháp' }, { value: 'planned', label: 'Đã lập kế hoạch' }], default_value: 'draft', required: true },
   ],
   assignments: [
     { key: 'production_order_id', label: 'Lệnh sản xuất', lookup: 'production_orders', required: true }, { key: 'employee_id', label: 'Nhân viên', lookup: 'employees', required: true }, { key: 'work_shift_id', label: 'Ca làm việc', lookup: 'work_shifts', required: false }, { key: 'assignment_name', label: 'Nhiệm vụ', type: 'select', options: [{ value: 'Vận hành thiết bị', label: 'Vận hành thiết bị' }, { value: 'Chuẩn bị nguyên vật liệu', label: 'Chuẩn bị nguyên vật liệu' }, { value: 'Kiểm soát chất lượng', label: 'Kiểm soát chất lượng' }, { value: 'Đóng gói sản phẩm', label: 'Đóng gói sản phẩm' }, { value: 'Kiểm soát đóng gói', label: 'Kiểm soát đóng gói' }, { value: 'Ghi nhận sản lượng', label: 'Ghi nhận sản lượng' }, { value: 'Vệ sinh dây chuyền', label: 'Vệ sinh dây chuyền' }, { value: 'Bảo trì thiết bị', label: 'Bảo trì thiết bị' }, { value: 'Bốc xếp và bàn giao', label: 'Bốc xếp và bàn giao' }, { value: 'Khác', label: 'Khác' }], required: false },
@@ -443,7 +446,13 @@ const empty_cell_labels = {
 };
 
 function format_cell(value, column_key, record) {
-  if (value === null || value === undefined || value === '') return empty_cell_labels[column_key] || 'Chưa cập nhật';
+  if (value === null || value === undefined || value === '') {
+    if (column_key === 'employee_code' && record?.employee_id) return 'Mã nhân viên #' + record.employee_id;
+    if (column_key === 'employee_name' && record?.employee_id) return 'Chưa liên kết hồ sơ nhân sự';
+    if (column_key === 'shift_code' && record?.work_shift_id) return 'Mã ca #' + record.work_shift_id;
+    if (column_key === 'shift_name' && record?.work_shift_id) return 'Chưa liên kết ca làm việc';
+    return empty_cell_labels[column_key] || 'Chưa cập nhật';
+  }
   if (column_key === 'counted_line_count' && record?.line_count !== undefined) {
     return `${format_number_vn(value, 0)} / ${format_number_vn(record.line_count, 0)} dòng`;
   }
@@ -458,15 +467,18 @@ function format_cell(value, column_key, record) {
   return String(value);
 }
 
-function render_create_field(field, form, selected_option) {
+function render_create_field(field, form, selected_option, disabled = false) {
+  if (field.auto_code) return <Input disabled placeholder="Tự sinh khi lưu" />;
+  if (field.type === 'production_plan') return <ProductionPlanField form={form} selected_option={selected_option} />;
   if (field.type === 'plan_line') return <PlanLineField form={form} />;
+  if (field.type === 'production_bom') return <ProductionBomField form={form} selected_option={selected_option} />;
   if (field.lookup) return <LookupField field={{ ...field, name: field.key }} form={form} selected_option={selected_option} />;
-  if (field.type === 'number') return <InputNumber min={field.min ?? 0} max={field.max} style={{ width: '100%' }} formatter={(value) => money_keys.has(field.key) && value !== undefined && value !== null && value !== '' ? format_number_vn(value) : value} parser={(value) => money_keys.has(field.key) ? String(value || '').replace(/\./g, '').replace(',', '.') : value} />;
-  if (field.type === 'date') return <VietnameseDateInput />;
-  if (field.type === 'datetime') return <Input type="datetime-local" />;
-  if (field.type === 'select') return <Select options={field.options} style={{ width: '100%' }} />;
-  if (field.type === 'textarea') return <Input.TextArea rows={3} />;
-  return <Input />;
+  if (field.type === 'number') return <InputNumber disabled={disabled} min={field.min ?? 0} max={field.max} style={{ width: '100%' }} formatter={(value) => money_keys.has(field.key) && value !== undefined && value !== null && value !== '' ? format_number_vn(value) : value} parser={(value) => money_keys.has(field.key) ? String(value || '').replace(/\./g, '').replace(',', '.') : value} />;
+  if (field.type === 'date') return <VietnameseDateInput disabled={disabled} />;
+  if (field.type === 'datetime') return <Input disabled={disabled} type="datetime-local" />;
+  if (field.type === 'select') return <Select disabled={disabled} options={field.options} style={{ width: '100%' }} />;
+  if (field.type === 'textarea') return <Input.TextArea disabled={disabled} rows={3} />;
+  return <Input disabled={disabled} />;
 }
 
 function normalize_form_values(values, schema) {
@@ -620,8 +632,10 @@ function CreateRecordModal({ config, feature_key, open, editing_record, on_close
       {schema.map((field) => {
         if (field.type === 'checkbox') return <Form.Item key={field.key} name={field.key} valuePropName="checked"><Checkbox>{field.label}</Checkbox></Form.Item>;
         if (field.type === 'lines') return <div key={field.key} className="workflow_form_lines"><Typography.Text strong>{field.label}</Typography.Text><Form.List name={field.key} rules={[{ validator: async (_, values) => values?.length ? Promise.resolve() : Promise.reject(new Error('At least one line is required.')) }]}>{(fields, { add, remove }) => <><div className="workflow_form_line_list">{fields.map(({ key, name, ...rest_field }) => <div className="workflow_form_line" key={key}>{field.fields.map((line_field, line_index) => <Form.Item {...rest_field} key={line_field.key} name={[name, line_field.key]} label={line_field.label} rules={line_field.required === false ? [] : [{ required: true, message: line_field.label + ' is required.' }]}>{render_create_field(line_field, form, lookup_option_for_field(line_field, editing_record?.[field.key]?.[line_index]))}</Form.Item>)}<Button type="text" danger icon={<StopOutlined />} aria-label="Xóa dòng" onClick={() => remove(name)} /></div>)}</div><Button type="dashed" block onClick={() => add({})} icon={<PlusOutlined />}>Thêm dòng</Button></>}</Form.List>{field.key === 'lines' && <StockAvailabilityHint form={form} feature_key={feature_key} />}</div>;
-        return <Form.Item key={field.key} label={field.label} name={field.key} rules={field.required === false ? [] : [{ required: true, message: field.label + ' is required.' }]}>{render_create_field(field, form, selected_lookup_options[field.key])}</Form.Item>;
+        return <Form.Item key={field.key} label={field.label} name={field.key} rules={field.required === false ? [] : [{ required: true, message: field.label + ' is required.' }]}>{render_create_field(field, form, selected_lookup_options[field.key], is_editing && field.key === 'status')}</Form.Item>;
       })}
+      <Form.Item name="__production_stock_item_id" hidden preserve><Input /></Form.Item>
+      <Form.Item name="__production_plan_line_remaining_quantity" hidden preserve><Input /></Form.Item>
       <Space><Button onClick={on_close} disabled={saving}>Hủy</Button><Button type="primary" htmlType="submit" loading={saving}>{is_editing ? 'Lưu thay đổi' : 'Lưu dữ liệu'}</Button></Space>
     </Form>
   </Modal>;
@@ -650,6 +664,12 @@ function ModuleDataPage({ feature_key }) {
   const can_detail_create = Boolean(config.detail_create_permission && has_permission(current_user, config.detail_create_permission));
   const can_write = config.actions.some((action) => has_permission(current_user, action.permission)) || Boolean(config.update_permission && has_permission(current_user, config.update_permission)) || can_detail_create;
 
+  useEffect(() => () => {
+    // Abort the previous feature request so a late response cannot repaint the next page.
+    request_controller.current?.abort();
+    request_sequence.current += 1;
+  }, []);
+
   const sync_query = useCallback((next_filters, next_page = null) => {
     set_search_params((current) => {
       const params = new URLSearchParams(current);
@@ -666,10 +686,14 @@ function ModuleDataPage({ feature_key }) {
     const sequence = request_sequence.current + 1;
     request_sequence.current = sequence;
     set_is_loading(true);
+    // Do not keep the previous page visible while a newer request is loading.
+    // Keeping it made stale rows look as if they were reappearing after scroll.
+    set_records([]);
     set_error_message('');
     const params = new URLSearchParams({ page: String(next_page - 1), page_size: String(next_page_size) });
     if (config.search_param && next_filters.search.trim()) params.set(config.search_param, next_filters.search.trim());
     if (config.status_param && next_filters.status) params.set(config.status_param, next_filters.status);
+    if (config.output_ready) params.set('output_ready', 'true');
     try {
       const response = await request_api(config.endpoint + '?' + params.toString(), { signal: controller.signal });
       if (controller.signal.aborted || sequence !== request_sequence.current) return;
@@ -811,7 +835,7 @@ function ModuleDataPage({ feature_key }) {
         columns={columns} data_source={records} row_key={config.row_key} loading={is_loading} pagination={pagination}
         on_change={(next_pagination) => { set_pagination((current) => ({ ...current, current: next_pagination.current, page_size: next_pagination.pageSize })); sync_query(filters, next_pagination.current); }}
         empty_text={error_message ? 'Không thể tải dữ liệu' : 'Chưa có dữ liệu phù hợp'} total_label="bản ghi" read_only={!can_write && !can_create}
-        column_presets={column_presets} storage_key={'data_workspace_' + config.module_key + '_' + feature_key + '_' + (current_user?.username || 'account')} on_open_record={open_detail}
+        column_presets={column_presets} required_column_keys={config.status_param ? ['status'] : []} storage_key={'data_workspace_' + config.module_key + '_' + feature_key + '_' + (current_user?.username || 'account')} on_open_record={open_detail}
       />
 
       <WorkflowDetailDrawer config={{ ...config, feature_key }} record={selected_record} open={Boolean(selected_record)} on_close={() => set_selected_record(null)} current_user={current_user} on_changed={() => load_records(filters, current_page, current_page_size)} />
@@ -822,5 +846,3 @@ function ModuleDataPage({ feature_key }) {
 
 export { feature_catalog };
 export default ModuleDataPage;
-
-
