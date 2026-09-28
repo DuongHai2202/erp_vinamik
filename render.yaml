@@ -26,7 +26,7 @@ services:
       - key: ERP_AUTH_SECURE_COOKIE
         value: "true"
       - key: ERP_BOOTSTRAP_ADMIN_USERNAME
-        sync: false
+        value: admin
       - key: ERP_BOOTSTRAP_ADMIN_PASSWORD
         sync: false
 

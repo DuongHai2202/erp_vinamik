@@ -77,7 +77,7 @@ Repository có thêm `render.yaml`, `ERP_Backend/Dockerfile` và `.github/workfl
 Thiết lập một lần trên Render:
 
 1. Chọn **New → Blueprint**, kết nối repository và chọn `render.yaml`.
-2. Nhập `ERP_BOOTSTRAP_ADMIN_USERNAME` và `ERP_BOOTSTRAP_ADMIN_PASSWORD` khi Render yêu cầu; không ghi hai giá trị này vào YAML.
+2. Tài khoản bootstrap có username mặc định `admin` từ Blueprint. Khi Render yêu cầu, nhập `ERP_BOOTSTRAP_ADMIN_PASSWORD` với mật khẩu dài tối thiểu 12 ký tự; mật khẩu không ghi vào YAML.
 3. Lấy deploy hook của hai service trong **Settings → Deploy Hook**, lưu vào GitHub Environment `production` với tên `RENDER_BACKEND_DEPLOY_HOOK_URL` và `RENDER_FRONTEND_DEPLOY_HOOK_URL`.
 4. Tạo Environment variable `RENDER_BACKEND_PUBLIC_URL` với giá trị `https://erp-vinamik-demo-backend.onrender.com` (không có dấu `/` cuối).
 5. Push `main` hoặc chạy thủ công **Actions → Deploy Render demo → Run workflow**; workflow chạy test, build, gọi Render và đợi readiness.

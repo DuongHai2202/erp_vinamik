@@ -19,7 +19,7 @@ Nội dung trong `docs/` là tài liệu nghiệp vụ/tham khảo. Khi có mâu
 
 ## Deploy demo
 
-Để có link truy cập khi máy cá nhân tắt, dùng Blueprint Render tại `render.yaml` và workflow `.github/workflows/deploy_render.yml`. Quy trình chi tiết, biến môi trường và giới hạn gói demo nằm trong `docs/business_code_and_deployment_plan.md`.
+Để có link truy cập khi máy cá nhân tắt, dùng Blueprint Render tại `render.yaml` và workflow `.github/workflows/deploy_render.yml`. Tài khoản bootstrap demo có username mặc định `admin`; chỉ nhập mật khẩu riêng trên Render. Quy trình chi tiết, biến môi trường và giới hạn gói demo nằm trong `docs/business_code_and_deployment_plan.md`.
 
 ## Bản đồ repository
 
