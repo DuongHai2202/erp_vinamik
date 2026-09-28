@@ -41,5 +41,10 @@ runtime_logs/
 # Local source documents used during analysis
 docs/ERP_ht_24-9-2026.pdf
 
+# Local project references kept outside the public demo repository
+/docs/
+/task/
+/UI_Sample/
+
 # Root-level Vite cache
 /.vite/

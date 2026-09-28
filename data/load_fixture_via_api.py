@@ -902,6 +902,11 @@ def production_order_payload(context: load_context, row: dict[str, str], plan_li
     source_line = row.get("production_line_name") or "production_line"
     # Keep the source label while making each imported schedule unambiguous.
     production_line_name = f"{source_line} ({row['order_code']})"
+    # The production-order API only accepts draft or planned when a new order
+    # is created.  Later lifecycle states are applied by
+    # ``finalize_order_statuses`` after all dependent operations have loaded.
+    desired_status = row.get("status") or "planned"
+    initial_status = desired_status if desired_status in {"draft", "planned"} else "planned"
     return {
         "order_code": row["order_code"],
         "production_plan_line_id": plan_line_id,
@@ -910,7 +915,7 @@ def production_order_payload(context: load_context, row: dict[str, str], plan_li
         "planned_starts_on": row["planned_starts_on"],
         "planned_ends_on": row["planned_ends_on"],
         "production_line_name": production_line_name,
-        "status": row.get("status") or "planned",
+        "status": initial_status,
         "notes": row.get("notes") or None,
     }
 
