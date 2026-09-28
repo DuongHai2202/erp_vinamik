@@ -6,6 +6,7 @@ services:
     region: singapore
     dockerfilePath: ./ERP_Backend/Dockerfile
     dockerContext: ./ERP_Backend
+    autoDeployTrigger: off
     healthCheckPath: /actuator/health/readiness
     envVars:
       - key: DATABASE_URL
@@ -35,6 +36,7 @@ services:
     buildCommand: npm ci && npm run build
     rootDir: ERP_Client
     staticPublishPath: dist
+    autoDeployTrigger: off
     routes:
       - type: rewrite
         source: /api/*

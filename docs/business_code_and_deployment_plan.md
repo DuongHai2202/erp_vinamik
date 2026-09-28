@@ -72,15 +72,15 @@ Tạo GitHub Environment tên `production`, thêm sáu secret triển khai ở t
 
 ### Deploy tự động lên Render cho link demo
 
-Repository có thêm `render.yaml`, `ERP_Backend/Dockerfile` và `.github/workflows/deploy_render.yml`. Blueprint tạo một backend Docker, một frontend static và một PostgreSQL; frontend proxy `/api/*` về backend nên trình duyệt vẫn dùng cùng origin và cookie CSRF không bị tách domain. Render sẽ cung cấp URL `onrender.com`; GitHub Action chỉ gọi hai deploy hook sau khi CI thành công.
+Repository có thêm `render.yaml`, `ERP_Backend/Dockerfile` và `.github/workflows/deploy_render.yml`. Blueprint tạo một backend Docker, một frontend static và một PostgreSQL; frontend proxy `/api/*` về backend nên trình duyệt vẫn dùng cùng origin và cookie CSRF không bị tách domain. `autoDeployTrigger: off` để tránh Render tự deploy song song với GitHub Action; GitHub Action chỉ gọi hai deploy hook sau khi CI thành công.
 
 Thiết lập một lần trên Render:
 
 1. Chọn **New → Blueprint**, kết nối repository và chọn `render.yaml`.
 2. Nhập `ERP_BOOTSTRAP_ADMIN_USERNAME` và `ERP_BOOTSTRAP_ADMIN_PASSWORD` khi Render yêu cầu; không ghi hai giá trị này vào YAML.
-3. Lấy deploy hook của hai service, lưu vào GitHub Environment `production` với tên `RENDER_BACKEND_DEPLOY_HOOK_URL` và `RENDER_FRONTEND_DEPLOY_HOOK_URL`.
-4. Tạo Environment variable `RENDER_BACKEND_PUBLIC_URL` với giá trị `https://erp-vinamik-demo-backend.onrender.com`.
-5. Push `main`; workflow `deploy_render.yml` chạy test, build, gọi Render và đợi readiness.
+3. Lấy deploy hook của hai service trong **Settings → Deploy Hook**, lưu vào GitHub Environment `production` với tên `RENDER_BACKEND_DEPLOY_HOOK_URL` và `RENDER_FRONTEND_DEPLOY_HOOK_URL`.
+4. Tạo Environment variable `RENDER_BACKEND_PUBLIC_URL` với giá trị `https://erp-vinamik-demo-backend.onrender.com` (không có dấu `/` cuối).
+5. Push `main` hoặc chạy thủ công **Actions → Deploy Render demo → Run workflow**; workflow chạy test, build, gọi Render và đợi readiness.
 
 Nếu Render tạo URL có hậu tố khác do tên bị trùng, cập nhật destination `/api/*` trong `render.yaml` theo URL backend thực tế rồi đồng bộ Blueprint. Gói miễn phí phù hợp demo nhưng backend có thể ngủ khi không có truy cập và database miễn phí có thời hạn; dùng gói trả phí nếu cần link hoạt động liên tục.
 
