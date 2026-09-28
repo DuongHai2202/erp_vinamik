@@ -9,9 +9,13 @@ function read_cookie(cookie_name) {
   return cookie ? decodeURIComponent(cookie.substring(cookie_name.length + 1)) : null;
 }
 
-async function ensure_csrf_token() {
+async function ensure_csrf_token(options = {}) {
   if (csrf_request) return csrf_request;
-  csrf_request = fetch('/api/v1/auth/csrf', { credentials: 'include', cache: 'no-store' })
+  csrf_request = fetch('/api/v1/auth/csrf', {
+    credentials: 'include',
+    cache: 'no-store',
+    ...(options.signal ? { signal: options.signal } : {}),
+  })
     .then(async (response) => {
       let payload = null;
       try { payload = await response.json(); } catch { payload = null; }
@@ -33,7 +37,7 @@ async function request_api(path, options = {}) {
 
   async function send_request(force_csrf_refresh = false) {
     if (is_mutation && (force_csrf_refresh || !read_cookie(csrf_cookie_name))) {
-      await ensure_csrf_token();
+      await ensure_csrf_token(options);
     }
     const headers = new Headers(options.headers || {});
     if (options.body && !headers.has('Content-Type')) {

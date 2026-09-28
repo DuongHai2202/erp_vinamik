@@ -6,7 +6,7 @@ services:
     region: singapore
     dockerfilePath: ./ERP_Backend/Dockerfile
     dockerContext: ./ERP_Backend
-    autoDeployTrigger: off
+    autoDeployTrigger: commit
     healthCheckPath: /actuator/health/readiness
     envVars:
       - key: DATABASE_URL
@@ -36,7 +36,7 @@ services:
     buildCommand: npm ci && npm run build
     rootDir: ERP_Client
     staticPublishPath: dist
-    autoDeployTrigger: off
+    autoDeployTrigger: commit
     envVars:
       - key: VITE_DEMO_USERNAME
         value: admin

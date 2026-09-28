@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { ensure_csrf_token, request_api } from '../common/api_client';
 
 const auth_context = createContext(null);
+const session_load_timeout_ms = 8000;
 
 function AuthProvider({ children }) {
   const [current_user, set_current_user] = useState(null);
@@ -9,10 +10,15 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     let is_active = true;
+    const controller = new AbortController();
+    const timeout_id = window.setTimeout(() => controller.abort(), session_load_timeout_ms);
+
     async function load_session() {
       try {
-        await ensure_csrf_token();
-        const response = await request_api('/api/v1/auth/me');
+        // GET /auth/me does not require CSRF. Avoid the extra sequential
+        // request so a sleeping Render backend can fall back to the login
+        // screen promptly instead of keeping the whole app on a spinner.
+        const response = await request_api('/api/v1/auth/me', { signal: controller.signal });
         if (is_active) {
           set_current_user(response.data);
         }
@@ -24,10 +30,15 @@ function AuthProvider({ children }) {
         if (is_active) {
           set_is_loading(false);
         }
+        window.clearTimeout(timeout_id);
       }
     }
     load_session();
-    return () => { is_active = false; };
+    return () => {
+      is_active = false;
+      window.clearTimeout(timeout_id);
+      controller.abort();
+    };
   }, []);
 
   const login = async (username, password) => {
