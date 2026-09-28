@@ -4,6 +4,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { use_auth } from './auth_context';
 
+const demo_username = import.meta.env.VITE_DEMO_USERNAME || 'admin';
+const demo_password = import.meta.env.VITE_DEMO_PASSWORD || 'Admin@123456';
+
 function LoginPage() {
   const { login } = use_auth();
   const [is_submitting, set_is_submitting] = useState(false);
@@ -28,6 +31,17 @@ function LoginPage() {
     <div className="login_brand"><div className="brand_mark large">V</div><div><Typography.Title level={2}>Vinamik</Typography.Title><Typography.Text>Điều phối vận hành doanh nghiệp</Typography.Text></div></div>
     <div className="login_heading"><Typography.Title level={3}>Đăng nhập</Typography.Title><Typography.Paragraph>Đăng nhập để truy cập các phân hệ được cấp quyền.</Typography.Paragraph></div>
     {error_message && <Alert type="error" showIcon message={error_message} className="login_alert" />}
+    <Alert
+      type="info"
+      showIcon
+      className="login_demo_credentials"
+      message="Tài khoản demo"
+      description={<div className="login_demo_credential_list">
+        <div className="login_demo_credential_row"><span>Tên đăng nhập</span><Typography.Text code copyable={{ text: demo_username }}>{demo_username}</Typography.Text></div>
+        <div className="login_demo_credential_row"><span>Mật khẩu</span><Typography.Text code copyable={{ text: demo_password }}>{demo_password}</Typography.Text></div>
+        <small>Chỉ dùng cho môi trường demo và kiểm thử.</small>
+      </div>}
+    />
     <Form layout="vertical" requiredMark={false} onFinish={on_finish}>
       <Form.Item label="Tên đăng nhập" name="username" rules={[{ required: true, message: 'Username is required.' }]}><Input size="large" autoComplete="username" prefix={<UserOutlined />} placeholder="Nhập tên đăng nhập" /></Form.Item>
       <Form.Item label="Mật khẩu" name="password" rules={[{ required: true, message: 'Password is required.' }]}><Input.Password size="large" autoComplete="current-password" prefix={<LockOutlined />} placeholder="Nhập mật khẩu" /></Form.Item>

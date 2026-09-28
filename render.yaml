@@ -37,6 +37,14 @@ services:
     rootDir: ERP_Client
     staticPublishPath: dist
     autoDeployTrigger: off
+    envVars:
+      - key: VITE_DEMO_USERNAME
+        value: admin
+      - key: VITE_DEMO_PASSWORD
+        fromService:
+          type: web
+          name: erp-vinamik-demo-backend
+          envVarKey: ERP_BOOTSTRAP_ADMIN_PASSWORD
     routes:
       - type: rewrite
         source: /api/*

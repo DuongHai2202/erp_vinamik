@@ -289,6 +289,13 @@ a { color: inherit; }
 .login_heading { margin: 0 8px 25px; }
 .login_heading .ant-typography { margin-bottom: 4px; }
 .login_alert { margin: 0 8px 21px; }
+.login_demo_credentials { margin: 0 8px 21px; }
+.login_demo_credentials .ant-alert-description { margin-top: 8px; }
+.login_demo_credential_list { display: grid; gap: 6px; }
+.login_demo_credential_row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.login_demo_credential_row > span:first-child { color: var(--erp-text-soft); }
+.login_demo_credential_row .ant-typography { margin-inline-start: auto; }
+.login_demo_credential_list small { color: var(--erp-text-faint); font-size: 11px; }
 .identity_page { position: relative; display: grid; min-height: 100dvh; place-items: center; padding: 24px; overflow: auto; background: var(--vinamik-blue); }
 .identity_backdrop { position: absolute; inset: 0; background: var(--vinamik-blue); }
 .identity_backdrop::before, .identity_backdrop::after { position: absolute; border: 1px solid rgba(255, 255, 255, .16); border-radius: 50%; content: ''; }
