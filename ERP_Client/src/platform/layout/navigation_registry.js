@@ -30,14 +30,14 @@ const navigation_registry = [
   },
   {
     key: 'inventory',
-    title: 'Kho và nguyên vật liệu',
+    title: 'Kho và vật tư',
     short_title: 'Kho',
     description: 'Số dư, lô hàng và giao dịch được kiểm soát từ một sổ kho duy nhất.',
     color: 'var(--erp-module-inventory)',
     icon: DatabaseOutlined,
     permission: 'inventory_material_read',
     features: [
-      { path: '/inventory', label: 'Danh mục nguyên vật liệu', icon: ShopOutlined, permission: 'inventory_material_read' },
+      { path: '/inventory', label: 'Danh mục vật tư', icon: ShopOutlined, permission: 'inventory_material_read' },
       { path: '/inventory/receipts', label: 'Phiếu nhập kho', icon: FileDoneOutlined, permission: 'inventory_receipt_read' },
       { path: '/inventory/issues', label: 'Phiếu xuất kho', icon: FileSearchOutlined, permission: 'inventory_issue_read' },
       { path: '/inventory/stocktakes', label: 'Kiểm kê kho', icon: CheckCircleFilled, permission: 'inventory_stocktake_read' },

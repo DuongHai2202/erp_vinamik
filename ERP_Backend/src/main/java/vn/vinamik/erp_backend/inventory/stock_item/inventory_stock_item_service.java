@@ -113,7 +113,7 @@ public class inventory_stock_item_service {
         stock_item_response created = find_by_id(entity.stock_item_id());
         audit_writer.write(actor.user_id(), "inventory", "stock_item_create", "stock_item",
                 String.valueOf(entity.stock_item_id()), correlation_id, Map.of("item_code", created.item_code()));
-        logger.info("Đã tạo mặt hàng nguyên vật liệu; stock_item_id={}, actor_user_id={}, correlation_id={}",
+        logger.info("Đã tạo mặt hàng vật tư; stock_item_id={}, actor_user_id={}, correlation_id={}",
                 entity.stock_item_id(), actor.user_id(), correlation_id);
         return created;
     }
@@ -151,7 +151,7 @@ public class inventory_stock_item_service {
         stock_item_response updated_item = find_by_id(stock_item_id);
         audit_writer.write(actor.user_id(), "inventory", "stock_item_update", "stock_item",
                 String.valueOf(stock_item_id), correlation_id, Map.of("item_code", updated_item.item_code()));
-        logger.info("Đã cập nhật mặt hàng nguyên vật liệu; stock_item_id={}, actor_user_id={}, correlation_id={}",
+        logger.info("Đã cập nhật mặt hàng vật tư; stock_item_id={}, actor_user_id={}, correlation_id={}",
                 stock_item_id, actor.user_id(), correlation_id);
         return updated_item;
     }

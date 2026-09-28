@@ -109,7 +109,7 @@ function display_value(value, field_key) {
 }
 
 const business_value_labels = {
-  raw_material: 'Nguyên vật liệu',
+  raw_material: 'Vật tư',
   finished_product: 'Thành phẩm',
   kg: 'Kilôgam',
   litre: 'Lít',
@@ -431,7 +431,7 @@ function ConsumptionFormModal({ order, open, on_close, on_saved }) {
       <Form.Item name="idempotency_key" hidden><Input maxLength={120} /></Form.Item>
       <Form.List name="lines" rules={[{ validator: async (_, values) => values?.length ? Promise.resolve() : Promise.reject(new Error('At least one line is required.')) }]}>
         {(fields, { add, remove }) => <div className="workflow_form_lines"><Typography.Text strong>Vật tư đã tiêu hao</Typography.Text>{fields.map(({ key, name, ...rest_field }) => <div className="workflow_form_line" key={key}>
-          <Form.Item {...rest_field} name={[name, 'material_stock_item_id']} label="Nguyên vật liệu" rules={[{ required: true, message: 'Material is required.' }]}><LookupField field={{ lookup: 'raw_materials', required: true, placeholder: 'Chọn nguyên vật liệu' }} form={form} /></Form.Item>
+          <Form.Item {...rest_field} name={[name, 'material_stock_item_id']} label="Vật tư" rules={[{ required: true, message: 'Material is required.' }]}><LookupField field={{ lookup: 'raw_materials', required: true, placeholder: 'Chọn vật tư' }} form={form} /></Form.Item>
           <Form.Item {...rest_field} name={[name, 'warehouse_location_id']} label="Vị trí kho" rules={[{ required: true, message: 'Warehouse location is required.' }]}><LookupField field={{ lookup: 'warehouse_locations', name: [name, 'warehouse_location_id'], parent_field: 'warehouse_id', auto_select_first: true, required: true, placeholder: 'Chọn vị trí' }} form={form} /></Form.Item>
           <Form.Item {...rest_field} name={[name, 'consumed_quantity']} label="Số lượng" rules={[{ required: true, message: 'Consumed quantity is required.' }]}><InputNumber min={0.000001} style={{ width: '100%' }} /></Form.Item>
           <Button type="text" danger icon={<StopOutlined />} aria-label="Xóa dòng" onClick={() => remove(name)} />

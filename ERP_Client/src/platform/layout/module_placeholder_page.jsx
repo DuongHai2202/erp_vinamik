@@ -16,7 +16,7 @@ const feature_catalog = {
     },
   },
   inventory: {
-    title: 'Kho và nguyên vật liệu',
+    title: 'Kho và vật tư',
     icon: <DatabaseOutlined />,
     color: '#0f9f89',
     features: {
@@ -31,7 +31,7 @@ const feature_catalog = {
     icon: <ToolOutlined />,
     color: '#7657e8',
     features: {
-      materials: { label: 'Định mức và vật tư', description: 'Quản lý BOM, phiên bản và nhu cầu nguyên vật liệu.', permission: 'production_bom_read' },
+      materials: { label: 'Định mức và vật tư', description: 'Quản lý BOM, phiên bản và nhu cầu vật tư.', permission: 'production_bom_read' },
       orders: { label: 'Lệnh sản xuất', description: 'Phát hành, theo dõi tiến độ và hoàn tất lệnh sản xuất.', permission: 'production_order_read' },
       assignments: { label: 'Phân công nhân sự', description: 'Xếp nhân viên vào ca và lịch làm việc, có kiểm tra trùng lịch.', permission: 'production_assignment_read' },
       finished_products: { label: 'Sản lượng thành phẩm', description: 'Ghi nhận đạt/lỗi và bàn giao thành phẩm đạt sang Kho.', permission: 'production_output_read' },

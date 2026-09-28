@@ -19,7 +19,7 @@ const status_options = [
 ];
 const status_labels = { active: 'Đang sử dụng', inactive: 'Ngừng sử dụng' };
 const item_type_options = [
-  { value: 'raw_material', label: 'Nguyên vật liệu' },
+  { value: 'raw_material', label: 'Vật tư' },
   { value: 'finished_product', label: 'Thành phẩm' },
 ];
 const item_type_filter_options = [
@@ -334,7 +334,7 @@ function InventoryPage() {
     {error_message && <Alert className="workspace_error" type="error" showIcon message={error_message} />}
     {active_view === 'balances' ? <InventoryBalanceView current_user={current_user} /> : <DataWorkspace
       title="Danh mục vật tư và thành phẩm"
-      description="Danh mục dùng chung cho Kho và Sản xuất; chọn loại mặt hàng để tạo nguyên vật liệu hoặc thành phẩm."
+      description="Danh mục dùng chung cho Kho và Sản xuất; chọn loại mặt hàng để tạo vật tư hoặc thành phẩm."
       toolbar={<Space wrap className="list_toolbar">
         <DebouncedSearchInput placeholder="Tìm theo mã hoặc tên mặt hàng" value={search_input} on_commit={on_material_search} style={{ width: 300 }} />
         <Select value={filters.status} options={status_options} onChange={(status) => { const next_filters = { ...filters, status }; set_filters(next_filters); sync_query(next_filters); load_materials(next_filters, 1, pagination.page_size); }} style={{ width: 170 }} />

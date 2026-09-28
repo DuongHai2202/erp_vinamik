@@ -26,7 +26,7 @@ const status_labels = {
 
 
 const field_value_labels = {
-  raw_material: 'Nguyên vật liệu',
+  raw_material: 'Vật tư',
   indefinite: 'Không xác định thời hạn',
   fixed_term_12_months: 'Xác định thời hạn 12 tháng',
   fixed_term_36_months: 'Xác định thời hạn 36 tháng',
@@ -368,7 +368,7 @@ const create_schemas = {
   materials: [
     { key: 'bom_code', label: 'Mã định mức', auto_code: true, required: false }, { key: 'stock_item_id', label: 'Thành phẩm', lookup: 'finished_products', required: true }, { key: 'version_number', label: 'Phiên bản', type: 'number', min: 1, required: true, default_value: 1 },
     { key: 'base_quantity', label: 'Số lượng cơ sở', type: 'number', min: 0.000001, required: true }, { key: 'valid_from', label: 'Hiệu lực từ', type: 'date', required: true }, { key: 'valid_to', label: 'Hiệu lực đến', type: 'date', required: false }, { key: 'notes', label: 'Ghi chú', type: 'textarea', required: false },
-    { key: 'lines', label: 'Dòng định mức', type: 'lines', required: true, fields: [{ key: 'material_stock_item_id', label: 'Nguyên vật liệu', lookup: 'raw_materials', required: true }, { key: 'quantity_per_base', label: 'Định lượng', type: 'number', min: 0.000001, required: true }, { key: 'scrap_percent', label: 'Tỷ lệ hao hụt (%)', type: 'number', min: 0, max: 100, required: false }] },
+    { key: 'lines', label: 'Dòng định mức', type: 'lines', required: true, fields: [{ key: 'material_stock_item_id', label: 'Vật tư', lookup: 'raw_materials', required: true }, { key: 'quantity_per_base', label: 'Định lượng', type: 'number', min: 0.000001, required: true }, { key: 'scrap_percent', label: 'Tỷ lệ hao hụt (%)', type: 'number', min: 0, max: 100, required: false }] },
   ],
   orders: [
     { key: 'order_code', label: 'Mã lệnh', auto_code: true, required: false }, { key: 'production_plan_id', label: 'Kế hoạch sản xuất', type: 'production_plan', required: true, virtual: true }, { key: 'production_plan_line_id', label: 'Dòng kế hoạch', type: 'plan_line', min: 1, required: true }, { key: 'bom_id', label: 'Định mức BOM', type: 'production_bom', required: true },
@@ -376,7 +376,7 @@ const create_schemas = {
     { key: 'status', label: 'Trạng thái khởi tạo', type: 'select', options: [{ value: 'draft', label: 'Bản nháp' }, { value: 'planned', label: 'Đã lập kế hoạch' }], default_value: 'draft', required: true },
   ],
   assignments: [
-    { key: 'production_order_id', label: 'Lệnh sản xuất', lookup: 'production_orders', related_endpoint: '/api/v1/production/orders/{id}', auto_fill: { starts_at: 'planned_starts_on', ends_at: 'planned_ends_on' }, auto_fill_datetime: ['starts_at', 'ends_at'], required: true }, { key: 'employee_id', label: 'Nhân viên', lookup: 'employees', required: true }, { key: 'work_shift_id', label: 'Ca làm việc', lookup: 'work_shifts', required: false }, { key: 'assignment_name', label: 'Nhiệm vụ', type: 'select', options: [{ value: 'Vận hành thiết bị', label: 'Vận hành thiết bị' }, { value: 'Chuẩn bị nguyên vật liệu', label: 'Chuẩn bị nguyên vật liệu' }, { value: 'Kiểm soát chất lượng', label: 'Kiểm soát chất lượng' }, { value: 'Đóng gói sản phẩm', label: 'Đóng gói sản phẩm' }, { value: 'Kiểm soát đóng gói', label: 'Kiểm soát đóng gói' }, { value: 'Ghi nhận sản lượng', label: 'Ghi nhận sản lượng' }, { value: 'Vệ sinh dây chuyền', label: 'Vệ sinh dây chuyền' }, { value: 'Bảo trì thiết bị', label: 'Bảo trì thiết bị' }, { value: 'Bốc xếp và bàn giao', label: 'Bốc xếp và bàn giao' }, { value: 'Khác', label: 'Khác' }], required: false },
+    { key: 'production_order_id', label: 'Lệnh sản xuất', lookup: 'production_orders', related_endpoint: '/api/v1/production/orders/{id}', auto_fill: { starts_at: 'planned_starts_on', ends_at: 'planned_ends_on' }, auto_fill_datetime: ['starts_at', 'ends_at'], required: true }, { key: 'employee_id', label: 'Nhân viên', lookup: 'employees', required: true }, { key: 'work_shift_id', label: 'Ca làm việc', lookup: 'work_shifts', required: false }, { key: 'assignment_name', label: 'Nhiệm vụ', type: 'select', options: [{ value: 'Vận hành thiết bị', label: 'Vận hành thiết bị' }, { value: 'Chuẩn bị vật tư', label: 'Chuẩn bị vật tư' }, { value: 'Kiểm soát chất lượng', label: 'Kiểm soát chất lượng' }, { value: 'Đóng gói sản phẩm', label: 'Đóng gói sản phẩm' }, { value: 'Kiểm soát đóng gói', label: 'Kiểm soát đóng gói' }, { value: 'Ghi nhận sản lượng', label: 'Ghi nhận sản lượng' }, { value: 'Vệ sinh dây chuyền', label: 'Vệ sinh dây chuyền' }, { value: 'Bảo trì thiết bị', label: 'Bảo trì thiết bị' }, { value: 'Bốc xếp và bàn giao', label: 'Bốc xếp và bàn giao' }, { value: 'Khác', label: 'Khác' }], required: false },
     { key: 'starts_at', label: 'Bắt đầu', type: 'datetime', required: true }, { key: 'ends_at', label: 'Kết thúc', type: 'datetime', required: true }, { key: 'notes', label: 'Ghi chú', type: 'textarea', required: false },
   ],
   quality_inspections: [
@@ -413,7 +413,7 @@ const create_schemas = {
     { key: 'stock_item_code', label: 'Mã hàng', required: false },
     { key: 'stock_item_name', label: 'Tên thành phẩm', required: false },
     { key: 'good_quantity', label: 'Sản lượng đạt', type: 'number', min: 0.000001, required: true },
-    { key: 'material_cost', label: 'Chi phí nguyên vật liệu', type: 'number', min: 0, required: true, default_value: 0 },
+    { key: 'material_cost', label: 'Chi phí vật tư', type: 'number', min: 0, required: true, default_value: 0 },
     { key: 'direct_labor_cost', label: 'Chi phí nhân công', type: 'number', min: 0, required: true, default_value: 0 },
     { key: 'overhead_cost', label: 'Chi phí sản xuất chung', type: 'number', min: 0, required: true, default_value: 0 },
     { key: 'adjustment_amount', label: 'Điều chỉnh', type: 'number', min: 0, required: false, default_value: 0 },

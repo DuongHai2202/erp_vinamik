@@ -48,7 +48,7 @@ const route_labels = {
   '/human_resources/absences': 'Nghỉ phép và vắng mặt',
   '/human_resources/rewards_discipline': 'Khen thưởng và kỷ luật',
   '/human_resources/payroll': 'Tính lương',
-  '/inventory': 'Danh mục nguyên vật liệu',
+  '/inventory': 'Danh mục vật tư',
   '/inventory/receipts': 'Phiếu nhập kho',
   '/inventory/issues': 'Phiếu xuất kho',
   '/inventory/stocktakes': 'Kiểm kê kho',
